@@ -1,0 +1,1017 @@
+{
+  "info": {
+    "_postman_id": "1c1762a9-244c-44e6-b869-024c36a7da13",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Expense Reports API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:00.000Z",
+    "updatedAt": "2026-07-28T02:58:01.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1c1762a9-244c-44e6-b869-024c36a7da13"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "expense-reports",
+              "item": [
+                {
+                  "name": "{expenseReportId}",
+                  "item": [
+                    {
+                      "name": "download",
+                      "item": [
+                        {
+                          "name": "Download Expense Report",
+                          "id": "36e3395e-335c-4495-83cb-be6a709af781",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/expense-reports/:expenseReportId/download?fileType=PDF_WITH_ATTACHMENTS",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "expense-reports",
+                                ":expenseReportId",
+                                "download"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The `ExpenseReport` file type.",
+                                  "key": "fileType",
+                                  "value": "PDF_WITH_ATTACHMENTS"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "df309748-0ae9-4a46-817f-2ca68c6afb67",
+                                  "key": "expenseReportId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to download `ExpenseReport` by ID."
+                          },
+                          "response": [
+                            {
+                              "id": "226130d6-ea20-4a99-b64c-58874e342947",
+                              "name": "The result is a URL to download `ExpenseReport`.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/expense-reports/:expenseReportId/download?fileType=PDF_WITH_ATTACHMENTS",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "expense-reports",
+                                    ":expenseReportId",
+                                    "download"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "The `ExpenseReport` file type.",
+                                      "key": "fileType",
+                                      "value": "PDF_WITH_ATTACHMENTS"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "expenseReportId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"file_url\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:58:01.000Z",
+                              "updatedAt": "2026-07-28T02:58:01.000Z",
+                              "uid": "35240-226130d6-ea20-4a99-b64c-58874e342947"
+                            },
+                            {
+                              "id": "081a6ceb-6570-495a-9a13-594668da6178",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/expense-reports/:expenseReportId/download?fileType=PDF_WITH_ATTACHMENTS",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "expense-reports",
+                                    ":expenseReportId",
+                                    "download"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "The `ExpenseReport` file type.",
+                                      "key": "fileType",
+                                      "value": "PDF_WITH_ATTACHMENTS"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "expenseReportId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:01.000Z",
+                              "updatedAt": "2026-07-28T02:58:01.000Z",
+                              "uid": "35240-081a6ceb-6570-495a-9a13-594668da6178"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:01.000Z",
+                          "updatedAt": "2026-07-28T02:58:01.000Z",
+                          "uid": "35240-36e3395e-335c-4495-83cb-be6a709af781"
+                        }
+                      ],
+                      "id": "5e4a88bd-db97-48df-9dcc-a5b515cb38b1",
+                      "createdAt": "2026-07-28T02:58:01.000Z",
+                      "updatedAt": "2026-07-28T02:58:01.000Z",
+                      "uid": "35240-5e4a88bd-db97-48df-9dcc-a5b515cb38b1"
+                    },
+                    {
+                      "name": "Get Expense Report",
+                      "id": "74ff9b24-a9b2-4779-8bc6-3752014f7885",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/expense-reports/:expenseReportId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "expense-reports",
+                            ":expenseReportId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "40db887c-4f8c-4d3b-ae49-7560765e5858",
+                              "key": "expenseReportId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to get a specific  `ExpenseReport` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "76c0c137-aa9f-435f-b42d-815381ffda06",
+                          "name": "The result is a single  `ExpenseReport`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/expense-reports/:expenseReportId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "expense-reports",
+                                ":expenseReportId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "expenseReportId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"reimburse_amount\": \"<number>\",\n  \"deduct_amount\": \"<number>\",\n  \"process_amount\": \"<number>\",\n  \"file_url\": \"<string>\",\n  \"id\": \"<string>\",\n  \"protocol\": \"<string>\",\n  \"number\": \"<string>\",\n  \"type\": \"EMPLOYEE\",\n  \"status\": \"CANCELLED\",\n  \"exported_date\": \"<string>\",\n  \"exported_by\": \"<string>\",\n  \"trx_owner_id\": \"<string>\",\n  \"trx_date_from\": \"<string>\",\n  \"trx_date_to\": \"<string>\",\n  \"processed_date\": \"<string>\",\n  \"processed_by\": \"<string>\",\n  \"reimbursement_transaction_id\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:58:01.000Z",
+                          "updatedAt": "2026-07-28T02:58:01.000Z",
+                          "uid": "35240-76c0c137-aa9f-435f-b42d-815381ffda06"
+                        },
+                        {
+                          "id": "cb17e8bf-3dab-4d99-9e5c-c1c0dbd45a8c",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/expense-reports/:expenseReportId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "expense-reports",
+                                ":expenseReportId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "expenseReportId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:01.000Z",
+                          "updatedAt": "2026-07-28T02:58:01.000Z",
+                          "uid": "35240-cb17e8bf-3dab-4d99-9e5c-c1c0dbd45a8c"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:01.000Z",
+                      "updatedAt": "2026-07-28T02:58:01.000Z",
+                      "uid": "35240-74ff9b24-a9b2-4779-8bc6-3752014f7885"
+                    },
+                    {
+                      "name": "Update Expense Report",
+                      "id": "7a211204-e305-4cac-88d6-50b778a452d0",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"approver_id\": \"<string>\",\n  \"status\": \"CANCELLED\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/expense-reports/:expenseReportId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "expense-reports",
+                            ":expenseReportId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "ed349570-1d91-4872-871c-3a9d606db1d5",
+                              "key": "expenseReportId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to update a specific `ExpenseReport`."
+                      },
+                      "response": [
+                        {
+                          "id": "e61c664a-0b22-49bd-9a53-1a1c683fa57f",
+                          "name": "The returned resource is a single `ExpenseReport`.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"approver_id\": \"<string>\",\n  \"status\": \"CANCELLED\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/expense-reports/:expenseReportId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "expense-reports",
+                                ":expenseReportId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "expenseReportId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"reimburse_amount\": \"<number>\",\n  \"deduct_amount\": \"<number>\",\n  \"process_amount\": \"<number>\",\n  \"file_url\": \"<string>\",\n  \"id\": \"<string>\",\n  \"protocol\": \"<string>\",\n  \"number\": \"<string>\",\n  \"type\": \"EMPLOYEE\",\n  \"status\": \"CANCELLED\",\n  \"exported_date\": \"<string>\",\n  \"exported_by\": \"<string>\",\n  \"trx_owner_id\": \"<string>\",\n  \"trx_date_from\": \"<string>\",\n  \"trx_date_to\": \"<string>\",\n  \"processed_date\": \"<string>\",\n  \"processed_by\": \"<string>\",\n  \"reimbursement_transaction_id\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:58:01.000Z",
+                          "updatedAt": "2026-07-28T02:58:01.000Z",
+                          "uid": "35240-e61c664a-0b22-49bd-9a53-1a1c683fa57f"
+                        },
+                        {
+                          "id": "a66ef979-ea15-40ad-bc1a-e237c8a576aa",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"approver_id\": \"<string>\",\n  \"status\": \"CANCELLED\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/expense-reports/:expenseReportId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "expense-reports",
+                                ":expenseReportId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "expenseReportId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:01.000Z",
+                          "updatedAt": "2026-07-28T02:58:01.000Z",
+                          "uid": "35240-a66ef979-ea15-40ad-bc1a-e237c8a576aa"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:01.000Z",
+                      "updatedAt": "2026-07-28T02:58:01.000Z",
+                      "uid": "35240-7a211204-e305-4cac-88d6-50b778a452d0"
+                    },
+                    {
+                      "name": "Delete Expense Report",
+                      "id": "0c742cbc-c4c0-4c58-be90-c05cf58b700c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/expense-reports/:expenseReportId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "expense-reports",
+                            ":expenseReportId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "83664637-6868-483e-b328-e8158295b1e8",
+                              "key": "expenseReportId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to delete a specific `ExpenseReport`."
+                      },
+                      "response": [
+                        {
+                          "id": "c272ff5a-f5dc-4197-ac29-55c0d0e3f11b",
+                          "name": "No content as result.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/expense-reports/:expenseReportId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "expense-reports",
+                                ":expenseReportId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "expenseReportId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:01.000Z",
+                          "updatedAt": "2026-07-28T02:58:01.000Z",
+                          "uid": "35240-c272ff5a-f5dc-4197-ac29-55c0d0e3f11b"
+                        },
+                        {
+                          "id": "f00011a6-29bc-49d2-89b4-efa090d8ff82",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/expense-reports/:expenseReportId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "expense-reports",
+                                ":expenseReportId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "expenseReportId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:01.000Z",
+                          "updatedAt": "2026-07-28T02:58:01.000Z",
+                          "uid": "35240-f00011a6-29bc-49d2-89b4-efa090d8ff82"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:01.000Z",
+                      "updatedAt": "2026-07-28T02:58:01.000Z",
+                      "uid": "35240-0c742cbc-c4c0-4c58-be90-c05cf58b700c"
+                    }
+                  ],
+                  "id": "f03c683d-09e2-4a4b-8f2a-d8192c1dc98e",
+                  "createdAt": "2026-07-28T02:58:01.000Z",
+                  "updatedAt": "2026-07-28T02:58:01.000Z",
+                  "uid": "35240-f03c683d-09e2-4a4b-8f2a-d8192c1dc98e"
+                },
+                {
+                  "name": "Search Expense Reports",
+                  "id": "f205c787-da4d-42ac-92b3-795c341a1380",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/expense-reports?number=<string>&trxOwnerId=<string>&status=CANCELLED&status=CANCELLED&type=COMPANY&type=COMPANY&toReimburse=<boolean>&p=0&s=0&d=ASC&props=<string>&props=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "expense-reports"
+                      ],
+                      "query": [
+                        {
+                          "description": "The `ExpenseReport` number.",
+                          "key": "number",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The ID of the `User` who made the expenses included in the `ExpenseReport`.",
+                          "key": "trxOwnerId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The `ExpenseReport` status.",
+                          "key": "status",
+                          "value": "CANCELLED"
+                        },
+                        {
+                          "description": "The `ExpenseReport` status.",
+                          "key": "status",
+                          "value": "CANCELLED"
+                        },
+                        {
+                          "description": "The `ExpenseReport` type.",
+                          "key": "type",
+                          "value": "COMPANY"
+                        },
+                        {
+                          "description": "The `ExpenseReport` type.",
+                          "key": "type",
+                          "value": "COMPANY"
+                        },
+                        {
+                          "description": "It determines whether only reports with or without an amount to be reimbursed should be returned.",
+                          "key": "toReimburse",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "description": "It indicates the specific page to display (the counter starts from zero).",
+                          "key": "p",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the number of items per page.",
+                          "key": "s",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates how the pages are ordered.",
+                          "key": "d",
+                          "value": "ASC"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to search `ExpenseReport` using filtering parameters."
+                  },
+                  "response": [
+                    {
+                      "id": "9f14a6fd-9c00-4dba-82e1-ffce20c045c0",
+                      "name": "The result is an array containing `ExpenseReport`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/expense-reports?number=<string>&trxOwnerId=<string>&status=CANCELLED&type=COMPANY&toReimburse=<boolean>&p=0&s=0&d=ASC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "expense-reports"
+                          ],
+                          "query": [
+                            {
+                              "description": "The `ExpenseReport` number.",
+                              "key": "number",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The ID of the `User` who made the expenses included in the `ExpenseReport`.",
+                              "key": "trxOwnerId",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The `ExpenseReport` status.",
+                              "key": "status",
+                              "value": "CANCELLED"
+                            },
+                            {
+                              "description": "The `ExpenseReport` type.",
+                              "key": "type",
+                              "value": "COMPANY"
+                            },
+                            {
+                              "description": "It determines whether only reports with or without an amount to be reimbursed should be returned.",
+                              "key": "toReimburse",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"reimburse_amount\": \"<number>\",\n      \"deduct_amount\": \"<number>\",\n      \"process_amount\": \"<number>\",\n      \"file_url\": \"<string>\",\n      \"id\": \"<string>\",\n      \"protocol\": \"<string>\",\n      \"number\": \"<string>\",\n      \"type\": \"COMPANY\",\n      \"status\": \"TO_BE_PROCESSED\",\n      \"exported_date\": \"<string>\",\n      \"exported_by\": \"<string>\",\n      \"trx_owner_id\": \"<string>\",\n      \"trx_date_from\": \"<string>\",\n      \"trx_date_to\": \"<string>\",\n      \"processed_date\": \"<string>\",\n      \"processed_by\": \"<string>\",\n      \"reimbursement_transaction_id\": \"<string>\"\n    },\n    {\n      \"reimburse_amount\": \"<number>\",\n      \"deduct_amount\": \"<number>\",\n      \"process_amount\": \"<number>\",\n      \"file_url\": \"<string>\",\n      \"id\": \"<string>\",\n      \"protocol\": \"<string>\",\n      \"number\": \"<string>\",\n      \"type\": \"EMPLOYEE\",\n      \"status\": \"PROCESSED\",\n      \"exported_date\": \"<string>\",\n      \"exported_by\": \"<string>\",\n      \"trx_owner_id\": \"<string>\",\n      \"trx_date_from\": \"<string>\",\n      \"trx_date_to\": \"<string>\",\n      \"processed_date\": \"<string>\",\n      \"processed_by\": \"<string>\",\n      \"reimbursement_transaction_id\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:58:01.000Z",
+                      "updatedAt": "2026-07-28T02:58:01.000Z",
+                      "uid": "35240-9f14a6fd-9c00-4dba-82e1-ffce20c045c0"
+                    },
+                    {
+                      "id": "33bd9a57-56b3-4fed-b585-a75c237e2837",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/expense-reports?number=<string>&trxOwnerId=<string>&status=CANCELLED&type=COMPANY&toReimburse=<boolean>&p=0&s=0&d=ASC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "expense-reports"
+                          ],
+                          "query": [
+                            {
+                              "description": "The `ExpenseReport` number.",
+                              "key": "number",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The ID of the `User` who made the expenses included in the `ExpenseReport`.",
+                              "key": "trxOwnerId",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The `ExpenseReport` status.",
+                              "key": "status",
+                              "value": "CANCELLED"
+                            },
+                            {
+                              "description": "The `ExpenseReport` type.",
+                              "key": "type",
+                              "value": "COMPANY"
+                            },
+                            {
+                              "description": "It determines whether only reports with or without an amount to be reimbursed should be returned.",
+                              "key": "toReimburse",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:58:01.000Z",
+                      "updatedAt": "2026-07-28T02:58:01.000Z",
+                      "uid": "35240-33bd9a57-56b3-4fed-b585-a75c237e2837"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:58:01.000Z",
+                  "updatedAt": "2026-07-28T02:58:01.000Z",
+                  "uid": "35240-f205c787-da4d-42ac-92b3-795c341a1380"
+                }
+              ],
+              "id": "b8e1b629-4f87-42b0-9a34-f05278fb0102",
+              "createdAt": "2026-07-28T02:58:01.000Z",
+              "updatedAt": "2026-07-28T02:58:01.000Z",
+              "uid": "35240-b8e1b629-4f87-42b0-9a34-f05278fb0102"
+            }
+          ],
+          "id": "c6b2ff0a-3543-420d-afaf-2098d0527a3b",
+          "createdAt": "2026-07-28T02:58:01.000Z",
+          "updatedAt": "2026-07-28T02:58:01.000Z",
+          "uid": "35240-c6b2ff0a-3543-420d-afaf-2098d0527a3b"
+        }
+      ],
+      "id": "7e5a0f3a-ffc8-4575-8055-8817cedc4d64",
+      "createdAt": "2026-07-28T02:58:01.000Z",
+      "updatedAt": "2026-07-28T02:58:01.000Z",
+      "uid": "35240-7e5a0f3a-ffc8-4575-8055-8817cedc4d64"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

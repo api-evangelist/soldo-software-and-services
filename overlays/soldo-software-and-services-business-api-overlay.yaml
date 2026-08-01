@@ -1,0 +1,24 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Soldo Business API v2.0
+  version: 1.0.0
+extends: openapi/soldo-software-and-services-business-api-openapi.json
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-enriched: '2026-07-21'
+      x-apievangelist-provider: soldo-software-and-services
+      x-api-category: spend-management
+      x-authentication: oauth2-client-credentials + advanced RSA request signing (X-Soldo-Fingerprint)
+      x-rate-limits:
+        per_minute: 600
+        per_second: 20
+      x-status-page: https://soldo.statuspage.io
+      x-changelog: https://developer.soldo.com/changelog
+      x-error-format: custom-json ({ error_code, message }); not RFC 9457
+      x-compliance: [PCI DSS Level 1, ISO/IEC 27001, ISO/IEC 9001, Cyber Essentials Plus]
+  - target: $.info
+    update:
+      x-apievangelist-webhooks: asyncapi/soldo-software-and-services-webhooks.yml
+      x-apievangelist-data-model: data-model/soldo-software-and-services-data-model.yml
+      x-apievangelist-conventions: conventions/soldo-software-and-services-conventions.yml

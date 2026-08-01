@@ -1,0 +1,1284 @@
+{
+  "info": {
+    "_postman_id": "f09d2559-22a1-416a-93a4-d326b93386c4",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Lists API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:24.000Z",
+    "updatedAt": "2026-07-28T02:58:24.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f09d2559-22a1-416a-93a4-d326b93386c4"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "dictionaries",
+              "item": [
+                {
+                  "name": "{listId}",
+                  "item": [
+                    {
+                      "name": "Get List",
+                      "id": "9df62412-3a5d-4eae-8666-eceb422b6b9e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/dictionaries/:listId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "dictionaries",
+                            ":listId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "86defc68-6f9f-4bb1-86f8-7876e351474b",
+                              "key": "listId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to get a specific `List` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "c759d5d5-4eb0-4544-b38a-8b7d73440c72",
+                          "name": "The returned resource is a single `List`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/dictionaries/:listId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "dictionaries",
+                                ":listId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "listId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"dictionary\": \"<string>\",\n  \"visible\": \"<boolean>\",\n  \"creation_time\": \"<string>\",\n  \"last_update\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"users\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"is_unique_select_tag\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:58:25.000Z",
+                          "updatedAt": "2026-07-28T02:58:25.000Z",
+                          "uid": "35240-c759d5d5-4eb0-4544-b38a-8b7d73440c72"
+                        },
+                        {
+                          "id": "dbd32a6a-740f-47ed-ba60-adb3002f0349",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/dictionaries/:listId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "dictionaries",
+                                ":listId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "listId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:25.000Z",
+                          "updatedAt": "2026-07-28T02:58:25.000Z",
+                          "uid": "35240-dbd32a6a-740f-47ed-ba60-adb3002f0349"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:25.000Z",
+                      "updatedAt": "2026-07-28T02:58:25.000Z",
+                      "uid": "35240-9df62412-3a5d-4eae-8666-eceb422b6b9e"
+                    },
+                    {
+                      "name": "Update List",
+                      "id": "6c1376cb-ffe4-4cfa-986d-469454fa488b",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/x-www-form-urlencoded"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "urlencoded",
+                          "urlencoded": [
+                            {
+                              "description": "The name of the `List`.",
+                              "key": "dictionary",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It determines whether multiple `Tags` of the `List` can be selected.",
+                              "key": "uniqueSelectTag",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "It determines whether it's required or not.",
+                              "key": "required",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "It determines whether the `List` is active.",
+                              "key": "visible",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "List of `Roles` to can view items in transaction details.",
+                              "key": "roles",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "List of `Roles` to can view items in transaction details.",
+                              "key": "roles",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "List of `User` IDs to can view items in transaction details..",
+                              "key": "users",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "List of `User` IDs to can view items in transaction details..",
+                              "key": "users",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/dictionaries/:listId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "dictionaries",
+                            ":listId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "9fd52067-5878-4bfe-9b61-0d8c0aff9be4",
+                              "key": "listId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to update the configuration of a `List`."
+                      },
+                      "response": [
+                        {
+                          "id": "70e57e21-a822-4366-b607-29fe9ac0fe9b",
+                          "name": "The returned resource is a single `List`.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "description": "The name of the `List`.",
+                                  "key": "dictionary",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "It determines whether multiple `Tags` of the `List` can be selected.",
+                                  "key": "uniqueSelectTag",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "It determines whether it's required or not.",
+                                  "key": "required",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "It determines whether the `List` is active.",
+                                  "key": "visible",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "List of `Roles` to can view items in transaction details.",
+                                  "key": "roles",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "List of `Roles` to can view items in transaction details.",
+                                  "key": "roles",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "List of `User` IDs to can view items in transaction details..",
+                                  "key": "users",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "List of `User` IDs to can view items in transaction details..",
+                                  "key": "users",
+                                  "value": "<string>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/dictionaries/:listId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "dictionaries",
+                                ":listId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "listId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"dictionary\": \"<string>\",\n  \"visible\": \"<boolean>\",\n  \"creation_time\": \"<string>\",\n  \"last_update\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"users\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"is_unique_select_tag\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:58:25.000Z",
+                          "updatedAt": "2026-07-28T02:58:25.000Z",
+                          "uid": "35240-70e57e21-a822-4366-b607-29fe9ac0fe9b"
+                        },
+                        {
+                          "id": "757ae2b6-fef1-415d-96b7-30808b30fd58",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "description": "The name of the `List`.",
+                                  "key": "dictionary",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "It determines whether multiple `Tags` of the `List` can be selected.",
+                                  "key": "uniqueSelectTag",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "It determines whether it's required or not.",
+                                  "key": "required",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "It determines whether the `List` is active.",
+                                  "key": "visible",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "List of `Roles` to can view items in transaction details.",
+                                  "key": "roles",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "List of `Roles` to can view items in transaction details.",
+                                  "key": "roles",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "List of `User` IDs to can view items in transaction details..",
+                                  "key": "users",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "List of `User` IDs to can view items in transaction details..",
+                                  "key": "users",
+                                  "value": "<string>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/dictionaries/:listId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "dictionaries",
+                                ":listId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "listId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:25.000Z",
+                          "updatedAt": "2026-07-28T02:58:25.000Z",
+                          "uid": "35240-757ae2b6-fef1-415d-96b7-30808b30fd58"
+                        },
+                        {
+                          "id": "f01da1e3-62d9-4f6c-89a5-6ca29e78b7a3",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "description": "The name of the `List`.",
+                                  "key": "dictionary",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "It determines whether multiple `Tags` of the `List` can be selected.",
+                                  "key": "uniqueSelectTag",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "It determines whether it's required or not.",
+                                  "key": "required",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "It determines whether the `List` is active.",
+                                  "key": "visible",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "List of `Roles` to can view items in transaction details.",
+                                  "key": "roles",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "List of `Roles` to can view items in transaction details.",
+                                  "key": "roles",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "List of `User` IDs to can view items in transaction details..",
+                                  "key": "users",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "List of `User` IDs to can view items in transaction details..",
+                                  "key": "users",
+                                  "value": "<string>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/dictionaries/:listId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "dictionaries",
+                                ":listId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "listId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:25.000Z",
+                          "updatedAt": "2026-07-28T02:58:25.000Z",
+                          "uid": "35240-f01da1e3-62d9-4f6c-89a5-6ca29e78b7a3"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:25.000Z",
+                      "updatedAt": "2026-07-28T02:58:25.000Z",
+                      "uid": "35240-6c1376cb-ffe4-4cfa-986d-469454fa488b"
+                    },
+                    {
+                      "name": "Delete List",
+                      "id": "b8959c7d-d28e-4c07-8a55-e842faf2675d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/dictionaries/:listId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "dictionaries",
+                            ":listId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "f3002d5e-7561-4450-b7fe-843412342510",
+                              "key": "listId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to delete a `List`."
+                      },
+                      "response": [
+                        {
+                          "id": "5d94f2b9-154e-4cf3-8f96-cdb41c0b5d8f",
+                          "name": "No content as result.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/dictionaries/:listId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "dictionaries",
+                                ":listId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "listId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:25.000Z",
+                          "updatedAt": "2026-07-28T02:58:25.000Z",
+                          "uid": "35240-5d94f2b9-154e-4cf3-8f96-cdb41c0b5d8f"
+                        },
+                        {
+                          "id": "32702438-c69f-4e4e-a63a-e0644010ce8a",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/dictionaries/:listId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "dictionaries",
+                                ":listId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "listId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:25.000Z",
+                          "updatedAt": "2026-07-28T02:58:25.000Z",
+                          "uid": "35240-32702438-c69f-4e4e-a63a-e0644010ce8a"
+                        },
+                        {
+                          "id": "9e2601c2-d336-4f67-8755-b0865f3e1c2f",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/dictionaries/:listId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "dictionaries",
+                                ":listId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "listId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:25.000Z",
+                          "updatedAt": "2026-07-28T02:58:25.000Z",
+                          "uid": "35240-9e2601c2-d336-4f67-8755-b0865f3e1c2f"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:25.000Z",
+                      "updatedAt": "2026-07-28T02:58:25.000Z",
+                      "uid": "35240-b8959c7d-d28e-4c07-8a55-e842faf2675d"
+                    }
+                  ],
+                  "id": "4ce7a7ac-2c06-426b-b3ad-cdfcdbbc024c",
+                  "createdAt": "2026-07-28T02:58:25.000Z",
+                  "updatedAt": "2026-07-28T02:58:25.000Z",
+                  "uid": "35240-4ce7a7ac-2c06-426b-b3ad-cdfcdbbc024c"
+                },
+                {
+                  "name": "Search Lists",
+                  "id": "2bcb8388-d841-4909-b39d-73d85064f3f9",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/dictionaries?visible=<boolean>&text=<string>&p=0&s=0&d=ASC&props=<string>&props=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "dictionaries"
+                      ],
+                      "query": [
+                        {
+                          "key": "visible",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "key": "text",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the specific page to display (the counter starts from zero).",
+                          "key": "p",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the number of items per page.",
+                          "key": "s",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates how the pages are ordered.",
+                          "key": "d",
+                          "value": "ASC"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to search `Lists` using filtering parameters."
+                  },
+                  "response": [
+                    {
+                      "id": "d2661837-e7a5-41cf-bfeb-0ec5feb72dd8",
+                      "name": "The result is an array containing `Lists`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/dictionaries?visible=<boolean>&text=<string>&p=0&s=0&d=ASC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "dictionaries"
+                          ],
+                          "query": [
+                            {
+                              "key": "visible",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "key": "text",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"dictionary\": \"<string>\",\n      \"visible\": \"<boolean>\",\n      \"creation_time\": \"<string>\",\n      \"last_update\": \"<string>\",\n      \"roles\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"users\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"is_unique_select_tag\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"dictionary\": \"<string>\",\n      \"visible\": \"<boolean>\",\n      \"creation_time\": \"<string>\",\n      \"last_update\": \"<string>\",\n      \"roles\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"users\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"is_unique_select_tag\": \"<boolean>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:58:25.000Z",
+                      "updatedAt": "2026-07-28T02:58:25.000Z",
+                      "uid": "35240-d2661837-e7a5-41cf-bfeb-0ec5feb72dd8"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:58:25.000Z",
+                  "updatedAt": "2026-07-28T02:58:25.000Z",
+                  "uid": "35240-2bcb8388-d841-4909-b39d-73d85064f3f9"
+                },
+                {
+                  "name": "Add List",
+                  "id": "df2a1cbf-1ea2-4942-9fe0-f245e2a9d3ee",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "urlencoded",
+                      "urlencoded": [
+                        {
+                          "description": "The name of the `List`.",
+                          "key": "dictionary",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It determines whether multiple `Tags` of the `List` can be selected.",
+                          "key": "uniqueSelectTag",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "description": "It determines required.",
+                          "key": "required",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "description": "List of `Roles` to can view items in transaction details.",
+                          "key": "roles",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "List of `Roles` to can view items in transaction details.",
+                          "key": "roles",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "List of `User` IDs to can view items in transaction details..",
+                          "key": "users",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "List of `User` IDs to can view items in transaction details..",
+                          "key": "users",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/dictionaries",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "dictionaries"
+                      ]
+                    },
+                    "description": "Endpoint to add a new `List`."
+                  },
+                  "response": [
+                    {
+                      "id": "5c772c28-22db-4fff-86dc-483ec20e13b3",
+                      "name": "The returned resource is a single `List`.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/x-www-form-urlencoded"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "urlencoded",
+                          "urlencoded": [
+                            {
+                              "description": "The name of the `List`.",
+                              "key": "dictionary",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It determines whether multiple `Tags` of the `List` can be selected.",
+                              "key": "uniqueSelectTag",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "It determines required.",
+                              "key": "required",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "List of `Roles` to can view items in transaction details.",
+                              "key": "roles",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "List of `Roles` to can view items in transaction details.",
+                              "key": "roles",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "List of `User` IDs to can view items in transaction details..",
+                              "key": "users",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "List of `User` IDs to can view items in transaction details..",
+                              "key": "users",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/dictionaries",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "dictionaries"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\",\n  \"dictionary\": \"<string>\",\n  \"visible\": \"<boolean>\",\n  \"creation_time\": \"<string>\",\n  \"last_update\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"users\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"is_unique_select_tag\": \"<boolean>\"\n}",
+                      "createdAt": "2026-07-28T02:58:25.000Z",
+                      "updatedAt": "2026-07-28T02:58:25.000Z",
+                      "uid": "35240-5c772c28-22db-4fff-86dc-483ec20e13b3"
+                    },
+                    {
+                      "id": "7bfd6fff-335c-4091-ab8f-5be213d2a407",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/x-www-form-urlencoded"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "urlencoded",
+                          "urlencoded": [
+                            {
+                              "description": "The name of the `List`.",
+                              "key": "dictionary",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It determines whether multiple `Tags` of the `List` can be selected.",
+                              "key": "uniqueSelectTag",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "It determines required.",
+                              "key": "required",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "List of `Roles` to can view items in transaction details.",
+                              "key": "roles",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "List of `Roles` to can view items in transaction details.",
+                              "key": "roles",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "List of `User` IDs to can view items in transaction details..",
+                              "key": "users",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "List of `User` IDs to can view items in transaction details..",
+                              "key": "users",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/dictionaries",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "dictionaries"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:58:25.000Z",
+                      "updatedAt": "2026-07-28T02:58:25.000Z",
+                      "uid": "35240-7bfd6fff-335c-4091-ab8f-5be213d2a407"
+                    },
+                    {
+                      "id": "eba4da8a-2b1b-49d3-820b-bd74dc4e0517",
+                      "name": "One or more resource requested does not exist.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/x-www-form-urlencoded"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "urlencoded",
+                          "urlencoded": [
+                            {
+                              "description": "The name of the `List`.",
+                              "key": "dictionary",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It determines whether multiple `Tags` of the `List` can be selected.",
+                              "key": "uniqueSelectTag",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "It determines required.",
+                              "key": "required",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "List of `Roles` to can view items in transaction details.",
+                              "key": "roles",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "List of `Roles` to can view items in transaction details.",
+                              "key": "roles",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "List of `User` IDs to can view items in transaction details..",
+                              "key": "users",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "List of `User` IDs to can view items in transaction details..",
+                              "key": "users",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/dictionaries",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "dictionaries"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:58:25.000Z",
+                      "updatedAt": "2026-07-28T02:58:25.000Z",
+                      "uid": "35240-eba4da8a-2b1b-49d3-820b-bd74dc4e0517"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:58:25.000Z",
+                  "updatedAt": "2026-07-28T02:58:25.000Z",
+                  "uid": "35240-df2a1cbf-1ea2-4942-9fe0-f245e2a9d3ee"
+                }
+              ],
+              "id": "938d6b54-62fd-4e71-9873-155feae95103",
+              "createdAt": "2026-07-28T02:58:25.000Z",
+              "updatedAt": "2026-07-28T02:58:25.000Z",
+              "uid": "35240-938d6b54-62fd-4e71-9873-155feae95103"
+            }
+          ],
+          "id": "1011046a-d8ab-48bd-960d-b5d4c35454b6",
+          "createdAt": "2026-07-28T02:58:25.000Z",
+          "updatedAt": "2026-07-28T02:58:25.000Z",
+          "uid": "35240-1011046a-d8ab-48bd-960d-b5d4c35454b6"
+        }
+      ],
+      "id": "d39a638d-ddb7-47a5-a979-8595cd3817ad",
+      "createdAt": "2026-07-28T02:58:25.000Z",
+      "updatedAt": "2026-07-28T02:58:25.000Z",
+      "uid": "35240-d39a638d-ddb7-47a5-a979-8595cd3817ad"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

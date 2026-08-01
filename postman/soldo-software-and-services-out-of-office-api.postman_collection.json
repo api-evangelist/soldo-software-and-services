@@ -1,0 +1,1232 @@
+{
+  "info": {
+    "_postman_id": "42ae4e19-bd45-410f-aa28-bf12c9a429df",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Out of Office API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:31.000Z",
+    "updatedAt": "2026-07-28T02:58:31.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-42ae4e19-bd45-410f-aa28-bf12c9a429df"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "employees",
+              "item": [
+                {
+                  "name": "out-of-office",
+                  "item": [
+                    {
+                      "name": "{out_of_office_id}",
+                      "item": [
+                        {
+                          "name": "Get Out of Office",
+                          "id": "c21ebf22-826b-4ed1-93ea-805bca6562ab",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/employees/out-of-office/:out_of_office_id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "employees",
+                                "out-of-office",
+                                ":out_of_office_id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "9e4d474b-38b1-484f-b1f2-b4ee6bd8a45b",
+                                  "key": "out_of_office_id",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to get a specific `out_of_office` by ID."
+                          },
+                          "response": [
+                            {
+                              "id": "d081da5e-bcf0-43e6-b031-c7024931f507",
+                              "name": "The result is a single `out_of_office`.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/employees/out-of-office/:out_of_office_id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "employees",
+                                    "out-of-office",
+                                    ":out_of_office_id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "out_of_office_id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"delegator_id\": \"<string>\",\n  \"delegate_id\": \"<string>\",\n  \"from_date\": \"<date>\",\n  \"to_date\": \"<date>\",\n  \"features\": [\n    \"REQUEST_PURCHASE\",\n    \"REQUEST_PURCHASE\"\n  ],\n  \"status\": \"SCHEDULED\"\n}",
+                              "createdAt": "2026-07-28T02:58:31.000Z",
+                              "updatedAt": "2026-07-28T02:58:31.000Z",
+                              "uid": "35240-d081da5e-bcf0-43e6-b031-c7024931f507"
+                            },
+                            {
+                              "id": "8dc511c5-5baa-4437-83f1-7c7773632bd8",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/employees/out-of-office/:out_of_office_id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "employees",
+                                    "out-of-office",
+                                    ":out_of_office_id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "out_of_office_id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:31.000Z",
+                              "updatedAt": "2026-07-28T02:58:31.000Z",
+                              "uid": "35240-8dc511c5-5baa-4437-83f1-7c7773632bd8"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:31.000Z",
+                          "updatedAt": "2026-07-28T02:58:31.000Z",
+                          "uid": "35240-c21ebf22-826b-4ed1-93ea-805bca6562ab"
+                        },
+                        {
+                          "name": "Update Out of Office",
+                          "id": "09bd4174-0525-49e9-8364-dd03dfd4c4f5",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"delegate_id\": \"<string>\",\n  \"features\": [\n    \"REQUEST_PURCHASE\",\n    \"EXPENSE_REVIEW\"\n  ],\n  \"request_timestamp\": \"<long>\",\n  \"from_date\": \"<string>\",\n  \"to_date\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/employees/out-of-office/:out_of_office_id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "employees",
+                                "out-of-office",
+                                ":out_of_office_id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "d95adbb4-8d27-4c26-a95b-8df3c3ef7bc0",
+                                  "key": "out_of_office_id",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to update a specific `out_of_office`."
+                          },
+                          "response": [
+                            {
+                              "id": "658c0d77-55f3-4807-a366-63977b5d1922",
+                              "name": "The returned resource is a single `out_of_office`.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"delegate_id\": \"<string>\",\n  \"features\": [\n    \"REQUEST_PURCHASE\",\n    \"EXPENSE_REVIEW\"\n  ],\n  \"request_timestamp\": \"<long>\",\n  \"from_date\": \"<string>\",\n  \"to_date\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/employees/out-of-office/:out_of_office_id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "employees",
+                                    "out-of-office",
+                                    ":out_of_office_id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "out_of_office_id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"delegator_id\": \"<string>\",\n  \"delegate_id\": \"<string>\",\n  \"from_date\": \"<date>\",\n  \"to_date\": \"<date>\",\n  \"features\": [\n    \"REQUEST_PURCHASE\",\n    \"REQUEST_PURCHASE\"\n  ],\n  \"status\": \"SCHEDULED\"\n}",
+                              "createdAt": "2026-07-28T02:58:31.000Z",
+                              "updatedAt": "2026-07-28T02:58:31.000Z",
+                              "uid": "35240-658c0d77-55f3-4807-a366-63977b5d1922"
+                            },
+                            {
+                              "id": "f6b2131c-30ba-4dab-a6d4-634009c53a7e",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"delegate_id\": \"<string>\",\n  \"features\": [\n    \"REQUEST_PURCHASE\",\n    \"EXPENSE_REVIEW\"\n  ],\n  \"request_timestamp\": \"<long>\",\n  \"from_date\": \"<string>\",\n  \"to_date\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/employees/out-of-office/:out_of_office_id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "employees",
+                                    "out-of-office",
+                                    ":out_of_office_id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "out_of_office_id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:31.000Z",
+                              "updatedAt": "2026-07-28T02:58:31.000Z",
+                              "uid": "35240-f6b2131c-30ba-4dab-a6d4-634009c53a7e"
+                            },
+                            {
+                              "id": "a92f3fa6-6727-4764-a606-c525dccf5879",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"delegate_id\": \"<string>\",\n  \"features\": [\n    \"REQUEST_PURCHASE\",\n    \"EXPENSE_REVIEW\"\n  ],\n  \"request_timestamp\": \"<long>\",\n  \"from_date\": \"<string>\",\n  \"to_date\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/employees/out-of-office/:out_of_office_id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "employees",
+                                    "out-of-office",
+                                    ":out_of_office_id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "out_of_office_id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:31.000Z",
+                              "updatedAt": "2026-07-28T02:58:31.000Z",
+                              "uid": "35240-a92f3fa6-6727-4764-a606-c525dccf5879"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:31.000Z",
+                          "updatedAt": "2026-07-28T02:58:31.000Z",
+                          "uid": "35240-09bd4174-0525-49e9-8364-dd03dfd4c4f5"
+                        },
+                        {
+                          "name": "Delete Out of Office",
+                          "id": "7fe141b9-3cca-4fc8-b18c-cf6beee0313d",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/employees/out-of-office/:out_of_office_id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "employees",
+                                "out-of-office",
+                                ":out_of_office_id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "9cc95742-4c29-491b-8ee4-4ab6dc595625",
+                                  "key": "out_of_office_id",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to delete a specific `out_of_office`."
+                          },
+                          "response": [
+                            {
+                              "id": "c8f4d67f-785e-4b72-aa9e-9b035ab6b94b",
+                              "name": "No content as result.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/employees/out-of-office/:out_of_office_id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "employees",
+                                    "out-of-office",
+                                    ":out_of_office_id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "out_of_office_id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:31.000Z",
+                              "updatedAt": "2026-07-28T02:58:31.000Z",
+                              "uid": "35240-c8f4d67f-785e-4b72-aa9e-9b035ab6b94b"
+                            },
+                            {
+                              "id": "a1ffdab7-b42b-41ae-973f-1e4b799d653f",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/employees/out-of-office/:out_of_office_id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "employees",
+                                    "out-of-office",
+                                    ":out_of_office_id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "out_of_office_id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:31.000Z",
+                              "updatedAt": "2026-07-28T02:58:31.000Z",
+                              "uid": "35240-a1ffdab7-b42b-41ae-973f-1e4b799d653f"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:31.000Z",
+                          "updatedAt": "2026-07-28T02:58:31.000Z",
+                          "uid": "35240-7fe141b9-3cca-4fc8-b18c-cf6beee0313d"
+                        }
+                      ],
+                      "id": "fac5b340-6e64-4df5-93e0-e19a0876eaa9",
+                      "createdAt": "2026-07-28T02:58:31.000Z",
+                      "updatedAt": "2026-07-28T02:58:31.000Z",
+                      "uid": "35240-fac5b340-6e64-4df5-93e0-e19a0876eaa9"
+                    },
+                    {
+                      "name": "Search Out of Office",
+                      "id": "848e9c84-cc7f-41cf-b305-2468a74ef891",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/employees/out-of-office?delegatorId=<string>&delegatorId=<string>&delegateId=<string>&delegateId=<string>&fromDate=<string>&toDate=<string>&status=EXPIRED&status=DELETED&feature=REQUEST_PURCHASE&feature=REQUEST_PURCHASE&p=0&s=0&d=ASC&props=<string>&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "employees",
+                            "out-of-office"
+                          ],
+                          "query": [
+                            {
+                              "key": "delegatorId",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "delegatorId",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "delegateId",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "delegateId",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Defines when the out_of_office entry starts. fromDate included. (i.e. greater than or equal to) (Format:`yyyy-MM-dd`).",
+                              "key": "fromDate",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Defines when the out_of_office entry ends, toDate included. (i.e. less than) (Format:`yyyy-MM-ddThh:mm:ssZ`,represents a UTC timezone).",
+                              "key": "toDate",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The status of `out_of_office`.",
+                              "key": "status",
+                              "value": "EXPIRED"
+                            },
+                            {
+                              "description": "The status of `out_of_office`.",
+                              "key": "status",
+                              "value": "DELETED"
+                            },
+                            {
+                              "description": "The features of `out_of_office`.",
+                              "key": "feature",
+                              "value": "REQUEST_PURCHASE"
+                            },
+                            {
+                              "description": "The features of `out_of_office`.",
+                              "key": "feature",
+                              "value": "REQUEST_PURCHASE"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to search `out_of_office` using filtering parameters."
+                      },
+                      "response": [
+                        {
+                          "id": "5f64cde3-8a90-4262-8d0c-4a28ebaa6412",
+                          "name": "The result is an array containing `out_of_office`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/employees/out-of-office?delegatorId=<string>&delegateId=<string>&fromDate=<string>&toDate=<string>&status=DELETED&feature=REQUEST_PURCHASE&p=0&s=0&d=ASC&props=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "employees",
+                                "out-of-office"
+                              ],
+                              "query": [
+                                {
+                                  "key": "delegatorId",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "delegateId",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Defines when the out_of_office entry starts. fromDate included. (i.e. greater than or equal to) (Format:`yyyy-MM-dd`).",
+                                  "key": "fromDate",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Defines when the out_of_office entry ends, toDate included. (i.e. less than) (Format:`yyyy-MM-ddThh:mm:ssZ`,represents a UTC timezone).",
+                                  "key": "toDate",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The status of `out_of_office`.",
+                                  "key": "status",
+                                  "value": "DELETED"
+                                },
+                                {
+                                  "description": "The features of `out_of_office`.",
+                                  "key": "feature",
+                                  "value": "REQUEST_PURCHASE"
+                                },
+                                {
+                                  "description": "It indicates the specific page to display (the counter starts from zero).",
+                                  "key": "p",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates the number of items per page.",
+                                  "key": "s",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates how the pages are ordered.",
+                                  "key": "d",
+                                  "value": "ASC"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"delegator_id\": \"<string>\",\n      \"delegate_id\": \"<string>\",\n      \"from_date\": \"<date>\",\n      \"to_date\": \"<date>\",\n      \"features\": [\n        \"REQUEST_PURCHASE\",\n        \"REQUEST_PURCHASE\"\n      ],\n      \"status\": \"EXPIRED\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"delegator_id\": \"<string>\",\n      \"delegate_id\": \"<string>\",\n      \"from_date\": \"<date>\",\n      \"to_date\": \"<date>\",\n      \"features\": [\n        \"REQUEST_PURCHASE\",\n        \"EXPENSE_REVIEW\"\n      ],\n      \"status\": \"EXPIRED\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:58:31.000Z",
+                          "updatedAt": "2026-07-28T02:58:31.000Z",
+                          "uid": "35240-5f64cde3-8a90-4262-8d0c-4a28ebaa6412"
+                        },
+                        {
+                          "id": "c50425ea-958f-44c6-a2d8-da193c22055c",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/employees/out-of-office?delegatorId=<string>&delegateId=<string>&fromDate=<string>&toDate=<string>&status=DELETED&feature=REQUEST_PURCHASE&p=0&s=0&d=ASC&props=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "employees",
+                                "out-of-office"
+                              ],
+                              "query": [
+                                {
+                                  "key": "delegatorId",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "delegateId",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Defines when the out_of_office entry starts. fromDate included. (i.e. greater than or equal to) (Format:`yyyy-MM-dd`).",
+                                  "key": "fromDate",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Defines when the out_of_office entry ends, toDate included. (i.e. less than) (Format:`yyyy-MM-ddThh:mm:ssZ`,represents a UTC timezone).",
+                                  "key": "toDate",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The status of `out_of_office`.",
+                                  "key": "status",
+                                  "value": "DELETED"
+                                },
+                                {
+                                  "description": "The features of `out_of_office`.",
+                                  "key": "feature",
+                                  "value": "REQUEST_PURCHASE"
+                                },
+                                {
+                                  "description": "It indicates the specific page to display (the counter starts from zero).",
+                                  "key": "p",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates the number of items per page.",
+                                  "key": "s",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates how the pages are ordered.",
+                                  "key": "d",
+                                  "value": "ASC"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:31.000Z",
+                          "updatedAt": "2026-07-28T02:58:31.000Z",
+                          "uid": "35240-c50425ea-958f-44c6-a2d8-da193c22055c"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:31.000Z",
+                      "updatedAt": "2026-07-28T02:58:31.000Z",
+                      "uid": "35240-848e9c84-cc7f-41cf-b305-2468a74ef891"
+                    },
+                    {
+                      "name": "Add Out of Office",
+                      "id": "4169a142-5205-463e-be53-7885a86d6eca",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"delegate_id\": \"<string>\",\n  \"delegator_id\": \"<string>\",\n  \"features\": [\n    \"REQUEST_MONEY\",\n    \"EXPENSE_REVIEW\"\n  ],\n  \"request_timestamp\": \"<long>\",\n  \"from_date\": \"<string>\",\n  \"to_date\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/employees/out-of-office",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "employees",
+                            "out-of-office"
+                          ]
+                        },
+                        "description": "Endpoint to add an `out_of_office`."
+                      },
+                      "response": [
+                        {
+                          "id": "3544e286-7706-4862-bb26-40450110d195",
+                          "name": "The result is a single `out_of_office`.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"delegate_id\": \"<string>\",\n  \"delegator_id\": \"<string>\",\n  \"features\": [\n    \"REQUEST_MONEY\",\n    \"EXPENSE_REVIEW\"\n  ],\n  \"request_timestamp\": \"<long>\",\n  \"from_date\": \"<string>\",\n  \"to_date\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/employees/out-of-office",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "employees",
+                                "out-of-office"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"delegator_id\": \"<string>\",\n  \"delegate_id\": \"<string>\",\n  \"from_date\": \"<date>\",\n  \"to_date\": \"<date>\",\n  \"features\": [\n    \"REQUEST_PURCHASE\",\n    \"REQUEST_PURCHASE\"\n  ],\n  \"status\": \"SCHEDULED\"\n}",
+                          "createdAt": "2026-07-28T02:58:31.000Z",
+                          "updatedAt": "2026-07-28T02:58:31.000Z",
+                          "uid": "35240-3544e286-7706-4862-bb26-40450110d195"
+                        },
+                        {
+                          "id": "a26651fd-e6cb-4bad-b9bd-51909c128426",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"delegate_id\": \"<string>\",\n  \"delegator_id\": \"<string>\",\n  \"features\": [\n    \"REQUEST_MONEY\",\n    \"EXPENSE_REVIEW\"\n  ],\n  \"request_timestamp\": \"<long>\",\n  \"from_date\": \"<string>\",\n  \"to_date\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/employees/out-of-office",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "employees",
+                                "out-of-office"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:31.000Z",
+                          "updatedAt": "2026-07-28T02:58:31.000Z",
+                          "uid": "35240-a26651fd-e6cb-4bad-b9bd-51909c128426"
+                        },
+                        {
+                          "id": "f0580078-dd1b-4993-9065-cfb4dc0f13bd",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"delegate_id\": \"<string>\",\n  \"delegator_id\": \"<string>\",\n  \"features\": [\n    \"REQUEST_MONEY\",\n    \"EXPENSE_REVIEW\"\n  ],\n  \"request_timestamp\": \"<long>\",\n  \"from_date\": \"<string>\",\n  \"to_date\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/employees/out-of-office",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "employees",
+                                "out-of-office"
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:31.000Z",
+                          "updatedAt": "2026-07-28T02:58:31.000Z",
+                          "uid": "35240-f0580078-dd1b-4993-9065-cfb4dc0f13bd"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:31.000Z",
+                      "updatedAt": "2026-07-28T02:58:31.000Z",
+                      "uid": "35240-4169a142-5205-463e-be53-7885a86d6eca"
+                    }
+                  ],
+                  "id": "3614253c-8d6c-4058-a6f7-a31c504d8354",
+                  "createdAt": "2026-07-28T02:58:31.000Z",
+                  "updatedAt": "2026-07-28T02:58:31.000Z",
+                  "uid": "35240-3614253c-8d6c-4058-a6f7-a31c504d8354"
+                }
+              ],
+              "id": "5eb316d4-ce39-4e30-97d5-c1c49c3f90ac",
+              "createdAt": "2026-07-28T02:58:31.000Z",
+              "updatedAt": "2026-07-28T02:58:31.000Z",
+              "uid": "35240-5eb316d4-ce39-4e30-97d5-c1c49c3f90ac"
+            }
+          ],
+          "id": "a788b2d2-1ee4-439d-9835-aefb3d6c4652",
+          "createdAt": "2026-07-28T02:58:31.000Z",
+          "updatedAt": "2026-07-28T02:58:31.000Z",
+          "uid": "35240-a788b2d2-1ee4-439d-9835-aefb3d6c4652"
+        }
+      ],
+      "id": "99232437-54cd-460b-9165-040594e5d768",
+      "createdAt": "2026-07-28T02:58:31.000Z",
+      "updatedAt": "2026-07-28T02:58:31.000Z",
+      "uid": "35240-99232437-54cd-460b-9165-040594e5d768"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

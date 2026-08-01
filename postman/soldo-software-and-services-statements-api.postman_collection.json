@@ -1,0 +1,456 @@
+{
+  "info": {
+    "_postman_id": "95fbbf79-e9b4-4fbc-b851-936190c64574",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Statements API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:44.000Z",
+    "updatedAt": "2026-07-28T02:58:44.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-95fbbf79-e9b4-4fbc-b851-936190c64574"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "statements",
+              "item": [
+                {
+                  "name": "download",
+                  "item": [
+                    {
+                      "name": "Download Statement",
+                      "id": "c5730222-95b9-4c5b-92cf-6c07878fce51",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"currency\": \"USD\",\n  \"file_type\": \"CSV\",\n  \"month\": \"NOVEMBER\",\n  \"year\": \"<integer>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/statements/download",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "statements",
+                            "download"
+                          ]
+                        },
+                        "description": "Endpoint to retrieve the presigned url to download a `Statement`."
+                      },
+                      "response": [
+                        {
+                          "id": "895b1cbc-005c-4173-ae70-1a99e7ae953a",
+                          "name": "The returned resource is a `Statement` presigned url.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"currency\": \"USD\",\n  \"file_type\": \"CSV\",\n  \"month\": \"NOVEMBER\",\n  \"year\": \"<integer>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/statements/download",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "statements",
+                                "download"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"presigned_url\": \"<uri>\"\n}",
+                          "createdAt": "2026-07-28T02:58:44.000Z",
+                          "updatedAt": "2026-07-28T02:58:44.000Z",
+                          "uid": "35240-895b1cbc-005c-4173-ae70-1a99e7ae953a"
+                        },
+                        {
+                          "id": "8ef414dd-33db-415c-8b46-acd04ef1b3a4",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"currency\": \"USD\",\n  \"file_type\": \"CSV\",\n  \"month\": \"NOVEMBER\",\n  \"year\": \"<integer>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/statements/download",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "statements",
+                                "download"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:44.000Z",
+                          "updatedAt": "2026-07-28T02:58:44.000Z",
+                          "uid": "35240-8ef414dd-33db-415c-8b46-acd04ef1b3a4"
+                        },
+                        {
+                          "id": "a0b88c56-cf46-40da-b181-1ecacd59e71b",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"currency\": \"USD\",\n  \"file_type\": \"CSV\",\n  \"month\": \"NOVEMBER\",\n  \"year\": \"<integer>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/statements/download",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "statements",
+                                "download"
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:44.000Z",
+                          "updatedAt": "2026-07-28T02:58:44.000Z",
+                          "uid": "35240-a0b88c56-cf46-40da-b181-1ecacd59e71b"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:44.000Z",
+                      "updatedAt": "2026-07-28T02:58:44.000Z",
+                      "uid": "35240-c5730222-95b9-4c5b-92cf-6c07878fce51"
+                    }
+                  ],
+                  "id": "6174d3aa-cdac-4ea6-86f6-4400e84f52c9",
+                  "createdAt": "2026-07-28T02:58:44.000Z",
+                  "updatedAt": "2026-07-28T02:58:44.000Z",
+                  "uid": "35240-6174d3aa-cdac-4ea6-86f6-4400e84f52c9"
+                },
+                {
+                  "name": "Search Statements",
+                  "id": "d3d60136-bfc0-4685-87b2-e0de7c02e8cf",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/statements?year=<integer>&year=<integer>&currency=EUR",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "statements"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The year to search for `Statements`.",
+                          "key": "year",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "(Required) The year to search for `Statements`.",
+                          "key": "year",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "(Required) The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Statement` to search for.",
+                          "key": "currency",
+                          "value": "EUR"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to find `Statements` available for download using filtering parameters."
+                  },
+                  "response": [
+                    {
+                      "id": "3d2c074e-8be4-48f7-9a0f-3f1dd104112e",
+                      "name": "The result array contains `Statements` available for download.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/statements?year=<integer>&currency=EUR",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "statements"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) The year to search for `Statements`.",
+                              "key": "year",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "(Required) The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Statement` to search for.",
+                              "key": "currency",
+                              "value": "EUR"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"results\": [\n    {\n      \"year\": \"<integer>\",\n      \"month\": \"MAY\",\n      \"currency\": \"USD\",\n      \"file_types\": [\n        \"CSV\",\n        \"PDF\"\n      ]\n    },\n    {\n      \"year\": \"<integer>\",\n      \"month\": \"NOVEMBER\",\n      \"currency\": \"EUR\",\n      \"file_types\": [\n        \"CSV\",\n        \"XLSX\"\n      ]\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:58:44.000Z",
+                      "updatedAt": "2026-07-28T02:58:44.000Z",
+                      "uid": "35240-3d2c074e-8be4-48f7-9a0f-3f1dd104112e"
+                    },
+                    {
+                      "id": "87d8695f-e199-4d88-825b-e186fbdfc7e7",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/statements?year=<integer>&currency=EUR",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "statements"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) The year to search for `Statements`.",
+                              "key": "year",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "(Required) The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Statement` to search for.",
+                              "key": "currency",
+                              "value": "EUR"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:58:44.000Z",
+                      "updatedAt": "2026-07-28T02:58:44.000Z",
+                      "uid": "35240-87d8695f-e199-4d88-825b-e186fbdfc7e7"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:58:44.000Z",
+                  "updatedAt": "2026-07-28T02:58:44.000Z",
+                  "uid": "35240-d3d60136-bfc0-4685-87b2-e0de7c02e8cf"
+                }
+              ],
+              "id": "948eda70-3581-4f97-a356-f7b516026b65",
+              "createdAt": "2026-07-28T02:58:44.000Z",
+              "updatedAt": "2026-07-28T02:58:44.000Z",
+              "uid": "35240-948eda70-3581-4f97-a356-f7b516026b65"
+            }
+          ],
+          "id": "7accf6be-9825-4d87-8d02-b11cf055b593",
+          "createdAt": "2026-07-28T02:58:44.000Z",
+          "updatedAt": "2026-07-28T02:58:44.000Z",
+          "uid": "35240-7accf6be-9825-4d87-8d02-b11cf055b593"
+        }
+      ],
+      "id": "606ae405-d705-4ff6-80d6-6869713e8a75",
+      "createdAt": "2026-07-28T02:58:44.000Z",
+      "updatedAt": "2026-07-28T02:58:44.000Z",
+      "uid": "35240-606ae405-d705-4ff6-80d6-6869713e8a75"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

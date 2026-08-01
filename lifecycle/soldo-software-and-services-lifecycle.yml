@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.soldo.com/
+note: >-
+  Versioning, changelog, and status posture for the Soldo Business API. No public deprecation
+  policy or Sunset/Deprecation header (RFC 8594) support was found in the docs or spec, and no
+  operations are flagged deprecated in the OpenAPI. No Deprecation pointer is emitted.
+versioning:
+  scheme: uri-path
+  current: v2
+  base_path: /business/v2
+  spec_version: 5.56.0
+  docs: https://developer.soldo.com/reference/introduction
+changelog:
+  url: https://developer.soldo.com/changelog
+  rss: https://developer.soldo.com/changelog/rss-feed
+  see: changelog/soldo-software-and-services-changelog.yml
+status_page: https://soldo.statuspage.io
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecated_operations: []
+support:
+  business_support_email: businesssupport@soldo.com

@@ -1,0 +1,41 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.soldo.com/docs/errors
+docs:
+  - https://developer.soldo.com/docs/errors
+  - https://developer.soldo.com/docs/standard-authentication
+  - https://developer.soldo.com/docs/advanced-authentication
+format: custom-json
+note: >-
+  Named error_code registry for the Soldo Business API. Errors return { error_code, message }
+  (auth-flow errors use { error, error_description }). This is the non-payments sibling of a
+  decline-code catalog; Soldo does not publish a card-network decline-code reference. The list
+  below captures the error codes documented in the guides; the API surfaces additional
+  business-rule codes at runtime (e.g. WALLET_BALANCE_GREATER_THAN_ZERO).
+error_codes:
+  - code: UNAUTHORIZED
+    http: 401
+    envelope: error_code
+    meaning: Authentication failed - invalid client_id or client_secret.
+    action: Verify credentials and that the application is active in the Soldo web app; regenerate if needed.
+  - code: invalid_token
+    http: 401
+    envelope: error
+    meaning: The access token is invalid or has expired (tokens expire after 7200s).
+    action: Request a new access_token via the client-credentials flow.
+  - code: INVALID_FINGERPRINT
+    http: 400
+    envelope: error_code
+    meaning: The X-Soldo-Fingerprint header is missing or its value is incorrect.
+    action: Recompute the SHA-512 fingerprint from the ordered field list on the endpoint's reference page (lowercase).
+  - code: INVALID_FINGERPRINT_SIGNATURE
+    http: 400
+    envelope: error_code
+    meaning: The X-Soldo-Fingerprint-Signature header is missing or incorrect.
+    action: Sign the fingerprint with SHA512withRSA using your private key and Base64-encode the result.
+  - code: WALLET_BALANCE_GREATER_THAN_ZERO
+    http: 400
+    envelope: error_code
+    meaning: Cannot delete a wallet that still holds a balance.
+    action: Transfer all funds to another wallet before deleting.
+support: businesssupport@soldo.com

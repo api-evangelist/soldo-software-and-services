@@ -1,0 +1,34 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.soldo.com/changelog
+rss: https://developer.soldo.com/changelog/rss-feed
+scheme: dated
+current_version: 5.56.0
+note: Recent-window capture of the Soldo Business API changelog (dated entries). Full history lives at the source URL.
+entries:
+  - date: '2025-01-20'
+    breaking: false
+    highlights:
+      - Expense Reports - added reimbursement_transaction_id field to the ExpenseReport object (null = not reimbursed by Soldo).
+      - Transactions - added reimbursement_expense_report_id field to the Transaction object (non-null = payment reimburses an expense report).
+  - date: '2024-12-09'
+    breaking: false
+    highlights:
+      - Auto-Transfer Preset - new endpoints to search and delete auto-transfer presets and to add/remove wallets from a preset.
+  - date: '2024-07-31'
+    breaking: false
+    highlights:
+      - Contacts - match a contact to an existing Soldo user via user_id (supports Bulk Reimbursement); searchable via userId.
+      - Transactions - new requiredInformation query param and required_information response field on Search Transactions.
+      - Users - added contact_id field to user response objects.
+      - Wallets - new name query parameter on Search Wallets (full/partial match).
+  - date: '2024-06-27'
+    breaking: false
+    highlights:
+      - Expense Review Processes - new CRUD endpoints for expense review processes.
+      - Permissions - added id field to the Role object for referencing roles from other endpoints.
+  - date: '2024-05-27'
+    breaking: false
+    highlights:
+      - Transactions - new tags object under split_transactions on Get Transaction.
+      - Transaction Split - new endpoints to create, update, and delete transaction splits.

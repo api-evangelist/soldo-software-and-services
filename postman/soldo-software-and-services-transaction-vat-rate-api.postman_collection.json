@@ -1,0 +1,207 @@
+{
+  "info": {
+    "_postman_id": "cfef49a7-bc26-451a-901a-02d2d8ca096c",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Transaction VAT Rate API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:59:01.000Z",
+    "updatedAt": "2026-07-28T02:59:01.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-cfef49a7-bc26-451a-901a-02d2d8ca096c"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "transactions",
+              "item": [
+                {
+                  "name": "{transactionId}",
+                  "item": [
+                    {
+                      "name": "tax-rate",
+                      "item": [
+                        {
+                          "name": "Remove VAT Rate from Transaction ",
+                          "id": "13452f62-a293-4eb4-a70c-b615508db782",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/tax-rate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "transactions",
+                                ":transactionId",
+                                "tax-rate"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "de68e22e-a573-444b-be32-4de2ed7a1a26",
+                                  "key": "transactionId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to remove the `Transaction`'s `VatRate`"
+                          },
+                          "response": [
+                            {
+                              "id": "c81bcbe8-915b-48c2-8bd6-543b636a85a2",
+                              "name": "No content as result.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/tax-rate",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "tax-rate"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "transactionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:59:01.000Z",
+                              "updatedAt": "2026-07-28T02:59:01.000Z",
+                              "uid": "35240-c81bcbe8-915b-48c2-8bd6-543b636a85a2"
+                            },
+                            {
+                              "id": "378f4765-3da6-48d6-9166-73cf0941b2a7",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/tax-rate",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "tax-rate"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "transactionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:59:01.000Z",
+                              "updatedAt": "2026-07-28T02:59:01.000Z",
+                              "uid": "35240-378f4765-3da6-48d6-9166-73cf0941b2a7"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:59:01.000Z",
+                          "updatedAt": "2026-07-28T02:59:01.000Z",
+                          "uid": "35240-13452f62-a293-4eb4-a70c-b615508db782"
+                        }
+                      ],
+                      "id": "e21e8833-9367-4980-a580-063647d547d4",
+                      "createdAt": "2026-07-28T02:59:01.000Z",
+                      "updatedAt": "2026-07-28T02:59:01.000Z",
+                      "uid": "35240-e21e8833-9367-4980-a580-063647d547d4"
+                    }
+                  ],
+                  "id": "817a6566-591d-435c-ae09-9fc3d0e2b844",
+                  "createdAt": "2026-07-28T02:59:01.000Z",
+                  "updatedAt": "2026-07-28T02:59:01.000Z",
+                  "uid": "35240-817a6566-591d-435c-ae09-9fc3d0e2b844"
+                }
+              ],
+              "id": "5f5885b5-846f-425a-822e-d64b2afcbdf2",
+              "createdAt": "2026-07-28T02:59:01.000Z",
+              "updatedAt": "2026-07-28T02:59:01.000Z",
+              "uid": "35240-5f5885b5-846f-425a-822e-d64b2afcbdf2"
+            }
+          ],
+          "id": "a47e2c43-cfe1-44ad-a29f-df50a13addd7",
+          "createdAt": "2026-07-28T02:59:01.000Z",
+          "updatedAt": "2026-07-28T02:59:01.000Z",
+          "uid": "35240-a47e2c43-cfe1-44ad-a29f-df50a13addd7"
+        }
+      ],
+      "id": "35de07e8-3f54-46cc-9058-e6b8c3077908",
+      "createdAt": "2026-07-28T02:59:01.000Z",
+      "updatedAt": "2026-07-28T02:59:01.000Z",
+      "uid": "35240-35de07e8-3f54-46cc-9058-e6b8c3077908"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

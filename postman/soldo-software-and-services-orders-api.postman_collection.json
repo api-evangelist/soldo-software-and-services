@@ -1,0 +1,581 @@
+{
+  "info": {
+    "_postman_id": "2e6d3389-65e9-40d6-b608-f691b17bc43e",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Orders API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:29.000Z",
+    "updatedAt": "2026-07-28T02:58:29.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-2e6d3389-65e9-40d6-b608-f691b17bc43e"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "orders",
+              "item": [
+                {
+                  "name": "{orderId}",
+                  "item": [
+                    {
+                      "name": "Get Order",
+                      "id": "57b68ac4-18d9-4cfd-89b0-2fbec1da21d0",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/orders/:orderId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "orders",
+                            ":orderId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "373da3c2-3939-42fc-a5a3-22409d991f9d",
+                              "key": "orderId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to retrieve a specific `Order`."
+                      },
+                      "response": [
+                        {
+                          "id": "2cfbfb7f-d703-464a-98ce-c2bf01fee2fb",
+                          "name": "The returned resource is a single `Order`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/orders/:orderId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "orders",
+                                ":orderId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "orderId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"status\": \"COMPLETED\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\",\n  \"error_code\": \"<string>\",\n  \"total_paid_amount\": \"<number>\",\n  \"total_paid_currency\": \"ETB\",\n  \"items\": [\n    {\n      \"id\": \"<string>\",\n      \"item_type\": \"<string>\",\n      \"category\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"item_type\": \"<string>\",\n      \"category\": \"<string>\"\n    }\n  ],\n  \"is_valid\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:58:30.000Z",
+                          "updatedAt": "2026-07-28T02:58:30.000Z",
+                          "uid": "35240-2cfbfb7f-d703-464a-98ce-c2bf01fee2fb"
+                        },
+                        {
+                          "id": "16c03dbd-898d-4aa1-a6f7-4658965ef117",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/orders/:orderId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "orders",
+                                ":orderId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "orderId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:30.000Z",
+                          "updatedAt": "2026-07-28T02:58:30.000Z",
+                          "uid": "35240-16c03dbd-898d-4aa1-a6f7-4658965ef117"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:30.000Z",
+                      "updatedAt": "2026-07-28T02:58:30.000Z",
+                      "uid": "35240-57b68ac4-18d9-4cfd-89b0-2fbec1da21d0"
+                    },
+                    {
+                      "name": "Delete Order",
+                      "id": "81e96d0f-e95c-424d-8392-54f6adcf8321",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/orders/:orderId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "orders",
+                            ":orderId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "ec781796-837c-4b8d-86ff-076c7a6c4b74",
+                              "key": "orderId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to delete a specific `Order`. Only resource in ERROR or PLACED status can be deleted."
+                      },
+                      "response": [
+                        {
+                          "id": "736d8317-f406-4044-abaa-405541167c4a",
+                          "name": "No content as result.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/orders/:orderId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "orders",
+                                ":orderId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "orderId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:30.000Z",
+                          "updatedAt": "2026-07-28T02:58:30.000Z",
+                          "uid": "35240-736d8317-f406-4044-abaa-405541167c4a"
+                        },
+                        {
+                          "id": "45997779-3342-472e-8012-aef3b8590bc7",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/orders/:orderId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "orders",
+                                ":orderId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "orderId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:30.000Z",
+                          "updatedAt": "2026-07-28T02:58:30.000Z",
+                          "uid": "35240-45997779-3342-472e-8012-aef3b8590bc7"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:30.000Z",
+                      "updatedAt": "2026-07-28T02:58:30.000Z",
+                      "uid": "35240-81e96d0f-e95c-424d-8392-54f6adcf8321"
+                    }
+                  ],
+                  "id": "183eb592-1259-4b2a-93a7-07930e121a5b",
+                  "createdAt": "2026-07-28T02:58:30.000Z",
+                  "updatedAt": "2026-07-28T02:58:30.000Z",
+                  "uid": "35240-183eb592-1259-4b2a-93a7-07930e121a5b"
+                },
+                {
+                  "name": "Search Orders",
+                  "id": "dea66df8-0d0f-43f0-9eba-6f83f5436353",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/orders?id=<string>&status=COMPLETED_WITH_CREDIT&p=0&s=0&d=DESC&props=<string>&props=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "orders"
+                      ],
+                      "query": [
+                        {
+                          "description": "The `Order` ID.",
+                          "key": "id",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The status of the `Order`.",
+                          "key": "status",
+                          "value": "COMPLETED_WITH_CREDIT"
+                        },
+                        {
+                          "description": "It indicates the specific page to display (the counter starts from zero).",
+                          "key": "p",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the number of items per page.",
+                          "key": "s",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates how the pages are ordered.",
+                          "key": "d",
+                          "value": "DESC"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to retrieve your `Orders`."
+                  },
+                  "response": [
+                    {
+                      "id": "7e39011f-1d32-437f-8276-5c6dea9d7f00",
+                      "name": "The result is an array containing `Orders`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/orders?id=<string>&status=COMPLETED_WITH_CREDIT&p=0&s=0&d=DESC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "orders"
+                          ],
+                          "query": [
+                            {
+                              "description": "The `Order` ID.",
+                              "key": "id",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The status of the `Order`.",
+                              "key": "status",
+                              "value": "COMPLETED_WITH_CREDIT"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "DESC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"status\": \"COMPLETED_WITH_CREDIT\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\",\n      \"error_code\": \"<string>\",\n      \"total_paid_amount\": \"<number>\",\n      \"total_paid_currency\": \"UAH\",\n      \"items\": [\n        {\n          \"id\": \"<string>\",\n          \"item_type\": \"<string>\",\n          \"category\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"item_type\": \"<string>\",\n          \"category\": \"<string>\"\n        }\n      ],\n      \"is_valid\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"status\": \"PENDING\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\",\n      \"error_code\": \"<string>\",\n      \"total_paid_amount\": \"<number>\",\n      \"total_paid_currency\": \"ARS\",\n      \"items\": [\n        {\n          \"id\": \"<string>\",\n          \"item_type\": \"<string>\",\n          \"category\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"item_type\": \"<string>\",\n          \"category\": \"<string>\"\n        }\n      ],\n      \"is_valid\": \"<boolean>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:58:30.000Z",
+                      "updatedAt": "2026-07-28T02:58:30.000Z",
+                      "uid": "35240-7e39011f-1d32-437f-8276-5c6dea9d7f00"
+                    },
+                    {
+                      "id": "09a32bf0-0d18-400b-976e-ad575015d4e3",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/orders?id=<string>&status=COMPLETED_WITH_CREDIT&p=0&s=0&d=DESC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "orders"
+                          ],
+                          "query": [
+                            {
+                              "description": "The `Order` ID.",
+                              "key": "id",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The status of the `Order`.",
+                              "key": "status",
+                              "value": "COMPLETED_WITH_CREDIT"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "DESC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:58:30.000Z",
+                      "updatedAt": "2026-07-28T02:58:30.000Z",
+                      "uid": "35240-09a32bf0-0d18-400b-976e-ad575015d4e3"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:58:30.000Z",
+                  "updatedAt": "2026-07-28T02:58:30.000Z",
+                  "uid": "35240-dea66df8-0d0f-43f0-9eba-6f83f5436353"
+                }
+              ],
+              "id": "e30c406d-c538-4f60-b6ec-582f86c8dc82",
+              "createdAt": "2026-07-28T02:58:30.000Z",
+              "updatedAt": "2026-07-28T02:58:30.000Z",
+              "uid": "35240-e30c406d-c538-4f60-b6ec-582f86c8dc82"
+            }
+          ],
+          "id": "13a47aa8-cb1f-44f7-8b08-fadc9547faff",
+          "createdAt": "2026-07-28T02:58:30.000Z",
+          "updatedAt": "2026-07-28T02:58:30.000Z",
+          "uid": "35240-13a47aa8-cb1f-44f7-8b08-fadc9547faff"
+        }
+      ],
+      "id": "489c0eee-244b-42a5-a1af-409fffca627a",
+      "createdAt": "2026-07-28T02:58:30.000Z",
+      "updatedAt": "2026-07-28T02:58:30.000Z",
+      "uid": "35240-489c0eee-244b-42a5-a1af-409fffca627a"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

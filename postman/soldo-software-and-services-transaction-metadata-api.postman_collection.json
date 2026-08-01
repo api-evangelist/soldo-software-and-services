@@ -1,0 +1,1149 @@
+{
+  "info": {
+    "_postman_id": "9e604b19-7509-4d78-b601-d43e0c7203fc",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Transaction Metadata API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:51.000Z",
+    "updatedAt": "2026-07-28T02:58:52.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9e604b19-7509-4d78-b601-d43e0c7203fc"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "transactions",
+              "item": [
+                {
+                  "name": "{transactionId}",
+                  "item": [
+                    {
+                      "name": "metadata",
+                      "item": [
+                        {
+                          "name": "{metadataId}",
+                          "item": [
+                            {
+                              "name": "Get Transaction Metadata",
+                              "id": "14d724b1-a225-4022-b214-ff6618738e2c",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/metadata/:metadataId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "metadata",
+                                    ":metadataId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "4b2f52e5-b1e7-47f8-988b-53736fba9cee",
+                                      "key": "transactionId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "09d79c82-860d-4673-aecb-eefd82d13153",
+                                      "key": "metadataId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to get the metadata of a `Transaction` by ID."
+                              },
+                              "response": [
+                                {
+                                  "id": "f0e88601-a7e3-4bb8-946f-0201f8d96ac6",
+                                  "name": "The returned resource is a generic JSON representing the metadata.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/metadata/:metadataId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "metadata",
+                                        ":metadataId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "metadataId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "<string>",
+                                  "createdAt": "2026-07-28T02:58:52.000Z",
+                                  "updatedAt": "2026-07-28T02:58:52.000Z",
+                                  "uid": "35240-f0e88601-a7e3-4bb8-946f-0201f8d96ac6"
+                                },
+                                {
+                                  "id": "1b129d5a-83cc-42f2-b10f-7dbff8bcf5c5",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/metadata/:metadataId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "metadata",
+                                        ":metadataId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "metadataId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:52.000Z",
+                                  "updatedAt": "2026-07-28T02:58:52.000Z",
+                                  "uid": "35240-1b129d5a-83cc-42f2-b10f-7dbff8bcf5c5"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:52.000Z",
+                              "updatedAt": "2026-07-28T02:58:52.000Z",
+                              "uid": "35240-14d724b1-a225-4022-b214-ff6618738e2c"
+                            },
+                            {
+                              "name": "Update Transaction Metadata",
+                              "id": "b9fcf56e-e863-45ce-9d46-0023382a2dce",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Duiscf\": {},\n  \"in_53e\": {}\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/metadata/:metadataId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "metadata",
+                                    ":metadataId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "4d1c9c8e-b557-445c-a8dc-eba8a8a57299",
+                                      "key": "transactionId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "ea438c05-d1fa-492e-a6a4-18fd1b707d7f",
+                                      "key": "metadataId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to update metadata of a `Transaction`."
+                              },
+                              "response": [
+                                {
+                                  "id": "a3a77b28-c3a8-4b24-bbd1-d87d87591393",
+                                  "name": "No content as result.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"Duiscf\": {},\n  \"in_53e\": {}\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/metadata/:metadataId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "metadata",
+                                        ":metadataId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "metadataId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "No Content",
+                                  "code": 204,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:52.000Z",
+                                  "updatedAt": "2026-07-28T02:58:52.000Z",
+                                  "uid": "35240-a3a77b28-c3a8-4b24-bbd1-d87d87591393"
+                                },
+                                {
+                                  "id": "0a34e9ae-9d9c-434e-a894-84f6c8b5d2a9",
+                                  "name": "Your request has missing arguments or is malformed.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"Duiscf\": {},\n  \"in_53e\": {}\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/metadata/:metadataId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "metadata",
+                                        ":metadataId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "metadataId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:52.000Z",
+                                  "updatedAt": "2026-07-28T02:58:52.000Z",
+                                  "uid": "35240-0a34e9ae-9d9c-434e-a894-84f6c8b5d2a9"
+                                },
+                                {
+                                  "id": "d89551f3-e3d8-4a29-aa10-cc4b749d1054",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"Duiscf\": {},\n  \"in_53e\": {}\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/metadata/:metadataId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "metadata",
+                                        ":metadataId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "metadataId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:52.000Z",
+                                  "updatedAt": "2026-07-28T02:58:52.000Z",
+                                  "uid": "35240-d89551f3-e3d8-4a29-aa10-cc4b749d1054"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:52.000Z",
+                              "updatedAt": "2026-07-28T02:58:52.000Z",
+                              "uid": "35240-b9fcf56e-e863-45ce-9d46-0023382a2dce"
+                            },
+                            {
+                              "name": "Add Transaction Metadata",
+                              "id": "46cf0e0b-8c7f-4d77-b30f-3743dcef71a0",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Duiscf\": {},\n  \"in_53e\": {}\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/metadata/:metadataId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "metadata",
+                                    ":metadataId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "a2327428-51ac-49f2-9d13-f0fc3e792900",
+                                      "key": "transactionId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "6cab86ee-8321-4d25-b422-a6d921f3949d",
+                                      "key": "metadataId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to add metadata to a `Transaction`."
+                              },
+                              "response": [
+                                {
+                                  "id": "78780d3c-08c7-4b4e-a9e6-605b1b10cc1e",
+                                  "name": "No content as result.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"Duiscf\": {},\n  \"in_53e\": {}\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/metadata/:metadataId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "metadata",
+                                        ":metadataId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "metadataId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "No Content",
+                                  "code": 204,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:52.000Z",
+                                  "updatedAt": "2026-07-28T02:58:52.000Z",
+                                  "uid": "35240-78780d3c-08c7-4b4e-a9e6-605b1b10cc1e"
+                                },
+                                {
+                                  "id": "bd19a023-475e-44ee-aa3a-88cf423300d4",
+                                  "name": "Your request has missing arguments or is malformed.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"Duiscf\": {},\n  \"in_53e\": {}\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/metadata/:metadataId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "metadata",
+                                        ":metadataId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "metadataId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:52.000Z",
+                                  "updatedAt": "2026-07-28T02:58:52.000Z",
+                                  "uid": "35240-bd19a023-475e-44ee-aa3a-88cf423300d4"
+                                },
+                                {
+                                  "id": "5086822f-d85b-4705-aa51-7ec622693903",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"Duiscf\": {},\n  \"in_53e\": {}\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/metadata/:metadataId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "metadata",
+                                        ":metadataId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "metadataId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:52.000Z",
+                                  "updatedAt": "2026-07-28T02:58:52.000Z",
+                                  "uid": "35240-5086822f-d85b-4705-aa51-7ec622693903"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:52.000Z",
+                              "updatedAt": "2026-07-28T02:58:52.000Z",
+                              "uid": "35240-46cf0e0b-8c7f-4d77-b30f-3743dcef71a0"
+                            },
+                            {
+                              "name": "Delete Transaction Metadata",
+                              "id": "a139fc4a-c2ca-4bd6-85cd-0dc58c15cdfd",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/metadata/:metadataId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "metadata",
+                                    ":metadataId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "18610c64-cd7f-40ef-9bd6-4b888a9dd389",
+                                      "key": "transactionId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "050c3322-4ee7-47a3-b259-0a9b68aed919",
+                                      "key": "metadataId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to delete metadata of a `Transaction`."
+                              },
+                              "response": [
+                                {
+                                  "id": "cc5ae978-1862-4b94-93b1-9a4168eeee14",
+                                  "name": "No content as result.",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/metadata/:metadataId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "metadata",
+                                        ":metadataId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "metadataId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "No Content",
+                                  "code": 204,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:52.000Z",
+                                  "updatedAt": "2026-07-28T02:58:52.000Z",
+                                  "uid": "35240-cc5ae978-1862-4b94-93b1-9a4168eeee14"
+                                },
+                                {
+                                  "id": "4a24b79b-b8bb-43d1-a204-080028987bde",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/metadata/:metadataId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "metadata",
+                                        ":metadataId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "metadataId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:52.000Z",
+                                  "updatedAt": "2026-07-28T02:58:52.000Z",
+                                  "uid": "35240-4a24b79b-b8bb-43d1-a204-080028987bde"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:52.000Z",
+                              "updatedAt": "2026-07-28T02:58:52.000Z",
+                              "uid": "35240-a139fc4a-c2ca-4bd6-85cd-0dc58c15cdfd"
+                            }
+                          ],
+                          "id": "cdd159d6-bd3e-4277-90a6-e775676a2451",
+                          "createdAt": "2026-07-28T02:58:52.000Z",
+                          "updatedAt": "2026-07-28T02:58:52.000Z",
+                          "uid": "35240-cdd159d6-bd3e-4277-90a6-e775676a2451"
+                        },
+                        {
+                          "name": "Search Transaction Metadata",
+                          "id": "31ae28f3-e3b3-4049-8e64-950e3b2c7563",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/metadata?p=0&s=0&d=ASC&props=<string>&props=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "transactions",
+                                ":transactionId",
+                                "metadata"
+                              ],
+                              "query": [
+                                {
+                                  "description": "It indicates the specific page to display (the counter starts from zero).",
+                                  "key": "p",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates the number of items per page.",
+                                  "key": "s",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates how the pages are ordered.",
+                                  "key": "d",
+                                  "value": "ASC"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "f2fa9fb0-7484-402f-b269-54a18cdd7a50",
+                                  "key": "transactionId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to get the list of metadata of a `Transaction`."
+                          },
+                          "response": [
+                            {
+                              "id": "9d091138-4fe7-430c-93c7-d4c18a38b237",
+                              "name": "The results array contains metadata.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/metadata?p=0&s=0&d=ASC&props=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "metadata"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "It indicates the specific page to display (the counter starts from zero).",
+                                      "key": "p",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "description": "It indicates the number of items per page.",
+                                      "key": "s",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "description": "It indicates how the pages are ordered.",
+                                      "key": "d",
+                                      "value": "ASC"
+                                    },
+                                    {
+                                      "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                      "key": "props",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "transactionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"metadata\": {\n        \"ea0\": {}\n      },\n      \"creation_time\": \"<string>\",\n      \"last_update\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"metadata\": {\n        \"deserunte6\": {},\n        \"laboree\": {}\n      },\n      \"creation_time\": \"<string>\",\n      \"last_update\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:58:52.000Z",
+                              "updatedAt": "2026-07-28T02:58:52.000Z",
+                              "uid": "35240-9d091138-4fe7-430c-93c7-d4c18a38b237"
+                            },
+                            {
+                              "id": "ea7c59b8-2109-4ba2-96f8-e13ecd79606d",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/metadata?p=0&s=0&d=ASC&props=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "metadata"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "It indicates the specific page to display (the counter starts from zero).",
+                                      "key": "p",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "description": "It indicates the number of items per page.",
+                                      "key": "s",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "description": "It indicates how the pages are ordered.",
+                                      "key": "d",
+                                      "value": "ASC"
+                                    },
+                                    {
+                                      "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                      "key": "props",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "transactionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:52.000Z",
+                              "updatedAt": "2026-07-28T02:58:52.000Z",
+                              "uid": "35240-ea7c59b8-2109-4ba2-96f8-e13ecd79606d"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:52.000Z",
+                          "updatedAt": "2026-07-28T02:58:52.000Z",
+                          "uid": "35240-31ae28f3-e3b3-4049-8e64-950e3b2c7563"
+                        }
+                      ],
+                      "id": "7f4d49b0-f7a0-4ef5-827a-589f5127c157",
+                      "createdAt": "2026-07-28T02:58:52.000Z",
+                      "updatedAt": "2026-07-28T02:58:52.000Z",
+                      "uid": "35240-7f4d49b0-f7a0-4ef5-827a-589f5127c157"
+                    }
+                  ],
+                  "id": "03fe4138-3fae-4cbb-bd35-f7e791c2a577",
+                  "createdAt": "2026-07-28T02:58:52.000Z",
+                  "updatedAt": "2026-07-28T02:58:52.000Z",
+                  "uid": "35240-03fe4138-3fae-4cbb-bd35-f7e791c2a577"
+                }
+              ],
+              "id": "08b95cce-bf23-4b30-b04d-b6ca7b9cd841",
+              "createdAt": "2026-07-28T02:58:52.000Z",
+              "updatedAt": "2026-07-28T02:58:52.000Z",
+              "uid": "35240-08b95cce-bf23-4b30-b04d-b6ca7b9cd841"
+            }
+          ],
+          "id": "0b9a49c7-f2ce-4050-b6b4-41b2d1fc6f7d",
+          "createdAt": "2026-07-28T02:58:52.000Z",
+          "updatedAt": "2026-07-28T02:58:52.000Z",
+          "uid": "35240-0b9a49c7-f2ce-4050-b6b4-41b2d1fc6f7d"
+        }
+      ],
+      "id": "fd569441-ef18-403e-b255-b982b07a381b",
+      "createdAt": "2026-07-28T02:58:52.000Z",
+      "updatedAt": "2026-07-28T02:58:52.000Z",
+      "uid": "35240-fd569441-ef18-403e-b255-b982b07a381b"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

@@ -1,0 +1,1678 @@
+{
+  "info": {
+    "_postman_id": "56cccfd8-64f3-4e44-a0d0-ff573b486770",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Online Ads API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:25.000Z",
+    "updatedAt": "2026-07-28T02:58:26.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-56cccfd8-64f3-4e44-a0d0-ff573b486770"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "online-ads",
+              "item": [
+                {
+                  "name": "{onlineAdId}",
+                  "item": [
+                    {
+                      "name": "addAssignees",
+                      "item": [
+                        {
+                          "name": "Add assignees to Online Ads",
+                          "id": "e65b8792-122a-4800-af22-4f6d187c2c58",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"add_assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/online-ads/:onlineAdId/addAssignees",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "online-ads",
+                                ":onlineAdId",
+                                "addAssignees"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "123d1413-3690-4bef-aae1-7af059a41599",
+                                  "key": "onlineAdId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to add assignees to an `OnlineAd`."
+                          },
+                          "response": [
+                            {
+                              "id": "4ba2f4c9-3aa5-4aa8-a895-6dc941b203d2",
+                              "name": "The returned resource is a single `OnlineAd`.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"add_assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/online-ads/:onlineAdId/addAssignees",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "online-ads",
+                                    ":onlineAdId",
+                                    "addAssignees"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "onlineAdId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"platform\": \"FACEBOOK\",\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"ACTIVE\",\n  \"wallet_id\": \"<string>\",\n  \"last_spent_date\": \"<string>\",\n  \"last_spent\": \"<number>\",\n  \"total_spent\": \"<number>\",\n  \"card_id\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:58:26.000Z",
+                              "updatedAt": "2026-07-28T02:58:26.000Z",
+                              "uid": "35240-4ba2f4c9-3aa5-4aa8-a895-6dc941b203d2"
+                            },
+                            {
+                              "id": "85f8831a-7296-4de3-b607-2ff34a66b1bd",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"add_assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/online-ads/:onlineAdId/addAssignees",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "online-ads",
+                                    ":onlineAdId",
+                                    "addAssignees"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "onlineAdId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:26.000Z",
+                              "updatedAt": "2026-07-28T02:58:26.000Z",
+                              "uid": "35240-85f8831a-7296-4de3-b607-2ff34a66b1bd"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:26.000Z",
+                          "updatedAt": "2026-07-28T02:58:26.000Z",
+                          "uid": "35240-e65b8792-122a-4800-af22-4f6d187c2c58"
+                        }
+                      ],
+                      "id": "30b78100-f46a-45b9-bf34-bef42ad3a7f0",
+                      "createdAt": "2026-07-28T02:58:26.000Z",
+                      "updatedAt": "2026-07-28T02:58:26.000Z",
+                      "uid": "35240-30b78100-f46a-45b9-bf34-bef42ad3a7f0"
+                    },
+                    {
+                      "name": "removeAssignees",
+                      "item": [
+                        {
+                          "name": "Remove assignees from Online Ads",
+                          "id": "33acbe5a-355c-457c-9955-31d533ddcd57",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"remove_assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/online-ads/:onlineAdId/removeAssignees",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "online-ads",
+                                ":onlineAdId",
+                                "removeAssignees"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "a489fe5a-96c1-4bb4-b3b9-96caf81e1826",
+                                  "key": "onlineAdId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to remove assignees from an `OnlineAd`."
+                          },
+                          "response": [
+                            {
+                              "id": "2c76963d-7564-4048-adae-792761cb1711",
+                              "name": "The returned resource is a single `OnlineAd`.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"remove_assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/online-ads/:onlineAdId/removeAssignees",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "online-ads",
+                                    ":onlineAdId",
+                                    "removeAssignees"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "onlineAdId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"platform\": \"FACEBOOK\",\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"ACTIVE\",\n  \"wallet_id\": \"<string>\",\n  \"last_spent_date\": \"<string>\",\n  \"last_spent\": \"<number>\",\n  \"total_spent\": \"<number>\",\n  \"card_id\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:58:26.000Z",
+                              "updatedAt": "2026-07-28T02:58:26.000Z",
+                              "uid": "35240-2c76963d-7564-4048-adae-792761cb1711"
+                            },
+                            {
+                              "id": "ecae98a3-32ed-4be7-b759-817966529dd7",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"remove_assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/online-ads/:onlineAdId/removeAssignees",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "online-ads",
+                                    ":onlineAdId",
+                                    "removeAssignees"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "onlineAdId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:26.000Z",
+                              "updatedAt": "2026-07-28T02:58:26.000Z",
+                              "uid": "35240-ecae98a3-32ed-4be7-b759-817966529dd7"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:26.000Z",
+                          "updatedAt": "2026-07-28T02:58:26.000Z",
+                          "uid": "35240-33acbe5a-355c-457c-9955-31d533ddcd57"
+                        }
+                      ],
+                      "id": "646a91b6-9b3e-4abf-83e3-1651b8991d72",
+                      "createdAt": "2026-07-28T02:58:26.000Z",
+                      "updatedAt": "2026-07-28T02:58:26.000Z",
+                      "uid": "35240-646a91b6-9b3e-4abf-83e3-1651b8991d72"
+                    },
+                    {
+                      "name": "Get Online Ads",
+                      "id": "3f05e50f-1f76-42fc-947a-777e45c961b1",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/online-ads/:onlineAdId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "online-ads",
+                            ":onlineAdId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "db0af054-b843-470c-9d4a-ac4c7ecc3bf0",
+                              "key": "onlineAdId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to get a specific `OnlineAd` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "bfdeb771-faeb-4ba4-96f9-2a02b20562c5",
+                          "name": "The result is a single `OnlineAd`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/online-ads/:onlineAdId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "online-ads",
+                                ":onlineAdId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "onlineAdId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"platform\": \"FACEBOOK\",\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"ACTIVE\",\n  \"wallet_id\": \"<string>\",\n  \"last_spent_date\": \"<string>\",\n  \"last_spent\": \"<number>\",\n  \"total_spent\": \"<number>\",\n  \"card_id\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:58:26.000Z",
+                          "updatedAt": "2026-07-28T02:58:26.000Z",
+                          "uid": "35240-bfdeb771-faeb-4ba4-96f9-2a02b20562c5"
+                        },
+                        {
+                          "id": "b6ef2ad8-46b1-4c18-96ed-0dde753341eb",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/online-ads/:onlineAdId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "online-ads",
+                                ":onlineAdId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "onlineAdId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:26.000Z",
+                          "updatedAt": "2026-07-28T02:58:26.000Z",
+                          "uid": "35240-b6ef2ad8-46b1-4c18-96ed-0dde753341eb"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:26.000Z",
+                      "updatedAt": "2026-07-28T02:58:26.000Z",
+                      "uid": "35240-3f05e50f-1f76-42fc-947a-777e45c961b1"
+                    },
+                    {
+                      "name": "Update Online Ads",
+                      "id": "0a0cbc26-5fab-409f-9dcb-8e9fba256633",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"wallet_id\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/online-ads/:onlineAdId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "online-ads",
+                            ":onlineAdId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "7af1fe11-172e-49c8-ae0a-7e257e4624c8",
+                              "key": "onlineAdId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to update a specific `OnlineAd`."
+                      },
+                      "response": [
+                        {
+                          "id": "c216db72-edcf-4f34-b44d-f5c1b6759bf7",
+                          "name": "The returned resource is a single `OnlineAd`.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"wallet_id\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/online-ads/:onlineAdId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "online-ads",
+                                ":onlineAdId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "onlineAdId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"platform\": \"FACEBOOK\",\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"ACTIVE\",\n  \"wallet_id\": \"<string>\",\n  \"last_spent_date\": \"<string>\",\n  \"last_spent\": \"<number>\",\n  \"total_spent\": \"<number>\",\n  \"card_id\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:58:26.000Z",
+                          "updatedAt": "2026-07-28T02:58:26.000Z",
+                          "uid": "35240-c216db72-edcf-4f34-b44d-f5c1b6759bf7"
+                        },
+                        {
+                          "id": "a560fb65-8707-4cc7-a018-874a73fc8742",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"wallet_id\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/online-ads/:onlineAdId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "online-ads",
+                                ":onlineAdId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "onlineAdId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:26.000Z",
+                          "updatedAt": "2026-07-28T02:58:26.000Z",
+                          "uid": "35240-a560fb65-8707-4cc7-a018-874a73fc8742"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:26.000Z",
+                      "updatedAt": "2026-07-28T02:58:26.000Z",
+                      "uid": "35240-0a0cbc26-5fab-409f-9dcb-8e9fba256633"
+                    },
+                    {
+                      "name": "Activate Online Ads",
+                      "id": "8ae70fde-2ef6-4644-b910-dd983758370d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/online-ads/:onlineAdId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "online-ads",
+                            ":onlineAdId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "2f68a68d-f2f3-4b6d-a10a-e6e86560ebcf",
+                              "key": "onlineAdId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to activate a specific `OnlineAd`."
+                      },
+                      "response": [
+                        {
+                          "id": "d1fb1b5d-dad0-47ee-b116-c15afed2f171",
+                          "name": "The `Order` of the reserved `Card` for the `OnlineAd`.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/online-ads/:onlineAdId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "online-ads",
+                                ":onlineAdId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "onlineAdId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"status\": \"PENDING\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\",\n  \"error_code\": \"<string>\",\n  \"total_paid_amount\": \"<number>\",\n  \"total_paid_currency\": \"VUV\",\n  \"items\": [\n    {\n      \"id\": \"<string>\",\n      \"item_type\": \"<string>\",\n      \"category\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"item_type\": \"<string>\",\n      \"category\": \"<string>\"\n    }\n  ],\n  \"is_valid\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:58:26.000Z",
+                          "updatedAt": "2026-07-28T02:58:26.000Z",
+                          "uid": "35240-d1fb1b5d-dad0-47ee-b116-c15afed2f171"
+                        },
+                        {
+                          "id": "7ae3b284-c459-40d6-bb53-a419522f33a0",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/online-ads/:onlineAdId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "online-ads",
+                                ":onlineAdId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "onlineAdId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:26.000Z",
+                          "updatedAt": "2026-07-28T02:58:26.000Z",
+                          "uid": "35240-7ae3b284-c459-40d6-bb53-a419522f33a0"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:26.000Z",
+                      "updatedAt": "2026-07-28T02:58:26.000Z",
+                      "uid": "35240-8ae70fde-2ef6-4644-b910-dd983758370d"
+                    },
+                    {
+                      "name": "Delete Online Ads",
+                      "id": "af5f2ee4-71bd-49f7-b0f5-b574bced2b43",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/online-ads/:onlineAdId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "online-ads",
+                            ":onlineAdId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "6c4f3433-05a5-4ef6-a28e-27e6e8d5d932",
+                              "key": "onlineAdId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to delete a specific `OnlineAd`."
+                      },
+                      "response": [
+                        {
+                          "id": "d81ecfa7-6626-4bcb-9d2d-3a59187b7b4a",
+                          "name": "No content as result.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/online-ads/:onlineAdId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "online-ads",
+                                ":onlineAdId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "onlineAdId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:26.000Z",
+                          "updatedAt": "2026-07-28T02:58:26.000Z",
+                          "uid": "35240-d81ecfa7-6626-4bcb-9d2d-3a59187b7b4a"
+                        },
+                        {
+                          "id": "007a6947-abad-4fdb-8d8c-b02743dd43a5",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/online-ads/:onlineAdId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "online-ads",
+                                ":onlineAdId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "onlineAdId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:26.000Z",
+                          "updatedAt": "2026-07-28T02:58:26.000Z",
+                          "uid": "35240-007a6947-abad-4fdb-8d8c-b02743dd43a5"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:26.000Z",
+                      "updatedAt": "2026-07-28T02:58:26.000Z",
+                      "uid": "35240-af5f2ee4-71bd-49f7-b0f5-b574bced2b43"
+                    }
+                  ],
+                  "id": "af412fde-f069-45a1-99a6-6bb946919ceb",
+                  "createdAt": "2026-07-28T02:58:26.000Z",
+                  "updatedAt": "2026-07-28T02:58:26.000Z",
+                  "uid": "35240-af412fde-f069-45a1-99a6-6bb946919ceb"
+                },
+                {
+                  "name": "Search Online Ads",
+                  "id": "978a1b7d-df1b-4977-9e52-b9e20bbb39ec",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/online-ads?text=<string>&platforms=OTHER&platforms=PINTEREST&assignees=<string>&assignees=<string>&statuses=ACTIVE&statuses=ACTIVE&p=0&s=0&d=ASC&props=<string>&props=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "online-ads"
+                      ],
+                      "query": [
+                        {
+                          "description": "A simple text to search in the `OnlineAds` data (name, description, assignee name).",
+                          "key": "text",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The `OnlineAds` platform.",
+                          "key": "platforms",
+                          "value": "OTHER"
+                        },
+                        {
+                          "description": "The `OnlineAds` platform.",
+                          "key": "platforms",
+                          "value": "PINTEREST"
+                        },
+                        {
+                          "key": "assignees",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "assignees",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The Online Ad status.",
+                          "key": "statuses",
+                          "value": "ACTIVE"
+                        },
+                        {
+                          "description": "The Online Ad status.",
+                          "key": "statuses",
+                          "value": "ACTIVE"
+                        },
+                        {
+                          "description": "It indicates the specific page to display (the counter starts from zero).",
+                          "key": "p",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the number of items per page.",
+                          "key": "s",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates how the pages are ordered.",
+                          "key": "d",
+                          "value": "ASC"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to search `OnlineAds` using filtering parameters."
+                  },
+                  "response": [
+                    {
+                      "id": "bfa4d3b5-7fce-428f-9f63-2eb51e27984b",
+                      "name": "The result is an array containing `OnlineAds`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/online-ads?text=<string>&platforms=PINTEREST&assignees=<string>&statuses=ACTIVE&p=0&s=0&d=ASC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "online-ads"
+                          ],
+                          "query": [
+                            {
+                              "description": "A simple text to search in the `OnlineAds` data (name, description, assignee name).",
+                              "key": "text",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The `OnlineAds` platform.",
+                              "key": "platforms",
+                              "value": "PINTEREST"
+                            },
+                            {
+                              "key": "assignees",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The Online Ad status.",
+                              "key": "statuses",
+                              "value": "ACTIVE"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"platform\": \"GOOGLE\",\n      \"assignees\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"status\": \"ASSIGNED\",\n      \"wallet_id\": \"<string>\",\n      \"last_spent_date\": \"<string>\",\n      \"last_spent\": \"<number>\",\n      \"total_spent\": \"<number>\",\n      \"card_id\": \"<string>\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"platform\": \"FACEBOOK\",\n      \"assignees\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"status\": \"CANCELLED\",\n      \"wallet_id\": \"<string>\",\n      \"last_spent_date\": \"<string>\",\n      \"last_spent\": \"<number>\",\n      \"total_spent\": \"<number>\",\n      \"card_id\": \"<string>\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:58:26.000Z",
+                      "updatedAt": "2026-07-28T02:58:26.000Z",
+                      "uid": "35240-bfa4d3b5-7fce-428f-9f63-2eb51e27984b"
+                    },
+                    {
+                      "id": "acbf2ec9-dca4-4eec-ba15-ed3834a6e674",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/online-ads?text=<string>&platforms=PINTEREST&assignees=<string>&statuses=ACTIVE&p=0&s=0&d=ASC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "online-ads"
+                          ],
+                          "query": [
+                            {
+                              "description": "A simple text to search in the `OnlineAds` data (name, description, assignee name).",
+                              "key": "text",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The `OnlineAds` platform.",
+                              "key": "platforms",
+                              "value": "PINTEREST"
+                            },
+                            {
+                              "key": "assignees",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The Online Ad status.",
+                              "key": "statuses",
+                              "value": "ACTIVE"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:58:26.000Z",
+                      "updatedAt": "2026-07-28T02:58:26.000Z",
+                      "uid": "35240-acbf2ec9-dca4-4eec-ba15-ed3834a6e674"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:58:26.000Z",
+                  "updatedAt": "2026-07-28T02:58:26.000Z",
+                  "uid": "35240-978a1b7d-df1b-4977-9e52-b9e20bbb39ec"
+                },
+                {
+                  "name": "Add Online Ads",
+                  "id": "cfae2184-83f4-4e23-8e76-556d5cb67c1a",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint",
+                        "value": "{{fingerprint}}"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint-Signature",
+                        "value": "{{fingerprint_signature}}"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"platform\": \"TIKTOK\",\n  \"wallet_id\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/online-ads",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "online-ads"
+                      ]
+                    },
+                    "description": "Endpoint to add a new `OnlineAd`."
+                  },
+                  "response": [
+                    {
+                      "id": "059f6689-052c-4f1b-9b2d-9e9ac7a044b7",
+                      "name": "The result is an `OnlineAd`.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"platform\": \"TIKTOK\",\n  \"wallet_id\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/online-ads",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "online-ads"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"platform\": \"FACEBOOK\",\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"ACTIVE\",\n  \"wallet_id\": \"<string>\",\n  \"last_spent_date\": \"<string>\",\n  \"last_spent\": \"<number>\",\n  \"total_spent\": \"<number>\",\n  \"card_id\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T02:58:26.000Z",
+                      "updatedAt": "2026-07-28T02:58:26.000Z",
+                      "uid": "35240-059f6689-052c-4f1b-9b2d-9e9ac7a044b7"
+                    },
+                    {
+                      "id": "8a4677a5-bea0-49ac-bcd2-6a8e6ac7c354",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"platform\": \"TIKTOK\",\n  \"wallet_id\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/online-ads",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "online-ads"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:58:26.000Z",
+                      "updatedAt": "2026-07-28T02:58:26.000Z",
+                      "uid": "35240-8a4677a5-bea0-49ac-bcd2-6a8e6ac7c354"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:58:26.000Z",
+                  "updatedAt": "2026-07-28T02:58:26.000Z",
+                  "uid": "35240-cfae2184-83f4-4e23-8e76-556d5cb67c1a"
+                }
+              ],
+              "id": "09d04fb2-b47a-4cfb-8dc7-471c2596c1fb",
+              "createdAt": "2026-07-28T02:58:26.000Z",
+              "updatedAt": "2026-07-28T02:58:26.000Z",
+              "uid": "35240-09d04fb2-b47a-4cfb-8dc7-471c2596c1fb"
+            }
+          ],
+          "id": "4e9e7487-67c3-4669-86a2-0682c639c905",
+          "createdAt": "2026-07-28T02:58:26.000Z",
+          "updatedAt": "2026-07-28T02:58:26.000Z",
+          "uid": "35240-4e9e7487-67c3-4669-86a2-0682c639c905"
+        }
+      ],
+      "id": "f981da93-2a79-4b94-8c7b-43fa8a6755e1",
+      "createdAt": "2026-07-28T02:58:26.000Z",
+      "updatedAt": "2026-07-28T02:58:26.000Z",
+      "uid": "35240-f981da93-2a79-4b94-8c7b-43fa8a6755e1"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

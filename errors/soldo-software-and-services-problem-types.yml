@@ -1,0 +1,37 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/soldo-software-and-services-business-api-openapi.json
+docs: https://developer.soldo.com/docs/errors
+format: custom-json
+note: >-
+  Soldo does NOT use RFC 9457 application/problem+json. Errors are returned as a custom JSON
+  envelope { error_code, message } with a conventional HTTP status. HTTP status types below are
+  derived from the OpenAPI 4xx responses (400, 403, 404 present in-spec) enriched from the
+  published HTTP-code table in the docs. See error-codes artifact for the named error_code
+  registry.
+envelope:
+  error_code: machine-readable custom code
+  message: human-readable detail
+http_statuses:
+  - status: 400
+    title: Bad Request
+    meaning: Request malformed or contains missing/invalid arguments (e.g. invalid fingerprint or fingerprint signature).
+  - status: 401
+    title: Unauthorized
+    meaning: Request not authenticated - invalid credentials (UNAUTHORIZED) or invalid/expired access token (invalid_token).
+  - status: 403
+    title: Forbidden
+    meaning: API credentials lack the scope required for the request.
+  - status: 404
+    title: Not Found
+    meaning: The requested endpoint or resource does not exist.
+  - status: 405
+    title: Method Not Allowed
+    meaning: An invalid HTTP method is being used against the endpoint.
+  - status: 429
+    title: Too Many Requests
+    meaning: Rate limit exceeded (600/min or 20/sec). Retry after the limit window resets.
+  - status: 500
+    title: Internal Server Error
+    meaning: Server-side failure; contact Soldo business support.
+in_spec_response_codes: [400, 403, 404]

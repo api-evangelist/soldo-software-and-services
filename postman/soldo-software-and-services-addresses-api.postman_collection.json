@@ -1,0 +1,1075 @@
+{
+  "info": {
+    "_postman_id": "d152bc2e-8a21-42c9-a4b5-4e93c1ae5272",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Addresses API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:57:40.000Z",
+    "updatedAt": "2026-07-28T02:57:40.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d152bc2e-8a21-42c9-a4b5-4e93c1ae5272"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "addresses",
+              "item": [
+                {
+                  "name": "{addressId}",
+                  "item": [
+                    {
+                      "name": "Get Address",
+                      "id": "294d9882-c8a3-4989-9007-ede2bb3c2f01",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/addresses/:addressId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "addresses",
+                            ":addressId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "76f63697-c8d4-4ba3-ab6b-a96b1931e658",
+                              "key": "addressId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to get an `Address` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "8881d1fd-73aa-47c4-9780-7c03be80a9b4",
+                          "name": "The returned resource is a single `Address`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/addresses/:addressId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "addresses",
+                                ":addressId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "addressId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"recipient\": \"<string>\",\n  \"name\": \"<string>\",\n  \"line1\": \"<string>\",\n  \"line2\": \"<string>\",\n  \"country\": \"<string>\",\n  \"county\": \"<string>\",\n  \"city\": \"<string>\",\n  \"post_code\": \"<string>\",\n  \"delivery_phone_number\": \"<string>\",\n  \"default_shipping\": \"<boolean>\",\n  \"type\": \"<string>\",\n  \"category\": \"COMPANY\",\n  \"user_id\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:57:41.000Z",
+                          "updatedAt": "2026-07-28T02:57:41.000Z",
+                          "uid": "35240-8881d1fd-73aa-47c4-9780-7c03be80a9b4"
+                        },
+                        {
+                          "id": "5d55f6b6-1400-4582-98b1-042f6b5c206d",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/addresses/:addressId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "addresses",
+                                ":addressId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "addressId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:41.000Z",
+                          "updatedAt": "2026-07-28T02:57:41.000Z",
+                          "uid": "35240-5d55f6b6-1400-4582-98b1-042f6b5c206d"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:41.000Z",
+                      "updatedAt": "2026-07-28T02:57:41.000Z",
+                      "uid": "35240-294d9882-c8a3-4989-9007-ede2bb3c2f01"
+                    },
+                    {
+                      "name": "Update Address",
+                      "id": "dd5c60cd-fcd5-4447-8b4c-c9979fafcca3",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"country\": \"ATG\",\n  \"recipient\": \"<string>\",\n  \"name\": \"<string>\",\n  \"line1\": \"<string>\",\n  \"line2\": \"<string>\",\n  \"county\": \"<string>\",\n  \"city\": \"<string>\",\n  \"post_code\": \"<string>\",\n  \"delivery_phone_number\": \"<string>\",\n  \"default_shipping\": true,\n  \"cards_to_link\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/addresses/:addressId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "addresses",
+                            ":addressId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "4136ac0c-be34-4bb9-bf24-9f161b122406",
+                              "key": "addressId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to update an `Address` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "d2c56d5b-2ffa-4b73-96db-098b733bd295",
+                          "name": "The returned resource is a single `Address`.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"country\": \"ATG\",\n  \"recipient\": \"<string>\",\n  \"name\": \"<string>\",\n  \"line1\": \"<string>\",\n  \"line2\": \"<string>\",\n  \"county\": \"<string>\",\n  \"city\": \"<string>\",\n  \"post_code\": \"<string>\",\n  \"delivery_phone_number\": \"<string>\",\n  \"default_shipping\": true,\n  \"cards_to_link\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/addresses/:addressId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "addresses",
+                                ":addressId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "addressId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"recipient\": \"<string>\",\n  \"name\": \"<string>\",\n  \"line1\": \"<string>\",\n  \"line2\": \"<string>\",\n  \"country\": \"<string>\",\n  \"county\": \"<string>\",\n  \"city\": \"<string>\",\n  \"post_code\": \"<string>\",\n  \"delivery_phone_number\": \"<string>\",\n  \"default_shipping\": \"<boolean>\",\n  \"type\": \"<string>\",\n  \"category\": \"COMPANY\",\n  \"user_id\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:57:41.000Z",
+                          "updatedAt": "2026-07-28T02:57:41.000Z",
+                          "uid": "35240-d2c56d5b-2ffa-4b73-96db-098b733bd295"
+                        },
+                        {
+                          "id": "928a3c2f-5101-4cc3-9fce-4f9e9e029265",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"country\": \"ATG\",\n  \"recipient\": \"<string>\",\n  \"name\": \"<string>\",\n  \"line1\": \"<string>\",\n  \"line2\": \"<string>\",\n  \"county\": \"<string>\",\n  \"city\": \"<string>\",\n  \"post_code\": \"<string>\",\n  \"delivery_phone_number\": \"<string>\",\n  \"default_shipping\": true,\n  \"cards_to_link\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/addresses/:addressId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "addresses",
+                                ":addressId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "addressId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:41.000Z",
+                          "updatedAt": "2026-07-28T02:57:41.000Z",
+                          "uid": "35240-928a3c2f-5101-4cc3-9fce-4f9e9e029265"
+                        },
+                        {
+                          "id": "12ef6194-f9d1-4f30-9130-de7aa1706ffc",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"country\": \"ATG\",\n  \"recipient\": \"<string>\",\n  \"name\": \"<string>\",\n  \"line1\": \"<string>\",\n  \"line2\": \"<string>\",\n  \"county\": \"<string>\",\n  \"city\": \"<string>\",\n  \"post_code\": \"<string>\",\n  \"delivery_phone_number\": \"<string>\",\n  \"default_shipping\": true,\n  \"cards_to_link\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/addresses/:addressId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "addresses",
+                                ":addressId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "addressId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:41.000Z",
+                          "updatedAt": "2026-07-28T02:57:41.000Z",
+                          "uid": "35240-12ef6194-f9d1-4f30-9130-de7aa1706ffc"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:41.000Z",
+                      "updatedAt": "2026-07-28T02:57:41.000Z",
+                      "uid": "35240-dd5c60cd-fcd5-4447-8b4c-c9979fafcca3"
+                    },
+                    {
+                      "name": "Delete Address",
+                      "id": "302907bf-a24d-45ca-82d9-292b321cd729",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/addresses/:addressId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "addresses",
+                            ":addressId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "f5a4f8d1-7e39-4caf-88b3-ec579eda23ac",
+                              "key": "addressId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to remove an `Address`."
+                      },
+                      "response": [
+                        {
+                          "id": "a1d45de2-6a98-4cf4-a7fe-1fb33c7e7caa",
+                          "name": "No content as result.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/addresses/:addressId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "addresses",
+                                ":addressId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "addressId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:41.000Z",
+                          "updatedAt": "2026-07-28T02:57:41.000Z",
+                          "uid": "35240-a1d45de2-6a98-4cf4-a7fe-1fb33c7e7caa"
+                        },
+                        {
+                          "id": "2f656f4b-2b9f-4ca8-83f2-1d7d70772115",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/addresses/:addressId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "addresses",
+                                ":addressId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "addressId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:41.000Z",
+                          "updatedAt": "2026-07-28T02:57:41.000Z",
+                          "uid": "35240-2f656f4b-2b9f-4ca8-83f2-1d7d70772115"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:41.000Z",
+                      "updatedAt": "2026-07-28T02:57:41.000Z",
+                      "uid": "35240-302907bf-a24d-45ca-82d9-292b321cd729"
+                    }
+                  ],
+                  "id": "a7641f18-98b4-474b-8dba-420204a2d80c",
+                  "createdAt": "2026-07-28T02:57:41.000Z",
+                  "updatedAt": "2026-07-28T02:57:41.000Z",
+                  "uid": "35240-a7641f18-98b4-474b-8dba-420204a2d80c"
+                },
+                {
+                  "name": "Search Addresses",
+                  "id": "d2baeefa-1201-4f1f-8674-7d806bcdff42",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/addresses?userId=<string>&category=COMPANY&p=0&s=0&d=DESC&props=<string>&props=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "addresses"
+                      ],
+                      "query": [
+                        {
+                          "description": "The `User` ID.",
+                          "key": "userId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The `User` CATEGORY.",
+                          "key": "category",
+                          "value": "COMPANY"
+                        },
+                        {
+                          "description": "It indicates the specific page to display (the counter starts from zero).",
+                          "key": "p",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the number of items per page.",
+                          "key": "s",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates how the pages are ordered.",
+                          "key": "d",
+                          "value": "DESC"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to search `Addresses`."
+                  },
+                  "response": [
+                    {
+                      "id": "7e2606a3-3639-49b8-8ae8-4c1a12d1db51",
+                      "name": "The result is an array containing `Addresses`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/addresses?userId=<string>&category=COMPANY&p=0&s=0&d=DESC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "addresses"
+                          ],
+                          "query": [
+                            {
+                              "description": "The `User` ID.",
+                              "key": "userId",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The `User` CATEGORY.",
+                              "key": "category",
+                              "value": "COMPANY"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "DESC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"recipient\": \"<string>\",\n      \"name\": \"<string>\",\n      \"line1\": \"<string>\",\n      \"line2\": \"<string>\",\n      \"country\": \"<string>\",\n      \"county\": \"<string>\",\n      \"city\": \"<string>\",\n      \"post_code\": \"<string>\",\n      \"delivery_phone_number\": \"<string>\",\n      \"default_shipping\": \"<boolean>\",\n      \"type\": \"<string>\",\n      \"category\": \"USER\",\n      \"user_id\": \"<string>\",\n      \"creation_time\": \"<string>\",\n      \"last_update\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"recipient\": \"<string>\",\n      \"name\": \"<string>\",\n      \"line1\": \"<string>\",\n      \"line2\": \"<string>\",\n      \"country\": \"<string>\",\n      \"county\": \"<string>\",\n      \"city\": \"<string>\",\n      \"post_code\": \"<string>\",\n      \"delivery_phone_number\": \"<string>\",\n      \"default_shipping\": \"<boolean>\",\n      \"type\": \"<string>\",\n      \"category\": \"USER\",\n      \"user_id\": \"<string>\",\n      \"creation_time\": \"<string>\",\n      \"last_update\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:57:41.000Z",
+                      "updatedAt": "2026-07-28T02:57:41.000Z",
+                      "uid": "35240-7e2606a3-3639-49b8-8ae8-4c1a12d1db51"
+                    },
+                    {
+                      "id": "5bfe55e0-b10a-4aa3-811a-967d848d6dc7",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/addresses?userId=<string>&category=COMPANY&p=0&s=0&d=DESC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "addresses"
+                          ],
+                          "query": [
+                            {
+                              "description": "The `User` ID.",
+                              "key": "userId",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The `User` CATEGORY.",
+                              "key": "category",
+                              "value": "COMPANY"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "DESC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:57:41.000Z",
+                      "updatedAt": "2026-07-28T02:57:41.000Z",
+                      "uid": "35240-5bfe55e0-b10a-4aa3-811a-967d848d6dc7"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:57:41.000Z",
+                  "updatedAt": "2026-07-28T02:57:41.000Z",
+                  "uid": "35240-d2baeefa-1201-4f1f-8674-7d806bcdff42"
+                },
+                {
+                  "name": "Add Address",
+                  "id": "cac112a1-95f3-4912-b512-7c0283e77861",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint",
+                        "value": "{{fingerprint}}"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint-Signature",
+                        "value": "{{fingerprint_signature}}"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"city\": \"<string>\",\n  \"country\": \"MAR\",\n  \"line1\": \"<string>\",\n  \"name\": \"<string>\",\n  \"post_code\": \"<string>\",\n  \"recipient\": \"<string>\",\n  \"line2\": \"<string>\",\n  \"county\": \"<string>\",\n  \"delivery_phone_number\": \"<string>\",\n  \"default_shipping\": \"<boolean>\",\n  \"user_id\": \"<string>\",\n  \"cards_to_link\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/addresses",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "addresses"
+                      ]
+                    },
+                    "description": "Endpoint to create an `Address`."
+                  },
+                  "response": [
+                    {
+                      "id": "45a52562-3a86-41c8-a3b9-09d92c15e5ca",
+                      "name": "The returned resource is the single `Address` created.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"city\": \"<string>\",\n  \"country\": \"MAR\",\n  \"line1\": \"<string>\",\n  \"name\": \"<string>\",\n  \"post_code\": \"<string>\",\n  \"recipient\": \"<string>\",\n  \"line2\": \"<string>\",\n  \"county\": \"<string>\",\n  \"delivery_phone_number\": \"<string>\",\n  \"default_shipping\": \"<boolean>\",\n  \"user_id\": \"<string>\",\n  \"cards_to_link\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/addresses",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "addresses"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\",\n  \"recipient\": \"<string>\",\n  \"name\": \"<string>\",\n  \"line1\": \"<string>\",\n  \"line2\": \"<string>\",\n  \"country\": \"<string>\",\n  \"county\": \"<string>\",\n  \"city\": \"<string>\",\n  \"post_code\": \"<string>\",\n  \"delivery_phone_number\": \"<string>\",\n  \"default_shipping\": \"<boolean>\",\n  \"type\": \"<string>\",\n  \"category\": \"COMPANY\",\n  \"user_id\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T02:57:41.000Z",
+                      "updatedAt": "2026-07-28T02:57:41.000Z",
+                      "uid": "35240-45a52562-3a86-41c8-a3b9-09d92c15e5ca"
+                    },
+                    {
+                      "id": "5e5f8d9d-218b-4f6d-8013-b622752e4015",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"city\": \"<string>\",\n  \"country\": \"MAR\",\n  \"line1\": \"<string>\",\n  \"name\": \"<string>\",\n  \"post_code\": \"<string>\",\n  \"recipient\": \"<string>\",\n  \"line2\": \"<string>\",\n  \"county\": \"<string>\",\n  \"delivery_phone_number\": \"<string>\",\n  \"default_shipping\": \"<boolean>\",\n  \"user_id\": \"<string>\",\n  \"cards_to_link\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/addresses",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "addresses"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:57:41.000Z",
+                      "updatedAt": "2026-07-28T02:57:41.000Z",
+                      "uid": "35240-5e5f8d9d-218b-4f6d-8013-b622752e4015"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:57:41.000Z",
+                  "updatedAt": "2026-07-28T02:57:41.000Z",
+                  "uid": "35240-cac112a1-95f3-4912-b512-7c0283e77861"
+                }
+              ],
+              "id": "01be633f-a6a3-4a5a-a974-6cfb342e8227",
+              "createdAt": "2026-07-28T02:57:41.000Z",
+              "updatedAt": "2026-07-28T02:57:41.000Z",
+              "uid": "35240-01be633f-a6a3-4a5a-a974-6cfb342e8227"
+            }
+          ],
+          "id": "3f9dd59d-0cd4-44fd-a843-7fb48bf5256b",
+          "createdAt": "2026-07-28T02:57:41.000Z",
+          "updatedAt": "2026-07-28T02:57:41.000Z",
+          "uid": "35240-3f9dd59d-0cd4-44fd-a843-7fb48bf5256b"
+        }
+      ],
+      "id": "37e50b70-e732-43f3-9d42-88d4a6f7ea4f",
+      "createdAt": "2026-07-28T02:57:41.000Z",
+      "updatedAt": "2026-07-28T02:57:41.000Z",
+      "uid": "35240-37e50b70-e732-43f3-9d42-88d4a6f7ea4f"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

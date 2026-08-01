@@ -1,0 +1,992 @@
+{
+  "info": {
+    "_postman_id": "e74fc87e-5d56-431b-a1c8-f0616a9bb097",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Card Rules Presets API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:57:50.000Z",
+    "updatedAt": "2026-07-28T02:57:50.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e74fc87e-5d56-431b-a1c8-f0616a9bb097"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "cards",
+              "item": [
+                {
+                  "name": "presets",
+                  "item": [
+                    {
+                      "name": "{presetId}",
+                      "item": [
+                        {
+                          "name": "Get Preset",
+                          "id": "1f29bc14-e358-412b-9ba2-e7f0cde7875f",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/cards/presets/:presetId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "cards",
+                                "presets",
+                                ":presetId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "bd38fe10-699c-41f6-b4b5-9ccb812e8af7",
+                                  "key": "presetId",
+                                  "value": "<string>",
+                                  "description": "(Required) The `CardRulePreset` ID"
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to get a `CardRulePreset` by ID."
+                          },
+                          "response": [
+                            {
+                              "id": "2af7841b-cabc-48c7-ae09-e294a5817982",
+                              "name": "The returned resource is a `CardRulePreset`.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/presets/:presetId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    "presets",
+                                    ":presetId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "presetId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:57:50.000Z",
+                              "updatedAt": "2026-07-28T02:57:50.000Z",
+                              "uid": "35240-2af7841b-cabc-48c7-ae09-e294a5817982"
+                            },
+                            {
+                              "id": "9d59d7f8-9c7f-4c30-bc7e-390a52b6812a",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/presets/:presetId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    "presets",
+                                    ":presetId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "presetId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:50.000Z",
+                              "updatedAt": "2026-07-28T02:57:50.000Z",
+                              "uid": "35240-9d59d7f8-9c7f-4c30-bc7e-390a52b6812a"
+                            },
+                            {
+                              "id": "e7d627e2-bd20-4274-9663-3f93c5bd037c",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/presets/:presetId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    "presets",
+                                    ":presetId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "presetId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:50.000Z",
+                              "updatedAt": "2026-07-28T02:57:50.000Z",
+                              "uid": "35240-e7d627e2-bd20-4274-9663-3f93c5bd037c"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:57:50.000Z",
+                          "updatedAt": "2026-07-28T02:57:50.000Z",
+                          "uid": "35240-1f29bc14-e358-412b-9ba2-e7f0cde7875f"
+                        },
+                        {
+                          "name": "Delete Preset",
+                          "id": "6953170e-dd46-4c48-800d-b7321919da23",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/cards/presets/:presetId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "cards",
+                                "presets",
+                                ":presetId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "cb1095f7-fcbd-4215-b6c1-f8434bc1178a",
+                                  "key": "presetId",
+                                  "value": "<string>",
+                                  "description": "(Required) The `CardRulePreset` ID."
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to delete a `CardRulePreset` by ID."
+                          },
+                          "response": [
+                            {
+                              "id": "1fea24f9-2bad-4494-9d2c-6b6c91c3f162",
+                              "name": "No content as result.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/presets/:presetId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    "presets",
+                                    ":presetId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "presetId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:50.000Z",
+                              "updatedAt": "2026-07-28T02:57:50.000Z",
+                              "uid": "35240-1fea24f9-2bad-4494-9d2c-6b6c91c3f162"
+                            },
+                            {
+                              "id": "162dfdc5-f83b-4fa9-8fa5-a543080fec03",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/presets/:presetId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    "presets",
+                                    ":presetId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "presetId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:50.000Z",
+                              "updatedAt": "2026-07-28T02:57:50.000Z",
+                              "uid": "35240-162dfdc5-f83b-4fa9-8fa5-a543080fec03"
+                            },
+                            {
+                              "id": "f8dbafc6-bd96-4186-8ba0-15f558ba2a97",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/presets/:presetId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    "presets",
+                                    ":presetId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "presetId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:50.000Z",
+                              "updatedAt": "2026-07-28T02:57:50.000Z",
+                              "uid": "35240-f8dbafc6-bd96-4186-8ba0-15f558ba2a97"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:57:50.000Z",
+                          "updatedAt": "2026-07-28T02:57:50.000Z",
+                          "uid": "35240-6953170e-dd46-4c48-800d-b7321919da23"
+                        }
+                      ],
+                      "id": "2d153795-e8d1-40b7-9ebb-56bdee64b7c6",
+                      "createdAt": "2026-07-28T02:57:50.000Z",
+                      "updatedAt": "2026-07-28T02:57:50.000Z",
+                      "uid": "35240-2d153795-e8d1-40b7-9ebb-56bdee64b7c6"
+                    },
+                    {
+                      "name": "Search Presets",
+                      "id": "3d5bdf54-955c-480c-9fbd-aaa352b1170e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/cards/presets?currency=NAD&currency=JOD&name=<string>&p=0&s=0&d=DESC&props=<string>&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "cards",
+                            "presets"
+                          ],
+                          "query": [
+                            {
+                              "description": "the currency of the `CardRulePreset`.",
+                              "key": "currency",
+                              "value": "NAD"
+                            },
+                            {
+                              "description": "the currency of the `CardRulePreset`.",
+                              "key": "currency",
+                              "value": "JOD"
+                            },
+                            {
+                              "description": "The name of the `CardRulePreset`.",
+                              "key": "name",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "DESC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to find `CardRulePresets` using filtering parameters."
+                      },
+                      "response": [
+                        {
+                          "id": "a0b987fc-24e1-49f6-a0ee-4c1d28c8cf04",
+                          "name": "The results array contains `CardRulePreset`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/cards/presets?currency=JOD&name=<string>&p=0&s=0&d=DESC&props=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "cards",
+                                "presets"
+                              ],
+                              "query": [
+                                {
+                                  "description": "the currency of the `CardRulePreset`.",
+                                  "key": "currency",
+                                  "value": "JOD"
+                                },
+                                {
+                                  "description": "The name of the `CardRulePreset`.",
+                                  "key": "name",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "It indicates the specific page to display (the counter starts from zero).",
+                                  "key": "p",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates the number of items per page.",
+                                  "key": "s",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates how the pages are ordered.",
+                                  "key": "d",
+                                  "value": "DESC"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:57:50.000Z",
+                          "updatedAt": "2026-07-28T02:57:50.000Z",
+                          "uid": "35240-a0b987fc-24e1-49f6-a0ee-4c1d28c8cf04"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:50.000Z",
+                      "updatedAt": "2026-07-28T02:57:50.000Z",
+                      "uid": "35240-3d5bdf54-955c-480c-9fbd-aaa352b1170e"
+                    }
+                  ],
+                  "id": "64ce4a6b-36b9-45db-99e5-e99ec42a370a",
+                  "createdAt": "2026-07-28T02:57:50.000Z",
+                  "updatedAt": "2026-07-28T02:57:50.000Z",
+                  "uid": "35240-64ce4a6b-36b9-45db-99e5-e99ec42a370a"
+                },
+                {
+                  "name": "{cardId}",
+                  "item": [
+                    {
+                      "name": "presets",
+                      "item": [
+                        {
+                          "name": "{presetId}",
+                          "item": [
+                            {
+                              "name": "Add Preset to Card",
+                              "id": "6f234c61-0631-4a7d-acbc-8b80f7614e63",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/:cardId/presets/:presetId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    ":cardId",
+                                    "presets",
+                                    ":presetId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "64f58297-4772-4d78-b30a-8ac1239c755c",
+                                      "key": "cardId",
+                                      "value": "<string>",
+                                      "description": "(Required) The `Card` ID"
+                                    },
+                                    {
+                                      "id": "3aa02ac7-d958-4325-8df6-28e25e6ef919",
+                                      "key": "presetId",
+                                      "value": "<string>",
+                                      "description": "(Required) The `CardRulePreset` ID"
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to add a `CardRulePreset` to a `Card`."
+                              },
+                              "response": [
+                                {
+                                  "id": "a4ee88f6-4a1e-467a-ac52-fa1441061669",
+                                  "name": "No content as result.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/presets/:presetId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "presets",
+                                        ":presetId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        },
+                                        {
+                                          "key": "presetId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "No Content",
+                                  "code": 204,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:57:50.000Z",
+                                  "updatedAt": "2026-07-28T02:57:50.000Z",
+                                  "uid": "35240-a4ee88f6-4a1e-467a-ac52-fa1441061669"
+                                },
+                                {
+                                  "id": "64026a2c-41f8-426d-ba75-f37ad2412896",
+                                  "name": "Your request has missing arguments or is malformed.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/presets/:presetId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "presets",
+                                        ":presetId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        },
+                                        {
+                                          "key": "presetId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:57:50.000Z",
+                                  "updatedAt": "2026-07-28T02:57:50.000Z",
+                                  "uid": "35240-64026a2c-41f8-426d-ba75-f37ad2412896"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:57:50.000Z",
+                              "updatedAt": "2026-07-28T02:57:50.000Z",
+                              "uid": "35240-6f234c61-0631-4a7d-acbc-8b80f7614e63"
+                            },
+                            {
+                              "name": "Remove Preset from Card",
+                              "id": "cb6a4e68-b186-410c-8e33-1acb28bb1b0b",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/:cardId/presets/:presetId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    ":cardId",
+                                    "presets",
+                                    ":presetId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "f03cbd12-3fd5-4bfa-9401-3c27efdceb5c",
+                                      "key": "cardId",
+                                      "value": "<string>",
+                                      "description": "(Required) The `Card` ID."
+                                    },
+                                    {
+                                      "id": "4243886b-b7dd-4bea-a115-22cccac12ac5",
+                                      "key": "presetId",
+                                      "value": "<string>",
+                                      "description": "(Required) The `CardRulePreset` ID."
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to remove a `CardRulePreset` from a `Card`."
+                              },
+                              "response": [
+                                {
+                                  "id": "df2e3cf8-9a83-4d40-a2ff-f8197e34fdbf",
+                                  "name": "No content as result.",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/presets/:presetId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "presets",
+                                        ":presetId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        },
+                                        {
+                                          "key": "presetId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "No Content",
+                                  "code": 204,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:57:50.000Z",
+                                  "updatedAt": "2026-07-28T02:57:50.000Z",
+                                  "uid": "35240-df2e3cf8-9a83-4d40-a2ff-f8197e34fdbf"
+                                },
+                                {
+                                  "id": "6920838b-688e-4008-9baf-eb8e493d5483",
+                                  "name": "Your request has missing arguments or is malformed.",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/presets/:presetId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "presets",
+                                        ":presetId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        },
+                                        {
+                                          "key": "presetId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:57:50.000Z",
+                                  "updatedAt": "2026-07-28T02:57:50.000Z",
+                                  "uid": "35240-6920838b-688e-4008-9baf-eb8e493d5483"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:57:50.000Z",
+                              "updatedAt": "2026-07-28T02:57:50.000Z",
+                              "uid": "35240-cb6a4e68-b186-410c-8e33-1acb28bb1b0b"
+                            }
+                          ],
+                          "id": "17ee9202-cd9d-4550-94cc-1beba152d1d2",
+                          "createdAt": "2026-07-28T02:57:50.000Z",
+                          "updatedAt": "2026-07-28T02:57:50.000Z",
+                          "uid": "35240-17ee9202-cd9d-4550-94cc-1beba152d1d2"
+                        }
+                      ],
+                      "id": "35c2c325-ecdb-49db-87fa-8e3ccec57093",
+                      "createdAt": "2026-07-28T02:57:50.000Z",
+                      "updatedAt": "2026-07-28T02:57:50.000Z",
+                      "uid": "35240-35c2c325-ecdb-49db-87fa-8e3ccec57093"
+                    }
+                  ],
+                  "id": "4ac35677-cb0f-45a5-87c9-b059a88a24c8",
+                  "createdAt": "2026-07-28T02:57:50.000Z",
+                  "updatedAt": "2026-07-28T02:57:50.000Z",
+                  "uid": "35240-4ac35677-cb0f-45a5-87c9-b059a88a24c8"
+                }
+              ],
+              "id": "28cc9ee7-7edc-4302-884b-34aa94f3258c",
+              "createdAt": "2026-07-28T02:57:50.000Z",
+              "updatedAt": "2026-07-28T02:57:50.000Z",
+              "uid": "35240-28cc9ee7-7edc-4302-884b-34aa94f3258c"
+            }
+          ],
+          "id": "0eaf40eb-967d-440b-b6a5-641d0b77c8f7",
+          "createdAt": "2026-07-28T02:57:50.000Z",
+          "updatedAt": "2026-07-28T02:57:50.000Z",
+          "uid": "35240-0eaf40eb-967d-440b-b6a5-641d0b77c8f7"
+        }
+      ],
+      "id": "024ae1ff-d03f-4442-b9b8-ab089df6be04",
+      "createdAt": "2026-07-28T02:57:50.000Z",
+      "updatedAt": "2026-07-28T02:57:50.000Z",
+      "uid": "35240-024ae1ff-d03f-4442-b9b8-ab089df6be04"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

@@ -1,0 +1,373 @@
+{
+  "info": {
+    "_postman_id": "5450af8d-6693-46dd-9a81-5f1a027c973e",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Transaction Expense Category API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:50.000Z",
+    "updatedAt": "2026-07-28T02:58:50.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-5450af8d-6693-46dd-9a81-5f1a027c973e"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "transactions",
+              "item": [
+                {
+                  "name": "{transactionId}",
+                  "item": [
+                    {
+                      "name": "expense-category",
+                      "item": [
+                        {
+                          "name": "{expenseCategoryId}",
+                          "item": [
+                            {
+                              "name": "Add Expense Category to Transaction",
+                              "id": "ea97d7b7-c868-4196-b2e1-fc655ca8a0f4",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/expense-category/:expenseCategoryId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "expense-category",
+                                    ":expenseCategoryId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "86a9799a-1e03-4f33-ae65-500647d5e62b",
+                                      "key": "transactionId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "12aaa760-cc10-4c82-8283-6e4e3c00dde5",
+                                      "key": "expenseCategoryId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to assign an `ExpenseCategory` to a `Transaction`."
+                              },
+                              "response": [
+                                {
+                                  "id": "288563cf-65d7-4f9c-9aa3-8597cd06814d",
+                                  "name": "No content as result.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/expense-category/:expenseCategoryId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "expense-category",
+                                        ":expenseCategoryId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "expenseCategoryId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "No Content",
+                                  "code": 204,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:51.000Z",
+                                  "updatedAt": "2026-07-28T02:58:51.000Z",
+                                  "uid": "35240-288563cf-65d7-4f9c-9aa3-8597cd06814d"
+                                },
+                                {
+                                  "id": "ebee007c-c267-4be4-8e49-869a03a3e1d1",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/expense-category/:expenseCategoryId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "expense-category",
+                                        ":expenseCategoryId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "expenseCategoryId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:51.000Z",
+                                  "updatedAt": "2026-07-28T02:58:51.000Z",
+                                  "uid": "35240-ebee007c-c267-4be4-8e49-869a03a3e1d1"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:51.000Z",
+                              "updatedAt": "2026-07-28T02:58:51.000Z",
+                              "uid": "35240-ea97d7b7-c868-4196-b2e1-fc655ca8a0f4"
+                            }
+                          ],
+                          "id": "781b3fb9-90cc-4b88-ac02-fc3f470def61",
+                          "createdAt": "2026-07-28T02:58:51.000Z",
+                          "updatedAt": "2026-07-28T02:58:51.000Z",
+                          "uid": "35240-781b3fb9-90cc-4b88-ac02-fc3f470def61"
+                        },
+                        {
+                          "name": "Remove Expense Category from Transaction",
+                          "id": "0ef82bf9-c0be-4f27-a09e-46079842a3e6",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/expense-category",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "transactions",
+                                ":transactionId",
+                                "expense-category"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "f17e5552-1c4a-40df-b530-b4a0702a991c",
+                                  "key": "transactionId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to remove the `Transaction`'s `ExpenseCategory`"
+                          },
+                          "response": [
+                            {
+                              "id": "91ff457e-a8d6-4e32-8422-680146d50d7b",
+                              "name": "No content as result.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/expense-category",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "expense-category"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "transactionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:51.000Z",
+                              "updatedAt": "2026-07-28T02:58:51.000Z",
+                              "uid": "35240-91ff457e-a8d6-4e32-8422-680146d50d7b"
+                            },
+                            {
+                              "id": "7412a30e-460e-402b-babc-620680fe1e63",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/expense-category",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "expense-category"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "transactionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:51.000Z",
+                              "updatedAt": "2026-07-28T02:58:51.000Z",
+                              "uid": "35240-7412a30e-460e-402b-babc-620680fe1e63"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:51.000Z",
+                          "updatedAt": "2026-07-28T02:58:51.000Z",
+                          "uid": "35240-0ef82bf9-c0be-4f27-a09e-46079842a3e6"
+                        }
+                      ],
+                      "id": "ed7c6c4c-51be-4f71-aa5c-71f7c584c8ed",
+                      "createdAt": "2026-07-28T02:58:51.000Z",
+                      "updatedAt": "2026-07-28T02:58:51.000Z",
+                      "uid": "35240-ed7c6c4c-51be-4f71-aa5c-71f7c584c8ed"
+                    }
+                  ],
+                  "id": "917a6174-6f90-441b-a8a6-8f9b43093020",
+                  "createdAt": "2026-07-28T02:58:51.000Z",
+                  "updatedAt": "2026-07-28T02:58:51.000Z",
+                  "uid": "35240-917a6174-6f90-441b-a8a6-8f9b43093020"
+                }
+              ],
+              "id": "caee4028-6f13-41bd-9665-47bff38f5c0c",
+              "createdAt": "2026-07-28T02:58:51.000Z",
+              "updatedAt": "2026-07-28T02:58:51.000Z",
+              "uid": "35240-caee4028-6f13-41bd-9665-47bff38f5c0c"
+            }
+          ],
+          "id": "85feb1e3-945d-4d03-bd1f-fcc9cd9e7af1",
+          "createdAt": "2026-07-28T02:58:51.000Z",
+          "updatedAt": "2026-07-28T02:58:51.000Z",
+          "uid": "35240-85feb1e3-945d-4d03-bd1f-fcc9cd9e7af1"
+        }
+      ],
+      "id": "8f3cca2f-96f9-4ec3-a9b9-9b0d189c56f9",
+      "createdAt": "2026-07-28T02:58:51.000Z",
+      "updatedAt": "2026-07-28T02:58:51.000Z",
+      "uid": "35240-8f3cca2f-96f9-4ec3-a9b9-9b0d189c56f9"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

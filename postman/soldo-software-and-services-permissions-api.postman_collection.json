@@ -1,0 +1,144 @@
+{
+  "info": {
+    "_postman_id": "95bbc9a7-99e0-4a2f-b786-0d14eb6c0e5e",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Permissions API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:32.000Z",
+    "updatedAt": "2026-07-28T02:58:32.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-95bbc9a7-99e0-4a2f-b786-0d14eb6c0e5e"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "roles",
+              "item": [
+                {
+                  "name": "Get Roles",
+                  "id": "e15b9091-aaa1-4cb7-9d07-fb78b04c80b2",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/roles",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "roles"
+                      ]
+                    },
+                    "description": "Endpoint to retrieve all `User` `Roles`."
+                  },
+                  "response": [
+                    {
+                      "id": "a7ccd232-068e-41e1-bbc7-32fe58fb9761",
+                      "name": "The result is an array of `UserRoles`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/roles",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "roles"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"category\": \"<string>\",\n      \"scopes\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"category\": \"<string>\",\n      \"scopes\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:58:33.000Z",
+                      "updatedAt": "2026-07-28T02:58:33.000Z",
+                      "uid": "35240-a7ccd232-068e-41e1-bbc7-32fe58fb9761"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:58:33.000Z",
+                  "updatedAt": "2026-07-28T02:58:33.000Z",
+                  "uid": "35240-e15b9091-aaa1-4cb7-9d07-fb78b04c80b2"
+                }
+              ],
+              "id": "8250ce81-84b5-473e-89ab-47725ca3de36",
+              "createdAt": "2026-07-28T02:58:33.000Z",
+              "updatedAt": "2026-07-28T02:58:33.000Z",
+              "uid": "35240-8250ce81-84b5-473e-89ab-47725ca3de36"
+            }
+          ],
+          "id": "8669cffc-bed6-4b0a-beb3-3e0e0e47b751",
+          "createdAt": "2026-07-28T02:58:33.000Z",
+          "updatedAt": "2026-07-28T02:58:33.000Z",
+          "uid": "35240-8669cffc-bed6-4b0a-beb3-3e0e0e47b751"
+        }
+      ],
+      "id": "d7ebb6b5-5749-47f9-9681-6908a87a88a5",
+      "createdAt": "2026-07-28T02:58:33.000Z",
+      "updatedAt": "2026-07-28T02:58:33.000Z",
+      "uid": "35240-d7ebb6b5-5749-47f9-9681-6908a87a88a5"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

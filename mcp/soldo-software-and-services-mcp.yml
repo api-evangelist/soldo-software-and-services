@@ -1,0 +1,952 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/soldo-software-and-services-business-api-openapi.json
+note: No official Soldo MCP server was found. This is a candidate tool surface derived one-to-one from
+  the 235 Soldo Business API operations, for building an MCP wrapper. Not an endorsed/hosted server.
+server:
+  name: soldo-business-api
+  transport: stdio
+  auth: oauth2 client_credentials (standardAuth); advanced operations require X-Soldo-Fingerprint + X-Soldo-Fingerprint-Signature
+tool_count: 235
+tools:
+- name: authorize
+  description: Authenticate
+  tag: Authentication
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#authorize
+- name: online_ads_get
+  description: Get Online Ads
+  tag: Online Ads
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#online-ads-get
+- name: online_ads_update
+  description: Update Online Ads
+  tag: Online Ads
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#online-ads-update
+- name: online_ads_activate
+  description: Activate Online Ads
+  tag: Online Ads
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#online-ads-activate
+- name: online_ads_delete
+  description: Delete Online Ads
+  tag: Online Ads
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#online-ads-delete
+- name: subscription_get
+  description: Get Subscription
+  tag: Subscriptions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#subscription-get
+- name: subscription_update
+  description: Update Subscription
+  tag: Subscriptions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#subscription-update
+- name: subscription_activate
+  description: Activate Subscription
+  tag: Subscriptions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#subscription-activate
+- name: subscription_delete
+  description: Delete Subscription
+  tag: Subscriptions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#subscription-delete
+- name: address_search
+  description: Search Addresses
+  tag: Addresses
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#address-search
+- name: address_add
+  description: Add Address
+  tag: Addresses
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#address-add
+- name: expense_policy_assignees_get
+  description: Get Expense Policy Assignees
+  tag: Expense Policies
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-policy-assignees-get
+- name: expense_policy_assignees_add
+  description: Assign Expense Policy to Users
+  tag: Expense Policies
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-policy-assignees-add
+- name: expense_policy_assignees_remove
+  description: Unassign Expense Policy from Users
+  tag: Expense Policies
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-policy-assignees-remove
+- name: autotag_search
+  description: Search Autotags
+  tag: Autotags
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#autotag-search
+- name: autotag_add
+  description: Add Autotag
+  tag: Autotags
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#autotag-add
+- name: business_trip_search
+  description: Search BusinessTrips
+  tag: Business Trips
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#business-trip-search
+- name: business_trip_add
+  description: Add Business Trip
+  tag: Business Trips
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#business-trip-add
+- name: card_search
+  description: Search Cards
+  tag: Cards
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-search
+- name: card_add
+  description: Add Card
+  tag: Cards
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-add
+- name: contact_search
+  description: Search Contacts
+  tag: Contacts
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#contact-search
+- name: contact_add
+  description: Add Contact
+  tag: Contacts
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#contact-add
+- name: out_of_office_search
+  description: Search Out of Office
+  tag: Out of Office
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#out-of-office-search
+- name: out_of_office_add
+  description: Add Out of Office
+  tag: Out of Office
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#out-of-office-add
+- name: expense_category_search
+  description: Search Expense Categories
+  tag: Accounting Classification
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-category-search
+- name: expense_category_add
+  description: Add Expense Category
+  tag: Expense Categories
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-category-add
+- name: expense_review_processes_search
+  description: Search Expense Review Processes
+  tag: Expense Review Processes
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-review-processes-search
+- name: expense_review_process_add
+  description: Add Expense Review Process
+  tag: Expense Review Processes
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-review-process-add
+- name: expense_review_configuration_get
+  description: Get Expense Review Configuration
+  tag: Expense Review Configuration
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-review-configuration-get
+- name: expense_review_configuration_update
+  description: Update Expense Review Configuration
+  tag: Expense Review Configuration
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-review-configuration-update
+- name: expense_review_configuration_add
+  description: Add Expense Review Configuration
+  tag: Expense Review Configuration
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-review-configuration-add
+- name: group_search
+  description: Search Groups
+  tag: Groups
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#group-search
+- name: group_add
+  description: Add Group
+  tag: Groups
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#group-add
+- name: list_search
+  description: Search Lists
+  tag: Lists
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#list-search
+- name: list_add
+  description: Add List
+  tag: Lists
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#list-add
+- name: online_ads_assignees_add
+  description: Add assignees to Online Ads
+  tag: Online Ads
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#online-ads-assignees-add
+- name: pre_approved_spend_search
+  description: Search Purchases
+  tag: Pre-approved Spend
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#pre-approved-spend-search
+- name: pre_approved_spend_add
+  description: Add Purchase
+  tag: Pre-approved Spend
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#pre-approved-spend-add
+- name: request_search
+  description: Search Requests
+  tag: Requests
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#request-search
+- name: request_add
+  description: Add request
+  tag: Requests
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#request-add
+- name: resource_set_search
+  description: Search Resource Sets
+  tag: Resource Sets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#resource-set-search
+- name: resource_set_add
+  description: Add Resource Set
+  tag: Resource Sets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#resource-set-add
+- name: group_resource_add
+  description: Add Resource To Group
+  tag: Groups
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#group-resource-add
+- name: group_resource_remove
+  description: Remove resource from Group
+  tag: Groups
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#group-resource-remove
+- name: subscription_assignees_add
+  description: Add assignees to Subscription
+  tag: Subscriptions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#subscription-assignees-add
+- name: tag_search
+  description: Search Tags
+  tag: Tags
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#tag-search
+- name: tag_add
+  description: Add Tag to List
+  tag: Tags
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#tag-add
+- name: tags_update_bulk
+  description: Update Tag bulk
+  tag: Tags
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#tags-update-bulk
+- name: tags_add_bulk
+  description: Add Tag bulk to List
+  tag: Tags
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#tags-add-bulk
+- name: vat_rate_search
+  description: Search VAT Rates
+  tag: VAT Rates
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#vat-rate-search
+- name: vat_rate_add
+  description: Add VAT Rate
+  tag: VAT Rates
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#vat-rate-add
+- name: transaction_export_add
+  description: Add Bulk TransactionCustomExport
+  tag: Transaction Custom Export
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-export-add
+- name: transaction_metadata_get
+  description: Get Transaction Metadata
+  tag: Transaction Metadata
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-metadata-get
+- name: transaction_metadata_update
+  description: Update Transaction Metadata
+  tag: Transaction Metadata
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-metadata-update
+- name: transaction_metadata_add
+  description: Add Transaction Metadata
+  tag: Transaction Metadata
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-metadata-add
+- name: transaction_metadata_delete
+  description: Delete Transaction Metadata
+  tag: Transaction Metadata
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-metadata-delete
+- name: transaction_tag_add
+  description: Add Tag to Transaction
+  tag: Transaction Tags
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-tag-add
+- name: transaction_tag_remove
+  description: Remove Tag from Transaction
+  tag: Transaction Tags
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-tag-remove
+- name: vehicle_search
+  description: Search Vehicle
+  tag: Vehicles
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#vehicle-search
+- name: vehicle_add
+  description: Add Vehicle
+  tag: Vehicles
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#vehicle-add
+- name: wallet_search
+  description: Search Wallets
+  tag: Wallets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#wallet-search
+- name: wallet_add
+  description: Add Wallet
+  tag: Wallets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#wallet-add
+- name: wallet_auto_transfer_preset_set
+  description: Add wallets to Auto-transfer Preset
+  tag: Auto-Transfer Presets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#wallet-auto-transfer-preset-set
+- name: webhook_subscription_search
+  description: Search Webhook Subscriptions
+  tag: Webhook Subscriptions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#webhook-subscription-search
+- name: webhook_subscription_add
+  description: Add Webhook Subscription
+  tag: Webhook Subscriptions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#webhook-subscription-add
+- name: workflow_search
+  description: Search Workflows
+  tag: Workflows
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#workflow-search
+- name: workflow_add
+  description: Add Workflow
+  tag: Workflows
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#workflow-add
+- name: request_approve
+  description: Approve Request
+  tag: Requests
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#request-approve
+- name: user_role_set
+  description: Add roles to User
+  tag: User Roles
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#user-role-set
+- name: autotag_get
+  description: Get Autotag
+  tag: Autotags
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#autotag-get
+- name: autotag_update
+  description: Update Autotag
+  tag: Autotags
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#autotag-update
+- name: autotag_delete
+  description: Delete Autotag
+  tag: Autotags
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#autotag-delete
+- name: roles_list
+  description: Get Roles
+  tag: Permissions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#roles-list
+- name: business_trip_get
+  description: Get BusinessTrip
+  tag: Business Trips
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#business-trip-get
+- name: business_trip_delete
+  description: Delete BusinessTrip
+  tag: Business Trips
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#business-trip-delete
+- name: card_get
+  description: Get Card
+  tag: Cards
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-get
+- name: card_update
+  description: Update Card
+  tag: Cards
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-update
+- name: card_delete
+  description: Delete Card
+  tag: Cards
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-delete
+- name: card_rule_cashpoint_get
+  description: Get CashPoint Rules
+  tag: Card Rules
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-rule-cashpoint-get
+- name: card_rule_countries_get
+  description: Get Countries Rules
+  tag: Card Rules
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-rule-countries-get
+- name: card_rule_countries_set
+  description: Set Countries Rules
+  tag: Card Rules
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-rule-countries-set
+- name: card_rule_merchant_categories_get
+  description: Get Merchant Categories Rules
+  tag: Card Rules
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-rule-merchant-categories-get
+- name: card_rule_merchant_categories_set
+  description: Set Merchant Categories Rules
+  tag: Card Rules
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-rule-merchant-categories-set
+- name: card_rule_spending_limits_get
+  description: Get Spending Limits Rules
+  tag: Card Rules
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-rule-spending-limits-get
+- name: card_wallet_switch
+  description: Switch Card Wallet
+  tag: Cards
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-wallet-switch
+- name: expense_review_process_priority_change
+  description: Change Expense Review Processes Priority
+  tag: Expense Review Processes
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-review-process-priority-change
+- name: company_get
+  description: Get Company
+  tag: Company
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#company-get
+- name: business_trip_complete_transfer
+  description: Complete Business Trip Transfer
+  tag: Business Trips
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#business-trip-complete-transfer
+- name: document_upload_confirm
+  description: Confirm Document Upload
+  tag: Documents
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#document-upload-confirm
+- name: transaction_attachment_get
+  description: Get Transaction Attachment
+  tag: Transaction Attachments
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-attachment-get
+- name: transaction_attachment_metadata_update
+  description: Update Transaction Attachment Metadata
+  tag: Transaction Attachments
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-attachment-metadata-update
+- name: transaction_attachment_upload_confirm
+  description: Confirm Transaction Attachment Upload
+  tag: Transaction Attachments
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-attachment-upload-confirm
+- name: transaction_attachment_delete
+  description: Delete Transaction Attachment
+  tag: Transaction Attachments
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-attachment-delete
+- name: contact_get
+  description: Get Contact
+  tag: Contacts
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#contact-get
+- name: contact_update
+  description: Update Contact
+  tag: Contacts
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#contact-update
+- name: contact_delete
+  description: Delete Contact
+  tag: Contacts
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#contact-delete
+- name: user_create
+  description: Create User
+  tag: Users
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#user-create
+- name: mileage_reimbursement_transaction_create
+  description: Create Mileage Reimbursement Transaction
+  tag: Transactions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#mileage-reimbursement-transaction-create
+- name: online_ads_search
+  description: Search Online Ads
+  tag: Online Ads
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#online-ads-search
+- name: online_ads_add
+  description: Add Online Ads
+  tag: Online Ads
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#online-ads-add
+- name: out_of_platform_transaction_create
+  description: Create Out-Of-Platform Transaction
+  tag: Transactions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#out-of-platform-transaction-create
+- name: subscription_search
+  description: Search Subscriptions
+  tag: Subscriptions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#subscription-search
+- name: subscription_add
+  description: Add Subscription
+  tag: Subscriptions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#subscription-add
+- name: transaction_split_update
+  description: Update Transaction Split
+  tag: Transaction Split
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-split-update
+- name: transaction_split_create
+  description: Create Transaction Split
+  tag: Transaction Split
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-split-create
+- name: transaction_split_delete
+  description: Delete Transaction Split
+  tag: Transaction Split
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-split-delete
+- name: wallet_create
+  description: Create Wallet
+  tag: Wallets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#wallet-create
+- name: request_decline
+  description: Decline Request
+  tag: Requests
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#request-decline
+- name: out_of_office_get
+  description: Get Out of Office
+  tag: Out of Office
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#out-of-office-get
+- name: out_of_office_update
+  description: Update Out of Office
+  tag: Out of Office
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#out-of-office-update
+- name: out_of_office_delete
+  description: Delete Out of Office
+  tag: Out of Office
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#out-of-office-delete
+- name: address_get
+  description: Get Address
+  tag: Addresses
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#address-get
+- name: address_update
+  description: Update Address
+  tag: Addresses
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#address-update
+- name: address_delete
+  description: Delete Address
+  tag: Addresses
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#address-delete
+- name: card_rule_cashpoint_set
+  description: Set CashPoint Rules
+  tag: Card Rules
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-rule-cashpoint-set
+- name: card_rule_cashpoint_unset
+  description: Unset CashPoint Rules
+  tag: Card Rules
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-rule-cashpoint-unset
+- name: card_rule_preset_get
+  description: Get Preset
+  tag: Card Rules Presets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-rule-preset-get
+- name: card_rule_preset_delete
+  description: Delete Preset
+  tag: Card Rules Presets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-rule-preset-delete
+- name: card_rule_spending_limits_set
+  description: Set Spending Limits Rules
+  tag: Card Rules
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-rule-spending-limits-set
+- name: card_rule_spending_limits_unset
+  description: Unset Spending Limits Rules
+  tag: Card Rules
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-rule-spending-limits-unset
+- name: document_get
+  description: Get Document
+  tag: Documents
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#document-get
+- name: document_delete
+  description: Delete Document
+  tag: Documents
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#document-delete
+- name: user_get
+  description: Get User
+  tag: Users
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#user-get
+- name: user_update
+  description: Update User
+  tag: Users
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#user-update
+- name: user_delete
+  description: Delete User
+  tag: Users
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#user-delete
+- name: expense_category_get
+  description: Get Expense Category
+  tag: Expense Categories
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-category-get
+- name: expense_category_update
+  description: Update Expense Category
+  tag: Expense Categories
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-category-update
+- name: expense_category_delete
+  description: Delete Expense Category
+  tag: Expense Categories
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-category-delete
+- name: expense_report_get
+  description: Get Expense Report
+  tag: Expense Reports
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-report-get
+- name: expense_report_update
+  description: Update Expense Report
+  tag: Expense Reports
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-report-update
+- name: expense_report_delete
+  description: Delete Expense Report
+  tag: Expense Reports
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-report-delete
+- name: expense_review_process_get
+  description: Get Expense Review Process
+  tag: Expense Review Processes
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-review-process-get
+- name: expense_review_process_update
+  description: Update Expense Review Process
+  tag: Expense Review Processes
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-review-process-update
+- name: expense_review_process_delete
+  description: Delete Expense Review Process
+  tag: Expense Review Processes
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-review-process-delete
+- name: group_get
+  description: Get Group
+  tag: Groups
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#group-get
+- name: group_update
+  description: Update Group
+  tag: Groups
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#group-update
+- name: group_delete
+  description: Delete Group
+  tag: Groups
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#group-delete
+- name: list_get
+  description: Get List
+  tag: Lists
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#list-get
+- name: list_update
+  description: Update List
+  tag: Lists
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#list-update
+- name: list_delete
+  description: Delete List
+  tag: Lists
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#list-delete
+- name: mileage_reimbursement_transaction_get
+  description: Get Mileage Reimbursement Transaction
+  tag: Transactions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#mileage-reimbursement-transaction-get
+- name: mileage_reimbursement_transaction_update
+  description: Update Mileage Reimbursement Transaction
+  tag: Transactions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#mileage-reimbursement-transaction-update
+- name: mileage_reimbursement_transaction_delete
+  description: Delete Mileage Reimbursement Transaction
+  tag: Transactions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#mileage-reimbursement-transaction-delete
+- name: order_get
+  description: Get Order
+  tag: Orders
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#order-get
+- name: order_delete
+  description: Delete Order
+  tag: Orders
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#order-delete
+- name: out_of_platform_transaction_get
+  description: Get Out-Of-Platform Transaction
+  tag: Transactions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#out-of-platform-transaction-get
+- name: out_of_platform_transaction_update
+  description: Update Out-Of-Platform Transaction
+  tag: Transactions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#out-of-platform-transaction-update
+- name: out_of_platform_transaction_delete
+  description: Delete Out-Of-Platform Transaction
+  tag: Transactions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#out-of-platform-transaction-delete
+- name: pre_approved_spend_get
+  description: Get Purchases
+  tag: Pre-approved Spend
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#pre-approved-spend-get
+- name: pre_approved_spend_update
+  description: Update Purchase
+  tag: Pre-approved Spend
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#pre-approved-spend-update
+- name: pre_approved_spend_delete
+  description: Delete Purchase
+  tag: Pre-approved Spend
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#pre-approved-spend-delete
+- name: request_get
+  description: Get Request
+  tag: Requests
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#request-get
+- name: request_update
+  description: Update Request
+  tag: Requests
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#request-update
+- name: request_delete
+  description: Delete Request
+  tag: Requests
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#request-delete
+- name: resource_set_get
+  description: Get Resource Set
+  tag: Resource Sets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#resource-set-get
+- name: resource_set_update
+  description: Update Resource Set
+  tag: Resource Sets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#resource-set-update
+- name: resource_set_delete
+  description: Delete Resource Set
+  tag: Resource Sets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#resource-set-delete
+- name: tag_get
+  description: Get Tag
+  tag: Tags
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#tag-get
+- name: tag_update
+  description: Update Tag
+  tag: Tags
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#tag-update
+- name: tag_delete
+  description: Delete Tag from List
+  tag: Tags
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#tag-delete
+- name: vat_rate_get
+  description: Get VAT Rate
+  tag: VAT Rates
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#vat-rate-get
+- name: vat_rate_update
+  description: Update VAT Rate
+  tag: VAT Rates
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#vat-rate-update
+- name: vat_rate_delete
+  description: Delete VAT Rate
+  tag: VAT Rates
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#vat-rate-delete
+- name: vehicle_get
+  description: Get Vehicle
+  tag: Vehicles
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#vehicle-get
+- name: vehicle_update
+  description: Update Vehicle
+  tag: Vehicles
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#vehicle-update
+- name: vehicle_delete
+  description: Delete Vehicle
+  tag: Vehicles
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#vehicle-delete
+- name: webhook_subscription_update
+  description: Update Webhook Subscription
+  tag: Webhook Subscriptions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#webhook-subscription-update
+- name: webhook_subscription_delete
+  description: Delete Webhook Subscription
+  tag: Webhook Subscriptions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#webhook-subscription-delete
+- name: workflow_get
+  description: Get Workflow
+  tag: Workflows
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#workflow-get
+- name: workflow_update
+  description: Update Workflow
+  tag: Workflows
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#workflow-update
+- name: workflow_delete
+  description: Delete Workflow
+  tag: Workflows
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#workflow-delete
+- name: document_upload
+  description: Upload Document
+  tag: Documents
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#document-upload
+- name: user_role_get
+  description: Get User Roles
+  tag: User Roles
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#user-role-get
+- name: user_search
+  description: Search Users
+  tag: Users
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#user-search
+- name: expense_report_download
+  description: Download Expense Report
+  tag: Expense Reports
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-report-download
+- name: expense_review_get
+  description: Get Expense Review
+  tag: Expense Reviews
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-review-get
+- name: expense_review_reminder
+  description: Send Expense Review Reminder
+  tag: Expense Reviews
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-review-reminder
+- name: expense_review_export
+  description: Export Expense Review
+  tag: Expense Reviews
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-review-export
+- name: card_rules_get
+  description: Get Card Rules
+  tag: Card Rules
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-rules-get
+- name: card_rules_set
+  description: Set Card Rules
+  tag: Card Rules
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-rules-set
+- name: expense_policy_get
+  description: Get Expense Policy
+  tag: Expense Policies
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-policy-get
+- name: transaction_metadata_search
+  description: Search Transaction Metadata
+  tag: Transaction Metadata
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-metadata-search
+- name: wallet_auto_transfer_preset_get
+  description: Get Auto-transfer Preset
+  tag: Auto-Transfer Presets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#wallet-auto-transfer-preset-get
+- name: wallet_internal_transfer
+  description: Make Internal Transfer
+  tag: Wallets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#wallet-internal-transfer
+- name: transaction_attachment_search
+  description: Search Transaction Attachments
+  tag: Transaction Attachments
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-attachment-search
+- name: transaction_attachment_upload
+  description: Upload Transaction Attachment
+  tag: Transaction Attachments
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-attachment-upload
+- name: order_search
+  description: Search Orders
+  tag: Orders
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#order-search
+- name: expense_review_process_recalculate
+  description: Recalculate Expense Review Process
+  tag: Expense Review Processes
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-review-process-recalculate
+- name: pre_approved_spend_redeem
+  description: Redeem Purchase
+  tag: Pre-approved Spend
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#pre-approved-spend-redeem
+- name: refueling_get
+  description: Get Refueling Transaction
+  tag: Refueling Transactions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#refueling-get
+- name: refueling_update
+  description: Update Refueling Transaction
+  tag: Refueling Transactions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#refueling-update
+- name: refueling_search
+  description: Search Refueling Transactions
+  tag: Refueling Transactions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#refueling-search
+- name: expense_policy_assignees_remove_any
+  description: Unassign any Expense Policy from Users
+  tag: Expense Policies
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-policy-assignees-remove-any
+- name: online_ads_assignees_remove
+  description: Remove assignees from Online Ads
+  tag: Online Ads
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#online-ads-assignees-remove
+- name: subscription_assignees_remove
+  description: Remove assignees from Subscription
+  tag: Subscriptions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#subscription-assignees-remove
+- name: transaction_export_remove
+  description: Remove Bulk TransactionCustomExport
+  tag: Transaction Custom Export
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-export-remove
+- name: transaction_expense_category_unset
+  description: Remove Expense Category from Transaction
+  tag: Transaction Expense Category
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-expense-category-unset
+- name: transaction_tax_rate_unset
+  description: Remove VAT Rate from Transaction
+  tag: Transaction VAT Rate
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-tax-rate-unset
+- name: wallet_get
+  description: Get Wallet
+  tag: Wallets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#wallet-get
+- name: wallet_update
+  description: Update Wallet
+  tag: Wallets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#wallet-update
+- name: wallet_delete
+  description: Delete Wallet
+  tag: Wallets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#wallet-delete
+- name: wallet_auto_transfer_preset_delete
+  description: Delete Auto-transfer Preset
+  tag: Auto-Transfer Presets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#wallet-auto-transfer-preset-delete
+- name: transaction_export_get
+  description: Retrieve Bulk TransactionCustomExport
+  tag: Transaction Custom Export
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-export-get
+- name: user_access_modes_get
+  description: Retrieve User Access Modes
+  tag: Users
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#user-access-modes-get
+- name: user_access_modes_update
+  description: Update User Access Modes
+  tag: Users
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#user-access-modes-update
+- name: card_rule_preset_search
+  description: Search Presets
+  tag: Card Rules Presets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-rule-preset-search
+- name: document_search
+  description: Search Documents
+  tag: Documents
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#document-search
+- name: expense_policy_search
+  description: Search Expense Policies
+  tag: Expense Policies
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-policy-search
+- name: expense_review_search
+  description: Search Expense Reviews
+  tag: Expense Reviews
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-review-search
+- name: expense_report_search
+  description: Search Expense Reports
+  tag: Expense Reports
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-report-search
+- name: transaction_export_search
+  description: Search TransactionCustomExport
+  tag: Transaction Custom Export
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-export-search
+- name: wallet_auto_transfer_presets_search
+  description: Search Auto-transfer Presets
+  tag: Auto-Transfer Presets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#wallet-auto-transfer-presets-search
+- name: card_rule_preset_set
+  description: Add Preset to Card
+  tag: Card Rules Presets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-rule-preset-set
+- name: card_rule_preset_unset
+  description: Remove Preset from Card
+  tag: Card Rules Presets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#card-rule-preset-unset
+- name: transaction_expense_category_set
+  description: Add Expense Category to Transaction
+  tag: Transaction Expense Category
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-expense-category-set
+- name: transaction_tax_rate_set
+  description: Add VAT Rate to Transaction
+  tag: Transactions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-tax-rate-set
+- name: statement_download
+  description: Download Statement
+  tag: Statements
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#statement-download
+- name: statement_search
+  description: Search Statements
+  tag: Statements
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#statement-search
+- name: transaction_get
+  description: Get Transaction
+  tag: Transactions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-get
+- name: transaction_update
+  description: Update Transaction
+  tag: Transactions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-update
+- name: transaction_search
+  description: Search Transactions
+  tag: Transactions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#transaction-search
+- name: user_role_unset
+  description: Remove roles from User
+  tag: User Roles
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#user-role-unset
+- name: wallet_auto_transfer_preset_unset
+  description: Remove Wallets from Auto-transfer Preset
+  tag: Auto-Transfer Presets
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#wallet-auto-transfer-preset-unset
+- name: business_trip_update_details
+  description: Update BusinessTrip Details
+  tag: Business Trips
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#business-trip-update-details
+- name: business_trip_update_expenses
+  description: Update BusinessTrip Expense Allocation
+  tag: Business Trips
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#business-trip-update-expenses
+- name: business_trip_update_post_actions
+  description: Update BusinessTrip Post Actions
+  tag: Business Trips
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#business-trip-update-post-actions
+- name: business_trip_update_tags
+  description: Update BusinessTrip Tags
+  tag: Business Trips
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#business-trip-update-tags
+- name: expense_review_update_type
+  description: Update Expense Review Type
+  tag: Expense Reviews
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-review-update-type
+- name: expense_review_process_status_update
+  description: Update Expense Review Process Status
+  tag: Expense Review Processes
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-review-process-status-update
+- name: expense_review_request_info
+  description: Request Expense Review Info
+  tag: Expense Reviews
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-review-request-info
+- name: expense_review_update_status
+  description: Update Expense Review Status
+  tag: Expense Reviews
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#expense-review-update-status
+- name: user_status_update
+  description: Update User Status
+  tag: Users
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#user-status-update
+- name: workflow_status_update
+  description: Update Workflow Status
+  tag: Workflows
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#workflow-status-update
+- name: webhook_subscription_get
+  description: Get Webhook Subscription
+  tag: Webhook Subscriptions
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#webhook-subscription-get
+- name: who_am_i
+  description: Get who am I
+  tag: Authentication
+  source_operation: openapi/soldo-software-and-services-business-api-openapi.json#who-am-i

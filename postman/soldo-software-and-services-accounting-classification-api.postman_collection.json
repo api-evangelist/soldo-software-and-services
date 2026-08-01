@@ -1,0 +1,292 @@
+{
+  "info": {
+    "_postman_id": "ac652ac8-c384-4221-9444-4096e6f4b8f8",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:57:38.000Z",
+    "updatedAt": "2026-07-28T02:57:39.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ac652ac8-c384-4221-9444-4096e6f4b8f8"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "entities",
+              "item": [
+                {
+                  "name": "expense-category",
+                  "item": [
+                    {
+                      "name": "Search Expense Categories",
+                      "id": "5b153e27-bffe-4c6f-99c2-d0ba76fd06fa",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/entities/expense-category?text=<string>&enabled=<boolean>&p=0&s=0&d=DESC&props=<string>&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "entities",
+                            "expense-category"
+                          ],
+                          "query": [
+                            {
+                              "description": "A simple text to search in the `ExpenseCategory` (`name` or `code`).",
+                              "key": "text",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It determines if `ExpenseCategory` is enabled.",
+                              "key": "enabled",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "DESC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to find `ExpenseCategories` using filtering parameters."
+                      },
+                      "response": [
+                        {
+                          "id": "d25202f9-d6d5-4543-b7d8-3bf8e73af57b",
+                          "name": "The result is an array containing `ExpenseCategories`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/entities/expense-category?text=<string>&enabled=<boolean>&p=0&s=0&d=DESC&props=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "entities",
+                                "expense-category"
+                              ],
+                              "query": [
+                                {
+                                  "description": "A simple text to search in the `ExpenseCategory` (`name` or `code`).",
+                                  "key": "text",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "It determines if `ExpenseCategory` is enabled.",
+                                  "key": "enabled",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "It indicates the specific page to display (the counter starts from zero).",
+                                  "key": "p",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates the number of items per page.",
+                                  "key": "s",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates how the pages are ordered.",
+                                  "key": "d",
+                                  "value": "DESC"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"tax_rate_id\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"merchant_categories\": [\n        \"Services_Social\",\n        \"Transport_Public_Transportation\"\n      ],\n      \"expense_type\": \"<string>\",\n      \"integration\": \"<string>\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"tax_rate_id\": \"<string>\",\n      \"enabled\": \"<boolean>\",\n      \"merchant_categories\": [\n        \"Travel_Car_Rental\",\n        \"Shopping_Direct_Marketing\"\n      ],\n      \"expense_type\": \"<string>\",\n      \"integration\": \"<string>\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:57:39.000Z",
+                          "updatedAt": "2026-07-28T02:57:39.000Z",
+                          "uid": "35240-d25202f9-d6d5-4543-b7d8-3bf8e73af57b"
+                        },
+                        {
+                          "id": "4d91bcd7-fc83-46fc-a459-02ec3d45d407",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/entities/expense-category?text=<string>&enabled=<boolean>&p=0&s=0&d=DESC&props=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "entities",
+                                "expense-category"
+                              ],
+                              "query": [
+                                {
+                                  "description": "A simple text to search in the `ExpenseCategory` (`name` or `code`).",
+                                  "key": "text",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "It determines if `ExpenseCategory` is enabled.",
+                                  "key": "enabled",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "It indicates the specific page to display (the counter starts from zero).",
+                                  "key": "p",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates the number of items per page.",
+                                  "key": "s",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates how the pages are ordered.",
+                                  "key": "d",
+                                  "value": "DESC"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:39.000Z",
+                          "updatedAt": "2026-07-28T02:57:39.000Z",
+                          "uid": "35240-4d91bcd7-fc83-46fc-a459-02ec3d45d407"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:39.000Z",
+                      "updatedAt": "2026-07-28T02:57:39.000Z",
+                      "uid": "35240-5b153e27-bffe-4c6f-99c2-d0ba76fd06fa"
+                    }
+                  ],
+                  "id": "a8e23910-ac7a-4bfe-8703-1c9693c5c37f",
+                  "createdAt": "2026-07-28T02:57:39.000Z",
+                  "updatedAt": "2026-07-28T02:57:39.000Z",
+                  "uid": "35240-a8e23910-ac7a-4bfe-8703-1c9693c5c37f"
+                }
+              ],
+              "id": "2e5f33ed-23f8-42fc-b102-5c7570a2a91f",
+              "createdAt": "2026-07-28T02:57:39.000Z",
+              "updatedAt": "2026-07-28T02:57:39.000Z",
+              "uid": "35240-2e5f33ed-23f8-42fc-b102-5c7570a2a91f"
+            }
+          ],
+          "id": "71a17006-0c9a-4596-b9bf-ba93c39b6207",
+          "createdAt": "2026-07-28T02:57:39.000Z",
+          "updatedAt": "2026-07-28T02:57:39.000Z",
+          "uid": "35240-71a17006-0c9a-4596-b9bf-ba93c39b6207"
+        }
+      ],
+      "id": "755f4c1d-e854-4428-a24e-c64b8edab206",
+      "createdAt": "2026-07-28T02:57:39.000Z",
+      "updatedAt": "2026-07-28T02:57:39.000Z",
+      "uid": "35240-755f4c1d-e854-4428-a24e-c64b8edab206"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

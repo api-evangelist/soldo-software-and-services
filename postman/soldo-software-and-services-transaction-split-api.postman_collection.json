@@ -1,0 +1,423 @@
+{
+  "info": {
+    "_postman_id": "ea50f073-ce0c-4d45-b02b-e358deacf097",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Transaction Split API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:56.000Z",
+    "updatedAt": "2026-07-28T02:58:56.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ea50f073-ce0c-4d45-b02b-e358deacf097"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "transactions",
+              "item": [
+                {
+                  "name": "{transactionId}",
+                  "item": [
+                    {
+                      "name": "split",
+                      "item": [
+                        {
+                          "name": "Update Transaction Split",
+                          "id": "8381178a-a1b1-4d41-9639-4edb3ef8eda0",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"split_transactions\": [\n    {\n      \"amount\": \"<number>\",\n      \"expense_type\": \"TRAVEL_AND_ENTERTAINMENT\",\n      \"user_id\": \"<string>\",\n      \"expense_category_id\": \"<string>\",\n      \"tax_rate_id\": \"<string>\",\n      \"tags\": [\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        },\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"amount\": \"<number>\",\n      \"expense_type\": \"TRAVEL_AND_ENTERTAINMENT\",\n      \"user_id\": \"<string>\",\n      \"expense_category_id\": \"<string>\",\n      \"tax_rate_id\": \"<string>\",\n      \"tags\": [\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        },\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/split",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "transactions",
+                                ":transactionId",
+                                "split"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "d7537945-5dc4-4ecb-8e18-c8522eec32a2",
+                                  "key": "transactionId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to update the split of a `Transaction`."
+                          },
+                          "response": [
+                            {
+                              "id": "996cdccd-3d55-4365-bd9d-d9883ae5e51a",
+                              "name": "No content as result.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"split_transactions\": [\n    {\n      \"amount\": \"<number>\",\n      \"expense_type\": \"TRAVEL_AND_ENTERTAINMENT\",\n      \"user_id\": \"<string>\",\n      \"expense_category_id\": \"<string>\",\n      \"tax_rate_id\": \"<string>\",\n      \"tags\": [\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        },\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"amount\": \"<number>\",\n      \"expense_type\": \"TRAVEL_AND_ENTERTAINMENT\",\n      \"user_id\": \"<string>\",\n      \"expense_category_id\": \"<string>\",\n      \"tax_rate_id\": \"<string>\",\n      \"tags\": [\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        },\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/split",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "split"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "transactionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:57.000Z",
+                              "updatedAt": "2026-07-28T02:58:57.000Z",
+                              "uid": "35240-996cdccd-3d55-4365-bd9d-d9883ae5e51a"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:57.000Z",
+                          "updatedAt": "2026-07-28T02:58:57.000Z",
+                          "uid": "35240-8381178a-a1b1-4d41-9639-4edb3ef8eda0"
+                        },
+                        {
+                          "name": "Create Transaction Split",
+                          "id": "619ef4aa-cc2c-46e3-8f7e-4ef36988c74b",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"split_transactions\": [\n    {\n      \"amount\": \"<number>\",\n      \"expense_type\": \"COMPANY\",\n      \"user_id\": \"<string>\",\n      \"expense_category_id\": \"<string>\",\n      \"tax_rate_id\": \"<string>\",\n      \"tags\": [\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        },\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"amount\": \"<number>\",\n      \"expense_type\": \"COMPANY\",\n      \"user_id\": \"<string>\",\n      \"expense_category_id\": \"<string>\",\n      \"tax_rate_id\": \"<string>\",\n      \"tags\": [\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        },\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/split",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "transactions",
+                                ":transactionId",
+                                "split"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "8c35b8a0-6961-4a22-8269-49f56528ac23",
+                                  "key": "transactionId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to split a `Transaction`."
+                          },
+                          "response": [
+                            {
+                              "id": "5440efbd-5e4b-411a-a0c4-71332acc3d9f",
+                              "name": "No content as result.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"split_transactions\": [\n    {\n      \"amount\": \"<number>\",\n      \"expense_type\": \"COMPANY\",\n      \"user_id\": \"<string>\",\n      \"expense_category_id\": \"<string>\",\n      \"tax_rate_id\": \"<string>\",\n      \"tags\": [\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        },\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"amount\": \"<number>\",\n      \"expense_type\": \"COMPANY\",\n      \"user_id\": \"<string>\",\n      \"expense_category_id\": \"<string>\",\n      \"tax_rate_id\": \"<string>\",\n      \"tags\": [\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        },\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/split",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "split"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "transactionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:57.000Z",
+                              "updatedAt": "2026-07-28T02:58:57.000Z",
+                              "uid": "35240-5440efbd-5e4b-411a-a0c4-71332acc3d9f"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:57.000Z",
+                          "updatedAt": "2026-07-28T02:58:57.000Z",
+                          "uid": "35240-619ef4aa-cc2c-46e3-8f7e-4ef36988c74b"
+                        },
+                        {
+                          "name": "Delete Transaction Split",
+                          "id": "8b2e4d2e-4a5a-4c6d-8142-20a57d935ce2",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/split",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "transactions",
+                                ":transactionId",
+                                "split"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "f0d2674f-ca6b-4acd-97ca-7e849aa0540e",
+                                  "key": "transactionId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to delete the split of a `Transaction`."
+                          },
+                          "response": [
+                            {
+                              "id": "519f723c-2bd3-4067-b1b7-6570d0fdc010",
+                              "name": "No content as result.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/split",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "split"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "transactionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:57.000Z",
+                              "updatedAt": "2026-07-28T02:58:57.000Z",
+                              "uid": "35240-519f723c-2bd3-4067-b1b7-6570d0fdc010"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:57.000Z",
+                          "updatedAt": "2026-07-28T02:58:57.000Z",
+                          "uid": "35240-8b2e4d2e-4a5a-4c6d-8142-20a57d935ce2"
+                        }
+                      ],
+                      "id": "5178a0c3-c76e-4606-9c68-8c00a7649a49",
+                      "createdAt": "2026-07-28T02:58:57.000Z",
+                      "updatedAt": "2026-07-28T02:58:57.000Z",
+                      "uid": "35240-5178a0c3-c76e-4606-9c68-8c00a7649a49"
+                    }
+                  ],
+                  "id": "016b2e64-9364-4aac-a5e4-9ffc825b0027",
+                  "createdAt": "2026-07-28T02:58:57.000Z",
+                  "updatedAt": "2026-07-28T02:58:57.000Z",
+                  "uid": "35240-016b2e64-9364-4aac-a5e4-9ffc825b0027"
+                }
+              ],
+              "id": "7767418c-1b66-4f7e-828f-ffcf1241c0f1",
+              "createdAt": "2026-07-28T02:58:57.000Z",
+              "updatedAt": "2026-07-28T02:58:57.000Z",
+              "uid": "35240-7767418c-1b66-4f7e-828f-ffcf1241c0f1"
+            }
+          ],
+          "id": "d562d21d-3862-45f0-915d-7afa43cf3822",
+          "createdAt": "2026-07-28T02:58:57.000Z",
+          "updatedAt": "2026-07-28T02:58:57.000Z",
+          "uid": "35240-d562d21d-3862-45f0-915d-7afa43cf3822"
+        }
+      ],
+      "id": "e1cb3448-ee18-4f77-a4ef-f7b24170f02b",
+      "createdAt": "2026-07-28T02:58:57.000Z",
+      "updatedAt": "2026-07-28T02:58:57.000Z",
+      "uid": "35240-e1cb3448-ee18-4f77-a4ef-f7b24170f02b"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

@@ -1,0 +1,872 @@
+{
+  "info": {
+    "_postman_id": "606e583f-22a7-46a9-bd39-2192dfd3b4b0",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Refueling Transactions API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:35.000Z",
+    "updatedAt": "2026-07-28T02:58:35.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-606e583f-22a7-46a9-bd39-2192dfd3b4b0"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "refueling",
+              "item": [
+                {
+                  "name": "{refuelingId}",
+                  "item": [
+                    {
+                      "name": "Get Refueling Transaction",
+                      "id": "9b0d0127-f10c-4487-96f9-7b708f20cd5d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/refueling/:refuelingId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "refueling",
+                            ":refuelingId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "9f3f51f6-d74d-47be-a748-d776388699cd",
+                              "key": "refuelingId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to get a specific `Refueling` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "27b92226-ec5b-4f4c-819f-62a9a157f20b",
+                          "name": "The returned resource is a single `Refueling`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/refueling/:refuelingId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "refueling",
+                                ":refuelingId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "refuelingId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"public_id\": \"<string>\",\n  \"transaction_id\": \"<string>\",\n  \"card_id\": \"<string>\",\n  \"tx_status\": \"Cancelled\",\n  \"transaction_sign\": \"Positive\",\n  \"tx_amount\": \"<number>\",\n  \"tx_amount_currency\": \"XAU\",\n  \"tx_date\": \"<string>\",\n  \"tx_settlement_date\": \"<string>\",\n  \"update_time\": \"<string>\",\n  \"tx_vat_amount\": \"<number>\",\n  \"tx_vat_currency\": \"ZWL\",\n  \"tx_country\": \"FLK\",\n  \"plate\": \"<string>\",\n  \"vehicle_fuel_type\": \"LNG\",\n  \"vat_deductibility_percentage\": \"<string>\",\n  \"mileage\": \"<integer>\",\n  \"quantity\": \"<number>\",\n  \"unit_price\": \"<number>\",\n  \"tx_fuel_type\": \"UNKNOWN\",\n  \"to_be_ignored\": \"<boolean>\",\n  \"invoice_id\": \"<long>\",\n  \"invoice_number\": \"<string>\",\n  \"invoice_date\": \"<string>\",\n  \"invoice_total_amount\": \"<number>\",\n  \"invoice_row\": \"<integer>\",\n  \"invoice_row_amount\": \"<number>\",\n  \"supplier_vat_id\": \"<string>\",\n  \"dri\": \"<string>\",\n  \"vehicle_id\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:58:35.000Z",
+                          "updatedAt": "2026-07-28T02:58:35.000Z",
+                          "uid": "35240-27b92226-ec5b-4f4c-819f-62a9a157f20b"
+                        },
+                        {
+                          "id": "00b717c8-1095-47dc-88fa-4034f1f1f2b6",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/refueling/:refuelingId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "refueling",
+                                ":refuelingId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "refuelingId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:35.000Z",
+                          "updatedAt": "2026-07-28T02:58:35.000Z",
+                          "uid": "35240-00b717c8-1095-47dc-88fa-4034f1f1f2b6"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:35.000Z",
+                      "updatedAt": "2026-07-28T02:58:35.000Z",
+                      "uid": "35240-9b0d0127-f10c-4487-96f9-7b708f20cd5d"
+                    },
+                    {
+                      "name": "Update Refueling Transaction",
+                      "id": "27fdf392-69af-4aba-8498-f49f397d7e50",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"mileage\": \"<integer>\",\n  \"unit_price\": \"<number>\",\n  \"tx_fuel_type\": \"LPG\",\n  \"quantity\": \"<number>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/refueling/:refuelingId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "refueling",
+                            ":refuelingId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "163c4dfe-d28e-4ff3-b529-482ebc2eaf30",
+                              "key": "refuelingId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to update a specific `Refueling` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "15f6cf13-3a53-47db-a1ef-06f5e98f6818",
+                          "name": "The returned resource is a single `Refueling`.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"mileage\": \"<integer>\",\n  \"unit_price\": \"<number>\",\n  \"tx_fuel_type\": \"LPG\",\n  \"quantity\": \"<number>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/refueling/:refuelingId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "refueling",
+                                ":refuelingId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "refuelingId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"public_id\": \"<string>\",\n  \"transaction_id\": \"<string>\",\n  \"card_id\": \"<string>\",\n  \"tx_status\": \"Cancelled\",\n  \"transaction_sign\": \"Positive\",\n  \"tx_amount\": \"<number>\",\n  \"tx_amount_currency\": \"XAU\",\n  \"tx_date\": \"<string>\",\n  \"tx_settlement_date\": \"<string>\",\n  \"update_time\": \"<string>\",\n  \"tx_vat_amount\": \"<number>\",\n  \"tx_vat_currency\": \"ZWL\",\n  \"tx_country\": \"FLK\",\n  \"plate\": \"<string>\",\n  \"vehicle_fuel_type\": \"LNG\",\n  \"vat_deductibility_percentage\": \"<string>\",\n  \"mileage\": \"<integer>\",\n  \"quantity\": \"<number>\",\n  \"unit_price\": \"<number>\",\n  \"tx_fuel_type\": \"UNKNOWN\",\n  \"to_be_ignored\": \"<boolean>\",\n  \"invoice_id\": \"<long>\",\n  \"invoice_number\": \"<string>\",\n  \"invoice_date\": \"<string>\",\n  \"invoice_total_amount\": \"<number>\",\n  \"invoice_row\": \"<integer>\",\n  \"invoice_row_amount\": \"<number>\",\n  \"supplier_vat_id\": \"<string>\",\n  \"dri\": \"<string>\",\n  \"vehicle_id\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:58:35.000Z",
+                          "updatedAt": "2026-07-28T02:58:35.000Z",
+                          "uid": "35240-15f6cf13-3a53-47db-a1ef-06f5e98f6818"
+                        },
+                        {
+                          "id": "07efe43a-c77e-4bf8-ba32-46d37a2a3e62",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"mileage\": \"<integer>\",\n  \"unit_price\": \"<number>\",\n  \"tx_fuel_type\": \"LPG\",\n  \"quantity\": \"<number>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/refueling/:refuelingId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "refueling",
+                                ":refuelingId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "refuelingId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:35.000Z",
+                          "updatedAt": "2026-07-28T02:58:35.000Z",
+                          "uid": "35240-07efe43a-c77e-4bf8-ba32-46d37a2a3e62"
+                        },
+                        {
+                          "id": "ef958a0a-8e8d-4025-af51-b0223c2c17e0",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"mileage\": \"<integer>\",\n  \"unit_price\": \"<number>\",\n  \"tx_fuel_type\": \"LPG\",\n  \"quantity\": \"<number>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/refueling/:refuelingId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "refueling",
+                                ":refuelingId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "refuelingId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:35.000Z",
+                          "updatedAt": "2026-07-28T02:58:35.000Z",
+                          "uid": "35240-ef958a0a-8e8d-4025-af51-b0223c2c17e0"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:35.000Z",
+                      "updatedAt": "2026-07-28T02:58:35.000Z",
+                      "uid": "35240-27fdf392-69af-4aba-8498-f49f397d7e50"
+                    }
+                  ],
+                  "id": "09c3dcf4-ceeb-44d5-96e5-158b1cc6f5d9",
+                  "createdAt": "2026-07-28T02:58:35.000Z",
+                  "updatedAt": "2026-07-28T02:58:35.000Z",
+                  "uid": "35240-09c3dcf4-ceeb-44d5-96e5-158b1cc6f5d9"
+                },
+                {
+                  "name": "Search Refueling Transactions",
+                  "id": "f6dea234-9444-4a0c-a546-983ceb47eadb",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint",
+                        "value": "{{fingerprint}}"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint-Signature",
+                        "value": "{{fingerprint_signature}}"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/refueling?type=transaction&publicId=<string>&dateType=TRANSACTION&txCountry=LUX&txStatus=Settled&txStatus=Unknown&txFuelType=METHANE&showFuelDetails=<boolean>&p=0&s=0&d=DESC&props=<string>&props=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "refueling"
+                      ],
+                      "query": [
+                        {
+                          "description": "The resource `type` to be used together with id.",
+                          "key": "type",
+                          "value": "transaction"
+                        },
+                        {
+                          "description": "The ID of the `type` resource.",
+                          "key": "publicId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It determines the date to be considered for `fromDate` and `toDate` parameters.",
+                          "key": "dateType",
+                          "value": "TRANSACTION"
+                        },
+                        {
+                          "description": "The [ISO 3166-1 alpha-3](https://www.iso.org/obp/ui/#search/code/) code of the country where the `Transaction` was made.",
+                          "key": "txCountry",
+                          "value": "LUX"
+                        },
+                        {
+                          "description": "A list of statuses the searched `Transactions` should be in.",
+                          "key": "txStatus",
+                          "value": "Settled"
+                        },
+                        {
+                          "description": "A list of statuses the searched `Transactions` should be in.",
+                          "key": "txStatus",
+                          "value": "Unknown"
+                        },
+                        {
+                          "description": "The fuel type specified on the `Transaction`.",
+                          "key": "txFuelType",
+                          "value": "METHANE"
+                        },
+                        {
+                          "description": "It determines whether to show further Fuel Details of the `Transaction`.",
+                          "key": "showFuelDetails",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "description": "It indicates the specific page to display (the counter starts from zero).",
+                          "key": "p",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the number of items per page.",
+                          "key": "s",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates how the pages are ordered.",
+                          "key": "d",
+                          "value": "DESC"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to search `Refuelings` using filtering parameters."
+                  },
+                  "response": [
+                    {
+                      "id": "f6465dfb-a356-4923-8ee8-588a27f3e316",
+                      "name": "The result is an array containing `Refuelings`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/refueling?type=transaction&publicId=<string>&dateType=TRANSACTION&txCountry=LUX&txStatus=Unknown&txFuelType=METHANE&showFuelDetails=<boolean>&p=0&s=0&d=DESC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "refueling"
+                          ],
+                          "query": [
+                            {
+                              "description": "The resource `type` to be used together with id.",
+                              "key": "type",
+                              "value": "transaction"
+                            },
+                            {
+                              "description": "The ID of the `type` resource.",
+                              "key": "publicId",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It determines the date to be considered for `fromDate` and `toDate` parameters.",
+                              "key": "dateType",
+                              "value": "TRANSACTION"
+                            },
+                            {
+                              "description": "The [ISO 3166-1 alpha-3](https://www.iso.org/obp/ui/#search/code/) code of the country where the `Transaction` was made.",
+                              "key": "txCountry",
+                              "value": "LUX"
+                            },
+                            {
+                              "description": "A list of statuses the searched `Transactions` should be in.",
+                              "key": "txStatus",
+                              "value": "Unknown"
+                            },
+                            {
+                              "description": "The fuel type specified on the `Transaction`.",
+                              "key": "txFuelType",
+                              "value": "METHANE"
+                            },
+                            {
+                              "description": "It determines whether to show further Fuel Details of the `Transaction`.",
+                              "key": "showFuelDetails",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "DESC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"public_id\": \"<string>\",\n      \"transaction_id\": \"<string>\",\n      \"card_id\": \"<string>\",\n      \"tx_status\": \"Cancelled\",\n      \"transaction_sign\": \"Negative\",\n      \"tx_amount\": \"<number>\",\n      \"tx_amount_currency\": \"CUC\",\n      \"tx_date\": \"<string>\",\n      \"tx_settlement_date\": \"<string>\",\n      \"update_time\": \"<string>\",\n      \"tx_vat_amount\": \"<number>\",\n      \"tx_vat_currency\": \"KGS\",\n      \"tx_country\": \"MOZ\",\n      \"plate\": \"<string>\",\n      \"vehicle_fuel_type\": \"LNG\",\n      \"vat_deductibility_percentage\": \"<string>\",\n      \"mileage\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"unit_price\": \"<number>\",\n      \"tx_fuel_type\": \"METHANE\",\n      \"to_be_ignored\": \"<boolean>\",\n      \"invoice_id\": \"<long>\",\n      \"invoice_number\": \"<string>\",\n      \"invoice_date\": \"<string>\",\n      \"invoice_total_amount\": \"<number>\",\n      \"invoice_row\": \"<integer>\",\n      \"invoice_row_amount\": \"<number>\",\n      \"supplier_vat_id\": \"<string>\",\n      \"dri\": \"<string>\",\n      \"vehicle_id\": \"<string>\"\n    },\n    {\n      \"public_id\": \"<string>\",\n      \"transaction_id\": \"<string>\",\n      \"card_id\": \"<string>\",\n      \"tx_status\": \"Settled\",\n      \"transaction_sign\": \"None\",\n      \"tx_amount\": \"<number>\",\n      \"tx_amount_currency\": \"XSU\",\n      \"tx_date\": \"<string>\",\n      \"tx_settlement_date\": \"<string>\",\n      \"update_time\": \"<string>\",\n      \"tx_vat_amount\": \"<number>\",\n      \"tx_vat_currency\": \"XPT\",\n      \"tx_country\": \"CHN\",\n      \"plate\": \"<string>\",\n      \"vehicle_fuel_type\": \"DIESEL\",\n      \"vat_deductibility_percentage\": \"<string>\",\n      \"mileage\": \"<integer>\",\n      \"quantity\": \"<number>\",\n      \"unit_price\": \"<number>\",\n      \"tx_fuel_type\": \"LPG\",\n      \"to_be_ignored\": \"<boolean>\",\n      \"invoice_id\": \"<long>\",\n      \"invoice_number\": \"<string>\",\n      \"invoice_date\": \"<string>\",\n      \"invoice_total_amount\": \"<number>\",\n      \"invoice_row\": \"<integer>\",\n      \"invoice_row_amount\": \"<number>\",\n      \"supplier_vat_id\": \"<string>\",\n      \"dri\": \"<string>\",\n      \"vehicle_id\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:58:35.000Z",
+                      "updatedAt": "2026-07-28T02:58:35.000Z",
+                      "uid": "35240-f6465dfb-a356-4923-8ee8-588a27f3e316"
+                    },
+                    {
+                      "id": "dfd70939-788b-499a-b00d-ccaf4bf0425a",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/refueling?type=transaction&publicId=<string>&dateType=TRANSACTION&txCountry=LUX&txStatus=Unknown&txFuelType=METHANE&showFuelDetails=<boolean>&p=0&s=0&d=DESC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "refueling"
+                          ],
+                          "query": [
+                            {
+                              "description": "The resource `type` to be used together with id.",
+                              "key": "type",
+                              "value": "transaction"
+                            },
+                            {
+                              "description": "The ID of the `type` resource.",
+                              "key": "publicId",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It determines the date to be considered for `fromDate` and `toDate` parameters.",
+                              "key": "dateType",
+                              "value": "TRANSACTION"
+                            },
+                            {
+                              "description": "The [ISO 3166-1 alpha-3](https://www.iso.org/obp/ui/#search/code/) code of the country where the `Transaction` was made.",
+                              "key": "txCountry",
+                              "value": "LUX"
+                            },
+                            {
+                              "description": "A list of statuses the searched `Transactions` should be in.",
+                              "key": "txStatus",
+                              "value": "Unknown"
+                            },
+                            {
+                              "description": "The fuel type specified on the `Transaction`.",
+                              "key": "txFuelType",
+                              "value": "METHANE"
+                            },
+                            {
+                              "description": "It determines whether to show further Fuel Details of the `Transaction`.",
+                              "key": "showFuelDetails",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "DESC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:58:35.000Z",
+                      "updatedAt": "2026-07-28T02:58:35.000Z",
+                      "uid": "35240-dfd70939-788b-499a-b00d-ccaf4bf0425a"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:58:35.000Z",
+                  "updatedAt": "2026-07-28T02:58:35.000Z",
+                  "uid": "35240-f6dea234-9444-4a0c-a546-983ceb47eadb"
+                }
+              ],
+              "id": "9a4d7403-f7cf-46c9-92af-e682ae3e1f19",
+              "createdAt": "2026-07-28T02:58:35.000Z",
+              "updatedAt": "2026-07-28T02:58:35.000Z",
+              "uid": "35240-9a4d7403-f7cf-46c9-92af-e682ae3e1f19"
+            }
+          ],
+          "id": "03370029-8477-40a2-b679-3bd80fde66c9",
+          "createdAt": "2026-07-28T02:58:35.000Z",
+          "updatedAt": "2026-07-28T02:58:35.000Z",
+          "uid": "35240-03370029-8477-40a2-b679-3bd80fde66c9"
+        }
+      ],
+      "id": "fc00b086-5e31-4fd8-8662-81ed04c00fa2",
+      "createdAt": "2026-07-28T02:58:35.000Z",
+      "updatedAt": "2026-07-28T02:58:35.000Z",
+      "uid": "35240-fc00b086-5e31-4fd8-8662-81ed04c00fa2"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

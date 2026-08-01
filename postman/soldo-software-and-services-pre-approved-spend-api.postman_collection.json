@@ -1,0 +1,1225 @@
+{
+  "info": {
+    "_postman_id": "6f1275a2-d736-4519-87b3-065066a6becd",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Pre-approved Spend API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:33.000Z",
+    "updatedAt": "2026-07-28T02:58:34.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-6f1275a2-d736-4519-87b3-065066a6becd"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "purchases",
+              "item": [
+                {
+                  "name": "{purchaseId}",
+                  "item": [
+                    {
+                      "name": "redeem",
+                      "item": [
+                        {
+                          "name": "Redeem Purchase",
+                          "id": "5fbbb3d6-72e8-4c02-8322-a926f2b4e678",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/purchases/:purchaseId/redeem",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "purchases",
+                                ":purchaseId",
+                                "redeem"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "0a048cd0-f0c3-447d-986b-e877c81b0f08",
+                                  "key": "purchaseId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to redeem a `Purchase`."
+                          },
+                          "response": [
+                            {
+                              "id": "697c4c1f-888a-445d-bc7f-6ce312ad48a0",
+                              "name": "The returned resource is a single `Order`.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/purchases/:purchaseId/redeem",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "purchases",
+                                    ":purchaseId",
+                                    "redeem"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "purchaseId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"status\": \"ERROR\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\",\n  \"error_code\": \"<string>\",\n  \"total_paid_amount\": \"<number>\",\n  \"total_paid_currency\": \"HUF\",\n  \"items\": [\n    {\n      \"id\": \"<string>\",\n      \"item_type\": \"<string>\",\n      \"category\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"item_type\": \"<string>\",\n      \"category\": \"<string>\"\n    }\n  ],\n  \"is_valid\": \"<boolean>\"\n}",
+                              "createdAt": "2026-07-28T02:58:34.000Z",
+                              "updatedAt": "2026-07-28T02:58:34.000Z",
+                              "uid": "35240-697c4c1f-888a-445d-bc7f-6ce312ad48a0"
+                            },
+                            {
+                              "id": "51598c7c-2f68-4954-8fca-ce1196a63727",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/purchases/:purchaseId/redeem",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "purchases",
+                                    ":purchaseId",
+                                    "redeem"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "purchaseId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:34.000Z",
+                              "updatedAt": "2026-07-28T02:58:34.000Z",
+                              "uid": "35240-51598c7c-2f68-4954-8fca-ce1196a63727"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:34.000Z",
+                          "updatedAt": "2026-07-28T02:58:34.000Z",
+                          "uid": "35240-5fbbb3d6-72e8-4c02-8322-a926f2b4e678"
+                        }
+                      ],
+                      "id": "758d26d8-6bbe-48c1-a94c-5709c4d9f38f",
+                      "createdAt": "2026-07-28T02:58:34.000Z",
+                      "updatedAt": "2026-07-28T02:58:34.000Z",
+                      "uid": "35240-758d26d8-6bbe-48c1-a94c-5709c4d9f38f"
+                    },
+                    {
+                      "name": "Get Purchases",
+                      "id": "cbed6210-b5e2-44d5-9ed0-b9073e7a3a63",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/purchases/:purchaseId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "purchases",
+                            ":purchaseId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "6b16b975-b5ba-4a3a-a26b-5b7c088f3f0a",
+                              "key": "purchaseId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to get a specific `Purchase` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "e73f28f4-a36d-4240-b43f-231813841cef",
+                          "name": "The returned resource is a single `Purchase`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/purchases/:purchaseId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "purchases",
+                                ":purchaseId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "purchaseId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"status\": \"ACTIVE\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"amount_currency\": \"MNT\",\n  \"wallet_id\": \"<string>\",\n  \"wallet_name\": \"<string>\",\n  \"has_attachments\": \"<boolean>\",\n  \"notes\": \"<string>\",\n  \"assignee_id\": \"<string>\",\n  \"additional_assignee_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"assignee_custom_reference_id\": \"<string>\",\n  \"author_id\": \"<string>\",\n  \"author_custom_reference_id\": \"<string>\",\n  \"expiration_date\": \"<string>\",\n  \"card_id\": \"<string>\",\n  \"transactions\": [\n    {\n      \"id\": \"<string>\",\n      \"amount\": \"<number>\",\n      \"amount_currency\": \"BGN\",\n      \"completed_time\": \"<string>\",\n      \"transaction_category\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"amount\": \"<number>\",\n      \"amount_currency\": \"XOF\",\n      \"completed_time\": \"<string>\",\n      \"transaction_category\": \"<string>\"\n    }\n  ],\n  \"max_tx_number\": \"<integer>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:58:34.000Z",
+                          "updatedAt": "2026-07-28T02:58:34.000Z",
+                          "uid": "35240-e73f28f4-a36d-4240-b43f-231813841cef"
+                        },
+                        {
+                          "id": "e3df2cc2-b662-4ee2-9a1a-45e6befa231a",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/purchases/:purchaseId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "purchases",
+                                ":purchaseId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "purchaseId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:34.000Z",
+                          "updatedAt": "2026-07-28T02:58:34.000Z",
+                          "uid": "35240-e3df2cc2-b662-4ee2-9a1a-45e6befa231a"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:34.000Z",
+                      "updatedAt": "2026-07-28T02:58:34.000Z",
+                      "uid": "35240-cbed6210-b5e2-44d5-9ed0-b9073e7a3a63"
+                    },
+                    {
+                      "name": "Update Purchase",
+                      "id": "42eb65fc-31a2-4450-a8e2-70598f3ca97c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"purchase_id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"assignee_id\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"wallet_id\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"max_tx_number\": 1\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/purchases/:purchaseId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "purchases",
+                            ":purchaseId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "f9220af2-1fef-407b-97f7-635971e68ced",
+                              "key": "purchaseId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to update a specific `Purchase`."
+                      },
+                      "response": [
+                        {
+                          "id": "4ef973b1-2a5c-42d0-bc34-793882d0a1f3",
+                          "name": "The returned resource is a single `Purchase`.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"purchase_id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"assignee_id\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"wallet_id\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"max_tx_number\": 1\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/purchases/:purchaseId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "purchases",
+                                ":purchaseId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "purchaseId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"status\": \"ACTIVE\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"amount_currency\": \"MNT\",\n  \"wallet_id\": \"<string>\",\n  \"wallet_name\": \"<string>\",\n  \"has_attachments\": \"<boolean>\",\n  \"notes\": \"<string>\",\n  \"assignee_id\": \"<string>\",\n  \"additional_assignee_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"assignee_custom_reference_id\": \"<string>\",\n  \"author_id\": \"<string>\",\n  \"author_custom_reference_id\": \"<string>\",\n  \"expiration_date\": \"<string>\",\n  \"card_id\": \"<string>\",\n  \"transactions\": [\n    {\n      \"id\": \"<string>\",\n      \"amount\": \"<number>\",\n      \"amount_currency\": \"BGN\",\n      \"completed_time\": \"<string>\",\n      \"transaction_category\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"amount\": \"<number>\",\n      \"amount_currency\": \"XOF\",\n      \"completed_time\": \"<string>\",\n      \"transaction_category\": \"<string>\"\n    }\n  ],\n  \"max_tx_number\": \"<integer>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:58:34.000Z",
+                          "updatedAt": "2026-07-28T02:58:34.000Z",
+                          "uid": "35240-4ef973b1-2a5c-42d0-bc34-793882d0a1f3"
+                        },
+                        {
+                          "id": "7824ef64-681a-4681-bf2a-33c859deca3a",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"purchase_id\": \"<string>\",\n  \"title\": \"<string>\",\n  \"assignee_id\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"description\": \"<string>\",\n  \"wallet_id\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"max_tx_number\": 1\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/purchases/:purchaseId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "purchases",
+                                ":purchaseId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "purchaseId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:34.000Z",
+                          "updatedAt": "2026-07-28T02:58:34.000Z",
+                          "uid": "35240-7824ef64-681a-4681-bf2a-33c859deca3a"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:34.000Z",
+                      "updatedAt": "2026-07-28T02:58:34.000Z",
+                      "uid": "35240-42eb65fc-31a2-4450-a8e2-70598f3ca97c"
+                    },
+                    {
+                      "name": "Delete Purchase",
+                      "id": "2c0cd7c4-fa93-40a0-bbbd-9fb556f4d5f6",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/purchases/:purchaseId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "purchases",
+                            ":purchaseId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "8b4445fe-d272-4300-a940-e07d850017ae",
+                              "key": "purchaseId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to delete a specific `Purchase`."
+                      },
+                      "response": [
+                        {
+                          "id": "f43af07f-c397-4976-9361-7899254501a3",
+                          "name": "No content as result.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/purchases/:purchaseId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "purchases",
+                                ":purchaseId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "purchaseId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:34.000Z",
+                          "updatedAt": "2026-07-28T02:58:34.000Z",
+                          "uid": "35240-f43af07f-c397-4976-9361-7899254501a3"
+                        },
+                        {
+                          "id": "16b8c8e4-7cfb-4c53-a963-98e4fc3b4e09",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/purchases/:purchaseId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "purchases",
+                                ":purchaseId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "purchaseId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:34.000Z",
+                          "updatedAt": "2026-07-28T02:58:34.000Z",
+                          "uid": "35240-16b8c8e4-7cfb-4c53-a963-98e4fc3b4e09"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:34.000Z",
+                      "updatedAt": "2026-07-28T02:58:34.000Z",
+                      "uid": "35240-2c0cd7c4-fa93-40a0-bbbd-9fb556f4d5f6"
+                    }
+                  ],
+                  "id": "ff25e56f-c741-4633-831f-45782317fd15",
+                  "createdAt": "2026-07-28T02:58:34.000Z",
+                  "updatedAt": "2026-07-28T02:58:34.000Z",
+                  "uid": "35240-ff25e56f-c741-4633-831f-45782317fd15"
+                },
+                {
+                  "name": "Search Purchases",
+                  "id": "2326bf87-a565-451e-a17a-c51c8a526497",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/purchases?dateType=CREATION_TIME&status=ACTIVE&status=ACTIVE&text=<string>&p=0&s=0&d=ASC&props=<string>&props=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "purchases"
+                      ],
+                      "query": [
+                        {
+                          "description": "It determines the date to be considered for `fromDate` and `toDate` parameters.",
+                          "key": "dateType",
+                          "value": "CREATION_TIME"
+                        },
+                        {
+                          "description": "The status of the `Purchase`.",
+                          "key": "status",
+                          "value": "ACTIVE"
+                        },
+                        {
+                          "description": "The status of the `Purchase`.",
+                          "key": "status",
+                          "value": "ACTIVE"
+                        },
+                        {
+                          "description": "A simple text to search in the `Purchase` data (`title`, `description`, `assignees`).",
+                          "key": "text",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the specific page to display (the counter starts from zero).",
+                          "key": "p",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the number of items per page.",
+                          "key": "s",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates how the pages are ordered.",
+                          "key": "d",
+                          "value": "ASC"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to find `Purchases` using filtering parameters."
+                  },
+                  "response": [
+                    {
+                      "id": "9ef77f1e-9336-4f35-9749-d1124e4e55b5",
+                      "name": "The result is an array containing `Purchases`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/purchases?dateType=CREATION_TIME&status=ACTIVE&text=<string>&p=0&s=0&d=ASC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "purchases"
+                          ],
+                          "query": [
+                            {
+                              "description": "It determines the date to be considered for `fromDate` and `toDate` parameters.",
+                              "key": "dateType",
+                              "value": "CREATION_TIME"
+                            },
+                            {
+                              "description": "The status of the `Purchase`.",
+                              "key": "status",
+                              "value": "ACTIVE"
+                            },
+                            {
+                              "description": "A simple text to search in the `Purchase` data (`title`, `description`, `assignees`).",
+                              "key": "text",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"status\": \"ASSIGNED\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"amount\": \"<number>\",\n      \"amount_currency\": \"KES\",\n      \"wallet_id\": \"<string>\",\n      \"wallet_name\": \"<string>\",\n      \"has_attachments\": \"<boolean>\",\n      \"notes\": \"<string>\",\n      \"assignee_id\": \"<string>\",\n      \"additional_assignee_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"assignee_custom_reference_id\": \"<string>\",\n      \"author_id\": \"<string>\",\n      \"author_custom_reference_id\": \"<string>\",\n      \"expiration_date\": \"<string>\",\n      \"card_id\": \"<string>\",\n      \"transactions\": [\n        {\n          \"id\": \"<string>\",\n          \"amount\": \"<number>\",\n          \"amount_currency\": \"SCR\",\n          \"completed_time\": \"<string>\",\n          \"transaction_category\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"amount\": \"<number>\",\n          \"amount_currency\": \"SVC\",\n          \"completed_time\": \"<string>\",\n          \"transaction_category\": \"<string>\"\n        }\n      ],\n      \"max_tx_number\": \"<integer>\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"status\": \"ASSIGNED\",\n      \"title\": \"<string>\",\n      \"description\": \"<string>\",\n      \"amount\": \"<number>\",\n      \"amount_currency\": \"MXN\",\n      \"wallet_id\": \"<string>\",\n      \"wallet_name\": \"<string>\",\n      \"has_attachments\": \"<boolean>\",\n      \"notes\": \"<string>\",\n      \"assignee_id\": \"<string>\",\n      \"additional_assignee_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"assignee_custom_reference_id\": \"<string>\",\n      \"author_id\": \"<string>\",\n      \"author_custom_reference_id\": \"<string>\",\n      \"expiration_date\": \"<string>\",\n      \"card_id\": \"<string>\",\n      \"transactions\": [\n        {\n          \"id\": \"<string>\",\n          \"amount\": \"<number>\",\n          \"amount_currency\": \"NGN\",\n          \"completed_time\": \"<string>\",\n          \"transaction_category\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"amount\": \"<number>\",\n          \"amount_currency\": \"PEN\",\n          \"completed_time\": \"<string>\",\n          \"transaction_category\": \"<string>\"\n        }\n      ],\n      \"max_tx_number\": \"<integer>\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:58:34.000Z",
+                      "updatedAt": "2026-07-28T02:58:34.000Z",
+                      "uid": "35240-9ef77f1e-9336-4f35-9749-d1124e4e55b5"
+                    },
+                    {
+                      "id": "da48895a-111b-45ba-81d1-58f1cd1987c8",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/purchases?dateType=CREATION_TIME&status=ACTIVE&text=<string>&p=0&s=0&d=ASC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "purchases"
+                          ],
+                          "query": [
+                            {
+                              "description": "It determines the date to be considered for `fromDate` and `toDate` parameters.",
+                              "key": "dateType",
+                              "value": "CREATION_TIME"
+                            },
+                            {
+                              "description": "The status of the `Purchase`.",
+                              "key": "status",
+                              "value": "ACTIVE"
+                            },
+                            {
+                              "description": "A simple text to search in the `Purchase` data (`title`, `description`, `assignees`).",
+                              "key": "text",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:58:34.000Z",
+                      "updatedAt": "2026-07-28T02:58:34.000Z",
+                      "uid": "35240-da48895a-111b-45ba-81d1-58f1cd1987c8"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:58:34.000Z",
+                  "updatedAt": "2026-07-28T02:58:34.000Z",
+                  "uid": "35240-2326bf87-a565-451e-a17a-c51c8a526497"
+                },
+                {
+                  "name": "Add Purchase",
+                  "id": "2fe416d7-c698-40bf-be70-0117e6e64d27",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint",
+                        "value": "{{fingerprint}}"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint-Signature",
+                        "value": "{{fingerprint_signature}}"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"amount\": \"<number>\",\n  \"assignee_id\": \"<string>\",\n  \"description\": \"<string>\",\n  \"max_tx_number\": 1,\n  \"title\": \"<string>\",\n  \"wallet_id\": \"<string>\",\n  \"notes\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/purchases",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "purchases"
+                      ]
+                    },
+                    "description": "Endpoint to add a new `Purchase`."
+                  },
+                  "response": [
+                    {
+                      "id": "3ee179c8-c4d5-4105-9a76-9e2915af6966",
+                      "name": "The returned resource is a single `Purchase`.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"amount\": \"<number>\",\n  \"assignee_id\": \"<string>\",\n  \"description\": \"<string>\",\n  \"max_tx_number\": 1,\n  \"title\": \"<string>\",\n  \"wallet_id\": \"<string>\",\n  \"notes\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/purchases",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "purchases"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\",\n  \"status\": \"ACTIVE\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"amount\": \"<number>\",\n  \"amount_currency\": \"MNT\",\n  \"wallet_id\": \"<string>\",\n  \"wallet_name\": \"<string>\",\n  \"has_attachments\": \"<boolean>\",\n  \"notes\": \"<string>\",\n  \"assignee_id\": \"<string>\",\n  \"additional_assignee_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"assignee_custom_reference_id\": \"<string>\",\n  \"author_id\": \"<string>\",\n  \"author_custom_reference_id\": \"<string>\",\n  \"expiration_date\": \"<string>\",\n  \"card_id\": \"<string>\",\n  \"transactions\": [\n    {\n      \"id\": \"<string>\",\n      \"amount\": \"<number>\",\n      \"amount_currency\": \"BGN\",\n      \"completed_time\": \"<string>\",\n      \"transaction_category\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"amount\": \"<number>\",\n      \"amount_currency\": \"XOF\",\n      \"completed_time\": \"<string>\",\n      \"transaction_category\": \"<string>\"\n    }\n  ],\n  \"max_tx_number\": \"<integer>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T02:58:34.000Z",
+                      "updatedAt": "2026-07-28T02:58:34.000Z",
+                      "uid": "35240-3ee179c8-c4d5-4105-9a76-9e2915af6966"
+                    },
+                    {
+                      "id": "74f8d5b5-1f88-40d1-9ac9-3577dd01cae7",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"amount\": \"<number>\",\n  \"assignee_id\": \"<string>\",\n  \"description\": \"<string>\",\n  \"max_tx_number\": 1,\n  \"title\": \"<string>\",\n  \"wallet_id\": \"<string>\",\n  \"notes\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/purchases",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "purchases"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:58:34.000Z",
+                      "updatedAt": "2026-07-28T02:58:34.000Z",
+                      "uid": "35240-74f8d5b5-1f88-40d1-9ac9-3577dd01cae7"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:58:34.000Z",
+                  "updatedAt": "2026-07-28T02:58:34.000Z",
+                  "uid": "35240-2fe416d7-c698-40bf-be70-0117e6e64d27"
+                }
+              ],
+              "id": "b5116d5f-88dc-40fb-9eed-299d70c443ac",
+              "createdAt": "2026-07-28T02:58:34.000Z",
+              "updatedAt": "2026-07-28T02:58:34.000Z",
+              "uid": "35240-b5116d5f-88dc-40fb-9eed-299d70c443ac"
+            }
+          ],
+          "id": "63c8e2eb-95c9-4d8b-ab5e-e441d7a738c8",
+          "createdAt": "2026-07-28T02:58:34.000Z",
+          "updatedAt": "2026-07-28T02:58:34.000Z",
+          "uid": "35240-63c8e2eb-95c9-4d8b-ab5e-e441d7a738c8"
+        }
+      ],
+      "id": "4d161f90-ce17-4082-a6e7-5072196da16d",
+      "createdAt": "2026-07-28T02:58:34.000Z",
+      "updatedAt": "2026-07-28T02:58:34.000Z",
+      "uid": "35240-4d161f90-ce17-4082-a6e7-5072196da16d"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

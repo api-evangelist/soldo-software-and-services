@@ -1,0 +1,844 @@
+{
+  "info": {
+    "_postman_id": "749aafd1-aaaf-42a6-8900-99193f363af6",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Expense Categories API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:57:57.000Z",
+    "updatedAt": "2026-07-28T02:57:58.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-749aafd1-aaaf-42a6-8900-99193f363af6"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "entities",
+              "item": [
+                {
+                  "name": "expense-category",
+                  "item": [
+                    {
+                      "name": "{expenseCategoryId}",
+                      "item": [
+                        {
+                          "name": "Get Expense Category",
+                          "id": "bb31925d-f9ef-432f-9403-655f76b5730a",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/entities/expense-category/:expenseCategoryId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "entities",
+                                "expense-category",
+                                ":expenseCategoryId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "3640510d-e0f3-4803-a1a9-7fed6eb6044c",
+                                  "key": "expenseCategoryId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to get a specific `ExpenseCategory` by ID."
+                          },
+                          "response": [
+                            {
+                              "id": "4d9d636e-8612-4ca3-84f8-781b48786974",
+                              "name": "The result is a single `ExpenseCategory`.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/entities/expense-category/:expenseCategoryId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "entities",
+                                    "expense-category",
+                                    ":expenseCategoryId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "expenseCategoryId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"merchant_categories\": [\n    \"Shopping_Airline\",\n    \"Shopping_Digital_Goods\"\n  ],\n  \"expense_type\": \"<string>\",\n  \"integration\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:57:58.000Z",
+                              "updatedAt": "2026-07-28T02:57:58.000Z",
+                              "uid": "35240-4d9d636e-8612-4ca3-84f8-781b48786974"
+                            },
+                            {
+                              "id": "4f2e714d-fa46-46e6-8fb7-027239ec443f",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/entities/expense-category/:expenseCategoryId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "entities",
+                                    "expense-category",
+                                    ":expenseCategoryId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "expenseCategoryId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:58.000Z",
+                              "updatedAt": "2026-07-28T02:57:58.000Z",
+                              "uid": "35240-4f2e714d-fa46-46e6-8fb7-027239ec443f"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:57:58.000Z",
+                          "updatedAt": "2026-07-28T02:57:58.000Z",
+                          "uid": "35240-bb31925d-f9ef-432f-9403-655f76b5730a"
+                        },
+                        {
+                          "name": "Update Expense Category",
+                          "id": "b7c432f3-8d24-43da-92ad-4fe720b9384f",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"merchant_categories\": [\n    \"Transport_Ships\",\n    \"Food_Cocktail_Bar\"\n  ],\n  \"expense_type\": \"COMPANY\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/entities/expense-category/:expenseCategoryId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "entities",
+                                "expense-category",
+                                ":expenseCategoryId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "dbcd1b8c-b9b6-4a18-bd84-e51c7073dca2",
+                                  "key": "expenseCategoryId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to update a specific `ExpenseCategory`."
+                          },
+                          "response": [
+                            {
+                              "id": "e0f26258-9e3f-45f3-98d8-4124f948bcdc",
+                              "name": "The returned resource is a single `ExpenseCategory`.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"merchant_categories\": [\n    \"Transport_Ships\",\n    \"Food_Cocktail_Bar\"\n  ],\n  \"expense_type\": \"COMPANY\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/entities/expense-category/:expenseCategoryId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "entities",
+                                    "expense-category",
+                                    ":expenseCategoryId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "expenseCategoryId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"merchant_categories\": [\n    \"Shopping_Airline\",\n    \"Shopping_Digital_Goods\"\n  ],\n  \"expense_type\": \"<string>\",\n  \"integration\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:57:58.000Z",
+                              "updatedAt": "2026-07-28T02:57:58.000Z",
+                              "uid": "35240-e0f26258-9e3f-45f3-98d8-4124f948bcdc"
+                            },
+                            {
+                              "id": "8566bda0-bb6d-42b7-bc31-8aca4bfbbcba",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"merchant_categories\": [\n    \"Transport_Ships\",\n    \"Food_Cocktail_Bar\"\n  ],\n  \"expense_type\": \"COMPANY\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/entities/expense-category/:expenseCategoryId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "entities",
+                                    "expense-category",
+                                    ":expenseCategoryId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "expenseCategoryId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:58.000Z",
+                              "updatedAt": "2026-07-28T02:57:58.000Z",
+                              "uid": "35240-8566bda0-bb6d-42b7-bc31-8aca4bfbbcba"
+                            },
+                            {
+                              "id": "3c38d728-6e04-4a2e-a1a8-f688c92ad663",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"merchant_categories\": [\n    \"Transport_Ships\",\n    \"Food_Cocktail_Bar\"\n  ],\n  \"expense_type\": \"COMPANY\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/entities/expense-category/:expenseCategoryId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "entities",
+                                    "expense-category",
+                                    ":expenseCategoryId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "expenseCategoryId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:58.000Z",
+                              "updatedAt": "2026-07-28T02:57:58.000Z",
+                              "uid": "35240-3c38d728-6e04-4a2e-a1a8-f688c92ad663"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:57:58.000Z",
+                          "updatedAt": "2026-07-28T02:57:58.000Z",
+                          "uid": "35240-b7c432f3-8d24-43da-92ad-4fe720b9384f"
+                        },
+                        {
+                          "name": "Delete Expense Category",
+                          "id": "4c79672c-0ec4-4f4d-812f-d6e28c61f36d",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/entities/expense-category/:expenseCategoryId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "entities",
+                                "expense-category",
+                                ":expenseCategoryId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "d8830f08-61ad-4886-b06c-8090799302cf",
+                                  "key": "expenseCategoryId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to delete a specific `ExpenseCategory`."
+                          },
+                          "response": [
+                            {
+                              "id": "b9b69903-584d-40cb-9905-7c62985f9570",
+                              "name": "No content as result.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/entities/expense-category/:expenseCategoryId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "entities",
+                                    "expense-category",
+                                    ":expenseCategoryId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "expenseCategoryId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:58.000Z",
+                              "updatedAt": "2026-07-28T02:57:58.000Z",
+                              "uid": "35240-b9b69903-584d-40cb-9905-7c62985f9570"
+                            },
+                            {
+                              "id": "be2b9f3d-577f-4c61-9405-c7fd059aa523",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/entities/expense-category/:expenseCategoryId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "entities",
+                                    "expense-category",
+                                    ":expenseCategoryId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "expenseCategoryId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:58.000Z",
+                              "updatedAt": "2026-07-28T02:57:58.000Z",
+                              "uid": "35240-be2b9f3d-577f-4c61-9405-c7fd059aa523"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:57:58.000Z",
+                          "updatedAt": "2026-07-28T02:57:58.000Z",
+                          "uid": "35240-4c79672c-0ec4-4f4d-812f-d6e28c61f36d"
+                        }
+                      ],
+                      "id": "53128fa3-8db9-4919-8238-f83831f05b61",
+                      "createdAt": "2026-07-28T02:57:58.000Z",
+                      "updatedAt": "2026-07-28T02:57:58.000Z",
+                      "uid": "35240-53128fa3-8db9-4919-8238-f83831f05b61"
+                    },
+                    {
+                      "name": "Add Expense Category",
+                      "id": "d67ef1b1-6552-454c-b0ab-9f89066e1f8e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"expense_type\": \"TRAVEL_AND_ENTERTAINMENT\",\n  \"name\": \"<string>\",\n  \"code\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"merchant_categories\": [\n    \"Transport_Road\",\n    \"Transport_Trains\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/entities/expense-category",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "entities",
+                            "expense-category"
+                          ]
+                        },
+                        "description": "Endpoint to add a new `ExpenseCategory`."
+                      },
+                      "response": [
+                        {
+                          "id": "786b7359-a352-4238-a512-bbcf6b655f31",
+                          "name": "The result is an `ExpenseCategory`.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"expense_type\": \"TRAVEL_AND_ENTERTAINMENT\",\n  \"name\": \"<string>\",\n  \"code\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"merchant_categories\": [\n    \"Transport_Road\",\n    \"Transport_Trains\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/entities/expense-category",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "entities",
+                                "expense-category"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"merchant_categories\": [\n    \"Shopping_Airline\",\n    \"Shopping_Digital_Goods\"\n  ],\n  \"expense_type\": \"<string>\",\n  \"integration\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:57:58.000Z",
+                          "updatedAt": "2026-07-28T02:57:58.000Z",
+                          "uid": "35240-786b7359-a352-4238-a512-bbcf6b655f31"
+                        },
+                        {
+                          "id": "18a803d6-00f9-4c2b-bc91-00c197486270",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"expense_type\": \"TRAVEL_AND_ENTERTAINMENT\",\n  \"name\": \"<string>\",\n  \"code\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"merchant_categories\": [\n    \"Transport_Road\",\n    \"Transport_Trains\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/entities/expense-category",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "entities",
+                                "expense-category"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:58.000Z",
+                          "updatedAt": "2026-07-28T02:57:58.000Z",
+                          "uid": "35240-18a803d6-00f9-4c2b-bc91-00c197486270"
+                        },
+                        {
+                          "id": "1350b35b-a32d-43f7-9369-8952307e499b",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"expense_type\": \"TRAVEL_AND_ENTERTAINMENT\",\n  \"name\": \"<string>\",\n  \"code\": \"<string>\",\n  \"description\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"merchant_categories\": [\n    \"Transport_Road\",\n    \"Transport_Trains\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/entities/expense-category",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "entities",
+                                "expense-category"
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:58.000Z",
+                          "updatedAt": "2026-07-28T02:57:58.000Z",
+                          "uid": "35240-1350b35b-a32d-43f7-9369-8952307e499b"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:58.000Z",
+                      "updatedAt": "2026-07-28T02:57:58.000Z",
+                      "uid": "35240-d67ef1b1-6552-454c-b0ab-9f89066e1f8e"
+                    }
+                  ],
+                  "id": "01ac1a0d-b851-4688-ba3f-1b403592b15f",
+                  "createdAt": "2026-07-28T02:57:58.000Z",
+                  "updatedAt": "2026-07-28T02:57:58.000Z",
+                  "uid": "35240-01ac1a0d-b851-4688-ba3f-1b403592b15f"
+                }
+              ],
+              "id": "a59f5c05-8c0a-4a99-9ba4-c1c10af495ff",
+              "createdAt": "2026-07-28T02:57:58.000Z",
+              "updatedAt": "2026-07-28T02:57:58.000Z",
+              "uid": "35240-a59f5c05-8c0a-4a99-9ba4-c1c10af495ff"
+            }
+          ],
+          "id": "6d457422-276e-40fd-9be8-39820e934fa5",
+          "createdAt": "2026-07-28T02:57:58.000Z",
+          "updatedAt": "2026-07-28T02:57:58.000Z",
+          "uid": "35240-6d457422-276e-40fd-9be8-39820e934fa5"
+        }
+      ],
+      "id": "abd4aaf8-3a84-49c9-8f22-1cfa8b8f3d4c",
+      "createdAt": "2026-07-28T02:57:58.000Z",
+      "updatedAt": "2026-07-28T02:57:58.000Z",
+      "uid": "35240-abd4aaf8-3a84-49c9-8f22-1cfa8b8f3d4c"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

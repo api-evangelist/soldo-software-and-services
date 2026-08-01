@@ -1,0 +1,1955 @@
+{
+  "info": {
+    "_postman_id": "af7a3ba7-4d1e-4d2a-afbf-b60fbbba9077",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Tags API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:46.000Z",
+    "updatedAt": "2026-07-28T02:58:47.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-af7a3ba7-4d1e-4d2a-afbf-b60fbbba9077"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "dictionaries",
+              "item": [
+                {
+                  "name": "{listId}",
+                  "item": [
+                    {
+                      "name": "tags",
+                      "item": [
+                        {
+                          "name": "bulk",
+                          "item": [
+                            {
+                              "name": "Update Tag bulk",
+                              "id": "62d2994e-fc09-452e-ba0c-c3d202a511a3",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"tags\": [\n    {\n      \"id\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"code\": \"<string>\",\n      \"visible\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"code\": \"<string>\",\n      \"visible\": \"<boolean>\"\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/bulk",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "dictionaries",
+                                    ":listId",
+                                    "tags",
+                                    "bulk"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "fcd4c77f-ae0e-476f-9e4f-384f28ebd9b3",
+                                      "key": "listId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to update a `List` by modifying up to 1000 `Tag` IDs per request."
+                              },
+                              "response": [
+                                {
+                                  "id": "f41cbab4-38a0-4335-a4b4-58d9ad18dfd8",
+                                  "name": "The returned resource is a list of `Tag`.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"tags\": [\n    {\n      \"id\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"code\": \"<string>\",\n      \"visible\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"code\": \"<string>\",\n      \"visible\": \"<boolean>\"\n    }\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/bulk",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "dictionaries",
+                                        ":listId",
+                                        "tags",
+                                        "bulk"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "listId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"tags\": [\n    {\n      \"id\": \"<string>\",\n      \"dictionary_id\": \"<string>\",\n      \"dictionary\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"visible\": \"<boolean>\",\n      \"code\": \"<string>\",\n      \"percentage\": \"<double>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"dictionary_id\": \"<string>\",\n      \"dictionary\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"visible\": \"<boolean>\",\n      \"code\": \"<string>\",\n      \"percentage\": \"<double>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T02:58:47.000Z",
+                                  "updatedAt": "2026-07-28T02:58:47.000Z",
+                                  "uid": "35240-f41cbab4-38a0-4335-a4b4-58d9ad18dfd8"
+                                },
+                                {
+                                  "id": "452b89db-d602-4bdb-b3de-1ce9e134fc9a",
+                                  "name": "Your request has missing arguments or is malformed.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"tags\": [\n    {\n      \"id\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"code\": \"<string>\",\n      \"visible\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"code\": \"<string>\",\n      \"visible\": \"<boolean>\"\n    }\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/bulk",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "dictionaries",
+                                        ":listId",
+                                        "tags",
+                                        "bulk"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "listId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:47.000Z",
+                                  "updatedAt": "2026-07-28T02:58:47.000Z",
+                                  "uid": "35240-452b89db-d602-4bdb-b3de-1ce9e134fc9a"
+                                },
+                                {
+                                  "id": "fe55b0cf-e260-48bd-a511-86a265bd0634",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"tags\": [\n    {\n      \"id\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"code\": \"<string>\",\n      \"visible\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"code\": \"<string>\",\n      \"visible\": \"<boolean>\"\n    }\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/bulk",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "dictionaries",
+                                        ":listId",
+                                        "tags",
+                                        "bulk"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "listId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:47.000Z",
+                                  "updatedAt": "2026-07-28T02:58:47.000Z",
+                                  "uid": "35240-fe55b0cf-e260-48bd-a511-86a265bd0634"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:47.000Z",
+                              "updatedAt": "2026-07-28T02:58:47.000Z",
+                              "uid": "35240-62d2994e-fc09-452e-ba0c-c3d202a511a3"
+                            },
+                            {
+                              "name": "Add Tag bulk to List",
+                              "id": "889bf9c5-4680-4e01-9eef-ba8f5275acb1",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"tags\": [\n    {\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"code\": \"<string>\"\n    },\n    {\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"code\": \"<string>\"\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/bulk",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "dictionaries",
+                                    ":listId",
+                                    "tags",
+                                    "bulk"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "0e2786d4-48bc-4e72-bd19-799e1294a946",
+                                      "key": "listId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to add a `List` by adding up to 1000 `Tag` IDs per request."
+                              },
+                              "response": [
+                                {
+                                  "id": "9bc22304-8af4-4c59-bae4-8840a7de42ca",
+                                  "name": "The result is an array containing `Tags`.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"tags\": [\n    {\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"code\": \"<string>\"\n    },\n    {\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"code\": \"<string>\"\n    }\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/bulk",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "dictionaries",
+                                        ":listId",
+                                        "tags",
+                                        "bulk"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "listId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"tags\": [\n    {\n      \"id\": \"<string>\",\n      \"dictionary_id\": \"<string>\",\n      \"dictionary\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"visible\": \"<boolean>\",\n      \"code\": \"<string>\",\n      \"percentage\": \"<double>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"dictionary_id\": \"<string>\",\n      \"dictionary\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"visible\": \"<boolean>\",\n      \"code\": \"<string>\",\n      \"percentage\": \"<double>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T02:58:47.000Z",
+                                  "updatedAt": "2026-07-28T02:58:47.000Z",
+                                  "uid": "35240-9bc22304-8af4-4c59-bae4-8840a7de42ca"
+                                },
+                                {
+                                  "id": "d131acef-9ea1-498d-9bfc-f488aebba8c9",
+                                  "name": "Your request has missing arguments or is malformed.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"tags\": [\n    {\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"code\": \"<string>\"\n    },\n    {\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"code\": \"<string>\"\n    }\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/bulk",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "dictionaries",
+                                        ":listId",
+                                        "tags",
+                                        "bulk"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "listId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:47.000Z",
+                                  "updatedAt": "2026-07-28T02:58:47.000Z",
+                                  "uid": "35240-d131acef-9ea1-498d-9bfc-f488aebba8c9"
+                                },
+                                {
+                                  "id": "036ba643-f703-4ae5-9106-3a0d2db5eab8",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"tags\": [\n    {\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"code\": \"<string>\"\n    },\n    {\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"code\": \"<string>\"\n    }\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/bulk",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "dictionaries",
+                                        ":listId",
+                                        "tags",
+                                        "bulk"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "listId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:47.000Z",
+                                  "updatedAt": "2026-07-28T02:58:47.000Z",
+                                  "uid": "35240-036ba643-f703-4ae5-9106-3a0d2db5eab8"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:47.000Z",
+                              "updatedAt": "2026-07-28T02:58:47.000Z",
+                              "uid": "35240-889bf9c5-4680-4e01-9eef-ba8f5275acb1"
+                            }
+                          ],
+                          "id": "40e9314a-a86d-43d4-9ca0-bbff834dca09",
+                          "createdAt": "2026-07-28T02:58:47.000Z",
+                          "updatedAt": "2026-07-28T02:58:47.000Z",
+                          "uid": "35240-40e9314a-a86d-43d4-9ca0-bbff834dca09"
+                        },
+                        {
+                          "name": "{tagId}",
+                          "item": [
+                            {
+                              "name": "Get Tag",
+                              "id": "aeeba43a-d8d8-48da-95a4-d10931011f8a",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/:tagId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "dictionaries",
+                                    ":listId",
+                                    "tags",
+                                    ":tagId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "e43677ca-b1a0-4292-8384-dd35868b7998",
+                                      "key": "listId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "aa32caf9-ccd4-486d-9b79-3ac27a36b0e3",
+                                      "key": "tagId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to get a specific `Tag` of a given `List` by ID."
+                              },
+                              "response": [
+                                {
+                                  "id": "d87a1951-2c5f-4213-bb04-6dfa66b8534c",
+                                  "name": "The returned resource is a single `Tag`.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/:tagId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "dictionaries",
+                                        ":listId",
+                                        "tags",
+                                        ":tagId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "listId"
+                                        },
+                                        {
+                                          "key": "tagId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"id\": \"<string>\",\n  \"dictionary_id\": \"<string>\",\n  \"dictionary\": \"<string>\",\n  \"tag\": \"<string>\",\n  \"description\": \"<string>\",\n  \"visible\": \"<boolean>\",\n  \"code\": \"<string>\",\n  \"percentage\": \"<double>\"\n}",
+                                  "createdAt": "2026-07-28T02:58:47.000Z",
+                                  "updatedAt": "2026-07-28T02:58:47.000Z",
+                                  "uid": "35240-d87a1951-2c5f-4213-bb04-6dfa66b8534c"
+                                },
+                                {
+                                  "id": "aa12cfd2-fce4-4c5c-9c35-2b17338b74fa",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/:tagId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "dictionaries",
+                                        ":listId",
+                                        "tags",
+                                        ":tagId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "listId"
+                                        },
+                                        {
+                                          "key": "tagId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:47.000Z",
+                                  "updatedAt": "2026-07-28T02:58:47.000Z",
+                                  "uid": "35240-aa12cfd2-fce4-4c5c-9c35-2b17338b74fa"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:47.000Z",
+                              "updatedAt": "2026-07-28T02:58:47.000Z",
+                              "uid": "35240-aeeba43a-d8d8-48da-95a4-d10931011f8a"
+                            },
+                            {
+                              "name": "Update Tag",
+                              "id": "409bc897-7a3e-4b5c-b0ed-1072979f50c9",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "description": "The name of the `Tag`.",
+                                      "key": "tag",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "The description of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).",
+                                      "key": "description",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "The code of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).",
+                                      "key": "code",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "It determines whether the `Tag` is visible in the `Transaction` detail.",
+                                      "key": "visible",
+                                      "value": "<boolean>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/:tagId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "dictionaries",
+                                    ":listId",
+                                    "tags",
+                                    ":tagId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "a58dcd69-c041-4e6d-93bc-dd90d5700d57",
+                                      "key": "listId",
+                                      "value": "<string>",
+                                      "description": "(Required) The `List` ID."
+                                    },
+                                    {
+                                      "id": "e1caffb8-b8d0-43db-9015-bfa7fdacd7b6",
+                                      "key": "tagId",
+                                      "value": "<string>",
+                                      "description": "(Required) The `Tag` ID."
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to update `Tag` data of a `List`."
+                              },
+                              "response": [
+                                {
+                                  "id": "282c6ce0-906c-468b-b63b-b32ee4478777",
+                                  "name": "The returned resource is a single `Tag`.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/x-www-form-urlencoded"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "urlencoded",
+                                      "urlencoded": [
+                                        {
+                                          "description": "The name of the `Tag`.",
+                                          "key": "tag",
+                                          "value": "<string>"
+                                        },
+                                        {
+                                          "description": "The description of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).",
+                                          "key": "description",
+                                          "value": "<string>"
+                                        },
+                                        {
+                                          "description": "The code of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).",
+                                          "key": "code",
+                                          "value": "<string>"
+                                        },
+                                        {
+                                          "description": "It determines whether the `Tag` is visible in the `Transaction` detail.",
+                                          "key": "visible",
+                                          "value": "<boolean>"
+                                        }
+                                      ]
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/:tagId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "dictionaries",
+                                        ":listId",
+                                        "tags",
+                                        ":tagId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "listId"
+                                        },
+                                        {
+                                          "key": "tagId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"id\": \"<string>\",\n  \"dictionary_id\": \"<string>\",\n  \"dictionary\": \"<string>\",\n  \"tag\": \"<string>\",\n  \"description\": \"<string>\",\n  \"visible\": \"<boolean>\",\n  \"code\": \"<string>\",\n  \"percentage\": \"<double>\"\n}",
+                                  "createdAt": "2026-07-28T02:58:47.000Z",
+                                  "updatedAt": "2026-07-28T02:58:47.000Z",
+                                  "uid": "35240-282c6ce0-906c-468b-b63b-b32ee4478777"
+                                },
+                                {
+                                  "id": "77f1d67f-49f9-4aac-8f45-d6061b5c0bef",
+                                  "name": "Your request has missing arguments or is malformed.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/x-www-form-urlencoded"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "urlencoded",
+                                      "urlencoded": [
+                                        {
+                                          "description": "The name of the `Tag`.",
+                                          "key": "tag",
+                                          "value": "<string>"
+                                        },
+                                        {
+                                          "description": "The description of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).",
+                                          "key": "description",
+                                          "value": "<string>"
+                                        },
+                                        {
+                                          "description": "The code of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).",
+                                          "key": "code",
+                                          "value": "<string>"
+                                        },
+                                        {
+                                          "description": "It determines whether the `Tag` is visible in the `Transaction` detail.",
+                                          "key": "visible",
+                                          "value": "<boolean>"
+                                        }
+                                      ]
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/:tagId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "dictionaries",
+                                        ":listId",
+                                        "tags",
+                                        ":tagId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "listId"
+                                        },
+                                        {
+                                          "key": "tagId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:47.000Z",
+                                  "updatedAt": "2026-07-28T02:58:47.000Z",
+                                  "uid": "35240-77f1d67f-49f9-4aac-8f45-d6061b5c0bef"
+                                },
+                                {
+                                  "id": "e119bc71-0436-4933-96fd-f2025614ee2d",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/x-www-form-urlencoded"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "urlencoded",
+                                      "urlencoded": [
+                                        {
+                                          "description": "The name of the `Tag`.",
+                                          "key": "tag",
+                                          "value": "<string>"
+                                        },
+                                        {
+                                          "description": "The description of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).",
+                                          "key": "description",
+                                          "value": "<string>"
+                                        },
+                                        {
+                                          "description": "The code of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).",
+                                          "key": "code",
+                                          "value": "<string>"
+                                        },
+                                        {
+                                          "description": "It determines whether the `Tag` is visible in the `Transaction` detail.",
+                                          "key": "visible",
+                                          "value": "<boolean>"
+                                        }
+                                      ]
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/:tagId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "dictionaries",
+                                        ":listId",
+                                        "tags",
+                                        ":tagId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "listId"
+                                        },
+                                        {
+                                          "key": "tagId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:47.000Z",
+                                  "updatedAt": "2026-07-28T02:58:47.000Z",
+                                  "uid": "35240-e119bc71-0436-4933-96fd-f2025614ee2d"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:47.000Z",
+                              "updatedAt": "2026-07-28T02:58:47.000Z",
+                              "uid": "35240-409bc897-7a3e-4b5c-b0ed-1072979f50c9"
+                            },
+                            {
+                              "name": "Delete Tag from List",
+                              "id": "276c80db-03a2-48cb-b2d7-53f205a1ae14",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/:tagId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "dictionaries",
+                                    ":listId",
+                                    "tags",
+                                    ":tagId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "5dc88984-cd38-4953-ae9b-f95c5ff51573",
+                                      "key": "listId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "713edbe3-902c-445c-b571-12747e7ab6c1",
+                                      "key": "tagId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to delete a `Tag` out of a `List`."
+                              },
+                              "response": [
+                                {
+                                  "id": "003db653-5126-4f5c-8365-29e10ae3f2ec",
+                                  "name": "No content as result.",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/:tagId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "dictionaries",
+                                        ":listId",
+                                        "tags",
+                                        ":tagId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "listId"
+                                        },
+                                        {
+                                          "key": "tagId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "No Content",
+                                  "code": 204,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:47.000Z",
+                                  "updatedAt": "2026-07-28T02:58:47.000Z",
+                                  "uid": "35240-003db653-5126-4f5c-8365-29e10ae3f2ec"
+                                },
+                                {
+                                  "id": "daf811cb-f029-484d-89f0-67a7ad942134",
+                                  "name": "Your request has missing arguments or is malformed.",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/:tagId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "dictionaries",
+                                        ":listId",
+                                        "tags",
+                                        ":tagId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "listId"
+                                        },
+                                        {
+                                          "key": "tagId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:47.000Z",
+                                  "updatedAt": "2026-07-28T02:58:47.000Z",
+                                  "uid": "35240-daf811cb-f029-484d-89f0-67a7ad942134"
+                                },
+                                {
+                                  "id": "5706ab51-0157-4ee4-b4b5-c089f064bb9a",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags/:tagId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "dictionaries",
+                                        ":listId",
+                                        "tags",
+                                        ":tagId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "listId"
+                                        },
+                                        {
+                                          "key": "tagId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:47.000Z",
+                                  "updatedAt": "2026-07-28T02:58:47.000Z",
+                                  "uid": "35240-5706ab51-0157-4ee4-b4b5-c089f064bb9a"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:47.000Z",
+                              "updatedAt": "2026-07-28T02:58:47.000Z",
+                              "uid": "35240-276c80db-03a2-48cb-b2d7-53f205a1ae14"
+                            }
+                          ],
+                          "id": "b32481a4-8887-4b20-89ef-793144fb5790",
+                          "createdAt": "2026-07-28T02:58:47.000Z",
+                          "updatedAt": "2026-07-28T02:58:47.000Z",
+                          "uid": "35240-b32481a4-8887-4b20-89ef-793144fb5790"
+                        },
+                        {
+                          "name": "Search Tags",
+                          "id": "2dad460f-4323-4f26-9d1b-823d184b7531",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags?visible=<boolean>&name=<string>&code=<string>&text=<string>&p=0&s=0&d=ASC&props=<string>&props=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "dictionaries",
+                                ":listId",
+                                "tags"
+                              ],
+                              "query": [
+                                {
+                                  "key": "visible",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "key": "name",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "code",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "text",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "It indicates the specific page to display (the counter starts from zero).",
+                                  "key": "p",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates the number of items per page.",
+                                  "key": "s",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates how the pages are ordered.",
+                                  "key": "d",
+                                  "value": "ASC"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "ff95b58b-362f-4c36-b4d6-2f2cb2a83033",
+                                  "key": "listId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to search `Tags` in a given `List` using filtering parameters."
+                          },
+                          "response": [
+                            {
+                              "id": "76e330de-400b-46fe-8b78-91a9329ed540",
+                              "name": "The result is an array containing `Tags`.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags?visible=<boolean>&name=<string>&code=<string>&text=<string>&p=0&s=0&d=ASC&props=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "dictionaries",
+                                    ":listId",
+                                    "tags"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "visible",
+                                      "value": "<boolean>"
+                                    },
+                                    {
+                                      "key": "name",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "code",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "text",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "It indicates the specific page to display (the counter starts from zero).",
+                                      "key": "p",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "description": "It indicates the number of items per page.",
+                                      "key": "s",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "description": "It indicates how the pages are ordered.",
+                                      "key": "d",
+                                      "value": "ASC"
+                                    },
+                                    {
+                                      "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                      "key": "props",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "listId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"dictionary_id\": \"<string>\",\n      \"dictionary\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"visible\": \"<boolean>\",\n      \"code\": \"<string>\",\n      \"percentage\": \"<double>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"dictionary_id\": \"<string>\",\n      \"dictionary\": \"<string>\",\n      \"tag\": \"<string>\",\n      \"description\": \"<string>\",\n      \"visible\": \"<boolean>\",\n      \"code\": \"<string>\",\n      \"percentage\": \"<double>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:58:47.000Z",
+                              "updatedAt": "2026-07-28T02:58:47.000Z",
+                              "uid": "35240-76e330de-400b-46fe-8b78-91a9329ed540"
+                            },
+                            {
+                              "id": "e6431ab7-27e8-43db-920e-7bd1f15083a3",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags?visible=<boolean>&name=<string>&code=<string>&text=<string>&p=0&s=0&d=ASC&props=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "dictionaries",
+                                    ":listId",
+                                    "tags"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "visible",
+                                      "value": "<boolean>"
+                                    },
+                                    {
+                                      "key": "name",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "code",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "text",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "It indicates the specific page to display (the counter starts from zero).",
+                                      "key": "p",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "description": "It indicates the number of items per page.",
+                                      "key": "s",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "description": "It indicates how the pages are ordered.",
+                                      "key": "d",
+                                      "value": "ASC"
+                                    },
+                                    {
+                                      "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                      "key": "props",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "listId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:47.000Z",
+                              "updatedAt": "2026-07-28T02:58:47.000Z",
+                              "uid": "35240-e6431ab7-27e8-43db-920e-7bd1f15083a3"
+                            },
+                            {
+                              "id": "6c9ae700-069c-4df2-bbd6-d82b43df3ad8",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags?visible=<boolean>&name=<string>&code=<string>&text=<string>&p=0&s=0&d=ASC&props=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "dictionaries",
+                                    ":listId",
+                                    "tags"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "visible",
+                                      "value": "<boolean>"
+                                    },
+                                    {
+                                      "key": "name",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "code",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "text",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "It indicates the specific page to display (the counter starts from zero).",
+                                      "key": "p",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "description": "It indicates the number of items per page.",
+                                      "key": "s",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "description": "It indicates how the pages are ordered.",
+                                      "key": "d",
+                                      "value": "ASC"
+                                    },
+                                    {
+                                      "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                      "key": "props",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "listId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:47.000Z",
+                              "updatedAt": "2026-07-28T02:58:47.000Z",
+                              "uid": "35240-6c9ae700-069c-4df2-bbd6-d82b43df3ad8"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:47.000Z",
+                          "updatedAt": "2026-07-28T02:58:47.000Z",
+                          "uid": "35240-2dad460f-4323-4f26-9d1b-823d184b7531"
+                        },
+                        {
+                          "name": "Add Tag to List",
+                          "id": "5ce68cf8-fe0b-4caf-b751-fa87afd228d7",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "description": "The name of the `Tag`.",
+                                  "key": "tag",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The description of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).",
+                                  "key": "description",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The code of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).",
+                                  "key": "code",
+                                  "value": "<string>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "dictionaries",
+                                ":listId",
+                                "tags"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "07cd7012-bcd9-4fdf-bd45-4fef13417c5a",
+                                  "key": "listId",
+                                  "value": "<string>",
+                                  "description": "(Required) The `List` ID."
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to add a `Tag` into a `List`."
+                          },
+                          "response": [
+                            {
+                              "id": "961a64af-cfb1-4a37-aeb5-0e4044ffc225",
+                              "name": "The returned resource is a single `Tag`.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "description": "The name of the `Tag`.",
+                                      "key": "tag",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "The description of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).",
+                                      "key": "description",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "The code of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).",
+                                      "key": "code",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "dictionaries",
+                                    ":listId",
+                                    "tags"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "listId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"dictionary_id\": \"<string>\",\n  \"dictionary\": \"<string>\",\n  \"tag\": \"<string>\",\n  \"description\": \"<string>\",\n  \"visible\": \"<boolean>\",\n  \"code\": \"<string>\",\n  \"percentage\": \"<double>\"\n}",
+                              "createdAt": "2026-07-28T02:58:47.000Z",
+                              "updatedAt": "2026-07-28T02:58:47.000Z",
+                              "uid": "35240-961a64af-cfb1-4a37-aeb5-0e4044ffc225"
+                            },
+                            {
+                              "id": "82c8b42f-781d-44e7-8139-46ba3d635128",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "description": "The name of the `Tag`.",
+                                      "key": "tag",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "The description of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).",
+                                      "key": "description",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "The code of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).",
+                                      "key": "code",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "dictionaries",
+                                    ":listId",
+                                    "tags"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "listId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:47.000Z",
+                              "updatedAt": "2026-07-28T02:58:47.000Z",
+                              "uid": "35240-82c8b42f-781d-44e7-8139-46ba3d635128"
+                            },
+                            {
+                              "id": "6d6e60b5-dd81-497b-baec-ae896a2a84e2",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "description": "The name of the `Tag`.",
+                                      "key": "tag",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "The description of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).",
+                                      "key": "description",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "The code of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).",
+                                      "key": "code",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/dictionaries/:listId/tags",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "dictionaries",
+                                    ":listId",
+                                    "tags"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "listId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:47.000Z",
+                              "updatedAt": "2026-07-28T02:58:47.000Z",
+                              "uid": "35240-6d6e60b5-dd81-497b-baec-ae896a2a84e2"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:47.000Z",
+                          "updatedAt": "2026-07-28T02:58:47.000Z",
+                          "uid": "35240-5ce68cf8-fe0b-4caf-b751-fa87afd228d7"
+                        }
+                      ],
+                      "id": "49343038-a132-41ba-a4cf-9d6abaa316cd",
+                      "createdAt": "2026-07-28T02:58:47.000Z",
+                      "updatedAt": "2026-07-28T02:58:47.000Z",
+                      "uid": "35240-49343038-a132-41ba-a4cf-9d6abaa316cd"
+                    }
+                  ],
+                  "id": "97479bd0-9610-4cf0-8662-72c1fa4d8b92",
+                  "createdAt": "2026-07-28T02:58:47.000Z",
+                  "updatedAt": "2026-07-28T02:58:47.000Z",
+                  "uid": "35240-97479bd0-9610-4cf0-8662-72c1fa4d8b92"
+                }
+              ],
+              "id": "efabddc9-6b50-492d-82ad-fce9d43cb3e1",
+              "createdAt": "2026-07-28T02:58:47.000Z",
+              "updatedAt": "2026-07-28T02:58:47.000Z",
+              "uid": "35240-efabddc9-6b50-492d-82ad-fce9d43cb3e1"
+            }
+          ],
+          "id": "d492ad7d-36d8-431d-b73c-cc76160278a7",
+          "createdAt": "2026-07-28T02:58:47.000Z",
+          "updatedAt": "2026-07-28T02:58:47.000Z",
+          "uid": "35240-d492ad7d-36d8-431d-b73c-cc76160278a7"
+        }
+      ],
+      "id": "a27246ab-b495-43b7-b044-cf785b9c64c6",
+      "createdAt": "2026-07-28T02:58:47.000Z",
+      "updatedAt": "2026-07-28T02:58:47.000Z",
+      "uid": "35240-a27246ab-b495-43b7-b044-cf785b9c64c6"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

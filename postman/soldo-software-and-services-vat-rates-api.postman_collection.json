@@ -1,0 +1,988 @@
+{
+  "info": {
+    "_postman_id": "b7c43ec4-6313-45e8-930b-f3bb257e7c6c",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification VAT Rates API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:59:22.000Z",
+    "updatedAt": "2026-07-28T02:59:22.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b7c43ec4-6313-45e8-930b-f3bb257e7c6c"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "entities",
+              "item": [
+                {
+                  "name": "tax-rate",
+                  "item": [
+                    {
+                      "name": "{taxRateId}",
+                      "item": [
+                        {
+                          "name": "Get VAT Rate",
+                          "id": "d8738470-6132-4749-b2ee-f9b44025873d",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/entities/tax-rate/:taxRateId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "entities",
+                                "tax-rate",
+                                ":taxRateId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "7d44ac38-714c-4111-b9bd-8c728ebc64b6",
+                                  "key": "taxRateId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to retrieve a specific `VatRate` by ID."
+                          },
+                          "response": [
+                            {
+                              "id": "f8d513f3-4266-42f4-a7b0-db57896f5322",
+                              "name": "The returned resource is a single `VatRate`.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/entities/tax-rate/:taxRateId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "entities",
+                                    "tax-rate",
+                                    ":taxRateId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "taxRateId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"percentage\": \"<double>\",\n  \"enabled\": \"<boolean>\",\n  \"integration\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:59:23.000Z",
+                              "updatedAt": "2026-07-28T02:59:23.000Z",
+                              "uid": "35240-f8d513f3-4266-42f4-a7b0-db57896f5322"
+                            },
+                            {
+                              "id": "93c39e59-4799-447c-a2ef-6ce89cd3fc34",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/entities/tax-rate/:taxRateId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "entities",
+                                    "tax-rate",
+                                    ":taxRateId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "taxRateId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:59:23.000Z",
+                              "updatedAt": "2026-07-28T02:59:23.000Z",
+                              "uid": "35240-93c39e59-4799-447c-a2ef-6ce89cd3fc34"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:59:23.000Z",
+                          "updatedAt": "2026-07-28T02:59:23.000Z",
+                          "uid": "35240-d8738470-6132-4749-b2ee-f9b44025873d"
+                        },
+                        {
+                          "name": "Update VAT Rate",
+                          "id": "1354528d-478b-415d-8e20-d9035f04c0d9",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"percentage\": \"<double>\",\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"enabled\": \"<boolean>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/entities/tax-rate/:taxRateId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "entities",
+                                "tax-rate",
+                                ":taxRateId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "32a36335-ff40-4ad9-894d-571a02f27524",
+                                  "key": "taxRateId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to update `VATRate`."
+                          },
+                          "response": [
+                            {
+                              "id": "d7a1e91f-02a6-4a1d-9d09-1ef62cc54bb0",
+                              "name": "The returned resource is a single `VatRate`.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"percentage\": \"<double>\",\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"enabled\": \"<boolean>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/entities/tax-rate/:taxRateId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "entities",
+                                    "tax-rate",
+                                    ":taxRateId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "taxRateId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"percentage\": \"<double>\",\n  \"enabled\": \"<boolean>\",\n  \"integration\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:59:23.000Z",
+                              "updatedAt": "2026-07-28T02:59:23.000Z",
+                              "uid": "35240-d7a1e91f-02a6-4a1d-9d09-1ef62cc54bb0"
+                            },
+                            {
+                              "id": "c4578cc2-ff4f-4101-9dfd-4be2851b3589",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"percentage\": \"<double>\",\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"enabled\": \"<boolean>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/entities/tax-rate/:taxRateId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "entities",
+                                    "tax-rate",
+                                    ":taxRateId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "taxRateId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:59:23.000Z",
+                              "updatedAt": "2026-07-28T02:59:23.000Z",
+                              "uid": "35240-c4578cc2-ff4f-4101-9dfd-4be2851b3589"
+                            },
+                            {
+                              "id": "1fb35f39-f6d2-4912-a9b3-e187ef0d796f",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"percentage\": \"<double>\",\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"enabled\": \"<boolean>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/entities/tax-rate/:taxRateId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "entities",
+                                    "tax-rate",
+                                    ":taxRateId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "taxRateId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:59:23.000Z",
+                              "updatedAt": "2026-07-28T02:59:23.000Z",
+                              "uid": "35240-1fb35f39-f6d2-4912-a9b3-e187ef0d796f"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:59:23.000Z",
+                          "updatedAt": "2026-07-28T02:59:23.000Z",
+                          "uid": "35240-1354528d-478b-415d-8e20-d9035f04c0d9"
+                        },
+                        {
+                          "name": "Delete VAT Rate",
+                          "id": "1ccc0851-8866-448f-8710-503f069b9957",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/entities/tax-rate/:taxRateId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "entities",
+                                "tax-rate",
+                                ":taxRateId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "9caf4b3b-7058-4335-88a5-e3f22fa48a77",
+                                  "key": "taxRateId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to delete a `VatRate`."
+                          },
+                          "response": [
+                            {
+                              "id": "f0402ec7-adec-4d74-8bab-e9f96e8f1c3a",
+                              "name": "No content as result.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/entities/tax-rate/:taxRateId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "entities",
+                                    "tax-rate",
+                                    ":taxRateId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "taxRateId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:59:23.000Z",
+                              "updatedAt": "2026-07-28T02:59:23.000Z",
+                              "uid": "35240-f0402ec7-adec-4d74-8bab-e9f96e8f1c3a"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:59:23.000Z",
+                          "updatedAt": "2026-07-28T02:59:23.000Z",
+                          "uid": "35240-1ccc0851-8866-448f-8710-503f069b9957"
+                        }
+                      ],
+                      "id": "b5654ef6-3e97-472d-bacf-31920f1d99b0",
+                      "createdAt": "2026-07-28T02:59:23.000Z",
+                      "updatedAt": "2026-07-28T02:59:23.000Z",
+                      "uid": "35240-b5654ef6-3e97-472d-bacf-31920f1d99b0"
+                    },
+                    {
+                      "name": "Search VAT Rates",
+                      "id": "2567191a-6d1a-4ed7-bf4f-12e8bc4fcb52",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/entities/tax-rate?text=<string>&enabled=<boolean>&p=0&s=0&d=DESC&props=<string>&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "entities",
+                            "tax-rate"
+                          ],
+                          "query": [
+                            {
+                              "description": "A simple text to search in the Vat rate data (name, code).",
+                              "key": "text",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It determines if Vat rate is enabled.",
+                              "key": "enabled",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "DESC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to find `VatRate` using filtering parameters."
+                      },
+                      "response": [
+                        {
+                          "id": "cf5b4b7a-5482-4e79-b7c5-852f69e51271",
+                          "name": "The result is an array containing `VATRates`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/entities/tax-rate?text=<string>&enabled=<boolean>&p=0&s=0&d=DESC&props=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "entities",
+                                "tax-rate"
+                              ],
+                              "query": [
+                                {
+                                  "description": "A simple text to search in the Vat rate data (name, code).",
+                                  "key": "text",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "It determines if Vat rate is enabled.",
+                                  "key": "enabled",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "It indicates the specific page to display (the counter starts from zero).",
+                                  "key": "p",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates the number of items per page.",
+                                  "key": "s",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates how the pages are ordered.",
+                                  "key": "d",
+                                  "value": "DESC"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"percentage\": \"<double>\",\n      \"enabled\": \"<boolean>\",\n      \"integration\": \"<string>\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"code\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"percentage\": \"<double>\",\n      \"enabled\": \"<boolean>\",\n      \"integration\": \"<string>\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:59:23.000Z",
+                          "updatedAt": "2026-07-28T02:59:23.000Z",
+                          "uid": "35240-cf5b4b7a-5482-4e79-b7c5-852f69e51271"
+                        },
+                        {
+                          "id": "ec43a465-c3c8-4ae1-ac03-ff5c0d10859c",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/entities/tax-rate?text=<string>&enabled=<boolean>&p=0&s=0&d=DESC&props=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "entities",
+                                "tax-rate"
+                              ],
+                              "query": [
+                                {
+                                  "description": "A simple text to search in the Vat rate data (name, code).",
+                                  "key": "text",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "It determines if Vat rate is enabled.",
+                                  "key": "enabled",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "It indicates the specific page to display (the counter starts from zero).",
+                                  "key": "p",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates the number of items per page.",
+                                  "key": "s",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates how the pages are ordered.",
+                                  "key": "d",
+                                  "value": "DESC"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:23.000Z",
+                          "updatedAt": "2026-07-28T02:59:23.000Z",
+                          "uid": "35240-ec43a465-c3c8-4ae1-ac03-ff5c0d10859c"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:59:23.000Z",
+                      "updatedAt": "2026-07-28T02:59:23.000Z",
+                      "uid": "35240-2567191a-6d1a-4ed7-bf4f-12e8bc4fcb52"
+                    },
+                    {
+                      "name": "Add VAT Rate",
+                      "id": "e4c1a1db-41e9-4830-a8af-5f59d19f5463",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"percentage\": \"<double>\",\n  \"code\": \"<string>\",\n  \"description\": \"<string>\",\n  \"enabled\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/entities/tax-rate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "entities",
+                            "tax-rate"
+                          ]
+                        },
+                        "description": "Endpoint to add a new `VatRate`."
+                      },
+                      "response": [
+                        {
+                          "id": "02fafb7b-4151-418b-ac2b-b38e3e50838d",
+                          "name": "The result is an `VatRate`.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"percentage\": \"<double>\",\n  \"code\": \"<string>\",\n  \"description\": \"<string>\",\n  \"enabled\": \"<boolean>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/entities/tax-rate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "entities",
+                                "tax-rate"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"code\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"percentage\": \"<double>\",\n  \"enabled\": \"<boolean>\",\n  \"integration\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:59:23.000Z",
+                          "updatedAt": "2026-07-28T02:59:23.000Z",
+                          "uid": "35240-02fafb7b-4151-418b-ac2b-b38e3e50838d"
+                        },
+                        {
+                          "id": "93d6288f-bc18-420b-b092-0b731d23e056",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"percentage\": \"<double>\",\n  \"code\": \"<string>\",\n  \"description\": \"<string>\",\n  \"enabled\": \"<boolean>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/entities/tax-rate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "entities",
+                                "tax-rate"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:23.000Z",
+                          "updatedAt": "2026-07-28T02:59:23.000Z",
+                          "uid": "35240-93d6288f-bc18-420b-b092-0b731d23e056"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:59:23.000Z",
+                      "updatedAt": "2026-07-28T02:59:23.000Z",
+                      "uid": "35240-e4c1a1db-41e9-4830-a8af-5f59d19f5463"
+                    }
+                  ],
+                  "id": "cc04fdec-de99-414a-a2b9-54fa421e0be6",
+                  "createdAt": "2026-07-28T02:59:23.000Z",
+                  "updatedAt": "2026-07-28T02:59:23.000Z",
+                  "uid": "35240-cc04fdec-de99-414a-a2b9-54fa421e0be6"
+                }
+              ],
+              "id": "f3765de8-4f79-40cb-8600-6972428dad8c",
+              "createdAt": "2026-07-28T02:59:23.000Z",
+              "updatedAt": "2026-07-28T02:59:23.000Z",
+              "uid": "35240-f3765de8-4f79-40cb-8600-6972428dad8c"
+            }
+          ],
+          "id": "7e09265a-de66-4acd-b0f7-8cde0089ea9d",
+          "createdAt": "2026-07-28T02:59:23.000Z",
+          "updatedAt": "2026-07-28T02:59:23.000Z",
+          "uid": "35240-7e09265a-de66-4acd-b0f7-8cde0089ea9d"
+        }
+      ],
+      "id": "a2c46343-e8c8-4a36-a1c1-7f0dbabb788c",
+      "createdAt": "2026-07-28T02:59:23.000Z",
+      "updatedAt": "2026-07-28T02:59:23.000Z",
+      "uid": "35240-a2c46343-e8c8-4a36-a1c1-7f0dbabb788c"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

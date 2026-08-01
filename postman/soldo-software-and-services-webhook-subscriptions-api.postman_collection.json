@@ -1,0 +1,1204 @@
+{
+  "info": {
+    "_postman_id": "d72f2bb3-fbaa-49ad-a6f4-d4530b50d520",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Webhook Subscriptions API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:59:27.000Z",
+    "updatedAt": "2026-07-28T02:59:27.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d72f2bb3-fbaa-49ad-a6f4-d4530b50d520"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "webhooks",
+              "item": [
+                {
+                  "name": "subscriptions",
+                  "item": [
+                    {
+                      "name": "{webhookSubscriptionId}",
+                      "item": [
+                        {
+                          "name": "Update Webhook Subscription",
+                          "id": "e12547d7-2376-4769-b962-3283e937dd72",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"webhook_url\": \"<string>\",\n  \"enabled_events\": [\n    \"load_failed\",\n    \"business_trip_updated\"\n  ],\n  \"description\": \"<string>\",\n  \"active\": \"<boolean>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/webhooks/subscriptions/:webhookSubscriptionId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "webhooks",
+                                "subscriptions",
+                                ":webhookSubscriptionId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "209c25d4-5614-4d35-9df5-3ad8517d6046",
+                                  "key": "webhookSubscriptionId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to update a specific `WebhookSubscription`."
+                          },
+                          "response": [
+                            {
+                              "id": "18743fb3-83ee-4611-8f62-31803d8c2d4f",
+                              "name": "The returned resource is a single `WebhookSubscription`.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"webhook_url\": \"<string>\",\n  \"enabled_events\": [\n    \"load_failed\",\n    \"business_trip_updated\"\n  ],\n  \"description\": \"<string>\",\n  \"active\": \"<boolean>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/webhooks/subscriptions/:webhookSubscriptionId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "webhooks",
+                                    "subscriptions",
+                                    ":webhookSubscriptionId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "webhookSubscriptionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<uuid>\",\n  \"webhook_url\": \"<string>\",\n  \"enabled_events\": [\n    \"attachment_delete\",\n    \"card_authorization\"\n  ],\n  \"description\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"creation_date\": \"<string>\",\n  \"last_update\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:59:27.000Z",
+                              "updatedAt": "2026-07-28T02:59:27.000Z",
+                              "uid": "35240-18743fb3-83ee-4611-8f62-31803d8c2d4f"
+                            },
+                            {
+                              "id": "5da45e81-e1c0-41a4-92fa-61f81cf8773e",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"webhook_url\": \"<string>\",\n  \"enabled_events\": [\n    \"load_failed\",\n    \"business_trip_updated\"\n  ],\n  \"description\": \"<string>\",\n  \"active\": \"<boolean>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/webhooks/subscriptions/:webhookSubscriptionId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "webhooks",
+                                    "subscriptions",
+                                    ":webhookSubscriptionId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "webhookSubscriptionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:59:27.000Z",
+                              "updatedAt": "2026-07-28T02:59:27.000Z",
+                              "uid": "35240-5da45e81-e1c0-41a4-92fa-61f81cf8773e"
+                            },
+                            {
+                              "id": "8c809bc0-4c73-442a-97b7-d552ea373987",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"webhook_url\": \"<string>\",\n  \"enabled_events\": [\n    \"load_failed\",\n    \"business_trip_updated\"\n  ],\n  \"description\": \"<string>\",\n  \"active\": \"<boolean>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/webhooks/subscriptions/:webhookSubscriptionId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "webhooks",
+                                    "subscriptions",
+                                    ":webhookSubscriptionId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "webhookSubscriptionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:59:27.000Z",
+                              "updatedAt": "2026-07-28T02:59:27.000Z",
+                              "uid": "35240-8c809bc0-4c73-442a-97b7-d552ea373987"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:59:27.000Z",
+                          "updatedAt": "2026-07-28T02:59:27.000Z",
+                          "uid": "35240-e12547d7-2376-4769-b962-3283e937dd72"
+                        },
+                        {
+                          "name": "Delete Webhook Subscription",
+                          "id": "4deac664-5753-481b-8dc9-731fd4db2bf7",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/webhooks/subscriptions/:webhookSubscriptionId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "webhooks",
+                                "subscriptions",
+                                ":webhookSubscriptionId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "bf61e76c-c5b9-4f36-983c-d090b80bd41b",
+                                  "key": "webhookSubscriptionId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to delete a specific `WebhookSubscription`."
+                          },
+                          "response": [
+                            {
+                              "id": "9f2bb72d-f61c-4b51-adb8-c9b53deaf4db",
+                              "name": "No content as result.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/webhooks/subscriptions/:webhookSubscriptionId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "webhooks",
+                                    "subscriptions",
+                                    ":webhookSubscriptionId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "webhookSubscriptionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:59:27.000Z",
+                              "updatedAt": "2026-07-28T02:59:27.000Z",
+                              "uid": "35240-9f2bb72d-f61c-4b51-adb8-c9b53deaf4db"
+                            },
+                            {
+                              "id": "db1d5f63-529d-41f7-bf58-d8a1c3ea3e52",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/webhooks/subscriptions/:webhookSubscriptionId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "webhooks",
+                                    "subscriptions",
+                                    ":webhookSubscriptionId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "webhookSubscriptionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:59:27.000Z",
+                              "updatedAt": "2026-07-28T02:59:27.000Z",
+                              "uid": "35240-db1d5f63-529d-41f7-bf58-d8a1c3ea3e52"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:59:27.000Z",
+                          "updatedAt": "2026-07-28T02:59:27.000Z",
+                          "uid": "35240-4deac664-5753-481b-8dc9-731fd4db2bf7"
+                        }
+                      ],
+                      "id": "617a7a1d-3f5e-4908-a0a3-81dce392aabc",
+                      "createdAt": "2026-07-28T02:59:27.000Z",
+                      "updatedAt": "2026-07-28T02:59:27.000Z",
+                      "uid": "35240-617a7a1d-3f5e-4908-a0a3-81dce392aabc"
+                    },
+                    {
+                      "name": "{webhookSubscriptionsId}",
+                      "item": [
+                        {
+                          "name": "Get Webhook Subscription",
+                          "id": "27b1fd49-d0d7-42c5-a79a-3d08a03487c6",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/webhooks/subscriptions/:webhookSubscriptionsId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "webhooks",
+                                "subscriptions",
+                                ":webhookSubscriptionsId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "af112551-5547-49a2-b0b8-8edb716383fe",
+                                  "key": "webhookSubscriptionsId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to retrieve a specific `WebhookSubscription` by ID."
+                          },
+                          "response": [
+                            {
+                              "id": "e1c5948c-014e-4d6a-bc05-7b4e27bf4f59",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/webhooks/subscriptions/:webhookSubscriptionsId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "webhooks",
+                                    "subscriptions",
+                                    ":webhookSubscriptionsId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "webhookSubscriptionsId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:59:27.000Z",
+                              "updatedAt": "2026-07-28T02:59:27.000Z",
+                              "uid": "35240-e1c5948c-014e-4d6a-bc05-7b4e27bf4f59"
+                            },
+                            {
+                              "id": "d0d1b9c2-20fa-4f17-9496-7ed796c61901",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/webhooks/subscriptions/:webhookSubscriptionsId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "webhooks",
+                                    "subscriptions",
+                                    ":webhookSubscriptionsId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "webhookSubscriptionsId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:59:27.000Z",
+                              "updatedAt": "2026-07-28T02:59:27.000Z",
+                              "uid": "35240-d0d1b9c2-20fa-4f17-9496-7ed796c61901"
+                            },
+                            {
+                              "id": "e09c3bf0-225d-42cd-bebf-c1d63d261576",
+                              "name": "The returned resource is a single `WebhookSubscription`.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/webhooks/subscriptions/:webhookSubscriptionsId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "webhooks",
+                                    "subscriptions",
+                                    ":webhookSubscriptionsId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "webhookSubscriptionsId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<uuid>\",\n  \"webhook_url\": \"<string>\",\n  \"enabled_events\": [\n    \"attachment_delete\",\n    \"card_authorization\"\n  ],\n  \"description\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"creation_date\": \"<string>\",\n  \"last_update\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:59:27.000Z",
+                              "updatedAt": "2026-07-28T02:59:27.000Z",
+                              "uid": "35240-e09c3bf0-225d-42cd-bebf-c1d63d261576"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:59:27.000Z",
+                          "updatedAt": "2026-07-28T02:59:27.000Z",
+                          "uid": "35240-27b1fd49-d0d7-42c5-a79a-3d08a03487c6"
+                        }
+                      ],
+                      "id": "1422e6f8-bc8c-403d-829e-6df4464aea78",
+                      "createdAt": "2026-07-28T02:59:27.000Z",
+                      "updatedAt": "2026-07-28T02:59:27.000Z",
+                      "uid": "35240-1422e6f8-bc8c-403d-829e-6df4464aea78"
+                    },
+                    {
+                      "name": "Search Webhook Subscriptions",
+                      "id": "ae9ea057-badc-4525-99e6-d91e127525cf",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/webhooks/subscriptions?webhookUrl=<string>&enabledEvents=joule_feed&enabledEvents=move_resources_card&active=<boolean>&description=<string>&p=0&s=0&d=ASC&props=<string>&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "webhooks",
+                            "subscriptions"
+                          ],
+                          "query": [
+                            {
+                              "key": "webhookUrl",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "enabledEvents",
+                              "value": "joule_feed"
+                            },
+                            {
+                              "key": "enabledEvents",
+                              "value": "move_resources_card"
+                            },
+                            {
+                              "key": "active",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "key": "description",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to search `WebhookSubscriptions` using filtering parameters."
+                      },
+                      "response": [
+                        {
+                          "id": "d0784b3e-6793-4689-8e40-6d699e156562",
+                          "name": "The result is an array containing `WebhookSubscriptions`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/webhooks/subscriptions?webhookUrl=<string>&enabledEvents=move_resources_card&active=<boolean>&description=<string>&p=0&s=0&d=ASC&props=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "webhooks",
+                                "subscriptions"
+                              ],
+                              "query": [
+                                {
+                                  "key": "webhookUrl",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "enabledEvents",
+                                  "value": "move_resources_card"
+                                },
+                                {
+                                  "key": "active",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "key": "description",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "It indicates the specific page to display (the counter starts from zero).",
+                                  "key": "p",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates the number of items per page.",
+                                  "key": "s",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates how the pages are ordered.",
+                                  "key": "d",
+                                  "value": "ASC"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<uuid>\",\n      \"webhook_url\": \"<string>\",\n      \"enabled_events\": [\n        \"update_group\",\n        \"vehicle_delete\"\n      ],\n      \"description\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"creation_date\": \"<string>\",\n      \"last_update\": \"<string>\"\n    },\n    {\n      \"id\": \"<uuid>\",\n      \"webhook_url\": \"<string>\",\n      \"enabled_events\": [\n        \"card_creation\",\n        \"scheduled_transfer\"\n      ],\n      \"description\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"creation_date\": \"<string>\",\n      \"last_update\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:59:27.000Z",
+                          "updatedAt": "2026-07-28T02:59:27.000Z",
+                          "uid": "35240-d0784b3e-6793-4689-8e40-6d699e156562"
+                        },
+                        {
+                          "id": "9f46e2af-84f4-4431-a144-4dd7390c6039",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/webhooks/subscriptions?webhookUrl=<string>&enabledEvents=move_resources_card&active=<boolean>&description=<string>&p=0&s=0&d=ASC&props=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "webhooks",
+                                "subscriptions"
+                              ],
+                              "query": [
+                                {
+                                  "key": "webhookUrl",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "enabledEvents",
+                                  "value": "move_resources_card"
+                                },
+                                {
+                                  "key": "active",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "key": "description",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "It indicates the specific page to display (the counter starts from zero).",
+                                  "key": "p",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates the number of items per page.",
+                                  "key": "s",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates how the pages are ordered.",
+                                  "key": "d",
+                                  "value": "ASC"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:27.000Z",
+                          "updatedAt": "2026-07-28T02:59:27.000Z",
+                          "uid": "35240-9f46e2af-84f4-4431-a144-4dd7390c6039"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:59:27.000Z",
+                      "updatedAt": "2026-07-28T02:59:27.000Z",
+                      "uid": "35240-ae9ea057-badc-4525-99e6-d91e127525cf"
+                    },
+                    {
+                      "name": "Add Webhook Subscription",
+                      "id": "431edeeb-91f1-4f48-87ac-fd9234835d70",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"active\": \"<boolean>\",\n  \"enabled_events\": [\n    \"updated_transaction\",\n    \"customer_care_deposit\"\n  ],\n  \"webhook_url\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/webhooks/subscriptions",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "webhooks",
+                            "subscriptions"
+                          ]
+                        },
+                        "description": "Endpoint to add a new `WebhookSubscription`."
+                      },
+                      "response": [
+                        {
+                          "id": "7caed5a8-ffc7-4468-880b-88069a2590c9",
+                          "name": "The returned resource is a single `WebhookSubscription`.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"active\": \"<boolean>\",\n  \"enabled_events\": [\n    \"updated_transaction\",\n    \"customer_care_deposit\"\n  ],\n  \"webhook_url\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/webhooks/subscriptions",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "webhooks",
+                                "subscriptions"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<uuid>\",\n  \"webhook_url\": \"<string>\",\n  \"enabled_events\": [\n    \"attachment_delete\",\n    \"card_authorization\"\n  ],\n  \"description\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"creation_date\": \"<string>\",\n  \"last_update\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:59:27.000Z",
+                          "updatedAt": "2026-07-28T02:59:27.000Z",
+                          "uid": "35240-7caed5a8-ffc7-4468-880b-88069a2590c9"
+                        },
+                        {
+                          "id": "28400632-8dbd-4dd5-bac6-3b28bc17d81a",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"active\": \"<boolean>\",\n  \"enabled_events\": [\n    \"updated_transaction\",\n    \"customer_care_deposit\"\n  ],\n  \"webhook_url\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/webhooks/subscriptions",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "webhooks",
+                                "subscriptions"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:27.000Z",
+                          "updatedAt": "2026-07-28T02:59:27.000Z",
+                          "uid": "35240-28400632-8dbd-4dd5-bac6-3b28bc17d81a"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:59:27.000Z",
+                      "updatedAt": "2026-07-28T02:59:27.000Z",
+                      "uid": "35240-431edeeb-91f1-4f48-87ac-fd9234835d70"
+                    }
+                  ],
+                  "id": "95ffeeb7-52dd-4397-aa17-28d1bd0daf65",
+                  "createdAt": "2026-07-28T02:59:27.000Z",
+                  "updatedAt": "2026-07-28T02:59:27.000Z",
+                  "uid": "35240-95ffeeb7-52dd-4397-aa17-28d1bd0daf65"
+                }
+              ],
+              "id": "64110096-8405-44a0-9abe-03435f22f175",
+              "createdAt": "2026-07-28T02:59:27.000Z",
+              "updatedAt": "2026-07-28T02:59:27.000Z",
+              "uid": "35240-64110096-8405-44a0-9abe-03435f22f175"
+            }
+          ],
+          "id": "cdf61ee3-e8e0-42e7-9b3b-43f9796256c7",
+          "createdAt": "2026-07-28T02:59:27.000Z",
+          "updatedAt": "2026-07-28T02:59:27.000Z",
+          "uid": "35240-cdf61ee3-e8e0-42e7-9b3b-43f9796256c7"
+        }
+      ],
+      "id": "499897ef-339d-4f65-8f91-61a19d5cd5fe",
+      "createdAt": "2026-07-28T02:59:27.000Z",
+      "updatedAt": "2026-07-28T02:59:27.000Z",
+      "uid": "35240-499897ef-339d-4f65-8f91-61a19d5cd5fe"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

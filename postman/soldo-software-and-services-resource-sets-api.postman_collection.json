@@ -1,0 +1,951 @@
+{
+  "info": {
+    "_postman_id": "7d2a9b0e-7960-4fb0-a5c2-4fd8fe3f31dd",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Resource Sets API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:38.000Z",
+    "updatedAt": "2026-07-28T02:58:38.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-7d2a9b0e-7960-4fb0-a5c2-4fd8fe3f31dd"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "resource-sets",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "Get Resource Set",
+                      "id": "e2207159-762c-4edf-b3e5-ffa96dddcd0b",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/resource-sets/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "resource-sets",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "baa0d9c5-7866-42de-bba8-fa1662342e91",
+                              "key": "id",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to get a specific `ResourceSet` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "09cd2cfd-9fae-4fcf-9eec-bb354676461a",
+                          "name": "The returned resource is a single `ResourceSet`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/resource-sets/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "resource-sets",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"configuration\": [\n    {\n      \"resource_type\": \"GROUP\",\n      \"scope\": \"LIST\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"resource_type\": \"USER\",\n      \"scope\": \"ALL\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:58:39.000Z",
+                          "updatedAt": "2026-07-28T02:58:39.000Z",
+                          "uid": "35240-09cd2cfd-9fae-4fcf-9eec-bb354676461a"
+                        },
+                        {
+                          "id": "d07c1362-dc52-4c6a-9449-63bac10ac533",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/resource-sets/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "resource-sets",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:39.000Z",
+                          "updatedAt": "2026-07-28T02:58:39.000Z",
+                          "uid": "35240-d07c1362-dc52-4c6a-9449-63bac10ac533"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:39.000Z",
+                      "updatedAt": "2026-07-28T02:58:39.000Z",
+                      "uid": "35240-e2207159-762c-4edf-b3e5-ffa96dddcd0b"
+                    },
+                    {
+                      "name": "Update Resource Set",
+                      "id": "90e21793-7c78-43c4-b80d-2efa3ccafbff",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"configuration\": [\n    {\n      \"resource_type\": \"GROUP\",\n      \"scope\": \"ALL\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"resource_type\": \"USER\",\n      \"scope\": \"ALL\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"name\": \"<string>\",\n  \"id\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/resource-sets/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "resource-sets",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "7e0d7f1b-1902-4566-a110-ea636fc50d19",
+                              "key": "id",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to update a `ResourceSet`."
+                      },
+                      "response": [
+                        {
+                          "id": "93c8008d-a613-425e-b278-188ae4cb9cb7",
+                          "name": "The returned resource is a single `ResourceSet`.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"configuration\": [\n    {\n      \"resource_type\": \"GROUP\",\n      \"scope\": \"ALL\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"resource_type\": \"USER\",\n      \"scope\": \"ALL\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"name\": \"<string>\",\n  \"id\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/resource-sets/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "resource-sets",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"configuration\": [\n    {\n      \"resource_type\": \"GROUP\",\n      \"scope\": \"LIST\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"resource_type\": \"USER\",\n      \"scope\": \"ALL\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:58:39.000Z",
+                          "updatedAt": "2026-07-28T02:58:39.000Z",
+                          "uid": "35240-93c8008d-a613-425e-b278-188ae4cb9cb7"
+                        },
+                        {
+                          "id": "690a5c02-29e3-4086-a8ad-6bebca0a6167",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"configuration\": [\n    {\n      \"resource_type\": \"GROUP\",\n      \"scope\": \"ALL\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"resource_type\": \"USER\",\n      \"scope\": \"ALL\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"name\": \"<string>\",\n  \"id\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/resource-sets/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "resource-sets",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:39.000Z",
+                          "updatedAt": "2026-07-28T02:58:39.000Z",
+                          "uid": "35240-690a5c02-29e3-4086-a8ad-6bebca0a6167"
+                        },
+                        {
+                          "id": "036ae830-3a3f-4905-99d6-62894115e7d7",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"configuration\": [\n    {\n      \"resource_type\": \"GROUP\",\n      \"scope\": \"ALL\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"resource_type\": \"USER\",\n      \"scope\": \"ALL\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"name\": \"<string>\",\n  \"id\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/resource-sets/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "resource-sets",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:39.000Z",
+                          "updatedAt": "2026-07-28T02:58:39.000Z",
+                          "uid": "35240-036ae830-3a3f-4905-99d6-62894115e7d7"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:39.000Z",
+                      "updatedAt": "2026-07-28T02:58:39.000Z",
+                      "uid": "35240-90e21793-7c78-43c4-b80d-2efa3ccafbff"
+                    },
+                    {
+                      "name": "Delete Resource Set",
+                      "id": "437aa50d-2d8f-4c5a-9b49-b1f57a8c472b",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/resource-sets/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "resource-sets",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "b970c760-4649-4655-8d82-b20a0161c11b",
+                              "key": "id",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to delete a specific `ResourceSet` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "a5fd8507-c62a-4ea4-b8f1-03fe5c2fecc5",
+                          "name": "No content as result.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/resource-sets/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "resource-sets",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:39.000Z",
+                          "updatedAt": "2026-07-28T02:58:39.000Z",
+                          "uid": "35240-a5fd8507-c62a-4ea4-b8f1-03fe5c2fecc5"
+                        },
+                        {
+                          "id": "73cbd22d-861f-4e81-9cfe-7aa0dad5dc6b",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/resource-sets/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "resource-sets",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:39.000Z",
+                          "updatedAt": "2026-07-28T02:58:39.000Z",
+                          "uid": "35240-73cbd22d-861f-4e81-9cfe-7aa0dad5dc6b"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:39.000Z",
+                      "updatedAt": "2026-07-28T02:58:39.000Z",
+                      "uid": "35240-437aa50d-2d8f-4c5a-9b49-b1f57a8c472b"
+                    }
+                  ],
+                  "id": "053aa8a6-c95f-4371-b238-51b9c2e4d413",
+                  "createdAt": "2026-07-28T02:58:39.000Z",
+                  "updatedAt": "2026-07-28T02:58:39.000Z",
+                  "uid": "35240-053aa8a6-c95f-4371-b238-51b9c2e4d413"
+                },
+                {
+                  "name": "Search Resource Sets",
+                  "id": "25d39fa1-1b59-4877-8ce5-baa7ec591352",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/resource-sets?text=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "resource-sets"
+                      ],
+                      "query": [
+                        {
+                          "key": "text",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to search `ResourceSet` using filtering parameters."
+                  },
+                  "response": [
+                    {
+                      "id": "0021a65d-b5a7-4c13-a517-7d72471d6211",
+                      "name": "The result is an array containing `ResourceSets`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/resource-sets?text=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "resource-sets"
+                          ],
+                          "query": [
+                            {
+                              "key": "text",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"configuration\": [\n      {\n        \"resource_type\": \"COMPANY_WALLET\",\n        \"scope\": \"ALL\",\n        \"resource_ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"resource_type\": \"COMPANY_CARD\",\n        \"scope\": \"SELF\",\n        \"resource_ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ],\n    \"creation_time\": \"<string>\",\n    \"last_update_time\": \"<string>\"\n  },\n  {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"configuration\": [\n      {\n        \"resource_type\": \"COMPANY_WALLET\",\n        \"scope\": \"NONE\",\n        \"resource_ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"resource_type\": \"USER\",\n        \"scope\": \"ALL\",\n        \"resource_ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ],\n    \"creation_time\": \"<string>\",\n    \"last_update_time\": \"<string>\"\n  }\n]",
+                      "createdAt": "2026-07-28T02:58:39.000Z",
+                      "updatedAt": "2026-07-28T02:58:39.000Z",
+                      "uid": "35240-0021a65d-b5a7-4c13-a517-7d72471d6211"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:58:39.000Z",
+                  "updatedAt": "2026-07-28T02:58:39.000Z",
+                  "uid": "35240-25d39fa1-1b59-4877-8ce5-baa7ec591352"
+                },
+                {
+                  "name": "Add Resource Set",
+                  "id": "27b5de84-411f-48ca-b584-029676b6b951",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint",
+                        "value": "{{fingerprint}}"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint-Signature",
+                        "value": "{{fingerprint_signature}}"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"configuration\": [\n    {\n      \"resource_type\": \"USER\",\n      \"scope\": \"ALL\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"resource_type\": \"USER\",\n      \"scope\": \"ALL\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/resource-sets",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "resource-sets"
+                      ]
+                    },
+                    "description": "Endpoint to add a new `ResourceSet`."
+                  },
+                  "response": [
+                    {
+                      "id": "b9136f4e-ebf4-4448-9f72-42525c3a8045",
+                      "name": "The returned resource is a single `ResourceSet`.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"configuration\": [\n    {\n      \"resource_type\": \"USER\",\n      \"scope\": \"ALL\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"resource_type\": \"USER\",\n      \"scope\": \"ALL\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/resource-sets",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "resource-sets"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"configuration\": [\n    {\n      \"resource_type\": \"GROUP\",\n      \"scope\": \"LIST\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"resource_type\": \"USER\",\n      \"scope\": \"ALL\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T02:58:39.000Z",
+                      "updatedAt": "2026-07-28T02:58:39.000Z",
+                      "uid": "35240-b9136f4e-ebf4-4448-9f72-42525c3a8045"
+                    },
+                    {
+                      "id": "e8a489a2-5ac9-43f6-8db2-64f1a7d1178c",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"configuration\": [\n    {\n      \"resource_type\": \"USER\",\n      \"scope\": \"ALL\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"resource_type\": \"USER\",\n      \"scope\": \"ALL\",\n      \"resource_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/resource-sets",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "resource-sets"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:58:39.000Z",
+                      "updatedAt": "2026-07-28T02:58:39.000Z",
+                      "uid": "35240-e8a489a2-5ac9-43f6-8db2-64f1a7d1178c"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:58:39.000Z",
+                  "updatedAt": "2026-07-28T02:58:39.000Z",
+                  "uid": "35240-27b5de84-411f-48ca-b584-029676b6b951"
+                }
+              ],
+              "id": "eeaa300e-7749-46e9-a055-6b332d34b615",
+              "createdAt": "2026-07-28T02:58:39.000Z",
+              "updatedAt": "2026-07-28T02:58:39.000Z",
+              "uid": "35240-eeaa300e-7749-46e9-a055-6b332d34b615"
+            }
+          ],
+          "id": "da58f2a6-5436-47a4-89b8-979375837865",
+          "createdAt": "2026-07-28T02:58:39.000Z",
+          "updatedAt": "2026-07-28T02:58:39.000Z",
+          "uid": "35240-da58f2a6-5436-47a4-89b8-979375837865"
+        }
+      ],
+      "id": "e19e4ba7-a111-4df5-bd5f-1fb77a7238e7",
+      "createdAt": "2026-07-28T02:58:39.000Z",
+      "updatedAt": "2026-07-28T02:58:39.000Z",
+      "uid": "35240-e19e4ba7-a111-4df5-bd5f-1fb77a7238e7"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "info": {
+    "_postman_id": "5eaae56b-055d-4671-be4c-34f71f323977",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Company API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:57:53.000Z",
+    "updatedAt": "2026-07-28T02:57:53.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-5eaae56b-055d-4671-be4c-34f71f323977"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "company",
+              "item": [
+                {
+                  "name": "Get Company",
+                  "id": "d4b5b7c3-f502-4a8f-8859-73eb376ea958",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/company",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "company"
+                      ]
+                    },
+                    "description": "Endpoint to retrieve one's own `Company` info."
+                  },
+                  "response": [
+                    {
+                      "id": "0e8e08b7-c59e-4a2d-83c6-2d4bcb31cf07",
+                      "name": "The returned resource is one's own `Company`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/company",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "company"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"name\": \"<string>\",\n  \"icon_code\": \"<string>\",\n  \"vat_number\": \"<string>\",\n  \"company_account_id\": \"<string>\",\n  \"shipping_address\": {\n    \"id\": \"<string>\",\n    \"recipient\": \"<string>\",\n    \"name\": \"<string>\",\n    \"line1\": \"<string>\",\n    \"line2\": \"<string>\",\n    \"country\": \"<string>\",\n    \"county\": \"<string>\",\n    \"city\": \"<string>\",\n    \"post_code\": \"<string>\",\n    \"delivery_phone_number\": \"<string>\",\n    \"default_shipping\": \"<boolean>\",\n    \"type\": \"<string>\",\n    \"category\": \"USER\",\n    \"user_id\": \"<string>\",\n    \"creation_time\": \"<string>\",\n    \"last_update\": \"<string>\"\n  },\n  \"time_zone\": \"<string>\",\n  \"market\": \"GTM\",\n  \"financial_entity\": \"SFS-IRL\",\n  \"creation_time\": \"<string>\",\n  \"last_update\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T02:57:53.000Z",
+                      "updatedAt": "2026-07-28T02:57:53.000Z",
+                      "uid": "35240-0e8e08b7-c59e-4a2d-83c6-2d4bcb31cf07"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:57:53.000Z",
+                  "updatedAt": "2026-07-28T02:57:53.000Z",
+                  "uid": "35240-d4b5b7c3-f502-4a8f-8859-73eb376ea958"
+                }
+              ],
+              "id": "0c06a347-3173-4509-916a-b6671c37300a",
+              "createdAt": "2026-07-28T02:57:53.000Z",
+              "updatedAt": "2026-07-28T02:57:53.000Z",
+              "uid": "35240-0c06a347-3173-4509-916a-b6671c37300a"
+            }
+          ],
+          "id": "eff2af01-1f4c-4660-8a34-0d3c1b3d080a",
+          "createdAt": "2026-07-28T02:57:53.000Z",
+          "updatedAt": "2026-07-28T02:57:53.000Z",
+          "uid": "35240-eff2af01-1f4c-4660-8a34-0d3c1b3d080a"
+        }
+      ],
+      "id": "eaecc2f9-ba70-4912-aa49-bb0adae91c88",
+      "createdAt": "2026-07-28T02:57:53.000Z",
+      "updatedAt": "2026-07-28T02:57:53.000Z",
+      "uid": "35240-eaecc2f9-ba70-4912-aa49-bb0adae91c88"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

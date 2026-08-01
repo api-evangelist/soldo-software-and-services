@@ -1,0 +1,19 @@
+generated: '2026-07-21'
+method: generated
+source: openapi/soldo-software-and-services-business-api-openapi.json
+note: >-
+  Agent Skills generated from the Soldo Business API OpenAPI, grounded in real operationIds.
+  No provider-published AGENTS.md/skills were found.
+skills:
+  - file: soldo-software-and-services-issue-and-control-card.md
+    name: Issue and control a Soldo company card
+    api: openapi/soldo-software-and-services-business-api-openapi.json
+    operations: [authorize, wallet-search, card-add, card-get, card-rules-set, card-rule-spending-limits-set]
+  - file: soldo-software-and-services-reconcile-transactions.md
+    name: Reconcile Soldo transactions and attach receipts
+    api: openapi/soldo-software-and-services-business-api-openapi.json
+    operations: [authorize, transaction-search, transaction-get, transaction-update, transaction-attachment-upload, transaction-attachment-upload-confirm, transaction-expense-category-set]
+  - file: soldo-software-and-services-subscribe-webhooks.md
+    name: Subscribe to Soldo webhooks
+    api: openapi/soldo-software-and-services-business-api-openapi.json
+    operations: [authorize, webhook-subscription-add, webhook-subscription-search, webhook-subscription-get, webhook-subscription-update, webhook-subscription-delete]

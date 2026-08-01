@@ -1,0 +1,1657 @@
+{
+  "info": {
+    "_postman_id": "302e6255-bba2-4d13-afd5-db18745cff05",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Subscriptions API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:45.000Z",
+    "updatedAt": "2026-07-28T02:58:45.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-302e6255-bba2-4d13-afd5-db18745cff05"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "subscriptions",
+              "item": [
+                {
+                  "name": "{subscriptionId}",
+                  "item": [
+                    {
+                      "name": "addAssignees",
+                      "item": [
+                        {
+                          "name": "Add assignees to Subscription",
+                          "id": "bf5c3503-b5e7-406d-b9c3-156e8afa88b2",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"add_assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/subscriptions/:subscriptionId/addAssignees",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "subscriptions",
+                                ":subscriptionId",
+                                "addAssignees"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "a9b2d16c-240f-4837-b1ee-84bfb1877453",
+                                  "key": "subscriptionId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to add assignees to a `Subscription`."
+                          },
+                          "response": [
+                            {
+                              "id": "5b76e5cc-7bc2-4e13-84ce-45b55f933bad",
+                              "name": "The returned resource is a `Subscription`.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"add_assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/subscriptions/:subscriptionId/addAssignees",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "subscriptions",
+                                    ":subscriptionId",
+                                    "addAssignees"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "subscriptionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"platform\": \"FACEBOOK\",\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"ACTIVE\",\n  \"wallet_id\": \"<string>\",\n  \"payment_frequency\": \"WEEKLY\",\n  \"last_spent\": \"<number>\",\n  \"total_spent\": \"<number>\",\n  \"card_id\": \"<string>\",\n  \"last_spent_date\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:58:45.000Z",
+                              "updatedAt": "2026-07-28T02:58:45.000Z",
+                              "uid": "35240-5b76e5cc-7bc2-4e13-84ce-45b55f933bad"
+                            },
+                            {
+                              "id": "1c64b893-4598-472b-a81d-7cbf7da48de3",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"add_assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/subscriptions/:subscriptionId/addAssignees",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "subscriptions",
+                                    ":subscriptionId",
+                                    "addAssignees"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "subscriptionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:45.000Z",
+                              "updatedAt": "2026-07-28T02:58:45.000Z",
+                              "uid": "35240-1c64b893-4598-472b-a81d-7cbf7da48de3"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:45.000Z",
+                          "updatedAt": "2026-07-28T02:58:45.000Z",
+                          "uid": "35240-bf5c3503-b5e7-406d-b9c3-156e8afa88b2"
+                        }
+                      ],
+                      "id": "997cc7bb-0329-4d3e-829f-66de749e14d3",
+                      "createdAt": "2026-07-28T02:58:45.000Z",
+                      "updatedAt": "2026-07-28T02:58:45.000Z",
+                      "uid": "35240-997cc7bb-0329-4d3e-829f-66de749e14d3"
+                    },
+                    {
+                      "name": "removeAssignees",
+                      "item": [
+                        {
+                          "name": "Remove assignees from Subscription",
+                          "id": "cf3dc443-e6d6-4313-b387-8f8c16f782cf",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"remove_assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/subscriptions/:subscriptionId/removeAssignees",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "subscriptions",
+                                ":subscriptionId",
+                                "removeAssignees"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "3b0dd4fc-1314-43dc-9c17-a939c81d16cf",
+                                  "key": "subscriptionId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to remove assignees from a `Subscription`."
+                          },
+                          "response": [
+                            {
+                              "id": "d30918e9-e63c-4e25-a88b-f612bca8a3ba",
+                              "name": "The returned resource is a `Subscription`.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"remove_assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/subscriptions/:subscriptionId/removeAssignees",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "subscriptions",
+                                    ":subscriptionId",
+                                    "removeAssignees"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "subscriptionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"platform\": \"FACEBOOK\",\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"ACTIVE\",\n  \"wallet_id\": \"<string>\",\n  \"payment_frequency\": \"WEEKLY\",\n  \"last_spent\": \"<number>\",\n  \"total_spent\": \"<number>\",\n  \"card_id\": \"<string>\",\n  \"last_spent_date\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:58:45.000Z",
+                              "updatedAt": "2026-07-28T02:58:45.000Z",
+                              "uid": "35240-d30918e9-e63c-4e25-a88b-f612bca8a3ba"
+                            },
+                            {
+                              "id": "716d30b7-5af7-4b4f-9880-8edb9f917f07",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"remove_assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/subscriptions/:subscriptionId/removeAssignees",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "subscriptions",
+                                    ":subscriptionId",
+                                    "removeAssignees"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "subscriptionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:45.000Z",
+                              "updatedAt": "2026-07-28T02:58:45.000Z",
+                              "uid": "35240-716d30b7-5af7-4b4f-9880-8edb9f917f07"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:45.000Z",
+                          "updatedAt": "2026-07-28T02:58:45.000Z",
+                          "uid": "35240-cf3dc443-e6d6-4313-b387-8f8c16f782cf"
+                        }
+                      ],
+                      "id": "a9cceb78-2024-44af-84f1-e15762b1808e",
+                      "createdAt": "2026-07-28T02:58:45.000Z",
+                      "updatedAt": "2026-07-28T02:58:45.000Z",
+                      "uid": "35240-a9cceb78-2024-44af-84f1-e15762b1808e"
+                    },
+                    {
+                      "name": "Get Subscription",
+                      "id": "7f2e0131-34a3-42e7-9eff-28eaed304b6f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/subscriptions/:subscriptionId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "subscriptions",
+                            ":subscriptionId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "c1085772-a546-41c9-bf29-5bc8d339462f",
+                              "key": "subscriptionId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "54a8d958-f3a4-4348-a798-666d0ee3b79f",
+                          "name": "The returned resource is a `Subscription`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/subscriptions/:subscriptionId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "subscriptions",
+                                ":subscriptionId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "subscriptionId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"platform\": \"FACEBOOK\",\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"ACTIVE\",\n  \"wallet_id\": \"<string>\",\n  \"payment_frequency\": \"WEEKLY\",\n  \"last_spent\": \"<number>\",\n  \"total_spent\": \"<number>\",\n  \"card_id\": \"<string>\",\n  \"last_spent_date\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:58:45.000Z",
+                          "updatedAt": "2026-07-28T02:58:45.000Z",
+                          "uid": "35240-54a8d958-f3a4-4348-a798-666d0ee3b79f"
+                        },
+                        {
+                          "id": "3c8234a8-61d0-499e-9d5e-94dabe689f37",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/subscriptions/:subscriptionId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "subscriptions",
+                                ":subscriptionId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "subscriptionId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:45.000Z",
+                          "updatedAt": "2026-07-28T02:58:45.000Z",
+                          "uid": "35240-3c8234a8-61d0-499e-9d5e-94dabe689f37"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:45.000Z",
+                      "updatedAt": "2026-07-28T02:58:45.000Z",
+                      "uid": "35240-7f2e0131-34a3-42e7-9eff-28eaed304b6f"
+                    },
+                    {
+                      "name": "Update Subscription",
+                      "id": "41d948e1-4f04-439a-b906-34f23e754fd8",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"wallet_id\": \"<string>\",\n  \"payment_frequency\": \"MONTHLY\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/subscriptions/:subscriptionId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "subscriptions",
+                            ":subscriptionId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "66014473-c17c-4ac7-865a-80707e623256",
+                              "key": "subscriptionId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to update a specific `Subscription`."
+                      },
+                      "response": [
+                        {
+                          "id": "bc58fe75-1deb-4cb5-8847-63f28aab5475",
+                          "name": "The returned resource is a `Subscription`.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"wallet_id\": \"<string>\",\n  \"payment_frequency\": \"MONTHLY\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/subscriptions/:subscriptionId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "subscriptions",
+                                ":subscriptionId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "subscriptionId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"platform\": \"FACEBOOK\",\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"ACTIVE\",\n  \"wallet_id\": \"<string>\",\n  \"payment_frequency\": \"WEEKLY\",\n  \"last_spent\": \"<number>\",\n  \"total_spent\": \"<number>\",\n  \"card_id\": \"<string>\",\n  \"last_spent_date\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:58:45.000Z",
+                          "updatedAt": "2026-07-28T02:58:45.000Z",
+                          "uid": "35240-bc58fe75-1deb-4cb5-8847-63f28aab5475"
+                        },
+                        {
+                          "id": "2c9beb5f-a739-4651-b50f-9969b18caf72",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"wallet_id\": \"<string>\",\n  \"payment_frequency\": \"MONTHLY\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/subscriptions/:subscriptionId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "subscriptions",
+                                ":subscriptionId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "subscriptionId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:45.000Z",
+                          "updatedAt": "2026-07-28T02:58:45.000Z",
+                          "uid": "35240-2c9beb5f-a739-4651-b50f-9969b18caf72"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:45.000Z",
+                      "updatedAt": "2026-07-28T02:58:45.000Z",
+                      "uid": "35240-41d948e1-4f04-439a-b906-34f23e754fd8"
+                    },
+                    {
+                      "name": "Activate Subscription",
+                      "id": "07726f4a-705e-4ab6-93d3-d0acb1f5bd95",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/subscriptions/:subscriptionId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "subscriptions",
+                            ":subscriptionId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "124d17ee-c827-4b77-b966-85ae986c84e0",
+                              "key": "subscriptionId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to activate a specific `Subscription`."
+                      },
+                      "response": [
+                        {
+                          "id": "5c10b32b-9e6a-46d7-9ebf-8bdf25888de3",
+                          "name": "The returned resource is an `Order`.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/subscriptions/:subscriptionId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "subscriptions",
+                                ":subscriptionId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "subscriptionId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"status\": \"COMPLETED_WITH_CREDIT\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\",\n  \"error_code\": \"<string>\",\n  \"total_paid_amount\": \"<number>\",\n  \"total_paid_currency\": \"XOF\",\n  \"items\": [\n    {\n      \"id\": \"<string>\",\n      \"item_type\": \"<string>\",\n      \"category\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"item_type\": \"<string>\",\n      \"category\": \"<string>\"\n    }\n  ],\n  \"is_valid\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:58:45.000Z",
+                          "updatedAt": "2026-07-28T02:58:45.000Z",
+                          "uid": "35240-5c10b32b-9e6a-46d7-9ebf-8bdf25888de3"
+                        },
+                        {
+                          "id": "82d00600-3f43-4576-b810-0ccf6c7a56d5",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/subscriptions/:subscriptionId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "subscriptions",
+                                ":subscriptionId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "subscriptionId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:45.000Z",
+                          "updatedAt": "2026-07-28T02:58:45.000Z",
+                          "uid": "35240-82d00600-3f43-4576-b810-0ccf6c7a56d5"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:45.000Z",
+                      "updatedAt": "2026-07-28T02:58:45.000Z",
+                      "uid": "35240-07726f4a-705e-4ab6-93d3-d0acb1f5bd95"
+                    },
+                    {
+                      "name": "Delete Subscription",
+                      "id": "8e427cb6-5341-499f-82e6-52f94405f324",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/subscriptions/:subscriptionId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "subscriptions",
+                            ":subscriptionId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "05c8110f-df50-40e6-b3b7-735bf677b283",
+                              "key": "subscriptionId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to delete a specific `Subscription`."
+                      },
+                      "response": [
+                        {
+                          "id": "8d4273bb-cfde-4a8f-8b10-4c401b51eb69",
+                          "name": "No content as result.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/subscriptions/:subscriptionId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "subscriptions",
+                                ":subscriptionId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "subscriptionId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:45.000Z",
+                          "updatedAt": "2026-07-28T02:58:45.000Z",
+                          "uid": "35240-8d4273bb-cfde-4a8f-8b10-4c401b51eb69"
+                        },
+                        {
+                          "id": "3a4c1fb2-52c5-4507-b5cc-484e16c2f03e",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/subscriptions/:subscriptionId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "subscriptions",
+                                ":subscriptionId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "subscriptionId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:45.000Z",
+                          "updatedAt": "2026-07-28T02:58:45.000Z",
+                          "uid": "35240-3a4c1fb2-52c5-4507-b5cc-484e16c2f03e"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:45.000Z",
+                      "updatedAt": "2026-07-28T02:58:45.000Z",
+                      "uid": "35240-8e427cb6-5341-499f-82e6-52f94405f324"
+                    }
+                  ],
+                  "id": "8729209f-1d7c-49c6-9b66-7577434215bc",
+                  "createdAt": "2026-07-28T02:58:45.000Z",
+                  "updatedAt": "2026-07-28T02:58:45.000Z",
+                  "uid": "35240-8729209f-1d7c-49c6-9b66-7577434215bc"
+                },
+                {
+                  "name": "Search Subscriptions",
+                  "id": "4e880479-1b61-4ac5-893b-26f0b7a4a63b",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/subscriptions?text=<string>&assignees=<string>&assignees=<string>&statuses=ASSIGNED&statuses=ASSIGNED&p=0&s=0&d=ASC&props=<string>&props=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "subscriptions"
+                      ],
+                      "query": [
+                        {
+                          "description": "A simple text to search in the Subscription data (name, description, assignee name).",
+                          "key": "text",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "assignees",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "assignees",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The `Subscription` status.",
+                          "key": "statuses",
+                          "value": "ASSIGNED"
+                        },
+                        {
+                          "description": "The `Subscription` status.",
+                          "key": "statuses",
+                          "value": "ASSIGNED"
+                        },
+                        {
+                          "description": "It indicates the specific page to display (the counter starts from zero).",
+                          "key": "p",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the number of items per page.",
+                          "key": "s",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates how the pages are ordered.",
+                          "key": "d",
+                          "value": "ASC"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to find `Subscriptions` using filtering parameters."
+                  },
+                  "response": [
+                    {
+                      "id": "1a13b3c0-d969-4989-b874-e70d60cf430c",
+                      "name": "The returned result is an array containing `Subscriptions`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/subscriptions?text=<string>&assignees=<string>&statuses=ASSIGNED&p=0&s=0&d=ASC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "subscriptions"
+                          ],
+                          "query": [
+                            {
+                              "description": "A simple text to search in the Subscription data (name, description, assignee name).",
+                              "key": "text",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "assignees",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The `Subscription` status.",
+                              "key": "statuses",
+                              "value": "ASSIGNED"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"platform\": \"MICROSOFT\",\n      \"assignees\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"status\": \"CANCELLED\",\n      \"wallet_id\": \"<string>\",\n      \"payment_frequency\": \"QUARTERLY\",\n      \"last_spent\": \"<number>\",\n      \"total_spent\": \"<number>\",\n      \"card_id\": \"<string>\",\n      \"last_spent_date\": \"<string>\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"platform\": \"MICROSOFT\",\n      \"assignees\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"status\": \"CANCELLED\",\n      \"wallet_id\": \"<string>\",\n      \"payment_frequency\": \"MONTHLY\",\n      \"last_spent\": \"<number>\",\n      \"total_spent\": \"<number>\",\n      \"card_id\": \"<string>\",\n      \"last_spent_date\": \"<string>\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:58:45.000Z",
+                      "updatedAt": "2026-07-28T02:58:45.000Z",
+                      "uid": "35240-1a13b3c0-d969-4989-b874-e70d60cf430c"
+                    },
+                    {
+                      "id": "c7ca5415-41e7-4f09-859e-ce24f9f527ee",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/subscriptions?text=<string>&assignees=<string>&statuses=ASSIGNED&p=0&s=0&d=ASC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "subscriptions"
+                          ],
+                          "query": [
+                            {
+                              "description": "A simple text to search in the Subscription data (name, description, assignee name).",
+                              "key": "text",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "assignees",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The `Subscription` status.",
+                              "key": "statuses",
+                              "value": "ASSIGNED"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:58:45.000Z",
+                      "updatedAt": "2026-07-28T02:58:45.000Z",
+                      "uid": "35240-c7ca5415-41e7-4f09-859e-ce24f9f527ee"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:58:45.000Z",
+                  "updatedAt": "2026-07-28T02:58:45.000Z",
+                  "uid": "35240-4e880479-1b61-4ac5-893b-26f0b7a4a63b"
+                },
+                {
+                  "name": "Add Subscription",
+                  "id": "96b446f6-ae8c-4a0a-8830-5b86b2686ade",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint",
+                        "value": "{{fingerprint}}"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint-Signature",
+                        "value": "{{fingerprint_signature}}"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"payment_frequency\": \"QUARTERLY\",\n  \"platform\": \"OTHER\",\n  \"wallet_id\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/subscriptions",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "subscriptions"
+                      ]
+                    },
+                    "description": "Endpoint to add a new `Subscription`."
+                  },
+                  "response": [
+                    {
+                      "id": "7a494eab-5feb-4d2d-aad6-e2835c3824eb",
+                      "name": "The returned resource is a `Subscription`.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"payment_frequency\": \"QUARTERLY\",\n  \"platform\": \"OTHER\",\n  \"wallet_id\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/subscriptions",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "subscriptions"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"platform\": \"FACEBOOK\",\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"status\": \"ACTIVE\",\n  \"wallet_id\": \"<string>\",\n  \"payment_frequency\": \"WEEKLY\",\n  \"last_spent\": \"<number>\",\n  \"total_spent\": \"<number>\",\n  \"card_id\": \"<string>\",\n  \"last_spent_date\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T02:58:45.000Z",
+                      "updatedAt": "2026-07-28T02:58:45.000Z",
+                      "uid": "35240-7a494eab-5feb-4d2d-aad6-e2835c3824eb"
+                    },
+                    {
+                      "id": "3a8d4ba3-dfa1-4510-b2a0-b7c2714df16c",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"payment_frequency\": \"QUARTERLY\",\n  \"platform\": \"OTHER\",\n  \"wallet_id\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/subscriptions",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "subscriptions"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:58:45.000Z",
+                      "updatedAt": "2026-07-28T02:58:45.000Z",
+                      "uid": "35240-3a8d4ba3-dfa1-4510-b2a0-b7c2714df16c"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:58:45.000Z",
+                  "updatedAt": "2026-07-28T02:58:45.000Z",
+                  "uid": "35240-96b446f6-ae8c-4a0a-8830-5b86b2686ade"
+                }
+              ],
+              "id": "c4c35dd3-b3e0-43d4-8abc-b131804d5d06",
+              "createdAt": "2026-07-28T02:58:45.000Z",
+              "updatedAt": "2026-07-28T02:58:45.000Z",
+              "uid": "35240-c4c35dd3-b3e0-43d4-8abc-b131804d5d06"
+            }
+          ],
+          "id": "f62d81ad-da5c-45c9-a1a5-3a317d0f9995",
+          "createdAt": "2026-07-28T02:58:45.000Z",
+          "updatedAt": "2026-07-28T02:58:45.000Z",
+          "uid": "35240-f62d81ad-da5c-45c9-a1a5-3a317d0f9995"
+        }
+      ],
+      "id": "74afa15a-b9c5-4cab-b6f4-be2c5b70253e",
+      "createdAt": "2026-07-28T02:58:45.000Z",
+      "updatedAt": "2026-07-28T02:58:45.000Z",
+      "uid": "35240-74afa15a-b9c5-4cab-b6f4-be2c5b70253e"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.soldo.com/en-gb/security/
+url: https://www.soldo.com/en-gb/security/
+note: >-
+  Soldo publishes a security page describing its compliance and certifications. Captured from the
+  live page (verified keywords: "PCI DSS Level 1", "ISO/IEC 27001", "ISO/IEC 9001",
+  "Cyber Essentials Plus", "Financial Conduct Authority", "3D Secure", "Strong Customer Authentication").
+certifications:
+  - PCI DSS Level 1
+  - ISO/IEC 27001
+  - ISO/IEC 9001
+  - Cyber Essentials Plus
+regulatory:
+  - FCA authorised (UK Financial Conduct Authority)
+security_controls:
+  - 3D Secure
+  - Strong Customer Authentication (SCA)
+  - Data encryption
+evidence:
+  - source: https://www.soldo.com/en-gb/security/
+    keywords: [pci dss level 1, iso/iec 27001, iso/iec 9001, cyber essentials plus, financial conduct authority, 3d secure, strong customer authentication]

@@ -1,0 +1,47 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.soldo.com/reference/webhook-subscriptions
+spec_type: Webhooks
+note: >-
+  Soldo documents a rich webhook event surface but does not publish an AsyncAPI document, so this
+  is a webhook catalog (not an AsyncAPI spec). Subscriptions are managed via the Webhook
+  Subscriptions API. Webhook deliveries are signed by Soldo (verified with your public key, per
+  the advanced-authentication crypto helpers). Event families and representative events below are
+  captured verbatim from the API reference; the full per-event list is in llms/ and the reference.
+management_operations:
+  - webhook-subscription-search
+  - webhook-subscription-get
+  - webhook-subscription-add
+  - webhook-subscription-update
+  - webhook-subscription-delete
+delivery_security:
+  signed: true
+  verification: RSA signature verified with your registered public key (SHA512withRSA), same crypto as advanced authentication.
+event_families:
+  - family: Card
+    examples: [card-activated, card-change_status, card-creation, card-destroyed, card-lost, card-replaced, card-stolen, card_label_updated, card_assignee_updated]
+  - family: Transaction
+    examples: [card-authorization, billing, recurring-billing, conversion, internal-transfer, load-money, load-failed, unload-money, inbound-payment, inbound-payment-reversal, wiretransfer, joule-feed, transaction-adjustment, transaction-modified, transaction-deleted, scheduled-transfer, balanced-transfer, customer-care-deposit, customer-care-withdraw, edit-tag, transaction-business-trip-linked, transaction-business-trip-unlinked]
+  - family: Wallet
+    examples: [wallet-created, wallet-deleted]
+  - family: User
+    examples: [new-user, user-status-changed, user-updated]
+  - family: Group
+    examples: [create-group, update-group, delete-group, add-resources-card, add-resources-member, add-resources-wallet, move-resources-card, move-resources-member, move-resources-wallet, remove-resources-card, remove-resources-member, remove-resources-wallet]
+  - family: Contact
+    examples: [contact-created, contact-updated, contact-deleted]
+  - family: Subscription
+    examples: [subscription-created, subscription-updated, subscription-activated, subscription-deleted, subscription-assignee-added, subscription-assignee-removed]
+  - family: OnlineAds
+    examples: [online-ads-created, online-ads-updated, online-ads-activated, online-ads-deleted, online-ads-assignee-added, online-ads-assignee-removed]
+  - family: Pre-Approved Spend
+    examples: [purchase-create, purchase-update, purchase-delete, purchase-redeem-card]
+  - family: Order
+    examples: [store-order-placed, store-order-completed]
+  - family: Expense Review
+    examples: [change-expense-type, completed-transactions-import, created-expense-configuration, enabled-expense-configuration, disabled-expense-configuration, updated-expense-configuration, updated-transaction]
+  - family: Transaction Attachment
+    examples: [upload-completed, attachment-delete]
+  - family: Vehicle
+    examples: [vehicle-create, vehicle-update, vehicle-delete]
+reference: https://developer.soldo.com/reference/introduction

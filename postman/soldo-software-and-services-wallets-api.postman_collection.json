@@ -1,0 +1,1626 @@
+{
+  "info": {
+    "_postman_id": "9186e675-ac03-4802-ae26-7ef30dad60b8",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Wallets API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:59:25.000Z",
+    "updatedAt": "2026-07-28T02:59:25.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9186e675-ac03-4802-ae26-7ef30dad60b8"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "wallets",
+              "item": [
+                {
+                  "name": "create",
+                  "item": [
+                    {
+                      "name": "Create Wallet",
+                      "id": "5d858e45-0cac-4453-a109-221386edb80f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"currency\": \"EUR\",\n  \"name\": \"<string>\",\n  \"request_timestamp\": \"<long>\",\n  \"description\": \"<string>\",\n  \"owner_type\": \"company\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/wallets/create",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "wallets",
+                            "create"
+                          ]
+                        },
+                        "description": "Endpoint to add a new `Wallet`. Only company wallets can be created, a user dedicated wallet for each currency supported by your account is automatically created by the Soldo platform."
+                      },
+                      "response": [
+                        {
+                          "id": "20bf88fc-2337-458c-badf-166afa70721a",
+                          "name": "The returned resource is a `Wallet`.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"currency\": \"EUR\",\n  \"name\": \"<string>\",\n  \"request_timestamp\": \"<long>\",\n  \"description\": \"<string>\",\n  \"owner_type\": \"company\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/wallets/create",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "wallets",
+                                "create"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"currency_code\": \"PKR\",\n  \"available_amount\": \"<number>\",\n  \"blocked_amount\": \"<number>\",\n  \"primary_user_type\": \"employee\",\n  \"primary_user_public_id\": \"<string>\",\n  \"custom_reference_id\": \"<string>\",\n  \"group_id\": \"<string>\",\n  \"groups\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"label\": \"<string>\",\n  \"visible\": \"<boolean>\",\n  \"creation_time\": \"<string>\",\n  \"last_update\": \"<string>\",\n  \"deposit_account_info\": [\n    {\n      \"type\": \"VIRTUAL_IBAN\",\n      \"identification\": \"<string>\"\n    },\n    {\n      \"type\": \"SORT_CODE\",\n      \"identification\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:59:26.000Z",
+                          "updatedAt": "2026-07-28T02:59:26.000Z",
+                          "uid": "35240-20bf88fc-2337-458c-badf-166afa70721a"
+                        },
+                        {
+                          "id": "db72afa5-a1f6-4cc1-bbf5-56dd0e954bf1",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"currency\": \"EUR\",\n  \"name\": \"<string>\",\n  \"request_timestamp\": \"<long>\",\n  \"description\": \"<string>\",\n  \"owner_type\": \"company\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/wallets/create",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "wallets",
+                                "create"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:26.000Z",
+                          "updatedAt": "2026-07-28T02:59:26.000Z",
+                          "uid": "35240-db72afa5-a1f6-4cc1-bbf5-56dd0e954bf1"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:59:26.000Z",
+                      "updatedAt": "2026-07-28T02:59:26.000Z",
+                      "uid": "35240-5d858e45-0cac-4453-a109-221386edb80f"
+                    }
+                  ],
+                  "id": "f89585ef-1924-4dcf-8356-9c53f0764bbd",
+                  "createdAt": "2026-07-28T02:59:26.000Z",
+                  "updatedAt": "2026-07-28T02:59:26.000Z",
+                  "uid": "35240-f89585ef-1924-4dcf-8356-9c53f0764bbd"
+                },
+                {
+                  "name": "internalTransfer",
+                  "item": [
+                    {
+                      "name": "{fromWalletId}",
+                      "item": [
+                        {
+                          "name": "{toWalletId}",
+                          "item": [
+                            {
+                              "name": "Make Internal Transfer",
+                              "id": "4c98dd48-e8fe-4190-b9ff-99e63cd936a3",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "description": "(Required) The amount to transfer.",
+                                      "key": "amount",
+                                      "value": "<number>"
+                                    },
+                                    {
+                                      "description": "(Required) The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Statement` to search for.",
+                                      "key": "currencyCode",
+                                      "value": "USD"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/wallets/internalTransfer/:fromWalletId/:toWalletId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "wallets",
+                                    "internalTransfer",
+                                    ":fromWalletId",
+                                    ":toWalletId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "b6b5fab7-b15d-41c1-aee6-163494b4184a",
+                                      "key": "fromWalletId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "1f61b51d-f8ca-42db-9c7c-c16a1ea239b0",
+                                      "key": "toWalletId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to transfer money between two `Wallets` within the same business account."
+                              },
+                              "response": [
+                                {
+                                  "id": "64ed7cb0-0a77-46b9-ab24-c0ec8b8af2d2",
+                                  "name": "The result is a `TransferResult`.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/x-www-form-urlencoded"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "urlencoded",
+                                      "urlencoded": [
+                                        {
+                                          "description": "(Required) The amount to transfer.",
+                                          "key": "amount",
+                                          "value": "<number>"
+                                        },
+                                        {
+                                          "description": "(Required) The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Statement` to search for.",
+                                          "key": "currencyCode",
+                                          "value": "USD"
+                                        }
+                                      ]
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/wallets/internalTransfer/:fromWalletId/:toWalletId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "wallets",
+                                        "internalTransfer",
+                                        ":fromWalletId",
+                                        ":toWalletId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "fromWalletId"
+                                        },
+                                        {
+                                          "key": "toWalletId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"amount\": \"<number>\",\n  \"currency\": \"ZWL\",\n  \"datetime\": \"<string>\",\n  \"from_wallet\": {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"currency_code\": \"IDR\",\n    \"available_amount\": \"<number>\",\n    \"blocked_amount\": \"<number>\",\n    \"primary_user_type\": \"employee\",\n    \"primary_user_public_id\": \"<string>\",\n    \"custom_reference_id\": \"<string>\",\n    \"group_id\": \"<string>\",\n    \"groups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"label\": \"<string>\",\n    \"visible\": \"<boolean>\",\n    \"creation_time\": \"<string>\",\n    \"last_update\": \"<string>\",\n    \"deposit_account_info\": [\n      {\n        \"type\": \"SORT_CODE\",\n        \"identification\": \"<string>\"\n      },\n      {\n        \"type\": \"VIRTUAL_IBAN\",\n        \"identification\": \"<string>\"\n      }\n    ],\n    \"description\": \"<string>\"\n  },\n  \"to_wallet\": {\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"currency_code\": \"SYP\",\n    \"available_amount\": \"<number>\",\n    \"blocked_amount\": \"<number>\",\n    \"primary_user_type\": \"company\",\n    \"primary_user_public_id\": \"<string>\",\n    \"custom_reference_id\": \"<string>\",\n    \"group_id\": \"<string>\",\n    \"groups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"label\": \"<string>\",\n    \"visible\": \"<boolean>\",\n    \"creation_time\": \"<string>\",\n    \"last_update\": \"<string>\",\n    \"deposit_account_info\": [\n      {\n        \"type\": \"DEDICATED_SWIFT\",\n        \"identification\": \"<string>\"\n      },\n      {\n        \"type\": \"VIRTUAL_IBAN\",\n        \"identification\": \"<string>\"\n      }\n    ],\n    \"description\": \"<string>\"\n  }\n}",
+                                  "createdAt": "2026-07-28T02:59:26.000Z",
+                                  "updatedAt": "2026-07-28T02:59:26.000Z",
+                                  "uid": "35240-64ed7cb0-0a77-46b9-ab24-c0ec8b8af2d2"
+                                },
+                                {
+                                  "id": "5f1d6840-7a4e-43c1-bd0c-6b01a164373e",
+                                  "name": "Your request has missing arguments or is malformed.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/x-www-form-urlencoded"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "urlencoded",
+                                      "urlencoded": [
+                                        {
+                                          "description": "(Required) The amount to transfer.",
+                                          "key": "amount",
+                                          "value": "<number>"
+                                        },
+                                        {
+                                          "description": "(Required) The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Statement` to search for.",
+                                          "key": "currencyCode",
+                                          "value": "USD"
+                                        }
+                                      ]
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/wallets/internalTransfer/:fromWalletId/:toWalletId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "wallets",
+                                        "internalTransfer",
+                                        ":fromWalletId",
+                                        ":toWalletId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "fromWalletId"
+                                        },
+                                        {
+                                          "key": "toWalletId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:59:26.000Z",
+                                  "updatedAt": "2026-07-28T02:59:26.000Z",
+                                  "uid": "35240-5f1d6840-7a4e-43c1-bd0c-6b01a164373e"
+                                },
+                                {
+                                  "id": "96dd360b-ea97-437f-b382-808cacddee97",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/x-www-form-urlencoded"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "urlencoded",
+                                      "urlencoded": [
+                                        {
+                                          "description": "(Required) The amount to transfer.",
+                                          "key": "amount",
+                                          "value": "<number>"
+                                        },
+                                        {
+                                          "description": "(Required) The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Statement` to search for.",
+                                          "key": "currencyCode",
+                                          "value": "USD"
+                                        }
+                                      ]
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/wallets/internalTransfer/:fromWalletId/:toWalletId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "wallets",
+                                        "internalTransfer",
+                                        ":fromWalletId",
+                                        ":toWalletId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "fromWalletId"
+                                        },
+                                        {
+                                          "key": "toWalletId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:59:26.000Z",
+                                  "updatedAt": "2026-07-28T02:59:26.000Z",
+                                  "uid": "35240-96dd360b-ea97-437f-b382-808cacddee97"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:59:26.000Z",
+                              "updatedAt": "2026-07-28T02:59:26.000Z",
+                              "uid": "35240-4c98dd48-e8fe-4190-b9ff-99e63cd936a3"
+                            }
+                          ],
+                          "id": "cc3e4c69-c367-4477-a954-e1b17fafc4e2",
+                          "createdAt": "2026-07-28T02:59:26.000Z",
+                          "updatedAt": "2026-07-28T02:59:26.000Z",
+                          "uid": "35240-cc3e4c69-c367-4477-a954-e1b17fafc4e2"
+                        }
+                      ],
+                      "id": "d49ee18c-6398-4e8c-8f7c-ad689f3535ef",
+                      "createdAt": "2026-07-28T02:59:26.000Z",
+                      "updatedAt": "2026-07-28T02:59:26.000Z",
+                      "uid": "35240-d49ee18c-6398-4e8c-8f7c-ad689f3535ef"
+                    }
+                  ],
+                  "id": "0e4368ef-ed98-46f0-b475-e0c159733256",
+                  "createdAt": "2026-07-28T02:59:26.000Z",
+                  "updatedAt": "2026-07-28T02:59:26.000Z",
+                  "uid": "35240-0e4368ef-ed98-46f0-b475-e0c159733256"
+                },
+                {
+                  "name": "{walletId}",
+                  "item": [
+                    {
+                      "name": "Get Wallet",
+                      "id": "490e5991-601b-4c8d-8c94-7d76b15cdae5",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/wallets/:walletId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "wallets",
+                            ":walletId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "2dbf897d-7fd6-4520-b33f-d76bf38ab6e6",
+                              "key": "walletId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to retrieve a specific `Wallet` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "7cd4bbfb-7ce8-421c-8f1c-beb53163eb2f",
+                          "name": "The returned resource is a single `Wallet`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/wallets/:walletId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "wallets",
+                                ":walletId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "walletId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"currency_code\": \"PKR\",\n  \"available_amount\": \"<number>\",\n  \"blocked_amount\": \"<number>\",\n  \"primary_user_type\": \"employee\",\n  \"primary_user_public_id\": \"<string>\",\n  \"custom_reference_id\": \"<string>\",\n  \"group_id\": \"<string>\",\n  \"groups\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"label\": \"<string>\",\n  \"visible\": \"<boolean>\",\n  \"creation_time\": \"<string>\",\n  \"last_update\": \"<string>\",\n  \"deposit_account_info\": [\n    {\n      \"type\": \"VIRTUAL_IBAN\",\n      \"identification\": \"<string>\"\n    },\n    {\n      \"type\": \"SORT_CODE\",\n      \"identification\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:59:26.000Z",
+                          "updatedAt": "2026-07-28T02:59:26.000Z",
+                          "uid": "35240-7cd4bbfb-7ce8-421c-8f1c-beb53163eb2f"
+                        },
+                        {
+                          "id": "e3b9e145-eeac-4162-bf71-0b9dd10c15d2",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/wallets/:walletId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "wallets",
+                                ":walletId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "walletId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:26.000Z",
+                          "updatedAt": "2026-07-28T02:59:26.000Z",
+                          "uid": "35240-e3b9e145-eeac-4162-bf71-0b9dd10c15d2"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:59:26.000Z",
+                      "updatedAt": "2026-07-28T02:59:26.000Z",
+                      "uid": "35240-490e5991-601b-4c8d-8c94-7d76b15cdae5"
+                    },
+                    {
+                      "name": "Update Wallet",
+                      "id": "bf59e813-9298-4f82-87ee-bf8f09b886b9",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"description\": \"<string>\",\n  \"label\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/wallets/:walletId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "wallets",
+                            ":walletId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "ad97ca9e-1255-4b46-bf1d-c329a5b1fb04",
+                              "key": "walletId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to update a `Wallet`. Only company wallets can be updated, a `User` dedicated wallet for each currency supported by your account is automatically created by the Soldo platform when a `User` gets created."
+                      },
+                      "response": [
+                        {
+                          "id": "7d50e118-7145-4a15-8151-d2ac29e7d940",
+                          "name": "The returned resource is a single `Wallet`.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"label\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/wallets/:walletId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "wallets",
+                                ":walletId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "walletId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"currency_code\": \"PKR\",\n  \"available_amount\": \"<number>\",\n  \"blocked_amount\": \"<number>\",\n  \"primary_user_type\": \"employee\",\n  \"primary_user_public_id\": \"<string>\",\n  \"custom_reference_id\": \"<string>\",\n  \"group_id\": \"<string>\",\n  \"groups\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"label\": \"<string>\",\n  \"visible\": \"<boolean>\",\n  \"creation_time\": \"<string>\",\n  \"last_update\": \"<string>\",\n  \"deposit_account_info\": [\n    {\n      \"type\": \"VIRTUAL_IBAN\",\n      \"identification\": \"<string>\"\n    },\n    {\n      \"type\": \"SORT_CODE\",\n      \"identification\": \"<string>\"\n    }\n  ],\n  \"description\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:59:26.000Z",
+                          "updatedAt": "2026-07-28T02:59:26.000Z",
+                          "uid": "35240-7d50e118-7145-4a15-8151-d2ac29e7d940"
+                        },
+                        {
+                          "id": "075e25e2-8565-4b60-a4e7-5c8ddb902c09",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"label\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/wallets/:walletId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "wallets",
+                                ":walletId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "walletId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:26.000Z",
+                          "updatedAt": "2026-07-28T02:59:26.000Z",
+                          "uid": "35240-075e25e2-8565-4b60-a4e7-5c8ddb902c09"
+                        },
+                        {
+                          "id": "515d9852-d562-4d09-9790-caff2ebfaa2a",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"description\": \"<string>\",\n  \"label\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/wallets/:walletId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "wallets",
+                                ":walletId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "walletId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:26.000Z",
+                          "updatedAt": "2026-07-28T02:59:26.000Z",
+                          "uid": "35240-515d9852-d562-4d09-9790-caff2ebfaa2a"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:59:26.000Z",
+                      "updatedAt": "2026-07-28T02:59:26.000Z",
+                      "uid": "35240-bf59e813-9298-4f82-87ee-bf8f09b886b9"
+                    },
+                    {
+                      "name": "Delete Wallet",
+                      "id": "d1d83161-d3f1-4c9b-ab39-08f5364d2db2",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/wallets/:walletId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "wallets",
+                            ":walletId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "cc0e8b35-738b-4edc-bd77-e187cbb2c290",
+                              "key": "walletId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to delete the `Wallet`"
+                      },
+                      "response": [
+                        {
+                          "id": "508b127d-cb00-49f6-a1f9-fa1b6d365f53",
+                          "name": "No content as result.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/wallets/:walletId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "wallets",
+                                ":walletId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "walletId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:26.000Z",
+                          "updatedAt": "2026-07-28T02:59:26.000Z",
+                          "uid": "35240-508b127d-cb00-49f6-a1f9-fa1b6d365f53"
+                        },
+                        {
+                          "id": "91446292-7415-4648-a03f-74e1b7d7424e",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/wallets/:walletId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "wallets",
+                                ":walletId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "walletId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:26.000Z",
+                          "updatedAt": "2026-07-28T02:59:26.000Z",
+                          "uid": "35240-91446292-7415-4648-a03f-74e1b7d7424e"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:59:26.000Z",
+                      "updatedAt": "2026-07-28T02:59:26.000Z",
+                      "uid": "35240-d1d83161-d3f1-4c9b-ab39-08f5364d2db2"
+                    }
+                  ],
+                  "id": "cebaa056-a667-49b4-a098-09101d52ac9c",
+                  "createdAt": "2026-07-28T02:59:26.000Z",
+                  "updatedAt": "2026-07-28T02:59:26.000Z",
+                  "uid": "35240-cebaa056-a667-49b4-a098-09101d52ac9c"
+                },
+                {
+                  "name": "Search Wallets",
+                  "id": "d2204c08-2ea7-4c17-a139-0560200520a5",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/wallets?type=company&id=<string>&customreferenceId=<string>&groupId=<string>&name=<string>&p=0&s=0&d=ASC&props=<string>&props=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "wallets"
+                      ],
+                      "query": [
+                        {
+                          "description": "The type of resource assigned to the `Wallet`.",
+                          "key": "type",
+                          "value": "company"
+                        },
+                        {
+                          "description": "The ID of the `type` resource.",
+                          "key": "id",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The custom reference ID of the `type` resource.",
+                          "key": "customreferenceId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The ID of the `Group` the `Wallet` is related to.",
+                          "key": "groupId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The full or partial name of the `Wallet`.",
+                          "key": "name",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the specific page to display (the counter starts from zero).",
+                          "key": "p",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the number of items per page.",
+                          "key": "s",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates how the pages are ordered.",
+                          "key": "d",
+                          "value": "ASC"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to search `Wallets` using filtering parameters."
+                  },
+                  "response": [
+                    {
+                      "id": "5cc2cb1c-a166-493b-a8c7-7088fba671c7",
+                      "name": "The returned resource is an array containing `Wallets`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/wallets?type=company&id=<string>&customreferenceId=<string>&groupId=<string>&name=<string>&p=0&s=0&d=ASC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "wallets"
+                          ],
+                          "query": [
+                            {
+                              "description": "The type of resource assigned to the `Wallet`.",
+                              "key": "type",
+                              "value": "company"
+                            },
+                            {
+                              "description": "The ID of the `type` resource.",
+                              "key": "id",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The custom reference ID of the `type` resource.",
+                              "key": "customreferenceId",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The ID of the `Group` the `Wallet` is related to.",
+                              "key": "groupId",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The full or partial name of the `Wallet`.",
+                              "key": "name",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"currency_code\": \"STN\",\n      \"available_amount\": \"<number>\",\n      \"blocked_amount\": \"<number>\",\n      \"primary_user_type\": \"dedicated\",\n      \"primary_user_public_id\": \"<string>\",\n      \"custom_reference_id\": \"<string>\",\n      \"group_id\": \"<string>\",\n      \"groups\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"label\": \"<string>\",\n      \"visible\": \"<boolean>\",\n      \"creation_time\": \"<string>\",\n      \"last_update\": \"<string>\",\n      \"deposit_account_info\": [\n        {\n          \"type\": \"SORT_CODE\",\n          \"identification\": \"<string>\"\n        },\n        {\n          \"type\": \"SHARED_SWIFT\",\n          \"identification\": \"<string>\"\n        }\n      ],\n      \"description\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"currency_code\": \"NZD\",\n      \"available_amount\": \"<number>\",\n      \"blocked_amount\": \"<number>\",\n      \"primary_user_type\": \"company\",\n      \"primary_user_public_id\": \"<string>\",\n      \"custom_reference_id\": \"<string>\",\n      \"group_id\": \"<string>\",\n      \"groups\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"label\": \"<string>\",\n      \"visible\": \"<boolean>\",\n      \"creation_time\": \"<string>\",\n      \"last_update\": \"<string>\",\n      \"deposit_account_info\": [\n        {\n          \"type\": \"SISAL\",\n          \"identification\": \"<string>\"\n        },\n        {\n          \"type\": \"VIRTUAL_IBAN\",\n          \"identification\": \"<string>\"\n        }\n      ],\n      \"description\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:59:26.000Z",
+                      "updatedAt": "2026-07-28T02:59:26.000Z",
+                      "uid": "35240-5cc2cb1c-a166-493b-a8c7-7088fba671c7"
+                    },
+                    {
+                      "id": "13946ec7-e4ac-4cf1-9491-745199667352",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/wallets?type=company&id=<string>&customreferenceId=<string>&groupId=<string>&name=<string>&p=0&s=0&d=ASC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "wallets"
+                          ],
+                          "query": [
+                            {
+                              "description": "The type of resource assigned to the `Wallet`.",
+                              "key": "type",
+                              "value": "company"
+                            },
+                            {
+                              "description": "The ID of the `type` resource.",
+                              "key": "id",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The custom reference ID of the `type` resource.",
+                              "key": "customreferenceId",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The ID of the `Group` the `Wallet` is related to.",
+                              "key": "groupId",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The full or partial name of the `Wallet`.",
+                              "key": "name",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:59:26.000Z",
+                      "updatedAt": "2026-07-28T02:59:26.000Z",
+                      "uid": "35240-13946ec7-e4ac-4cf1-9491-745199667352"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:59:26.000Z",
+                  "updatedAt": "2026-07-28T02:59:26.000Z",
+                  "uid": "35240-d2204c08-2ea7-4c17-a139-0560200520a5"
+                },
+                {
+                  "name": "Add Wallet",
+                  "id": "b4673002-23fc-44d3-a023-677302a619a2",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint",
+                        "value": "{{fingerprint}}"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint-Signature",
+                        "value": "{{fingerprint_signature}}"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"currency\": \"GBP\",\n  \"name\": \"<string>\",\n  \"request_timestamp\": \"<long>\",\n  \"owner_type\": \"company\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/wallets",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "wallets"
+                      ]
+                    },
+                    "description": "Endpoint to add a new `Wallet`. Only company wallets can be created, a user dedicated wallet for each currency supported by your account is automatically created by the Soldo platform. *Deprecated*: use [/wallets/create](ref:wallet-create) instead."
+                  },
+                  "response": [
+                    {
+                      "id": "1baa2478-0117-4fd6-824b-9a86cd1bd65f",
+                      "name": "The returned resource is a single `Order`.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"currency\": \"GBP\",\n  \"name\": \"<string>\",\n  \"request_timestamp\": \"<long>\",\n  \"owner_type\": \"company\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/wallets",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "wallets"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\",\n  \"status\": \"PENDING\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\",\n  \"error_code\": \"<string>\",\n  \"total_paid_amount\": \"<number>\",\n  \"total_paid_currency\": \"TRY\",\n  \"items\": [\n    {\n      \"id\": \"<string>\",\n      \"item_type\": \"<string>\",\n      \"category\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"item_type\": \"<string>\",\n      \"category\": \"<string>\"\n    }\n  ],\n  \"is_valid\": \"<boolean>\"\n}",
+                      "createdAt": "2026-07-28T02:59:26.000Z",
+                      "updatedAt": "2026-07-28T02:59:26.000Z",
+                      "uid": "35240-1baa2478-0117-4fd6-824b-9a86cd1bd65f"
+                    },
+                    {
+                      "id": "a78c0503-f9f8-4c1a-b189-e37a9b5ae205",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"currency\": \"GBP\",\n  \"name\": \"<string>\",\n  \"request_timestamp\": \"<long>\",\n  \"owner_type\": \"company\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/wallets",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "wallets"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:59:26.000Z",
+                      "updatedAt": "2026-07-28T02:59:26.000Z",
+                      "uid": "35240-a78c0503-f9f8-4c1a-b189-e37a9b5ae205"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:59:26.000Z",
+                  "updatedAt": "2026-07-28T02:59:26.000Z",
+                  "uid": "35240-b4673002-23fc-44d3-a023-677302a619a2"
+                }
+              ],
+              "id": "fd145ece-b862-4882-a296-d3da42b5184d",
+              "createdAt": "2026-07-28T02:59:26.000Z",
+              "updatedAt": "2026-07-28T02:59:26.000Z",
+              "uid": "35240-fd145ece-b862-4882-a296-d3da42b5184d"
+            }
+          ],
+          "id": "4bb313ea-3fe7-40a6-877b-1a4c275babdf",
+          "createdAt": "2026-07-28T02:59:26.000Z",
+          "updatedAt": "2026-07-28T02:59:26.000Z",
+          "uid": "35240-4bb313ea-3fe7-40a6-877b-1a4c275babdf"
+        }
+      ],
+      "id": "c243ea65-22a2-4622-958b-3a71252d7293",
+      "createdAt": "2026-07-28T02:59:26.000Z",
+      "updatedAt": "2026-07-28T02:59:26.000Z",
+      "uid": "35240-c243ea65-22a2-4622-958b-3a71252d7293"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

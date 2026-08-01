@@ -1,0 +1,84 @@
+generated: '2026-07-21'
+method: searched
+source: https://developer.soldo.com/docs/
+docs:
+  authentication: https://developer.soldo.com/docs/authentication
+  pagination: https://developer.soldo.com/docs/pagination-and-sorting
+  errors: https://developer.soldo.com/docs/errors
+  rate_limits: https://developer.soldo.com/docs/rate-limits
+  data_types: https://developer.soldo.com/docs/data-types
+note: >-
+  Cross-cutting request/response semantics for the Soldo Business API, captured from the
+  developer documentation and the OpenAPI spec. Cross-links errors/, lifecycle/,
+  authentication/, and scopes/ artifacts in this repo.
+
+authentication:
+  style: oauth2-client-credentials
+  token_url: https://api.soldo.com/oauth/authorize
+  token_type: Bearer
+  access_token_ttl_seconds: 7200
+  transport: HTTPS only (plain HTTP or unauthenticated requests are rejected)
+  advanced_auth:
+    required_for: money movement, transaction access, and account changes (marked per-endpoint)
+    headers:
+      - X-Soldo-Fingerprint          # SHA-512 hash of an ordered, concatenated field list (lowercase)
+      - X-Soldo-Fingerprint-Signature # SHA512withRSA signature of the fingerprint, Base64-encoded
+    key_pair: 2048-bit RSA (X.509 SubjectPublicKeyInfo / OpenSSL PEM); public key registered in the Soldo web app
+    fingerprint_token: additional per-application secret concatenated into the fingerprint
+
+idempotency:
+  supported: false
+  note: >-
+    Soldo does not document an idempotency-key header or an Idempotency-Key parameter in the
+    OpenAPI spec. Write safety is instead enforced via advanced-authentication request signing
+    (X-Soldo-Fingerprint) rather than client-supplied idempotency keys. No Idempotency pointer
+    is emitted (no fabrication).
+
+pagination:
+  style: page-number
+  request_params:
+    p: page number, zero-based (default 0)
+    s: page size (default 50, max 50 unless raised by support)
+    d: sort direction (ASC | DESC)
+    props: field(s) to sort on; repeat the param for multi-field sort (e.g. props=id&props=status)
+  response_fields:
+    total: total number of objects
+    pages: total number of pages
+    page_size: max objects per page
+    current_page: current page (zero-based)
+    results_size: number of objects in this page's results array
+    results: array of objects for the current page
+
+error_envelope:
+  format: custom-json
+  rfc9457: false
+  shape:
+    error_code: machine-readable custom code (e.g. UNAUTHORIZED, INVALID_FINGERPRINT, WALLET_BALANCE_GREATER_THAN_ZERO)
+    message: human-readable detail
+  auth_variant:
+    error: e.g. invalid_token
+    error_description: human-readable detail
+  see: errors/soldo-software-and-services-error-codes.yml
+
+rate_limiting:
+  limits:
+    per_minute: 600
+    per_second: 20
+  response_headers:
+    - x-ratelimit-limit-minute
+    - x-ratelimit-limit-second
+    - x-ratelimit-remaining-minute
+    - x-ratelimit-remaining-second
+  exceeded_status: 429
+  see: rate-limits (documented at https://developer.soldo.com/docs/rate-limits)
+
+versioning:
+  scheme: uri-path
+  current: v2
+  base_path: /business/v2
+  see: lifecycle/soldo-software-and-services-lifecycle.yml
+
+file_uploads:
+  pattern: pre-signed URL (request UPLOAD_URL, PUT the file, then confirm)
+  applies_to: Documents, Transaction Attachments
+  docs: https://developer.soldo.com/docs/file-uploads

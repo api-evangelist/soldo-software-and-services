@@ -1,0 +1,2866 @@
+{
+  "info": {
+    "_postman_id": "7a966f8c-358d-41dc-b912-5ac806e27885",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Card Rules API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:57:48.000Z",
+    "updatedAt": "2026-07-28T02:57:48.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-7a966f8c-358d-41dc-b912-5ac806e27885"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "cards",
+              "item": [
+                {
+                  "name": "{cardId}",
+                  "item": [
+                    {
+                      "name": "rules",
+                      "item": [
+                        {
+                          "name": "cashpoint",
+                          "item": [
+                            {
+                              "name": "{limitName}",
+                              "item": [
+                                {
+                                  "name": "Set CashPoint Rules",
+                                  "id": "e06eb419-84b2-461f-ad17-37fb7804d16d",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "auth": {
+                                      "type": "oauth2",
+                                      "oauth2": [
+                                        {
+                                          "key": "scope",
+                                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "key": "accessTokenUrl",
+                                          "value": "https://api.soldo.com/oauth/authorize",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "key": "grant_type",
+                                          "value": "client_credentials",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"max\": \"<double>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/cashpoint/:limitName",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "rules",
+                                        "cashpoint",
+                                        ":limitName"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "156b18dc-c4dd-4675-b51b-bfc7db9cb06f",
+                                          "key": "cardId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "829bae30-c63c-4f3f-8eb4-d812453e6e38",
+                                          "key": "limitName",
+                                          "value": "daily",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Endpoint to set a `CardRuleCashPointRule` of the `Card`."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "19f88802-566f-4220-8de6-c9cc3cd75f8b",
+                                      "name": "The result is a `CardRuleCashPointRules`.",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint",
+                                            "value": "{{fingerprint}}"
+                                          },
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint-Signature",
+                                            "value": "{{fingerprint_signature}}"
+                                          },
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"max\": \"<double>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/cashpoint/:limitName",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "business",
+                                            "v2",
+                                            "cards",
+                                            ":cardId",
+                                            "rules",
+                                            "cashpoint",
+                                            ":limitName"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "cardId"
+                                            },
+                                            {
+                                              "key": "limitName"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"enabled\": \"<boolean>\",\n  \"amount\": \"<number>\"\n}",
+                                      "createdAt": "2026-07-28T02:57:49.000Z",
+                                      "updatedAt": "2026-07-28T02:57:49.000Z",
+                                      "uid": "35240-19f88802-566f-4220-8de6-c9cc3cd75f8b"
+                                    },
+                                    {
+                                      "id": "3c83bd52-8012-4e2a-8679-4f2bcfbc1c13",
+                                      "name": "Your request has missing arguments or is malformed.",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint",
+                                            "value": "{{fingerprint}}"
+                                          },
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint-Signature",
+                                            "value": "{{fingerprint_signature}}"
+                                          },
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"max\": \"<double>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/cashpoint/:limitName",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "business",
+                                            "v2",
+                                            "cards",
+                                            ":cardId",
+                                            "rules",
+                                            "cashpoint",
+                                            ":limitName"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "cardId"
+                                            },
+                                            {
+                                              "key": "limitName"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Bad Request",
+                                      "code": 400,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T02:57:49.000Z",
+                                      "updatedAt": "2026-07-28T02:57:49.000Z",
+                                      "uid": "35240-3c83bd52-8012-4e2a-8679-4f2bcfbc1c13"
+                                    },
+                                    {
+                                      "id": "165fb97e-2bce-4fc6-8755-2573490c7eb9",
+                                      "name": "One or more resource requested does not exist.",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint",
+                                            "value": "{{fingerprint}}"
+                                          },
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint-Signature",
+                                            "value": "{{fingerprint_signature}}"
+                                          },
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"max\": \"<double>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/cashpoint/:limitName",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "business",
+                                            "v2",
+                                            "cards",
+                                            ":cardId",
+                                            "rules",
+                                            "cashpoint",
+                                            ":limitName"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "cardId"
+                                            },
+                                            {
+                                              "key": "limitName"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Not Found",
+                                      "code": 404,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T02:57:49.000Z",
+                                      "updatedAt": "2026-07-28T02:57:49.000Z",
+                                      "uid": "35240-165fb97e-2bce-4fc6-8755-2573490c7eb9"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T02:57:49.000Z",
+                                  "updatedAt": "2026-07-28T02:57:49.000Z",
+                                  "uid": "35240-e06eb419-84b2-461f-ad17-37fb7804d16d"
+                                },
+                                {
+                                  "name": "Unset CashPoint Rules",
+                                  "id": "6ef28af5-1e4d-42af-adab-bf636b7c5f8d",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "auth": {
+                                      "type": "oauth2",
+                                      "oauth2": [
+                                        {
+                                          "key": "scope",
+                                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "key": "accessTokenUrl",
+                                          "value": "https://api.soldo.com/oauth/authorize",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "key": "grant_type",
+                                          "value": "client_credentials",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/cashpoint/:limitName",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "rules",
+                                        "cashpoint",
+                                        ":limitName"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "9b0be91f-5442-423a-b6e8-ac0116ca4eee",
+                                          "key": "cardId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "f0aa8bbc-33b6-49bb-803b-1dd86a80d979",
+                                          "key": "limitName",
+                                          "value": "daily",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Endpoint to unset a `CardRuleCashPointRule` of the `Card`."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "db99bf19-838f-48cc-8004-5f39e0f6eb22",
+                                      "name": "The result is a single `CardRuleCashPointRule`.",
+                                      "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint",
+                                            "value": "{{fingerprint}}"
+                                          },
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint-Signature",
+                                            "value": "{{fingerprint_signature}}"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/cashpoint/:limitName",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "business",
+                                            "v2",
+                                            "cards",
+                                            ":cardId",
+                                            "rules",
+                                            "cashpoint",
+                                            ":limitName"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "cardId"
+                                            },
+                                            {
+                                              "key": "limitName"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"enabled\": \"<boolean>\",\n  \"amount\": \"<number>\"\n}",
+                                      "createdAt": "2026-07-28T02:57:49.000Z",
+                                      "updatedAt": "2026-07-28T02:57:49.000Z",
+                                      "uid": "35240-db99bf19-838f-48cc-8004-5f39e0f6eb22"
+                                    },
+                                    {
+                                      "id": "8646529a-dcbf-4914-bda1-bb6cb1bbc8b9",
+                                      "name": "Your request has missing arguments or is malformed.",
+                                      "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint",
+                                            "value": "{{fingerprint}}"
+                                          },
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint-Signature",
+                                            "value": "{{fingerprint_signature}}"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/cashpoint/:limitName",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "business",
+                                            "v2",
+                                            "cards",
+                                            ":cardId",
+                                            "rules",
+                                            "cashpoint",
+                                            ":limitName"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "cardId"
+                                            },
+                                            {
+                                              "key": "limitName"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Bad Request",
+                                      "code": 400,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T02:57:49.000Z",
+                                      "updatedAt": "2026-07-28T02:57:49.000Z",
+                                      "uid": "35240-8646529a-dcbf-4914-bda1-bb6cb1bbc8b9"
+                                    },
+                                    {
+                                      "id": "151eb485-0e4d-41e5-b121-faef0efe7bcc",
+                                      "name": "One or more resource requested does not exist.",
+                                      "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint",
+                                            "value": "{{fingerprint}}"
+                                          },
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint-Signature",
+                                            "value": "{{fingerprint_signature}}"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/cashpoint/:limitName",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "business",
+                                            "v2",
+                                            "cards",
+                                            ":cardId",
+                                            "rules",
+                                            "cashpoint",
+                                            ":limitName"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "cardId"
+                                            },
+                                            {
+                                              "key": "limitName"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Not Found",
+                                      "code": 404,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T02:57:49.000Z",
+                                      "updatedAt": "2026-07-28T02:57:49.000Z",
+                                      "uid": "35240-151eb485-0e4d-41e5-b121-faef0efe7bcc"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T02:57:49.000Z",
+                                  "updatedAt": "2026-07-28T02:57:49.000Z",
+                                  "uid": "35240-6ef28af5-1e4d-42af-adab-bf636b7c5f8d"
+                                }
+                              ],
+                              "id": "460964f8-ecca-49ad-8c02-cc0ebb425183",
+                              "createdAt": "2026-07-28T02:57:49.000Z",
+                              "updatedAt": "2026-07-28T02:57:49.000Z",
+                              "uid": "35240-460964f8-ecca-49ad-8c02-cc0ebb425183"
+                            },
+                            {
+                              "name": "Get CashPoint Rules",
+                              "id": "4ebc939c-970b-4c72-a549-e0faf5865202",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/cashpoint",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    ":cardId",
+                                    "rules",
+                                    "cashpoint"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "510241db-7076-461d-9c4b-8604385ebe7c",
+                                      "key": "cardId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to get the `CardRuleCashPointRules` of the `Card`."
+                              },
+                              "response": [
+                                {
+                                  "id": "834a82d5-e083-425c-aa0f-d511cae4a3e6",
+                                  "name": "The result is a `CardRuleCashPointRules`.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/cashpoint",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "rules",
+                                        "cashpoint"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"daily\": {\n    \"enabled\": \"<boolean>\",\n    \"max\": \"<number>\",\n    \"spent\": \"<number>\",\n    \"left\": \"<number>\"\n  },\n  \"weekly\": {\n    \"enabled\": \"<boolean>\",\n    \"max\": \"<number>\",\n    \"spent\": \"<number>\",\n    \"left\": \"<number>\"\n  },\n  \"monthly\": {\n    \"enabled\": \"<boolean>\",\n    \"max\": \"<number>\",\n    \"spent\": \"<number>\",\n    \"left\": \"<number>\"\n  },\n  \"chip_and_pin\": {\n    \"enabled\": \"<boolean>\"\n  },\n  \"magstripe\": {\n    \"enabled\": \"<boolean>\"\n  }\n}",
+                                  "createdAt": "2026-07-28T02:57:49.000Z",
+                                  "updatedAt": "2026-07-28T02:57:49.000Z",
+                                  "uid": "35240-834a82d5-e083-425c-aa0f-d511cae4a3e6"
+                                },
+                                {
+                                  "id": "4ac6d3a2-3771-488b-b4f1-0006e38d9883",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/cashpoint",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "rules",
+                                        "cashpoint"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:57:49.000Z",
+                                  "updatedAt": "2026-07-28T02:57:49.000Z",
+                                  "uid": "35240-4ac6d3a2-3771-488b-b4f1-0006e38d9883"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:57:49.000Z",
+                              "updatedAt": "2026-07-28T02:57:49.000Z",
+                              "uid": "35240-4ebc939c-970b-4c72-a549-e0faf5865202"
+                            }
+                          ],
+                          "id": "a4a5992a-c7e5-4f9d-800e-9b6c4cf46a17",
+                          "createdAt": "2026-07-28T02:57:49.000Z",
+                          "updatedAt": "2026-07-28T02:57:49.000Z",
+                          "uid": "35240-a4a5992a-c7e5-4f9d-800e-9b6c4cf46a17"
+                        },
+                        {
+                          "name": "countries",
+                          "item": [
+                            {
+                              "name": "Get Countries Rules",
+                              "id": "4dd99a76-72d9-4055-8c2d-dfd721bce36c",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/countries",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    ":cardId",
+                                    "rules",
+                                    "countries"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "ae5b208d-9a54-4a05-b2ae-9395ea63c02d",
+                                      "key": "cardId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to get the `CardRuleCountries` of the `Card`."
+                              },
+                              "response": [
+                                {
+                                  "id": "1b645955-2236-4480-9467-528d650b34fb",
+                                  "name": "The results is `CardRuleCountries`.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/countries",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "rules",
+                                        "countries"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"total\": \"<integer>\",\n  \"results\": [\n    {\n      \"code\": \"FLK\",\n      \"enabled\": \"<boolean>\"\n    },\n    {\n      \"code\": \"CZE\",\n      \"enabled\": \"<boolean>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T02:57:49.000Z",
+                                  "updatedAt": "2026-07-28T02:57:49.000Z",
+                                  "uid": "35240-1b645955-2236-4480-9467-528d650b34fb"
+                                },
+                                {
+                                  "id": "36df9641-813a-42b0-8fdd-00cd7ead7780",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/countries",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "rules",
+                                        "countries"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:57:49.000Z",
+                                  "updatedAt": "2026-07-28T02:57:49.000Z",
+                                  "uid": "35240-36df9641-813a-42b0-8fdd-00cd7ead7780"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:57:49.000Z",
+                              "updatedAt": "2026-07-28T02:57:49.000Z",
+                              "uid": "35240-4dd99a76-72d9-4055-8c2d-dfd721bce36c"
+                            },
+                            {
+                              "name": "Set Countries Rules",
+                              "id": "4cbeac9f-8a37-4667-a69f-05ab69f5fa0e",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"countries\": [\n    {\n      \"code\": \"MHL\",\n      \"enabled\": \"<boolean>\"\n    },\n    {\n      \"code\": \"GMB\",\n      \"enabled\": \"<boolean>\"\n    }\n  ],\n  \"request_timestamp\": \"<long>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/countries",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    ":cardId",
+                                    "rules",
+                                    "countries"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "2a94202d-029f-4b30-ad91-2cc2e36936a7",
+                                      "key": "cardId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to set the `CardRuleCountries` of the `Card`."
+                              },
+                              "response": [
+                                {
+                                  "id": "43c745e2-df58-4645-b641-6b62cb2356a7",
+                                  "name": "The results is `CardRuleCountries`.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"countries\": [\n    {\n      \"code\": \"MHL\",\n      \"enabled\": \"<boolean>\"\n    },\n    {\n      \"code\": \"GMB\",\n      \"enabled\": \"<boolean>\"\n    }\n  ],\n  \"request_timestamp\": \"<long>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/countries",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "rules",
+                                        "countries"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"total\": \"<integer>\",\n  \"results\": [\n    {\n      \"code\": \"FLK\",\n      \"enabled\": \"<boolean>\"\n    },\n    {\n      \"code\": \"CZE\",\n      \"enabled\": \"<boolean>\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T02:57:49.000Z",
+                                  "updatedAt": "2026-07-28T02:57:49.000Z",
+                                  "uid": "35240-43c745e2-df58-4645-b641-6b62cb2356a7"
+                                },
+                                {
+                                  "id": "2e546b0a-dcac-44f0-b9a6-575f995c0930",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"countries\": [\n    {\n      \"code\": \"MHL\",\n      \"enabled\": \"<boolean>\"\n    },\n    {\n      \"code\": \"GMB\",\n      \"enabled\": \"<boolean>\"\n    }\n  ],\n  \"request_timestamp\": \"<long>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/countries",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "rules",
+                                        "countries"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:57:49.000Z",
+                                  "updatedAt": "2026-07-28T02:57:49.000Z",
+                                  "uid": "35240-2e546b0a-dcac-44f0-b9a6-575f995c0930"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:57:49.000Z",
+                              "updatedAt": "2026-07-28T02:57:49.000Z",
+                              "uid": "35240-4cbeac9f-8a37-4667-a69f-05ab69f5fa0e"
+                            }
+                          ],
+                          "id": "72cfd683-dd0b-4522-9af7-4dd901c3fbaa",
+                          "createdAt": "2026-07-28T02:57:49.000Z",
+                          "updatedAt": "2026-07-28T02:57:49.000Z",
+                          "uid": "35240-72cfd683-dd0b-4522-9af7-4dd901c3fbaa"
+                        },
+                        {
+                          "name": "merchantCategories",
+                          "item": [
+                            {
+                              "name": "Get Merchant Categories Rules",
+                              "id": "ab6201a2-2b9f-484f-9902-4db0f2ccb19f",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/merchantCategories",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    ":cardId",
+                                    "rules",
+                                    "merchantCategories"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "6000a656-ea25-4041-991d-6c9bac3f7d1c",
+                                      "key": "cardId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to get the `CardRuleMerchantCategories` of the `Card`."
+                              },
+                              "response": [
+                                {
+                                  "id": "023425fb-6194-4d88-8dab-86e2f2330903",
+                                  "name": "The result is a `CardRuleMerchantCategories`.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/merchantCategories",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "rules",
+                                        "merchantCategories"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"total\": \"<integer>\",\n  \"results\": [\n    {\n      \"enabled\": \"<boolean>\",\n      \"name\": \"Shopping_Art\"\n    },\n    {\n      \"enabled\": \"<boolean>\",\n      \"name\": \"Shopping_Art\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T02:57:49.000Z",
+                                  "updatedAt": "2026-07-28T02:57:49.000Z",
+                                  "uid": "35240-023425fb-6194-4d88-8dab-86e2f2330903"
+                                },
+                                {
+                                  "id": "c3cbdba2-42ee-48bd-b48f-7be925559050",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/merchantCategories",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "rules",
+                                        "merchantCategories"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:57:49.000Z",
+                                  "updatedAt": "2026-07-28T02:57:49.000Z",
+                                  "uid": "35240-c3cbdba2-42ee-48bd-b48f-7be925559050"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:57:49.000Z",
+                              "updatedAt": "2026-07-28T02:57:49.000Z",
+                              "uid": "35240-ab6201a2-2b9f-484f-9902-4db0f2ccb19f"
+                            },
+                            {
+                              "name": "Set Merchant Categories Rules",
+                              "id": "76d5eedd-2d3e-43b6-8329-ee292f8ff18d",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"merchant_categories\": [\n    {\n      \"enabled\": \"<boolean>\",\n      \"name\": \"Services_Educational\"\n    },\n    {\n      \"enabled\": \"<boolean>\",\n      \"name\": \"Travel_Agency\"\n    }\n  ],\n  \"request_timestamp\": \"<long>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/merchantCategories",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    ":cardId",
+                                    "rules",
+                                    "merchantCategories"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "2dbcebdb-1034-41e3-8eb2-f76f3a0ebc6e",
+                                      "key": "cardId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to set the `CardRuleMerchantCategories` of the `Card`."
+                              },
+                              "response": [
+                                {
+                                  "id": "d63ab44a-1bb5-47db-a21d-9100c84c5944",
+                                  "name": "The result is a `CardRuleMerchantCategories`.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"merchant_categories\": [\n    {\n      \"enabled\": \"<boolean>\",\n      \"name\": \"Services_Educational\"\n    },\n    {\n      \"enabled\": \"<boolean>\",\n      \"name\": \"Travel_Agency\"\n    }\n  ],\n  \"request_timestamp\": \"<long>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/merchantCategories",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "rules",
+                                        "merchantCategories"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"total\": \"<integer>\",\n  \"results\": [\n    {\n      \"enabled\": \"<boolean>\",\n      \"name\": \"Shopping_Art\"\n    },\n    {\n      \"enabled\": \"<boolean>\",\n      \"name\": \"Shopping_Art\"\n    }\n  ]\n}",
+                                  "createdAt": "2026-07-28T02:57:49.000Z",
+                                  "updatedAt": "2026-07-28T02:57:49.000Z",
+                                  "uid": "35240-d63ab44a-1bb5-47db-a21d-9100c84c5944"
+                                },
+                                {
+                                  "id": "f3363caf-2a0d-4fd3-95f1-0901b46e2df2",
+                                  "name": "Your request has missing arguments or is malformed.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"merchant_categories\": [\n    {\n      \"enabled\": \"<boolean>\",\n      \"name\": \"Services_Educational\"\n    },\n    {\n      \"enabled\": \"<boolean>\",\n      \"name\": \"Travel_Agency\"\n    }\n  ],\n  \"request_timestamp\": \"<long>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/merchantCategories",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "rules",
+                                        "merchantCategories"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:57:49.000Z",
+                                  "updatedAt": "2026-07-28T02:57:49.000Z",
+                                  "uid": "35240-f3363caf-2a0d-4fd3-95f1-0901b46e2df2"
+                                },
+                                {
+                                  "id": "45f005fe-f1fa-4bce-b33e-db3b4b4ecffb",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"merchant_categories\": [\n    {\n      \"enabled\": \"<boolean>\",\n      \"name\": \"Services_Educational\"\n    },\n    {\n      \"enabled\": \"<boolean>\",\n      \"name\": \"Travel_Agency\"\n    }\n  ],\n  \"request_timestamp\": \"<long>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/merchantCategories",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "rules",
+                                        "merchantCategories"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:57:49.000Z",
+                                  "updatedAt": "2026-07-28T02:57:49.000Z",
+                                  "uid": "35240-45f005fe-f1fa-4bce-b33e-db3b4b4ecffb"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:57:49.000Z",
+                              "updatedAt": "2026-07-28T02:57:49.000Z",
+                              "uid": "35240-76d5eedd-2d3e-43b6-8329-ee292f8ff18d"
+                            }
+                          ],
+                          "id": "40c053f5-ff32-44c2-a9b6-ee519f95b453",
+                          "createdAt": "2026-07-28T02:57:49.000Z",
+                          "updatedAt": "2026-07-28T02:57:49.000Z",
+                          "uid": "35240-40c053f5-ff32-44c2-a9b6-ee519f95b453"
+                        },
+                        {
+                          "name": "spendingLimits",
+                          "item": [
+                            {
+                              "name": "{limitName}",
+                              "item": [
+                                {
+                                  "name": "Set Spending Limits Rules",
+                                  "id": "c9c412d5-b116-43e1-9dfb-6e8379b68bcf",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "auth": {
+                                      "type": "oauth2",
+                                      "oauth2": [
+                                        {
+                                          "key": "scope",
+                                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "key": "accessTokenUrl",
+                                          "value": "https://api.soldo.com/oauth/authorize",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "key": "grant_type",
+                                          "value": "client_credentials",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "*/*"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"max\": \"<double>\"\n}"
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/spendingLimits/:limitName",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "rules",
+                                        "spendingLimits",
+                                        ":limitName"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "9c7c78cc-67b9-4732-95d9-1ce0c07fb807",
+                                          "key": "cardId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "8468dfff-a3eb-47ca-af43-dd969bcd3ec9",
+                                          "key": "limitName",
+                                          "value": "weekly",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Endpoint to set the `CardRuleSpendingLimitsRules` of the `Card`."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "5173a3c8-413b-474a-a6be-76ebb6f5f505",
+                                      "name": "The result is a single `CardRuleSpendingLimitsRule`.",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint",
+                                            "value": "{{fingerprint}}"
+                                          },
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint-Signature",
+                                            "value": "{{fingerprint_signature}}"
+                                          },
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "*/*"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"max\": \"<double>\"\n}"
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/spendingLimits/:limitName",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "business",
+                                            "v2",
+                                            "cards",
+                                            ":cardId",
+                                            "rules",
+                                            "spendingLimits",
+                                            ":limitName"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "cardId"
+                                            },
+                                            {
+                                              "key": "limitName"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"enabled\": \"<boolean>\",\n  \"amount\": \"<number>\"\n}",
+                                      "createdAt": "2026-07-28T02:57:49.000Z",
+                                      "updatedAt": "2026-07-28T02:57:49.000Z",
+                                      "uid": "35240-5173a3c8-413b-474a-a6be-76ebb6f5f505"
+                                    },
+                                    {
+                                      "id": "5c3a4db6-4510-4dc9-8850-fcd1bcde932b",
+                                      "name": "Your request has missing arguments or is malformed.",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint",
+                                            "value": "{{fingerprint}}"
+                                          },
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint-Signature",
+                                            "value": "{{fingerprint_signature}}"
+                                          },
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "*/*"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"max\": \"<double>\"\n}"
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/spendingLimits/:limitName",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "business",
+                                            "v2",
+                                            "cards",
+                                            ":cardId",
+                                            "rules",
+                                            "spendingLimits",
+                                            ":limitName"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "cardId"
+                                            },
+                                            {
+                                              "key": "limitName"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Bad Request",
+                                      "code": 400,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T02:57:49.000Z",
+                                      "updatedAt": "2026-07-28T02:57:49.000Z",
+                                      "uid": "35240-5c3a4db6-4510-4dc9-8850-fcd1bcde932b"
+                                    },
+                                    {
+                                      "id": "1072cb7a-feb7-44ba-aa98-86cde8ed45eb",
+                                      "name": "One or more resource requested does not exist.",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint",
+                                            "value": "{{fingerprint}}"
+                                          },
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint-Signature",
+                                            "value": "{{fingerprint_signature}}"
+                                          },
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "*/*"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"max\": \"<double>\"\n}"
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/spendingLimits/:limitName",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "business",
+                                            "v2",
+                                            "cards",
+                                            ":cardId",
+                                            "rules",
+                                            "spendingLimits",
+                                            ":limitName"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "cardId"
+                                            },
+                                            {
+                                              "key": "limitName"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Not Found",
+                                      "code": 404,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T02:57:49.000Z",
+                                      "updatedAt": "2026-07-28T02:57:49.000Z",
+                                      "uid": "35240-1072cb7a-feb7-44ba-aa98-86cde8ed45eb"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T02:57:49.000Z",
+                                  "updatedAt": "2026-07-28T02:57:49.000Z",
+                                  "uid": "35240-c9c412d5-b116-43e1-9dfb-6e8379b68bcf"
+                                },
+                                {
+                                  "name": "Unset Spending Limits Rules",
+                                  "id": "cc385f3b-26ca-41f9-a177-28c91517d18d",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "auth": {
+                                      "type": "oauth2",
+                                      "oauth2": [
+                                        {
+                                          "key": "scope",
+                                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "key": "accessTokenUrl",
+                                          "value": "https://api.soldo.com/oauth/authorize",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "key": "grant_type",
+                                          "value": "client_credentials",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/spendingLimits/:limitName",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "rules",
+                                        "spendingLimits",
+                                        ":limitName"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "08ba018f-686c-4289-b668-1fcf4ee66f40",
+                                          "key": "cardId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "34c0e684-7feb-4552-a17c-8e746e5f5c2b",
+                                          "key": "limitName",
+                                          "value": "weekly",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Endpoint to unset the `CardRuleSpendingLimitsRule`  of the `Card`."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "5d67aea0-4990-4190-a3ce-ff52e5fcff2f",
+                                      "name": "The result is a single `CardRuleSpendingLimitsRule`.",
+                                      "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint",
+                                            "value": "{{fingerprint}}"
+                                          },
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint-Signature",
+                                            "value": "{{fingerprint_signature}}"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/spendingLimits/:limitName",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "business",
+                                            "v2",
+                                            "cards",
+                                            ":cardId",
+                                            "rules",
+                                            "spendingLimits",
+                                            ":limitName"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "cardId"
+                                            },
+                                            {
+                                              "key": "limitName"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"enabled\": \"<boolean>\",\n  \"amount\": \"<number>\"\n}",
+                                      "createdAt": "2026-07-28T02:57:49.000Z",
+                                      "updatedAt": "2026-07-28T02:57:49.000Z",
+                                      "uid": "35240-5d67aea0-4990-4190-a3ce-ff52e5fcff2f"
+                                    },
+                                    {
+                                      "id": "611695ad-fd73-46e5-beab-542c956c12a0",
+                                      "name": "Your request has missing arguments or is malformed.",
+                                      "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint",
+                                            "value": "{{fingerprint}}"
+                                          },
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint-Signature",
+                                            "value": "{{fingerprint_signature}}"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/spendingLimits/:limitName",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "business",
+                                            "v2",
+                                            "cards",
+                                            ":cardId",
+                                            "rules",
+                                            "spendingLimits",
+                                            ":limitName"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "cardId"
+                                            },
+                                            {
+                                              "key": "limitName"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Bad Request",
+                                      "code": 400,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T02:57:49.000Z",
+                                      "updatedAt": "2026-07-28T02:57:49.000Z",
+                                      "uid": "35240-611695ad-fd73-46e5-beab-542c956c12a0"
+                                    },
+                                    {
+                                      "id": "1051207d-997f-410b-8c41-cad1d29f81f8",
+                                      "name": "One or more resource requested does not exist.",
+                                      "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint",
+                                            "value": "{{fingerprint}}"
+                                          },
+                                          {
+                                            "description": "(Required) ",
+                                            "key": "X-Soldo-Fingerprint-Signature",
+                                            "value": "{{fingerprint_signature}}"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/spendingLimits/:limitName",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "business",
+                                            "v2",
+                                            "cards",
+                                            ":cardId",
+                                            "rules",
+                                            "spendingLimits",
+                                            ":limitName"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "cardId"
+                                            },
+                                            {
+                                              "key": "limitName"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Not Found",
+                                      "code": 404,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T02:57:49.000Z",
+                                      "updatedAt": "2026-07-28T02:57:49.000Z",
+                                      "uid": "35240-1051207d-997f-410b-8c41-cad1d29f81f8"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T02:57:49.000Z",
+                                  "updatedAt": "2026-07-28T02:57:49.000Z",
+                                  "uid": "35240-cc385f3b-26ca-41f9-a177-28c91517d18d"
+                                }
+                              ],
+                              "id": "ecdc2a94-53a8-48a1-b857-f65541c0c7b1",
+                              "createdAt": "2026-07-28T02:57:49.000Z",
+                              "updatedAt": "2026-07-28T02:57:49.000Z",
+                              "uid": "35240-ecdc2a94-53a8-48a1-b857-f65541c0c7b1"
+                            },
+                            {
+                              "name": "Get Spending Limits Rules",
+                              "id": "58030d29-6037-4cff-9ea2-3d8352b8b78a",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/spendingLimits",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    ":cardId",
+                                    "rules",
+                                    "spendingLimits"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "8bb597d2-f1d1-425f-a359-26b92348a169",
+                                      "key": "cardId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to get the `CardRuleSpendingLimitsRules` of the `Card`."
+                              },
+                              "response": [
+                                {
+                                  "id": "0cf298dc-edab-4537-b8bd-2f52505ca47d",
+                                  "name": "The result is a `CardRuleSpendingLimitsRules`.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/spendingLimits",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "rules",
+                                        "spendingLimits"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"daily\": {\n    \"enabled\": \"<boolean>\",\n    \"max\": \"<number>\",\n    \"spent\": \"<number>\",\n    \"left\": \"<number>\"\n  },\n  \"weekly\": {\n    \"enabled\": \"<boolean>\",\n    \"max\": \"<number>\",\n    \"spent\": \"<number>\",\n    \"left\": \"<number>\"\n  },\n  \"monthly\": {\n    \"enabled\": \"<boolean>\",\n    \"max\": \"<number>\",\n    \"spent\": \"<number>\",\n    \"left\": \"<number>\"\n  },\n  \"per_transaction\": {\n    \"enabled\": \"<boolean>\",\n    \"max\": \"<number>\",\n    \"spent\": \"<number>\",\n    \"left\": \"<number>\"\n  }\n}",
+                                  "createdAt": "2026-07-28T02:57:49.000Z",
+                                  "updatedAt": "2026-07-28T02:57:49.000Z",
+                                  "uid": "35240-0cf298dc-edab-4537-b8bd-2f52505ca47d"
+                                },
+                                {
+                                  "id": "6a82369b-7d94-435e-b6de-29916edec4bf",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules/spendingLimits",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "rules",
+                                        "spendingLimits"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:57:49.000Z",
+                                  "updatedAt": "2026-07-28T02:57:49.000Z",
+                                  "uid": "35240-6a82369b-7d94-435e-b6de-29916edec4bf"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:57:49.000Z",
+                              "updatedAt": "2026-07-28T02:57:49.000Z",
+                              "uid": "35240-58030d29-6037-4cff-9ea2-3d8352b8b78a"
+                            }
+                          ],
+                          "id": "0c824bb5-1e74-4ba4-af97-9e6a85138b35",
+                          "createdAt": "2026-07-28T02:57:49.000Z",
+                          "updatedAt": "2026-07-28T02:57:49.000Z",
+                          "uid": "35240-0c824bb5-1e74-4ba4-af97-9e6a85138b35"
+                        },
+                        {
+                          "name": "Get Card Rules",
+                          "id": "c0cc545f-6137-4bb1-8c4c-040a8b64abc6",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "cards",
+                                ":cardId",
+                                "rules"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "18c1d621-9833-47b9-83cd-5d6d0c961983",
+                                  "key": "cardId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to get the `CardRules` of the `Card`."
+                          },
+                          "response": [
+                            {
+                              "id": "41c18ef5-9edd-431b-b14f-6aa0922164bf",
+                              "name": "The returned resource is a list of `CardRule`.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    ":cardId",
+                                    "rules"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "cardId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"rules\": [\n    {\n      \"enabled\": \"<boolean>\",\n      \"name\": \"OpenCloseMasterLock\"\n    },\n    {\n      \"enabled\": \"<boolean>\",\n      \"name\": \"OpenCloseAfterOneTx\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:57:49.000Z",
+                              "updatedAt": "2026-07-28T02:57:49.000Z",
+                              "uid": "35240-41c18ef5-9edd-431b-b14f-6aa0922164bf"
+                            },
+                            {
+                              "id": "ee91560b-0cc6-412d-a1ee-3b2df7d8a602",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    ":cardId",
+                                    "rules"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "cardId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:49.000Z",
+                              "updatedAt": "2026-07-28T02:57:49.000Z",
+                              "uid": "35240-ee91560b-0cc6-412d-a1ee-3b2df7d8a602"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:57:49.000Z",
+                          "updatedAt": "2026-07-28T02:57:49.000Z",
+                          "uid": "35240-c0cc545f-6137-4bb1-8c4c-040a8b64abc6"
+                        },
+                        {
+                          "name": "Set Card Rules",
+                          "id": "63449355-2fbe-41f8-a233-4853c6571656",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"name\": \"OpenClose\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "cards",
+                                ":cardId",
+                                "rules"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "5d3b0584-20a6-45ab-9918-e1f5fc827ae3",
+                                  "key": "cardId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to set the `CardRules`."
+                          },
+                          "response": [
+                            {
+                              "id": "16661e86-f8a7-48f3-8b12-25910ce7744c",
+                              "name": "The result is a list of `CardRule`.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"name\": \"OpenClose\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    ":cardId",
+                                    "rules"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "cardId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"rules\": [\n    {\n      \"enabled\": \"<boolean>\",\n      \"name\": \"OpenCloseMasterLock\"\n    },\n    {\n      \"enabled\": \"<boolean>\",\n      \"name\": \"OpenCloseAfterOneTx\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:57:49.000Z",
+                              "updatedAt": "2026-07-28T02:57:49.000Z",
+                              "uid": "35240-16661e86-f8a7-48f3-8b12-25910ce7744c"
+                            },
+                            {
+                              "id": "2ac0b3e9-a8a7-4c48-8a82-d4a00c681811",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"name\": \"OpenClose\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    ":cardId",
+                                    "rules"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "cardId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:49.000Z",
+                              "updatedAt": "2026-07-28T02:57:49.000Z",
+                              "uid": "35240-2ac0b3e9-a8a7-4c48-8a82-d4a00c681811"
+                            },
+                            {
+                              "id": "8e63684e-97c8-49a5-9948-16d7895f9d06",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"enabled\": \"<boolean>\",\n  \"name\": \"OpenClose\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/:cardId/rules",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    ":cardId",
+                                    "rules"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "cardId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:49.000Z",
+                              "updatedAt": "2026-07-28T02:57:49.000Z",
+                              "uid": "35240-8e63684e-97c8-49a5-9948-16d7895f9d06"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:57:49.000Z",
+                          "updatedAt": "2026-07-28T02:57:49.000Z",
+                          "uid": "35240-63449355-2fbe-41f8-a233-4853c6571656"
+                        }
+                      ],
+                      "id": "c9bb55e4-516c-4497-95e0-a4d88d8b351d",
+                      "createdAt": "2026-07-28T02:57:49.000Z",
+                      "updatedAt": "2026-07-28T02:57:49.000Z",
+                      "uid": "35240-c9bb55e4-516c-4497-95e0-a4d88d8b351d"
+                    }
+                  ],
+                  "id": "7bc1ac2e-dc5f-4667-a820-5d57e4c281e3",
+                  "createdAt": "2026-07-28T02:57:49.000Z",
+                  "updatedAt": "2026-07-28T02:57:49.000Z",
+                  "uid": "35240-7bc1ac2e-dc5f-4667-a820-5d57e4c281e3"
+                }
+              ],
+              "id": "141133f1-ac47-415d-9bd1-078258e1bd17",
+              "createdAt": "2026-07-28T02:57:49.000Z",
+              "updatedAt": "2026-07-28T02:57:49.000Z",
+              "uid": "35240-141133f1-ac47-415d-9bd1-078258e1bd17"
+            }
+          ],
+          "id": "3d70dd27-e3bb-4a0c-b8b6-553997ecd4b3",
+          "createdAt": "2026-07-28T02:57:49.000Z",
+          "updatedAt": "2026-07-28T02:57:49.000Z",
+          "uid": "35240-3d70dd27-e3bb-4a0c-b8b6-553997ecd4b3"
+        }
+      ],
+      "id": "656b2220-303b-48ed-bc74-21d2aeac0cb7",
+      "createdAt": "2026-07-28T02:57:49.000Z",
+      "updatedAt": "2026-07-28T02:57:49.000Z",
+      "uid": "35240-656b2220-303b-48ed-bc74-21d2aeac0cb7"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

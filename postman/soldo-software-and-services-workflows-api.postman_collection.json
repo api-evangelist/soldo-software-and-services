@@ -1,0 +1,1205 @@
+{
+  "info": {
+    "_postman_id": "941233db-7104-4896-8473-148b4aa6db64",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Workflows API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:59:28.000Z",
+    "updatedAt": "2026-07-28T02:59:28.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-941233db-7104-4896-8473-148b4aa6db64"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "workflows",
+              "item": [
+                {
+                  "name": "{workflowId}",
+                  "item": [
+                    {
+                      "name": "status",
+                      "item": [
+                        {
+                          "name": "Update Workflow Status",
+                          "id": "570bd59d-2a82-41e7-a308-010ea87c3c94",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"status\": \"ACTIVE\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/workflows/:workflowId/status",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "workflows",
+                                ":workflowId",
+                                "status"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "8966ec0a-4857-47b5-bb96-864e0846e521",
+                                  "key": "workflowId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to update a specific `Workflow` status (ACTIVE, DEACTIVATED, DELETED)."
+                          },
+                          "response": [
+                            {
+                              "id": "11da6d16-9a9d-4807-a3ab-c152de19bbe7",
+                              "name": "No content as result.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"status\": \"ACTIVE\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/workflows/:workflowId/status",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "workflows",
+                                    ":workflowId",
+                                    "status"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "workflowId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:59:28.000Z",
+                              "updatedAt": "2026-07-28T02:59:28.000Z",
+                              "uid": "35240-11da6d16-9a9d-4807-a3ab-c152de19bbe7"
+                            },
+                            {
+                              "id": "fedb082d-dcb9-42bf-ba33-9ca3352bd6cc",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"status\": \"ACTIVE\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/workflows/:workflowId/status",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "workflows",
+                                    ":workflowId",
+                                    "status"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "workflowId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:59:28.000Z",
+                              "updatedAt": "2026-07-28T02:59:28.000Z",
+                              "uid": "35240-fedb082d-dcb9-42bf-ba33-9ca3352bd6cc"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:59:28.000Z",
+                          "updatedAt": "2026-07-28T02:59:28.000Z",
+                          "uid": "35240-570bd59d-2a82-41e7-a308-010ea87c3c94"
+                        }
+                      ],
+                      "id": "572138d2-c039-46df-8461-7d3717cc6f8c",
+                      "createdAt": "2026-07-28T02:59:28.000Z",
+                      "updatedAt": "2026-07-28T02:59:28.000Z",
+                      "uid": "35240-572138d2-c039-46df-8461-7d3717cc6f8c"
+                    },
+                    {
+                      "name": "Get Workflow",
+                      "id": "7bb305d8-edfc-45af-908c-5aa978b94a77",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/workflows/:workflowId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "workflows",
+                            ":workflowId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "1bf96192-5201-4cb6-b6da-0c5c134afdc0",
+                              "key": "workflowId",
+                              "value": "<string>",
+                              "description": "(Required) The workflow ID."
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to get a specific `Workflow` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "b4a073ac-7078-459d-904f-2676882cf976",
+                          "name": "The result is a single `Workflow`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/workflows/:workflowId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "workflows",
+                                ":workflowId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "workflowId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"steps\": [\n    {\n      \"reviewer_type\": \"ROLE\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"APPROVED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"LOWER_EQUAL\"\n        }\n      }\n    },\n    {\n      \"reviewer_type\": \"USER\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"DECLINED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"HIGHER_EQUAL\"\n        }\n      }\n    }\n  ],\n  \"visibilities\": [\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"policy_url\": \"<string>\",\n  \"status\": \"ACTIVE\",\n  \"target_type\": \"GOODS_AND_SERVICES\",\n  \"priority\": \"<integer>\",\n  \"steps_count\": \"<integer>\"\n}",
+                          "createdAt": "2026-07-28T02:59:28.000Z",
+                          "updatedAt": "2026-07-28T02:59:28.000Z",
+                          "uid": "35240-b4a073ac-7078-459d-904f-2676882cf976"
+                        },
+                        {
+                          "id": "9b7b0eca-c520-45ca-98de-59ef8bbb4c62",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/workflows/:workflowId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "workflows",
+                                ":workflowId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "workflowId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:28.000Z",
+                          "updatedAt": "2026-07-28T02:59:28.000Z",
+                          "uid": "35240-9b7b0eca-c520-45ca-98de-59ef8bbb4c62"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:59:28.000Z",
+                      "updatedAt": "2026-07-28T02:59:28.000Z",
+                      "uid": "35240-7bb305d8-edfc-45af-908c-5aa978b94a77"
+                    },
+                    {
+                      "name": "Update Workflow",
+                      "id": "5522ecd0-3b4f-4410-9834-35b3ee00bd16",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"steps\": [\n    {\n      \"reviewer_type\": \"LINE_MANAGER\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"DECLINED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"HIGHER_EQUAL\"\n        }\n      }\n    },\n    {\n      \"reviewer_type\": \"LINE_MANAGER\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"PARTIALLY_APPROVED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"LOWER_EQUAL\"\n        }\n      }\n    }\n  ],\n  \"target_type\": \"FUNDS\",\n  \"visibilities\": [\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"policy_url\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/workflows/:workflowId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "workflows",
+                            ":workflowId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "a0f349d9-1c55-47af-a665-88ba406c249d",
+                              "key": "workflowId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to update an existing `Workflow`,for some types, this might generate a new ID."
+                      },
+                      "response": [
+                        {
+                          "id": "8f70a60f-9d07-4943-a0a7-0a41bdec70aa",
+                          "name": "The updated `Workflow`.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"steps\": [\n    {\n      \"reviewer_type\": \"LINE_MANAGER\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"DECLINED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"HIGHER_EQUAL\"\n        }\n      }\n    },\n    {\n      \"reviewer_type\": \"LINE_MANAGER\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"PARTIALLY_APPROVED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"LOWER_EQUAL\"\n        }\n      }\n    }\n  ],\n  \"target_type\": \"FUNDS\",\n  \"visibilities\": [\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"policy_url\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/workflows/:workflowId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "workflows",
+                                ":workflowId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "workflowId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"steps\": [\n    {\n      \"reviewer_type\": \"ROLE\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"APPROVED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"LOWER_EQUAL\"\n        }\n      }\n    },\n    {\n      \"reviewer_type\": \"USER\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"DECLINED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"HIGHER_EQUAL\"\n        }\n      }\n    }\n  ],\n  \"visibilities\": [\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"policy_url\": \"<string>\",\n  \"status\": \"ACTIVE\",\n  \"target_type\": \"GOODS_AND_SERVICES\",\n  \"priority\": \"<integer>\",\n  \"steps_count\": \"<integer>\"\n}",
+                          "createdAt": "2026-07-28T02:59:28.000Z",
+                          "updatedAt": "2026-07-28T02:59:28.000Z",
+                          "uid": "35240-8f70a60f-9d07-4943-a0a7-0a41bdec70aa"
+                        },
+                        {
+                          "id": "c98b1804-d952-4ff4-8bf9-b533d3564046",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"steps\": [\n    {\n      \"reviewer_type\": \"LINE_MANAGER\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"DECLINED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"HIGHER_EQUAL\"\n        }\n      }\n    },\n    {\n      \"reviewer_type\": \"LINE_MANAGER\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"PARTIALLY_APPROVED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"LOWER_EQUAL\"\n        }\n      }\n    }\n  ],\n  \"target_type\": \"FUNDS\",\n  \"visibilities\": [\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"policy_url\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/workflows/:workflowId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "workflows",
+                                ":workflowId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "workflowId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:28.000Z",
+                          "updatedAt": "2026-07-28T02:59:28.000Z",
+                          "uid": "35240-c98b1804-d952-4ff4-8bf9-b533d3564046"
+                        },
+                        {
+                          "id": "7115e6f7-c53f-403a-b635-8201d0b2cff2",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"steps\": [\n    {\n      \"reviewer_type\": \"LINE_MANAGER\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"DECLINED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"HIGHER_EQUAL\"\n        }\n      }\n    },\n    {\n      \"reviewer_type\": \"LINE_MANAGER\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"PARTIALLY_APPROVED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"LOWER_EQUAL\"\n        }\n      }\n    }\n  ],\n  \"target_type\": \"FUNDS\",\n  \"visibilities\": [\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"policy_url\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/workflows/:workflowId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "workflows",
+                                ":workflowId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "workflowId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:28.000Z",
+                          "updatedAt": "2026-07-28T02:59:28.000Z",
+                          "uid": "35240-7115e6f7-c53f-403a-b635-8201d0b2cff2"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:59:28.000Z",
+                      "updatedAt": "2026-07-28T02:59:28.000Z",
+                      "uid": "35240-5522ecd0-3b4f-4410-9834-35b3ee00bd16"
+                    },
+                    {
+                      "name": "Delete Workflow ",
+                      "id": "be9da180-5e4b-4c51-8849-70aa678862c8",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/workflows/:workflowId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "workflows",
+                            ":workflowId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "3a730fba-9734-441f-9487-9ba90e6822d2",
+                              "key": "workflowId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to delete a `Workflow`."
+                      },
+                      "response": [
+                        {
+                          "id": "f7571e7a-ffa2-4839-912c-6f6f12aee3d6",
+                          "name": "No content as result.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/workflows/:workflowId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "workflows",
+                                ":workflowId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "workflowId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:28.000Z",
+                          "updatedAt": "2026-07-28T02:59:28.000Z",
+                          "uid": "35240-f7571e7a-ffa2-4839-912c-6f6f12aee3d6"
+                        },
+                        {
+                          "id": "2a72c121-0819-4065-a875-a35590415c34",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/workflows/:workflowId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "workflows",
+                                ":workflowId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "workflowId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:28.000Z",
+                          "updatedAt": "2026-07-28T02:59:28.000Z",
+                          "uid": "35240-2a72c121-0819-4065-a875-a35590415c34"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:59:28.000Z",
+                      "updatedAt": "2026-07-28T02:59:28.000Z",
+                      "uid": "35240-be9da180-5e4b-4c51-8849-70aa678862c8"
+                    }
+                  ],
+                  "id": "f7615f30-671c-4714-8706-f7e91300b051",
+                  "createdAt": "2026-07-28T02:59:28.000Z",
+                  "updatedAt": "2026-07-28T02:59:28.000Z",
+                  "uid": "35240-f7615f30-671c-4714-8706-f7e91300b051"
+                },
+                {
+                  "name": "Search Workflows",
+                  "id": "ae46c859-fab8-454e-b16d-81f372ef52e0",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/workflows?status=INACTIVE&status=INACTIVE&targetTypes=TRIP&targetTypes=FUNDS&text=<string>&p=0&s=0&props=<string>&props=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "workflows"
+                      ],
+                      "query": [
+                        {
+                          "description": "The status of the `Workflow`.",
+                          "key": "status",
+                          "value": "INACTIVE"
+                        },
+                        {
+                          "description": "The status of the `Workflow`.",
+                          "key": "status",
+                          "value": "INACTIVE"
+                        },
+                        {
+                          "description": "The type of the `Workflow`.",
+                          "key": "targetTypes",
+                          "value": "TRIP"
+                        },
+                        {
+                          "description": "The type of the `Workflow`.",
+                          "key": "targetTypes",
+                          "value": "FUNDS"
+                        },
+                        {
+                          "description": "A simple text to search `Workflow` by `name` or `description`.",
+                          "key": "text",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "0",
+                          "key": "p",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the number of items per page.",
+                          "key": "s",
+                          "value": "0"
+                        },
+                        {
+                          "key": "props",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "props",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to search `Workflows`."
+                  },
+                  "response": [
+                    {
+                      "id": "369b717b-4ca0-4137-b4dc-cbd8d5b06011",
+                      "name": "The result is an array containing `Workflows`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/workflows?status=INACTIVE&targetTypes=FUNDS&text=<string>&p=0&s=0&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "workflows"
+                          ],
+                          "query": [
+                            {
+                              "description": "The status of the `Workflow`.",
+                              "key": "status",
+                              "value": "INACTIVE"
+                            },
+                            {
+                              "description": "The type of the `Workflow`.",
+                              "key": "targetTypes",
+                              "value": "FUNDS"
+                            },
+                            {
+                              "description": "A simple text to search `Workflow` by `name` or `description`.",
+                              "key": "text",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "0",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"status\": \"DEACTIVATED\",\n      \"target_type\": \"TRIP\",\n      \"steps_count\": \"<integer>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"status\": \"ACTIVE\",\n      \"target_type\": \"TRIP\",\n      \"steps_count\": \"<integer>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:59:28.000Z",
+                      "updatedAt": "2026-07-28T02:59:28.000Z",
+                      "uid": "35240-369b717b-4ca0-4137-b4dc-cbd8d5b06011"
+                    },
+                    {
+                      "id": "194761b1-46c0-4707-accf-590497f53c4a",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/workflows?status=INACTIVE&targetTypes=FUNDS&text=<string>&p=0&s=0&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "workflows"
+                          ],
+                          "query": [
+                            {
+                              "description": "The status of the `Workflow`.",
+                              "key": "status",
+                              "value": "INACTIVE"
+                            },
+                            {
+                              "description": "The type of the `Workflow`.",
+                              "key": "targetTypes",
+                              "value": "FUNDS"
+                            },
+                            {
+                              "description": "A simple text to search `Workflow` by `name` or `description`.",
+                              "key": "text",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "0",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:59:28.000Z",
+                      "updatedAt": "2026-07-28T02:59:28.000Z",
+                      "uid": "35240-194761b1-46c0-4707-accf-590497f53c4a"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:59:28.000Z",
+                  "updatedAt": "2026-07-28T02:59:28.000Z",
+                  "uid": "35240-ae46c859-fab8-454e-b16d-81f372ef52e0"
+                },
+                {
+                  "name": "Add Workflow",
+                  "id": "cb7041c5-8d17-4b65-af8b-0496169f3ffb",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"reviewer_type\": \"ROLE\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"PARTIALLY_APPROVED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"HIGHER_EQUAL\"\n        }\n      }\n    },\n    {\n      \"reviewer_type\": \"USER\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"PARTIALLY_APPROVED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"LOWER_EQUAL\"\n        }\n      }\n    }\n  ],\n  \"target_type\": \"TRIP\",\n  \"visibilities\": [\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"policy_url\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/workflows",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "workflows"
+                      ]
+                    },
+                    "description": "Endpoint to add a new `Workflow`."
+                  },
+                  "response": [
+                    {
+                      "id": "c6d73a13-b1cf-48a4-84d3-60599d055eb7",
+                      "name": "The created `Workflow`.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"reviewer_type\": \"ROLE\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"PARTIALLY_APPROVED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"HIGHER_EQUAL\"\n        }\n      }\n    },\n    {\n      \"reviewer_type\": \"USER\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"PARTIALLY_APPROVED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"LOWER_EQUAL\"\n        }\n      }\n    }\n  ],\n  \"target_type\": \"TRIP\",\n  \"visibilities\": [\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"policy_url\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/workflows",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "workflows"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"steps\": [\n    {\n      \"reviewer_type\": \"ROLE\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"APPROVED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"LOWER_EQUAL\"\n        }\n      }\n    },\n    {\n      \"reviewer_type\": \"USER\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"DECLINED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"HIGHER_EQUAL\"\n        }\n      }\n    }\n  ],\n  \"visibilities\": [\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"policy_url\": \"<string>\",\n  \"status\": \"ACTIVE\",\n  \"target_type\": \"GOODS_AND_SERVICES\",\n  \"priority\": \"<integer>\",\n  \"steps_count\": \"<integer>\"\n}",
+                      "createdAt": "2026-07-28T02:59:28.000Z",
+                      "updatedAt": "2026-07-28T02:59:28.000Z",
+                      "uid": "35240-c6d73a13-b1cf-48a4-84d3-60599d055eb7"
+                    },
+                    {
+                      "id": "78816111-a7c1-4039-9e6a-079018a3eefa",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"description\": \"<string>\",\n  \"name\": \"<string>\",\n  \"steps\": [\n    {\n      \"reviewer_type\": \"ROLE\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"PARTIALLY_APPROVED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"HIGHER_EQUAL\"\n        }\n      }\n    },\n    {\n      \"reviewer_type\": \"USER\",\n      \"step_number\": 1,\n      \"reviewer_info\": {\n        \"ids\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      \"automation_rule\": {\n        \"expense_status\": \"PARTIALLY_APPROVED\",\n        \"required_info\": false,\n        \"amount_condition\": {\n          \"amount\": \"<number>\",\n          \"operator\": \"LOWER_EQUAL\"\n        }\n      }\n    }\n  ],\n  \"target_type\": \"TRIP\",\n  \"visibilities\": [\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"type\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"policy_url\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/workflows",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "workflows"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:59:28.000Z",
+                      "updatedAt": "2026-07-28T02:59:28.000Z",
+                      "uid": "35240-78816111-a7c1-4039-9e6a-079018a3eefa"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:59:28.000Z",
+                  "updatedAt": "2026-07-28T02:59:28.000Z",
+                  "uid": "35240-cb7041c5-8d17-4b65-af8b-0496169f3ffb"
+                }
+              ],
+              "id": "eedf9a2f-8f67-41cf-a06d-f5d49bcd0f3f",
+              "createdAt": "2026-07-28T02:59:28.000Z",
+              "updatedAt": "2026-07-28T02:59:28.000Z",
+              "uid": "35240-eedf9a2f-8f67-41cf-a06d-f5d49bcd0f3f"
+            }
+          ],
+          "id": "6b72a217-7fca-4890-ad91-20a6dc7ef5bf",
+          "createdAt": "2026-07-28T02:59:28.000Z",
+          "updatedAt": "2026-07-28T02:59:28.000Z",
+          "uid": "35240-6b72a217-7fca-4890-ad91-20a6dc7ef5bf"
+        }
+      ],
+      "id": "08388843-b1df-4644-bc3c-ffa197f3873b",
+      "createdAt": "2026-07-28T02:59:28.000Z",
+      "updatedAt": "2026-07-28T02:59:28.000Z",
+      "uid": "35240-08388843-b1df-4644-bc3c-ffa197f3873b"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

@@ -1,0 +1,1104 @@
+{
+  "info": {
+    "_postman_id": "430359cf-2297-4cc5-b879-be9a5f11d2cb",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Auto-Transfer Presets API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:57:43.000Z",
+    "updatedAt": "2026-07-28T02:57:43.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-430359cf-2297-4cc5-b879-be9a5f11d2cb"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "wallets",
+              "item": [
+                {
+                  "name": "autotransfer-presets",
+                  "item": [
+                    {
+                      "name": "{presetId}",
+                      "item": [
+                        {
+                          "name": "relate-resource",
+                          "item": [
+                            {
+                              "name": "Add wallets to Auto-transfer Preset",
+                              "id": "04a2bb98-7864-4162-a1d9-edb91bd0b3ab",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"walletIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/wallets/autotransfer-presets/:presetId/relate-resource",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "wallets",
+                                    "autotransfer-presets",
+                                    ":presetId",
+                                    "relate-resource"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "eecce41d-a8c3-4b30-8f31-8622265a5f64",
+                                      "key": "presetId",
+                                      "value": "<string>",
+                                      "description": "(Required) The `AutoTransferPreset` ID"
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to add a `Wallets` to `AutoTransferPreset`."
+                              },
+                              "response": [
+                                {
+                                  "id": "fff09efa-d8de-4224-bd47-d129185a27d9",
+                                  "name": "No content as result.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"walletIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/wallets/autotransfer-presets/:presetId/relate-resource",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "wallets",
+                                        "autotransfer-presets",
+                                        ":presetId",
+                                        "relate-resource"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "presetId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "No Content",
+                                  "code": 204,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:57:44.000Z",
+                                  "updatedAt": "2026-07-28T02:57:44.000Z",
+                                  "uid": "35240-fff09efa-d8de-4224-bd47-d129185a27d9"
+                                },
+                                {
+                                  "id": "dd2fdaca-0dec-4ada-ad5a-3a21a3956d37",
+                                  "name": "Your request has missing arguments or is malformed.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"walletIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/wallets/autotransfer-presets/:presetId/relate-resource",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "wallets",
+                                        "autotransfer-presets",
+                                        ":presetId",
+                                        "relate-resource"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "presetId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:57:44.000Z",
+                                  "updatedAt": "2026-07-28T02:57:44.000Z",
+                                  "uid": "35240-dd2fdaca-0dec-4ada-ad5a-3a21a3956d37"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:57:44.000Z",
+                              "updatedAt": "2026-07-28T02:57:44.000Z",
+                              "uid": "35240-04a2bb98-7864-4162-a1d9-edb91bd0b3ab"
+                            }
+                          ],
+                          "id": "42133431-8238-4e59-b9f0-3242fd46c445",
+                          "createdAt": "2026-07-28T02:57:44.000Z",
+                          "updatedAt": "2026-07-28T02:57:44.000Z",
+                          "uid": "35240-42133431-8238-4e59-b9f0-3242fd46c445"
+                        },
+                        {
+                          "name": "unrelate-resource",
+                          "item": [
+                            {
+                              "name": "Remove Wallets from Auto-transfer Preset",
+                              "id": "2ccca5e4-eb3e-4847-983a-fe3db472ddcf",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"walletIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/wallets/autotransfer-presets/:presetId/unrelate-resource",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "wallets",
+                                    "autotransfer-presets",
+                                    ":presetId",
+                                    "unrelate-resource"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "6a468c61-174b-43bf-ad70-070db4b6b269",
+                                      "key": "presetId",
+                                      "value": "<string>",
+                                      "description": "(Required) The `AutoTransferPreset` ID"
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to remove a `Wallets` from a `AutoTransferPreset`."
+                              },
+                              "response": [
+                                {
+                                  "id": "213896df-edde-444f-a8a9-aed1c8e7e802",
+                                  "name": "No content as result.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"walletIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/wallets/autotransfer-presets/:presetId/unrelate-resource",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "wallets",
+                                        "autotransfer-presets",
+                                        ":presetId",
+                                        "unrelate-resource"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "presetId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "No Content",
+                                  "code": 204,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:57:44.000Z",
+                                  "updatedAt": "2026-07-28T02:57:44.000Z",
+                                  "uid": "35240-213896df-edde-444f-a8a9-aed1c8e7e802"
+                                },
+                                {
+                                  "id": "946e7660-2e5e-4ab3-b19d-459e873bf1ab",
+                                  "name": "Your request has missing arguments or is malformed.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"walletIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/wallets/autotransfer-presets/:presetId/unrelate-resource",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "wallets",
+                                        "autotransfer-presets",
+                                        ":presetId",
+                                        "unrelate-resource"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "presetId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:57:44.000Z",
+                                  "updatedAt": "2026-07-28T02:57:44.000Z",
+                                  "uid": "35240-946e7660-2e5e-4ab3-b19d-459e873bf1ab"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:57:44.000Z",
+                              "updatedAt": "2026-07-28T02:57:44.000Z",
+                              "uid": "35240-2ccca5e4-eb3e-4847-983a-fe3db472ddcf"
+                            }
+                          ],
+                          "id": "1c335f59-356a-4a11-b20f-1c72a0a5a90c",
+                          "createdAt": "2026-07-28T02:57:44.000Z",
+                          "updatedAt": "2026-07-28T02:57:44.000Z",
+                          "uid": "35240-1c335f59-356a-4a11-b20f-1c72a0a5a90c"
+                        },
+                        {
+                          "name": "Get Auto-transfer Preset",
+                          "id": "5d844504-91b1-48c6-8314-7b5ac629693a",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/wallets/autotransfer-presets/:presetId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "wallets",
+                                "autotransfer-presets",
+                                ":presetId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "b4ed0885-dfb1-497c-b2c0-7ceafac02984",
+                                  "key": "presetId",
+                                  "value": "<string>",
+                                  "description": "(Required) The `AutoTransferPreset` ID"
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to get `AutoTransferPreset` by ID."
+                          },
+                          "response": [
+                            {
+                              "id": "7c5f93f3-82fb-4c8c-870b-d093ce3c7558",
+                              "name": "The returned resource is an `AutoTransferPreset`.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/wallets/autotransfer-presets/:presetId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "wallets",
+                                    "autotransfer-presets",
+                                    ":presetId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "presetId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"type\": \"PERIODIC\",\n  \"currency\": \"<string>\",\n  \"number_of_assigned_wallets\": \"<integer>\",\n  \"wallet_from\": \"<string>\",\n  \"wallet_to\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:57:44.000Z",
+                              "updatedAt": "2026-07-28T02:57:44.000Z",
+                              "uid": "35240-7c5f93f3-82fb-4c8c-870b-d093ce3c7558"
+                            },
+                            {
+                              "id": "831c8c22-4c3a-43f2-94fe-048d73f86a83",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/wallets/autotransfer-presets/:presetId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "wallets",
+                                    "autotransfer-presets",
+                                    ":presetId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "presetId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:44.000Z",
+                              "updatedAt": "2026-07-28T02:57:44.000Z",
+                              "uid": "35240-831c8c22-4c3a-43f2-94fe-048d73f86a83"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:57:44.000Z",
+                          "updatedAt": "2026-07-28T02:57:44.000Z",
+                          "uid": "35240-5d844504-91b1-48c6-8314-7b5ac629693a"
+                        }
+                      ],
+                      "id": "821ea077-d6f0-4d4f-9f16-db5fc9f13d76",
+                      "createdAt": "2026-07-28T02:57:44.000Z",
+                      "updatedAt": "2026-07-28T02:57:44.000Z",
+                      "uid": "35240-821ea077-d6f0-4d4f-9f16-db5fc9f13d76"
+                    },
+                    {
+                      "name": "Search Auto-transfer Presets",
+                      "id": "12b05a6c-2d25-42b7-b4da-46445e382e5c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/wallets/autotransfer-presets?type=PERIODIC&type=PERIODIC&currency=<string>&currency=<string>&text=<string>&p=0&s=0&d=ASC&props=<string>&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "wallets",
+                            "autotransfer-presets"
+                          ],
+                          "query": [
+                            {
+                              "description": "The type of `AutoTransferPreset`.",
+                              "key": "type",
+                              "value": "PERIODIC"
+                            },
+                            {
+                              "description": "The type of `AutoTransferPreset`.",
+                              "key": "type",
+                              "value": "PERIODIC"
+                            },
+                            {
+                              "key": "currency",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "currency",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The full or partial name of the `AutoTransferPreset`.",
+                              "key": "text",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to find `AutoTransferPreset` using filtering parameters."
+                      },
+                      "response": [
+                        {
+                          "id": "7e57574f-401a-4ba7-a093-a11815c4eb0c",
+                          "name": "The returned resource is an array containing `AutoTransferPresets`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/wallets/autotransfer-presets?type=PERIODIC&currency=<string>&text=<string>&p=0&s=0&d=ASC&props=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "wallets",
+                                "autotransfer-presets"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The type of `AutoTransferPreset`.",
+                                  "key": "type",
+                                  "value": "PERIODIC"
+                                },
+                                {
+                                  "key": "currency",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The full or partial name of the `AutoTransferPreset`.",
+                                  "key": "text",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "It indicates the specific page to display (the counter starts from zero).",
+                                  "key": "p",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates the number of items per page.",
+                                  "key": "s",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates how the pages are ordered.",
+                                  "key": "d",
+                                  "value": "ASC"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"type\": \"PERIODIC\",\n      \"currency\": \"<string>\",\n      \"number_of_assigned_wallets\": \"<integer>\",\n      \"wallet_from\": \"<string>\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"type\": \"PERIODIC\",\n      \"currency\": \"<string>\",\n      \"number_of_assigned_wallets\": \"<integer>\",\n      \"wallet_from\": \"<string>\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:57:44.000Z",
+                          "updatedAt": "2026-07-28T02:57:44.000Z",
+                          "uid": "35240-7e57574f-401a-4ba7-a093-a11815c4eb0c"
+                        },
+                        {
+                          "id": "e53038eb-3309-4b18-8456-e21c992fc6ec",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/wallets/autotransfer-presets?type=PERIODIC&currency=<string>&text=<string>&p=0&s=0&d=ASC&props=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "wallets",
+                                "autotransfer-presets"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The type of `AutoTransferPreset`.",
+                                  "key": "type",
+                                  "value": "PERIODIC"
+                                },
+                                {
+                                  "key": "currency",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The full or partial name of the `AutoTransferPreset`.",
+                                  "key": "text",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "It indicates the specific page to display (the counter starts from zero).",
+                                  "key": "p",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates the number of items per page.",
+                                  "key": "s",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates how the pages are ordered.",
+                                  "key": "d",
+                                  "value": "ASC"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:44.000Z",
+                          "updatedAt": "2026-07-28T02:57:44.000Z",
+                          "uid": "35240-e53038eb-3309-4b18-8456-e21c992fc6ec"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:44.000Z",
+                      "updatedAt": "2026-07-28T02:57:44.000Z",
+                      "uid": "35240-12b05a6c-2d25-42b7-b4da-46445e382e5c"
+                    }
+                  ],
+                  "id": "d85a4325-580d-4bbc-8f71-0c0703491bf4",
+                  "createdAt": "2026-07-28T02:57:44.000Z",
+                  "updatedAt": "2026-07-28T02:57:44.000Z",
+                  "uid": "35240-d85a4325-580d-4bbc-8f71-0c0703491bf4"
+                },
+                {
+                  "name": "presets",
+                  "item": [
+                    {
+                      "name": "{presetId}",
+                      "item": [
+                        {
+                          "name": "Delete Auto-transfer Preset",
+                          "id": "43ad926d-2af1-4b98-b127-ad2874044551",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/wallets/presets/:presetId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "wallets",
+                                "presets",
+                                ":presetId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "30ed3f3a-1721-4dff-9d04-ce437a42532e",
+                                  "key": "presetId",
+                                  "value": "<string>",
+                                  "description": "(Required) The `AutoTransferPreset` ID."
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to delete a `AutoTransferPreset` by ID."
+                          },
+                          "response": [
+                            {
+                              "id": "ef2afc39-40fa-43fb-9923-bf552175044e",
+                              "name": "No content as result.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/wallets/presets/:presetId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "wallets",
+                                    "presets",
+                                    ":presetId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "presetId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:44.000Z",
+                              "updatedAt": "2026-07-28T02:57:44.000Z",
+                              "uid": "35240-ef2afc39-40fa-43fb-9923-bf552175044e"
+                            },
+                            {
+                              "id": "4bf7eb7c-303e-4ebd-afe4-46cfcf915f32",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/wallets/presets/:presetId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "wallets",
+                                    "presets",
+                                    ":presetId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "presetId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:44.000Z",
+                              "updatedAt": "2026-07-28T02:57:44.000Z",
+                              "uid": "35240-4bf7eb7c-303e-4ebd-afe4-46cfcf915f32"
+                            },
+                            {
+                              "id": "c022fbcf-7c45-4d3c-9b93-21dd54673db9",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/wallets/presets/:presetId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "wallets",
+                                    "presets",
+                                    ":presetId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "presetId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:44.000Z",
+                              "updatedAt": "2026-07-28T02:57:44.000Z",
+                              "uid": "35240-c022fbcf-7c45-4d3c-9b93-21dd54673db9"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:57:44.000Z",
+                          "updatedAt": "2026-07-28T02:57:44.000Z",
+                          "uid": "35240-43ad926d-2af1-4b98-b127-ad2874044551"
+                        }
+                      ],
+                      "id": "af4f9c6d-5496-4c7b-8650-4ccbdbd43690",
+                      "createdAt": "2026-07-28T02:57:44.000Z",
+                      "updatedAt": "2026-07-28T02:57:44.000Z",
+                      "uid": "35240-af4f9c6d-5496-4c7b-8650-4ccbdbd43690"
+                    }
+                  ],
+                  "id": "df0359a5-5b8c-46dd-a4dc-eb6de35dda79",
+                  "createdAt": "2026-07-28T02:57:44.000Z",
+                  "updatedAt": "2026-07-28T02:57:44.000Z",
+                  "uid": "35240-df0359a5-5b8c-46dd-a4dc-eb6de35dda79"
+                }
+              ],
+              "id": "9c812303-dd65-4bdc-a5f3-bf7fa00f6ead",
+              "createdAt": "2026-07-28T02:57:44.000Z",
+              "updatedAt": "2026-07-28T02:57:44.000Z",
+              "uid": "35240-9c812303-dd65-4bdc-a5f3-bf7fa00f6ead"
+            }
+          ],
+          "id": "63846cfd-ac94-4099-9ca7-bd5f53b0e36e",
+          "createdAt": "2026-07-28T02:57:44.000Z",
+          "updatedAt": "2026-07-28T02:57:44.000Z",
+          "uid": "35240-63846cfd-ac94-4099-9ca7-bd5f53b0e36e"
+        }
+      ],
+      "id": "dc135277-ccc1-4964-a6de-c082ad2abf34",
+      "createdAt": "2026-07-28T02:57:44.000Z",
+      "updatedAt": "2026-07-28T02:57:44.000Z",
+      "uid": "35240-dc135277-ccc1-4964-a6de-c082ad2abf34"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

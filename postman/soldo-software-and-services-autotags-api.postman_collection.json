@@ -1,0 +1,997 @@
+{
+  "info": {
+    "_postman_id": "aa68a204-5bdd-4d95-aa7f-8ffe4f32065c",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Autotags API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:57:45.000Z",
+    "updatedAt": "2026-07-28T02:57:45.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-aa68a204-5bdd-4d95-aa7f-8ffe4f32065c"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "autotags",
+              "item": [
+                {
+                  "name": "{autotagId}",
+                  "item": [
+                    {
+                      "name": "Get Autotag",
+                      "id": "e510eb0e-7d53-4a55-9089-8517c454c34d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/autotags/:autotagId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "autotags",
+                            ":autotagId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "c9ff4462-365e-4d75-b5a6-670e45efba41",
+                              "key": "autotagId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to get a specific `Autotag` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "2f022065-e976-4006-9cf9-a24a39a7e788",
+                          "name": "The returned resource is a single `Autotag`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/autotags/:autotagId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "autotags",
+                                ":autotagId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "autotagId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"operation\": \"AND\",\n  \"criteria\": [\n    {\n      \"name\": \"CARD\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"MERCHANT_CATEGORY\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"expense_category_id\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"tag_ids\": [\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    },\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    }\n  ],\n  \"enabled\": \"<boolean>\",\n  \"owner_id\": \"<string>\",\n  \"status\": \"NOT_VALID\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:57:45.000Z",
+                          "updatedAt": "2026-07-28T02:57:45.000Z",
+                          "uid": "35240-2f022065-e976-4006-9cf9-a24a39a7e788"
+                        },
+                        {
+                          "id": "66f75e64-9ce7-4b2c-a635-545d6feb9521",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/autotags/:autotagId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "autotags",
+                                ":autotagId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "autotagId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:45.000Z",
+                          "updatedAt": "2026-07-28T02:57:45.000Z",
+                          "uid": "35240-66f75e64-9ce7-4b2c-a635-545d6feb9521"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:45.000Z",
+                      "updatedAt": "2026-07-28T02:57:45.000Z",
+                      "uid": "35240-e510eb0e-7d53-4a55-9089-8517c454c34d"
+                    },
+                    {
+                      "name": "Update Autotag",
+                      "id": "478d381e-f8d4-41a5-ba0c-cacde060fb2c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"operation\": \"AND\",\n  \"criteria\": [\n    {\n      \"name\": \"MERCHANT_CATEGORY\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"CARD\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"expense_category_id\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"tag_ids\": [\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    },\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    }\n  ],\n  \"enabled\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/autotags/:autotagId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "autotags",
+                            ":autotagId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "111c589c-da3d-47f1-bca2-446bbd457d5a",
+                              "key": "autotagId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to update the settings of a specific `Autotag`."
+                      },
+                      "response": [
+                        {
+                          "id": "55bd6942-0e96-4c48-ba14-6e2c369d86b2",
+                          "name": "The returned resource is a single `Autotag`.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"operation\": \"AND\",\n  \"criteria\": [\n    {\n      \"name\": \"MERCHANT_CATEGORY\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"CARD\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"expense_category_id\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"tag_ids\": [\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    },\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    }\n  ],\n  \"enabled\": \"<boolean>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/autotags/:autotagId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "autotags",
+                                ":autotagId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "autotagId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"operation\": \"AND\",\n  \"criteria\": [\n    {\n      \"name\": \"CARD\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"MERCHANT_CATEGORY\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"expense_category_id\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"tag_ids\": [\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    },\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    }\n  ],\n  \"enabled\": \"<boolean>\",\n  \"owner_id\": \"<string>\",\n  \"status\": \"NOT_VALID\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:57:45.000Z",
+                          "updatedAt": "2026-07-28T02:57:45.000Z",
+                          "uid": "35240-55bd6942-0e96-4c48-ba14-6e2c369d86b2"
+                        },
+                        {
+                          "id": "b682b26d-ea1b-41d7-bc5e-b054a205b042",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"operation\": \"AND\",\n  \"criteria\": [\n    {\n      \"name\": \"MERCHANT_CATEGORY\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"CARD\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"expense_category_id\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"tag_ids\": [\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    },\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    }\n  ],\n  \"enabled\": \"<boolean>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/autotags/:autotagId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "autotags",
+                                ":autotagId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "autotagId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:45.000Z",
+                          "updatedAt": "2026-07-28T02:57:45.000Z",
+                          "uid": "35240-b682b26d-ea1b-41d7-bc5e-b054a205b042"
+                        },
+                        {
+                          "id": "2201785b-58ad-4d35-9a2c-8b4a80841155",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"operation\": \"AND\",\n  \"criteria\": [\n    {\n      \"name\": \"MERCHANT_CATEGORY\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"CARD\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"expense_category_id\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"tag_ids\": [\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    },\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    }\n  ],\n  \"enabled\": \"<boolean>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/autotags/:autotagId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "autotags",
+                                ":autotagId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "autotagId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:45.000Z",
+                          "updatedAt": "2026-07-28T02:57:45.000Z",
+                          "uid": "35240-2201785b-58ad-4d35-9a2c-8b4a80841155"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:45.000Z",
+                      "updatedAt": "2026-07-28T02:57:45.000Z",
+                      "uid": "35240-478d381e-f8d4-41a5-ba0c-cacde060fb2c"
+                    },
+                    {
+                      "name": "Delete Autotag",
+                      "id": "389657f5-7d2c-4e50-a95f-8faf97fc9fbf",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/autotags/:autotagId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "autotags",
+                            ":autotagId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "d5788d2b-bee4-4543-9315-0b5a4827cb71",
+                              "key": "autotagId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to delete a specific `Autotag`."
+                      },
+                      "response": [
+                        {
+                          "id": "f0c4a725-bc2e-4baf-b66f-66cda002cff1",
+                          "name": "No content as result.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/autotags/:autotagId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "autotags",
+                                ":autotagId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "autotagId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:45.000Z",
+                          "updatedAt": "2026-07-28T02:57:45.000Z",
+                          "uid": "35240-f0c4a725-bc2e-4baf-b66f-66cda002cff1"
+                        },
+                        {
+                          "id": "8604e004-5c4d-4f54-820f-74bcb501b294",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/autotags/:autotagId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "autotags",
+                                ":autotagId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "autotagId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:45.000Z",
+                          "updatedAt": "2026-07-28T02:57:45.000Z",
+                          "uid": "35240-8604e004-5c4d-4f54-820f-74bcb501b294"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:45.000Z",
+                      "updatedAt": "2026-07-28T02:57:45.000Z",
+                      "uid": "35240-389657f5-7d2c-4e50-a95f-8faf97fc9fbf"
+                    }
+                  ],
+                  "id": "63fb73ec-87ac-401e-95d6-e21e0af30712",
+                  "createdAt": "2026-07-28T02:57:45.000Z",
+                  "updatedAt": "2026-07-28T02:57:45.000Z",
+                  "uid": "35240-63fb73ec-87ac-401e-95d6-e21e0af30712"
+                },
+                {
+                  "name": "Search Autotags",
+                  "id": "f01d3bae-b00f-46ab-9f57-de2530c66bb0",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/autotags?name=<string>&enabled=<boolean>&ownerId=<string>&p=0&s=0&d=ASC&props=<string>&props=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "autotags"
+                      ],
+                      "query": [
+                        {
+                          "description": "The name of the `Autotag`.",
+                          "key": "name",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It determines whether the `Autotag` rule is enabled (if a rule is not enabled, it won't be executed).",
+                          "key": "enabled",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "description": "The ID of the `User` who created the `Autotag`.",
+                          "key": "ownerId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the specific page to display (the counter starts from zero).",
+                          "key": "p",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the number of items per page.",
+                          "key": "s",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates how the pages are ordered.",
+                          "key": "d",
+                          "value": "ASC"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to find `Autotags` using filtering parameters."
+                  },
+                  "response": [
+                    {
+                      "id": "f1efc47a-6f0e-4554-a701-d74128e68afe",
+                      "name": "The returned resource is an array of `Autotags`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/autotags?name=<string>&enabled=<boolean>&ownerId=<string>&p=0&s=0&d=ASC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "autotags"
+                          ],
+                          "query": [
+                            {
+                              "description": "The name of the `Autotag`.",
+                              "key": "name",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It determines whether the `Autotag` rule is enabled (if a rule is not enabled, it won't be executed).",
+                              "key": "enabled",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "The ID of the `User` who created the `Autotag`.",
+                              "key": "ownerId",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"operation\": \"OR\",\n      \"criteria\": [\n        {\n          \"name\": \"USER\",\n          \"value\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"name\": \"USER\",\n          \"value\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"expense_category_id\": \"<string>\",\n      \"tax_rate_id\": \"<string>\",\n      \"tag_ids\": [\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        },\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        }\n      ],\n      \"enabled\": \"<boolean>\",\n      \"owner_id\": \"<string>\",\n      \"status\": \"PARTIAL_VALID\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"operation\": \"OR\",\n      \"criteria\": [\n        {\n          \"name\": \"CARD\",\n          \"value\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"name\": \"USER\",\n          \"value\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"expense_category_id\": \"<string>\",\n      \"tax_rate_id\": \"<string>\",\n      \"tag_ids\": [\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        },\n        {\n          \"tag_id\": \"<string>\",\n          \"dictionary_id\": \"<string>\"\n        }\n      ],\n      \"enabled\": \"<boolean>\",\n      \"owner_id\": \"<string>\",\n      \"status\": \"PARTIAL_VALID\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:57:45.000Z",
+                      "updatedAt": "2026-07-28T02:57:45.000Z",
+                      "uid": "35240-f1efc47a-6f0e-4554-a701-d74128e68afe"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:57:45.000Z",
+                  "updatedAt": "2026-07-28T02:57:45.000Z",
+                  "uid": "35240-f01d3bae-b00f-46ab-9f57-de2530c66bb0"
+                },
+                {
+                  "name": "Add Autotag",
+                  "id": "38e76e57-da1d-44aa-b343-36f0d3f8a7fd",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"criteria\": [\n    {\n      \"name\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"COMPANY_CARD\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"name\": \"<string>\",\n  \"operation\": \"AND\",\n  \"expense_category_id\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"tag_ids\": [\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    },\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/autotags",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "autotags"
+                      ]
+                    },
+                    "description": "Endpoint to add a new `Autotag`."
+                  },
+                  "response": [
+                    {
+                      "id": "71a6bfa0-8941-4e91-8ed7-fd6529e4aac9",
+                      "name": "The returned resource is a single `Autotag`.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"criteria\": [\n    {\n      \"name\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"COMPANY_CARD\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"name\": \"<string>\",\n  \"operation\": \"AND\",\n  \"expense_category_id\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"tag_ids\": [\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    },\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/autotags",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "autotags"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"operation\": \"AND\",\n  \"criteria\": [\n    {\n      \"name\": \"CARD\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"MERCHANT_CATEGORY\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"expense_category_id\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"tag_ids\": [\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    },\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    }\n  ],\n  \"enabled\": \"<boolean>\",\n  \"owner_id\": \"<string>\",\n  \"status\": \"NOT_VALID\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T02:57:45.000Z",
+                      "updatedAt": "2026-07-28T02:57:45.000Z",
+                      "uid": "35240-71a6bfa0-8941-4e91-8ed7-fd6529e4aac9"
+                    },
+                    {
+                      "id": "2de4fd0a-072e-49b8-9acf-88c709cb8a1a",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"criteria\": [\n    {\n      \"name\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"COMPANY_CARD\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"name\": \"<string>\",\n  \"operation\": \"AND\",\n  \"expense_category_id\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"tag_ids\": [\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    },\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/autotags",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "autotags"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:57:45.000Z",
+                      "updatedAt": "2026-07-28T02:57:45.000Z",
+                      "uid": "35240-2de4fd0a-072e-49b8-9acf-88c709cb8a1a"
+                    },
+                    {
+                      "id": "d70a3ca4-c0ff-4131-9af4-054b23fdfc93",
+                      "name": "One or more resource requested does not exist.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"criteria\": [\n    {\n      \"name\": \"USER\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"COMPANY_CARD\",\n      \"value\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"name\": \"<string>\",\n  \"operation\": \"AND\",\n  \"expense_category_id\": \"<string>\",\n  \"tax_rate_id\": \"<string>\",\n  \"tag_ids\": [\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    },\n    {\n      \"tag_id\": \"<string>\",\n      \"dictionary_id\": \"<string>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/autotags",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "autotags"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:57:45.000Z",
+                      "updatedAt": "2026-07-28T02:57:45.000Z",
+                      "uid": "35240-d70a3ca4-c0ff-4131-9af4-054b23fdfc93"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:57:45.000Z",
+                  "updatedAt": "2026-07-28T02:57:45.000Z",
+                  "uid": "35240-38e76e57-da1d-44aa-b343-36f0d3f8a7fd"
+                }
+              ],
+              "id": "9f843806-06d4-4a5d-b3f9-a2dbf7448eb3",
+              "createdAt": "2026-07-28T02:57:45.000Z",
+              "updatedAt": "2026-07-28T02:57:45.000Z",
+              "uid": "35240-9f843806-06d4-4a5d-b3f9-a2dbf7448eb3"
+            }
+          ],
+          "id": "2b89de1e-6ae9-4d25-8c0e-ee3983455e49",
+          "createdAt": "2026-07-28T02:57:45.000Z",
+          "updatedAt": "2026-07-28T02:57:45.000Z",
+          "uid": "35240-2b89de1e-6ae9-4d25-8c0e-ee3983455e49"
+        }
+      ],
+      "id": "52fb278f-ccd3-4970-9ddb-a1f8421fb83a",
+      "createdAt": "2026-07-28T02:57:45.000Z",
+      "updatedAt": "2026-07-28T02:57:45.000Z",
+      "uid": "35240-52fb278f-ccd3-4970-9ddb-a1f8421fb83a"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

@@ -1,0 +1,1271 @@
+{
+  "info": {
+    "_postman_id": "0924ff71-be47-435b-b3a3-680600fdedf6",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Expense Policies API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:57:59.000Z",
+    "updatedAt": "2026-07-28T02:57:59.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0924ff71-be47-435b-b3a3-680600fdedf6"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "expense-policies",
+              "item": [
+                {
+                  "name": "{expensePolicyId}",
+                  "item": [
+                    {
+                      "name": "assignees",
+                      "item": [
+                        {
+                          "name": "Get Expense Policy Assignees",
+                          "id": "abeb4027-c6d8-4935-9d8b-9e9fbaabcf89",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/expense-policies/:expensePolicyId/assignees?p=0&s=0&d=DESC&props=<string>&props=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "expense-policies",
+                                ":expensePolicyId",
+                                "assignees"
+                              ],
+                              "query": [
+                                {
+                                  "description": "It indicates the specific page to display (the counter starts from zero).",
+                                  "key": "p",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates the number of items per page.",
+                                  "key": "s",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates how the pages are ordered.",
+                                  "key": "d",
+                                  "value": "DESC"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "f258fde2-f8c6-4a3b-bb7b-a763b95547cf",
+                                  "key": "expensePolicyId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to get all `User` resources currently assigned to a specific `ExpensePolicy`."
+                          },
+                          "response": [
+                            {
+                              "id": "45d32eed-32a8-415c-9f42-b614b162333e",
+                              "name": "The result is an array of `ExpensePolicyAssignee` resources.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/expense-policies/:expensePolicyId/assignees?p=0&s=0&d=DESC&props=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "expense-policies",
+                                    ":expensePolicyId",
+                                    "assignees"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "It indicates the specific page to display (the counter starts from zero).",
+                                      "key": "p",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "description": "It indicates the number of items per page.",
+                                      "key": "s",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "description": "It indicates how the pages are ordered.",
+                                      "key": "d",
+                                      "value": "DESC"
+                                    },
+                                    {
+                                      "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                      "key": "props",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "expensePolicyId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"assignee_id\": \"<string>\"\n    },\n    {\n      \"assignee_id\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:57:59.000Z",
+                              "updatedAt": "2026-07-28T02:57:59.000Z",
+                              "uid": "35240-45d32eed-32a8-415c-9f42-b614b162333e"
+                            },
+                            {
+                              "id": "ccfc3470-efa9-4bc7-a821-6827057644a6",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/expense-policies/:expensePolicyId/assignees?p=0&s=0&d=DESC&props=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "expense-policies",
+                                    ":expensePolicyId",
+                                    "assignees"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "It indicates the specific page to display (the counter starts from zero).",
+                                      "key": "p",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "description": "It indicates the number of items per page.",
+                                      "key": "s",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "description": "It indicates how the pages are ordered.",
+                                      "key": "d",
+                                      "value": "DESC"
+                                    },
+                                    {
+                                      "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                      "key": "props",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "expensePolicyId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:59.000Z",
+                              "updatedAt": "2026-07-28T02:57:59.000Z",
+                              "uid": "35240-ccfc3470-efa9-4bc7-a821-6827057644a6"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:57:59.000Z",
+                          "updatedAt": "2026-07-28T02:57:59.000Z",
+                          "uid": "35240-abeb4027-c6d8-4935-9d8b-9e9fbaabcf89"
+                        },
+                        {
+                          "name": "Assign Expense Policy to Users",
+                          "id": "51a17e1f-3c7b-47df-aeea-45758b37ecc0",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"assignee_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/expense-policies/:expensePolicyId/assignees",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "expense-policies",
+                                ":expensePolicyId",
+                                "assignees"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "c7465497-6d65-45c2-8469-121442d3bbb7",
+                                  "key": "expensePolicyId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to assign a specific `ExpensePolicy` to one or more `User` resources. Since a `User` can hold at most one `ExpensePolicy`, any existing assignment is replaced."
+                          },
+                          "response": [
+                            {
+                              "id": "b45d0eed-e000-4ff5-a02d-8397aff0a5e9",
+                              "name": "No content as result.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"assignee_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/expense-policies/:expensePolicyId/assignees",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "expense-policies",
+                                    ":expensePolicyId",
+                                    "assignees"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "expensePolicyId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:59.000Z",
+                              "updatedAt": "2026-07-28T02:57:59.000Z",
+                              "uid": "35240-b45d0eed-e000-4ff5-a02d-8397aff0a5e9"
+                            },
+                            {
+                              "id": "459079ab-f932-4cbe-84cf-a4e463fc2c94",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"assignee_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/expense-policies/:expensePolicyId/assignees",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "expense-policies",
+                                    ":expensePolicyId",
+                                    "assignees"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "expensePolicyId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:59.000Z",
+                              "updatedAt": "2026-07-28T02:57:59.000Z",
+                              "uid": "35240-459079ab-f932-4cbe-84cf-a4e463fc2c94"
+                            },
+                            {
+                              "id": "54277e22-eee9-4605-b6a0-de637992101c",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"assignee_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/expense-policies/:expensePolicyId/assignees",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "expense-policies",
+                                    ":expensePolicyId",
+                                    "assignees"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "expensePolicyId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:59.000Z",
+                              "updatedAt": "2026-07-28T02:57:59.000Z",
+                              "uid": "35240-54277e22-eee9-4605-b6a0-de637992101c"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:57:59.000Z",
+                          "updatedAt": "2026-07-28T02:57:59.000Z",
+                          "uid": "35240-51a17e1f-3c7b-47df-aeea-45758b37ecc0"
+                        },
+                        {
+                          "name": "Unassign Expense Policy from Users",
+                          "id": "6f9404e8-bbb8-4511-829c-7a0825f3e5a5",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"assignee_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/expense-policies/:expensePolicyId/assignees",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "expense-policies",
+                                ":expensePolicyId",
+                                "assignees"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "583ab0fa-2b5e-4d42-838a-b16ebe97546b",
+                                  "key": "expensePolicyId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to unassign a specific `ExpensePolicy` from one or more `User` resources."
+                          },
+                          "response": [
+                            {
+                              "id": "014b55ef-c0d9-4891-b76d-9a35037196e1",
+                              "name": "No content as result.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"assignee_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/expense-policies/:expensePolicyId/assignees",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "expense-policies",
+                                    ":expensePolicyId",
+                                    "assignees"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "expensePolicyId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:59.000Z",
+                              "updatedAt": "2026-07-28T02:57:59.000Z",
+                              "uid": "35240-014b55ef-c0d9-4891-b76d-9a35037196e1"
+                            },
+                            {
+                              "id": "609e0bc4-a8a2-4bb8-a9b1-865dd10882bf",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"assignee_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/expense-policies/:expensePolicyId/assignees",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "expense-policies",
+                                    ":expensePolicyId",
+                                    "assignees"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "expensePolicyId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:59.000Z",
+                              "updatedAt": "2026-07-28T02:57:59.000Z",
+                              "uid": "35240-609e0bc4-a8a2-4bb8-a9b1-865dd10882bf"
+                            },
+                            {
+                              "id": "1aa88fa5-3337-4cae-ba88-a417887cacbd",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"assignee_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/expense-policies/:expensePolicyId/assignees",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "expense-policies",
+                                    ":expensePolicyId",
+                                    "assignees"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "expensePolicyId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:57:59.000Z",
+                              "updatedAt": "2026-07-28T02:57:59.000Z",
+                              "uid": "35240-1aa88fa5-3337-4cae-ba88-a417887cacbd"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:57:59.000Z",
+                          "updatedAt": "2026-07-28T02:57:59.000Z",
+                          "uid": "35240-6f9404e8-bbb8-4511-829c-7a0825f3e5a5"
+                        }
+                      ],
+                      "id": "5b218489-4020-42dd-a499-62b772045d2a",
+                      "createdAt": "2026-07-28T02:57:59.000Z",
+                      "updatedAt": "2026-07-28T02:57:59.000Z",
+                      "uid": "35240-5b218489-4020-42dd-a499-62b772045d2a"
+                    },
+                    {
+                      "name": "Get Expense Policy",
+                      "id": "ef291fc5-0121-4d63-a4fe-d7a7406c5e50",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/expense-policies/:expensePolicyId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "expense-policies",
+                            ":expensePolicyId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "c935cb94-ea37-4c0b-9ccc-d9006c1e75a8",
+                              "key": "expensePolicyId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to get a specific `ExpensePolicy` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "3ce6869f-bedf-493d-87ee-7da71be3eac7",
+                          "name": "The result is a single `ExpensePolicy`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/expense-policies/:expensePolicyId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "expense-policies",
+                                ":expensePolicyId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "expensePolicyId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"policy_url\": \"<string>\",\n  \"status\": \"ACTIVE\",\n  \"creation_time\": \"<string>\",\n  \"last_update\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:57:59.000Z",
+                          "updatedAt": "2026-07-28T02:57:59.000Z",
+                          "uid": "35240-3ce6869f-bedf-493d-87ee-7da71be3eac7"
+                        },
+                        {
+                          "id": "9638ed54-c0c6-45b0-8058-e8a3cba37256",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/expense-policies/:expensePolicyId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "expense-policies",
+                                ":expensePolicyId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "expensePolicyId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:59.000Z",
+                          "updatedAt": "2026-07-28T02:57:59.000Z",
+                          "uid": "35240-9638ed54-c0c6-45b0-8058-e8a3cba37256"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:59.000Z",
+                      "updatedAt": "2026-07-28T02:57:59.000Z",
+                      "uid": "35240-ef291fc5-0121-4d63-a4fe-d7a7406c5e50"
+                    }
+                  ],
+                  "id": "bf3a7d84-21c7-4000-b2cb-4576b8a36889",
+                  "createdAt": "2026-07-28T02:57:59.000Z",
+                  "updatedAt": "2026-07-28T02:57:59.000Z",
+                  "uid": "35240-bf3a7d84-21c7-4000-b2cb-4576b8a36889"
+                },
+                {
+                  "name": "assignees",
+                  "item": [
+                    {
+                      "name": "Unassign any Expense Policy from Users",
+                      "id": "da46798a-2288-4e1f-90d4-1522e743b66d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"assignee_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/expense-policies/assignees",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "expense-policies",
+                            "assignees"
+                          ]
+                        },
+                        "description": "Endpoint to unassign the currently assigned `ExpensePolicy` from one or more `User` resources. No-op silently for a `User` with no `ExpensePolicy` assigned."
+                      },
+                      "response": [
+                        {
+                          "id": "c16a320f-a64a-4d9b-ac7a-7ada551a2d64",
+                          "name": "No content as result.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"assignee_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/expense-policies/assignees",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "expense-policies",
+                                "assignees"
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:59.000Z",
+                          "updatedAt": "2026-07-28T02:57:59.000Z",
+                          "uid": "35240-c16a320f-a64a-4d9b-ac7a-7ada551a2d64"
+                        },
+                        {
+                          "id": "500eb408-96af-4cc3-9f1f-c1c0e66752c4",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"assignee_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/expense-policies/assignees",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "expense-policies",
+                                "assignees"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:59.000Z",
+                          "updatedAt": "2026-07-28T02:57:59.000Z",
+                          "uid": "35240-500eb408-96af-4cc3-9f1f-c1c0e66752c4"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:59.000Z",
+                      "updatedAt": "2026-07-28T02:57:59.000Z",
+                      "uid": "35240-da46798a-2288-4e1f-90d4-1522e743b66d"
+                    }
+                  ],
+                  "id": "3c702289-0dfb-4939-8d37-511c77cc3a2b",
+                  "createdAt": "2026-07-28T02:57:59.000Z",
+                  "updatedAt": "2026-07-28T02:57:59.000Z",
+                  "uid": "35240-3c702289-0dfb-4939-8d37-511c77cc3a2b"
+                },
+                {
+                  "name": "Search Expense Policies",
+                  "id": "c0e33452-a224-450b-adfb-d45d3d90e524",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/expense-policies?text=<string>&statuses=DELETED&statuses=ACTIVE&p=0&s=0&d=DESC&props=<string>&props=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "expense-policies"
+                      ],
+                      "query": [
+                        {
+                          "description": "A simple text to search in the `ExpensePolicy` (`name` or `description`).",
+                          "key": "text",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The list of `ExpensePolicy` statuses to search by.",
+                          "key": "statuses",
+                          "value": "DELETED"
+                        },
+                        {
+                          "description": "The list of `ExpensePolicy` statuses to search by.",
+                          "key": "statuses",
+                          "value": "ACTIVE"
+                        },
+                        {
+                          "description": "It indicates the specific page to display (the counter starts from zero).",
+                          "key": "p",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the number of items per page.",
+                          "key": "s",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates how the pages are ordered.",
+                          "key": "d",
+                          "value": "DESC"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to search `ExpensePolicy` resources using filtering parameters."
+                  },
+                  "response": [
+                    {
+                      "id": "ccf49f72-78e6-4418-96f4-953603828cbd",
+                      "name": "The result is an array of `ExpensePolicy` resources.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/expense-policies?text=<string>&statuses=ACTIVE&p=0&s=0&d=DESC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "expense-policies"
+                          ],
+                          "query": [
+                            {
+                              "description": "A simple text to search in the `ExpensePolicy` (`name` or `description`).",
+                              "key": "text",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The list of `ExpensePolicy` statuses to search by.",
+                              "key": "statuses",
+                              "value": "ACTIVE"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "DESC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"policy_url\": \"<string>\",\n      \"status\": \"ACTIVE\",\n      \"creation_time\": \"<string>\",\n      \"last_update\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"policy_url\": \"<string>\",\n      \"status\": \"ACTIVE\",\n      \"creation_time\": \"<string>\",\n      \"last_update\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:57:59.000Z",
+                      "updatedAt": "2026-07-28T02:57:59.000Z",
+                      "uid": "35240-ccf49f72-78e6-4418-96f4-953603828cbd"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:57:59.000Z",
+                  "updatedAt": "2026-07-28T02:57:59.000Z",
+                  "uid": "35240-c0e33452-a224-450b-adfb-d45d3d90e524"
+                }
+              ],
+              "id": "0f5ba114-48d8-4a65-80b8-b9b595b6b7ef",
+              "createdAt": "2026-07-28T02:57:59.000Z",
+              "updatedAt": "2026-07-28T02:57:59.000Z",
+              "uid": "35240-0f5ba114-48d8-4a65-80b8-b9b595b6b7ef"
+            }
+          ],
+          "id": "d696bb26-d286-41da-b5ee-7cdf71dd5692",
+          "createdAt": "2026-07-28T02:57:59.000Z",
+          "updatedAt": "2026-07-28T02:57:59.000Z",
+          "uid": "35240-d696bb26-d286-41da-b5ee-7cdf71dd5692"
+        }
+      ],
+      "id": "64e9ebea-2082-4950-be1f-8be93b86d5e5",
+      "createdAt": "2026-07-28T02:57:59.000Z",
+      "updatedAt": "2026-07-28T02:57:59.000Z",
+      "uid": "35240-64e9ebea-2082-4950-be1f-8be93b86d5e5"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

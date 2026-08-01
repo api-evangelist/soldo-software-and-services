@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: openapi/soldo-software-and-services-business-api-openapi.json
+docs: https://developer.soldo.com/reference/introduction
+note: >-
+  Soldo publishes a dedicated sandbox (demo) server for testing with non-live data, selectable
+  from the "Base URL" dropdown on each API reference page and via the 'Try It!' console. No public
+  magic test-card numbers or hosted test tokens are published in the developer docs; test data is
+  provisioned per demo account. Only verbatim published values are recorded here (no invented test values).
+environments:
+  - name: production
+    base_url: https://api.soldo.com
+    description: Production server using live data.
+  - name: sandbox
+    base_url: https://api-demo.soldocloud.net
+    description: Sandbox server using test data.
+token_url:
+  production: https://api.soldo.com/oauth/authorize
+credentials:
+  model: Per-environment client_id / client_secret + fingerprint token generated in the Soldo web app.
+  test_data: Provisioned within the demo account; no globally published magic test values.
+console:
+  try_it: Each reference page has a 'Try It!' feature with a Base URL dropdown to switch production/sandbox.

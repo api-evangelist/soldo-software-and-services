@@ -1,0 +1,1145 @@
+{
+  "info": {
+    "_postman_id": "f47e0ec5-477c-4d58-874f-b34e88261a67",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Contacts API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:57:54.000Z",
+    "updatedAt": "2026-07-28T02:57:54.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f47e0ec5-477c-4d58-874f-b34e88261a67"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "contacts",
+              "item": [
+                {
+                  "name": "{contactId}",
+                  "item": [
+                    {
+                      "name": "Get Contact",
+                      "id": "80dd632c-1194-4b6c-b2e6-88b29d45790d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/contacts/:contactId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "contacts",
+                            ":contactId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "1b3a8ec2-b2a4-44ae-9f22-f10165006392",
+                              "key": "contactId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to get specific `Contact` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "d45390c6-d359-44d9-aa29-d0d113028d66",
+                          "name": "The returned resource is a single `Contact`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/contacts/:contactId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "contacts",
+                                ":contactId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "contactId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"user_id\": \"<string>\",\n  \"type\": \"EMPLOYEE\",\n  \"payment_scheme\": [\n    \"SEPA\",\n    \"SEPA\"\n  ],\n  \"account_info\": [\n    {\n      \"type\": \"IBAN\",\n      \"identification\": \"<string>\"\n    },\n    {\n      \"type\": \"SORT_CODE\",\n      \"identification\": \"<string>\"\n    }\n  ],\n  \"bic\": \"<string>\",\n  \"country\": \"PAN\",\n  \"status\": \"CREATED\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\",\n  \"bank_account_verification_status\": \"PARTIAL_MATCH\"\n}",
+                          "createdAt": "2026-07-28T02:57:55.000Z",
+                          "updatedAt": "2026-07-28T02:57:55.000Z",
+                          "uid": "35240-d45390c6-d359-44d9-aa29-d0d113028d66"
+                        },
+                        {
+                          "id": "d3626a05-0299-41ae-adaf-361205ffc9d3",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/contacts/:contactId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "contacts",
+                                ":contactId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "contactId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:55.000Z",
+                          "updatedAt": "2026-07-28T02:57:55.000Z",
+                          "uid": "35240-d3626a05-0299-41ae-adaf-361205ffc9d3"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:55.000Z",
+                      "updatedAt": "2026-07-28T02:57:55.000Z",
+                      "uid": "35240-80dd632c-1194-4b6c-b2e6-88b29d45790d"
+                    },
+                    {
+                      "name": "Update Contact",
+                      "id": "826a5111-8332-48aa-8d6e-fdaa20f15513",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"type\": \"SUPPLIER\",\n  \"user_id\": \"<string>\",\n  \"account_info\": [\n    {\n      \"type\": \"IBAN\",\n      \"identification\": \"<string>\"\n    },\n    {\n      \"type\": \"SORT_CODE\",\n      \"identification\": \"<string>\"\n    }\n  ],\n  \"status\": \"SUGGESTED\",\n  \"name\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/contacts/:contactId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "contacts",
+                            ":contactId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "81f3127a-7123-4eb2-8cd7-552d630c6ac2",
+                              "key": "contactId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to update `Contact`."
+                      },
+                      "response": [
+                        {
+                          "id": "baf041fd-2b31-4c6e-b744-67dff1b787c6",
+                          "name": "The returned resource is a single `Contact`.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"type\": \"SUPPLIER\",\n  \"user_id\": \"<string>\",\n  \"account_info\": [\n    {\n      \"type\": \"IBAN\",\n      \"identification\": \"<string>\"\n    },\n    {\n      \"type\": \"SORT_CODE\",\n      \"identification\": \"<string>\"\n    }\n  ],\n  \"status\": \"SUGGESTED\",\n  \"name\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/contacts/:contactId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "contacts",
+                                ":contactId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "contactId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"user_id\": \"<string>\",\n  \"type\": \"ACCOUNT\",\n  \"payment_scheme\": [\n    \"SEPA\",\n    \"SEPA_INSTANT\"\n  ],\n  \"account_info\": [\n    {\n      \"type\": \"ACCOUNT_NUMBER\",\n      \"identification\": \"<string>\"\n    },\n    {\n      \"type\": \"SORT_CODE\",\n      \"identification\": \"<string>\"\n    }\n  ],\n  \"bic\": \"<string>\",\n  \"country\": \"UGA\",\n  \"status\": \"SUGGESTED\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\",\n  \"validation\": {\n    \"field\": \"<string>\",\n    \"current_value\": \"<string>\",\n    \"suggested_value\": \"<string>\",\n    \"match_status\": \"FULL_MATCH\"\n  }\n}",
+                          "createdAt": "2026-07-28T02:57:55.000Z",
+                          "updatedAt": "2026-07-28T02:57:55.000Z",
+                          "uid": "35240-baf041fd-2b31-4c6e-b744-67dff1b787c6"
+                        },
+                        {
+                          "id": "9a3236b1-e8dc-43c5-9e84-6af3b4781e00",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"type\": \"SUPPLIER\",\n  \"user_id\": \"<string>\",\n  \"account_info\": [\n    {\n      \"type\": \"IBAN\",\n      \"identification\": \"<string>\"\n    },\n    {\n      \"type\": \"SORT_CODE\",\n      \"identification\": \"<string>\"\n    }\n  ],\n  \"status\": \"SUGGESTED\",\n  \"name\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/contacts/:contactId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "contacts",
+                                ":contactId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "contactId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:55.000Z",
+                          "updatedAt": "2026-07-28T02:57:55.000Z",
+                          "uid": "35240-9a3236b1-e8dc-43c5-9e84-6af3b4781e00"
+                        },
+                        {
+                          "id": "032a507c-753c-4d88-a8e6-c666b86b0e29",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"type\": \"SUPPLIER\",\n  \"user_id\": \"<string>\",\n  \"account_info\": [\n    {\n      \"type\": \"IBAN\",\n      \"identification\": \"<string>\"\n    },\n    {\n      \"type\": \"SORT_CODE\",\n      \"identification\": \"<string>\"\n    }\n  ],\n  \"status\": \"SUGGESTED\",\n  \"name\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/contacts/:contactId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "contacts",
+                                ":contactId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "contactId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:55.000Z",
+                          "updatedAt": "2026-07-28T02:57:55.000Z",
+                          "uid": "35240-032a507c-753c-4d88-a8e6-c666b86b0e29"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:55.000Z",
+                      "updatedAt": "2026-07-28T02:57:55.000Z",
+                      "uid": "35240-826a5111-8332-48aa-8d6e-fdaa20f15513"
+                    },
+                    {
+                      "name": "Delete Contact",
+                      "id": "b0380ad1-9917-4fda-b8be-54c35a943ec7",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/contacts/:contactId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "contacts",
+                            ":contactId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "630eb96c-3b9e-407d-bbb4-458217164353",
+                              "key": "contactId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to delete a specific `Contact`."
+                      },
+                      "response": [
+                        {
+                          "id": "0c5d0fee-908a-4861-bf10-c1d835a98acb",
+                          "name": "No content as result.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/contacts/:contactId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "contacts",
+                                ":contactId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "contactId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:55.000Z",
+                          "updatedAt": "2026-07-28T02:57:55.000Z",
+                          "uid": "35240-0c5d0fee-908a-4861-bf10-c1d835a98acb"
+                        },
+                        {
+                          "id": "e8b3bd42-e24c-44c1-be4e-b149bed18c15",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/contacts/:contactId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "contacts",
+                                ":contactId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "contactId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:55.000Z",
+                          "updatedAt": "2026-07-28T02:57:55.000Z",
+                          "uid": "35240-e8b3bd42-e24c-44c1-be4e-b149bed18c15"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:55.000Z",
+                      "updatedAt": "2026-07-28T02:57:55.000Z",
+                      "uid": "35240-b0380ad1-9917-4fda-b8be-54c35a943ec7"
+                    }
+                  ],
+                  "id": "dc98c3b8-6408-4fee-894f-f7854e785a27",
+                  "createdAt": "2026-07-28T02:57:55.000Z",
+                  "updatedAt": "2026-07-28T02:57:55.000Z",
+                  "uid": "35240-dc98c3b8-6408-4fee-894f-f7854e785a27"
+                },
+                {
+                  "name": "Search Contacts",
+                  "id": "3f41d3e2-b843-4d96-b879-4c4e545b5fff",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/contacts?statuses=CREATED&statuses=CREATED&name=<string>&name=<string>&type=ACCOUNT&type=ACCOUNT&countries=SAU&countries=HND&user=<string>&user=<string>&p=0&s=0&d=ASC&props=<string>&props=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "contacts"
+                      ],
+                      "query": [
+                        {
+                          "description": "The status of the `Contact`.",
+                          "key": "statuses",
+                          "value": "CREATED"
+                        },
+                        {
+                          "description": "The status of the `Contact`.",
+                          "key": "statuses",
+                          "value": "CREATED"
+                        },
+                        {
+                          "description": "The name of the `Contact`.",
+                          "key": "name",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The name of the `Contact`.",
+                          "key": "name",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The type of the `Contact`.",
+                          "key": "type",
+                          "value": "ACCOUNT"
+                        },
+                        {
+                          "description": "The type of the `Contact`.",
+                          "key": "type",
+                          "value": "ACCOUNT"
+                        },
+                        {
+                          "description": "The [ISO 3166-1 alpha-3](https://www.iso.org/obp/ui/#search/code/) countries of the `Contact`.",
+                          "key": "countries",
+                          "value": "SAU"
+                        },
+                        {
+                          "description": "The [ISO 3166-1 alpha-3](https://www.iso.org/obp/ui/#search/code/) countries of the `Contact`.",
+                          "key": "countries",
+                          "value": "HND"
+                        },
+                        {
+                          "description": "The ID of the `User` the bank details are assigned.",
+                          "key": "user",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The ID of the `User` the bank details are assigned.",
+                          "key": "user",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the specific page to display (the counter starts from zero).",
+                          "key": "p",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the number of items per page.",
+                          "key": "s",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates how the pages are ordered.",
+                          "key": "d",
+                          "value": "ASC"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to search `Contacts` using filtering parameters."
+                  },
+                  "response": [
+                    {
+                      "id": "b29ddc6b-f060-4481-83d4-815f4f720650",
+                      "name": "The returned result is a list of `Contacts`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/contacts?statuses=CREATED&name=<string>&type=ACCOUNT&countries=HND&user=<string>&p=0&s=0&d=ASC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "contacts"
+                          ],
+                          "query": [
+                            {
+                              "description": "The status of the `Contact`.",
+                              "key": "statuses",
+                              "value": "CREATED"
+                            },
+                            {
+                              "description": "The name of the `Contact`.",
+                              "key": "name",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The type of the `Contact`.",
+                              "key": "type",
+                              "value": "ACCOUNT"
+                            },
+                            {
+                              "description": "The [ISO 3166-1 alpha-3](https://www.iso.org/obp/ui/#search/code/) countries of the `Contact`.",
+                              "key": "countries",
+                              "value": "HND"
+                            },
+                            {
+                              "description": "The ID of the `User` the bank details are assigned.",
+                              "key": "user",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"user_id\": \"<string>\",\n      \"type\": \"CLIENT\",\n      \"payment_scheme\": [\n        \"FPS\",\n        \"SEPA_INSTANT\"\n      ],\n      \"account_info\": [\n        {\n          \"type\": \"ACCOUNT_NUMBER\",\n          \"identification\": \"<string>\"\n        },\n        {\n          \"type\": \"IBAN\",\n          \"identification\": \"<string>\"\n        }\n      ],\n      \"bic\": \"<string>\",\n      \"country\": \"SVN\",\n      \"status\": \"CREATED\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\",\n      \"bank_account_verification_status\": \"FULL_MATCH\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"user_id\": \"<string>\",\n      \"type\": \"EMPLOYEE\",\n      \"payment_scheme\": [\n        \"FPS\",\n        \"SEPA_INSTANT\"\n      ],\n      \"account_info\": [\n        {\n          \"type\": \"SORT_CODE\",\n          \"identification\": \"<string>\"\n        },\n        {\n          \"type\": \"SORT_CODE\",\n          \"identification\": \"<string>\"\n        }\n      ],\n      \"bic\": \"<string>\",\n      \"country\": \"MWI\",\n      \"status\": \"CREATED\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\",\n      \"bank_account_verification_status\": \"PARTIAL_MATCH\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:57:55.000Z",
+                      "updatedAt": "2026-07-28T02:57:55.000Z",
+                      "uid": "35240-b29ddc6b-f060-4481-83d4-815f4f720650"
+                    },
+                    {
+                      "id": "9b375efb-094b-4e4f-8fda-77f17e04522c",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/contacts?statuses=CREATED&name=<string>&type=ACCOUNT&countries=HND&user=<string>&p=0&s=0&d=ASC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "contacts"
+                          ],
+                          "query": [
+                            {
+                              "description": "The status of the `Contact`.",
+                              "key": "statuses",
+                              "value": "CREATED"
+                            },
+                            {
+                              "description": "The name of the `Contact`.",
+                              "key": "name",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The type of the `Contact`.",
+                              "key": "type",
+                              "value": "ACCOUNT"
+                            },
+                            {
+                              "description": "The [ISO 3166-1 alpha-3](https://www.iso.org/obp/ui/#search/code/) countries of the `Contact`.",
+                              "key": "countries",
+                              "value": "HND"
+                            },
+                            {
+                              "description": "The ID of the `User` the bank details are assigned.",
+                              "key": "user",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:57:55.000Z",
+                      "updatedAt": "2026-07-28T02:57:55.000Z",
+                      "uid": "35240-9b375efb-094b-4e4f-8fda-77f17e04522c"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:57:55.000Z",
+                  "updatedAt": "2026-07-28T02:57:55.000Z",
+                  "uid": "35240-3f41d3e2-b843-4d96-b879-4c4e545b5fff"
+                },
+                {
+                  "name": "Add Contact",
+                  "id": "e80420a4-32ff-46fb-b5a6-493b98c41fb2",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint",
+                        "value": "{{fingerprint}}"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint-Signature",
+                        "value": "{{fingerprint_signature}}"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"account_type\": \"BUSINESS\",\n  \"country\": \"HMD\",\n  \"name\": \"<string>\",\n  \"type\": \"CLIENT\",\n  \"user_id\": \"<string>\",\n  \"account_info\": [\n    {\n      \"type\": \"ACCOUNT_NUMBER\",\n      \"identification\": \"<string>\"\n    },\n    {\n      \"type\": \"IBAN\",\n      \"identification\": \"<string>\"\n    }\n  ],\n  \"bic\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/contacts",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "contacts"
+                      ]
+                    },
+                    "description": "Endpoint to add a new `Contact`."
+                  },
+                  "response": [
+                    {
+                      "id": "e35b8469-e958-4fa8-b963-6fcca9fb6ca4",
+                      "name": "The returned resource is a single `Contact`.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"account_type\": \"BUSINESS\",\n  \"country\": \"HMD\",\n  \"name\": \"<string>\",\n  \"type\": \"CLIENT\",\n  \"user_id\": \"<string>\",\n  \"account_info\": [\n    {\n      \"type\": \"ACCOUNT_NUMBER\",\n      \"identification\": \"<string>\"\n    },\n    {\n      \"type\": \"IBAN\",\n      \"identification\": \"<string>\"\n    }\n  ],\n  \"bic\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/contacts",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "contacts"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"user_id\": \"<string>\",\n  \"type\": \"ACCOUNT\",\n  \"payment_scheme\": [\n    \"SEPA\",\n    \"SEPA_INSTANT\"\n  ],\n  \"account_info\": [\n    {\n      \"type\": \"ACCOUNT_NUMBER\",\n      \"identification\": \"<string>\"\n    },\n    {\n      \"type\": \"SORT_CODE\",\n      \"identification\": \"<string>\"\n    }\n  ],\n  \"bic\": \"<string>\",\n  \"country\": \"UGA\",\n  \"status\": \"SUGGESTED\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\",\n  \"validation\": {\n    \"field\": \"<string>\",\n    \"current_value\": \"<string>\",\n    \"suggested_value\": \"<string>\",\n    \"match_status\": \"FULL_MATCH\"\n  }\n}",
+                      "createdAt": "2026-07-28T02:57:55.000Z",
+                      "updatedAt": "2026-07-28T02:57:55.000Z",
+                      "uid": "35240-e35b8469-e958-4fa8-b963-6fcca9fb6ca4"
+                    },
+                    {
+                      "id": "5b8e553d-848c-4e9e-9189-3c44bf39956f",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"account_type\": \"BUSINESS\",\n  \"country\": \"HMD\",\n  \"name\": \"<string>\",\n  \"type\": \"CLIENT\",\n  \"user_id\": \"<string>\",\n  \"account_info\": [\n    {\n      \"type\": \"ACCOUNT_NUMBER\",\n      \"identification\": \"<string>\"\n    },\n    {\n      \"type\": \"IBAN\",\n      \"identification\": \"<string>\"\n    }\n  ],\n  \"bic\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/contacts",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "contacts"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:57:55.000Z",
+                      "updatedAt": "2026-07-28T02:57:55.000Z",
+                      "uid": "35240-5b8e553d-848c-4e9e-9189-3c44bf39956f"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:57:55.000Z",
+                  "updatedAt": "2026-07-28T02:57:55.000Z",
+                  "uid": "35240-e80420a4-32ff-46fb-b5a6-493b98c41fb2"
+                }
+              ],
+              "id": "51e709e6-104f-439b-a5ac-b5774a90e141",
+              "createdAt": "2026-07-28T02:57:55.000Z",
+              "updatedAt": "2026-07-28T02:57:55.000Z",
+              "uid": "35240-51e709e6-104f-439b-a5ac-b5774a90e141"
+            }
+          ],
+          "id": "4a96c7db-ac24-4240-a553-653606afbd8e",
+          "createdAt": "2026-07-28T02:57:55.000Z",
+          "updatedAt": "2026-07-28T02:57:55.000Z",
+          "uid": "35240-4a96c7db-ac24-4240-a553-653606afbd8e"
+        }
+      ],
+      "id": "eae24e31-7e3e-4b25-8c26-9d3c7ab55884",
+      "createdAt": "2026-07-28T02:57:55.000Z",
+      "updatedAt": "2026-07-28T02:57:55.000Z",
+      "uid": "35240-eae24e31-7e3e-4b25-8c26-9d3c7ab55884"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

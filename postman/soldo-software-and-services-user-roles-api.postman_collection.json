@@ -1,0 +1,665 @@
+{
+  "info": {
+    "_postman_id": "4a30659f-853d-4bfd-bc2b-577a3e9375e1",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification User Roles API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:59:04.000Z",
+    "updatedAt": "2026-07-28T02:59:04.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-4a30659f-853d-4bfd-bc2b-577a3e9375e1"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "employees",
+              "item": [
+                {
+                  "name": "{userId}",
+                  "item": [
+                    {
+                      "name": "assignRole",
+                      "item": [
+                        {
+                          "name": "Add roles to User",
+                          "id": "587151b0-58b9-41e2-ba94-e2c8e763cdb0",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"scope\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/employees/:userId/assignRole",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "employees",
+                                ":userId",
+                                "assignRole"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "f16eabd9-8350-453a-9fd6-151250f263be",
+                                  "key": "userId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to assign a `Role` to an `User`."
+                          },
+                          "response": [
+                            {
+                              "id": "437d210b-d535-4397-b17b-80b1237f5c77",
+                              "name": "The returned resource is a single `User`.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"scope\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/employees/:userId/assignRole",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "employees",
+                                    ":userId",
+                                    "assignRole"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "userId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"roles\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"scope\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"scope\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:59:04.000Z",
+                              "updatedAt": "2026-07-28T02:59:04.000Z",
+                              "uid": "35240-437d210b-d535-4397-b17b-80b1237f5c77"
+                            },
+                            {
+                              "id": "06ed449e-a2d4-4d53-bcef-7b04e88e328b",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"scope\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/employees/:userId/assignRole",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "employees",
+                                    ":userId",
+                                    "assignRole"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "userId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:59:04.000Z",
+                              "updatedAt": "2026-07-28T02:59:04.000Z",
+                              "uid": "35240-06ed449e-a2d4-4d53-bcef-7b04e88e328b"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:59:04.000Z",
+                          "updatedAt": "2026-07-28T02:59:04.000Z",
+                          "uid": "35240-587151b0-58b9-41e2-ba94-e2c8e763cdb0"
+                        }
+                      ],
+                      "id": "bd5e0c56-524f-4991-9e4d-a3d752cda491",
+                      "createdAt": "2026-07-28T02:59:04.000Z",
+                      "updatedAt": "2026-07-28T02:59:04.000Z",
+                      "uid": "35240-bd5e0c56-524f-4991-9e4d-a3d752cda491"
+                    },
+                    {
+                      "name": "roles",
+                      "item": [
+                        {
+                          "name": "Get User Roles",
+                          "id": "0428dd1b-75c2-462e-8d2e-fac2d6733db2",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/employees/:userId/roles",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "employees",
+                                ":userId",
+                                "roles"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "61fe096e-943e-4d57-b048-5868abd020f5",
+                                  "key": "userId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to retrieve roles by `User` ID."
+                          },
+                          "response": [
+                            {
+                              "id": "36c73f84-0f8e-41cd-b826-d808a84b9c5b",
+                              "name": "The result is the `User` with their `Roles`.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/employees/:userId/roles",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "employees",
+                                    ":userId",
+                                    "roles"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "userId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"roles\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"scope\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"scope\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:59:04.000Z",
+                              "updatedAt": "2026-07-28T02:59:04.000Z",
+                              "uid": "35240-36c73f84-0f8e-41cd-b826-d808a84b9c5b"
+                            },
+                            {
+                              "id": "7e1bb08a-a25b-459f-bd82-7ae3d89d634c",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/employees/:userId/roles",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "employees",
+                                    ":userId",
+                                    "roles"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "userId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:59:04.000Z",
+                              "updatedAt": "2026-07-28T02:59:04.000Z",
+                              "uid": "35240-7e1bb08a-a25b-459f-bd82-7ae3d89d634c"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:59:04.000Z",
+                          "updatedAt": "2026-07-28T02:59:04.000Z",
+                          "uid": "35240-0428dd1b-75c2-462e-8d2e-fac2d6733db2"
+                        }
+                      ],
+                      "id": "b3b30143-2b4d-458b-8294-3f399b79f5f1",
+                      "createdAt": "2026-07-28T02:59:04.000Z",
+                      "updatedAt": "2026-07-28T02:59:04.000Z",
+                      "uid": "35240-b3b30143-2b4d-458b-8294-3f399b79f5f1"
+                    },
+                    {
+                      "name": "unassignRole",
+                      "item": [
+                        {
+                          "name": "Remove roles from User",
+                          "id": "28d5e6b5-2e71-4324-9ee9-6c2c430fcb4b",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"scope\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/employees/:userId/unassignRole",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "employees",
+                                ":userId",
+                                "unassignRole"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "b9cad1e7-bd87-434d-9fb0-0161e83e9e66",
+                                  "key": "userId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to remove a `Role` from an `User`."
+                          },
+                          "response": [
+                            {
+                              "id": "b6da6eb0-047a-4c21-b435-bd28e96b7e13",
+                              "name": "The returned resource is a single `User`.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"scope\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/employees/:userId/unassignRole",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "employees",
+                                    ":userId",
+                                    "unassignRole"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "userId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"roles\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"scope\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"scope\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:59:04.000Z",
+                              "updatedAt": "2026-07-28T02:59:04.000Z",
+                              "uid": "35240-b6da6eb0-047a-4c21-b435-bd28e96b7e13"
+                            },
+                            {
+                              "id": "4e1524ab-7044-4c65-aa72-2097964577e0",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"scope\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/employees/:userId/unassignRole",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "employees",
+                                    ":userId",
+                                    "unassignRole"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "userId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:59:04.000Z",
+                              "updatedAt": "2026-07-28T02:59:04.000Z",
+                              "uid": "35240-4e1524ab-7044-4c65-aa72-2097964577e0"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:59:04.000Z",
+                          "updatedAt": "2026-07-28T02:59:04.000Z",
+                          "uid": "35240-28d5e6b5-2e71-4324-9ee9-6c2c430fcb4b"
+                        }
+                      ],
+                      "id": "9cf4078a-a86d-4817-b294-a83e252afc4b",
+                      "createdAt": "2026-07-28T02:59:04.000Z",
+                      "updatedAt": "2026-07-28T02:59:04.000Z",
+                      "uid": "35240-9cf4078a-a86d-4817-b294-a83e252afc4b"
+                    }
+                  ],
+                  "id": "49ef3bc1-811b-4784-a877-508ddff85624",
+                  "createdAt": "2026-07-28T02:59:04.000Z",
+                  "updatedAt": "2026-07-28T02:59:04.000Z",
+                  "uid": "35240-49ef3bc1-811b-4784-a877-508ddff85624"
+                }
+              ],
+              "id": "51b1c3a9-a4b5-4f00-b241-2128ef3e7221",
+              "createdAt": "2026-07-28T02:59:04.000Z",
+              "updatedAt": "2026-07-28T02:59:04.000Z",
+              "uid": "35240-51b1c3a9-a4b5-4f00-b241-2128ef3e7221"
+            }
+          ],
+          "id": "f7e5f835-9ceb-41f2-9f4f-a2cdc2a2128f",
+          "createdAt": "2026-07-28T02:59:04.000Z",
+          "updatedAt": "2026-07-28T02:59:04.000Z",
+          "uid": "35240-f7e5f835-9ceb-41f2-9f4f-a2cdc2a2128f"
+        }
+      ],
+      "id": "962dfa35-46ad-4f72-8966-5540a422c914",
+      "createdAt": "2026-07-28T02:59:04.000Z",
+      "updatedAt": "2026-07-28T02:59:04.000Z",
+      "uid": "35240-962dfa35-46ad-4f72-8966-5540a422c914"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

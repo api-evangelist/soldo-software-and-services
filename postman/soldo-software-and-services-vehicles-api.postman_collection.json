@@ -1,0 +1,955 @@
+{
+  "info": {
+    "_postman_id": "1eade24d-9656-4c9a-a26a-7511cfa3361f",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Vehicles API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:59:24.000Z",
+    "updatedAt": "2026-07-28T02:59:24.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1eade24d-9656-4c9a-a26a-7511cfa3361f"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "vehicles",
+              "item": [
+                {
+                  "name": "{vehicleId}",
+                  "item": [
+                    {
+                      "name": "Get Vehicle",
+                      "id": "ed728488-a6f4-4a41-b423-4962ca06aa1c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/vehicles/:vehicleId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "vehicles",
+                            ":vehicleId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "e87e7a29-05b7-402a-8744-274af14cc318",
+                              "key": "vehicleId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to get a specific `Vehicle` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "2b832a9d-27a8-42ce-ab1d-cd56fdb44c73",
+                          "name": "The returned resource is a `Vehicle`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/vehicles/:vehicleId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "vehicles",
+                                ":vehicleId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "vehicleId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"number_plate\": \"<string>\",\n  \"description\": \"<string>\",\n  \"vat_deductible\": \"40\",\n  \"fuel_type\": \"UNKNOWN\",\n  \"status\": \"ACTIVE\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\",\n  \"card_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"reimbursement_rate\": \"<number>\"\n}",
+                          "createdAt": "2026-07-28T02:59:24.000Z",
+                          "updatedAt": "2026-07-28T02:59:24.000Z",
+                          "uid": "35240-2b832a9d-27a8-42ce-ab1d-cd56fdb44c73"
+                        },
+                        {
+                          "id": "d67c801a-9bec-4f4f-b030-b6ced3892cdb",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/vehicles/:vehicleId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "vehicles",
+                                ":vehicleId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "vehicleId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:24.000Z",
+                          "updatedAt": "2026-07-28T02:59:24.000Z",
+                          "uid": "35240-d67c801a-9bec-4f4f-b030-b6ced3892cdb"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:59:24.000Z",
+                      "updatedAt": "2026-07-28T02:59:24.000Z",
+                      "uid": "35240-ed728488-a6f4-4a41-b423-4962ca06aa1c"
+                    },
+                    {
+                      "name": "Update Vehicle",
+                      "id": "2499c6ff-9017-46ee-b652-23e2ac7209e9",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"number_plate\": \"<string>\",\n  \"description\": \"0ox_qD[8C`yHx\",\n  \"vat_deductible\": \"40\",\n  \"fuel_type\": \"UNKNOWN\",\n  \"status\": \"ACTIVE\",\n  \"reimbursement_rate\": \"<number>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/vehicles/:vehicleId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "vehicles",
+                            ":vehicleId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "4bf38779-edce-4af9-9b69-51bf7d3a3b28",
+                              "key": "vehicleId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to update a specific Vehicle"
+                      },
+                      "response": [
+                        {
+                          "id": "2f89fc9d-b0dc-420d-964b-cb6760841da5",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"number_plate\": \"<string>\",\n  \"description\": \"0ox_qD[8C`yHx\",\n  \"vat_deductible\": \"40\",\n  \"fuel_type\": \"UNKNOWN\",\n  \"status\": \"ACTIVE\",\n  \"reimbursement_rate\": \"<number>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/vehicles/:vehicleId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "vehicles",
+                                ":vehicleId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "vehicleId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:24.000Z",
+                          "updatedAt": "2026-07-28T02:59:24.000Z",
+                          "uid": "35240-2f89fc9d-b0dc-420d-964b-cb6760841da5"
+                        },
+                        {
+                          "id": "6a73a109-18f3-45fd-817f-1acea25c5e95",
+                          "name": "The returned resource is a `Vehicle`",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"number_plate\": \"<string>\",\n  \"description\": \"0ox_qD[8C`yHx\",\n  \"vat_deductible\": \"40\",\n  \"fuel_type\": \"UNKNOWN\",\n  \"status\": \"ACTIVE\",\n  \"reimbursement_rate\": \"<number>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/vehicles/:vehicleId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "vehicles",
+                                ":vehicleId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "vehicleId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"number_plate\": \"<string>\",\n  \"description\": \"<string>\",\n  \"vat_deductible\": \"40\",\n  \"fuel_type\": \"UNKNOWN\",\n  \"status\": \"ACTIVE\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\",\n  \"card_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"reimbursement_rate\": \"<number>\"\n}",
+                          "createdAt": "2026-07-28T02:59:24.000Z",
+                          "updatedAt": "2026-07-28T02:59:24.000Z",
+                          "uid": "35240-6a73a109-18f3-45fd-817f-1acea25c5e95"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:59:24.000Z",
+                      "updatedAt": "2026-07-28T02:59:24.000Z",
+                      "uid": "35240-2499c6ff-9017-46ee-b652-23e2ac7209e9"
+                    },
+                    {
+                      "name": "Delete Vehicle",
+                      "id": "2c5ee0cd-2c16-41cb-81f4-9b0ef62bdde2",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/vehicles/:vehicleId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "vehicles",
+                            ":vehicleId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "4e3aee5f-764d-415a-bf9f-7fb3e84d2bfa",
+                              "key": "vehicleId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to delete a specific `Vehicle`."
+                      },
+                      "response": [
+                        {
+                          "id": "40b42dc4-0c7c-46bd-9eaa-8e3531fa3d2e",
+                          "name": "No content as result.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/vehicles/:vehicleId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "vehicles",
+                                ":vehicleId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "vehicleId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:24.000Z",
+                          "updatedAt": "2026-07-28T02:59:24.000Z",
+                          "uid": "35240-40b42dc4-0c7c-46bd-9eaa-8e3531fa3d2e"
+                        },
+                        {
+                          "id": "f9aaf848-9c21-41fd-93a7-e292cf642297",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/vehicles/:vehicleId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "vehicles",
+                                ":vehicleId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "vehicleId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:59:24.000Z",
+                          "updatedAt": "2026-07-28T02:59:24.000Z",
+                          "uid": "35240-f9aaf848-9c21-41fd-93a7-e292cf642297"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:59:24.000Z",
+                      "updatedAt": "2026-07-28T02:59:24.000Z",
+                      "uid": "35240-2c5ee0cd-2c16-41cb-81f4-9b0ef62bdde2"
+                    }
+                  ],
+                  "id": "387ce2b9-ee1b-4e15-8eee-1025cb5c15bd",
+                  "createdAt": "2026-07-28T02:59:24.000Z",
+                  "updatedAt": "2026-07-28T02:59:24.000Z",
+                  "uid": "35240-387ce2b9-ee1b-4e15-8eee-1025cb5c15bd"
+                },
+                {
+                  "name": "Search Vehicle",
+                  "id": "db1077d5-8b93-4215-bf56-bd4fccc18841",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/vehicles?text=<string>&ids=<string>&ids=<string>&p=0&s=0&d=ASC&props=<string>&props=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "vehicles"
+                      ],
+                      "query": [
+                        {
+                          "description": "A text to be searched on the number plate and description field.",
+                          "key": "text",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The IDs of the vehicles to search.",
+                          "key": "ids",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The IDs of the vehicles to search.",
+                          "key": "ids",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the specific page to display (the counter starts from zero).",
+                          "key": "p",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the number of items per page.",
+                          "key": "s",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates how the pages are ordered.",
+                          "key": "d",
+                          "value": "ASC"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to find Vehicles using filtering parameters."
+                  },
+                  "response": [
+                    {
+                      "id": "6050633c-3c71-4b1b-96b7-556e57ac5300",
+                      "name": "The returned array contains `Vehicle` resources.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/vehicles?text=<string>&ids=<string>&p=0&s=0&d=ASC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "vehicles"
+                          ],
+                          "query": [
+                            {
+                              "description": "A text to be searched on the number plate and description field.",
+                              "key": "text",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The IDs of the vehicles to search.",
+                              "key": "ids",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"number_plate\": \"<string>\",\n      \"description\": \"<string>\",\n      \"vat_deductible\": \"80\",\n      \"fuel_type\": \"PETROL\",\n      \"status\": \"ARCHIVED\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\",\n      \"card_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"reimbursement_rate\": \"<number>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"number_plate\": \"<string>\",\n      \"description\": \"<string>\",\n      \"vat_deductible\": \"40\",\n      \"fuel_type\": \"UNKNOWN\",\n      \"status\": \"ARCHIVED\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\",\n      \"card_ids\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"reimbursement_rate\": \"<number>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:59:24.000Z",
+                      "updatedAt": "2026-07-28T02:59:24.000Z",
+                      "uid": "35240-6050633c-3c71-4b1b-96b7-556e57ac5300"
+                    },
+                    {
+                      "id": "814f9636-9eba-4ab2-837a-43ff5a1482dd",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/vehicles?text=<string>&ids=<string>&p=0&s=0&d=ASC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "vehicles"
+                          ],
+                          "query": [
+                            {
+                              "description": "A text to be searched on the number plate and description field.",
+                              "key": "text",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The IDs of the vehicles to search.",
+                              "key": "ids",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "ASC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:59:24.000Z",
+                      "updatedAt": "2026-07-28T02:59:24.000Z",
+                      "uid": "35240-814f9636-9eba-4ab2-837a-43ff5a1482dd"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:59:24.000Z",
+                  "updatedAt": "2026-07-28T02:59:24.000Z",
+                  "uid": "35240-db1077d5-8b93-4215-bf56-bd4fccc18841"
+                },
+                {
+                  "name": "Add Vehicle",
+                  "id": "b3853b60-557d-474e-9609-05c2f2891b93",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"description\": \"-6,Z!#mvxe(dV5`q`rs9\",\n  \"fuel_type\": \"LPG\",\n  \"number_plate\": \"<string>\",\n  \"vat_deductible\": \"80\",\n  \"reimbursement_rate\": \"<number>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/vehicles",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "vehicles"
+                      ]
+                    },
+                    "description": "Endpoint to add a new `Vehicle`."
+                  },
+                  "response": [
+                    {
+                      "id": "a389d760-ec01-40c1-be8e-6eba43a89121",
+                      "name": "The returned resource is a new `Vehicle`.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"description\": \"-6,Z!#mvxe(dV5`q`rs9\",\n  \"fuel_type\": \"LPG\",\n  \"number_plate\": \"<string>\",\n  \"vat_deductible\": \"80\",\n  \"reimbursement_rate\": \"<number>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/vehicles",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "vehicles"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\",\n  \"number_plate\": \"<string>\",\n  \"description\": \"<string>\",\n  \"vat_deductible\": \"40\",\n  \"fuel_type\": \"UNKNOWN\",\n  \"status\": \"ACTIVE\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\",\n  \"card_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"reimbursement_rate\": \"<number>\"\n}",
+                      "createdAt": "2026-07-28T02:59:24.000Z",
+                      "updatedAt": "2026-07-28T02:59:24.000Z",
+                      "uid": "35240-a389d760-ec01-40c1-be8e-6eba43a89121"
+                    },
+                    {
+                      "id": "fc1629bf-5b16-4b68-9fa3-c6ada2148655",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"description\": \"-6,Z!#mvxe(dV5`q`rs9\",\n  \"fuel_type\": \"LPG\",\n  \"number_plate\": \"<string>\",\n  \"vat_deductible\": \"80\",\n  \"reimbursement_rate\": \"<number>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/vehicles",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "vehicles"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:59:24.000Z",
+                      "updatedAt": "2026-07-28T02:59:24.000Z",
+                      "uid": "35240-fc1629bf-5b16-4b68-9fa3-c6ada2148655"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:59:24.000Z",
+                  "updatedAt": "2026-07-28T02:59:24.000Z",
+                  "uid": "35240-b3853b60-557d-474e-9609-05c2f2891b93"
+                }
+              ],
+              "id": "fb784212-0663-4f02-8bdf-40772ba0f5dd",
+              "createdAt": "2026-07-28T02:59:24.000Z",
+              "updatedAt": "2026-07-28T02:59:24.000Z",
+              "uid": "35240-fb784212-0663-4f02-8bdf-40772ba0f5dd"
+            }
+          ],
+          "id": "d0834bd7-5de0-4dfa-bb1e-6b9c6750e61c",
+          "createdAt": "2026-07-28T02:59:24.000Z",
+          "updatedAt": "2026-07-28T02:59:24.000Z",
+          "uid": "35240-d0834bd7-5de0-4dfa-bb1e-6b9c6750e61c"
+        }
+      ],
+      "id": "e5a28db6-d829-4bd4-a95e-a2817ea7d2b6",
+      "createdAt": "2026-07-28T02:59:24.000Z",
+      "updatedAt": "2026-07-28T02:59:24.000Z",
+      "uid": "35240-e5a28db6-d829-4bd4-a95e-a2817ea7d2b6"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

@@ -1,0 +1,1352 @@
+{
+  "info": {
+    "_postman_id": "00ad76c1-14ec-482d-8b0f-bc825c27108e",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Transaction Attachments API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:48.000Z",
+    "updatedAt": "2026-07-28T02:58:48.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-00ad76c1-14ec-482d-8b0f-bc825c27108e"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "transactions",
+              "item": [
+                {
+                  "name": "{transactionId}",
+                  "item": [
+                    {
+                      "name": "attachments",
+                      "item": [
+                        {
+                          "name": "{attachmentId}",
+                          "item": [
+                            {
+                              "name": "Get Transaction Attachment",
+                              "id": "844f265c-278d-4c97-9248-100c0a8b6404",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments/:attachmentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "attachments",
+                                    ":attachmentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "64ca7081-34b3-49e5-a8c4-38aebead432f",
+                                      "key": "transactionId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "36512931-c771-4318-8c1e-96327de10fab",
+                                      "key": "attachmentId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to get a specific `TransactionAttachment` by ID."
+                              },
+                              "response": [
+                                {
+                                  "id": "df0434ab-cb2e-4258-8f3b-c91deda1f703",
+                                  "name": "The returned resource is a single `TransactionAttachment`.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments/:attachmentId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "attachments",
+                                        ":attachmentId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "attachmentId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"attachment_id\": \"<string>\",\n  \"transaction_id\": \"<string>\",\n  \"file_name\": \"<string>\",\n  \"file_extension\": \"<string>\",\n  \"file_size\": \"<long>\",\n  \"url\": \"<string>\",\n  \"file_url\": \"<string>\",\n  \"url_type\": \"DOWNLOAD_URL\",\n  \"attachment_type\": \"POP_AUTH\",\n  \"read_only\": \"<boolean>\",\n  \"content_type\": \"<string>\",\n  \"upload_time\": \"<string>\",\n  \"attachment_user_id\": \"<string>\",\n  \"upload_user_channel\": \"BAPI\",\n  \"compressed_file\": {\n    \"file_name\": \"<string>\",\n    \"file_extension\": \"<string>\",\n    \"file_size\": \"<long>\",\n    \"file_url\": \"<string>\",\n    \"url\": \"<string>\",\n    \"url_type\": \"UPLOAD_URL\"\n  },\n  \"metadata\": {\n    \"Duis_7\": \"<string>\",\n    \"adbe\": \"<string>\"\n  },\n  \"last_update_time\": \"<string>\"\n}",
+                                  "createdAt": "2026-07-28T02:58:48.000Z",
+                                  "updatedAt": "2026-07-28T02:58:48.000Z",
+                                  "uid": "35240-df0434ab-cb2e-4258-8f3b-c91deda1f703"
+                                },
+                                {
+                                  "id": "0470ebe6-7f54-4935-b1cc-103aa2236e69",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments/:attachmentId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "attachments",
+                                        ":attachmentId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "attachmentId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:48.000Z",
+                                  "updatedAt": "2026-07-28T02:58:48.000Z",
+                                  "uid": "35240-0470ebe6-7f54-4935-b1cc-103aa2236e69"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:48.000Z",
+                              "updatedAt": "2026-07-28T02:58:48.000Z",
+                              "uid": "35240-844f265c-278d-4c97-9248-100c0a8b6404"
+                            },
+                            {
+                              "name": "Update Transaction Attachment Metadata",
+                              "id": "5c786707-dbbd-43f0-9438-3e65309b2d66",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"read_only\": \"<boolean>\",\n  \"attachment_type\": \"PURCHASE_REQUEST\",\n  \"metadata\": {\n    \"aliquip_52c\": \"<string>\",\n    \"Excepteur5\": \"<string>\"\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments/:attachmentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "attachments",
+                                    ":attachmentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "50d3e1c2-6392-4832-accd-1799642a909a",
+                                      "key": "transactionId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "6bd6363c-41af-45e1-ab1f-850da5c25bbc",
+                                      "key": "attachmentId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to update the `TransactionAttachment` Metadata of by ID."
+                              },
+                              "response": [
+                                {
+                                  "id": "9b4345b4-e441-4dba-bad4-3ba40ede4f02",
+                                  "name": "The returned resource is a single `TransactionAttachment`.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"read_only\": \"<boolean>\",\n  \"attachment_type\": \"PURCHASE_REQUEST\",\n  \"metadata\": {\n    \"aliquip_52c\": \"<string>\",\n    \"Excepteur5\": \"<string>\"\n  }\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments/:attachmentId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "attachments",
+                                        ":attachmentId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "attachmentId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"attachment_id\": \"<string>\",\n  \"transaction_id\": \"<string>\",\n  \"file_name\": \"<string>\",\n  \"file_extension\": \"<string>\",\n  \"file_size\": \"<long>\",\n  \"url\": \"<string>\",\n  \"file_url\": \"<string>\",\n  \"url_type\": \"DOWNLOAD_URL\",\n  \"attachment_type\": \"POP_AUTH\",\n  \"read_only\": \"<boolean>\",\n  \"content_type\": \"<string>\",\n  \"upload_time\": \"<string>\",\n  \"attachment_user_id\": \"<string>\",\n  \"upload_user_channel\": \"BAPI\",\n  \"compressed_file\": {\n    \"file_name\": \"<string>\",\n    \"file_extension\": \"<string>\",\n    \"file_size\": \"<long>\",\n    \"file_url\": \"<string>\",\n    \"url\": \"<string>\",\n    \"url_type\": \"UPLOAD_URL\"\n  },\n  \"metadata\": {\n    \"Duis_7\": \"<string>\",\n    \"adbe\": \"<string>\"\n  },\n  \"last_update_time\": \"<string>\"\n}",
+                                  "createdAt": "2026-07-28T02:58:48.000Z",
+                                  "updatedAt": "2026-07-28T02:58:48.000Z",
+                                  "uid": "35240-9b4345b4-e441-4dba-bad4-3ba40ede4f02"
+                                },
+                                {
+                                  "id": "3d6086cc-3c3e-4328-83b5-cf0272102bc1",
+                                  "name": "Your request has missing arguments or is malformed.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"read_only\": \"<boolean>\",\n  \"attachment_type\": \"PURCHASE_REQUEST\",\n  \"metadata\": {\n    \"aliquip_52c\": \"<string>\",\n    \"Excepteur5\": \"<string>\"\n  }\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments/:attachmentId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "attachments",
+                                        ":attachmentId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "attachmentId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:48.000Z",
+                                  "updatedAt": "2026-07-28T02:58:48.000Z",
+                                  "uid": "35240-3d6086cc-3c3e-4328-83b5-cf0272102bc1"
+                                },
+                                {
+                                  "id": "0700dfa6-4420-4188-a231-cc1533c13839",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"read_only\": \"<boolean>\",\n  \"attachment_type\": \"PURCHASE_REQUEST\",\n  \"metadata\": {\n    \"aliquip_52c\": \"<string>\",\n    \"Excepteur5\": \"<string>\"\n  }\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments/:attachmentId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "attachments",
+                                        ":attachmentId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "attachmentId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:48.000Z",
+                                  "updatedAt": "2026-07-28T02:58:48.000Z",
+                                  "uid": "35240-0700dfa6-4420-4188-a231-cc1533c13839"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:48.000Z",
+                              "updatedAt": "2026-07-28T02:58:48.000Z",
+                              "uid": "35240-5c786707-dbbd-43f0-9438-3e65309b2d66"
+                            },
+                            {
+                              "name": "Confirm Transaction Attachment Upload",
+                              "id": "be382137-b906-4272-9169-3fff7c37719b",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "description": "The file name of the attachment.",
+                                      "key": "fileName",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "The file type of the attachment.",
+                                      "key": "fileType",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments/:attachmentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "attachments",
+                                    ":attachmentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "0914c1f2-4b01-46f2-a7d8-16e015d9cc8b",
+                                      "key": "transactionId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "9e326f05-f230-463e-b030-252cc1d7b050",
+                                      "key": "attachmentId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "After you got the temporary file URL of type `UPLOAD_URL` and the attachment file is uploaded, the upload of the `TransactionAttachment` must be confirmed."
+                              },
+                              "response": [
+                                {
+                                  "id": "06a0157a-bf31-46fe-a2f3-e7db27389684",
+                                  "name": "The returned resource is a single `TransactionAttachment`.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/x-www-form-urlencoded"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "urlencoded",
+                                      "urlencoded": [
+                                        {
+                                          "description": "The file name of the attachment.",
+                                          "key": "fileName",
+                                          "value": "<string>"
+                                        },
+                                        {
+                                          "description": "The file type of the attachment.",
+                                          "key": "fileType",
+                                          "value": "<string>"
+                                        }
+                                      ]
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments/:attachmentId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "attachments",
+                                        ":attachmentId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "attachmentId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"attachment_id\": \"<string>\",\n  \"transaction_id\": \"<string>\",\n  \"file_name\": \"<string>\",\n  \"file_extension\": \"<string>\",\n  \"file_size\": \"<long>\",\n  \"url\": \"<string>\",\n  \"file_url\": \"<string>\",\n  \"url_type\": \"DOWNLOAD_URL\",\n  \"attachment_type\": \"POP_AUTH\",\n  \"read_only\": \"<boolean>\",\n  \"content_type\": \"<string>\",\n  \"upload_time\": \"<string>\",\n  \"attachment_user_id\": \"<string>\",\n  \"upload_user_channel\": \"BAPI\",\n  \"compressed_file\": {\n    \"file_name\": \"<string>\",\n    \"file_extension\": \"<string>\",\n    \"file_size\": \"<long>\",\n    \"file_url\": \"<string>\",\n    \"url\": \"<string>\",\n    \"url_type\": \"UPLOAD_URL\"\n  },\n  \"metadata\": {\n    \"Duis_7\": \"<string>\",\n    \"adbe\": \"<string>\"\n  },\n  \"last_update_time\": \"<string>\"\n}",
+                                  "createdAt": "2026-07-28T02:58:48.000Z",
+                                  "updatedAt": "2026-07-28T02:58:48.000Z",
+                                  "uid": "35240-06a0157a-bf31-46fe-a2f3-e7db27389684"
+                                },
+                                {
+                                  "id": "db24f0af-743d-410f-aa43-0db551403755",
+                                  "name": "Your request has missing arguments or is malformed.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/x-www-form-urlencoded"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "urlencoded",
+                                      "urlencoded": [
+                                        {
+                                          "description": "The file name of the attachment.",
+                                          "key": "fileName",
+                                          "value": "<string>"
+                                        },
+                                        {
+                                          "description": "The file type of the attachment.",
+                                          "key": "fileType",
+                                          "value": "<string>"
+                                        }
+                                      ]
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments/:attachmentId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "attachments",
+                                        ":attachmentId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "attachmentId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:48.000Z",
+                                  "updatedAt": "2026-07-28T02:58:48.000Z",
+                                  "uid": "35240-db24f0af-743d-410f-aa43-0db551403755"
+                                },
+                                {
+                                  "id": "d36fc100-29ab-4a0a-91d5-ef72e5bc51b0",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/x-www-form-urlencoded"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "urlencoded",
+                                      "urlencoded": [
+                                        {
+                                          "description": "The file name of the attachment.",
+                                          "key": "fileName",
+                                          "value": "<string>"
+                                        },
+                                        {
+                                          "description": "The file type of the attachment.",
+                                          "key": "fileType",
+                                          "value": "<string>"
+                                        }
+                                      ]
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments/:attachmentId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "attachments",
+                                        ":attachmentId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "attachmentId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:48.000Z",
+                                  "updatedAt": "2026-07-28T02:58:48.000Z",
+                                  "uid": "35240-d36fc100-29ab-4a0a-91d5-ef72e5bc51b0"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:48.000Z",
+                              "updatedAt": "2026-07-28T02:58:48.000Z",
+                              "uid": "35240-be382137-b906-4272-9169-3fff7c37719b"
+                            },
+                            {
+                              "name": "Delete Transaction Attachment",
+                              "id": "6456ee43-9643-4cfe-a953-c161a42e43ca",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments/:attachmentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "attachments",
+                                    ":attachmentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "282ffecf-8264-44d9-be0b-5c9f7ee72ddf",
+                                      "key": "transactionId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "a89529ef-7eef-41d6-8674-b8389ce58678",
+                                      "key": "attachmentId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to delete a `TransactionAttachment` by ID."
+                              },
+                              "response": [
+                                {
+                                  "id": "d97fb456-5fa1-471a-a90b-7f4821f45d9c",
+                                  "name": "No content as result.",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments/:attachmentId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "attachments",
+                                        ":attachmentId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "attachmentId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "No Content",
+                                  "code": 204,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:48.000Z",
+                                  "updatedAt": "2026-07-28T02:58:48.000Z",
+                                  "uid": "35240-d97fb456-5fa1-471a-a90b-7f4821f45d9c"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:48.000Z",
+                              "updatedAt": "2026-07-28T02:58:48.000Z",
+                              "uid": "35240-6456ee43-9643-4cfe-a953-c161a42e43ca"
+                            }
+                          ],
+                          "id": "f988d44d-619a-46a4-b4c0-7b8a1c12c0fe",
+                          "createdAt": "2026-07-28T02:58:48.000Z",
+                          "updatedAt": "2026-07-28T02:58:48.000Z",
+                          "uid": "35240-f988d44d-619a-46a4-b4c0-7b8a1c12c0fe"
+                        },
+                        {
+                          "name": "Search Transaction Attachments",
+                          "id": "6f0d7754-10b0-443e-868c-addc0f6f6f37",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "transactions",
+                                ":transactionId",
+                                "attachments"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "2096dcf5-ce1f-4fa9-8bdb-12f69d02159b",
+                                  "key": "transactionId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to get the list of `TransactionAttachments` of a `Transaction`."
+                          },
+                          "response": [
+                            {
+                              "id": "c0f09daf-0c1d-4c4e-918c-1c71fc615c5c",
+                              "name": "The returned array contains `TransactionAttachment`.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "attachments"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "transactionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"attachments\": [\n    {\n      \"attachment_id\": \"<string>\",\n      \"transaction_id\": \"<string>\",\n      \"file_name\": \"<string>\",\n      \"file_extension\": \"<string>\",\n      \"file_size\": \"<long>\",\n      \"url\": \"<string>\",\n      \"file_url\": \"<string>\",\n      \"url_type\": \"UPLOAD_URL\",\n      \"attachment_type\": \"MAIL\",\n      \"read_only\": \"<boolean>\",\n      \"content_type\": \"<string>\",\n      \"upload_time\": \"<string>\",\n      \"attachment_user_id\": \"<string>\",\n      \"upload_user_channel\": \"WEB\",\n      \"compressed_file\": {\n        \"file_name\": \"<string>\",\n        \"file_extension\": \"<string>\",\n        \"file_size\": \"<long>\",\n        \"file_url\": \"<string>\",\n        \"url\": \"<string>\",\n        \"url_type\": \"DOWNLOAD_URL\"\n      },\n      \"metadata\": {\n        \"commodo_1\": \"<string>\"\n      },\n      \"last_update_time\": \"<string>\"\n    },\n    {\n      \"attachment_id\": \"<string>\",\n      \"transaction_id\": \"<string>\",\n      \"file_name\": \"<string>\",\n      \"file_extension\": \"<string>\",\n      \"file_size\": \"<long>\",\n      \"url\": \"<string>\",\n      \"file_url\": \"<string>\",\n      \"url_type\": \"UPDATE_METADATA\",\n      \"attachment_type\": \"PURCHASE_REQUEST\",\n      \"read_only\": \"<boolean>\",\n      \"content_type\": \"<string>\",\n      \"upload_time\": \"<string>\",\n      \"attachment_user_id\": \"<string>\",\n      \"upload_user_channel\": \"BO_USER\",\n      \"compressed_file\": {\n        \"file_name\": \"<string>\",\n        \"file_extension\": \"<string>\",\n        \"file_size\": \"<long>\",\n        \"file_url\": \"<string>\",\n        \"url\": \"<string>\",\n        \"url_type\": \"UPLOAD_URL\"\n      },\n      \"metadata\": {\n        \"velit48\": \"<string>\",\n        \"officia_8c0\": \"<string>\"\n      },\n      \"last_update_time\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:58:48.000Z",
+                              "updatedAt": "2026-07-28T02:58:48.000Z",
+                              "uid": "35240-c0f09daf-0c1d-4c4e-918c-1c71fc615c5c"
+                            },
+                            {
+                              "id": "02762461-2365-4660-9594-b0f4b1875871",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "attachments"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "transactionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:48.000Z",
+                              "updatedAt": "2026-07-28T02:58:48.000Z",
+                              "uid": "35240-02762461-2365-4660-9594-b0f4b1875871"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:48.000Z",
+                          "updatedAt": "2026-07-28T02:58:48.000Z",
+                          "uid": "35240-6f0d7754-10b0-443e-868c-addc0f6f6f37"
+                        },
+                        {
+                          "name": "Upload Transaction Attachment",
+                          "id": "c29d6b17-a552-4c41-a188-7bddf86cfa39",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "description": "The file name of the attachment.",
+                                  "key": "fileName",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The file type of the attachment.",
+                                  "key": "fileType",
+                                  "value": "<string>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "transactions",
+                                ":transactionId",
+                                "attachments"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "4e391124-1a97-4280-b204-747ae0d7b8c5",
+                                  "key": "transactionId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to upload a `TransactionAttachment` to a `Transaction`.\nThe first step is to get a temporary URL where to upload the attachment file."
+                          },
+                          "response": [
+                            {
+                              "id": "5a9c9b6d-0943-4289-b502-05332360bdb1",
+                              "name": "The returned resource is a single `TransactionAttachment`.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "description": "The file name of the attachment.",
+                                      "key": "fileName",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "The file type of the attachment.",
+                                      "key": "fileType",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "attachments"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "transactionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"attachment_id\": \"<string>\",\n  \"transaction_id\": \"<string>\",\n  \"file_name\": \"<string>\",\n  \"file_extension\": \"<string>\",\n  \"file_size\": \"<long>\",\n  \"url\": \"<string>\",\n  \"file_url\": \"<string>\",\n  \"url_type\": \"DOWNLOAD_URL\",\n  \"attachment_type\": \"POP_AUTH\",\n  \"read_only\": \"<boolean>\",\n  \"content_type\": \"<string>\",\n  \"upload_time\": \"<string>\",\n  \"attachment_user_id\": \"<string>\",\n  \"upload_user_channel\": \"BAPI\",\n  \"compressed_file\": {\n    \"file_name\": \"<string>\",\n    \"file_extension\": \"<string>\",\n    \"file_size\": \"<long>\",\n    \"file_url\": \"<string>\",\n    \"url\": \"<string>\",\n    \"url_type\": \"UPLOAD_URL\"\n  },\n  \"metadata\": {\n    \"Duis_7\": \"<string>\",\n    \"adbe\": \"<string>\"\n  },\n  \"last_update_time\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:58:48.000Z",
+                              "updatedAt": "2026-07-28T02:58:48.000Z",
+                              "uid": "35240-5a9c9b6d-0943-4289-b502-05332360bdb1"
+                            },
+                            {
+                              "id": "a0eb651b-4a60-486d-88cc-fb2c4bde0cdf",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "description": "The file name of the attachment.",
+                                      "key": "fileName",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "The file type of the attachment.",
+                                      "key": "fileType",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "attachments"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "transactionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:48.000Z",
+                              "updatedAt": "2026-07-28T02:58:48.000Z",
+                              "uid": "35240-a0eb651b-4a60-486d-88cc-fb2c4bde0cdf"
+                            },
+                            {
+                              "id": "0a03118c-e1d6-4702-8a06-725281e01036",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/x-www-form-urlencoded"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "urlencoded",
+                                  "urlencoded": [
+                                    {
+                                      "description": "The file name of the attachment.",
+                                      "key": "fileName",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "The file type of the attachment.",
+                                      "key": "fileType",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/attachments",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "attachments"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "transactionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:48.000Z",
+                              "updatedAt": "2026-07-28T02:58:48.000Z",
+                              "uid": "35240-0a03118c-e1d6-4702-8a06-725281e01036"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:48.000Z",
+                          "updatedAt": "2026-07-28T02:58:48.000Z",
+                          "uid": "35240-c29d6b17-a552-4c41-a188-7bddf86cfa39"
+                        }
+                      ],
+                      "id": "bb338f6b-aa77-40d3-bd38-cde63d5c148b",
+                      "createdAt": "2026-07-28T02:58:48.000Z",
+                      "updatedAt": "2026-07-28T02:58:48.000Z",
+                      "uid": "35240-bb338f6b-aa77-40d3-bd38-cde63d5c148b"
+                    }
+                  ],
+                  "id": "efe2925d-b93a-4cfc-ac34-df7a132174aa",
+                  "createdAt": "2026-07-28T02:58:48.000Z",
+                  "updatedAt": "2026-07-28T02:58:48.000Z",
+                  "uid": "35240-efe2925d-b93a-4cfc-ac34-df7a132174aa"
+                }
+              ],
+              "id": "bb419960-d97b-4e7d-9183-39863806c459",
+              "createdAt": "2026-07-28T02:58:48.000Z",
+              "updatedAt": "2026-07-28T02:58:48.000Z",
+              "uid": "35240-bb419960-d97b-4e7d-9183-39863806c459"
+            }
+          ],
+          "id": "b2418d5a-cd53-4289-ad4a-6285ce43d591",
+          "createdAt": "2026-07-28T02:58:48.000Z",
+          "updatedAt": "2026-07-28T02:58:48.000Z",
+          "uid": "35240-b2418d5a-cd53-4289-ad4a-6285ce43d591"
+        }
+      ],
+      "id": "2b734eea-1e90-493a-ad98-9eff5e113b36",
+      "createdAt": "2026-07-28T02:58:48.000Z",
+      "updatedAt": "2026-07-28T02:58:48.000Z",
+      "uid": "35240-2b734eea-1e90-493a-ad98-9eff5e113b36"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

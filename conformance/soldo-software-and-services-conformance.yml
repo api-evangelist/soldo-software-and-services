@@ -1,0 +1,54 @@
+generated: '2026-07-21'
+method: searched
+source:
+  - openapi/soldo-software-and-services-business-api-openapi.json
+  - https://www.soldo.com/en-gb/security/
+note: >-
+  Standards and compliance posture for Soldo. Cross-cutting API standards are derived from the
+  OpenAPI/docs; the published compliance certifications are captured from the Soldo security page
+  and mirrored in security/soldo-software-and-services-trust-center.yml.
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: OpenAPI securityScheme standardAuth type oauth2, clientCredentials flow.
+  - id: oauth2-client-credentials
+    conforms: true
+    evidence: tokenUrl https://api.soldo.com/oauth/authorize; documented client-credentials grant.
+  - id: oidc
+    conforms: false
+    evidence: No openid-configuration; OAuth2 client credentials only (machine-to-machine).
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Custom { error_code, message } envelope; not application/problem+json.
+  - id: rfc8594-sunset-header
+    conforms: false
+    evidence: No Sunset/Deprecation header support documented.
+  - id: pagination
+    conforms: true
+    evidence: Documented page-number pagination (p/s/d/props) with total/pages/results envelope.
+  - id: rate-limit-headers
+    conforms: true
+    evidence: x-ratelimit-limit/remaining-minute/second headers; 429 on exceed.
+  - id: psd2-sca
+    conforms: true
+    evidence: SCA verification during credential creation; Strong Customer Authentication referenced on security page.
+  - id: pci-dss
+    conforms: true
+    evidence: PCI DSS Level 1 compliance stated on https://www.soldo.com/en-gb/security/.
+  - id: iso-27001
+    conforms: true
+    evidence: ISO/IEC 27001 certification stated on https://www.soldo.com/en-gb/security/.
+  - id: iso-9001
+    conforms: true
+    evidence: ISO/IEC 9001 certification stated on https://www.soldo.com/en-gb/security/.
+  - id: cyber-essentials-plus
+    conforms: true
+    evidence: Cyber Essentials Plus stated on https://www.soldo.com/en-gb/security/.
+compliance_certifications:
+  - PCI DSS Level 1
+  - ISO/IEC 27001
+  - ISO/IEC 9001
+  - Cyber Essentials Plus
+regulatory:
+  - FCA authorised (UK Financial Conduct Authority)
+  - Mastercard principal member / card issuer

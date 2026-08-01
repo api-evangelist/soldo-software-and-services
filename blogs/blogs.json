@@ -1,0 +1,14 @@
+{
+  "repo": "soldo-software-and-services",
+  "feeds": [
+    {
+      "source": "https://soldo.statuspage.io",
+      "feed_url": "https://soldo.statuspage.io",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-08-01T15:49:00Z"
+}

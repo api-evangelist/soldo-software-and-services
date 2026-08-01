@@ -1,0 +1,856 @@
+{
+  "info": {
+    "_postman_id": "6e40d187-8058-4d33-b9cf-509021101944",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Transaction Custom Export API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:49.000Z",
+    "updatedAt": "2026-07-28T02:58:49.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-6e40d187-8058-4d33-b9cf-509021101944"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "transactions",
+              "item": [
+                {
+                  "name": "custom-exports",
+                  "item": [
+                    {
+                      "name": "bulk-add",
+                      "item": [
+                        {
+                          "name": "Add Bulk TransactionCustomExport",
+                          "id": "704b48d3-fe3f-4ca7-932a-9fdeac00dd0d",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"product\": \"<string>\",\n  \"transaction_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/transactions/custom-exports/bulk-add",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "transactions",
+                                "custom-exports",
+                                "bulk-add"
+                              ]
+                            },
+                            "description": "Endpoint bulk to add a new `TransactionCustomExport`."
+                          },
+                          "response": [
+                            {
+                              "id": "da02483b-aa45-4d16-9989-c6244a28567d",
+                              "name": "The result is an array containing `TransactionCustomExport`.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"product\": \"<string>\",\n  \"transaction_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/custom-exports/bulk-add",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    "custom-exports",
+                                    "bulk-add"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"exported_transactions\": [\n    {\n      \"id\": \"<string>\",\n      \"transaction_id\": \"<string>\",\n      \"product\": \"<string>\",\n      \"export_timestamp\": \"<string>\",\n      \"status\": \"FAILED\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"transaction_id\": \"<string>\",\n      \"product\": \"<string>\",\n      \"export_timestamp\": \"<string>\",\n      \"status\": \"SUCCESS\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:58:49.000Z",
+                              "updatedAt": "2026-07-28T02:58:49.000Z",
+                              "uid": "35240-da02483b-aa45-4d16-9989-c6244a28567d"
+                            },
+                            {
+                              "id": "0cd145b5-3b42-47ba-b8c2-5234a27611fe",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"product\": \"<string>\",\n  \"transaction_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/custom-exports/bulk-add",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    "custom-exports",
+                                    "bulk-add"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:49.000Z",
+                              "updatedAt": "2026-07-28T02:58:49.000Z",
+                              "uid": "35240-0cd145b5-3b42-47ba-b8c2-5234a27611fe"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:49.000Z",
+                          "updatedAt": "2026-07-28T02:58:49.000Z",
+                          "uid": "35240-704b48d3-fe3f-4ca7-932a-9fdeac00dd0d"
+                        }
+                      ],
+                      "id": "8e741ee4-7b55-4a6e-9a07-cf20363dc97c",
+                      "createdAt": "2026-07-28T02:58:49.000Z",
+                      "updatedAt": "2026-07-28T02:58:49.000Z",
+                      "uid": "35240-8e741ee4-7b55-4a6e-9a07-cf20363dc97c"
+                    },
+                    {
+                      "name": "bulk-remove",
+                      "item": [
+                        {
+                          "name": " Remove Bulk TransactionCustomExport",
+                          "id": "71174cbb-d6e8-4c75-9a70-0eb5e8f93dd9",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/transactions/custom-exports/bulk-remove",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "transactions",
+                                "custom-exports",
+                                "bulk-remove"
+                              ]
+                            },
+                            "description": "Endpoint bulk to remove a list of `TransactionCustomExport` by TransactionIds."
+                          },
+                          "response": [
+                            {
+                              "id": "667f241e-7a9e-4ce6-9e32-aa8d22a1d57c",
+                              "name": "The result is an array containing `TransactionCustomExport`.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/custom-exports/bulk-remove",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    "custom-exports",
+                                    "bulk-remove"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"result\": [\n    {\n      \"id\": \"<string>\",\n      \"transaction_id\": \"<string>\",\n      \"status\": \"SUCCESS\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"transaction_id\": \"<string>\",\n      \"status\": \"SUCCESS\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:58:49.000Z",
+                              "updatedAt": "2026-07-28T02:58:49.000Z",
+                              "uid": "35240-667f241e-7a9e-4ce6-9e32-aa8d22a1d57c"
+                            },
+                            {
+                              "id": "209130d3-c4fd-4559-9a7d-2d630d3bd6db",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/custom-exports/bulk-remove",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    "custom-exports",
+                                    "bulk-remove"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:49.000Z",
+                              "updatedAt": "2026-07-28T02:58:49.000Z",
+                              "uid": "35240-209130d3-c4fd-4559-9a7d-2d630d3bd6db"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:49.000Z",
+                          "updatedAt": "2026-07-28T02:58:49.000Z",
+                          "uid": "35240-71174cbb-d6e8-4c75-9a70-0eb5e8f93dd9"
+                        }
+                      ],
+                      "id": "e147e032-7a3b-4ce2-8df1-e1d40f8d5ef5",
+                      "createdAt": "2026-07-28T02:58:49.000Z",
+                      "updatedAt": "2026-07-28T02:58:49.000Z",
+                      "uid": "35240-e147e032-7a3b-4ce2-8df1-e1d40f8d5ef5"
+                    },
+                    {
+                      "name": "bulk-retrieve",
+                      "item": [
+                        {
+                          "name": " Retrieve Bulk TransactionCustomExport",
+                          "id": "f8f76343-538f-40c3-845e-f4403551f5e0",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"transaction_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/transactions/custom-exports/bulk-retrieve",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "transactions",
+                                "custom-exports",
+                                "bulk-retrieve"
+                              ]
+                            },
+                            "description": "Endpoint retrieve a list of `TransactionCustomExport` by TransactionIds."
+                          },
+                          "response": [
+                            {
+                              "id": "fe26dad4-e689-418a-b543-7d2b7f831643",
+                              "name": "The result is an array containing `TransactionCustomExport`.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"transaction_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/custom-exports/bulk-retrieve",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    "custom-exports",
+                                    "bulk-retrieve"
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"result\": [\n    {\n      \"id\": \"<string>\",\n      \"transaction_id\": \"<string>\",\n      \"product\": \"<string>\",\n      \"export_timestamp\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"transaction_id\": \"<string>\",\n      \"product\": \"<string>\",\n      \"export_timestamp\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:58:49.000Z",
+                              "updatedAt": "2026-07-28T02:58:49.000Z",
+                              "uid": "35240-fe26dad4-e689-418a-b543-7d2b7f831643"
+                            },
+                            {
+                              "id": "439ef139-6c1b-4d05-8153-a711df37e611",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"transaction_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/custom-exports/bulk-retrieve",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    "custom-exports",
+                                    "bulk-retrieve"
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:49.000Z",
+                              "updatedAt": "2026-07-28T02:58:49.000Z",
+                              "uid": "35240-439ef139-6c1b-4d05-8153-a711df37e611"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:49.000Z",
+                          "updatedAt": "2026-07-28T02:58:49.000Z",
+                          "uid": "35240-f8f76343-538f-40c3-845e-f4403551f5e0"
+                        }
+                      ],
+                      "id": "7e0ac7e5-0fbf-448e-9158-c21396db518d",
+                      "createdAt": "2026-07-28T02:58:49.000Z",
+                      "updatedAt": "2026-07-28T02:58:49.000Z",
+                      "uid": "35240-7e0ac7e5-0fbf-448e-9158-c21396db518d"
+                    },
+                    {
+                      "name": "search",
+                      "item": [
+                        {
+                          "name": "Search TransactionCustomExport",
+                          "id": "0b31f255-8351-4a84-b629-fd95ef716272",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/transactions/custom-exports/search?product=<string>&p=0&s=0&d=DESC&props=<string>&props=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "transactions",
+                                "custom-exports",
+                                "search"
+                              ],
+                              "query": [
+                                {
+                                  "description": "A product that exported list of `Transaction`",
+                                  "key": "product",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "It indicates the specific page to display (the counter starts from zero).",
+                                  "key": "p",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates the number of items per page.",
+                                  "key": "s",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates how the pages are ordered.",
+                                  "key": "d",
+                                  "value": "DESC"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to get the list of a `TransactionCustomExport`."
+                          },
+                          "response": [
+                            {
+                              "id": "9d935a28-2217-4f2c-b4c7-05962e58af89",
+                              "name": "The result is an array containing `TransactionCustomExport`.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/custom-exports/search?product=<string>&p=0&s=0&d=DESC&props=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    "custom-exports",
+                                    "search"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "A product that exported list of `Transaction`",
+                                      "key": "product",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "It indicates the specific page to display (the counter starts from zero).",
+                                      "key": "p",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "description": "It indicates the number of items per page.",
+                                      "key": "s",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "description": "It indicates how the pages are ordered.",
+                                      "key": "d",
+                                      "value": "DESC"
+                                    },
+                                    {
+                                      "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                      "key": "props",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"transaction_id\": \"<string>\",\n      \"product\": \"<string>\",\n      \"export_timestamp\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"transaction_id\": \"<string>\",\n      \"product\": \"<string>\",\n      \"export_timestamp\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:58:49.000Z",
+                              "updatedAt": "2026-07-28T02:58:49.000Z",
+                              "uid": "35240-9d935a28-2217-4f2c-b4c7-05962e58af89"
+                            },
+                            {
+                              "id": "9d8b2981-0ff1-4424-8f52-31dab2398b14",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/custom-exports/search?product=<string>&p=0&s=0&d=DESC&props=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    "custom-exports",
+                                    "search"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "A product that exported list of `Transaction`",
+                                      "key": "product",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "It indicates the specific page to display (the counter starts from zero).",
+                                      "key": "p",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "description": "It indicates the number of items per page.",
+                                      "key": "s",
+                                      "value": "0"
+                                    },
+                                    {
+                                      "description": "It indicates how the pages are ordered.",
+                                      "key": "d",
+                                      "value": "DESC"
+                                    },
+                                    {
+                                      "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                      "key": "props",
+                                      "value": "<string>"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:49.000Z",
+                              "updatedAt": "2026-07-28T02:58:49.000Z",
+                              "uid": "35240-9d8b2981-0ff1-4424-8f52-31dab2398b14"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:49.000Z",
+                          "updatedAt": "2026-07-28T02:58:49.000Z",
+                          "uid": "35240-0b31f255-8351-4a84-b629-fd95ef716272"
+                        }
+                      ],
+                      "id": "8a211543-61da-473e-948e-833b5d4cf28c",
+                      "createdAt": "2026-07-28T02:58:49.000Z",
+                      "updatedAt": "2026-07-28T02:58:49.000Z",
+                      "uid": "35240-8a211543-61da-473e-948e-833b5d4cf28c"
+                    }
+                  ],
+                  "id": "57a1d540-79e9-4d98-904b-996421abde0f",
+                  "createdAt": "2026-07-28T02:58:49.000Z",
+                  "updatedAt": "2026-07-28T02:58:49.000Z",
+                  "uid": "35240-57a1d540-79e9-4d98-904b-996421abde0f"
+                }
+              ],
+              "id": "84ba72b6-1c6f-40d9-a1c7-e5eff9c4d37d",
+              "createdAt": "2026-07-28T02:58:49.000Z",
+              "updatedAt": "2026-07-28T02:58:49.000Z",
+              "uid": "35240-84ba72b6-1c6f-40d9-a1c7-e5eff9c4d37d"
+            }
+          ],
+          "id": "ae995f60-5246-4635-89b2-5e77622bea03",
+          "createdAt": "2026-07-28T02:58:49.000Z",
+          "updatedAt": "2026-07-28T02:58:49.000Z",
+          "uid": "35240-ae995f60-5246-4635-89b2-5e77622bea03"
+        }
+      ],
+      "id": "8838e28c-120e-468a-8348-027b3899270d",
+      "createdAt": "2026-07-28T02:58:49.000Z",
+      "updatedAt": "2026-07-28T02:58:49.000Z",
+      "uid": "35240-8838e28c-120e-468a-8348-027b3899270d"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

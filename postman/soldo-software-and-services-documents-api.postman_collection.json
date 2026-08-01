@@ -1,0 +1,1103 @@
+{
+  "info": {
+    "_postman_id": "0a0d38f0-68d7-4fd1-9518-7df89779acc5",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Documents API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:57:56.000Z",
+    "updatedAt": "2026-07-28T02:57:56.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0a0d38f0-68d7-4fd1-9518-7df89779acc5"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "documents",
+              "item": [
+                {
+                  "name": "confirm",
+                  "item": [
+                    {
+                      "name": "Confirm Document Upload",
+                      "id": "a203bce7-e3b0-4d97-aa3d-aa296c58c85f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/x-www-form-urlencoded"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "urlencoded",
+                          "urlencoded": [
+                            {
+                              "description": "(Required) Attachment name of the `Document`",
+                              "key": "attachment_name",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "(Required) The MIME type of the `Document`.",
+                              "key": "content_type",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The type of file of the `Document`.",
+                              "key": "attachment_type",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The User or system that uploaded the file of the `Document`",
+                              "key": "uploaded_by",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The requested thumbnail size hint for downstream rendering of file of the `Document` .",
+                              "key": "thumbnails_size",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Readonly flag of the `Document`",
+                              "key": "readonly",
+                              "value": "<boolean>"
+                            },
+                            {
+                              "description": "It indicates whether automated content analysis should be performed on the `Document` after upload.",
+                              "key": "analysis_required",
+                              "value": "<boolean>"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/documents/confirm",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "documents",
+                            "confirm"
+                          ]
+                        },
+                        "description": "After you got the temporary file URL of type `UPLOAD_URL` and the file is uploaded, the upload of file must be confirmed."
+                      },
+                      "response": [
+                        {
+                          "id": "3ed26d3b-8c39-4e2b-88e4-f87fc629dd32",
+                          "name": "The returned resource is a single `Document`.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "description": "(Required) Attachment name of the `Document`",
+                                  "key": "attachment_name",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "(Required) The MIME type of the `Document`.",
+                                  "key": "content_type",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The type of file of the `Document`.",
+                                  "key": "attachment_type",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The User or system that uploaded the file of the `Document`",
+                                  "key": "uploaded_by",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The requested thumbnail size hint for downstream rendering of file of the `Document` .",
+                                  "key": "thumbnails_size",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Readonly flag of the `Document`",
+                                  "key": "readonly",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "It indicates whether automated content analysis should be performed on the `Document` after upload.",
+                                  "key": "analysis_required",
+                                  "value": "<boolean>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/documents/confirm",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "documents",
+                                "confirm"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"preview_url\": \"<string>\",\n  \"thumbnail_url\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"attached\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:57:56.000Z",
+                          "updatedAt": "2026-07-28T02:57:56.000Z",
+                          "uid": "35240-3ed26d3b-8c39-4e2b-88e4-f87fc629dd32"
+                        },
+                        {
+                          "id": "8235d9e9-66a7-434d-83f9-51813ba928bb",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "description": "(Required) Attachment name of the `Document`",
+                                  "key": "attachment_name",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "(Required) The MIME type of the `Document`.",
+                                  "key": "content_type",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The type of file of the `Document`.",
+                                  "key": "attachment_type",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The User or system that uploaded the file of the `Document`",
+                                  "key": "uploaded_by",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The requested thumbnail size hint for downstream rendering of file of the `Document` .",
+                                  "key": "thumbnails_size",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Readonly flag of the `Document`",
+                                  "key": "readonly",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "It indicates whether automated content analysis should be performed on the `Document` after upload.",
+                                  "key": "analysis_required",
+                                  "value": "<boolean>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/documents/confirm",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "documents",
+                                "confirm"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:56.000Z",
+                          "updatedAt": "2026-07-28T02:57:56.000Z",
+                          "uid": "35240-8235d9e9-66a7-434d-83f9-51813ba928bb"
+                        },
+                        {
+                          "id": "ec7af651-7d23-410d-9077-519085e83681",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "description": "(Required) Attachment name of the `Document`",
+                                  "key": "attachment_name",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "(Required) The MIME type of the `Document`.",
+                                  "key": "content_type",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The type of file of the `Document`.",
+                                  "key": "attachment_type",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The User or system that uploaded the file of the `Document`",
+                                  "key": "uploaded_by",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "The requested thumbnail size hint for downstream rendering of file of the `Document` .",
+                                  "key": "thumbnails_size",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Readonly flag of the `Document`",
+                                  "key": "readonly",
+                                  "value": "<boolean>"
+                                },
+                                {
+                                  "description": "It indicates whether automated content analysis should be performed on the `Document` after upload.",
+                                  "key": "analysis_required",
+                                  "value": "<boolean>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/documents/confirm",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "documents",
+                                "confirm"
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:56.000Z",
+                          "updatedAt": "2026-07-28T02:57:56.000Z",
+                          "uid": "35240-ec7af651-7d23-410d-9077-519085e83681"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:56.000Z",
+                      "updatedAt": "2026-07-28T02:57:56.000Z",
+                      "uid": "35240-a203bce7-e3b0-4d97-aa3d-aa296c58c85f"
+                    }
+                  ],
+                  "id": "f0b60361-29b7-4d72-8f06-8b22fbf02c1f",
+                  "createdAt": "2026-07-28T02:57:56.000Z",
+                  "updatedAt": "2026-07-28T02:57:56.000Z",
+                  "uid": "35240-f0b60361-29b7-4d72-8f06-8b22fbf02c1f"
+                },
+                {
+                  "name": "{documentId}",
+                  "item": [
+                    {
+                      "name": "Get Document",
+                      "id": "7d980aa0-7193-488e-b59f-6645fe5e2ba7",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/documents/:documentId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "documents",
+                            ":documentId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "a6661028-80cf-4e3e-a50d-0a2328fe59fb",
+                              "key": "documentId",
+                              "value": "<string>",
+                              "description": "(Required) The `Document` ID."
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to get a specific `Document` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "5318c246-30a1-44e8-85d4-639f8f0c6c42",
+                          "name": "The result is a single `Document`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/documents/:documentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "documents",
+                                ":documentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "documentId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"preview_url\": \"<string>\",\n  \"thumbnail_url\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"attached\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:57:56.000Z",
+                          "updatedAt": "2026-07-28T02:57:56.000Z",
+                          "uid": "35240-5318c246-30a1-44e8-85d4-639f8f0c6c42"
+                        },
+                        {
+                          "id": "672ab13a-c6ef-496a-8310-c7729802174a",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/documents/:documentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "documents",
+                                ":documentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "documentId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:56.000Z",
+                          "updatedAt": "2026-07-28T02:57:56.000Z",
+                          "uid": "35240-672ab13a-c6ef-496a-8310-c7729802174a"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:56.000Z",
+                      "updatedAt": "2026-07-28T02:57:56.000Z",
+                      "uid": "35240-7d980aa0-7193-488e-b59f-6645fe5e2ba7"
+                    },
+                    {
+                      "name": "Delete Document",
+                      "id": "ea885b75-84fa-4ba9-ba86-2c121e624984",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/documents/:documentId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "documents",
+                            ":documentId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "14184319-4c8e-4621-b0c5-0aab3756ad30",
+                              "key": "documentId",
+                              "value": "<string>",
+                              "description": "(Required) The `Document` ID."
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to delete a specific `Document` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "97a501ba-6419-47fe-95bb-11ca224cdebe",
+                          "name": "No content as result.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/documents/:documentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "documents",
+                                ":documentId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "documentId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:56.000Z",
+                          "updatedAt": "2026-07-28T02:57:56.000Z",
+                          "uid": "35240-97a501ba-6419-47fe-95bb-11ca224cdebe"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:56.000Z",
+                      "updatedAt": "2026-07-28T02:57:56.000Z",
+                      "uid": "35240-ea885b75-84fa-4ba9-ba86-2c121e624984"
+                    }
+                  ],
+                  "id": "ed2bb2f6-a250-400c-a838-09735f2764df",
+                  "createdAt": "2026-07-28T02:57:56.000Z",
+                  "updatedAt": "2026-07-28T02:57:56.000Z",
+                  "uid": "35240-ed2bb2f6-a250-400c-a838-09735f2764df"
+                },
+                {
+                  "name": "upload",
+                  "item": [
+                    {
+                      "name": "Upload Document",
+                      "id": "1f0d86b9-20c5-47bc-9387-c373d7cdf98a",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/x-www-form-urlencoded"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "urlencoded",
+                          "urlencoded": [
+                            {
+                              "description": "(Required) The MIME type of the `Document`.",
+                              "key": "content_type",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "(Required) The file extension of the `Document`.",
+                              "key": "file_extension",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/documents/upload",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "documents",
+                            "upload"
+                          ]
+                        },
+                        "description": "Endpoint to upload a `Document`.The first step is to get a temporary URL where to upload the file."
+                      },
+                      "response": [
+                        {
+                          "id": "4d526b98-f969-48e4-ac93-92316bdbf9b0",
+                          "name": "The returned resource is a single `UploadUrlDocument`.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "description": "(Required) The MIME type of the `Document`.",
+                                  "key": "content_type",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "(Required) The file extension of the `Document`.",
+                                  "key": "file_extension",
+                                  "value": "<string>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/documents/upload",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "documents",
+                                "upload"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"uploaded_by\": \"<string>\",\n  \"operation_type\": \"UPLOAD_URL\",\n  \"content_type\": \"<string>\",\n  \"attachment_name\": \"<string>\",\n  \"pre_signed_url\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:57:56.000Z",
+                          "updatedAt": "2026-07-28T02:57:56.000Z",
+                          "uid": "35240-4d526b98-f969-48e4-ac93-92316bdbf9b0"
+                        },
+                        {
+                          "id": "231db478-6c17-42bf-b3e5-82b02024374d",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "description": "(Required) The MIME type of the `Document`.",
+                                  "key": "content_type",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "(Required) The file extension of the `Document`.",
+                                  "key": "file_extension",
+                                  "value": "<string>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/documents/upload",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "documents",
+                                "upload"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:56.000Z",
+                          "updatedAt": "2026-07-28T02:57:56.000Z",
+                          "uid": "35240-231db478-6c17-42bf-b3e5-82b02024374d"
+                        },
+                        {
+                          "id": "a0896515-b4c0-471f-8ca2-79198e594213",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/x-www-form-urlencoded"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "urlencoded",
+                              "urlencoded": [
+                                {
+                                  "description": "(Required) The MIME type of the `Document`.",
+                                  "key": "content_type",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "(Required) The file extension of the `Document`.",
+                                  "key": "file_extension",
+                                  "value": "<string>"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/documents/upload",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "documents",
+                                "upload"
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:56.000Z",
+                          "updatedAt": "2026-07-28T02:57:56.000Z",
+                          "uid": "35240-a0896515-b4c0-471f-8ca2-79198e594213"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:56.000Z",
+                      "updatedAt": "2026-07-28T02:57:56.000Z",
+                      "uid": "35240-1f0d86b9-20c5-47bc-9387-c373d7cdf98a"
+                    }
+                  ],
+                  "id": "0e8e9254-88e6-4d1c-b56c-a268ea9a44a8",
+                  "createdAt": "2026-07-28T02:57:56.000Z",
+                  "updatedAt": "2026-07-28T02:57:56.000Z",
+                  "uid": "35240-0e8e9254-88e6-4d1c-b56c-a268ea9a44a8"
+                },
+                {
+                  "name": "Search Documents",
+                  "id": "c27f5ecf-5d2e-4b50-8917-069bf7ceeef9",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/documents?p=0&s=0&props=<string>&props=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "documents"
+                      ],
+                      "query": [
+                        {
+                          "description": "0",
+                          "key": "p",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the number of items per page.",
+                          "key": "s",
+                          "value": "0"
+                        },
+                        {
+                          "key": "props",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "props",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to search `Documents` stored in the repository."
+                  },
+                  "response": [
+                    {
+                      "id": "0befad24-388f-4002-90eb-86333c245746",
+                      "name": "The result is an array containing `Documents`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/documents?p=0&s=0&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "documents"
+                          ],
+                          "query": [
+                            {
+                              "description": "0",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"attachment_url\": \"<string>\",\n      \"preview_url\": \"<string>\",\n      \"thumbnail_url\": \"<string>\",\n      \"import_date\": \"<dateTime>\",\n      \"attached\": \"<boolean>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"attachment_url\": \"<string>\",\n      \"preview_url\": \"<string>\",\n      \"thumbnail_url\": \"<string>\",\n      \"import_date\": \"<dateTime>\",\n      \"attached\": \"<boolean>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:57:56.000Z",
+                      "updatedAt": "2026-07-28T02:57:56.000Z",
+                      "uid": "35240-0befad24-388f-4002-90eb-86333c245746"
+                    },
+                    {
+                      "id": "3e5157a9-0de1-4837-b3ed-54fd82f21214",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/documents?p=0&s=0&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "documents"
+                          ],
+                          "query": [
+                            {
+                              "description": "0",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:57:56.000Z",
+                      "updatedAt": "2026-07-28T02:57:56.000Z",
+                      "uid": "35240-3e5157a9-0de1-4837-b3ed-54fd82f21214"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:57:56.000Z",
+                  "updatedAt": "2026-07-28T02:57:56.000Z",
+                  "uid": "35240-c27f5ecf-5d2e-4b50-8917-069bf7ceeef9"
+                }
+              ],
+              "id": "5a7cdca1-e914-4234-92d8-f38b7097d987",
+              "createdAt": "2026-07-28T02:57:56.000Z",
+              "updatedAt": "2026-07-28T02:57:56.000Z",
+              "uid": "35240-5a7cdca1-e914-4234-92d8-f38b7097d987"
+            }
+          ],
+          "id": "c22e47dd-0c4a-4618-8e9d-1a1494188476",
+          "createdAt": "2026-07-28T02:57:56.000Z",
+          "updatedAt": "2026-07-28T02:57:56.000Z",
+          "uid": "35240-c22e47dd-0c4a-4618-8e9d-1a1494188476"
+        }
+      ],
+      "id": "e2622017-8fd9-470c-9845-a98f01e092d6",
+      "createdAt": "2026-07-28T02:57:56.000Z",
+      "updatedAt": "2026-07-28T02:57:56.000Z",
+      "uid": "35240-e2622017-8fd9-470c-9845-a98f01e092d6"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

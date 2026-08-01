@@ -1,0 +1,388 @@
+{
+  "info": {
+    "_postman_id": "f6f7b77a-0d02-41ee-b072-7ad52707c03f",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Transaction Tags API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:58.000Z",
+    "updatedAt": "2026-07-28T02:58:59.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f6f7b77a-0d02-41ee-b072-7ad52707c03f"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "transactions",
+              "item": [
+                {
+                  "name": "{transactionId}",
+                  "item": [
+                    {
+                      "name": "tags",
+                      "item": [
+                        {
+                          "name": "{tagId}",
+                          "item": [
+                            {
+                              "name": "Add Tag to Transaction",
+                              "id": "280eaaea-72c1-48b3-b5dc-b455d067e629",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "POST",
+                                "header": [],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/tags/:tagId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "tags",
+                                    ":tagId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "1d273385-65c5-4fd0-a713-a11845f948bc",
+                                      "key": "transactionId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "77ec09f1-7945-4271-9820-21b3a6461771",
+                                      "key": "tagId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to assign a `Tag` to a `Transaction`."
+                              },
+                              "response": [
+                                {
+                                  "id": "7e63bb27-c8e7-459b-8f8b-83f2791bc0be",
+                                  "name": "No content as result.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/tags/:tagId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "tags",
+                                        ":tagId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "tagId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "No Content",
+                                  "code": 204,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:59.000Z",
+                                  "updatedAt": "2026-07-28T02:58:59.000Z",
+                                  "uid": "35240-7e63bb27-c8e7-459b-8f8b-83f2791bc0be"
+                                },
+                                {
+                                  "id": "f8f72a0c-b2f7-40c5-9e71-83477f162489",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/tags/:tagId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "tags",
+                                        ":tagId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "tagId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:59.000Z",
+                                  "updatedAt": "2026-07-28T02:58:59.000Z",
+                                  "uid": "35240-f8f72a0c-b2f7-40c5-9e71-83477f162489"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:59.000Z",
+                              "updatedAt": "2026-07-28T02:58:59.000Z",
+                              "uid": "35240-280eaaea-72c1-48b3-b5dc-b455d067e629"
+                            },
+                            {
+                              "name": "Remove Tag from Transaction",
+                              "id": "2c3eb854-588a-4f8e-b344-b7ea4295d463",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "DELETE",
+                                "header": [],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/tags/:tagId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "tags",
+                                    ":tagId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "2e127a29-80a8-4e6e-a429-708933215bda",
+                                      "key": "transactionId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "3eb856a6-43f3-4404-8859-673a2ecce5b2",
+                                      "key": "tagId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to remove a `Tag` from a `Transaction`."
+                              },
+                              "response": [
+                                {
+                                  "id": "77e24d31-1129-4712-8f67-8ae2f8113d82",
+                                  "name": "No content as result.",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/tags/:tagId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "tags",
+                                        ":tagId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "tagId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "No Content",
+                                  "code": 204,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:59.000Z",
+                                  "updatedAt": "2026-07-28T02:58:59.000Z",
+                                  "uid": "35240-77e24d31-1129-4712-8f67-8ae2f8113d82"
+                                },
+                                {
+                                  "id": "f07e4694-81f9-43a8-ad20-473372ec72d5",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/tags/:tagId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "tags",
+                                        ":tagId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        },
+                                        {
+                                          "key": "tagId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:59.000Z",
+                                  "updatedAt": "2026-07-28T02:58:59.000Z",
+                                  "uid": "35240-f07e4694-81f9-43a8-ad20-473372ec72d5"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:59.000Z",
+                              "updatedAt": "2026-07-28T02:58:59.000Z",
+                              "uid": "35240-2c3eb854-588a-4f8e-b344-b7ea4295d463"
+                            }
+                          ],
+                          "id": "a8b7b4b3-7ea8-4f90-80ed-d0c27ed9ec68",
+                          "createdAt": "2026-07-28T02:58:59.000Z",
+                          "updatedAt": "2026-07-28T02:58:59.000Z",
+                          "uid": "35240-a8b7b4b3-7ea8-4f90-80ed-d0c27ed9ec68"
+                        }
+                      ],
+                      "id": "8a2a0395-c209-428d-a22c-05759c68504b",
+                      "createdAt": "2026-07-28T02:58:59.000Z",
+                      "updatedAt": "2026-07-28T02:58:59.000Z",
+                      "uid": "35240-8a2a0395-c209-428d-a22c-05759c68504b"
+                    }
+                  ],
+                  "id": "9668ca61-dda7-44f2-9185-cf99f2fef37f",
+                  "createdAt": "2026-07-28T02:58:59.000Z",
+                  "updatedAt": "2026-07-28T02:58:59.000Z",
+                  "uid": "35240-9668ca61-dda7-44f2-9185-cf99f2fef37f"
+                }
+              ],
+              "id": "0902b275-b60f-449e-85e2-e469e4262025",
+              "createdAt": "2026-07-28T02:58:59.000Z",
+              "updatedAt": "2026-07-28T02:58:59.000Z",
+              "uid": "35240-0902b275-b60f-449e-85e2-e469e4262025"
+            }
+          ],
+          "id": "18fb7078-6ced-4fb4-ab44-044ae9e3c538",
+          "createdAt": "2026-07-28T02:58:59.000Z",
+          "updatedAt": "2026-07-28T02:58:59.000Z",
+          "uid": "35240-18fb7078-6ced-4fb4-ab44-044ae9e3c538"
+        }
+      ],
+      "id": "5cc88b6b-452a-4305-81f9-eaaf9a702e89",
+      "createdAt": "2026-07-28T02:58:59.000Z",
+      "updatedAt": "2026-07-28T02:58:59.000Z",
+      "uid": "35240-5cc88b6b-452a-4305-81f9-eaaf9a702e89"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

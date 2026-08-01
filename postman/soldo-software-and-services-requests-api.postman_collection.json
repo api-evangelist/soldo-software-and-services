@@ -1,0 +1,1636 @@
+{
+  "info": {
+    "_postman_id": "71316a4c-eb7a-40fe-a19e-a1d8d9b058ab",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Requests API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:36.000Z",
+    "updatedAt": "2026-07-28T02:58:37.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-71316a4c-eb7a-40fe-a19e-a1d8d9b058ab"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "requests",
+              "item": [
+                {
+                  "name": "{requestId}",
+                  "item": [
+                    {
+                      "name": "approve",
+                      "item": [
+                        {
+                          "name": "Approve Request",
+                          "id": "542ea50c-09f7-453b-bbab-c8f7ecd2d752",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"approver\": \"<string>\",\n  \"type\": \"TRIP\",\n  \"wallet_id\": \"<string>\",\n  \"note\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/requests/:requestId/approve",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "requests",
+                                ":requestId",
+                                "approve"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "c20b9228-88e4-48a4-856e-77e3c5bd2b59",
+                                  "key": "requestId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to approve an `Request` by ID. Payload depends on the request type (GOODS_OR_SERVICES, FUNDS, TRIP)."
+                          },
+                          "response": [
+                            {
+                              "id": "3db5f8e1-d395-4099-a642-cb4ae304f13e",
+                              "name": "No content as result.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"approver\": \"<string>\",\n  \"type\": \"TRIP\",\n  \"wallet_id\": \"<string>\",\n  \"note\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/requests/:requestId/approve",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "requests",
+                                    ":requestId",
+                                    "approve"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "requestId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:37.000Z",
+                              "updatedAt": "2026-07-28T02:58:37.000Z",
+                              "uid": "35240-3db5f8e1-d395-4099-a642-cb4ae304f13e"
+                            },
+                            {
+                              "id": "4bb7bee4-7077-43d5-a24e-174786060243",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"approver\": \"<string>\",\n  \"type\": \"TRIP\",\n  \"wallet_id\": \"<string>\",\n  \"note\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/requests/:requestId/approve",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "requests",
+                                    ":requestId",
+                                    "approve"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "requestId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:37.000Z",
+                              "updatedAt": "2026-07-28T02:58:37.000Z",
+                              "uid": "35240-4bb7bee4-7077-43d5-a24e-174786060243"
+                            },
+                            {
+                              "id": "25f21603-c18b-49f1-bcd3-85c82a734937",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"approver\": \"<string>\",\n  \"type\": \"TRIP\",\n  \"wallet_id\": \"<string>\",\n  \"note\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/requests/:requestId/approve",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "requests",
+                                    ":requestId",
+                                    "approve"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "requestId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:37.000Z",
+                              "updatedAt": "2026-07-28T02:58:37.000Z",
+                              "uid": "35240-25f21603-c18b-49f1-bcd3-85c82a734937"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:37.000Z",
+                          "updatedAt": "2026-07-28T02:58:37.000Z",
+                          "uid": "35240-542ea50c-09f7-453b-bbab-c8f7ecd2d752"
+                        }
+                      ],
+                      "id": "2da52599-c154-408e-872a-202312f504f8",
+                      "createdAt": "2026-07-28T02:58:37.000Z",
+                      "updatedAt": "2026-07-28T02:58:37.000Z",
+                      "uid": "35240-2da52599-c154-408e-872a-202312f504f8"
+                    },
+                    {
+                      "name": "decline",
+                      "item": [
+                        {
+                          "name": "Decline Request",
+                          "id": "9cf4a88d-3d2b-4cf5-b0df-2dd201785778",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"reviewer\": \"<string>\",\n  \"supervisor_note\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/requests/:requestId/decline",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "requests",
+                                ":requestId",
+                                "decline"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "2a00535c-3a70-4b6b-bad2-be0c106cd24c",
+                                  "key": "requestId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to decline an `Request` by ID."
+                          },
+                          "response": [
+                            {
+                              "id": "30eebc59-3ddc-4c87-9183-0882965f8223",
+                              "name": "No content as result.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"reviewer\": \"<string>\",\n  \"supervisor_note\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/requests/:requestId/decline",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "requests",
+                                    ":requestId",
+                                    "decline"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "requestId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:37.000Z",
+                              "updatedAt": "2026-07-28T02:58:37.000Z",
+                              "uid": "35240-30eebc59-3ddc-4c87-9183-0882965f8223"
+                            },
+                            {
+                              "id": "8f4a5297-263b-492f-9973-0575033d977c",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"reviewer\": \"<string>\",\n  \"supervisor_note\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/requests/:requestId/decline",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "requests",
+                                    ":requestId",
+                                    "decline"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "requestId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:37.000Z",
+                              "updatedAt": "2026-07-28T02:58:37.000Z",
+                              "uid": "35240-8f4a5297-263b-492f-9973-0575033d977c"
+                            },
+                            {
+                              "id": "527ff568-5f4c-45fc-a1d1-4451ab5fc630",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"reviewer\": \"<string>\",\n  \"supervisor_note\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/requests/:requestId/decline",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "requests",
+                                    ":requestId",
+                                    "decline"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "requestId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:37.000Z",
+                              "updatedAt": "2026-07-28T02:58:37.000Z",
+                              "uid": "35240-527ff568-5f4c-45fc-a1d1-4451ab5fc630"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:37.000Z",
+                          "updatedAt": "2026-07-28T02:58:37.000Z",
+                          "uid": "35240-9cf4a88d-3d2b-4cf5-b0df-2dd201785778"
+                        }
+                      ],
+                      "id": "af3a9087-753b-4fd4-b97d-dba23c9a3a4b",
+                      "createdAt": "2026-07-28T02:58:37.000Z",
+                      "updatedAt": "2026-07-28T02:58:37.000Z",
+                      "uid": "35240-af3a9087-753b-4fd4-b97d-dba23c9a3a4b"
+                    },
+                    {
+                      "name": "Get Request",
+                      "id": "c447e28f-e9cc-46d5-a7f3-b531ec7899d1",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/requests/:requestId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "requests",
+                            ":requestId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "b3a2d2be-d713-4ea3-8ad1-cf0d6f4b379d",
+                              "key": "requestId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to get an `Request` by ID.\nThere are 3 types of request:GOODS_OR_SERVICES, FUNDS,TRIP."
+                      },
+                      "response": [
+                        {
+                          "id": "a9b2b0aa-03ba-481f-85f1-8e95ffc6a2a8",
+                          "name": "The returned resource is a single `Request`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/requests/:requestId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "requests",
+                                ":requestId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "requestId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"TRIP\",\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"requester\": \"<string>\",\n  \"request_process_id\": \"<string>\",\n  \"status\": \"DECLINED\",\n  \"amount\": \"<number>\",\n  \"currency\": \"HUF\",\n  \"has_attachments\": \"<boolean>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\",\n  \"note\": \"<string>\",\n  \"review_timeline\": [\n    {\n      \"step_number\": \"<integer>\",\n      \"reviewer_type\": \"LINE_MANAGER\",\n      \"status\": \"APPROVED\",\n      \"date\": \"<string>\",\n      \"reviewer_info\": [\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"automatic_review\": \"<boolean>\"\n    },\n    {\n      \"step_number\": \"<integer>\",\n      \"reviewer_type\": \"AUTOMATIC\",\n      \"status\": \"APPROVED\",\n      \"date\": \"<string>\",\n      \"reviewer_info\": [\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"automatic_review\": \"<boolean>\"\n    }\n  ],\n  \"attachment_document_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                          "createdAt": "2026-07-28T02:58:37.000Z",
+                          "updatedAt": "2026-07-28T02:58:37.000Z",
+                          "uid": "35240-a9b2b0aa-03ba-481f-85f1-8e95ffc6a2a8"
+                        },
+                        {
+                          "id": "4118ba21-b1aa-4ec2-a5e8-ce121cfd3881",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/requests/:requestId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "requests",
+                                ":requestId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "requestId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:37.000Z",
+                          "updatedAt": "2026-07-28T02:58:37.000Z",
+                          "uid": "35240-4118ba21-b1aa-4ec2-a5e8-ce121cfd3881"
+                        },
+                        {
+                          "id": "a70ab3d4-1966-4bbb-a352-171e50e61683",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/requests/:requestId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "requests",
+                                ":requestId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "requestId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:37.000Z",
+                          "updatedAt": "2026-07-28T02:58:37.000Z",
+                          "uid": "35240-a70ab3d4-1966-4bbb-a352-171e50e61683"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:37.000Z",
+                      "updatedAt": "2026-07-28T02:58:37.000Z",
+                      "uid": "35240-c447e28f-e9cc-46d5-a7f3-b531ec7899d1"
+                    },
+                    {
+                      "name": "Update Request",
+                      "id": "619a0ba7-0b9f-4a19-ba79-e78997fbd242",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"request_timestamp\": \"<long>\",\n  \"type\": \"FUNDS\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"note\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/requests/:requestId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "requests",
+                            ":requestId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "15412b3a-2d77-4109-9d07-b7fbd655fbe9",
+                              "key": "requestId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to update an `Request`. There are 3 types of request:GOODS_OR_SERVICES, FUNDS, TRIP."
+                      },
+                      "response": [
+                        {
+                          "id": "bed50d86-d4e7-44a0-bc57-9d54623462b1",
+                          "name": "The returned resource is the single `Request` created.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"request_timestamp\": \"<long>\",\n  \"type\": \"FUNDS\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"note\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/requests/:requestId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "requests",
+                                ":requestId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "requestId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"TRIP\",\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"requester\": \"<string>\",\n  \"request_process_id\": \"<string>\",\n  \"status\": \"DECLINED\",\n  \"amount\": \"<number>\",\n  \"currency\": \"HUF\",\n  \"has_attachments\": \"<boolean>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\",\n  \"note\": \"<string>\",\n  \"review_timeline\": [\n    {\n      \"step_number\": \"<integer>\",\n      \"reviewer_type\": \"LINE_MANAGER\",\n      \"status\": \"APPROVED\",\n      \"date\": \"<string>\",\n      \"reviewer_info\": [\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"automatic_review\": \"<boolean>\"\n    },\n    {\n      \"step_number\": \"<integer>\",\n      \"reviewer_type\": \"AUTOMATIC\",\n      \"status\": \"APPROVED\",\n      \"date\": \"<string>\",\n      \"reviewer_info\": [\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"automatic_review\": \"<boolean>\"\n    }\n  ],\n  \"attachment_document_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                          "createdAt": "2026-07-28T02:58:37.000Z",
+                          "updatedAt": "2026-07-28T02:58:37.000Z",
+                          "uid": "35240-bed50d86-d4e7-44a0-bc57-9d54623462b1"
+                        },
+                        {
+                          "id": "ad9e1c99-8c81-4a8e-96e6-ce07ad4a9d80",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"request_timestamp\": \"<long>\",\n  \"type\": \"FUNDS\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"note\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/requests/:requestId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "requests",
+                                ":requestId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "requestId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:37.000Z",
+                          "updatedAt": "2026-07-28T02:58:37.000Z",
+                          "uid": "35240-ad9e1c99-8c81-4a8e-96e6-ce07ad4a9d80"
+                        },
+                        {
+                          "id": "dd0ea9aa-126a-4980-9ac0-ca9a975cabf9",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"request_timestamp\": \"<long>\",\n  \"type\": \"FUNDS\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"note\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/requests/:requestId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "requests",
+                                ":requestId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "requestId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:37.000Z",
+                          "updatedAt": "2026-07-28T02:58:37.000Z",
+                          "uid": "35240-dd0ea9aa-126a-4980-9ac0-ca9a975cabf9"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:37.000Z",
+                      "updatedAt": "2026-07-28T02:58:37.000Z",
+                      "uid": "35240-619a0ba7-0b9f-4a19-ba79-e78997fbd242"
+                    },
+                    {
+                      "name": "Delete Request",
+                      "id": "f5981dbe-d2c8-4cd9-876d-10191899d5de",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/requests/:requestId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "requests",
+                            ":requestId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "f8733788-d584-4da2-92c8-dea0913ecf66",
+                              "key": "requestId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to remove an `Request`."
+                      },
+                      "response": [
+                        {
+                          "id": "f7c47a7b-e63f-4b3e-b9a0-81cd48b3a0a8",
+                          "name": "No content as result.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/requests/:requestId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "requests",
+                                ":requestId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "requestId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:37.000Z",
+                          "updatedAt": "2026-07-28T02:58:37.000Z",
+                          "uid": "35240-f7c47a7b-e63f-4b3e-b9a0-81cd48b3a0a8"
+                        },
+                        {
+                          "id": "21361337-49c7-443b-a315-bad3468606a4",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/requests/:requestId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "requests",
+                                ":requestId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "requestId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:37.000Z",
+                          "updatedAt": "2026-07-28T02:58:37.000Z",
+                          "uid": "35240-21361337-49c7-443b-a315-bad3468606a4"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:37.000Z",
+                      "updatedAt": "2026-07-28T02:58:37.000Z",
+                      "uid": "35240-f5981dbe-d2c8-4cd9-876d-10191899d5de"
+                    }
+                  ],
+                  "id": "9ad935a7-87d1-4a20-a411-aa032ec6fd7a",
+                  "createdAt": "2026-07-28T02:58:37.000Z",
+                  "updatedAt": "2026-07-28T02:58:37.000Z",
+                  "uid": "35240-9ad935a7-87d1-4a20-a411-aa032ec6fd7a"
+                },
+                {
+                  "name": "Search Requests",
+                  "id": "d5155a6a-bf82-4535-ace3-1c0e09b30e05",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/requests?status=IDLE&status=IDLE&paymentMethod=BANK_TRANSFER&text=<string>&p=0&s=0&d=DESC&props=<string>&props=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "requests"
+                      ],
+                      "query": [
+                        {
+                          "description": "The status of the `request`",
+                          "key": "status",
+                          "value": "IDLE"
+                        },
+                        {
+                          "description": "The status of the `request`",
+                          "key": "status",
+                          "value": "IDLE"
+                        },
+                        {
+                          "description": "The payment method of the `request`",
+                          "key": "paymentMethod",
+                          "value": "BANK_TRANSFER"
+                        },
+                        {
+                          "description": "A simple text to search in the `Request` (`name` or `description`).",
+                          "key": "text",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the specific page to display (the counter starts from zero).",
+                          "key": "p",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the number of items per page.",
+                          "key": "s",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates how the pages are ordered.",
+                          "key": "d",
+                          "value": "DESC"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to search `Requests`."
+                  },
+                  "response": [
+                    {
+                      "id": "347d3c94-fd98-44ed-a7c9-01186a99c65e",
+                      "name": "The result is an array containing `Requests`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/requests?status=IDLE&paymentMethod=BANK_TRANSFER&text=<string>&p=0&s=0&d=DESC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "requests"
+                          ],
+                          "query": [
+                            {
+                              "description": "The status of the `request`",
+                              "key": "status",
+                              "value": "IDLE"
+                            },
+                            {
+                              "description": "The payment method of the `request`",
+                              "key": "paymentMethod",
+                              "value": "BANK_TRANSFER"
+                            },
+                            {
+                              "description": "A simple text to search in the `Request` (`name` or `description`).",
+                              "key": "text",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "DESC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"requester\": \"<string>\",\n      \"status\": \"DELETED\",\n      \"payment_method\": \"BANK_TRANSFER\",\n      \"type\": \"FUNDS\",\n      \"amount\": \"<number>\",\n      \"currency\": \"SAR\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"requester\": \"<string>\",\n      \"status\": \"PENDING\",\n      \"payment_method\": \"TEMPORARY_CARD\",\n      \"type\": \"TRIP\",\n      \"amount\": \"<number>\",\n      \"currency\": \"LBP\",\n      \"creation_time\": \"<string>\",\n      \"last_update_time\": \"<string>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:58:37.000Z",
+                      "updatedAt": "2026-07-28T02:58:37.000Z",
+                      "uid": "35240-347d3c94-fd98-44ed-a7c9-01186a99c65e"
+                    },
+                    {
+                      "id": "e4658ba4-36c0-44c6-8a49-bbb14255589b",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/requests?status=IDLE&paymentMethod=BANK_TRANSFER&text=<string>&p=0&s=0&d=DESC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "requests"
+                          ],
+                          "query": [
+                            {
+                              "description": "The status of the `request`",
+                              "key": "status",
+                              "value": "IDLE"
+                            },
+                            {
+                              "description": "The payment method of the `request`",
+                              "key": "paymentMethod",
+                              "value": "BANK_TRANSFER"
+                            },
+                            {
+                              "description": "A simple text to search in the `Request` (`name` or `description`).",
+                              "key": "text",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "DESC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:58:37.000Z",
+                      "updatedAt": "2026-07-28T02:58:37.000Z",
+                      "uid": "35240-e4658ba4-36c0-44c6-8a49-bbb14255589b"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:58:37.000Z",
+                  "updatedAt": "2026-07-28T02:58:37.000Z",
+                  "uid": "35240-d5155a6a-bf82-4535-ace3-1c0e09b30e05"
+                },
+                {
+                  "name": "Add request",
+                  "id": "a6fa0ad8-5a74-4dc4-b8d2-f33aff89ceb8",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint",
+                        "value": "{{fingerprint}}"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint-Signature",
+                        "value": "{{fingerprint_signature}}"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"amount\": \"<number>\",\n  \"currency\": \"CHE\",\n  \"name\": \"<string>\",\n  \"request_process_id\": \"<string>\",\n  \"request_timestamp\": \"<long>\",\n  \"requester\": \"<string>\",\n  \"type\": \"GOODS_OR_SERVICES\",\n  \"note\": \"<string>\",\n  \"attachment_document_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/requests",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "requests"
+                      ]
+                    },
+                    "description": "Endpoint to create an `Request`. There are 3 types of request:GOODS_OR_SERVICES, FUNDS,TRIP."
+                  },
+                  "response": [
+                    {
+                      "id": "435d7c52-2aa0-4467-8189-4111e1038b21",
+                      "name": "The returned resource is the single `Request` created.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"amount\": \"<number>\",\n  \"currency\": \"CHE\",\n  \"name\": \"<string>\",\n  \"request_process_id\": \"<string>\",\n  \"request_timestamp\": \"<long>\",\n  \"requester\": \"<string>\",\n  \"type\": \"GOODS_OR_SERVICES\",\n  \"note\": \"<string>\",\n  \"attachment_document_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/requests",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "requests"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"type\": \"TRIP\",\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"requester\": \"<string>\",\n  \"request_process_id\": \"<string>\",\n  \"status\": \"DECLINED\",\n  \"amount\": \"<number>\",\n  \"currency\": \"HUF\",\n  \"has_attachments\": \"<boolean>\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\",\n  \"note\": \"<string>\",\n  \"review_timeline\": [\n    {\n      \"step_number\": \"<integer>\",\n      \"reviewer_type\": \"LINE_MANAGER\",\n      \"status\": \"APPROVED\",\n      \"date\": \"<string>\",\n      \"reviewer_info\": [\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"automatic_review\": \"<boolean>\"\n    },\n    {\n      \"step_number\": \"<integer>\",\n      \"reviewer_type\": \"AUTOMATIC\",\n      \"status\": \"APPROVED\",\n      \"date\": \"<string>\",\n      \"reviewer_info\": [\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"automatic_review\": \"<boolean>\"\n    }\n  ],\n  \"attachment_document_ids\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+                      "createdAt": "2026-07-28T02:58:37.000Z",
+                      "updatedAt": "2026-07-28T02:58:37.000Z",
+                      "uid": "35240-435d7c52-2aa0-4467-8189-4111e1038b21"
+                    },
+                    {
+                      "id": "e80723da-e399-4a47-b91f-1581860f2c29",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"amount\": \"<number>\",\n  \"currency\": \"CHE\",\n  \"name\": \"<string>\",\n  \"request_process_id\": \"<string>\",\n  \"request_timestamp\": \"<long>\",\n  \"requester\": \"<string>\",\n  \"type\": \"GOODS_OR_SERVICES\",\n  \"note\": \"<string>\",\n  \"attachment_document_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/requests",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "requests"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:58:37.000Z",
+                      "updatedAt": "2026-07-28T02:58:37.000Z",
+                      "uid": "35240-e80723da-e399-4a47-b91f-1581860f2c29"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:58:37.000Z",
+                  "updatedAt": "2026-07-28T02:58:37.000Z",
+                  "uid": "35240-a6fa0ad8-5a74-4dc4-b8d2-f33aff89ceb8"
+                }
+              ],
+              "id": "ff091c46-e2a8-474b-bbbe-f57c11f10025",
+              "createdAt": "2026-07-28T02:58:37.000Z",
+              "updatedAt": "2026-07-28T02:58:37.000Z",
+              "uid": "35240-ff091c46-e2a8-474b-bbbe-f57c11f10025"
+            }
+          ],
+          "id": "052bd175-160c-4ee7-a841-1154e70fa5b0",
+          "createdAt": "2026-07-28T02:58:37.000Z",
+          "updatedAt": "2026-07-28T02:58:37.000Z",
+          "uid": "35240-052bd175-160c-4ee7-a841-1154e70fa5b0"
+        }
+      ],
+      "id": "a4f0a0ce-8233-4c56-83d2-a5aff33afd93",
+      "createdAt": "2026-07-28T02:58:37.000Z",
+      "updatedAt": "2026-07-28T02:58:37.000Z",
+      "uid": "35240-a4f0a0ce-8233-4c56-83d2-a5aff33afd93"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

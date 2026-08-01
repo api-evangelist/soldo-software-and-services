@@ -1,0 +1,1733 @@
+{
+  "info": {
+    "_postman_id": "b877e2bf-0918-4669-af8d-b1810c72e23e",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Expense Reviews API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:58:20.000Z",
+    "updatedAt": "2026-07-28T02:58:20.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b877e2bf-0918-4669-af8d-b1810c72e23e"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "expense-review",
+              "item": [
+                {
+                  "name": "{userId}",
+                  "item": [
+                    {
+                      "name": "reminder",
+                      "item": [
+                        {
+                          "name": "Send Expense Review Reminder",
+                          "id": "abd925c4-761c-4aa7-aac4-648114030c92",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"from_date\": {},\n  \"request_timestamp\": \"<long>\",\n  \"to_date\": {}\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/expense-review/:userId/reminder",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "expense-review",
+                                ":userId",
+                                "reminder"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "cfa6da28-8fb1-4d72-be2c-910a63c27478",
+                                  "key": "userId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to send a reminder of `ExpenseReview` to a specific `User`."
+                          },
+                          "response": [
+                            {
+                              "id": "909d4d59-dff7-41d5-8267-11e2585ead6e",
+                              "name": "No content as result.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"from_date\": {},\n  \"request_timestamp\": \"<long>\",\n  \"to_date\": {}\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/expense-review/:userId/reminder",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "expense-review",
+                                    ":userId",
+                                    "reminder"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "userId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:21.000Z",
+                              "updatedAt": "2026-07-28T02:58:21.000Z",
+                              "uid": "35240-909d4d59-dff7-41d5-8267-11e2585ead6e"
+                            },
+                            {
+                              "id": "976fa54c-1619-46cd-a887-fcba187149ba",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"from_date\": {},\n  \"request_timestamp\": \"<long>\",\n  \"to_date\": {}\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/expense-review/:userId/reminder",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "expense-review",
+                                    ":userId",
+                                    "reminder"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "userId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:21.000Z",
+                              "updatedAt": "2026-07-28T02:58:21.000Z",
+                              "uid": "35240-976fa54c-1619-46cd-a887-fcba187149ba"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:21.000Z",
+                          "updatedAt": "2026-07-28T02:58:21.000Z",
+                          "uid": "35240-abd925c4-761c-4aa7-aac4-648114030c92"
+                        }
+                      ],
+                      "id": "2fe93b83-ca27-4436-a8fc-e68bf99c79a8",
+                      "createdAt": "2026-07-28T02:58:21.000Z",
+                      "updatedAt": "2026-07-28T02:58:21.000Z",
+                      "uid": "35240-2fe93b83-ca27-4436-a8fc-e68bf99c79a8"
+                    },
+                    {
+                      "name": "Get Expense Review",
+                      "id": "3f180fe1-b50e-491e-813e-e3915f2518cd",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/expense-review/:userId?status=TO_REVIEW&status=APPROVED&paymentMethod=USER&paymentMethod=USER&p=0&s=0&d=DESC&props=<string>&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "expense-review",
+                            ":userId"
+                          ],
+                          "query": [
+                            {
+                              "description": "The status of the `ExpenseReview`.",
+                              "key": "status",
+                              "value": "TO_REVIEW"
+                            },
+                            {
+                              "description": "The status of the `ExpenseReview`.",
+                              "key": "status",
+                              "value": "APPROVED"
+                            },
+                            {
+                              "description": "It determines the filter by payment method of the transaction.",
+                              "key": "paymentMethod",
+                              "value": "USER"
+                            },
+                            {
+                              "description": "It determines the filter by payment method of the transaction.",
+                              "key": "paymentMethod",
+                              "value": "USER"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "DESC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "73481e51-7eb8-4c6f-8d81-ca5f0f675e78",
+                              "key": "userId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to get the `ExpenseReview` of a specific `User`."
+                      },
+                      "response": [
+                        {
+                          "id": "8ab328d3-502f-4113-95e5-d97ebd4d2ae6",
+                          "name": "The returned resource is a `ExpenseReview`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/expense-review/:userId?status=APPROVED&paymentMethod=USER&p=0&s=0&d=DESC&props=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "expense-review",
+                                ":userId"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The status of the `ExpenseReview`.",
+                                  "key": "status",
+                                  "value": "APPROVED"
+                                },
+                                {
+                                  "description": "It determines the filter by payment method of the transaction.",
+                                  "key": "paymentMethod",
+                                  "value": "USER"
+                                },
+                                {
+                                  "description": "It indicates the specific page to display (the counter starts from zero).",
+                                  "key": "p",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates the number of items per page.",
+                                  "key": "s",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates how the pages are ordered.",
+                                  "key": "d",
+                                  "value": "DESC"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "userId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"user_id\": \"<string>\",\n  \"user_name\": \"<string>\",\n  \"user_surname\": \"<string>\",\n  \"job_title\": \"<string>\",\n  \"to_review_transaction\": \"<long>\",\n  \"reviewed_transaction\": \"<long>\",\n  \"exported_transaction\": \"<long>\",\n  \"total_transaction\": \"<long>\",\n  \"from_date\": \"<string>\",\n  \"to_date\": \"<string>\",\n  \"transaction_to_review\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"transaction_reviewed\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"transaction_exported\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "createdAt": "2026-07-28T02:58:21.000Z",
+                          "updatedAt": "2026-07-28T02:58:21.000Z",
+                          "uid": "35240-8ab328d3-502f-4113-95e5-d97ebd4d2ae6"
+                        },
+                        {
+                          "id": "e094b29c-0986-409f-b864-46e54ec1a506",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/expense-review/:userId?status=APPROVED&paymentMethod=USER&p=0&s=0&d=DESC&props=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "expense-review",
+                                ":userId"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The status of the `ExpenseReview`.",
+                                  "key": "status",
+                                  "value": "APPROVED"
+                                },
+                                {
+                                  "description": "It determines the filter by payment method of the transaction.",
+                                  "key": "paymentMethod",
+                                  "value": "USER"
+                                },
+                                {
+                                  "description": "It indicates the specific page to display (the counter starts from zero).",
+                                  "key": "p",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates the number of items per page.",
+                                  "key": "s",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "It indicates how the pages are ordered.",
+                                  "key": "d",
+                                  "value": "DESC"
+                                },
+                                {
+                                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                                  "key": "props",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "userId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:58:21.000Z",
+                          "updatedAt": "2026-07-28T02:58:21.000Z",
+                          "uid": "35240-e094b29c-0986-409f-b864-46e54ec1a506"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:58:21.000Z",
+                      "updatedAt": "2026-07-28T02:58:21.000Z",
+                      "uid": "35240-3f180fe1-b50e-491e-813e-e3915f2518cd"
+                    }
+                  ],
+                  "id": "1ae8b357-1ff5-46e9-951b-ba07d7aca924",
+                  "createdAt": "2026-07-28T02:58:21.000Z",
+                  "updatedAt": "2026-07-28T02:58:21.000Z",
+                  "uid": "35240-1ae8b357-1ff5-46e9-951b-ba07d7aca924"
+                },
+                {
+                  "name": "export-expenses",
+                  "item": [
+                    {
+                      "name": "{userId}",
+                      "item": [
+                        {
+                          "name": "Export Expense Review",
+                          "id": "337514c4-1105-458f-bd84-161e64dfa388",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://api.soldo.com/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "client_credentials",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"transaction_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"exported_by_id\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/expense-review/export-expenses/:userId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "expense-review",
+                                "export-expenses",
+                                ":userId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "3fbe8b31-12fc-4ab6-8982-6fa3a01490e6",
+                                  "key": "userId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Endpoint to export the `ExpenseReview` of a single `User`."
+                          },
+                          "response": [
+                            {
+                              "id": "5ab55582-d464-4ad1-a940-dd9a193e3b3b",
+                              "name": "The result is data containing `ExpenseReview` export.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"transaction_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"exported_by_id\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/expense-review/export-expenses/:userId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "expense-review",
+                                    "export-expenses",
+                                    ":userId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "userId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"expense_report_protocol_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "createdAt": "2026-07-28T02:58:21.000Z",
+                              "updatedAt": "2026-07-28T02:58:21.000Z",
+                              "uid": "35240-5ab55582-d464-4ad1-a940-dd9a193e3b3b"
+                            },
+                            {
+                              "id": "8ea71715-a6e2-41e0-80ef-b7b3d1b35058",
+                              "name": "Your request has missing arguments or is malformed.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"transaction_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"exported_by_id\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/expense-review/export-expenses/:userId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "expense-review",
+                                    "export-expenses",
+                                    ":userId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "userId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:21.000Z",
+                              "updatedAt": "2026-07-28T02:58:21.000Z",
+                              "uid": "35240-8ea71715-a6e2-41e0-80ef-b7b3d1b35058"
+                            },
+                            {
+                              "id": "82115720-c17f-4f73-97a6-bfb23861d2d9",
+                              "name": "One or more resource requested does not exist.",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"transaction_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"exported_by_id\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/expense-review/export-expenses/:userId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "expense-review",
+                                    "export-expenses",
+                                    ":userId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "userId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:58:21.000Z",
+                              "updatedAt": "2026-07-28T02:58:21.000Z",
+                              "uid": "35240-82115720-c17f-4f73-97a6-bfb23861d2d9"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:58:21.000Z",
+                          "updatedAt": "2026-07-28T02:58:21.000Z",
+                          "uid": "35240-337514c4-1105-458f-bd84-161e64dfa388"
+                        }
+                      ],
+                      "id": "43437f5e-7193-4fa8-aecd-44fa7df4f934",
+                      "createdAt": "2026-07-28T02:58:21.000Z",
+                      "updatedAt": "2026-07-28T02:58:21.000Z",
+                      "uid": "35240-43437f5e-7193-4fa8-aecd-44fa7df4f934"
+                    }
+                  ],
+                  "id": "7628efa6-1399-4069-ac79-74de164577ba",
+                  "createdAt": "2026-07-28T02:58:21.000Z",
+                  "updatedAt": "2026-07-28T02:58:21.000Z",
+                  "uid": "35240-7628efa6-1399-4069-ac79-74de164577ba"
+                },
+                {
+                  "name": "Search Expense Reviews",
+                  "id": "8e1840f5-658d-46d8-bcd9-5b809cdbc9d6",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/expense-review?delegatedBy=<string>&delegatedBy=<string>&text=<string>&p=0&s=0&props=<string>&props=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "expense-review"
+                      ],
+                      "query": [
+                        {
+                          "key": "delegatedBy",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "delegatedBy",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "A text to search in the expenses reviewer name or surname.",
+                          "key": "text",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the specific page to display (the counter starts from zero).",
+                          "key": "p",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the number of items per page.",
+                          "key": "s",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to find users with `ExpenseReview` using filtering parameters."
+                  },
+                  "response": [
+                    {
+                      "id": "497d6bfb-df40-4aca-8233-407e36183738",
+                      "name": "The returned resource is an array of `Expenses`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/expense-review?delegatedBy=<string>&text=<string>&p=0&s=0&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "expense-review"
+                          ],
+                          "query": [
+                            {
+                              "key": "delegatedBy",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "A text to search in the expenses reviewer name or surname.",
+                              "key": "text",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"user_id\": \"<string>\",\n      \"user_name\": \"<string>\",\n      \"user_surname\": \"<string>\",\n      \"job_title\": \"<string>\",\n      \"to_review_transaction\": \"<long>\",\n      \"reviewed_transaction\": \"<long>\",\n      \"exported_transaction\": \"<long>\",\n      \"total_transaction\": \"<long>\"\n    },\n    {\n      \"user_id\": \"<string>\",\n      \"user_name\": \"<string>\",\n      \"user_surname\": \"<string>\",\n      \"job_title\": \"<string>\",\n      \"to_review_transaction\": \"<long>\",\n      \"reviewed_transaction\": \"<long>\",\n      \"exported_transaction\": \"<long>\",\n      \"total_transaction\": \"<long>\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:58:21.000Z",
+                      "updatedAt": "2026-07-28T02:58:21.000Z",
+                      "uid": "35240-497d6bfb-df40-4aca-8233-407e36183738"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:58:21.000Z",
+                  "updatedAt": "2026-07-28T02:58:21.000Z",
+                  "uid": "35240-8e1840f5-658d-46d8-bcd9-5b809cdbc9d6"
+                }
+              ],
+              "id": "4504d0eb-c102-44b5-bcc1-3ee7aae14480",
+              "createdAt": "2026-07-28T02:58:21.000Z",
+              "updatedAt": "2026-07-28T02:58:21.000Z",
+              "uid": "35240-4504d0eb-c102-44b5-bcc1-3ee7aae14480"
+            },
+            {
+              "name": "transactions",
+              "item": [
+                {
+                  "name": "{transactionId}",
+                  "item": [
+                    {
+                      "name": "expense-review",
+                      "item": [
+                        {
+                          "name": "change-type",
+                          "item": [
+                            {
+                              "name": "Update Expense Review Type",
+                              "id": "5b2a6f33-7e4d-4556-938d-b5ba55c6560a",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"approver_id\": \"<string>\",\n  \"type\": \"PERSONAL\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/expense-review/change-type",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "expense-review",
+                                    "change-type"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "0c889116-6297-4b72-89f1-6cf728b27c4e",
+                                      "key": "transactionId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to update the type of an `ExpenseReview`."
+                              },
+                              "response": [
+                                {
+                                  "id": "5c8bebce-9350-4d5d-bb1c-f7baa555f2bc",
+                                  "name": "No content as result.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"approver_id\": \"<string>\",\n  \"type\": \"PERSONAL\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/expense-review/change-type",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "expense-review",
+                                        "change-type"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "No Content",
+                                  "code": 204,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:21.000Z",
+                                  "updatedAt": "2026-07-28T02:58:21.000Z",
+                                  "uid": "35240-5c8bebce-9350-4d5d-bb1c-f7baa555f2bc"
+                                },
+                                {
+                                  "id": "53c9f59d-90ab-4491-a702-67714034f4f1",
+                                  "name": "Your request has missing arguments or is malformed.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"approver_id\": \"<string>\",\n  \"type\": \"PERSONAL\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/expense-review/change-type",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "expense-review",
+                                        "change-type"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:21.000Z",
+                                  "updatedAt": "2026-07-28T02:58:21.000Z",
+                                  "uid": "35240-53c9f59d-90ab-4491-a702-67714034f4f1"
+                                },
+                                {
+                                  "id": "9c6e103d-8f89-4e86-8f1b-9dc0af5a6b12",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"approver_id\": \"<string>\",\n  \"type\": \"PERSONAL\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/expense-review/change-type",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "expense-review",
+                                        "change-type"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:21.000Z",
+                                  "updatedAt": "2026-07-28T02:58:21.000Z",
+                                  "uid": "35240-9c6e103d-8f89-4e86-8f1b-9dc0af5a6b12"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:21.000Z",
+                              "updatedAt": "2026-07-28T02:58:21.000Z",
+                              "uid": "35240-5b2a6f33-7e4d-4556-938d-b5ba55c6560a"
+                            }
+                          ],
+                          "id": "a6094326-8951-4913-ab53-befe1b02cabf",
+                          "createdAt": "2026-07-28T02:58:21.000Z",
+                          "updatedAt": "2026-07-28T02:58:21.000Z",
+                          "uid": "35240-a6094326-8951-4913-ab53-befe1b02cabf"
+                        },
+                        {
+                          "name": "request-info",
+                          "item": [
+                            {
+                              "name": "Request Expense Review Info",
+                              "id": "a2ff4fa8-ff7c-4990-944e-6bf5e7d03eb3",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"approver_id\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/expense-review/request-info",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "expense-review",
+                                    "request-info"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "772688df-03df-4dea-a9ec-2b444c05e3c6",
+                                      "key": "transactionId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to request info to an `User` about an `ExpenseReview`."
+                              },
+                              "response": [
+                                {
+                                  "id": "be58517f-8b56-4773-8d78-293c6cef33d6",
+                                  "name": "No content as result.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"approver_id\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/expense-review/request-info",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "expense-review",
+                                        "request-info"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "No Content",
+                                  "code": 204,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:21.000Z",
+                                  "updatedAt": "2026-07-28T02:58:21.000Z",
+                                  "uid": "35240-be58517f-8b56-4773-8d78-293c6cef33d6"
+                                },
+                                {
+                                  "id": "756e4dba-1fec-4d09-81a2-302138adecdb",
+                                  "name": "Your request has missing arguments or is malformed.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"approver_id\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/expense-review/request-info",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "expense-review",
+                                        "request-info"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:21.000Z",
+                                  "updatedAt": "2026-07-28T02:58:21.000Z",
+                                  "uid": "35240-756e4dba-1fec-4d09-81a2-302138adecdb"
+                                },
+                                {
+                                  "id": "de1b20c2-4ccc-450c-b680-c4fbd9c47ae3",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"approver_id\": \"<string>\",\n  \"message\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/expense-review/request-info",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "expense-review",
+                                        "request-info"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:21.000Z",
+                                  "updatedAt": "2026-07-28T02:58:21.000Z",
+                                  "uid": "35240-de1b20c2-4ccc-450c-b680-c4fbd9c47ae3"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:21.000Z",
+                              "updatedAt": "2026-07-28T02:58:21.000Z",
+                              "uid": "35240-a2ff4fa8-ff7c-4990-944e-6bf5e7d03eb3"
+                            }
+                          ],
+                          "id": "10cd2230-12c3-4091-b4b7-0f0ff4ddd31d",
+                          "createdAt": "2026-07-28T02:58:21.000Z",
+                          "updatedAt": "2026-07-28T02:58:21.000Z",
+                          "uid": "35240-10cd2230-12c3-4091-b4b7-0f0ff4ddd31d"
+                        },
+                        {
+                          "name": "update-status",
+                          "item": [
+                            {
+                              "name": "Update Expense Review Status",
+                              "id": "9ec66c8e-4fdf-484e-a2ae-5e9222a3b6e9",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"approver_id\": \"<string>\",\n  \"status\": \"TO_REVIEW\",\n  \"status_category\": \"PERSONAL_EXPENSE\",\n  \"status_reason\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/expense-review/update-status",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "transactions",
+                                    ":transactionId",
+                                    "expense-review",
+                                    "update-status"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "25decf77-7c1c-4355-8173-65b36449dbba",
+                                      "key": "transactionId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to update the status of an `ExpenseReview`."
+                              },
+                              "response": [
+                                {
+                                  "id": "480f0b99-b108-485d-a4c3-7afeefa35302",
+                                  "name": "No content as result.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"approver_id\": \"<string>\",\n  \"status\": \"TO_REVIEW\",\n  \"status_category\": \"PERSONAL_EXPENSE\",\n  \"status_reason\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/expense-review/update-status",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "expense-review",
+                                        "update-status"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "No Content",
+                                  "code": 204,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:21.000Z",
+                                  "updatedAt": "2026-07-28T02:58:21.000Z",
+                                  "uid": "35240-480f0b99-b108-485d-a4c3-7afeefa35302"
+                                },
+                                {
+                                  "id": "a1ac25fd-4e2b-4b91-a7d6-6a33573fc433",
+                                  "name": "Your request has missing arguments or is malformed.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"approver_id\": \"<string>\",\n  \"status\": \"TO_REVIEW\",\n  \"status_category\": \"PERSONAL_EXPENSE\",\n  \"status_reason\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/expense-review/update-status",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "expense-review",
+                                        "update-status"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:21.000Z",
+                                  "updatedAt": "2026-07-28T02:58:21.000Z",
+                                  "uid": "35240-a1ac25fd-4e2b-4b91-a7d6-6a33573fc433"
+                                },
+                                {
+                                  "id": "012b1a76-5b25-41de-9a13-22cdf419a3d0",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"approver_id\": \"<string>\",\n  \"status\": \"TO_REVIEW\",\n  \"status_category\": \"PERSONAL_EXPENSE\",\n  \"status_reason\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/transactions/:transactionId/expense-review/update-status",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "transactions",
+                                        ":transactionId",
+                                        "expense-review",
+                                        "update-status"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "transactionId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:58:21.000Z",
+                                  "updatedAt": "2026-07-28T02:58:21.000Z",
+                                  "uid": "35240-012b1a76-5b25-41de-9a13-22cdf419a3d0"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:58:21.000Z",
+                              "updatedAt": "2026-07-28T02:58:21.000Z",
+                              "uid": "35240-9ec66c8e-4fdf-484e-a2ae-5e9222a3b6e9"
+                            }
+                          ],
+                          "id": "ec993774-3be6-4c06-9b64-c0487a8be007",
+                          "createdAt": "2026-07-28T02:58:21.000Z",
+                          "updatedAt": "2026-07-28T02:58:21.000Z",
+                          "uid": "35240-ec993774-3be6-4c06-9b64-c0487a8be007"
+                        }
+                      ],
+                      "id": "6307bf71-f226-425f-a269-a1fc1d62058b",
+                      "createdAt": "2026-07-28T02:58:21.000Z",
+                      "updatedAt": "2026-07-28T02:58:21.000Z",
+                      "uid": "35240-6307bf71-f226-425f-a269-a1fc1d62058b"
+                    }
+                  ],
+                  "id": "21002ef6-11a9-4300-8ed1-7a9eb8c60bd1",
+                  "createdAt": "2026-07-28T02:58:21.000Z",
+                  "updatedAt": "2026-07-28T02:58:21.000Z",
+                  "uid": "35240-21002ef6-11a9-4300-8ed1-7a9eb8c60bd1"
+                }
+              ],
+              "id": "fd5d7062-1bb8-48f6-98fa-a32f2b51ff54",
+              "createdAt": "2026-07-28T02:58:21.000Z",
+              "updatedAt": "2026-07-28T02:58:21.000Z",
+              "uid": "35240-fd5d7062-1bb8-48f6-98fa-a32f2b51ff54"
+            }
+          ],
+          "id": "968abb1d-c6f5-4937-8d74-2d6d70f13c85",
+          "createdAt": "2026-07-28T02:58:21.000Z",
+          "updatedAt": "2026-07-28T02:58:21.000Z",
+          "uid": "35240-968abb1d-c6f5-4937-8d74-2d6d70f13c85"
+        }
+      ],
+      "id": "9e5a1ed7-6637-46c3-93b3-37bde4bce85d",
+      "createdAt": "2026-07-28T02:58:21.000Z",
+      "updatedAt": "2026-07-28T02:58:21.000Z",
+      "uid": "35240-9e5a1ed7-6637-46c3-93b3-37bde4bce85d"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

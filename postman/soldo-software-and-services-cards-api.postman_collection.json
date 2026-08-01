@@ -1,0 +1,1543 @@
+{
+  "info": {
+    "_postman_id": "da6c931f-1d38-49d3-8f06-87cc69f91191",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Cards API",
+    "description": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:57:51.000Z",
+    "updatedAt": "2026-07-28T02:57:51.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-da6c931f-1d38-49d3-8f06-87cc69f91191"
+  },
+  "item": [
+    {
+      "name": "business",
+      "item": [
+        {
+          "name": "v2",
+          "item": [
+            {
+              "name": "cards",
+              "item": [
+                {
+                  "name": "{cardId}",
+                  "item": [
+                    {
+                      "name": "move",
+                      "item": [
+                        {
+                          "name": "{newWalletId}",
+                          "item": [
+                            {
+                              "name": "Switch Card Wallet",
+                              "id": "24ecdc3e-527a-4e4c-93c4-e609aa230aa1",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://api.soldo.com/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "client_credentials",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint",
+                                    "value": "{{fingerprint}}"
+                                  },
+                                  {
+                                    "description": "(Required) ",
+                                    "key": "X-Soldo-Fingerprint-Signature",
+                                    "value": "{{fingerprint_signature}}"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/business/v2/cards/:cardId/move/:newWalletId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "business",
+                                    "v2",
+                                    "cards",
+                                    ":cardId",
+                                    "move",
+                                    ":newWalletId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "12f3db34-6667-4a8a-86a2-1feac780ec30",
+                                      "key": "cardId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "ebd0b4c8-80b0-4a83-82a7-a7a7daede813",
+                                      "key": "newWalletId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Endpoint to switch the `Card` `Wallet`."
+                              },
+                              "response": [
+                                {
+                                  "id": "c58ac150-a09a-48d5-878f-c0293c57702b",
+                                  "name": "The returned resource is a single `Card`.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/move/:newWalletId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "move",
+                                        ":newWalletId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        },
+                                        {
+                                          "key": "newWalletId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"label\": \"<string>\",\n  \"masked_pan\": \"<string>\",\n  \"card_holder\": \"<string>\",\n  \"expiration_date\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update\": \"<string>\",\n  \"type\": \"PLASTIC\",\n  \"status\": \"Do not honor\",\n  \"owner_type\": \"company\",\n  \"owner_public_id\": \"<string>\",\n  \"custom_reference_id\": \"<string>\",\n  \"wallet_id\": \"<string>\",\n  \"currency_code\": \"CVE\",\n  \"emboss_line4\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"group_id\": \"<string>\",\n  \"groups\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"sensitive_data\": {\n    \"encrypted_full_pan\": \"<string>\",\n    \"encrypted_cvv\": \"<string>\",\n    \"encrypted_pin\": \"<string>\"\n  },\n  \"vehicle_id\": \"<string>\",\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"payment_method\": \"ONLINE_ADS\",\n  \"payment_method_id\": \"<string>\",\n  \"preset_id\": \"<string>\",\n  \"shipping_address_id\": \"<string>\",\n  \"renewal_info\": {\n    \"expiring_soon\": \"<boolean>\",\n    \"renewed_card_ready_for_activation\": \"<boolean>\"\n  }\n}",
+                                  "createdAt": "2026-07-28T02:57:52.000Z",
+                                  "updatedAt": "2026-07-28T02:57:52.000Z",
+                                  "uid": "35240-c58ac150-a09a-48d5-878f-c0293c57702b"
+                                },
+                                {
+                                  "id": "5f2c2801-ed70-45cc-b0cc-0568090c5e94",
+                                  "name": "Your request has missing arguments or is malformed.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/move/:newWalletId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "move",
+                                        ":newWalletId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        },
+                                        {
+                                          "key": "newWalletId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:57:52.000Z",
+                                  "updatedAt": "2026-07-28T02:57:52.000Z",
+                                  "uid": "35240-5f2c2801-ed70-45cc-b0cc-0568090c5e94"
+                                },
+                                {
+                                  "id": "7b7416c0-1288-48de-bed2-25c067ab9372",
+                                  "name": "One or more resource requested does not exist.",
+                                  "originalRequest": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint",
+                                        "value": "{{fingerprint}}"
+                                      },
+                                      {
+                                        "description": "(Required) ",
+                                        "key": "X-Soldo-Fingerprint-Signature",
+                                        "value": "{{fingerprint_signature}}"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/business/v2/cards/:cardId/move/:newWalletId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "business",
+                                        "v2",
+                                        "cards",
+                                        ":cardId",
+                                        "move",
+                                        ":newWalletId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "cardId"
+                                        },
+                                        {
+                                          "key": "newWalletId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:57:52.000Z",
+                                  "updatedAt": "2026-07-28T02:57:52.000Z",
+                                  "uid": "35240-7b7416c0-1288-48de-bed2-25c067ab9372"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:57:52.000Z",
+                              "updatedAt": "2026-07-28T02:57:52.000Z",
+                              "uid": "35240-24ecdc3e-527a-4e4c-93c4-e609aa230aa1"
+                            }
+                          ],
+                          "id": "e3e41eec-6bbf-4644-9316-a35478ced7aa",
+                          "createdAt": "2026-07-28T02:57:52.000Z",
+                          "updatedAt": "2026-07-28T02:57:52.000Z",
+                          "uid": "35240-e3e41eec-6bbf-4644-9316-a35478ced7aa"
+                        }
+                      ],
+                      "id": "197557ef-6c7c-4e09-a05e-043d047068f7",
+                      "createdAt": "2026-07-28T02:57:52.000Z",
+                      "updatedAt": "2026-07-28T02:57:52.000Z",
+                      "uid": "35240-197557ef-6c7c-4e09-a05e-043d047068f7"
+                    },
+                    {
+                      "name": "Get Card",
+                      "id": "7c5bbd8b-e9d3-488a-b16d-80e6714ac3ff",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/cards/:cardId?showSensitiveData=<boolean>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "cards",
+                            ":cardId"
+                          ],
+                          "query": [
+                            {
+                              "key": "showSensitiveData",
+                              "value": "<boolean>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "de832cb4-3c5d-4712-a299-5d4f50de6d4b",
+                              "key": "cardId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to retrieve a specific `Card` by ID."
+                      },
+                      "response": [
+                        {
+                          "id": "f0a070ce-8e92-4f8c-944f-4f49244c4780",
+                          "name": "The returned resource is a single `Card`.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/cards/:cardId?showSensitiveData=<boolean>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "cards",
+                                ":cardId"
+                              ],
+                              "query": [
+                                {
+                                  "key": "showSensitiveData",
+                                  "value": "<boolean>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"label\": \"<string>\",\n  \"masked_pan\": \"<string>\",\n  \"card_holder\": \"<string>\",\n  \"expiration_date\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update\": \"<string>\",\n  \"type\": \"PLASTIC\",\n  \"status\": \"Do not honor\",\n  \"owner_type\": \"company\",\n  \"owner_public_id\": \"<string>\",\n  \"custom_reference_id\": \"<string>\",\n  \"wallet_id\": \"<string>\",\n  \"currency_code\": \"CVE\",\n  \"emboss_line4\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"group_id\": \"<string>\",\n  \"groups\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"sensitive_data\": {\n    \"encrypted_full_pan\": \"<string>\",\n    \"encrypted_cvv\": \"<string>\",\n    \"encrypted_pin\": \"<string>\"\n  },\n  \"vehicle_id\": \"<string>\",\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"payment_method\": \"ONLINE_ADS\",\n  \"payment_method_id\": \"<string>\",\n  \"preset_id\": \"<string>\",\n  \"shipping_address_id\": \"<string>\",\n  \"renewal_info\": {\n    \"expiring_soon\": \"<boolean>\",\n    \"renewed_card_ready_for_activation\": \"<boolean>\"\n  }\n}",
+                          "createdAt": "2026-07-28T02:57:52.000Z",
+                          "updatedAt": "2026-07-28T02:57:52.000Z",
+                          "uid": "35240-f0a070ce-8e92-4f8c-944f-4f49244c4780"
+                        },
+                        {
+                          "id": "2c7e0a7b-e2cf-431e-b800-65c2d9f8ccf0",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/cards/:cardId?showSensitiveData=<boolean>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "cards",
+                                ":cardId"
+                              ],
+                              "query": [
+                                {
+                                  "key": "showSensitiveData",
+                                  "value": "<boolean>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:52.000Z",
+                          "updatedAt": "2026-07-28T02:57:52.000Z",
+                          "uid": "35240-2c7e0a7b-e2cf-431e-b800-65c2d9f8ccf0"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:52.000Z",
+                      "updatedAt": "2026-07-28T02:57:52.000Z",
+                      "uid": "35240-7c5bbd8b-e9d3-488a-b16d-80e6714ac3ff"
+                    },
+                    {
+                      "name": "Update Card",
+                      "id": "56a4aa8e-a79f-4d03-a7de-8b3fb9ff3328",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"label\": \"<string>\",\n  \"vehicle_id\": \"<string>\",\n  \"shipping_address_id\": \"<string>\",\n  \"addCardAssignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"removeCardAssignees\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/cards/:cardId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "cards",
+                            ":cardId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "7732a1c8-be12-4c96-b6c8-45375cc7ad2a",
+                              "key": "cardId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to add and remove assignees for company `Cards`."
+                      },
+                      "response": [
+                        {
+                          "id": "b3606d27-8608-481e-92fc-711be27044e9",
+                          "name": "The returned resource is a single `Card`.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"label\": \"<string>\",\n  \"vehicle_id\": \"<string>\",\n  \"shipping_address_id\": \"<string>\",\n  \"addCardAssignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"removeCardAssignees\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/cards/:cardId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "cards",
+                                ":cardId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"label\": \"<string>\",\n  \"masked_pan\": \"<string>\",\n  \"card_holder\": \"<string>\",\n  \"expiration_date\": \"<string>\",\n  \"creation_time\": \"<string>\",\n  \"last_update\": \"<string>\",\n  \"type\": \"PLASTIC\",\n  \"status\": \"Do not honor\",\n  \"owner_type\": \"company\",\n  \"owner_public_id\": \"<string>\",\n  \"custom_reference_id\": \"<string>\",\n  \"wallet_id\": \"<string>\",\n  \"currency_code\": \"CVE\",\n  \"emboss_line4\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"group_id\": \"<string>\",\n  \"groups\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"sensitive_data\": {\n    \"encrypted_full_pan\": \"<string>\",\n    \"encrypted_cvv\": \"<string>\",\n    \"encrypted_pin\": \"<string>\"\n  },\n  \"vehicle_id\": \"<string>\",\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"payment_method\": \"ONLINE_ADS\",\n  \"payment_method_id\": \"<string>\",\n  \"preset_id\": \"<string>\",\n  \"shipping_address_id\": \"<string>\",\n  \"renewal_info\": {\n    \"expiring_soon\": \"<boolean>\",\n    \"renewed_card_ready_for_activation\": \"<boolean>\"\n  }\n}",
+                          "createdAt": "2026-07-28T02:57:52.000Z",
+                          "updatedAt": "2026-07-28T02:57:52.000Z",
+                          "uid": "35240-b3606d27-8608-481e-92fc-711be27044e9"
+                        },
+                        {
+                          "id": "e04d6d72-6fdc-4daa-b890-141f1b1576d5",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"label\": \"<string>\",\n  \"vehicle_id\": \"<string>\",\n  \"shipping_address_id\": \"<string>\",\n  \"addCardAssignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"removeCardAssignees\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/cards/:cardId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "cards",
+                                ":cardId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:52.000Z",
+                          "updatedAt": "2026-07-28T02:57:52.000Z",
+                          "uid": "35240-e04d6d72-6fdc-4daa-b890-141f1b1576d5"
+                        },
+                        {
+                          "id": "cdfb0fc6-9ff6-406f-8c57-b76323feb7a1",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint",
+                                "value": "{{fingerprint}}"
+                              },
+                              {
+                                "description": "(Required) ",
+                                "key": "X-Soldo-Fingerprint-Signature",
+                                "value": "{{fingerprint_signature}}"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"label\": \"<string>\",\n  \"vehicle_id\": \"<string>\",\n  \"shipping_address_id\": \"<string>\",\n  \"addCardAssignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"removeCardAssignees\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/cards/:cardId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "cards",
+                                ":cardId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:52.000Z",
+                          "updatedAt": "2026-07-28T02:57:52.000Z",
+                          "uid": "35240-cdfb0fc6-9ff6-406f-8c57-b76323feb7a1"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:52.000Z",
+                      "updatedAt": "2026-07-28T02:57:52.000Z",
+                      "uid": "35240-56a4aa8e-a79f-4d03-a7de-8b3fb9ff3328"
+                    },
+                    {
+                      "name": "Delete Card",
+                      "id": "d50acd57-d46e-452a-a7b0-4b702eeef327",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.soldo.com/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "client_credentials",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/cards/:cardId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "cards",
+                            ":cardId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "0a30263c-c5c6-4e6b-b90c-25941ea3b369",
+                              "key": "cardId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Endpoint to delete a `Card`."
+                      },
+                      "response": [
+                        {
+                          "id": "68ba2365-9b54-4202-9bd0-ee0a95b1b208",
+                          "name": "No content as result.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/cards/:cardId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "cards",
+                                ":cardId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "No Content",
+                          "code": 204,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:52.000Z",
+                          "updatedAt": "2026-07-28T02:57:52.000Z",
+                          "uid": "35240-68ba2365-9b54-4202-9bd0-ee0a95b1b208"
+                        },
+                        {
+                          "id": "ff745ae9-37d4-43fc-8163-36f3e41b5a55",
+                          "name": "Your request has missing arguments or is malformed.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/cards/:cardId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "cards",
+                                ":cardId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:52.000Z",
+                          "updatedAt": "2026-07-28T02:57:52.000Z",
+                          "uid": "35240-ff745ae9-37d4-43fc-8163-36f3e41b5a55"
+                        },
+                        {
+                          "id": "d2624a21-11a2-4220-83ca-ef611b868801",
+                          "name": "One or more resource requested does not exist.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/business/v2/cards/:cardId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "business",
+                                "v2",
+                                "cards",
+                                ":cardId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cardId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:57:52.000Z",
+                          "updatedAt": "2026-07-28T02:57:52.000Z",
+                          "uid": "35240-d2624a21-11a2-4220-83ca-ef611b868801"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:57:52.000Z",
+                      "updatedAt": "2026-07-28T02:57:52.000Z",
+                      "uid": "35240-d50acd57-d46e-452a-a7b0-4b702eeef327"
+                    }
+                  ],
+                  "id": "e7856eaf-cebe-4380-a86b-73c3534b6bcd",
+                  "createdAt": "2026-07-28T02:57:52.000Z",
+                  "updatedAt": "2026-07-28T02:57:52.000Z",
+                  "uid": "35240-e7856eaf-cebe-4380-a86b-73c3534b6bcd"
+                },
+                {
+                  "name": "Search Cards",
+                  "id": "0869191d-0276-4a5d-b421-d6218a4cf386",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/cards?type=company&id=<string>&customreferenceId=<string>&status=Stolen card&groupId=<string>&name=<string>&label=<string>&p=0&s=0&d=DESC&props=<string>&props=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "cards"
+                      ],
+                      "query": [
+                        {
+                          "description": "The type of a resource the `Card` is attached to.",
+                          "key": "type",
+                          "value": "company"
+                        },
+                        {
+                          "description": "The ID of the `type` resource (it's not applicable for `company` resource; it's not required for `employees`).",
+                          "key": "id",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The custom reference ID of the `type` resource.",
+                          "key": "customreferenceId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "One among the available `Card` statuses of a `Card`.",
+                          "key": "status",
+                          "value": "Stolen card"
+                        },
+                        {
+                          "description": "The ID of the `Group` the `Card` is related to.",
+                          "key": "groupId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The name of the `Card`.",
+                          "key": "name",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The label of the `Card`.",
+                          "key": "label",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the specific page to display (the counter starts from zero).",
+                          "key": "p",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates the number of items per page.",
+                          "key": "s",
+                          "value": "0"
+                        },
+                        {
+                          "description": "It indicates how the pages are ordered.",
+                          "key": "d",
+                          "value": "DESC"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                          "key": "props",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "description": "Endpoint to find `Cards` using filtering parameters."
+                  },
+                  "response": [
+                    {
+                      "id": "22e4c2ed-ef25-4ba5-9b06-7a03684e30cf",
+                      "name": "The result is an array containing `Cards`.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/cards?type=company&id=<string>&customreferenceId=<string>&status=Stolen card&groupId=<string>&name=<string>&label=<string>&p=0&s=0&d=DESC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "cards"
+                          ],
+                          "query": [
+                            {
+                              "description": "The type of a resource the `Card` is attached to.",
+                              "key": "type",
+                              "value": "company"
+                            },
+                            {
+                              "description": "The ID of the `type` resource (it's not applicable for `company` resource; it's not required for `employees`).",
+                              "key": "id",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The custom reference ID of the `type` resource.",
+                              "key": "customreferenceId",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "One among the available `Card` statuses of a `Card`.",
+                              "key": "status",
+                              "value": "Stolen card"
+                            },
+                            {
+                              "description": "The ID of the `Group` the `Card` is related to.",
+                              "key": "groupId",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The name of the `Card`.",
+                              "key": "name",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The label of the `Card`.",
+                              "key": "label",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "DESC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"total\": \"<integer>\",\n  \"pages\": \"<integer>\",\n  \"page_size\": \"<integer>\",\n  \"current_page\": \"<integer>\",\n  \"results_size\": \"<integer>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"label\": \"<string>\",\n      \"masked_pan\": \"<string>\",\n      \"card_holder\": \"<string>\",\n      \"expiration_date\": \"<string>\",\n      \"creation_time\": \"<string>\",\n      \"last_update\": \"<string>\",\n      \"type\": \"VIRTUAL\",\n      \"status\": \"Card Destroyed\",\n      \"owner_type\": \"company\",\n      \"owner_public_id\": \"<string>\",\n      \"custom_reference_id\": \"<string>\",\n      \"wallet_id\": \"<string>\",\n      \"currency_code\": \"NPR\",\n      \"emboss_line4\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"group_id\": \"<string>\",\n      \"groups\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"sensitive_data\": {\n        \"encrypted_full_pan\": \"<string>\",\n        \"encrypted_cvv\": \"<string>\",\n        \"encrypted_pin\": \"<string>\"\n      },\n      \"vehicle_id\": \"<string>\",\n      \"assignees\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"payment_method\": \"ONLINE_ADS\",\n      \"payment_method_id\": \"<string>\",\n      \"preset_id\": \"<string>\",\n      \"shipping_address_id\": \"<string>\",\n      \"renewal_info\": {\n        \"expiring_soon\": \"<boolean>\",\n        \"renewed_card_ready_for_activation\": \"<boolean>\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"label\": \"<string>\",\n      \"masked_pan\": \"<string>\",\n      \"card_holder\": \"<string>\",\n      \"expiration_date\": \"<string>\",\n      \"creation_time\": \"<string>\",\n      \"last_update\": \"<string>\",\n      \"type\": \"VIRTUAL\",\n      \"status\": \"Normal\",\n      \"owner_type\": \"company\",\n      \"owner_public_id\": \"<string>\",\n      \"custom_reference_id\": \"<string>\",\n      \"wallet_id\": \"<string>\",\n      \"currency_code\": \"LRD\",\n      \"emboss_line4\": \"<string>\",\n      \"active\": \"<boolean>\",\n      \"group_id\": \"<string>\",\n      \"groups\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"sensitive_data\": {\n        \"encrypted_full_pan\": \"<string>\",\n        \"encrypted_cvv\": \"<string>\",\n        \"encrypted_pin\": \"<string>\"\n      },\n      \"vehicle_id\": \"<string>\",\n      \"assignees\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"payment_method\": \"SUBSCRIPTION\",\n      \"payment_method_id\": \"<string>\",\n      \"preset_id\": \"<string>\",\n      \"shipping_address_id\": \"<string>\",\n      \"renewal_info\": {\n        \"expiring_soon\": \"<boolean>\",\n        \"renewed_card_ready_for_activation\": \"<boolean>\"\n      }\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T02:57:52.000Z",
+                      "updatedAt": "2026-07-28T02:57:52.000Z",
+                      "uid": "35240-22e4c2ed-ef25-4ba5-9b06-7a03684e30cf"
+                    },
+                    {
+                      "id": "8ae35953-370a-4c49-9512-9ed285bcdda4",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/cards?type=company&id=<string>&customreferenceId=<string>&status=Stolen card&groupId=<string>&name=<string>&label=<string>&p=0&s=0&d=DESC&props=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "cards"
+                          ],
+                          "query": [
+                            {
+                              "description": "The type of a resource the `Card` is attached to.",
+                              "key": "type",
+                              "value": "company"
+                            },
+                            {
+                              "description": "The ID of the `type` resource (it's not applicable for `company` resource; it's not required for `employees`).",
+                              "key": "id",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The custom reference ID of the `type` resource.",
+                              "key": "customreferenceId",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "One among the available `Card` statuses of a `Card`.",
+                              "key": "status",
+                              "value": "Stolen card"
+                            },
+                            {
+                              "description": "The ID of the `Group` the `Card` is related to.",
+                              "key": "groupId",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The name of the `Card`.",
+                              "key": "name",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The label of the `Card`.",
+                              "key": "label",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "It indicates the specific page to display (the counter starts from zero).",
+                              "key": "p",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates the number of items per page.",
+                              "key": "s",
+                              "value": "0"
+                            },
+                            {
+                              "description": "It indicates how the pages are ordered.",
+                              "key": "d",
+                              "value": "DESC"
+                            },
+                            {
+                              "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request.",
+                              "key": "props",
+                              "value": "<string>"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:57:52.000Z",
+                      "updatedAt": "2026-07-28T02:57:52.000Z",
+                      "uid": "35240-8ae35953-370a-4c49-9512-9ed285bcdda4"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:57:52.000Z",
+                  "updatedAt": "2026-07-28T02:57:52.000Z",
+                  "uid": "35240-0869191d-0276-4a5d-b421-d6218a4cf386"
+                },
+                {
+                  "name": "Add Card",
+                  "id": "9ab26624-6c9e-4c18-88bb-d193e5598837",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.soldo.com/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "client_credentials",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint",
+                        "value": "{{fingerprint}}"
+                      },
+                      {
+                        "description": "(Required) ",
+                        "key": "X-Soldo-Fingerprint-Signature",
+                        "value": "{{fingerprint_signature}}"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"owner_public_id\": \"<string>\",\n  \"owner_type\": \"employee\",\n  \"request_timestamp\": \"<long>\",\n  \"type\": \"VIRTUAL_CHARGE\",\n  \"wallet_id\": \"<string>\",\n  \"reserved_wallet_currency\": \"USD\",\n  \"card_label\": \"<string>\",\n  \"emboss_line4\": \"<string>\",\n  \"address_id\": \"<string>\",\n  \"vehicle_id\": \"<string>\",\n  \"preset_id\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/business/v2/cards",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "business",
+                        "v2",
+                        "cards"
+                      ]
+                    },
+                    "description": "Endpoint to add a new `Card`. The created `Card` has the same currency of the `Wallet` it belongs to."
+                  },
+                  "response": [
+                    {
+                      "id": "848e5aad-2b60-4596-952f-6a5b4a6a5a43",
+                      "name": "The returned resource is a single `Order`.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"owner_public_id\": \"<string>\",\n  \"owner_type\": \"employee\",\n  \"request_timestamp\": \"<long>\",\n  \"type\": \"VIRTUAL_CHARGE\",\n  \"wallet_id\": \"<string>\",\n  \"reserved_wallet_currency\": \"USD\",\n  \"card_label\": \"<string>\",\n  \"emboss_line4\": \"<string>\",\n  \"address_id\": \"<string>\",\n  \"vehicle_id\": \"<string>\",\n  \"preset_id\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/cards",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "cards"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"id\": \"<string>\",\n  \"status\": \"COMPLETED\",\n  \"creation_time\": \"<string>\",\n  \"last_update_time\": \"<string>\",\n  \"error_code\": \"<string>\",\n  \"total_paid_amount\": \"<number>\",\n  \"total_paid_currency\": \"MRU\",\n  \"items\": [\n    {\n      \"id\": \"<string>\",\n      \"item_type\": \"<string>\",\n      \"category\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"item_type\": \"<string>\",\n      \"category\": \"<string>\"\n    }\n  ],\n  \"is_valid\": \"<boolean>\"\n}",
+                      "createdAt": "2026-07-28T02:57:52.000Z",
+                      "updatedAt": "2026-07-28T02:57:52.000Z",
+                      "uid": "35240-848e5aad-2b60-4596-952f-6a5b4a6a5a43"
+                    },
+                    {
+                      "id": "9a595813-adcd-4ec8-b36a-2c7d075a4643",
+                      "name": "Your request has missing arguments or is malformed.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"owner_public_id\": \"<string>\",\n  \"owner_type\": \"employee\",\n  \"request_timestamp\": \"<long>\",\n  \"type\": \"VIRTUAL_CHARGE\",\n  \"wallet_id\": \"<string>\",\n  \"reserved_wallet_currency\": \"USD\",\n  \"card_label\": \"<string>\",\n  \"emboss_line4\": \"<string>\",\n  \"address_id\": \"<string>\",\n  \"vehicle_id\": \"<string>\",\n  \"preset_id\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/cards",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "cards"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:57:52.000Z",
+                      "updatedAt": "2026-07-28T02:57:52.000Z",
+                      "uid": "35240-9a595813-adcd-4ec8-b36a-2c7d075a4643"
+                    },
+                    {
+                      "id": "8d6363e1-0096-4463-9c90-37317d59b324",
+                      "name": "One or more resource requested does not exist.",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint",
+                            "value": "{{fingerprint}}"
+                          },
+                          {
+                            "description": "(Required) ",
+                            "key": "X-Soldo-Fingerprint-Signature",
+                            "value": "{{fingerprint_signature}}"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"owner_public_id\": \"<string>\",\n  \"owner_type\": \"employee\",\n  \"request_timestamp\": \"<long>\",\n  \"type\": \"VIRTUAL_CHARGE\",\n  \"wallet_id\": \"<string>\",\n  \"reserved_wallet_currency\": \"USD\",\n  \"card_label\": \"<string>\",\n  \"emboss_line4\": \"<string>\",\n  \"address_id\": \"<string>\",\n  \"vehicle_id\": \"<string>\",\n  \"preset_id\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/business/v2/cards",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "business",
+                            "v2",
+                            "cards"
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:57:52.000Z",
+                      "updatedAt": "2026-07-28T02:57:52.000Z",
+                      "uid": "35240-8d6363e1-0096-4463-9c90-37317d59b324"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:57:52.000Z",
+                  "updatedAt": "2026-07-28T02:57:52.000Z",
+                  "uid": "35240-9ab26624-6c9e-4c18-88bb-d193e5598837"
+                }
+              ],
+              "id": "4dc752c3-68ba-43d9-94cb-d6f47eccca55",
+              "createdAt": "2026-07-28T02:57:52.000Z",
+              "updatedAt": "2026-07-28T02:57:52.000Z",
+              "uid": "35240-4dc752c3-68ba-43d9-94cb-d6f47eccca55"
+            }
+          ],
+          "id": "0a96d021-c707-4bca-9054-56efd5375374",
+          "createdAt": "2026-07-28T02:57:52.000Z",
+          "updatedAt": "2026-07-28T02:57:52.000Z",
+          "uid": "35240-0a96d021-c707-4bca-9054-56efd5375374"
+        }
+      ],
+      "id": "3f0c88ee-c16e-4cf6-af2d-efb7f6799340",
+      "createdAt": "2026-07-28T02:57:52.000Z",
+      "updatedAt": "2026-07-28T02:57:52.000Z",
+      "uid": "35240-3f0c88ee-c16e-4cf6-af2d-efb7f6799340"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.soldo.com"
+    }
+  ]
+}

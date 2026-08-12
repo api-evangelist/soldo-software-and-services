@@ -547,6 +547,8 @@ apis:
   - type: OpenAPI
     url: openapi/soldo-software-and-services-workflows-api-openapi.yml
 common:
+- type: Overlay
+  url: overlays/soldo-software-and-services-business-api-overlay.yaml
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/soldo-software-and-services/overview
 - type: DomainSecurity

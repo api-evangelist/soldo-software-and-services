@@ -1,0 +1,2148 @@
+{
+  "item": [
+    {
+      "id": "bf2c174f-1cac-4933-821d-c07ece1103a0",
+      "name": "Users",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0116a79b-6ae5-4401-a560-ece4cd2e1747",
+          "name": "Create User",
+          "request": {
+            "name": "Create User",
+            "description": {
+              "content": "Endpoint to create a new `User`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "business",
+                "v2",
+                "employees",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-Soldo-Fingerprint",
+                "value": "{{fingerprint}}"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-Soldo-Fingerprint-Signature",
+                "value": "{{fingerprint_signature}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.soldo.com/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"mobile\": \"<string>\",\n  \"mobile_access\": false,\n  \"mobile_prefix\": \"<string>\",\n  \"name\": \"<string>\",\n  \"request_timestamp\": \"<long>\",\n  \"surname\": \"<string>\",\n  \"web_access\": false,\n  \"middlename\": \"<string>\",\n  \"job_title\": \"<string>\",\n  \"email\": \"<string>\",\n  \"custom_reference_id\": \"<string>\",\n  \"reports_to\": \"<string>\",\n  \"status\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "40c7f6f9-d3d1-4328-a819-3ecacc73c3f2",
+              "name": "The returned result is an `User`.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint",
+                    "value": "{{fingerprint}}"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint-Signature",
+                    "value": "{{fingerprint_signature}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"mobile\": \"+44123323232\",\n  \"mobile_access\": true,\n  \"mobile_prefix\": \"+44\",\n  \"name\": \"John\",\n  \"request_timestamp\": 1576850500000,\n  \"surname\": \"Smith\",\n  \"web_access\": true,\n  \"middlename\": \"John\",\n  \"job_title\": \"Business Strategist\",\n  \"email\": \"jdoe@fake.soldo.com\",\n  \"custom_reference_id\": \"123456-user-1\",\n  \"reports_to\": \"XMPL1234-000001\",\n  \"status\": \"ACTIVE\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"XMPL1234-000001\",\n  \"name\": \"John\",\n  \"surname\": \"Smith\",\n  \"middlename\": \"John\",\n  \"dob\": \"1970-10-21\",\n  \"job_title\": \"Business Strategist\",\n  \"department\": \"Research & Development\",\n  \"email\": \"jdoe@fake.soldo.com\",\n  \"mobile\": \"+44123323232\",\n  \"mobile_prefix\": \"+44\",\n  \"custom_reference_id\": \"123456-user-1\",\n  \"status\": \"ACTIVE\",\n  \"visible\": true,\n  \"mobile_access\": true,\n  \"web_access\": true,\n  \"groups\": [\n    \"7bf79328-a7ae-4222-aa54-091ff7f429a7\",\n    \"2d65bd5e-3fdf-4002-b166-bde7fb8863fa\"\n  ],\n  \"shipping_address\": {\n    \"id\": \"7bf79328-a7ae-4222-aa54-091ff7f429a7\",\n    \"recipient\": \"JohnSmith\",\n    \"name\": \"Foo Street 75\",\n    \"line1\": \"Bar Street 64\",\n    \"line2\": \"Other street 31\",\n    \"country\": \"GB\",\n    \"county\": \"LD\",\n    \"city\": \"London\",\n    \"post_code\": \"00000\",\n    \"delivery_phone_number\": \"+441234567890\",\n    \"default_shipping\": false,\n    \"type\": \"SHIPPING\",\n    \"category\": \"COMPANY\",\n    \"user_id\": \"string\",\n    \"creation_time\": \"2017-06-01T12:48:40Z\",\n    \"last_update\": \"2017-06-01T12:48:40Z\"\n  },\n  \"reports_to\": \"XMPL1234-000001\",\n  \"roles\": [\n    {\n      \"id\": \"superAdmin\",\n      \"name\": \"superAdmin\",\n      \"description\": \"The SuperAdmin role\",\n      \"scope\": \"ALL\"\n    },\n    {\n      \"id\": \"superAdmin\",\n      \"name\": \"superAdmin\",\n      \"description\": \"The SuperAdmin role\",\n      \"scope\": \"ALL\"\n    }\n  ],\n  \"contact_id\": \"135fdb6c-2e77-4fc0-a79f-2453fde75ef7\",\n  \"creation_time\": \"2017-06-01T12:48:40Z\",\n  \"last_update\": \"2017-06-01T12:48:40Z\",\n  \"work_status\": \"OUT_OF_OFFICE\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0aba597f-78dc-444e-9020-8d7291a9536e",
+              "name": "Your request has missing arguments or is malformed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint",
+                    "value": "{{fingerprint}}"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint-Signature",
+                    "value": "{{fingerprint_signature}}"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"mobile\": \"+44123323232\",\n  \"mobile_access\": true,\n  \"mobile_prefix\": \"+44\",\n  \"name\": \"John\",\n  \"request_timestamp\": 1576850500000,\n  \"surname\": \"Smith\",\n  \"web_access\": true,\n  \"middlename\": \"John\",\n  \"job_title\": \"Business Strategist\",\n  \"email\": \"jdoe@fake.soldo.com\",\n  \"custom_reference_id\": \"123456-user-1\",\n  \"reports_to\": \"XMPL1234-000001\",\n  \"status\": \"ACTIVE\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a23da45d-30ea-442a-8cc2-d8f16c959500",
+          "name": "Get User",
+          "request": {
+            "name": "Get User",
+            "description": {
+              "content": "Endpoint to retrieve a specific `User` by ID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "business",
+                "v2",
+                "employees",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.soldo.com/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "080a975d-10e4-4ac0-b73c-87b8275d4848",
+              "name": "The returned resource is a single `User`.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"XMPL1234-000001\",\n  \"name\": \"John\",\n  \"surname\": \"Smith\",\n  \"middlename\": \"John\",\n  \"dob\": \"1970-10-21\",\n  \"job_title\": \"Business Strategist\",\n  \"department\": \"Research & Development\",\n  \"email\": \"jdoe@fake.soldo.com\",\n  \"mobile\": \"+44123323232\",\n  \"mobile_prefix\": \"+44\",\n  \"custom_reference_id\": \"123456-user-1\",\n  \"status\": \"ACTIVE\",\n  \"visible\": true,\n  \"mobile_access\": true,\n  \"web_access\": true,\n  \"groups\": [\n    \"7bf79328-a7ae-4222-aa54-091ff7f429a7\",\n    \"2d65bd5e-3fdf-4002-b166-bde7fb8863fa\"\n  ],\n  \"shipping_address\": {\n    \"id\": \"7bf79328-a7ae-4222-aa54-091ff7f429a7\",\n    \"recipient\": \"JohnSmith\",\n    \"name\": \"Foo Street 75\",\n    \"line1\": \"Bar Street 64\",\n    \"line2\": \"Other street 31\",\n    \"country\": \"GB\",\n    \"county\": \"LD\",\n    \"city\": \"London\",\n    \"post_code\": \"00000\",\n    \"delivery_phone_number\": \"+441234567890\",\n    \"default_shipping\": false,\n    \"type\": \"SHIPPING\",\n    \"category\": \"COMPANY\",\n    \"user_id\": \"string\",\n    \"creation_time\": \"2017-06-01T12:48:40Z\",\n    \"last_update\": \"2017-06-01T12:48:40Z\"\n  },\n  \"reports_to\": \"XMPL1234-000001\",\n  \"roles\": [\n    {\n      \"id\": \"superAdmin\",\n      \"name\": \"superAdmin\",\n      \"description\": \"The SuperAdmin role\",\n      \"scope\": \"ALL\"\n    },\n    {\n      \"id\": \"superAdmin\",\n      \"name\": \"superAdmin\",\n      \"description\": \"The SuperAdmin role\",\n      \"scope\": \"ALL\"\n    }\n  ],\n  \"contact_id\": \"135fdb6c-2e77-4fc0-a79f-2453fde75ef7\",\n  \"creation_time\": \"2017-06-01T12:48:40Z\",\n  \"last_update\": \"2017-06-01T12:48:40Z\",\n  \"work_status\": \"OUT_OF_OFFICE\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "06b25316-b7b3-48b4-ab83-7348671d7feb",
+              "name": "One or more resource requested does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9d2aeff1-af30-44a6-97ab-6dd0d40c1109",
+          "name": "Update User",
+          "request": {
+            "name": "Update User",
+            "description": {
+              "content": "Endpoint to update an `User`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "business",
+                "v2",
+                "employees",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-Soldo-Fingerprint",
+                "value": "{{fingerprint}}"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-Soldo-Fingerprint-Signature",
+                "value": "{{fingerprint_signature}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.soldo.com/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"job_title\": \"<string>\",\n  \"mobile_number\": \"<string>\",\n  \"mobile_prefix\": \"<string>\",\n  \"email\": \"<string>\",\n  \"enable_mobile_credential\": \"<boolean>\",\n  \"enable_web_credential\": \"<boolean>\",\n  \"custom_reference_id\": \"<string>\",\n  \"reports_to\": \"<string>\",\n  \"skip_credential_notification\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9350dfa0-0872-45bf-a6d7-dc1066eb2e3f",
+              "name": "The returned result is a single `User`.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint",
+                    "value": "{{fingerprint}}"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint-Signature",
+                    "value": "{{fingerprint_signature}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"job_title\": \"Business Strategist\",\n  \"mobile_number\": \"+44123323232\",\n  \"mobile_prefix\": \"+44\",\n  \"email\": \"jdoe@fake.soldo.com\",\n  \"enable_mobile_credential\": true,\n  \"enable_web_credential\": false,\n  \"custom_reference_id\": \"123456-user-1\",\n  \"reports_to\": \"XMPL1234-000001\",\n  \"skip_credential_notification\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"XMPL1234-000001\",\n  \"name\": \"John\",\n  \"surname\": \"Smith\",\n  \"middlename\": \"John\",\n  \"dob\": \"1970-10-21\",\n  \"job_title\": \"Business Strategist\",\n  \"department\": \"Research & Development\",\n  \"email\": \"jdoe@fake.soldo.com\",\n  \"mobile\": \"+44123323232\",\n  \"mobile_prefix\": \"+44\",\n  \"custom_reference_id\": \"123456-user-1\",\n  \"status\": \"ACTIVE\",\n  \"visible\": true,\n  \"mobile_access\": true,\n  \"web_access\": true,\n  \"groups\": [\n    \"7bf79328-a7ae-4222-aa54-091ff7f429a7\",\n    \"2d65bd5e-3fdf-4002-b166-bde7fb8863fa\"\n  ],\n  \"shipping_address\": {\n    \"id\": \"7bf79328-a7ae-4222-aa54-091ff7f429a7\",\n    \"recipient\": \"JohnSmith\",\n    \"name\": \"Foo Street 75\",\n    \"line1\": \"Bar Street 64\",\n    \"line2\": \"Other street 31\",\n    \"country\": \"GB\",\n    \"county\": \"LD\",\n    \"city\": \"London\",\n    \"post_code\": \"00000\",\n    \"delivery_phone_number\": \"+441234567890\",\n    \"default_shipping\": false,\n    \"type\": \"SHIPPING\",\n    \"category\": \"COMPANY\",\n    \"user_id\": \"string\",\n    \"creation_time\": \"2017-06-01T12:48:40Z\",\n    \"last_update\": \"2017-06-01T12:48:40Z\"\n  },\n  \"reports_to\": \"XMPL1234-000001\",\n  \"roles\": [\n    {\n      \"id\": \"superAdmin\",\n      \"name\": \"superAdmin\",\n      \"description\": \"The SuperAdmin role\",\n      \"scope\": \"ALL\"\n    },\n    {\n      \"id\": \"superAdmin\",\n      \"name\": \"superAdmin\",\n      \"description\": \"The SuperAdmin role\",\n      \"scope\": \"ALL\"\n    }\n  ],\n  \"contact_id\": \"135fdb6c-2e77-4fc0-a79f-2453fde75ef7\",\n  \"creation_time\": \"2017-06-01T12:48:40Z\",\n  \"last_update\": \"2017-06-01T12:48:40Z\",\n  \"work_status\": \"OUT_OF_OFFICE\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b75ce5cc-5112-4bdd-b6cc-5dd6237b6f93",
+              "name": "Your request has missing arguments or is malformed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint",
+                    "value": "{{fingerprint}}"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint-Signature",
+                    "value": "{{fingerprint_signature}}"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"job_title\": \"Business Strategist\",\n  \"mobile_number\": \"+44123323232\",\n  \"mobile_prefix\": \"+44\",\n  \"email\": \"jdoe@fake.soldo.com\",\n  \"enable_mobile_credential\": true,\n  \"enable_web_credential\": false,\n  \"custom_reference_id\": \"123456-user-1\",\n  \"reports_to\": \"XMPL1234-000001\",\n  \"skip_credential_notification\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "58ec8728-ca8c-458e-aed9-2d9d44c917f9",
+              "name": "One or more resource requested does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint",
+                    "value": "{{fingerprint}}"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint-Signature",
+                    "value": "{{fingerprint_signature}}"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"job_title\": \"Business Strategist\",\n  \"mobile_number\": \"+44123323232\",\n  \"mobile_prefix\": \"+44\",\n  \"email\": \"jdoe@fake.soldo.com\",\n  \"enable_mobile_credential\": true,\n  \"enable_web_credential\": false,\n  \"custom_reference_id\": \"123456-user-1\",\n  \"reports_to\": \"XMPL1234-000001\",\n  \"skip_credential_notification\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ef6db9ee-3bb7-4121-9dcd-b67e41d95fef",
+          "name": "Delete User",
+          "request": {
+            "name": "Delete User",
+            "description": {
+              "content": "Endpoint to delete an `User`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "business",
+                "v2",
+                "employees",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.soldo.com/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2730edee-5419-4339-b31a-71af6001600c",
+              "name": "No content as result.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "51c61cad-514b-43d3-8245-b4bc927dfc4f",
+              "name": "One or more resource requested does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b9cb081e-4007-4b06-adcb-246d810b1463",
+          "name": "Search Users",
+          "request": {
+            "name": "Search Users",
+            "description": {
+              "content": "Endpoint to find `Users` using filtering parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "business",
+                "v2",
+                "employees"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "customreferenceId",
+                  "value": "<string>",
+                  "description": "The reference of the `User` in an external system."
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "The name of the `User`."
+                },
+                {
+                  "disabled": false,
+                  "key": "surname",
+                  "value": "<string>",
+                  "description": "The surname of the `User`."
+                },
+                {
+                  "disabled": false,
+                  "key": "visible",
+                  "value": "<boolean>",
+                  "description": "The visibility property of the `User`."
+                },
+                {
+                  "disabled": false,
+                  "key": "jobTitle",
+                  "value": "<string>",
+                  "description": "The job title of the `User`."
+                },
+                {
+                  "disabled": false,
+                  "key": "department",
+                  "value": "<string>",
+                  "description": "The department of the `User`."
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>",
+                  "description": "The email address of the `User`."
+                },
+                {
+                  "disabled": false,
+                  "key": "mobile",
+                  "value": "<string>",
+                  "description": "The mobile number of the `User`."
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "The status of the `User`."
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "The ID of the `User`."
+                },
+                {
+                  "disabled": false,
+                  "key": "groupId",
+                  "value": "<string>",
+                  "description": "The ID of the `Group` the `User` is a member of."
+                },
+                {
+                  "disabled": false,
+                  "key": "reportsTo",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "reportsTo",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "workStatus",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "workStatus",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "expensePolicyId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "expensePolicyId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "excludeExpensePolicyId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "excludeExpensePolicyId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "withoutExpensePolicy",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "p",
+                  "value": "0",
+                  "description": "It indicates the specific page to display (the counter starts from zero)."
+                },
+                {
+                  "disabled": false,
+                  "key": "s",
+                  "value": "0",
+                  "description": "It indicates the number of items per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "d",
+                  "value": "<string>",
+                  "description": "It indicates how the pages are ordered."
+                },
+                {
+                  "disabled": false,
+                  "key": "props",
+                  "value": "<string>",
+                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request."
+                },
+                {
+                  "disabled": false,
+                  "key": "props",
+                  "value": "<string>",
+                  "description": "It indicates the sorting direction applied to the above parameters. To apply a sorting on multiple parameters, set as many times the `props` parameter in the request."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.soldo.com/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6e881b8b-2f5a-4ac7-a89b-070046143f6f",
+              "name": "The result array contains `Users`.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "customreferenceId",
+                      "value": "IDEMPLOY111"
+                    },
+                    {
+                      "key": "name",
+                      "value": "John"
+                    },
+                    {
+                      "key": "surname",
+                      "value": "Doe"
+                    },
+                    {
+                      "key": "visible",
+                      "value": "true"
+                    },
+                    {
+                      "key": "jobTitle",
+                      "value": "HR Specialist"
+                    },
+                    {
+                      "key": "department",
+                      "value": "HR departement"
+                    },
+                    {
+                      "key": "email",
+                      "value": "johndoe@email.com"
+                    },
+                    {
+                      "key": "mobile",
+                      "value": "johndoe@email.com"
+                    },
+                    {
+                      "key": "status",
+                      "value": "ACTIVE"
+                    },
+                    {
+                      "key": "id",
+                      "value": "XMPL1234-000001"
+                    },
+                    {
+                      "key": "groupId",
+                      "value": "2d65bd5e-3fdf-4002-b166-bde7fb8863fa"
+                    },
+                    {
+                      "key": "reportsTo",
+                      "value": "XMPL1234-000001"
+                    },
+                    {
+                      "key": "reportsTo",
+                      "value": "XMPL1234-000002"
+                    },
+                    {
+                      "key": "reportsTo",
+                      "value": "XMPL1234-000003"
+                    },
+                    {
+                      "key": "workStatus",
+                      "value": "OUT_OF_OFFICE"
+                    },
+                    {
+                      "key": "expensePolicyId",
+                      "value": "XMPL1234-000001"
+                    },
+                    {
+                      "key": "expensePolicyId",
+                      "value": "XMPL1234-000002"
+                    },
+                    {
+                      "key": "expensePolicyId",
+                      "value": "XMPL1234-000003"
+                    },
+                    {
+                      "key": "excludeExpensePolicyId",
+                      "value": "XMPL1234-000001"
+                    },
+                    {
+                      "key": "excludeExpensePolicyId",
+                      "value": "XMPL1234-000002"
+                    },
+                    {
+                      "key": "excludeExpensePolicyId",
+                      "value": "XMPL1234-000003"
+                    },
+                    {
+                      "key": "withoutExpensePolicy",
+                      "value": "true"
+                    },
+                    {
+                      "key": "p",
+                      "value": "3"
+                    },
+                    {
+                      "key": "s",
+                      "value": "25"
+                    },
+                    {
+                      "key": "d",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "props",
+                      "value": "creationTime"
+                    },
+                    {
+                      "key": "props",
+                      "value": "creationTime"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": 168,\n  \"pages\": 7,\n  \"page_size\": 25,\n  \"current_page\": 0,\n  \"results_size\": 25,\n  \"results\": [\n    {\n      \"id\": \"XMPL1234-000001\",\n      \"name\": \"John\",\n      \"surname\": \"Smith\",\n      \"middlename\": \"John\",\n      \"dob\": \"1970-10-21\",\n      \"job_title\": \"Business Strategist\",\n      \"department\": \"Research & Development\",\n      \"email\": \"jdoe@fake.soldo.com\",\n      \"mobile\": \"+44123323232\",\n      \"custom_reference_id\": \"123456-user-1\",\n      \"status\": \"ACTIVE\",\n      \"visible\": true,\n      \"groups\": [\n        \"7bf79328-a7ae-4222-aa54-091ff7f429a7\",\n        \"2d65bd5e-3fdf-4002-b166-bde7fb8863fa\"\n      ],\n      \"reports_to\": \"XMPL1234-000001\",\n      \"roles\": [\n        {\n          \"id\": \"superAdmin\",\n          \"name\": \"superAdmin\",\n          \"description\": \"The SuperAdmin role\",\n          \"scope\": \"ALL\"\n        },\n        {\n          \"id\": \"superAdmin\",\n          \"name\": \"superAdmin\",\n          \"description\": \"The SuperAdmin role\",\n          \"scope\": \"ALL\"\n        }\n      ],\n      \"contact_id\": \"135fdb6c-2e77-4fc0-a79f-2453fde75ef7\",\n      \"creation_time\": \"2017-06-01T12:48:40Z\",\n      \"last_update\": \"2017-06-01T12:48:40Z\",\n      \"work_status\": \"OUT_OF_OFFICE\"\n    },\n    {\n      \"id\": \"XMPL1234-000001\",\n      \"name\": \"John\",\n      \"surname\": \"Smith\",\n      \"middlename\": \"John\",\n      \"dob\": \"1970-10-21\",\n      \"job_title\": \"Business Strategist\",\n      \"department\": \"Research & Development\",\n      \"email\": \"jdoe@fake.soldo.com\",\n      \"mobile\": \"+44123323232\",\n      \"custom_reference_id\": \"123456-user-1\",\n      \"status\": \"ACTIVE\",\n      \"visible\": true,\n      \"groups\": [\n        \"7bf79328-a7ae-4222-aa54-091ff7f429a7\",\n        \"2d65bd5e-3fdf-4002-b166-bde7fb8863fa\"\n      ],\n      \"reports_to\": \"XMPL1234-000001\",\n      \"roles\": [\n        {\n          \"id\": \"superAdmin\",\n          \"name\": \"superAdmin\",\n          \"description\": \"The SuperAdmin role\",\n          \"scope\": \"ALL\"\n        },\n        {\n          \"id\": \"superAdmin\",\n          \"name\": \"superAdmin\",\n          \"description\": \"The SuperAdmin role\",\n          \"scope\": \"ALL\"\n        }\n      ],\n      \"contact_id\": \"135fdb6c-2e77-4fc0-a79f-2453fde75ef7\",\n      \"creation_time\": \"2017-06-01T12:48:40Z\",\n      \"last_update\": \"2017-06-01T12:48:40Z\",\n      \"work_status\": \"OUT_OF_OFFICE\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9efe615b-48c3-4b74-aa47-6ccaf9e5216f",
+              "name": "Your request has missing arguments or is malformed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "customreferenceId",
+                      "value": "IDEMPLOY111"
+                    },
+                    {
+                      "key": "name",
+                      "value": "John"
+                    },
+                    {
+                      "key": "surname",
+                      "value": "Doe"
+                    },
+                    {
+                      "key": "visible",
+                      "value": "true"
+                    },
+                    {
+                      "key": "jobTitle",
+                      "value": "HR Specialist"
+                    },
+                    {
+                      "key": "department",
+                      "value": "HR departement"
+                    },
+                    {
+                      "key": "email",
+                      "value": "johndoe@email.com"
+                    },
+                    {
+                      "key": "mobile",
+                      "value": "johndoe@email.com"
+                    },
+                    {
+                      "key": "status",
+                      "value": "ACTIVE"
+                    },
+                    {
+                      "key": "id",
+                      "value": "XMPL1234-000001"
+                    },
+                    {
+                      "key": "groupId",
+                      "value": "2d65bd5e-3fdf-4002-b166-bde7fb8863fa"
+                    },
+                    {
+                      "key": "reportsTo",
+                      "value": "XMPL1234-000001"
+                    },
+                    {
+                      "key": "reportsTo",
+                      "value": "XMPL1234-000002"
+                    },
+                    {
+                      "key": "reportsTo",
+                      "value": "XMPL1234-000003"
+                    },
+                    {
+                      "key": "workStatus",
+                      "value": "OUT_OF_OFFICE"
+                    },
+                    {
+                      "key": "expensePolicyId",
+                      "value": "XMPL1234-000001"
+                    },
+                    {
+                      "key": "expensePolicyId",
+                      "value": "XMPL1234-000002"
+                    },
+                    {
+                      "key": "expensePolicyId",
+                      "value": "XMPL1234-000003"
+                    },
+                    {
+                      "key": "excludeExpensePolicyId",
+                      "value": "XMPL1234-000001"
+                    },
+                    {
+                      "key": "excludeExpensePolicyId",
+                      "value": "XMPL1234-000002"
+                    },
+                    {
+                      "key": "excludeExpensePolicyId",
+                      "value": "XMPL1234-000003"
+                    },
+                    {
+                      "key": "withoutExpensePolicy",
+                      "value": "true"
+                    },
+                    {
+                      "key": "p",
+                      "value": "3"
+                    },
+                    {
+                      "key": "s",
+                      "value": "25"
+                    },
+                    {
+                      "key": "d",
+                      "value": "DESC"
+                    },
+                    {
+                      "key": "props",
+                      "value": "creationTime"
+                    },
+                    {
+                      "key": "props",
+                      "value": "creationTime"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cc1e0611-93fd-4a20-8a0f-4017d8a978bd",
+          "name": "Retrieve User Access Modes",
+          "request": {
+            "name": "Retrieve User Access Modes",
+            "description": {
+              "content": "Endpoint to retrieve the `User` access modes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "business",
+                "v2",
+                "employees",
+                ":userId",
+                "access-modes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "channel",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.soldo.com/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "14de37df-690c-4bce-8781-d7d38dc1155f",
+              "name": "The access modes configure for the given `User`.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees",
+                    ":userId",
+                    "access-modes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "channel",
+                      "value": "WEB"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"user_access_mode\": [\n    {\n      \"auth_mode\": \"SSO\",\n      \"channel\": \"WEB\"\n    },\n    {\n      \"auth_mode\": \"SSO\",\n      \"channel\": \"WEB\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "610701a7-06e2-4cea-9a0b-7d13c52d3027",
+              "name": "One or more resource requested does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees",
+                    ":userId",
+                    "access-modes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "channel",
+                      "value": "WEB"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bb72002f-04cd-4cc4-a877-8ce8be8a4067",
+          "name": "Update User Access Modes",
+          "request": {
+            "name": "Update User Access Modes",
+            "description": {
+              "content": "Endpoint to update the `User` access modes.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "business",
+                "v2",
+                "employees",
+                ":userId",
+                "access-modes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-Soldo-Fingerprint",
+                "value": "{{fingerprint}}"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-Soldo-Fingerprint-Signature",
+                "value": "{{fingerprint_signature}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.soldo.com/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"access_modes\": [\n    {\n      \"auth_mode\": \"<string>\",\n      \"channel\": \"<string>\"\n    },\n    {\n      \"auth_mode\": \"<string>\",\n      \"channel\": \"<string>\"\n    }\n  ],\n  \"request_timestamp\": \"<long>\",\n  \"skip_credential_notification\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "91b8df12-4d61-4514-bad5-49c9d246bd7e",
+              "name": "No content as result.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees",
+                    ":userId",
+                    "access-modes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint",
+                    "value": "{{fingerprint}}"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint-Signature",
+                    "value": "{{fingerprint_signature}}"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"access_modes\": [\n    {\n      \"auth_mode\": \"SSO\",\n      \"channel\": \"WEB\"\n    },\n    {\n      \"auth_mode\": \"SSO\",\n      \"channel\": \"WEB\"\n    }\n  ],\n  \"request_timestamp\": 1576850500000,\n  \"skip_credential_notification\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "462d3722-a40f-4bb0-9997-2a554c702bb5",
+              "name": "Your request has missing arguments or is malformed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees",
+                    ":userId",
+                    "access-modes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint",
+                    "value": "{{fingerprint}}"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint-Signature",
+                    "value": "{{fingerprint_signature}}"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"access_modes\": [\n    {\n      \"auth_mode\": \"SSO\",\n      \"channel\": \"WEB\"\n    },\n    {\n      \"auth_mode\": \"SSO\",\n      \"channel\": \"WEB\"\n    }\n  ],\n  \"request_timestamp\": 1576850500000,\n  \"skip_credential_notification\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6e8264d9-4366-4644-b72c-0bafc1440bbf",
+              "name": "One or more resource requested does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees",
+                    ":userId",
+                    "access-modes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint",
+                    "value": "{{fingerprint}}"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint-Signature",
+                    "value": "{{fingerprint_signature}}"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"access_modes\": [\n    {\n      \"auth_mode\": \"SSO\",\n      \"channel\": \"WEB\"\n    },\n    {\n      \"auth_mode\": \"SSO\",\n      \"channel\": \"WEB\"\n    }\n  ],\n  \"request_timestamp\": 1576850500000,\n  \"skip_credential_notification\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dc6cc91b-5060-46c9-9c6f-05a41fef65f6",
+          "name": "Update User Status",
+          "request": {
+            "name": "Update User Status",
+            "description": {
+              "content": "Endpoint to update an `User` status.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "business",
+                "v2",
+                "employees",
+                ":userId",
+                "status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-Soldo-Fingerprint",
+                "value": "{{fingerprint}}"
+              },
+              {
+                "disabled": false,
+                "description": "(Required) ",
+                "key": "X-Soldo-Fingerprint-Signature",
+                "value": "{{fingerprint_signature}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.soldo.com/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"<string>\",\n  \"credentialResetMode\": \"NONE\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2e46dc03-87f0-48e9-8ce0-c8d700df20f2",
+              "name": "The returned result is a single `User`.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees",
+                    ":userId",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint",
+                    "value": "{{fingerprint}}"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint-Signature",
+                    "value": "{{fingerprint_signature}}"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"ACTIVE\",\n  \"credentialResetMode\": \"NONE\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"XMPL1234-000001\",\n  \"name\": \"John\",\n  \"surname\": \"Smith\",\n  \"middlename\": \"John\",\n  \"dob\": \"1970-10-21\",\n  \"job_title\": \"Business Strategist\",\n  \"department\": \"Research & Development\",\n  \"email\": \"jdoe@fake.soldo.com\",\n  \"mobile\": \"+44123323232\",\n  \"mobile_prefix\": \"+44\",\n  \"custom_reference_id\": \"123456-user-1\",\n  \"status\": \"ACTIVE\",\n  \"visible\": true,\n  \"mobile_access\": true,\n  \"web_access\": true,\n  \"groups\": [\n    \"7bf79328-a7ae-4222-aa54-091ff7f429a7\",\n    \"2d65bd5e-3fdf-4002-b166-bde7fb8863fa\"\n  ],\n  \"shipping_address\": {\n    \"id\": \"7bf79328-a7ae-4222-aa54-091ff7f429a7\",\n    \"recipient\": \"JohnSmith\",\n    \"name\": \"Foo Street 75\",\n    \"line1\": \"Bar Street 64\",\n    \"line2\": \"Other street 31\",\n    \"country\": \"GB\",\n    \"county\": \"LD\",\n    \"city\": \"London\",\n    \"post_code\": \"00000\",\n    \"delivery_phone_number\": \"+441234567890\",\n    \"default_shipping\": false,\n    \"type\": \"SHIPPING\",\n    \"category\": \"COMPANY\",\n    \"user_id\": \"string\",\n    \"creation_time\": \"2017-06-01T12:48:40Z\",\n    \"last_update\": \"2017-06-01T12:48:40Z\"\n  },\n  \"reports_to\": \"XMPL1234-000001\",\n  \"roles\": [\n    {\n      \"id\": \"superAdmin\",\n      \"name\": \"superAdmin\",\n      \"description\": \"The SuperAdmin role\",\n      \"scope\": \"ALL\"\n    },\n    {\n      \"id\": \"superAdmin\",\n      \"name\": \"superAdmin\",\n      \"description\": \"The SuperAdmin role\",\n      \"scope\": \"ALL\"\n    }\n  ],\n  \"contact_id\": \"135fdb6c-2e77-4fc0-a79f-2453fde75ef7\",\n  \"creation_time\": \"2017-06-01T12:48:40Z\",\n  \"last_update\": \"2017-06-01T12:48:40Z\",\n  \"work_status\": \"OUT_OF_OFFICE\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "50e486a0-7db6-406a-bd71-ba8b5e965705",
+              "name": "Your request has missing arguments or is malformed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees",
+                    ":userId",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint",
+                    "value": "{{fingerprint}}"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint-Signature",
+                    "value": "{{fingerprint_signature}}"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"ACTIVE\",\n  \"credentialResetMode\": \"NONE\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "208cf7af-ed56-4553-91a9-0ee2fe84104d",
+              "name": "One or more resource requested does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "employees",
+                    ":userId",
+                    "status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint",
+                    "value": "{{fingerprint}}"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) ",
+                    "key": "X-Soldo-Fingerprint-Signature",
+                    "value": "{{fingerprint_signature}}"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"ACTIVE\",\n  \"credentialResetMode\": \"NONE\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.soldo.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "42f7f415-b879-400b-9612-9714cc518e98",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Users API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+      "type": "text/plain"
+    }
+  }
+}

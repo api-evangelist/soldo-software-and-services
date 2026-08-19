@@ -1,0 +1,191 @@
+{
+  "item": [
+    {
+      "id": "2fd483c3-0b8d-4296-be60-717b6c6d865c",
+      "name": "Transaction VAT Rate",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8d1a176d-4dcb-4a35-9b34-f5d48f47a9cf",
+          "name": "Remove VAT Rate from Transaction ",
+          "request": {
+            "name": "Remove VAT Rate from Transaction ",
+            "description": {
+              "content": "Endpoint to remove the `Transaction`'s `VatRate`",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "business",
+                "v2",
+                "transactions",
+                ":transactionId",
+                "tax-rate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "transactionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.soldo.com/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f9c67d6c-d5a1-4bdd-8f11-d170646dc044",
+              "name": "No content as result.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "transactions",
+                    ":transactionId",
+                    "tax-rate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f875efe6-98b1-4249-9a4a-8d3c27d2e547",
+              "name": "One or more resource requested does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "transactions",
+                    ":transactionId",
+                    "tax-rate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "transactionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.soldo.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "addd4d76-d914-4012-9a64-aa78513d03b0",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Transaction VAT Rate API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+      "type": "text/plain"
+    }
+  }
+}

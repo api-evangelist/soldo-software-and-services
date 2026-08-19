@@ -950,3 +950,9 @@ tools:
   description: Get who am I
   tag: Authentication
   source_operation: openapi/soldo-software-and-services-business-api-openapi.json#who-am-i
+deployment:
+  mode: none
+  verified: derived
+  tools: 235
+  checked: '2026-08-12'
+  source: catalog MCP census

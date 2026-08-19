@@ -1,0 +1,130 @@
+{
+  "item": [
+    {
+      "id": "73a1f8af-906d-41eb-86fe-75134e3c3663",
+      "name": "Company",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d30fc10a-5383-4595-972c-3c3fd8c90cdd",
+          "name": "Get Company",
+          "request": {
+            "name": "Get Company",
+            "description": {
+              "content": "Endpoint to retrieve one's own `Company` info.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "business",
+                "v2",
+                "company"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "address_read address_write card_read card_write company_read company_write contact_read contact_write employee_read employee_write expense_category_read expense_category_write expense_report_read expense_report_write expense_review_read expense_review_write group_read group_write online_ads_read online_ads_write payment_read payment_write purchase_read purchase_write refueling_read refueling_write resource_set_read resource_set_write role_read statement_read subscription_read subscription_write tag_read tag_write tax_rate_read tax_rate_write transaction_read transaction_write vehicle_read vehicle_write wallet_read wallet_write webhook_subscription_read webhook_subscription_write"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.soldo.com/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "client_credentials"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a7ccd9c1-37bc-4675-96b5-61e3bcbec003",
+              "name": "The returned resource is one's own `Company`.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "v2",
+                    "company"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"Example Inc.\",\n  \"icon_code\": \"string\",\n  \"vat_number\": \"98746784967\",\n  \"company_account_id\": \"XMPL1234\",\n  \"shipping_address\": {\n    \"id\": \"7bf79328-a7ae-4222-aa54-091ff7f429a7\",\n    \"recipient\": \"JohnSmith\",\n    \"name\": \"Foo Street 75\",\n    \"line1\": \"Bar Street 64\",\n    \"line2\": \"Other street 31\",\n    \"country\": \"GB\",\n    \"county\": \"LD\",\n    \"city\": \"London\",\n    \"post_code\": \"00000\",\n    \"delivery_phone_number\": \"+441234567890\",\n    \"default_shipping\": false,\n    \"type\": \"SHIPPING\",\n    \"category\": \"COMPANY\",\n    \"user_id\": \"string\",\n    \"creation_time\": \"2017-06-01T12:48:40Z\",\n    \"last_update\": \"2017-06-01T12:48:40Z\"\n  },\n  \"time_zone\": \"Europe/London\",\n  \"market\": \"GBR\",\n  \"financial_entity\": \"SFS-IRL\",\n  \"creation_time\": \"2017-06-01T12:48:40Z\",\n  \"last_update\": \"2017-06-01T12:48:40Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.soldo.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a50c3af6-f77e-4e98-a120-8d61d993dd71",
+    "name": "Soldo Business API v2.0 - OpenAPI 3.0 Accounting Classification Company API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Soldo Business API v2.0 OpenAPI 3.0 specification",
+      "type": "text/plain"
+    }
+  }
+}

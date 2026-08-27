@@ -568,6 +568,16 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/soldo-software-and-services-workflows-api-openapi.yml
+- aid: soldo-software-and-services:soldo-software-and-services-webhooks-api
+  name: Soldo Software and Services Webhooks API
+  description: The Webhooks API from Soldo Software and Services — 0 operation(s) for webhooks.
+  humanURL: https://developer.soldo.com/
+  baseURL: https://api.soldo.com/business/v2
+  tags:
+  - Webhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/soldo-software-and-services-webhooks-api-openapi.yml
 common:
 - type: Overlay
   url: overlays/soldo-software-and-services-business-api-overlay.yaml

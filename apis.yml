@@ -17,6 +17,18 @@ x-backed-by:
 - battery-ventures
 x-tier: enriched
 x-tier-reason: portfolio-lead
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
@@ -579,6 +591,9 @@ apis:
   - type: OpenAPI
     url: openapi/soldo-software-and-services-webhooks-api-openapi.yml
 common:
+- type: CapabilityMap
+  url: capabilities/soldo-software-and-services-capability-edges.yml
+  name: Soldo Software and Services Business Capability Map
 - type: Overlay
   url: overlays/soldo-software-and-services-business-api-overlay.yaml
 - type: PostmanWorkspace

@@ -593,6 +593,8 @@ apis:
   - type: OpenAPI
     url: openapi/soldo-software-and-services-webhooks-api-openapi.yml
 common:
+- type: Website
+  url: https://www.soldo.com/
 - type: CapabilityMap
   url: capabilities/soldo-software-and-services-capability-edges.yml
   name: Soldo Software and Services Business Capability Map

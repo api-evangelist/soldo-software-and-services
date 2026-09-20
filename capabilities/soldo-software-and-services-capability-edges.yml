@@ -1,0 +1,47 @@
+slug: soldo-software-and-services
+provider: Soldo Software and Services
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Banking & Capital Markets
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Cards
+  spec_file: soldo-software-and-services-cards-api-openapi.yml
+  capability_id: BC-1340.60
+  capability_id_l1: BC-1340
+  capability_name: Card Issuance Management
+  confidence: 0.78
+  evidence: POST /business/v2/cards  card-add  Add Card; schemas AddCardOrder, CardStatus, CardRenewalInfo,
+    CardType, CardPaymentMethod
+  reason: Operations create, retrieve, update, cancel and re-assign prepaid company cards, with order,
+    status and renewal schemas — this is card issuance and card lifecycle management, not generic account
+    admin. Slight uncertainty only because Soldo is the issuer-side platform for corporate spend rather
+    than a bank card system.
+- tag: VAT Rates
+  spec_file: soldo-software-and-services-vat-rates-api-openapi.yml
+  capability_id: BC-220.20
+  capability_id_l1: BC-220
+  capability_name: Indirect Tax Management
+  confidence: 0.75
+  evidence: POST /business/v2/entities/tax-rate  'Add VAT Rate'; schemas 'CreateVatRate', 'VatRate', 'UpdateVatRate'
+  reason: Full CRUD over the entity's VAT/tax-rate master data used to tax-treat spend, which is squarely
+    indirect tax (VAT) management. Configuration flavour keeps it below 0.8.
+- tag: User Roles
+  spec_file: soldo-software-and-services-user-roles-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.72
+  evidence: POST /business/v2/employees/{userId}/assignRole  'Add roles to User'; schemas 'UserRole',
+    'AssignedUserRoles'
+  reason: Assignment and revocation of platform roles to users is access-rights administration, i.e. Identity
+    & Access Management. It is not HR job/position management — the objects are roles on the Soldo application,
+    granting permissions.

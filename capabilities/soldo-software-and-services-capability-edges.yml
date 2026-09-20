@@ -11,7 +11,7 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 3
+edge_count: 4
 edges:
 - tag: Cards
   spec_file: soldo-software-and-services-cards-api-openapi.yml
@@ -45,3 +45,14 @@ edges:
   reason: Assignment and revocation of platform roles to users is access-rights administration, i.e. Identity
     & Access Management. It is not HR job/position management — the objects are roles on the Soldo application,
     granting permissions.
+- tag: Transaction VAT Rate
+  spec_file: soldo-software-and-services-transaction-vat-rate-api-openapi.yml
+  capability_id: BC-220.20
+  capability_id_l1: BC-220
+  capability_name: Indirect Tax Management
+  confidence: 0.7
+  evidence: DELETE /business/v2/transactions/{transactionId}/tax-rate transaction-tax-rate-unset Remove
+    VAT Rate from Transaction
+  reason: Setting/removing the VAT rate on spend transactions is indirect tax treatment of expenses; single
+    operation limits confidence but the VAT reference is explicit.
+  recovered_from: sweep-20260829T005356Z-edges.json

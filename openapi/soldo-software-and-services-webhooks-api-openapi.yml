@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  title: Soldo Software And Services Webhooks API
+  title: Soldo Business API v2.0 - OpenAPI 3.0 Webhooks API
+  description: Soldo Business API v2.0 OpenAPI 3.0 specification
   version: 5.56.0
-  description: 'Operations tagged Webhooks across 46 of this provider''s published API definitions: soldo-software-and-services-accounting-classification-api-openapi.yml, soldo-software-and-services-addresses-api-openapi.yml, soldo-software-and-services-authentication-api-openapi.yml, soldo-software-and-services-auto-transfer-presets-api-openapi.yml, soldo-software-and-services-autotags-api-openapi.yml, soldo-software-and-services-business-trips-api-openapi.yml, soldo-software-and-services-card-rules-api-openapi.yml, soldo-software-and-services-card-rules-presets-api-openapi.yml, soldo-software-and-services-cards-api-openapi.yml, soldo-software-and-services-company-api-openapi.yml, soldo-software-and-services-contacts-api-openapi.yml, soldo-software-and-services-documents-api-openapi.yml, soldo-software-and-services-expense-categories-api-openapi.yml, soldo-software-and-services-expense-policies-api-openapi.yml, soldo-software-and-services-expense-reports-api-openapi.yml, soldo-software-and-services-expense-review-configuration-api-openapi.yml, soldo-software-and-services-expense-review-processes-api-openapi.yml, soldo-software-and-services-expense-reviews-api-openapi.yml, soldo-software-and-services-groups-api-openapi.yml, soldo-software-and-services-lists-api-openapi.yml, soldo-software-and-services-online-ads-api-openapi.yml, soldo-software-and-services-orders-api-openapi.yml, soldo-software-and-services-out-of-office-api-openapi.yml, soldo-software-and-services-permissions-api-openapi.yml, soldo-software-and-services-pre-approved-spend-api-openapi.yml, soldo-software-and-services-refueling-transactions-api-openapi.yml, soldo-software-and-services-requests-api-openapi.yml, soldo-software-and-services-resource-sets-api-openapi.yml, soldo-software-and-services-statements-api-openapi.yml, soldo-software-and-services-subscriptions-api-openapi.yml, soldo-software-and-services-tags-api-openapi.yml, soldo-software-and-services-transaction-attachments-api-openapi.yml, soldo-software-and-services-transaction-custom-export-api-openapi.yml, soldo-software-and-services-transaction-expense-category-api-openapi.yml, soldo-software-and-services-transaction-metadata-api-openapi.yml, soldo-software-and-services-transaction-split-api-openapi.yml, soldo-software-and-services-transaction-tags-api-openapi.yml, soldo-software-and-services-transaction-vat-rate-api-openapi.yml, soldo-software-and-services-transactions-api-openapi.yml, soldo-software-and-services-user-roles-api-openapi.yml, soldo-software-and-services-users-api-openapi.yml, soldo-software-and-services-vat-rates-api-openapi.yml, soldo-software-and-services-vehicles-api-openapi.yml, soldo-software-and-services-wallets-api-openapi.yml, soldo-software-and-services-webhook-subscriptions-api-openapi.yml, soldo-software-and-services-workflows-api-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://api.soldo.com
   description: Production server (using live data)
@@ -54,11 +54,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, type, customReferenceId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   move_resources_wallet:
     post:
       tags:
@@ -101,11 +96,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, type, customReferenceId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   customer_care_withdraw:
     post:
       tags:
@@ -148,11 +138,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   transaction_business_trip_unlinked:
     post:
       tags:
@@ -195,11 +180,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   remove_resources_card:
     post:
       tags:
@@ -242,11 +222,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, type, customReferenceId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   load_failed:
     post:
       tags:
@@ -289,11 +264,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   created_expense_configuration:
     post:
       tags:
@@ -336,11 +306,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: startDate, policyUrl, enabled, transactionId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   change_expense_type:
     post:
       tags:
@@ -383,11 +348,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: startDate, policyUrl, enabled, transactionId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   move_resources_member:
     post:
       tags:
@@ -430,11 +390,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, type, customReferenceId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   purchase_redeem_card:
     post:
       tags:
@@ -477,11 +432,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, title, description, amount, amountCurrency
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   billing:
     post:
       tags:
@@ -524,11 +474,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   customer_care_deposit:
     post:
       tags:
@@ -571,11 +516,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   store_order_completed:
     post:
       tags:
@@ -618,11 +558,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, status
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   card_lost:
     post:
       tags:
@@ -665,11 +600,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, status, walletId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   inbound_payment_reversal:
     post:
       tags:
@@ -712,11 +642,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   new_user:
     post:
       tags:
@@ -759,11 +684,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, surname, status
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   updated_expense_configuration:
     post:
       tags:
@@ -806,11 +726,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: startDate, policyUrl, enabled, transactionId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   scheduled_transfer:
     post:
       tags:
@@ -853,11 +768,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   transaction_modified:
     post:
       tags:
@@ -900,11 +810,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   card_change_status:
     post:
       tags:
@@ -947,11 +852,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, status, walletId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   online_ads_updated:
     post:
       tags:
@@ -994,11 +894,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, walletId, cardId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   delete_group:
     post:
       tags:
@@ -1041,11 +936,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, type, customReferenceId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   load_money:
     post:
       tags:
@@ -1088,11 +978,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   wiretransfer:
     post:
       tags:
@@ -1135,11 +1020,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   contact_deleted:
     post:
       tags:
@@ -1182,11 +1062,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, userId, type, status
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   card_destroyed:
     post:
       tags:
@@ -1229,11 +1104,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, status, walletId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   card_authorization:
     post:
       tags:
@@ -1276,11 +1146,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   updated_transaction:
     post:
       tags:
@@ -1323,11 +1188,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: startDate, policyUrl, enabled, transactionId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   transaction_adjustment:
     post:
       tags:
@@ -1370,11 +1230,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   attachment_delete:
     post:
       tags:
@@ -1417,11 +1272,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: attachmentId, transactionId, fileName
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   disabled_expense_configuration:
     post:
       tags:
@@ -1464,11 +1314,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: startDate, policyUrl, enabled, transactionId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   purchase_delete:
     post:
       tags:
@@ -1511,11 +1356,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, title, description, amount, amountCurrency
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   wallet_created:
     post:
       tags:
@@ -1558,11 +1398,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, currencyCode, primaryUserPublicId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   card_activated:
     post:
       tags:
@@ -1605,11 +1440,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, status, walletId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   unload_money:
     post:
       tags:
@@ -1652,11 +1482,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   create_group:
     post:
       tags:
@@ -1699,11 +1524,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, type, customReferenceId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   update_group:
     post:
       tags:
@@ -1746,11 +1566,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, type, customReferenceId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   user_updated:
     post:
       tags:
@@ -1793,11 +1608,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, surname, status
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   subscription_assignee_added:
     post:
       tags:
@@ -1840,11 +1650,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, platform, status, paymentFrequency, cardId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   inbound_payment:
     post:
       tags:
@@ -1887,11 +1692,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   joule_feed:
     post:
       tags:
@@ -1934,11 +1734,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   transaction_business_trip_linked:
     post:
       tags:
@@ -1981,11 +1776,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   transaction_deleted:
     post:
       tags:
@@ -2028,11 +1818,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   vehicle_create:
     post:
       tags:
@@ -2075,11 +1860,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id,numberPlate
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   card_replaced:
     post:
       tags:
@@ -2122,11 +1902,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, status, walletId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   card_stolen:
     post:
       tags:
@@ -2169,11 +1944,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, status, walletId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   card_creation:
     post:
       tags:
@@ -2216,11 +1986,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, status, walletId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   add_resources_card:
     post:
       tags:
@@ -2263,11 +2028,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, type, customReferenceId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   online_ads_created:
     post:
       tags:
@@ -2310,11 +2070,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, walletId, cardId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   vehicle_delete:
     post:
       tags:
@@ -2357,11 +2112,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id,numberPlate
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   remove_resources_member:
     post:
       tags:
@@ -2404,11 +2154,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, type, customReferenceId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   subscription_created:
     post:
       tags:
@@ -2451,11 +2196,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, platform, status, paymentFrequency, cardId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   add_resources_wallet:
     post:
       tags:
@@ -2498,11 +2238,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, type, customReferenceId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   balanced_transfer:
     post:
       tags:
@@ -2545,11 +2280,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   vehicle_update:
     post:
       tags:
@@ -2592,11 +2322,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id,numberPlate
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   online_ads_activated:
     post:
       tags:
@@ -2639,11 +2364,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, walletId, cardId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   card_label_updated:
     post:
       tags:
@@ -2686,11 +2406,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, status, walletId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   subscription_deleted:
     post:
       tags:
@@ -2733,11 +2448,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, platform, status, paymentFrequency, cardId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   recurring_billing:
     post:
       tags:
@@ -2780,11 +2490,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   upload_completed:
     post:
       tags:
@@ -2827,11 +2532,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: attachmentId, transactionId, fileName
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   subscription_updated:
     post:
       tags:
@@ -2874,11 +2574,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, platform, status, paymentFrequency, cardId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   online_ads_deleted:
     post:
       tags:
@@ -2921,11 +2616,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, walletId, cardId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   conversion:
     post:
       tags:
@@ -2968,11 +2658,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   edit_tag:
     post:
       tags:
@@ -3015,11 +2700,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   contact_updated:
     post:
       tags:
@@ -3062,11 +2742,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, userId, type, status
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   online_ads_assignee_added:
     post:
       tags:
@@ -3109,11 +2784,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, walletId, cardId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   purchase_update:
     post:
       tags:
@@ -3156,11 +2826,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, title, description, amount, amountCurrency
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   online_ads_assignee_removed:
     post:
       tags:
@@ -3203,11 +2868,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, walletId, cardId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   wallet_deleted:
     post:
       tags:
@@ -3250,11 +2910,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, currencyCode, primaryUserPublicId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   remove_resources_wallet:
     post:
       tags:
@@ -3297,11 +2952,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, type, customReferenceId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   enabled_expense_configuration:
     post:
       tags:
@@ -3344,11 +2994,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: startDate, policyUrl, enabled, transactionId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   completed_transactions_import:
     post:
       tags:
@@ -3391,11 +3036,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: startDate, policyUrl, enabled, transactionId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   store_order_placed:
     post:
       tags:
@@ -3438,11 +3078,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, status
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   purchase_create:
     post:
       tags:
@@ -3485,11 +3120,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, title, description, amount, amountCurrency
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   subscription_assignee_removed:
     post:
       tags:
@@ -3532,11 +3162,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, platform, status, paymentFrequency, cardId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   contact_created:
     post:
       tags:
@@ -3579,11 +3204,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, userId, type, status
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   add_resources_member:
     post:
       tags:
@@ -3626,11 +3246,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, type, customReferenceId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   internal_transfer:
     post:
       tags:
@@ -3673,11 +3288,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, walletId, status, transactionSign
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   card_assignee_updated:
     post:
       tags:
@@ -3720,11 +3330,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, status, walletId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   user_status_changed:
     post:
       tags:
@@ -3767,11 +3372,6 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, surname, status
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
   subscription_activated:
     post:
       tags:
@@ -3814,12 +3414,4392 @@ webhooks:
           description: Success.
       x-soldo:
         fingerprint-order: id, name, platform, status, paymentFrequency, cardId
-    servers:
-    - url: https://api.soldo.com
-      description: Production server (using live data)
-    - url: https://api-demo.soldocloud.net
-      description: Sandbox server (using test data)
 components:
+  schemas:
+    UploadUserChannel:
+      type: string
+      description: The channel used to upload the attachment ).
+      enum:
+      - WEB
+      - MOBILE
+      - BO_USER
+      - business
+      - BAPI
+      - PAPI
+      - OTHER
+    CardRenewalInfo:
+      type: object
+      properties:
+        expiring_soon:
+          type: boolean
+          description: Whether the `Card` is approaching its expiration date.
+          example: true
+        renewed_card_ready_for_activation:
+          type: boolean
+          description: Whether the renewed `Card` is ready to be activated.
+          example: true
+      description: Renewal details for the `Card`. Present only when a renewal process has been initiated for the `Card`, `null` otherwise.
+    TransactionAdjustmentEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    TransactionBusinessTripLinkedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    Address:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `Address` ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        recipient:
+          type: string
+          description: The recipient of the `Address`
+          example: JohnSmith
+        name:
+          type: string
+          description: The actual name of the `Address`.
+          example: Foo Street 75
+        line1:
+          type: string
+          description: The `Address` street.
+          example: Bar Street 64
+        line2:
+          type: string
+          description: An optional other street.
+          example: Other street 31
+        country:
+          type: string
+          description: The country of the `Address`.
+          example: GB
+        county:
+          type: string
+          description: The county of the `Address`.
+          example: LD
+        city:
+          type: string
+          description: The city of the `Address`.
+          example: London
+        post_code:
+          type: string
+          description: The postal code of the `Address`.
+          example: '00000'
+        delivery_phone_number:
+          type: string
+          description: Delivery phone number
+          example: '+441234567890'
+        default_shipping:
+          type: boolean
+          description: True if the `Address` is the default shipping address.
+          example: false
+        type:
+          type: string
+          description: The type of the `Address`.
+          example: SHIPPING
+        category:
+          $ref: '#/components/schemas/AddressCategory'
+        user_id:
+          type: string
+          description: The `User` ID, only if category of the `Address` is `USER`.
+        creation_time:
+          type: string
+          description: The date and time when the `Address` was created.
+          example: '2017-06-01T12:48:40Z'
+        last_update:
+          type: string
+          description: The date and time when the `Address` was last updated.
+          example: '2017-06-01T12:48:40Z'
+      description: The default shipping `Address` of the `User`.
+      example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+    WiretransferEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    CardOwnerType:
+      type: string
+      description: 'The owner type (sortable: no).'
+      example: employee
+      enum:
+      - company
+      - employee
+    MoveResourcesMemberEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Group'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    TransactionTimelineItem:
+      type: object
+      properties:
+        created_at:
+          type: string
+          description: The instant the change happened to the `Transaction` and related `Wallet`.
+          example: '2017-06-01T12:48:40Z'
+        status:
+          $ref: '#/components/schemas/TransactionTimelineStatus'
+        amount:
+          type: number
+          description: The amount related to the change in the currency of the `Wallet`.
+          example: 10.25
+        balance_after:
+          $ref: '#/components/schemas/TransactionTimelineBalance'
+        balance_before:
+          $ref: '#/components/schemas/TransactionTimelineBalance'
+        is_fee:
+          type: boolean
+          description: Indicate whether the change is a fee.
+          example: true
+      description: The timeline of changes affecting the `Transaction` and the related `Wallet`. For each occurrence, the `Wallet` balance is reported before and after the change.
+    DepositAccountInfo:
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/AccountInfoDeposit'
+        identification:
+          type: string
+          description: The account identification related to the type.
+          example: GB00ABCD00000123456789
+      description: The deposit account info of the `Wallet`.
+      example:
+      - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+      - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    ExpenseStatus:
+      type: string
+      description: 'The status of approval of the expense (sortable: no).'
+      example: APPROVED
+      enum:
+      - APPROVED
+      - PARTIALLY_APPROVED
+      - DENIED
+      - TO_REVIEW
+    OnlineAds:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `OnlineAds` ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        name:
+          type: string
+          description: The name of the `OnlineAds`.
+          example: EXAMPLE ONLINE AD
+        description:
+          type: string
+          description: A custom description of the `OnlineAds`.
+          example: This is an online advertisement
+        platform:
+          $ref: '#/components/schemas/OnlineAdsPlatform'
+        assignees:
+          type: array
+          description: List of `User` IDs currently assigned to the `OnlineAds` and its `Cards`.
+          example:
+          - XMPL1234-000001
+          - XMPL1234-000002
+          - XMPL1234-000003
+          items:
+            type: string
+            description: List of `User` IDs currently assigned to the `OnlineAds` and its `Cards`.
+            example: '["XMPL1234-000001","XMPL1234-000002","XMPL1234-000003"]'
+        status:
+          $ref: '#/components/schemas/OnlineAdsStatus'
+        wallet_id:
+          type: string
+          description: The `Wallet` ID the `OnlineAds` and its `Card` are linked to.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+        last_spent_date:
+          type: string
+          description: The date and time of the last `Transaction` made with the `Card`.
+          example: '2020-05-07T12:48:40Z'
+        last_spent:
+          type: number
+          description: The amount of the last `Transaction` made with the `Card`.
+          example: 75.01
+        total_spent:
+          type: number
+          description: The overall amount spent with the `Card`.
+          example: 775.01
+        card_id:
+          type: string
+          description: The ID of the `Card` reserved for this `OnlineAds` (only available after the `OnlineAds` has been activated).
+          example: c861cc24-6663-410f-8c78-73f886fff4ef
+        creation_time:
+          type: string
+          description: The date and time when the `OnlineAds` was created.
+          example: '2017-06-01T12:48:40Z'
+        last_update_time:
+          type: string
+          description: The date and time when the `OnlineAds` was last updated.
+          example: '2017-06-01T12:48:40Z'
+    InboundPaymentEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    SubscriptionUpdatedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Subscription'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    VehicleUpdateEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Vehicle'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    Contact:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `Contact` ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        name:
+          type: string
+          description: The name of the `Contact`.
+          example: John Doe
+        user_id:
+          type: string
+          description: The ID of the `User` the bank details are assigned to (only available for `Contacts` of type `EMPLOYEE`).
+          example: XMPL1234-000001
+        type:
+          $ref: '#/components/schemas/ContactType'
+        payment_scheme:
+          uniqueItems: true
+          type: array
+          description: The type of payment accepted by the `Contact`.
+          items:
+            $ref: '#/components/schemas/PaymentSchema'
+        account_info:
+          type: array
+          description: The bank account information of the `Contact`.
+          items:
+            $ref: '#/components/schemas/AccountInfoContact'
+        bic:
+          type: string
+          description: The bic of the `User` the bank details .
+          example: XMPL1234-000001
+        country:
+          $ref: '#/components/schemas/ISO3166Country'
+        status:
+          $ref: '#/components/schemas/ContactStatus'
+        creation_time:
+          type: string
+          description: The date and time when the `Contact` was created.
+          example: '2017-06-01T12:48:40Z'
+        last_update_time:
+          type: string
+          description: The date and time when the `Contact` was last updated.
+          example: '2017-06-01T12:48:40Z'
+        bank_account_verification_status:
+          $ref: '#/components/schemas/ContactBankAccountVerificationStatus'
+    TransactionAmount:
+      type: object
+      properties:
+        amount:
+          type: number
+          description: The amount of the `Transaction` line.
+          example: 10.25
+        currency:
+          $ref: '#/components/schemas/ISO4217Currency'
+      description: The `TransactionList`'s line amount rejected in policy.
+    ExpenseCategory:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `ExpenseCategory` ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        code:
+          type: string
+          description: The code of the `ExpenseCategory`.
+          example: '123'
+        name:
+          type: string
+          description: The name of the `ExpenseCategory`.
+          example: category-one
+        description:
+          type: string
+          description: A custom description of the `ExpenseCategory`.
+          example: An expense category
+        tax_rate_id:
+          type: string
+          description: The ID of the VAT rate linked to the `ExpenseCategory`.
+          example: c861cc24-6663-410f-8c78-73f886fff4ef
+        enabled:
+          type: boolean
+          description: The `ExpenseCategory` is visible in the transaction detail.
+          example: false
+        merchant_categories:
+          uniqueItems: true
+          type: array
+          description: A list of merchant categories this `ExpenseCategory`.
+          items:
+            $ref: '#/components/schemas/MerchantCategory'
+        expense_type:
+          type: string
+          description: The type of expense assigned to category.
+          example: TRAVEL_AND_ENTERTAINMENT
+        integration:
+          type: string
+          description: The `ExpenseCategory`'s correlated integration.
+          example: Netsuite
+        creation_time:
+          type: string
+          description: 'The date and time when the `ExpenseCategory` was created (sortable: no).'
+          example: '2017-06-01T12:48:40Z'
+        last_update_time:
+          type: string
+          description: 'The date and time when the `ExpenseCategory` was last updated (sortable: no).'
+          example: '2017-06-01T12:48:40Z'
+      description: The `ExpenseCategory` object.
+    AddressCategory:
+      type: string
+      description: The category of the `Address`.
+      example: COMPANY
+      enum:
+      - USER
+      - COMPANY
+    VatRate:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `VATRate` ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        code:
+          type: string
+          description: The code of the `VATRate`.
+          example: code-vat-11
+        name:
+          type: string
+          description: The name of the `VATRate`
+          example: Tax 11
+        description:
+          type: string
+          description: A custom description of the `VATRate`.
+          example: Number 11 of Tax code
+        percentage:
+          type: number
+          description: The percentage value of the `VATRate`
+          format: double
+          example: 15
+        enabled:
+          type: boolean
+          description: The `VATRate` is visible in the transaction detail.
+          example: true
+        integration:
+          type: string
+          description: The `VATRate`'s corresponding integration.
+          example: something
+        creation_time:
+          type: string
+          description: 'The date and time when the `VATRate` was created (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+        last_update_time:
+          type: string
+          description: 'The date and time when the `VATRate` was last updated (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+      description: The `VATRate` object.
+    ScheduledTransferEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    OrderItem:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of a single item of a specific `Order`.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        item_type:
+          type: string
+          description: The type of the ordered item.
+          example: CARD
+        category:
+          type: string
+          description: The category of the ordered item.
+      description: The products associated with the `Order`.
+    VehicleStatus:
+      type: string
+      description: The status of the `Vehicle`.
+      example: ACTIVE
+      enum:
+      - ACTIVE
+      - ARCHIVED
+    TransactionOwnerType:
+      type: string
+      description: 'The owner type (`company`, `employee`) (sortable: no).'
+      example: company
+      enum:
+      - employee
+      - company
+    PrimaryUserType:
+      type: string
+      description: The type of resource assigned to the `Wallet`.
+      example: company
+      enum:
+      - main
+      - company
+      - employee
+      - dedicated
+    UnloadMoneyEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    GroupType:
+      type: string
+      description: The `Group`'s type.
+      example: DIVISION
+      enum:
+      - TEAM
+      - PROJECT
+      - DEPARTMENT
+      - DIVISION
+      - SQUAD
+      - UNIT
+      - PRODUCTION
+    StoreOrderCompletedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Order'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    InternalTransferEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    OnlineAdsDeletedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/OnlineAds'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    Vehicle:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'The `Vehicle` ID (sortable: no).'
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        number_plate:
+          type: string
+          description: 'The plate number of the `Vehicle` (sortable: yes).'
+          example: AA000BB
+        description:
+          type: string
+          description: 'The description of the `Vehicle` (sortable: no).'
+          example: Employee electric vehicle
+        vat_deductible:
+          $ref: '#/components/schemas/VatDeductibilityPercentage'
+        fuel_type:
+          $ref: '#/components/schemas/FuelType'
+        status:
+          $ref: '#/components/schemas/VehicleStatus'
+        creation_time:
+          type: string
+          description: 'The date and time when the `Vehicle` was created (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+        last_update_time:
+          type: string
+          description: 'The last date and time when the `Vehicle` was updated (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+        card_ids:
+          type: array
+          description: 'The list of `Card` ID associated with the vehicle (sortable: no).'
+          example:
+          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+          items:
+            type: string
+            description: 'The list of `Card` ID associated with the vehicle (sortable: no).'
+            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
+        reimbursement_rate:
+          type: number
+          description: 'The rate to apply for a `MileageReimbursement`, measured in main `Wallet` currency per km (sortable: no).'
+          example: 0.45
+    Source:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The source name.
+          example: J. Doe
+        type:
+          $ref: '#/components/schemas/LoadSource'
+        destination_wallet_id:
+          type: string
+          description: ' The receiving wallet in the transaction, to which funds are being transferred.'
+          example: de29bffb-7da2-40f1-934a-241170762d3e
+        destination_wallet_name:
+          type: string
+          description: ' The receiving wallet name in the transaction, to which funds are being transferred.'
+          example: EURO VIBAN
+      description: Info about the origin of the `Transaction` (this applies for `InboundFasterPayment`, `InboundFasterPaymentReversal`, `Load`, `LoadReversal` and `Wiretransfer`).
+    Subscription:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `Subscription` ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        name:
+          type: string
+          description: The name of the `Subscription`.
+          example: EXAMPLE SUBSCRIPTION.
+        description:
+          type: string
+          description: A custom description of the `Subscription`.
+          example: This is a subscription
+        platform:
+          $ref: '#/components/schemas/SubscriptionPlatform'
+        assignees:
+          type: array
+          description: List of `User` ID currently assigned to the `Subscription` and its `Card`.
+          example:
+          - XMPL1234-000001
+          - XMPL1234-000002
+          - XMPL1234-000003
+          items:
+            type: string
+            description: List of `User` ID currently assigned to the `Subscription` and its `Card`.
+            example: '["XMPL1234-000001","XMPL1234-000002","XMPL1234-000003"]'
+        status:
+          $ref: '#/components/schemas/SubscriptionStatus'
+        wallet_id:
+          type: string
+          description: The ID of the `Wallet` the `Subscription` and its `Card` are linked to.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        payment_frequency:
+          $ref: '#/components/schemas/SubscriptionPaymentFrequency'
+        last_spent:
+          type: number
+          description: The amount of the last `Transaction` made with the `Card`.
+          example: 75.01
+        total_spent:
+          type: number
+          description: The overall amount spent with the `Card`.
+          example: 775.01
+        card_id:
+          type: string
+          description: The ID of the `Card` reserved for this `Subscription` (only available after the subscription is activated).
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+        last_spent_date:
+          type: string
+          description: The date and time of the last `Transaction` made with the `Card`.
+          example: '2020-05-07T12:48:40Z'
+        creation_time:
+          type: string
+          description: The date and time when the `Subscription` was last updated.
+          example: '2017-06-01T12:48:40Z'
+        last_update_time:
+          type: string
+          description: The date and time when the `Subscription` was last updated.
+          example: '2017-06-01T12:48:40Z'
+    RemoveResourcesCardEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Group'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    AddResourcesMemberEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Group'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    TransactionDeletedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `Order` ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        status:
+          $ref: '#/components/schemas/OrderStatus'
+        creation_time:
+          type: string
+          description: The date and time when the `Order` was created.
+          example: '2017-06-01T12:48:40Z'
+        last_update_time:
+          type: string
+          description: The last update date of the `Order`.
+          example: '2017-06-01T12:48:40Z'
+        error_code:
+          type: string
+          description: In case is_valid is false, the error code of the `Order` is shown.
+        total_paid_amount:
+          type: number
+          description: The total amount of the `Order`.
+          example: 10.25
+        total_paid_currency:
+          $ref: '#/components/schemas/ISO4217Currency'
+        items:
+          type: array
+          description: The products associated with the `Order`.
+          items:
+            $ref: '#/components/schemas/OrderItem'
+        is_valid:
+          type: boolean
+          description: It states whether the `Order` is valid.
+          example: true
+    RemoveResourcesMemberEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Group'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    UploadCompletedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/TransactionAttachment'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    RecurringBillingEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    CardReplacedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Card'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    OnlineAdsUpdatedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/OnlineAds'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    ChangeExpenseTypeEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/ExpenseReviewEvent'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    OrderStatus:
+      type: string
+      description: The status of the `Order`.
+      example: PENDING
+      enum:
+      - PENDING
+      - ERROR
+      - PLACED
+      - CANCELLED
+      - COMPLETED
+      - COMPLETED_WITH_CREDIT
+    StoreOrderPlacedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Order'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    Invoice:
+      type: object
+      properties:
+        number:
+          maxLength: 50
+          pattern: ^(?![=+\-@])[^,;'"]{0,50}$
+          type: string
+          description: A unique identifier assigned to an invoice by the supplier.
+          example: INV-2023-001
+        date:
+          type: string
+          description: 'The date the invoice was issued by the supplier. Accepted format: yyyy-MM-dd.'
+          example: '2023-01-23'
+        po_number:
+          maxLength: 50
+          pattern: ^(?![=+\-@])[^,;'"]{0,50}$
+          type: string
+          description: A reference number provided by the customer's purchasing system (Purchase Order Number)
+          example: PO-2023-001
+        supplier_vat_number:
+          maxLength: 15
+          pattern: ^[a-zA-Z0-9]{0,15}$
+          type: string
+          description: The Value-Added Tax (VAT) registration number of the supplier.
+          example: '123456789'
+      description: The `Invoice` related to the `Transaction`.
+    EditTagEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    AccountIdentificationType:
+      type: string
+      description: The type of the bank account identification.
+      example: IBAN
+      enum:
+      - SORT_CODE
+      - ACCOUNT_NUMBER
+      - IBAN
+    Group:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'The `Group` ID (sortable: yes).'
+          example: 1bf79328-a7ae-4222-aa54-091ff7f429a7
+        name:
+          type: string
+          description: 'The name of the `Group` (sortable: yes).'
+          example: HR
+        custom_reference_id:
+          type: string
+          description: The `Group` reference in an external system.
+          example: hr-division-0001
+        type:
+          $ref: '#/components/schemas/GroupType'
+        note:
+          type: string
+          description: 'Any notes about the `Group` (sortable: no).'
+          example: division
+        members:
+          type: array
+          description: 'A list of `User` IDs belonging to the `Group` (sortable: no).'
+          example:
+          - 5bf79328-a7ae-4222-aa54-091ff7f429a7
+          items:
+            type: string
+            description: 'A list of `User` IDs belonging to the `Group` (sortable: no).'
+            example: '["5bf79328-a7ae-4222-aa54-091ff7f429a7"]'
+        wallets:
+          type: array
+          description: 'A list of `Wallet` IDs related to the `Group` (sortable: no).'
+          example:
+          - 4bf79328-a7ae-4222-aa54-091ff7f429a7
+          items:
+            type: string
+            description: 'A list of `Wallet` IDs related to the `Group` (sortable: no).'
+            example: '["4bf79328-a7ae-4222-aa54-091ff7f429a7"]'
+        cards:
+          type: array
+          description: 'A list of `Card` IDs related to the `Group` (sortable: no).'
+          example:
+          - 3bf79328-a7ae-4222-aa54-091ff7f429a7
+          items:
+            type: string
+            description: 'A list of `Card` IDs related to the `Group` (sortable: no).'
+            example: '["3bf79328-a7ae-4222-aa54-091ff7f429a7"]'
+        creation_time:
+          type: string
+          description: 'The date and time when the `Group` was created (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+        last_update:
+          type: string
+          description: 'The date and time when the `Group` was last updated (sortable: yes).'
+          example: '2017-06-30T12:48:40Z'
+    VehicleDeleteEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Vehicle'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    AccountInfoDeposit:
+      type: string
+      description: The `type` of account identification.
+      example: IBAN
+      enum:
+      - IBAN
+      - SISAL
+      - SORT_CODE
+      - VIRTUAL_IBAN
+      - SHARED_SWIFT
+      - DEDICATED_SWIFT
+    SubscriptionAssigneeAddedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Subscription'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    ISO4217Currency:
+      type: string
+      description: 'The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Wallet` (sortable: no)'
+      example: EUR
+      enum:
+      - AED
+      - AFN
+      - ALL
+      - AMD
+      - ANG
+      - AOA
+      - ARS
+      - AUD
+      - AWG
+      - AZN
+      - BAM
+      - BBD
+      - BDT
+      - BGN
+      - BHD
+      - BIF
+      - BMD
+      - BND
+      - BOB
+      - BOV
+      - BRL
+      - BSD
+      - BTN
+      - BWP
+      - BYN
+      - BZD
+      - CAD
+      - CDF
+      - CHE
+      - CHF
+      - CHW
+      - CLF
+      - CLP
+      - CNY
+      - COP
+      - COU
+      - CRC
+      - CUC
+      - CUP
+      - CVE
+      - CZK
+      - DJF
+      - DKK
+      - DOP
+      - DZD
+      - EGP
+      - ERN
+      - ETB
+      - EUR
+      - FJD
+      - FKP
+      - GBP
+      - GEL
+      - GHS
+      - GIP
+      - GMD
+      - GNF
+      - GTQ
+      - GYD
+      - HKD
+      - HNL
+      - HRK
+      - HTG
+      - HUF
+      - IDR
+      - ILS
+      - INR
+      - IQD
+      - IRR
+      - ISK
+      - JMD
+      - JOD
+      - JPY
+      - KES
+      - KGS
+      - KHR
+      - KMF
+      - KPW
+      - KRW
+      - KWD
+      - KYD
+      - KZT
+      - LAK
+      - LBP
+      - LKR
+      - LRD
+      - LSL
+      - LYD
+      - MAD
+      - MDL
+      - MGA
+      - MKD
+      - MMK
+      - MNT
+      - MOP
+      - MRO
+      - MRU
+      - MUR
+      - MVR
+      - MWK
+      - MXN
+      - MXV
+      - MYR
+      - MZN
+      - NAD
+      - NGN
+      - NIO
+      - NOK
+      - NPR
+      - NZD
+      - OMR
+      - PAB
+      - PEN
+      - PGK
+      - PHP
+      - PKR
+      - PLN
+      - PYG
+      - QAR
+      - RON
+      - RSD
+      - RUB
+      - RWF
+      - SAR
+      - SBD
+      - SCR
+      - SDG
+      - SEK
+      - SGD
+      - SHP
+      - SLE
+      - SLL
+      - SOS
+      - SRD
+      - SSP
+      - STD
+      - STN
+      - SVC
+      - SYP
+      - SZL
+      - THB
+      - TJS
+      - TMT
+      - TND
+      - TOP
+      - TRY
+      - TTD
+      - TWD
+      - TZS
+      - UAH
+      - UGX
+      - USD
+      - USN
+      - UYI
+      - UYU
+      - UYW
+      - UZS
+      - VED
+      - VEF
+      - VES
+      - VND
+      - VUV
+      - WST
+      - XAF
+      - XAG
+      - XAU
+      - XBA
+      - XBB
+      - XBC
+      - XBD
+      - XCD
+      - XDR
+      - XOF
+      - XPD
+      - XPF
+      - XPT
+      - XSU
+      - XTS
+      - XUA
+      - XXX
+      - YER
+      - ZAR
+      - ZMW
+      - ZWL
+    TransactionSign:
+      type: string
+      description: 'The sign of the transaction amount (Negative, Positive, None) (sortable: no).'
+      example: Negative
+      enum:
+      - Negative
+      - Positive
+      - None
+    PurchaseStatus:
+      type: string
+      description: 'The status of the `Purchase` (sortable: no).'
+      example: ASSIGNED
+      enum:
+      - SUCCESSFUL
+      - ACTIVE
+      - ASSIGNED
+      - DELETED
+      - EXPIRED
+      - REQUEST_EXTENSION
+    DisabledExpenseConfigurationEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/ExpenseReviewConfigurationEvent'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    TransactionBusinessTripUnlinkedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    SubscriptionActivatedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Subscription'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    ConversionEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    ContactStatus:
+      type: string
+      description: The status of the `Contact`.
+      example: CREATED
+      enum:
+      - CREATED
+      - SUGGESTED
+    RemoveResourcesWalletEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Group'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    TransactionAttachment:
+      type: object
+      properties:
+        attachment_id:
+          type: string
+          description: The `TransactionAttachment` ID.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+        transaction_id:
+          type: string
+          description: The `Transaction` ID the file is attached to.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        file_name:
+          type: string
+          description: The file name of the attachment.
+          example: invoice01.jpg
+        file_extension:
+          type: string
+          description: The file extension of the attachment.
+          example: .jpg
+        file_size:
+          type: integer
+          description: The file size in bytes.
+          format: int64
+          example: 32768
+        url:
+          type: string
+          description: The url of the attachment.
+        file_url:
+          type: string
+          description: The Base64 string of the File URL encrypted by DES in ECB mode, Pkcs7 padding scheme and using Token for key. Deprecated, use `url` instead.
+          deprecated: true
+        url_type:
+          $ref: '#/components/schemas/UrlType'
+        attachment_type:
+          $ref: '#/components/schemas/TransactionAttachmentType'
+        read_only:
+          type: boolean
+          description: It determines whether the attachment can be removed or updated.
+        content_type:
+          type: string
+          description: 'The type of the `TransactionAttachment` content (default: ''binary/octet-stream'').'
+          example: binary/octet-stream
+        upload_time:
+          type: string
+          description: The date of upload.
+          example: '2017-06-01T12:48:40Z'
+        attachment_user_id:
+          type: string
+          description: The ID of the `User` that uploaded the attachment.
+        upload_user_channel:
+          $ref: '#/components/schemas/UploadUserChannel'
+        compressed_file:
+          $ref: '#/components/schemas/TransactionAttachmentCompressedFile'
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+            description: The metadata of the attachment.
+          description: The metadata of the attachment.
+        last_update_time:
+          type: string
+          description: The date and time when the `TransactionAttachment` was last updated.
+          example: '2017-06-01T12:48:40Z'
+    FuelType:
+      type: string
+      description: The fuel type of the `Vehicle`.
+      example: PETROL
+      enum:
+      - PETROL
+      - DIESEL
+      - METHANE
+      - LPG
+      - LNG
+      - ELECTRIC
+      - UNKNOWN
+    ContactBankAccountVerificationStatus:
+      type: string
+      description: Whether the provided `Contact` bank account details matches the actual ones.
+      example: '2017-06-01T12:48:40Z'
+      enum:
+      - UNABLE_TO_MATCH
+      - FULL_MATCH
+      - PARTIAL_MATCH
+      - NO_MATCH
+      - UNABLE_TO_VERIFY
+    BalancedTransferEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    ISO3166Country:
+      type: string
+      description: The [ISO 3166-1 alpha-3](https://www.iso.org/obp/ui/#search/code/) code of the country where the `Transaction` has been authorised.
+      example: GBR
+      enum:
+      - ASC
+      - AND
+      - ARE
+      - AFG
+      - ATG
+      - AIA
+      - ALB
+      - ARM
+      - ANT
+      - AGO
+      - ATA
+      - ARG
+      - ASM
+      - AUT
+      - AUS
+      - ABW
+      - ALA
+      - AZE
+      - BIH
+      - BRB
+      - BGD
+      - BEL
+      - BFA
+      - BGR
+      - BHR
+      - BDI
+      - BEN
+      - BLM
+      - BMU
+      - BRN
+      - BOL
+      - BES
+      - BRA
+      - BHS
+      - BTN
+      - BUR
+      - BVT
+      - BWA
+      - BLR
+      - BLZ
+      - CAN
+      - CCK
+      - COD
+      - CAF
+      - COG
+      - CHE
+      - CIV
+      - COK
+      - CHL
+      - CMR
+      - CHN
+      - COL
+      - CPT
+      - CRI
+      - CSXX
+      - CUB
+      - CPV
+      - CUW
+      - CXR
+      - CYP
+      - CZE
+      - DEU
+      - DGA
+      - DJI
+      - DNK
+      - DMA
+      - DOM
+      - DZA
+      - ECU
+      - EST
+      - EGY
+      - ESH
+      - ERI
+      - ESP
+      - ETH
+      - FIN
+      - FJI
+      - FLK
+      - FSM
+      - FRO
+      - FRA
+      - FXX
+      - GAB
+      - GBR
+      - GRD
+      - GEO
+      - GUF
+      - GGY
+      - GHA
+      - GIB
+      - GRL
+      - GMB
+      - GIN
+      - GLP
+      - GNQ
+      - GRC
+      - SGS
+      - GTM
+      - GUM
+      - GNB
+      - GUY
+      - HKG
+      - HMD
+      - HND
+      - HRV
+      - HTI
+      - HUN
+      - IDN
+      - IRL
+      - ISR
+      - IMN
+      - IND
+      - IOT
+      - IRQ
+      - IRN
+      - ISL
+      - ITA
+      - JEY
+      - JAM
+      - JOR
+      - JPN
+      - KEN
+      - KGZ
+      - KHM
+      - KIR
+      - COM
+      - KNA
+      - PRK
+      - KOR
+      - KWT
+      - CYM
+      - KAZ
+      - LAO
+      - LBN
+      - LCA
+      - LIE
+      - LKA
+      - LBR
+      - LSO
+      - LTU
+      - LUX
+      - LVA
+      - LBY
+      - MAR
+      - MCO
+      - MDA
+      - MNE
+      - MAF
+      - MDG
+      - MHL
+      - MKD
+      - MLI
+      - MMR
+      - MNG
+      - MAC
+      - MNP
+      - MTQ
+      - MRT
+      - MSR
+      - MLT
+      - MUS
+      - MDV
+      - MWI
+      - MEX
+      - MYS
+      - MOZ
+      - NAM
+      - NCL
+      - NER
+      - NFK
+      - NGA
+      - NIC
+      - NLD
+      - NOR
+      - NPL
+      - NRU
+      - NTZ
+      - NIU
+      - NZL
+      - OMN
+      - PAN
+      - PER
+      - PYF
+      - PNG
+      - PHL
+      - PAK
+      - POL
+      - SPM
+      - PCN
+      - PRI
+      - PSE
+      - PRT
+      - PLW
+      - PRY
+      - QAT
+      - REU
+      - ROU
+      - ROM
+      - SRB
+      - RUS
+      - RWA
+      - SAU
+      - SLB
+      - SYC
+      - SDN
+      - SWE
+      - SGP
+      - SHN
+      - SVN
+      - SJM
+      - SVK
+      - SLE
+      - SMR
+      - SEN
+      - SOM
+      - SUR
+      - SSD
+      - STP
+      - SUN
+      - SLV
+      - SXM
+      - SYR
+      - SWZ
+      - TAA
+      - TCA
+      - TCD
+      - ATF
+      - TGO
+      - THA
+      - TJK
+      - TKL
+      - TLS
+      - TKM
+      - TUN
+      - TON
+      - TUR
+      - TTO
+      - TUV
+      - TWN
+      - TZA
+      - UKR
+      - UGA
+      - UMI
+      - USA
+      - URY
+      - UZB
+      - VAT
+      - VCT
+      - VEN
+      - VGB
+      - VIR
+      - VNM
+      - VUT
+      - WLF
+      - WSM
+      - XKX
+      - XXK
+      - QZZ
+      - YEM
+      - MYT
+      - YUCS
+      - ZAF
+      - ZMB
+      - ZRCD
+      - ZWE
+    TransactionModifiedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    CardLabelUpdatedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Card'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    ExpenseReviewConfigurationEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+      description: The webhook `ExpenseReview` data.
+    ExpenseType:
+      type: string
+      description: The type of the expense of the `SplitTransaction` line.
+      example: TRAVEL_AND_ENTERTAINMENT
+      enum:
+      - COMPANY
+      - PERSONAL
+      - TRAVEL_AND_ENTERTAINMENT
+    UpdatedTransactionEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/ExpenseReviewEvent'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    WalletCreatedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Wallet'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    CardActivatedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Card'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    TransactionFuelDetails:
+      type: object
+      properties:
+        plate:
+          type: string
+          description: '`Vehicle`''s plate number.'
+          example: AA000BB
+        vehicle_fuel_type:
+          $ref: '#/components/schemas/FuelType'
+        vat_deductibility_percentage:
+          type: string
+          description: The deductible VAT percentage configured for the `Vehicle`.
+          example: 40%
+        mileage:
+          type: integer
+          description: The `Vehicle` mileage.
+          format: int32
+          example: 125000
+        quantity:
+          type: number
+          description: The fuel quantity as specified in the invoice.
+          example: 80
+        unit_price:
+          type: number
+          description: The fuel unit price as specified on the transaction.
+          example: 1.41
+        tx_fuel_type:
+          $ref: '#/components/schemas/FuelType'
+        to_be_ignored:
+          type: boolean
+          description: If the transaction link status is set to ignored.
+          example: false
+        invoice_id:
+          type: integer
+          description: Invoice ID.
+          format: int64
+          example: 4421109
+        invoice_number:
+          type: string
+          description: Invoice number.
+          example: NVC112200987
+        invoice_date:
+          type: string
+          description: Invoice date.
+          example: '2017-06-01T12:48:40Z'
+        invoice_total_amount:
+          type: number
+          description: Total amount of the linked invoice.
+          example: 10.25
+        invoice_row:
+          type: integer
+          description: Row of the linked invoice.
+          format: int32
+          example: 4
+        invoice_row_amount:
+          type: number
+          description: Amount of the transaction's row in the linked invoice.
+          example: 10.25
+        supplier_vat_id:
+          type: string
+          description: Supplier VAT ID.
+          example: '98746784967'
+        dri:
+          type: string
+          description: The DRI (Documento Riepilogativo) code.
+          example: DRI00099881
+        vehicle_id:
+          type: string
+          description: The `Vehicle` ID.
+          example: 6853e657-c797-4985-8d6b-5425d4e51df8
+      description: The transaction fuel details `Refueling` resource
+    WebhookEventName:
+      type: string
+      description: The list of subscribed events.
+      enum:
+      - business_trip_created
+      - business_trip_updated
+      - business_trip_deleted
+      - card_activated
+      - card_change_status
+      - card_creation
+      - card_destroyed
+      - card_lost
+      - card_replaced
+      - card_stolen
+      - card_label_updated
+      - card_assignee_updated
+      - add_resources_card
+      - add_resources_member
+      - add_resources_wallet
+      - create_group
+      - delete_group
+      - move_resources_card
+      - move_resources_member
+      - move_resources_wallet
+      - remove_resources_card
+      - remove_resources_member
+      - remove_resources_wallet
+      - update_group
+      - store_order_completed
+      - store_order_placed
+      - balanced_transfer
+      - billing
+      - card_authorization
+      - conversion
+      - customer_care_deposit
+      - customer_care_withdraw
+      - edit_tag
+      - inbound_payment
+      - inbound_payment_reversal
+      - internal_transfer
+      - joule_feed
+      - load_failed
+      - load_money
+      - recurring_billing
+      - scheduled_transfer
+      - transaction_adjustment
+      - unload_money
+      - wiretransfer
+      - upload_completed
+      - attachment_delete
+      - new_user
+      - user_status_changed
+      - user_updated
+      - wallet_created
+      - wallet_deleted
+      - vehicle_create
+      - vehicle_update
+      - vehicle_delete
+      - purchase_create
+      - purchase_update
+      - purchase_delete
+      - purchase_redeem_card
+      - created_expense_configuration
+      - disabled_expense_configuration
+      - enabled_expense_configuration
+      - updated_expense_configuration
+      - completed_transactions_import
+      - updated_transaction
+      - change_expense_type
+      - subscription_activated
+      - subscription_created
+      - subscription_updated
+      - subscription_deleted
+      - subscription_assignee_added
+      - subscription_assignee_removed
+      - online_ads_activated
+      - online_ads_created
+      - online_ads_updated
+      - online_ads_deleted
+      - online_ads_assignee_added
+      - online_ads_assignee_removed
+      - transaction_created
+      - transaction_modified
+      - transaction_deleted
+      - transaction_business_trip_linked
+      - transaction_business_trip_unlinked
+      - contact_created
+      - contact_updated
+      - contact_deleted
+    LoadSource:
+      type: string
+      description: The source type.
+      example: BANK_TRANSFER
+      enum:
+      - UNSPECIFIED
+      - BANK_TRANSFER
+      - CARD
+      - SISAL_PAY
+      - FASTER_PAYMENT
+    TransactionMerchant:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the `Merchant`.
+          example: '2100846839'
+        name:
+          type: string
+          description: The name of the `Merchant` (normalised).
+          example: SHH HOTEL LONDON
+        raw_name:
+          type: string
+          description: The raw name of the `Merchant`.
+          example: SHERLOCK HOLMES HOTEL  LONDON        GBR
+        code:
+          type: string
+          description: The Mastercard `Merchant` code.
+        address:
+          type: string
+          description: The `Merchant` address.
+      description: 'The name of the Merchant of the transaction (only valid for `Payment`, `Withdrawal`, `Refund` transaction categories) (sortable: no).'
+    OnlineAdsStatus:
+      type: string
+      description: The status of the `OnlineAds`.
+      example: ACTIVE
+      enum:
+      - ACTIVE
+      - ASSIGNED
+      - CANCELLED
+    Card:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'The `Card` ID (sortable: yes).'
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        name:
+          type: string
+          description: 'The name of the `Card` (sortable: yes).'
+          example: CardName
+        label:
+          type: string
+          description: 'The label of the `Card (sortable: no)`.'
+          example: CardLabel
+        masked_pan:
+          type: string
+          description: 'The masked PAN of the `Card` (sortable: yes).'
+          example: 123456******1234
+        card_holder:
+          type: string
+          description: 'The name and surname of the Cardholder of the `Card`, only available when `owner_type` is `employee` (sortable: yes).'
+          example: John Doe
+        expiration_date:
+          type: string
+          description: 'The expiration date and time of the `Card` (sortable: yes).'
+          example: '2026-05-07T23:59:59Z'
+        creation_time:
+          type: string
+          description: 'The date and time when the `Card` was created (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+        last_update:
+          type: string
+          description: 'The date and time when the `Card` was last updated (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+        type:
+          $ref: '#/components/schemas/CardType'
+        status:
+          $ref: '#/components/schemas/CardStatus'
+        owner_type:
+          $ref: '#/components/schemas/CardOwnerType'
+        owner_public_id:
+          type: string
+          description: The ID of the Cardholder available when `owner_type` is `employee`.
+          example: XMPL1234-000001
+        custom_reference_id:
+          type: string
+          description: 'The custom reference ID of the Cardholder (sortable: no).'
+          example: 123456-user-1
+        wallet_id:
+          type: string
+          description: 'The ID of the `Wallet` the `Card` is linked to (sortable: no).'
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        currency_code:
+          $ref: '#/components/schemas/ISO4217Currency'
+        emboss_line4:
+          type: string
+          description: 'The fourth line printed on the `Card` (sortable: no).'
+          example: Example Inc.
+        active:
+          type: boolean
+          description: 'It determines whether the `Card` is active (sortable: yes).'
+          example: true
+        group_id:
+          type: string
+          description: 'The ID of the `Group` the `Card` is related to (sortable: no). In case of multiple groups associated this field contains the first one for backward compatibility.'
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+          deprecated: true
+        groups:
+          type: array
+          description: 'The list of `Group` ID the `Card` is related to (sortable: no).'
+          example:
+          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+          items:
+            type: string
+            description: 'The list of `Group` ID the `Card` is related to (sortable: no).'
+            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
+        sensitive_data:
+          $ref: '#/components/schemas/CardSensitiveData'
+        vehicle_id:
+          type: string
+          description: 'The ID of the `Vehicle` assigned to the card (sortable: no).'
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        assignees:
+          type: array
+          description: 'List of `User` IDs currently assigned to the `Card`, when `owner_type` is `employee` there is only one assignee, when is `company` there could be none or more assignees (sortable: no).'
+          example:
+          - XMPL1234-000001
+          - XMPL1234-000002
+          - XMPL1234-000003
+          items:
+            type: string
+            description: 'List of `User` IDs currently assigned to the `Card`, when `owner_type` is `employee` there is only one assignee, when is `company` there could be none or more assignees (sortable: no).'
+            example: '["XMPL1234-000001","XMPL1234-000002","XMPL1234-000003"]'
+        payment_method:
+          $ref: '#/components/schemas/CardPaymentMethod'
+        payment_method_id:
+          type: string
+          description: 'The payment method ID (sortable: no).'
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        preset_id:
+          type: string
+          description: The `cardRulePreset` ID assigned to the `Card`.
+          example: c861cc24-6663-410f-8c78-73f886fff4ef
+        shipping_address_id:
+          type: string
+          description: The `shippingAddress` ID assigned to the `Card`.
+          example: c861cc24-6663-410f-8c78-73f886fff4ef
+        renewal_info:
+          $ref: '#/components/schemas/CardRenewalInfo'
+    TransactionDetails:
+      type: object
+      properties:
+        de022:
+          type: string
+          description: Mastercard `DE022` field.
+        de061:
+          type: string
+          description: Mastercard `DE061` field.
+        tx_country:
+          $ref: '#/components/schemas/ISO3166Country'
+        denied_info_type:
+          type: string
+          description: The type of the denied reason of the transaction (only if the `Transaction` is `Declined`).
+        denied_info_description:
+          type: string
+          description: The description of the denied reason (only if the `Transaction` is `Declined`).
+        is_card_present:
+          type: boolean
+          description: It determines whether the card was there at the moment of the `Transaction`.
+          example: false
+        is_atm_transaction:
+          type: boolean
+          description: It determines whether the transaction is an ATM withdrawal.
+          example: false
+      description: 'The details of the `Transaction`  (sortable: no).'
+    UpdatedExpenseConfigurationEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/ExpenseReviewConfigurationEvent'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    OnlineAdsCreatedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/OnlineAds'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    WebhookEventType:
+      type: string
+      description: The webhook event type.
+      example: Contact
+      default: Contact
+      enum:
+      - BusinessTrip
+      - Card
+      - Contact
+      - ExpenseReview
+      - Group
+      - OnlineAds
+      - Order
+      - Purchase
+      - Subscription
+      - Transaction
+      - TransactionAttachment
+      - Employee
+      - Vehicle
+      - Wallet
+    WorkStatus:
+      type: string
+      description: The work status of the `User`.
+      example: OUT_OF_OFFICE
+      enum:
+      - AVAILABLE
+      - OUT_OF_OFFICE
+    Wallet:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'The `Wallet` ID (sortable: yes)'
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        name:
+          type: string
+          description: 'The name of the `Wallet` (sortable: yes)'
+          example: CompanyWallet1
+        currency_code:
+          $ref: '#/components/schemas/ISO4217Currency'
+        available_amount:
+          type: number
+          description: 'The currently available balance of the `Wallet` (sortable: no)'
+          example: 100
+        blocked_amount:
+          type: number
+          description: 'The blocked balance of the `Wallet` (the overall amount of `Transactions` in `Authorised` status) (sortable: no)'
+          example: 0
+        primary_user_type:
+          $ref: '#/components/schemas/PrimaryUserType'
+        primary_user_public_id:
+          type: string
+          description: 'The ID of the `User` if the `Wallet` is of type `employee`, not available for other `Wallet` types (sortable: no)'
+          example: XMPL1234-000001
+        custom_reference_id:
+          type: string
+          description: 'The custom reference of the `User` if the `Wallet` is of type `employee`, not available for other wallet types (sortable: yes)'
+          example: 123456-usa-1
+        group_id:
+          type: string
+          description: 'The ID of the `Group` the wallet is related to (sortable: no). In case of multiple groups associated this field contains the first one for backward compatibility.'
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+          deprecated: true
+        groups:
+          type: array
+          description: 'The list of `Group` ID the wallet is related to (sortable: no)'
+          example:
+          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+          items:
+            type: string
+            description: 'The list of `Group` ID the wallet is related to (sortable: no)'
+            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
+        label:
+          type: string
+          description: 'The label of the `Wallet` (sortable: yes)'
+          example: CompanyWallet1
+        visible:
+          type: boolean
+          description: 'It determines whether the `Wallet` is visible on the web console (sortable: yes)'
+          example: true
+        creation_time:
+          type: string
+          description: 'The date and time when the `Wallet` was created (sortable: yes)'
+          example: '2017-06-01T12:48:40Z'
+        last_update:
+          type: string
+          description: 'The date and time when the `Wallet` was last updated (sortable: yes)'
+          example: '2017-06-01T12:48:40Z'
+        deposit_account_info:
+          type: array
+          description: The deposit account info of the `Wallet`.
+          example:
+          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+          items:
+            $ref: '#/components/schemas/DepositAccountInfo'
+        description:
+          type: string
+          description: 'The note of the `Wallet` (sortable: yes)'
+          example: CompanyWallet1
+    CardStolenEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Card'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    CardChangeStatusEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Card'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    TransactionPaymentMethod:
+      type: string
+      description: The payment method of the `Transaction`.
+      example: ONLINE_ADS
+      enum:
+      - USER
+      - COMPANY
+      - PURCHASE
+      - SUBSCRIPTION
+      - ONLINE_ADS
+      - OUT_OF_PLATFORM_COMPANY
+      - OUT_OF_PLATFORM_PERSONAL
+      - IATS
+      - WIRETRANSFER
+    MerchantCategory:
+      type: string
+      description: A list of merchant categories this `ExpenseCategory`.
+      enum:
+      - Advertising
+      - Entertainment
+      - Utilities
+      - Food_Cocktail_Bar
+      - Food_Restaurant
+      - Food_Store
+      - Food_Wine
+      - Services_Business
+      - Services_Cleaning
+      - Services_Contracted
+      - Services_Delivery
+      - Services_Educational
+      - Services_Financial
+      - Services_Gambling
+      - Services_Government
+      - Services_Health
+      - Services_Insurance
+      - Services_Legal
+      - Services_Museum
+      - Services_Organisation
+      - Services_Personal
+      - Services_Repair
+      - Services_Social
+      - Services_Stationery
+      - Services_Telecommunication
+      - Services_Veterinary
+      - Services_Warehouse
+      - Services_Wholesale
+      - Shopping_Accessories
+      - Shopping_Airline
+      - Shopping_Art
+      - Shopping_Automotive
+      - Shopping_Beauty
+      - Shopping_Books
+      - Shopping_Clothes
+      - Shopping_Digital_Goods
+      - Shopping_Direct_Marketing
+      - Shopping_Furnitures
+      - Shopping_Sport
+      - Shopping_Store
+      - Shopping_Technology
+      - Transport_Airports
+      - Transport_Charging_Station
+      - Transport_Parking
+      - Transport_Public_Transportation
+      - Transport_Road
+      - Transport_Service_Station
+      - Transport_Ships
+      - Transport_Taxi
+      - Transport_Toll_Roads
+      - Transport_Trains
+      - Travel_Airlines
+      - Travel_Agency
+      - Travel_Car_Rental
+      - Travel_Hotels
+      - Travel_Time_Shares
+    TransactionSplitInfoTag:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `Tag` ID.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+        dictionary_id:
+          type: string
+          description: The `List` ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        dictionary:
+          type: string
+          description: The name of the `List` where the `Tag` is listed.
+          example: ExampleTagDictionary
+        tag:
+          type: string
+          description: The name of the `Tag`.
+          example: tx-label
+        code:
+          type: string
+          description: The code of the `Tag`.
+          example: CODE tag
+        visible:
+          type: boolean
+          description: It determines whether the `Tag` is visible in the `Transaction` detail.
+          example: true
+        description:
+          type: string
+          description: The description of the `Tag`.
+          example: Label to mark transactions
+      description: The list of the Tags of the Transaction (only returned from [Get Transaction](https://developer.soldo.com/reference/transaction-get)).
+    SubscriptionAssigneeRemovedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Subscription'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    UpdateGroupEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Group'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    Purchase:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'The `Purchase` ID (sortable: no).'
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        status:
+          $ref: '#/components/schemas/PurchaseStatus'
+        title:
+          type: string
+          description: 'The name of the `Purchase` (sortable: no).'
+          example: Tech book
+        description:
+          type: string
+          description: 'The description of the `Purchase` (sortable: no).'
+          example: A purchase to approve
+        amount:
+          type: number
+          description: 'The maximum spendable amount of the `Purchase` (sortable: no).'
+          example: 10.25
+        amount_currency:
+          $ref: '#/components/schemas/ISO4217Currency'
+        wallet_id:
+          type: string
+          description: 'The ID of the `Wallet` the money are taken from, the funding source of the `Purchase` (sortable: no).'
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+        wallet_name:
+          type: string
+          description: 'The name of the `Wallet` the money are taken from, the funding source of the `Purchase` (sortable: no).'
+          example: John Doe
+        has_attachments:
+          type: boolean
+          description: 'It determines whether the `Purchase` has one or more attachments (sortable: no).'
+          example: true
+        notes:
+          type: string
+          description: 'The notes of the `Purchase` (sortable: no).'
+          example: Notes about the purchase request
+        assignee_id:
+          type: string
+          description: 'The ID of the `User` assigned to the `Purchase` (sortable: no).'
+          example: XMPL1234-000003
+        additional_assignee_ids:
+          uniqueItems: true
+          type: array
+          description: 'The IDs of any additional `User` assigned to the `Purchase` (sortable: no).'
+          example: XMPL1234-000003
+          items:
+            type: string
+            description: 'The IDs of any additional `User` assigned to the `Purchase` (sortable: no).'
+            example: XMPL1234-000003
+        assignee_custom_reference_id:
+          type: string
+          description: 'The custom reference of the `User` assigned to the `Purchase` (sortable: no).'
+          example: 123456-user-1
+        author_id:
+          type: string
+          description: 'The ID of the `User` that created the `Purchase` (sortable: no).'
+          example: XMPL1234-000001
+        author_custom_reference_id:
+          type: string
+          description: 'The custom reference of the `User` that created the purchase (sortable: no).'
+          example: 123456-user-2
+        expiration_date:
+          type: string
+          description: 'The date and time when the `Purchase` will expire (sortable: no).'
+          example: '2017-06-01T12:48:40Z'
+        card_id:
+          type: string
+          description: 'The ID of the `Card` assigned to the `Purchase`, only available after the redemption `Order` has been completed (sortable: no).'
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+        transactions:
+          type: array
+          description: 'The `Transactions` originated by the `Purchase` (sortable: no).'
+          items:
+            $ref: '#/components/schemas/PurchaseTransaction'
+        max_tx_number:
+          type: integer
+          description: The max number of the `Transactions` that can be made with the `Card`.
+          format: int32
+          example: 3
+        creation_time:
+          type: string
+          description: 'The date and time when the `Purchase` was created (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+        last_update_time:
+          type: string
+          description: 'The date and time when the `Purchase` was last updated (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+    ExpenseReviewEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+      description: The webhook `ExpenseReview` data.
+    CreateGroupEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Group'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    AddResourcesWalletEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Group'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    DeleteGroupEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Group'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    OnlineAdsPlatform:
+      type: string
+      description: The platform the `OnlineAds` are made on.
+      example: OTHER
+      enum:
+      - GOOGLE
+      - TWITTER
+      - TABOOLA
+      - PINTEREST
+      - MICROSOFT
+      - FACEBOOK
+      - AMAZON
+      - APPLE
+      - TIKTOK
+      - LINKEDIN
+      - INSTAGRAM
+      - OTHER
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `User` ID.
+          example: XMPL1234-000001
+        name:
+          type: string
+          description: 'The name of the `User` (sortable: yes).'
+          example: John
+        surname:
+          type: string
+          description: 'The surname of the `User` (sortable: yes).'
+          example: Smith
+        middlename:
+          type: string
+          description: 'The middlename of the `User` (sortable: no).'
+          example: John
+        dob:
+          type: string
+          description: The Date of birth of the `User`.
+          example: '1970-10-21'
+        job_title:
+          type: string
+          description: 'The job title of the `User` (sortable: yes).'
+          example: Business Strategist
+        department:
+          type: string
+          description: 'The department of the `User` (sortable: no).'
+          example: Research & Development
+        email:
+          type: string
+          description: 'The email address of the `User` (sortable: no).'
+          example: jdoe@fake.soldo.com
+        mobile:
+          type: string
+          description: 'The mobile number of the `User` including the country code (sortable: no).'
+          example: '+44123323232'
+        mobile_prefix:
+          type: string
+          description: 'The mobile number country code (sortable: no).'
+          example: '+44'
+        custom_reference_id:
+          type: string
+          description: 'The reference of the employee in an external system (sortable: yes).'
+          example: 123456-user-1
+        status:
+          $ref: '#/components/schemas/UserStatus'
+        visible:
+          type: boolean
+          description: 'It determines whether the `User` is visible in the web console (sortable: yes).'
+          example: true
+        mobile_access:
+          type: boolean
+          description: 'It determines whether the `User` has mobile access (sortable: no).'
+          example: true
+        web_access:
+          type: boolean
+          description: 'It determines whether the `User` has web access (sortable: no).'
+          example: true
+        groups:
+          type: array
+          description: 'The list of `Groups` ID the `User` is member of (sortable: no).'
+          example:
+          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+          items:
+            type: string
+            description: 'The list of `Groups` ID the `User` is member of (sortable: no).'
+            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
+        shipping_address:
+          $ref: '#/components/schemas/Address'
+        reports_to:
+          type: string
+          description: The ID of the `User` it reports to.
+          example: XMPL1234-000001
+        roles:
+          type: array
+          description: The list of `UserRole` of the `User`.
+          items:
+            $ref: '#/components/schemas/UserRole'
+        contact_id:
+          type: string
+          description: The ID of the `Contact` assigned to the `User`. This information can be updated from the [Add Contact](ref:contact-add) and [Update Contact](ref:contact-update) endpoints.
+          example: 135fdb6c-2e77-4fc0-a79f-2453fde75ef7
+        creation_time:
+          type: string
+          description: 'The date and time when the `User` was created (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+        last_update:
+          type: string
+          description: 'The date and time when the `User` was last updated (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+        work_status:
+          $ref: '#/components/schemas/WorkStatus'
+    TransactionMerchantCategory:
+      type: object
+      properties:
+        description:
+          type: string
+          description: The merchant category description as defined in the Soldo platform.
+          example: Travel
+        mcc:
+          type: string
+          description: The official Mastercard Merchant Category Code (MCC).
+          example: '7011'
+        mcc_description:
+          type: string
+          description: The official Mastercard Merchant category description.
+          example: Lodging - Hotels, Motels, Resorts - not elsewhere classified
+        code:
+          type: string
+          description: 'The merchant category code as defined in the Soldo platform. *Deprecated*: use `description` instead.'
+          example: Lodging - Hotels, Motels, Resorts - not elsewhere classified
+          deprecated: true
+        sub_category:
+          type: string
+          description: The merchant sub-category as defined in the Soldo platform.
+          example: Hotels
+      description: 'The category of the `Merchant` of the `Transaction` (only valid for `Payment`, `Withdrawal`, `Refund` transaction categories) (sortable: no).'
+    SubscriptionDeletedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Subscription'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    CardSensitiveData:
+      type: object
+      properties:
+        encrypted_full_pan:
+          type: string
+          description: The encrypted PAN of the card.
+        encrypted_cvv:
+          type: string
+          description: The encrypted cvv of the card.
+        encrypted_pin:
+          type: string
+          description: The encrypted pin of the card (only valid for PLASTIC or FUEL card type).
+      description: 'The `Card` sensitive data (sortable: no).'
+    CompletedTransactionsImportEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/ExpenseReviewConfigurationEvent'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    CardAssigneeUpdatedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Card'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    CardType:
+      type: string
+      description: 'The type of `Card` (sortable: no).'
+      example: PLASTIC
+      enum:
+      - PLASTIC
+      - VIRTUAL
+      - FUEL
+      - GOOGLE_CARD
+    UserStatusChangedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/User'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    ContactDeletedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Contact'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    AccountInfoContact:
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/AccountIdentificationType'
+        identification:
+          type: string
+          description: The bank account identification for the specified type.
+          example: GB00ABCD00000123456789
+      description: The bank account information of the `Contact`.
+    VehicleCreateEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Vehicle'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    TransactionAttachmentType:
+      type: string
+      description: The type of attachment.
+      example: INVOICE
+      enum:
+      - RECEIPT
+      - INVOICE
+      - MAIL
+      - OTHER
+      - PURCHASE_REQUEST
+      - POP_AUTH
+      - POP_SETTLEMENT
+    NewUserEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/User'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    VatDeductibilityPercentage:
+      type: string
+      description: The VAT deductibility rate.
+      example: '40'
+      enum:
+      - NONE
+      - '40'
+      - '80'
+      - '100'
+    TransactionSplitInfo:
+      type: object
+      properties:
+        amount:
+          $ref: '#/components/schemas/TransactionAmount'
+        vat_amount:
+          $ref: '#/components/schemas/TransactionAmount'
+        expense_type:
+          $ref: '#/components/schemas/ExpenseType'
+        line_number:
+          type: integer
+          description: The `Transaction`'s line number.
+          format: int32
+          example: 1
+        tags:
+          type: array
+          description: The list of the Tags of the Transaction (only returned from [Get Transaction](https://developer.soldo.com/reference/transaction-get)).
+          items:
+            $ref: '#/components/schemas/TransactionSplitInfoTag'
+        employee:
+          $ref: '#/components/schemas/User'
+        expense_category:
+          $ref: '#/components/schemas/ExpenseCategory'
+        tax_rate:
+          $ref: '#/components/schemas/VatRate'
+        approved_amount:
+          $ref: '#/components/schemas/TransactionAmount'
+        rejected_amount:
+          $ref: '#/components/schemas/TransactionAmount'
+      description: The list of `SplitTransactionInfo`.
+    SubscriptionCreatedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Subscription'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    MoveResourcesCardEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Group'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    CustomerCareDepositEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    UrlType:
+      type: string
+      description: The URL type (DOWNLOAD_URL to download the attachment; UPLOAD_URL to upload the attachment).
+      example: DOWNLOAD_URL
+      enum:
+      - DOWNLOAD_URL
+      - UPLOAD_URL
+      - UPLOAD_COMPLETED
+      - DELETE
+      - THUMBNAILS_DOWNLOAD_URL
+      - UPDATE_METADATA
+    PurchaseTransaction:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'The `Transaction` ID (sortable: no)'
+          example: c861cc24-6663-410f-8c78-73f886fff4ef
+        amount:
+          type: number
+          description: 'The maximum spendable amount of the `Purchase` (sortable: no)'
+          example: 10.25
+        amount_currency:
+          $ref: '#/components/schemas/ISO4217Currency'
+        completed_time:
+          type: string
+          description: 'The date and time when the `Purchase` was completed (sortable: no)'
+          example: '2017-06-01T12:48:40Z'
+        transaction_category:
+          type: string
+          description: 'The category of the `Transaction` (sortable: no)'
+      description: 'The `Transactions` originated by the `Purchase` (sortable: no).'
+    TransactionCategory:
+      type: string
+      description: 'The category of the `Transaction` (sortable: yes).'
+      example: Payment
+      enum:
+      - Billing
+      - Chargeback
+      - Conversion
+      - Fee
+      - FeeReversal
+      - InboundFasterPayment
+      - InboundFasterPaymentReversal
+      - Load
+      - LoadReversal
+      - MileageReimbursement
+      - NotRecognized
+      - P2P
+      - Payment
+      - Rebalance
+      - RecurringBilling
+      - Refund
+      - SoldoActivity
+      - SoldoCreditOperation
+      - SoldoDebitOperation
+      - Transfer
+      - Wiretransfer
+      - Withdrawal
+      - InterAccountTransferWithdrawalRecurringBilling
+      - InterAccountTransferWithdrawal
+      - InterAccountTransferDeposit
+      - InterAccountTransferDepositRecurringBilling
+    OnlineAdsAssigneeRemovedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/OnlineAds'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    TransactionCarbonEmissionInfo:
+      type: object
+      properties:
+        value:
+          type: number
+          description: The amount of greenhouses gas emissions generated.
+        unit:
+          type: string
+          description: The unit of measure related to the `value` of greenhouses gas emissions generated.
+      description: The amount of CO2e emissions generated as a result of the `Transaction`.
+    UserRole:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the `UserRole`.
+          example: superAdmin
+        name:
+          type: string
+          description: The name of the `UserRole`.
+          example: superAdmin
+        description:
+          type: string
+          description: The description of the `UserRole`.
+          example: The SuperAdmin role
+        scope:
+          type: string
+          description: The scope of the `UserRole`.
+          example: ALL
+      description: The list of `UserRole` of the `User`.
+    WalletDeletedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Wallet'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    Transaction:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'The `Transaction` ID (sortable: yes).'
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        wallet_id:
+          type: string
+          description: 'The ID of the `Wallet` from where the `Transaction` has been authorised (sortable: no).'
+          example: 6853e657-c797-4985-8d6b-5425d4e51df8
+        wallet_name:
+          type: string
+          description: 'The name of the `Wallet` from where the `Transaction` has been authorised (sortable: no).'
+          example: John Doe
+        status:
+          $ref: '#/components/schemas/TransactionStatus'
+        category:
+          $ref: '#/components/schemas/TransactionCategory'
+        transaction_sign:
+          $ref: '#/components/schemas/TransactionSign'
+        purchase_id:
+          type: string
+          description: 'The `Purchase` ID (sortable: no).'
+          example: 6853e657-c797-4985-8d6b-5425d4e51df8
+        amount:
+          type: number
+          description: 'The amount of the `Transaction` in the currency of the `Wallet` (sortable: no).'
+          example: 10.25
+        amount_currency:
+          $ref: '#/components/schemas/ISO4217Currency'
+        tx_amount:
+          type: number
+          description: 'The amount of the `Transaction` in the currency of the `Merchant` (sortable: no).'
+          example: 10.25
+        tx_amount_currency:
+          $ref: '#/components/schemas/ISO4217Currency'
+        fee_amount:
+          type: number
+          description: 'The amount of the `Transaction` fee in the currency of the `Wallet` (sortable: no).'
+          example: 10.25
+        fee_currency:
+          $ref: '#/components/schemas/ISO4217Currency'
+        exchange_rate:
+          type: number
+          description: 'The exchange rate applied at the `Settled` status (sortable: no).'
+          example: 1
+        auth_exchange_rate:
+          type: number
+          description: 'The exchange rate applied at the `Authorised` status (sortable: no).'
+          example: 1
+        expense_status:
+          $ref: '#/components/schemas/ExpenseStatus'
+        expense_type:
+          $ref: '#/components/schemas/ExpenseType'
+        expense_date:
+          type: string
+          description: 'The date and time of the last review of the expense (sortable: no).'
+          example: '2017-06-01T12:48:40Z'
+        expense_reviewer:
+          type: string
+          description: 'The ID of the `User` who reviewed the expense (sortable: no).'
+          example: XMPL1234-000001
+        expense_approved_amount:
+          type: number
+          description: 'The expense amount that a reviewer has approved (sortable: no).'
+          example: 10.25
+        expense_report_id:
+          type: string
+          description: 'The ID of the `ExpenseReport` the `Transaction` is included into (sortable: no).'
+          example: c861cc24-6663-410f-8c78-73f886fff4ef
+        date:
+          type: string
+          description: 'The date and time of the `Transaction` at the `Authorised` status (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+        settlement_date:
+          type: string
+          description: 'The date and time of the `Transaction` at the `Settled` status (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+        update_time:
+          type: string
+          description: 'The date and time of the last update to the `Transaction` (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+        merchant:
+          $ref: '#/components/schemas/TransactionMerchant'
+        merchant_category:
+          $ref: '#/components/schemas/TransactionMerchantCategory'
+        tags:
+          type: array
+          description: The list of the `Tags` of the `Transaction`.
+          items:
+            $ref: '#/components/schemas/TransactionTag'
+        card_id:
+          type: string
+          description: 'The ID of the `Card` used for the `Transaction` (sortable: no).'
+          example: 6853e657-c797-4985-8d6b-5425d4e51df8
+        masked_pan:
+          type: string
+          description: 'The masked PAN of the `Card` used for the `Transaction` (sortable: yes).'
+          example: 123456******1234
+        owner_name:
+          type: string
+          description: 'The name of the cardholder who made the transaction (only available when `owner_type` is `employee`) (sortable: no).'
+          example: John
+        owner_surname:
+          type: string
+          description: 'The surname of the cardholder who made the transaction (only available when `owner_type` is `employee`) (sortable: no).'
+          example: Smith
+        owner_type:
+          $ref: '#/components/schemas/TransactionOwnerType'
+        owner_id:
+          type: string
+          description: 'The ID of the Cardholder who made the `Transaction` (only available when `owner_type` is `employee`) (sortable: no).'
+          example: XMPL1234-000003
+        custom_reference_id:
+          type: string
+          description: 'The custom reference ID of the Cardholder who made the `Transaction` (only available when `owner_type` is `employee`) (sortable: no).'
+          example: 123456-user-1
+        group_id:
+          type: string
+          description: 'The ID of the `Group` the `Transaction` belongs to (sortable: no). '
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+        has_attachments:
+          type: boolean
+          description: 'It determines whether the transaction has one or more `TransactionAttachments` (sortable: no).'
+          example: false
+        trx_owner_id:
+          type: string
+          description: 'For User `Card` transactions, when `owner_type` is `employee`, is the cardholder ID, for Company `Card`, when `owner_type` is `company`, is empty or one of the `Card` assignees (sortable: no).'
+          example: XMPL1234-000003
+        metadata_ids:
+          type: array
+          description: 'A list of IDs related to custom generated `Metadata` of the `Transaction` (sortable: no).'
+          example:
+          - express
+          items:
+            type: string
+            description: 'A list of IDs related to custom generated `Metadata` of the `Transaction` (sortable: no).'
+            example: '["express"]'
+        fuel_details:
+          $ref: '#/components/schemas/TransactionFuelDetails'
+        vat_percentage:
+          type: number
+          description: 'The VAT percentage applied (sortable: no).'
+          example: 15
+        vat_amount:
+          type: number
+          description: 'The amount of the VAT in the currency of the `Wallet` (sortable: no).'
+          example: 10.25
+        vat_currency:
+          $ref: '#/components/schemas/ISO4217Currency'
+        user_notes:
+          type: string
+          description: 'The notes defined by the `User` (sortable: no).'
+        notes:
+          type: string
+          description: 'The notes defined by Soldo (sortable: no).'
+        direct_url:
+          type: string
+          description: 'The direct URL to the transaction details page (sortable: no).'
+        flags:
+          type: array
+          description: 'List of strings: `forUser`, `forAdmin` or empty. It determines for which kinds of `Users` the transaction is flagged to (sortable: no).'
+          example:
+          - forUser
+          items:
+            type: string
+            description: 'List of strings: `forUser`, `forAdmin` or empty. It determines for which kinds of `Users` the transaction is flagged to (sortable: no).'
+            example: '["forUser"]'
+        payment_method:
+          $ref: '#/components/schemas/TransactionPaymentMethod'
+        payment_method_id:
+          type: string
+          description: 'The ID of the payment method, could be the ID of a `Subscription`, `OnlineAds` or `Purchase` resource (sortable: no).'
+          example: 6853e657-c797-4985-8d6b-5425d4e51df8
+        expense_category:
+          $ref: '#/components/schemas/ExpenseCategory'
+        tax_rate:
+          $ref: '#/components/schemas/VatRate'
+        split:
+          type: boolean
+          description: 'It determines whether the transaction has been split (sortable: no).'
+          example: false
+        tx_id:
+          type: string
+          description: The transaction's internal id (the same ID that can be found on reports and the advanced details section of a `Transaction`).
+          example: 5-857211147-150603333585014265
+        payment_trn_code:
+          type: string
+          description: The Transaction Reference Number (TRN) of the outbound payment generated by Soldo. Available for `SEPA`, `SEPA_INSTANT`.
+          example: 1234567890123456789012345678IT
+        carbon_emissions:
+          $ref: '#/components/schemas/TransactionCarbonEmissionInfo'
+        required_information:
+          $ref: '#/components/schemas/SearchTransactionRequiredInformation'
+        reimbursement_expense_report_id:
+          type: string
+          description: 'The ID of the ExpenseReport that was reimbursed by this payment. Note to developer: if this ID is not null this payment can be considered a reimbursement. (sortable: no).'
+        invoice:
+          $ref: '#/components/schemas/Invoice'
+        source:
+          $ref: '#/components/schemas/Source'
+        custom_export:
+          type: array
+          description: The info generated as a result of the custom export `Transaction`.
+          items:
+            $ref: '#/components/schemas/CustomExport'
+        out_spending_policy:
+          $ref: '#/components/schemas/TransactionSpendingPolicyMetadata'
+        business_trip_id:
+          type: string
+          description: 'The ID of the `BusinessTrip` the `Transaction` is linked to (sortable: no).'
+        card_name:
+          type: string
+          description: 'The name of the `Card` used for the `Transaction` (sortable: no).'
+          example: CardName
+        details:
+          $ref: '#/components/schemas/TransactionDetails'
+        split_transactions:
+          type: array
+          description: The list of `SplitTransactionInfo`.
+          items:
+            $ref: '#/components/schemas/TransactionSplitInfo'
+        timeline:
+          type: array
+          description: The timeline of changes affecting the `Transaction` and the related `Wallet`. For each occurrence, the `Wallet` balance is reported before and after the change.
+          items:
+            $ref: '#/components/schemas/TransactionTimelineItem'
+    CustomExport:
+      type: object
+      properties:
+        product:
+          type: string
+          description: A product that exported list of `Transaction`
+          example: SAP
+        export_date:
+          type: string
+          description: A date of exported `Transactions`
+          example: '2017-06-01T12:48:40Z'
+      description: The info generated as a result of the custom export `Transaction`.
+    SearchTransactionRequiredInformation:
+      type: string
+      description: It indicates whether a transaction has (or doesn’t have) all details marked as mandatory in the ‘Reminders’ section filled in.
+      example: COMPLETE
+      enum:
+      - COMPLETE
+      - NOT_COMPLETE
+    SubscriptionPaymentFrequency:
+      type: string
+      description: The payment frequency indicates how often a `Transaction` is expected to be made.
+      example: YEARLY
+      enum:
+      - OTHER
+      - YEARLY
+      - WEEKLY
+      - QUARTERLY
+      - MONTHLY
+    TransactionTag:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `Tag` ID.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+        dictionary_id:
+          type: string
+          description: The `List` ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        dictionary:
+          type: string
+          description: The name of the `List` where the `Tag` is listed.
+          example: ExampleTagDictionary
+        tag:
+          type: string
+          description: The name of the `Tag`.
+          example: tx-label
+        code:
+          type: string
+          description: The code of the `Tag`.
+          example: CODE tag
+        visible:
+          type: boolean
+          description: It determines whether the `Tag` is visible in the `Transaction` detail.
+          example: true
+        description:
+          type: string
+          description: The description of the `Tag`.
+          example: Label to mark transactions
+      description: The list of the `Tags` of the `Transaction`.
+    UserStatus:
+      type: string
+      description: 'The status of the `User` (sortable: yes).'
+      example: ACTIVE
+      enum:
+      - ACTIVE
+      - INACTIVE
+      - BLOCKED
+      - SUSPENDED
+      - PENDING
+      - ARCHIVED
+    TransactionAttachmentCompressedFile:
+      type: object
+      properties:
+        file_name:
+          type: string
+          description: The file name of the compressed attachment.
+          example: invoice01_thumb.jpg
+        file_extension:
+          type: string
+          description: The file extension of the compressed attachment.
+          example: .jpg
+        file_size:
+          type: integer
+          description: The file size of the compressed attachment in bytes.
+          format: int64
+          example: 32768
+        file_url:
+          type: string
+          description: The Base64 string of the Compressed File URL encrypted by DES in ECB mode, Pkcs7 padding scheme and using Token for key. Deprecated, use `url` instead.
+          deprecated: true
+        url:
+          type: string
+          description: The fileUrl  of the compressed attachment.
+        url_type:
+          $ref: '#/components/schemas/UrlType'
+      description: The Compressed version of the attachment, Soldo automatically generates a compressedversion of any image type (e.g. `JPG`, `JPEG`, `PNG`) attachment having a size greater than `2.5MB`.
+    AttachmentDeleteEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/TransactionAttachment'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    PurchaseCreateEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Purchase'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    MoveResourcesWalletEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Group'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    SubscriptionPlatform:
+      type: string
+      description: The platform the `Subscription` is made on.
+      example: OTHER
+      enum:
+      - ADOBE
+      - AMAZON
+      - APPLE
+      - ATLASSIAN
+      - FACEBOOK
+      - FIGMA
+      - GITHUB
+      - GOOGLE
+      - HUBSPOT
+      - LINKEDIN
+      - MICROSOFT
+      - NOTION
+      - OTHER
+      - PINTEREST
+      - SALESFORCE
+      - TWITTER
+      - XERO
+      - ZOOM
+    LoadFailedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    ContactCreatedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Contact'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    EnabledExpenseConfigurationEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/ExpenseReviewConfigurationEvent'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    UserUpdatedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/User'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    LoadMoneyEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    CardLostEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Card'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    PurchaseUpdateEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Purchase'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    CardDestroyedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Card'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    TransactionSpendingPolicyMetadata:
+      type: object
+      properties:
+        approved_amount:
+          $ref: '#/components/schemas/TransactionAmount'
+        rejected_amount:
+          $ref: '#/components/schemas/TransactionAmount'
+      description: The outSpendingPolicy of the `Transaction`.
+    PaymentSchema:
+      type: string
+      description: The type of payment accepted by the `Contact`.
+      enum:
+      - FPS
+      - SEPA
+      - SEPA_INSTANT
+    OnlineAdsAssigneeAddedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/OnlineAds'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    TransactionStatus:
+      type: string
+      description: 'The status of the `Transaction` (sortable: yes).'
+      example: Settled
+      enum:
+      - Authorised
+      - Settled
+      - Cancelled
+      - Declined
+      - DisputeFailed
+      - DisputeOpened
+      - DisputeWon
+      - Moved
+      - Unknown
+    ContactType:
+      type: string
+      description: The type of the `Contact`. If type is ACCOUNT, cannot be updated
+      example: SUPPLIER
+      enum:
+      - SUPPLIER
+      - CLIENT
+      - EMPLOYEE
+      - ACCOUNT
+    ContactUpdatedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Contact'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    CardAuthorizationEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    AddResourcesCardEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Group'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    PurchaseDeleteEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Purchase'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    BillingEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    TransactionTimelineBalance:
+      type: object
+      properties:
+        available_amount:
+          type: number
+          description: The `Wallet` available amount in the currency of the `Wallet`.
+          example: 10.25
+        pending_amount:
+          type: number
+          description: The `Wallet` pending amount in the currency of the `Wallet`. This is also known as `blocked` amount.
+          example: 10.25
+        ledger_amount:
+          type: number
+          description: The `Wallet` ledger amount in the currency of the `Wallet`. This is a shorthand for the sum of available and pending amounts.
+          example: 10.25
+      description: The `Wallet` balance before the change took place.
+      example: 10.25
+    OnlineAdsActivatedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/OnlineAds'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    InboundPaymentReversalEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    CardStatus:
+      type: string
+      description: 'The status of the `Card` (sortable: yes).'
+      example: Normal
+      enum:
+      - Normal
+      - Do not honor
+      - Lost card
+      - Stolen card
+      - Expired card
+      - Restricted card
+      - Security Violation
+      - Cardholder to contact the issuer
+      - Card Destroyed
+    CardPaymentMethod:
+      type: string
+      description: 'The `Card` payment method (sortable: no).'
+      example: ONLINE_ADS
+      enum:
+      - SUBSCRIPTION
+      - ONLINE_ADS
+      - PURCHASE
+    CustomerCareWithdrawEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    CreatedExpenseConfigurationEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/ExpenseReviewConfigurationEvent'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    SubscriptionStatus:
+      type: string
+      description: The status of the `Subscription`.
+      example: ACTIVE
+      enum:
+      - ACTIVE
+      - ASSIGNED
+      - CANCELLED
+    JouleFeedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Transaction'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    CardCreationEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Card'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    TransactionTimelineStatus:
+      type: string
+      description: What happened in that moment to the `Transaction` and to the related `Wallet`.
+      example: Settled
+      enum:
+      - Unspecified
+      - Authorized
+      - Reversed
+      - Refunded
+      - Settled
+      - Withdraw
+      - Deposit
+      - Chargeback
+    PurchaseRedeemCardEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Purchase'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
   securitySchemes:
     standardAuth:
       type: oauth2
@@ -3872,52 +7852,5 @@ components:
             wallet_write: Can change wallet details.
             webhook_subscription_read: Can read webhook subscription details.
             webhook_subscription_write: Can change webhook subscription details.
-x-refined-from:
-- soldo-software-and-services-accounting-classification-api-openapi.yml
-- soldo-software-and-services-addresses-api-openapi.yml
-- soldo-software-and-services-authentication-api-openapi.yml
-- soldo-software-and-services-auto-transfer-presets-api-openapi.yml
-- soldo-software-and-services-autotags-api-openapi.yml
-- soldo-software-and-services-business-trips-api-openapi.yml
-- soldo-software-and-services-card-rules-api-openapi.yml
-- soldo-software-and-services-card-rules-presets-api-openapi.yml
-- soldo-software-and-services-cards-api-openapi.yml
-- soldo-software-and-services-company-api-openapi.yml
-- soldo-software-and-services-contacts-api-openapi.yml
-- soldo-software-and-services-documents-api-openapi.yml
-- soldo-software-and-services-expense-categories-api-openapi.yml
-- soldo-software-and-services-expense-policies-api-openapi.yml
-- soldo-software-and-services-expense-reports-api-openapi.yml
-- soldo-software-and-services-expense-review-configuration-api-openapi.yml
-- soldo-software-and-services-expense-review-processes-api-openapi.yml
-- soldo-software-and-services-expense-reviews-api-openapi.yml
-- soldo-software-and-services-groups-api-openapi.yml
-- soldo-software-and-services-lists-api-openapi.yml
-- soldo-software-and-services-online-ads-api-openapi.yml
-- soldo-software-and-services-orders-api-openapi.yml
-- soldo-software-and-services-out-of-office-api-openapi.yml
-- soldo-software-and-services-permissions-api-openapi.yml
-- soldo-software-and-services-pre-approved-spend-api-openapi.yml
-- soldo-software-and-services-refueling-transactions-api-openapi.yml
-- soldo-software-and-services-requests-api-openapi.yml
-- soldo-software-and-services-resource-sets-api-openapi.yml
-- soldo-software-and-services-statements-api-openapi.yml
-- soldo-software-and-services-subscriptions-api-openapi.yml
-- soldo-software-and-services-tags-api-openapi.yml
-- soldo-software-and-services-transaction-attachments-api-openapi.yml
-- soldo-software-and-services-transaction-custom-export-api-openapi.yml
-- soldo-software-and-services-transaction-expense-category-api-openapi.yml
-- soldo-software-and-services-transaction-metadata-api-openapi.yml
-- soldo-software-and-services-transaction-split-api-openapi.yml
-- soldo-software-and-services-transaction-tags-api-openapi.yml
-- soldo-software-and-services-transaction-vat-rate-api-openapi.yml
-- soldo-software-and-services-transactions-api-openapi.yml
-- soldo-software-and-services-user-roles-api-openapi.yml
-- soldo-software-and-services-users-api-openapi.yml
-- soldo-software-and-services-vat-rates-api-openapi.yml
-- soldo-software-and-services-vehicles-api-openapi.yml
-- soldo-software-and-services-wallets-api-openapi.yml
-- soldo-software-and-services-webhook-subscriptions-api-openapi.yml
-- soldo-software-and-services-workflows-api-openapi.yml
 x-readme:
   hidden: true

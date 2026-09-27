@@ -122,22 +122,6 @@ paths:
         - employee_write
 components:
   schemas:
-    UpdateUserRoleAssignment:
-      type: object
-      properties:
-        name:
-          type: string
-          description: The name of the `Role`.
-          example: superAdmin
-        description:
-          type: string
-          description: The description of the `Role`.
-          example: The SuperAdmin role
-        scope:
-          type: string
-          description: The name of the scope.
-          example: ALL
-      description: Remove `Role` from `User` JSON parameters.
     AssignedUserRoles:
       type: object
       properties:
@@ -170,6 +154,22 @@ components:
           description: The scope of the `UserRole`.
           example: ALL
       description: The list of `UserRole` of the `User`.
+    UpdateUserRoleAssignment:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the `Role`.
+          example: superAdmin
+        description:
+          type: string
+          description: The description of the `Role`.
+          example: The SuperAdmin role
+        scope:
+          type: string
+          description: The name of the scope.
+          example: ALL
+      description: Remove `Role` from `User` JSON parameters.
   securitySchemes:
     standardAuth:
       type: oauth2

@@ -445,104 +445,6 @@ webhooks:
       description: Sandbox server (using test data)
 components:
   schemas:
-    Wallet:
-      type: object
-      properties:
-        id:
-          type: string
-          description: 'The `Wallet` ID (sortable: yes)'
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        name:
-          type: string
-          description: 'The name of the `Wallet` (sortable: yes)'
-          example: CompanyWallet1
-        currency_code:
-          $ref: '#/components/schemas/ISO4217Currency'
-        available_amount:
-          type: number
-          description: 'The currently available balance of the `Wallet` (sortable: no)'
-          example: 100
-        blocked_amount:
-          type: number
-          description: 'The blocked balance of the `Wallet` (the overall amount of `Transactions` in `Authorised` status) (sortable: no)'
-          example: 0
-        primary_user_type:
-          $ref: '#/components/schemas/PrimaryUserType'
-        primary_user_public_id:
-          type: string
-          description: 'The ID of the `User` if the `Wallet` is of type `employee`, not available for other `Wallet` types (sortable: no)'
-          example: XMPL1234-000001
-        custom_reference_id:
-          type: string
-          description: 'The custom reference of the `User` if the `Wallet` is of type `employee`, not available for other wallet types (sortable: yes)'
-          example: 123456-usa-1
-        group_id:
-          type: string
-          description: 'The ID of the `Group` the wallet is related to (sortable: no). In case of multiple groups associated this field contains the first one for backward compatibility.'
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-          deprecated: true
-        groups:
-          type: array
-          description: 'The list of `Group` ID the wallet is related to (sortable: no)'
-          example:
-          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
-          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-          items:
-            type: string
-            description: 'The list of `Group` ID the wallet is related to (sortable: no)'
-            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
-        label:
-          type: string
-          description: 'The label of the `Wallet` (sortable: yes)'
-          example: CompanyWallet1
-        visible:
-          type: boolean
-          description: 'It determines whether the `Wallet` is visible on the web console (sortable: yes)'
-          example: true
-        creation_time:
-          type: string
-          description: 'The date and time when the `Wallet` was created (sortable: yes)'
-          example: '2017-06-01T12:48:40Z'
-        last_update:
-          type: string
-          description: 'The date and time when the `Wallet` was last updated (sortable: yes)'
-          example: '2017-06-01T12:48:40Z'
-        deposit_account_info:
-          type: array
-          description: The deposit account info of the `Wallet`.
-          example:
-          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
-          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-          items:
-            $ref: '#/components/schemas/DepositAccountInfo'
-        description:
-          type: string
-          description: 'The note of the `Wallet` (sortable: yes)'
-          example: CompanyWallet1
-    AccountInfoDeposit:
-      type: string
-      description: The `type` of account identification.
-      example: IBAN
-      enum:
-      - IBAN
-      - SISAL
-      - SORT_CODE
-      - VIRTUAL_IBAN
-      - SHARED_SWIFT
-      - DEDICATED_SWIFT
-    DepositAccountInfo:
-      type: object
-      properties:
-        type:
-          $ref: '#/components/schemas/AccountInfoDeposit'
-        identification:
-          type: string
-          description: The account identification related to the type.
-          example: GB00ABCD00000123456789
-      description: The deposit account info of the `Wallet`.
-      example:
-      - 7bf79328-a7ae-4222-aa54-091ff7f429a7
-      - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
     ISO4217Currency:
       type: string
       description: 'The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Wallet` (sortable: no)'
@@ -732,109 +634,6 @@ components:
       - ZAR
       - ZMW
       - ZWL
-    TransferResult:
-      type: object
-      properties:
-        amount:
-          type: number
-          description: The transferred amount.
-          example: 10.25
-        currency:
-          $ref: '#/components/schemas/ISO4217Currency'
-        datetime:
-          type: string
-          description: The date and time of the transaction.
-          example: '2017-06-01T12:48:40Z'
-        from_wallet:
-          $ref: '#/components/schemas/Wallet'
-        to_wallet:
-          $ref: '#/components/schemas/Wallet'
-    Direction:
-      type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
-      enum:
-      - ASC
-      - DESC
-    AddWalletOwnerType:
-      type: string
-      description: The type of the owner of the `Wallet`.
-      example: company
-      enum:
-      - company
-    OrderItem:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The ID of a single item of a specific `Order`.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        item_type:
-          type: string
-          description: The type of the ordered item.
-          example: CARD
-        category:
-          type: string
-          description: The category of the ordered item.
-      description: The products associated with the `Order`.
-    PrimaryUserType:
-      type: string
-      description: The type of resource assigned to the `Wallet`.
-      example: company
-      enum:
-      - main
-      - company
-      - employee
-      - dedicated
-    ISO4217SupportedCurrency:
-      type: string
-      description: The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Statement` to search for.
-      example: EUR
-      enum:
-      - EUR
-      - GBP
-      - USD
-    WalletDeletedEvent:
-      type: object
-      properties:
-        event_uuid:
-          type: string
-          description: The webhook unique ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        event_type:
-          $ref: '#/components/schemas/WebhookEventType'
-        event_name:
-          $ref: '#/components/schemas/WebhookEventName'
-        company_account_id:
-          type: string
-          description: The company account ID.
-          example: XMPL1234
-        data:
-          $ref: '#/components/schemas/Wallet'
-        subscription_id:
-          type: string
-          description: The webhook subscription ID used to route this event.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-    UpdateWallet:
-      required:
-      - description
-      - label
-      - name
-      type: object
-      properties:
-        name:
-          type: string
-          description: The `Wallet` name.
-          example: John Doe
-        label:
-          type: string
-          description: The `Wallet` label.
-          example: JD
-        description:
-          type: string
-          description: The `Wallet` description.
-          example: My company wallet
-      description: The `Wallet` JSON parameters.
     CreateWallet:
       required:
       - currency
@@ -859,62 +658,38 @@ components:
           $ref: '#/components/schemas/ISO4217SupportedCurrency'
         owner_type:
           $ref: '#/components/schemas/AddWalletOwnerType'
-    Order:
+    Wallets:
       type: object
       properties:
-        id:
-          type: string
-          description: The `Order` ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        status:
-          $ref: '#/components/schemas/OrderStatus'
-        creation_time:
-          type: string
-          description: The date and time when the `Order` was created.
-          example: '2017-06-01T12:48:40Z'
-        last_update_time:
-          type: string
-          description: The last update date of the `Order`.
-          example: '2017-06-01T12:48:40Z'
-        error_code:
-          type: string
-          description: In case is_valid is false, the error code of the `Order` is shown.
-        total_paid_amount:
-          type: number
-          description: The total amount of the `Order`.
-          example: 10.25
-        total_paid_currency:
-          $ref: '#/components/schemas/ISO4217Currency'
-        items:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        pages:
+          type: integer
+          description: It represents the total number of available pages.
+          format: int32
+          example: 7
+        page_size:
+          type: integer
+          description: It represents the number of items per page.
+          format: int32
+          example: 25
+        current_page:
+          type: integer
+          description: It indicates the current page (the counter starts from zero).
+          format: int32
+          example: 0
+        results_size:
+          type: integer
+          description: It indicates the size of the array results.
+          format: int32
+          example: 25
+        results:
           type: array
-          description: The products associated with the `Order`.
           items:
-            $ref: '#/components/schemas/OrderItem'
-        is_valid:
-          type: boolean
-          description: It states whether the `Order` is valid.
-          example: true
-    WalletCreatedEvent:
-      type: object
-      properties:
-        event_uuid:
-          type: string
-          description: The webhook unique ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        event_type:
-          $ref: '#/components/schemas/WebhookEventType'
-        event_name:
-          $ref: '#/components/schemas/WebhookEventName'
-        company_account_id:
-          type: string
-          description: The company account ID.
-          example: XMPL1234
-        data:
-          $ref: '#/components/schemas/Wallet'
-        subscription_id:
-          type: string
-          description: The webhook subscription ID used to route this event.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+            $ref: '#/components/schemas/Wallet'
     WebhookEventName:
       type: string
       description: The list of subscribed events.
@@ -1004,38 +779,38 @@ components:
       - contact_created
       - contact_updated
       - contact_deleted
-    Wallets:
+    OrderStatus:
+      type: string
+      description: The status of the `Order`.
+      example: PENDING
+      enum:
+      - PENDING
+      - ERROR
+      - PLACED
+      - CANCELLED
+      - COMPLETED
+      - COMPLETED_WITH_CREDIT
+    WalletCreatedEvent:
       type: object
       properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        pages:
-          type: integer
-          description: It represents the total number of available pages.
-          format: int32
-          example: 7
-        page_size:
-          type: integer
-          description: It represents the number of items per page.
-          format: int32
-          example: 25
-        current_page:
-          type: integer
-          description: It indicates the current page (the counter starts from zero).
-          format: int32
-          example: 0
-        results_size:
-          type: integer
-          description: It indicates the size of the array results.
-          format: int32
-          example: 25
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Wallet'
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Wallet'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
     AddWalletOrder:
       required:
       - currency
@@ -1057,17 +832,141 @@ components:
         owner_type:
           $ref: '#/components/schemas/AddWalletOwnerType'
       description: Add `Wallet` JSON parameters.
-    OrderStatus:
+    OrderItem:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of a single item of a specific `Order`.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        item_type:
+          type: string
+          description: The type of the ordered item.
+          example: CARD
+        category:
+          type: string
+          description: The category of the ordered item.
+      description: The products associated with the `Order`.
+    AccountInfoDeposit:
       type: string
-      description: The status of the `Order`.
-      example: PENDING
+      description: The `type` of account identification.
+      example: IBAN
       enum:
-      - PENDING
-      - ERROR
-      - PLACED
-      - CANCELLED
-      - COMPLETED
-      - COMPLETED_WITH_CREDIT
+      - IBAN
+      - SISAL
+      - SORT_CODE
+      - VIRTUAL_IBAN
+      - SHARED_SWIFT
+      - DEDICATED_SWIFT
+    ISO4217SupportedCurrency:
+      type: string
+      description: The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Statement` to search for.
+      example: EUR
+      enum:
+      - EUR
+      - GBP
+      - USD
+    UpdateWallet:
+      required:
+      - description
+      - label
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+          description: The `Wallet` name.
+          example: John Doe
+        label:
+          type: string
+          description: The `Wallet` label.
+          example: JD
+        description:
+          type: string
+          description: The `Wallet` description.
+          example: My company wallet
+      description: The `Wallet` JSON parameters.
+    Direction:
+      type: string
+      description: It indicates how the pages are ordered.
+      example: DESC
+      enum:
+      - ASC
+      - DESC
+    Wallet:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'The `Wallet` ID (sortable: yes)'
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        name:
+          type: string
+          description: 'The name of the `Wallet` (sortable: yes)'
+          example: CompanyWallet1
+        currency_code:
+          $ref: '#/components/schemas/ISO4217Currency'
+        available_amount:
+          type: number
+          description: 'The currently available balance of the `Wallet` (sortable: no)'
+          example: 100
+        blocked_amount:
+          type: number
+          description: 'The blocked balance of the `Wallet` (the overall amount of `Transactions` in `Authorised` status) (sortable: no)'
+          example: 0
+        primary_user_type:
+          $ref: '#/components/schemas/PrimaryUserType'
+        primary_user_public_id:
+          type: string
+          description: 'The ID of the `User` if the `Wallet` is of type `employee`, not available for other `Wallet` types (sortable: no)'
+          example: XMPL1234-000001
+        custom_reference_id:
+          type: string
+          description: 'The custom reference of the `User` if the `Wallet` is of type `employee`, not available for other wallet types (sortable: yes)'
+          example: 123456-usa-1
+        group_id:
+          type: string
+          description: 'The ID of the `Group` the wallet is related to (sortable: no). In case of multiple groups associated this field contains the first one for backward compatibility.'
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+          deprecated: true
+        groups:
+          type: array
+          description: 'The list of `Group` ID the wallet is related to (sortable: no)'
+          example:
+          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+          items:
+            type: string
+            description: 'The list of `Group` ID the wallet is related to (sortable: no)'
+            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
+        label:
+          type: string
+          description: 'The label of the `Wallet` (sortable: yes)'
+          example: CompanyWallet1
+        visible:
+          type: boolean
+          description: 'It determines whether the `Wallet` is visible on the web console (sortable: yes)'
+          example: true
+        creation_time:
+          type: string
+          description: 'The date and time when the `Wallet` was created (sortable: yes)'
+          example: '2017-06-01T12:48:40Z'
+        last_update:
+          type: string
+          description: 'The date and time when the `Wallet` was last updated (sortable: yes)'
+          example: '2017-06-01T12:48:40Z'
+        deposit_account_info:
+          type: array
+          description: The deposit account info of the `Wallet`.
+          example:
+          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+          items:
+            $ref: '#/components/schemas/DepositAccountInfo'
+        description:
+          type: string
+          description: 'The note of the `Wallet` (sortable: yes)'
+          example: CompanyWallet1
     WebhookEventType:
       type: string
       description: The webhook event type.
@@ -1088,6 +987,107 @@ components:
       - Employee
       - Vehicle
       - Wallet
+    TransferResult:
+      type: object
+      properties:
+        amount:
+          type: number
+          description: The transferred amount.
+          example: 10.25
+        currency:
+          $ref: '#/components/schemas/ISO4217Currency'
+        datetime:
+          type: string
+          description: The date and time of the transaction.
+          example: '2017-06-01T12:48:40Z'
+        from_wallet:
+          $ref: '#/components/schemas/Wallet'
+        to_wallet:
+          $ref: '#/components/schemas/Wallet'
+    PrimaryUserType:
+      type: string
+      description: The type of resource assigned to the `Wallet`.
+      example: company
+      enum:
+      - main
+      - company
+      - employee
+      - dedicated
+    DepositAccountInfo:
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/AccountInfoDeposit'
+        identification:
+          type: string
+          description: The account identification related to the type.
+          example: GB00ABCD00000123456789
+      description: The deposit account info of the `Wallet`.
+      example:
+      - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+      - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `Order` ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        status:
+          $ref: '#/components/schemas/OrderStatus'
+        creation_time:
+          type: string
+          description: The date and time when the `Order` was created.
+          example: '2017-06-01T12:48:40Z'
+        last_update_time:
+          type: string
+          description: The last update date of the `Order`.
+          example: '2017-06-01T12:48:40Z'
+        error_code:
+          type: string
+          description: In case is_valid is false, the error code of the `Order` is shown.
+        total_paid_amount:
+          type: number
+          description: The total amount of the `Order`.
+          example: 10.25
+        total_paid_currency:
+          $ref: '#/components/schemas/ISO4217Currency'
+        items:
+          type: array
+          description: The products associated with the `Order`.
+          items:
+            $ref: '#/components/schemas/OrderItem'
+        is_valid:
+          type: boolean
+          description: It states whether the `Order` is valid.
+          example: true
+    AddWalletOwnerType:
+      type: string
+      description: The type of the owner of the `Wallet`.
+      example: company
+      enum:
+      - company
+    WalletDeletedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Wallet'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
   securitySchemes:
     standardAuth:
       type: oauth2

@@ -680,137 +680,23 @@ webhooks:
       description: Sandbox server (using test data)
 components:
   schemas:
-    UpdateOnlineAds:
-      type: object
-      properties:
-        name:
-          type: string
-          description: The name of the `OnlineAds`.
-          example: Google Ads
-        description:
-          type: string
-          description: The description `OnlineAds`.
-          example: Google Ads Campaign
-        wallet_id:
-          type: string
-          description: The `Wallet` ID associated to the `OnlineAds`.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-      description: Update `OnlineAd` JSON parameters.
-    OnlineAdsAssigneeAddedEvent:
-      type: object
-      properties:
-        event_uuid:
-          type: string
-          description: The webhook unique ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        event_type:
-          $ref: '#/components/schemas/WebhookEventType'
-        event_name:
-          $ref: '#/components/schemas/WebhookEventName'
-        company_account_id:
-          type: string
-          description: The company account ID.
-          example: XMPL1234
-        data:
-          $ref: '#/components/schemas/OnlineAds'
-        subscription_id:
-          type: string
-          description: The webhook subscription ID used to route this event.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-    CreateOnlineAds:
+    AddAssignees:
       required:
-      - assignees
-      - description
-      - name
-      - platform
-      - wallet_id
+      - add_assignees
       type: object
       properties:
-        name:
-          type: string
-          description: The name of the `OnlineAds`.
-          example: Google Ads
-        description:
-          type: string
-          description: The description of the `OnlineAds`.
-          example: Google Ads Campaign
-        platform:
-          $ref: '#/components/schemas/OnlineAdsPlatform'
-        assignees:
-          uniqueItems: true
+        add_assignees:
           type: array
-          description: List of `User` IDs to be assigned to the `OnlineAds` and its `Cards`.
+          description: List of new `User` IDs to add as assignees.
           example:
           - XMPL1234-000001
           - XMPL1234-000002
           - XMPL1234-000003
           items:
             type: string
-            description: List of `User` IDs to be assigned to the `OnlineAds` and its `Cards`.
+            description: List of new `User` IDs to add as assignees.
             example: '["XMPL1234-000001","XMPL1234-000002","XMPL1234-000003"]'
-        wallet_id:
-          type: string
-          description: The `Wallet` ID associated to the `OnlineAds`.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-      description: Add `OnlineAd` JSON parameters.
-    OnlineAds:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The `OnlineAds` ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        name:
-          type: string
-          description: The name of the `OnlineAds`.
-          example: EXAMPLE ONLINE AD
-        description:
-          type: string
-          description: A custom description of the `OnlineAds`.
-          example: This is an online advertisement
-        platform:
-          $ref: '#/components/schemas/OnlineAdsPlatform'
-        assignees:
-          type: array
-          description: List of `User` IDs currently assigned to the `OnlineAds` and its `Cards`.
-          example:
-          - XMPL1234-000001
-          - XMPL1234-000002
-          - XMPL1234-000003
-          items:
-            type: string
-            description: List of `User` IDs currently assigned to the `OnlineAds` and its `Cards`.
-            example: '["XMPL1234-000001","XMPL1234-000002","XMPL1234-000003"]'
-        status:
-          $ref: '#/components/schemas/OnlineAdsStatus'
-        wallet_id:
-          type: string
-          description: The `Wallet` ID the `OnlineAds` and its `Card` are linked to.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-        last_spent_date:
-          type: string
-          description: The date and time of the last `Transaction` made with the `Card`.
-          example: '2020-05-07T12:48:40Z'
-        last_spent:
-          type: number
-          description: The amount of the last `Transaction` made with the `Card`.
-          example: 75.01
-        total_spent:
-          type: number
-          description: The overall amount spent with the `Card`.
-          example: 775.01
-        card_id:
-          type: string
-          description: The ID of the `Card` reserved for this `OnlineAds` (only available after the `OnlineAds` has been activated).
-          example: c861cc24-6663-410f-8c78-73f886fff4ef
-        creation_time:
-          type: string
-          description: The date and time when the `OnlineAds` was created.
-          example: '2017-06-01T12:48:40Z'
-        last_update_time:
-          type: string
-          description: The date and time when the `OnlineAds` was last updated.
-          example: '2017-06-01T12:48:40Z'
+      description: Add `Subscription` assignees JSON parameters.
     ISO4217Currency:
       type: string
       description: 'The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Wallet` (sortable: no)'
@@ -1000,48 +886,7 @@ components:
       - ZAR
       - ZMW
       - ZWL
-    OnlineAdsPlatform:
-      type: string
-      description: The platform the `OnlineAds` are made on.
-      example: OTHER
-      enum:
-      - GOOGLE
-      - TWITTER
-      - TABOOLA
-      - PINTEREST
-      - MICROSOFT
-      - FACEBOOK
-      - AMAZON
-      - APPLE
-      - TIKTOK
-      - LINKEDIN
-      - INSTAGRAM
-      - OTHER
-    Direction:
-      type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
-      enum:
-      - ASC
-      - DESC
-    AddAssignees:
-      required:
-      - add_assignees
-      type: object
-      properties:
-        add_assignees:
-          type: array
-          description: List of new `User` IDs to add as assignees.
-          example:
-          - XMPL1234-000001
-          - XMPL1234-000002
-          - XMPL1234-000003
-          items:
-            type: string
-            description: List of new `User` IDs to add as assignees.
-            example: '["XMPL1234-000001","XMPL1234-000002","XMPL1234-000003"]'
-      description: Add `Subscription` assignees JSON parameters.
-    OnlineAdsActivatedEvent:
+    OnlineAdsCreatedEvent:
       type: object
       properties:
         event_uuid:
@@ -1062,147 +907,6 @@ components:
           type: string
           description: The webhook subscription ID used to route this event.
           example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-    OrderItem:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The ID of a single item of a specific `Order`.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        item_type:
-          type: string
-          description: The type of the ordered item.
-          example: CARD
-        category:
-          type: string
-          description: The category of the ordered item.
-      description: The products associated with the `Order`.
-    OnlineAdsAssigneeRemovedEvent:
-      type: object
-      properties:
-        event_uuid:
-          type: string
-          description: The webhook unique ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        event_type:
-          $ref: '#/components/schemas/WebhookEventType'
-        event_name:
-          $ref: '#/components/schemas/WebhookEventName'
-        company_account_id:
-          type: string
-          description: The company account ID.
-          example: XMPL1234
-        data:
-          $ref: '#/components/schemas/OnlineAds'
-        subscription_id:
-          type: string
-          description: The webhook subscription ID used to route this event.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-    OnlineAdsDeletedEvent:
-      type: object
-      properties:
-        event_uuid:
-          type: string
-          description: The webhook unique ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        event_type:
-          $ref: '#/components/schemas/WebhookEventType'
-        event_name:
-          $ref: '#/components/schemas/WebhookEventName'
-        company_account_id:
-          type: string
-          description: The company account ID.
-          example: XMPL1234
-        data:
-          $ref: '#/components/schemas/OnlineAds'
-        subscription_id:
-          type: string
-          description: The webhook subscription ID used to route this event.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-    OnlineAdsList:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        pages:
-          type: integer
-          description: It represents the total number of available pages.
-          format: int32
-          example: 7
-        page_size:
-          type: integer
-          description: It represents the number of items per page.
-          format: int32
-          example: 25
-        current_page:
-          type: integer
-          description: It indicates the current page (the counter starts from zero).
-          format: int32
-          example: 0
-        results_size:
-          type: integer
-          description: It indicates the size of the array results.
-          format: int32
-          example: 25
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/OnlineAds'
-    RemoveAssignees:
-      required:
-      - remove_assignees
-      type: object
-      properties:
-        remove_assignees:
-          type: array
-          description: List of `User` IDs to remove from assignees.
-          example:
-          - XMPL1234-000001
-          - XMPL1234-000002
-          - XMPL1234-000003
-          items:
-            type: string
-            description: List of `User` IDs to remove from assignees.
-            example: '["XMPL1234-000001","XMPL1234-000002","XMPL1234-000003"]'
-      description: Remove `Subscription` assignees JSON parameters.
-    Order:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The `Order` ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        status:
-          $ref: '#/components/schemas/OrderStatus'
-        creation_time:
-          type: string
-          description: The date and time when the `Order` was created.
-          example: '2017-06-01T12:48:40Z'
-        last_update_time:
-          type: string
-          description: The last update date of the `Order`.
-          example: '2017-06-01T12:48:40Z'
-        error_code:
-          type: string
-          description: In case is_valid is false, the error code of the `Order` is shown.
-        total_paid_amount:
-          type: number
-          description: The total amount of the `Order`.
-          example: 10.25
-        total_paid_currency:
-          $ref: '#/components/schemas/ISO4217Currency'
-        items:
-          type: array
-          description: The products associated with the `Order`.
-          items:
-            $ref: '#/components/schemas/OrderItem'
-        is_valid:
-          type: boolean
-          description: It states whether the `Order` is valid.
-          example: true
     WebhookEventName:
       type: string
       description: The list of subscribed events.
@@ -1292,27 +996,6 @@ components:
       - contact_created
       - contact_updated
       - contact_deleted
-    OnlineAdsUpdatedEvent:
-      type: object
-      properties:
-        event_uuid:
-          type: string
-          description: The webhook unique ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        event_type:
-          $ref: '#/components/schemas/WebhookEventType'
-        event_name:
-          $ref: '#/components/schemas/WebhookEventName'
-        company_account_id:
-          type: string
-          description: The company account ID.
-          example: XMPL1234
-        data:
-          $ref: '#/components/schemas/OnlineAds'
-        subscription_id:
-          type: string
-          description: The webhook subscription ID used to route this event.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
     OnlineAdsStatus:
       type: string
       description: The status of the `OnlineAds`.
@@ -1321,7 +1004,7 @@ components:
       - ACTIVE
       - ASSIGNED
       - CANCELLED
-    OnlineAdsCreatedEvent:
+    OnlineAdsUpdatedEvent:
       type: object
       properties:
         event_uuid:
@@ -1353,6 +1036,161 @@ components:
       - CANCELLED
       - COMPLETED
       - COMPLETED_WITH_CREDIT
+    OnlineAdsActivatedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/OnlineAds'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    OnlineAdsAssigneeRemovedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/OnlineAds'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    OnlineAds:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `OnlineAds` ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        name:
+          type: string
+          description: The name of the `OnlineAds`.
+          example: EXAMPLE ONLINE AD
+        description:
+          type: string
+          description: A custom description of the `OnlineAds`.
+          example: This is an online advertisement
+        platform:
+          $ref: '#/components/schemas/OnlineAdsPlatform'
+        assignees:
+          type: array
+          description: List of `User` IDs currently assigned to the `OnlineAds` and its `Cards`.
+          example:
+          - XMPL1234-000001
+          - XMPL1234-000002
+          - XMPL1234-000003
+          items:
+            type: string
+            description: List of `User` IDs currently assigned to the `OnlineAds` and its `Cards`.
+            example: '["XMPL1234-000001","XMPL1234-000002","XMPL1234-000003"]'
+        status:
+          $ref: '#/components/schemas/OnlineAdsStatus'
+        wallet_id:
+          type: string
+          description: The `Wallet` ID the `OnlineAds` and its `Card` are linked to.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+        last_spent_date:
+          type: string
+          description: The date and time of the last `Transaction` made with the `Card`.
+          example: '2020-05-07T12:48:40Z'
+        last_spent:
+          type: number
+          description: The amount of the last `Transaction` made with the `Card`.
+          example: 75.01
+        total_spent:
+          type: number
+          description: The overall amount spent with the `Card`.
+          example: 775.01
+        card_id:
+          type: string
+          description: The ID of the `Card` reserved for this `OnlineAds` (only available after the `OnlineAds` has been activated).
+          example: c861cc24-6663-410f-8c78-73f886fff4ef
+        creation_time:
+          type: string
+          description: The date and time when the `OnlineAds` was created.
+          example: '2017-06-01T12:48:40Z'
+        last_update_time:
+          type: string
+          description: The date and time when the `OnlineAds` was last updated.
+          example: '2017-06-01T12:48:40Z'
+    OrderItem:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of a single item of a specific `Order`.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        item_type:
+          type: string
+          description: The type of the ordered item.
+          example: CARD
+        category:
+          type: string
+          description: The category of the ordered item.
+      description: The products associated with the `Order`.
+    RemoveAssignees:
+      required:
+      - remove_assignees
+      type: object
+      properties:
+        remove_assignees:
+          type: array
+          description: List of `User` IDs to remove from assignees.
+          example:
+          - XMPL1234-000001
+          - XMPL1234-000002
+          - XMPL1234-000003
+          items:
+            type: string
+            description: List of `User` IDs to remove from assignees.
+            example: '["XMPL1234-000001","XMPL1234-000002","XMPL1234-000003"]'
+      description: Remove `Subscription` assignees JSON parameters.
+    UpdateOnlineAds:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the `OnlineAds`.
+          example: Google Ads
+        description:
+          type: string
+          description: The description `OnlineAds`.
+          example: Google Ads Campaign
+        wallet_id:
+          type: string
+          description: The `Wallet` ID associated to the `OnlineAds`.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+      description: Update `OnlineAd` JSON parameters.
+    Direction:
+      type: string
+      description: It indicates how the pages are ordered.
+      example: DESC
+      enum:
+      - ASC
+      - DESC
     WebhookEventType:
       type: string
       description: The webhook event type.
@@ -1373,6 +1211,168 @@ components:
       - Employee
       - Vehicle
       - Wallet
+    OnlineAdsPlatform:
+      type: string
+      description: The platform the `OnlineAds` are made on.
+      example: OTHER
+      enum:
+      - GOOGLE
+      - TWITTER
+      - TABOOLA
+      - PINTEREST
+      - MICROSOFT
+      - FACEBOOK
+      - AMAZON
+      - APPLE
+      - TIKTOK
+      - LINKEDIN
+      - INSTAGRAM
+      - OTHER
+    OnlineAdsList:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        pages:
+          type: integer
+          description: It represents the total number of available pages.
+          format: int32
+          example: 7
+        page_size:
+          type: integer
+          description: It represents the number of items per page.
+          format: int32
+          example: 25
+        current_page:
+          type: integer
+          description: It indicates the current page (the counter starts from zero).
+          format: int32
+          example: 0
+        results_size:
+          type: integer
+          description: It indicates the size of the array results.
+          format: int32
+          example: 25
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/OnlineAds'
+    OnlineAdsDeletedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/OnlineAds'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    OnlineAdsAssigneeAddedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/OnlineAds'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `Order` ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        status:
+          $ref: '#/components/schemas/OrderStatus'
+        creation_time:
+          type: string
+          description: The date and time when the `Order` was created.
+          example: '2017-06-01T12:48:40Z'
+        last_update_time:
+          type: string
+          description: The last update date of the `Order`.
+          example: '2017-06-01T12:48:40Z'
+        error_code:
+          type: string
+          description: In case is_valid is false, the error code of the `Order` is shown.
+        total_paid_amount:
+          type: number
+          description: The total amount of the `Order`.
+          example: 10.25
+        total_paid_currency:
+          $ref: '#/components/schemas/ISO4217Currency'
+        items:
+          type: array
+          description: The products associated with the `Order`.
+          items:
+            $ref: '#/components/schemas/OrderItem'
+        is_valid:
+          type: boolean
+          description: It states whether the `Order` is valid.
+          example: true
+    CreateOnlineAds:
+      required:
+      - assignees
+      - description
+      - name
+      - platform
+      - wallet_id
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the `OnlineAds`.
+          example: Google Ads
+        description:
+          type: string
+          description: The description of the `OnlineAds`.
+          example: Google Ads Campaign
+        platform:
+          $ref: '#/components/schemas/OnlineAdsPlatform'
+        assignees:
+          uniqueItems: true
+          type: array
+          description: List of `User` IDs to be assigned to the `OnlineAds` and its `Cards`.
+          example:
+          - XMPL1234-000001
+          - XMPL1234-000002
+          - XMPL1234-000003
+          items:
+            type: string
+            description: List of `User` IDs to be assigned to the `OnlineAds` and its `Cards`.
+            example: '["XMPL1234-000001","XMPL1234-000002","XMPL1234-000003"]'
+        wallet_id:
+          type: string
+          description: The `Wallet` ID associated to the `OnlineAds`.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+      description: Add `OnlineAd` JSON parameters.
   securitySchemes:
     standardAuth:
       type: oauth2

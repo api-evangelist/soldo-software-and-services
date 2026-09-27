@@ -264,13 +264,6 @@ paths:
         - tag_write
 components:
   schemas:
-    Direction:
-      type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
-      enum:
-      - ASC
-      - DESC
     TagDictionaries:
       type: object
       properties:
@@ -303,6 +296,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TagDictionary'
+    Direction:
+      type: string
+      description: It indicates how the pages are ordered.
+      example: DESC
+      enum:
+      - ASC
+      - DESC
     TagDictionary:
       type: object
       properties:

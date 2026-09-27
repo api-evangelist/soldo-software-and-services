@@ -255,14 +255,30 @@ components:
       enum:
       - EMPLOYEE
       - COMPANY
-    ExpenseReportStatusOutput:
+    ExpenseReportStatus:
       type: string
-      description: The status of the  `ExpenseReport`.
+      description: The `ExpenseReport` status.
       enum:
       - PROCESSED
       - CANCELLED
-      - DELETED
       - TO_BE_PROCESSED
+    ExpenseReportDownload:
+      type: object
+      properties:
+        file_url:
+          type: string
+          description: 'The  `ExpenseReport`file URL '
+    DateParam:
+      type: object
+      description: 'The end of the period of the search `toDate` included (i.e. less than) (Formats: `yyyy-MM-dd`, `yyyy-MM-ddThh:mm:ss`, `yyyy-MM-ddThh:mm:ssZ`).'
+      example: '1970-01-30'
+    ExpenseReportStatusUpdate:
+      type: string
+      description: The status of the  `ExpenseReport`.
+      example: PROCESSED
+      enum:
+      - PROCESSED
+      - CANCELLED
     ExpenseReports:
       type: object
       properties:
@@ -295,13 +311,16 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ExpenseReport'
-    ExpenseReportStatus:
-      type: string
-      description: The `ExpenseReport` status.
-      enum:
-      - PROCESSED
-      - CANCELLED
-      - TO_BE_PROCESSED
+    UpdateExpenseReport:
+      type: object
+      properties:
+        approver_id:
+          type: string
+          description: The ID of the SuperAdmin `User` who approves/rejects the expense.
+          example: XMPL1234-000003
+        status:
+          $ref: '#/components/schemas/ExpenseReportStatusUpdate'
+      description: Update `ExpenseReport` Request JSON parameters.
     ExpenseReportFileType:
       type: string
       description: The `ExpenseReport` file type.
@@ -309,24 +328,6 @@ components:
       enum:
       - PDF
       - PDF_WITH_ATTACHMENTS
-    ExpenseReportStatusUpdate:
-      type: string
-      description: The status of the  `ExpenseReport`.
-      example: PROCESSED
-      enum:
-      - PROCESSED
-      - CANCELLED
-    DateParam:
-      type: object
-      description: 'The end of the period of the search `toDate` included (i.e. less than) (Formats: `yyyy-MM-dd`, `yyyy-MM-ddThh:mm:ss`, `yyyy-MM-ddThh:mm:ssZ`).'
-      example: '1970-01-30'
-    Direction:
-      type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
-      enum:
-      - ASC
-      - DESC
     ExpenseReport:
       type: object
       properties:
@@ -380,22 +381,21 @@ components:
         reimbursement_transaction_id:
           type: string
           description: The ID of the transaction of the `ExpenseReport`.
-    UpdateExpenseReport:
-      type: object
-      properties:
-        approver_id:
-          type: string
-          description: The ID of the SuperAdmin `User` who approves/rejects the expense.
-          example: XMPL1234-000003
-        status:
-          $ref: '#/components/schemas/ExpenseReportStatusUpdate'
-      description: Update `ExpenseReport` Request JSON parameters.
-    ExpenseReportDownload:
-      type: object
-      properties:
-        file_url:
-          type: string
-          description: 'The  `ExpenseReport`file URL '
+    Direction:
+      type: string
+      description: It indicates how the pages are ordered.
+      example: DESC
+      enum:
+      - ASC
+      - DESC
+    ExpenseReportStatusOutput:
+      type: string
+      description: The status of the  `ExpenseReport`.
+      enum:
+      - PROCESSED
+      - CANCELLED
+      - DELETED
+      - TO_BE_PROCESSED
   securitySchemes:
     standardAuth:
       type: oauth2

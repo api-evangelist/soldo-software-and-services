@@ -266,6 +266,196 @@ paths:
         - expense_review_write
 components:
   schemas:
+    RecalculateExpenseReviewProcess:
+      required:
+      - transaction_ids
+      type: object
+      properties:
+        transaction_ids:
+          type: array
+          description: A list of transaction IDs for which the `ExpenseReviewProcess` they’re included into should be recalculated.
+          example:
+          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+          items:
+            type: string
+            description: A list of transaction IDs for which the `ExpenseReviewProcess` they’re included into should be recalculated.
+            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
+      description: Recalculate `ExpenseReviewProcess` JSON parameters.
+    UpdateExpenseReviewProcessStatus:
+      required:
+      - status
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/ExpenseReviewProcessChangeStatus'
+      description: Update ExpenseReviewProcessStatus JSON parameters.
+    ExpenseReviewProcessStep:
+      required:
+      - reviewer_type
+      - step_number
+      type: object
+      properties:
+        step_number:
+          minimum: 1
+          type: integer
+          description: A number which identifies the order of the step. The first step should start with `1`, the following steps number should be previous `step_number + 1` without any gap.
+          format: int32
+          example: 2
+          default: 1
+        reviewer_type:
+          $ref: '#/components/schemas/ExpenseReviewProcessReviewerType'
+        reviewer_info:
+          $ref: '#/components/schemas/ExpenseReviewProcessReviewerInfo'
+        automation_rule:
+          $ref: '#/components/schemas/ExpenseReviewProcessAutomationRule'
+      description: The approval steps a transaction needs to go through in order to be reviewed.
+    ExpenseReviewProcessAutomationRule:
+      required:
+      - expense_status
+      - required_info
+      type: object
+      properties:
+        expense_status:
+          $ref: '#/components/schemas/ExpenseReviewProcessStepStatus'
+        required_info:
+          type: boolean
+          description: A boolean to define whether a transaction should have all the required info (as defined on the Reminders feature) completed.
+          example: true
+          default: false
+        amount_condition:
+          $ref: '#/components/schemas/ExpenseReviewProcessAmountCondition'
+      description: An automation to automatically review the step when certain conditions are met.
+    ExpenseReviewProcessConditionType:
+      type: string
+      description: The type of the condition.
+      example: USER
+      enum:
+      - COMPANY_CARD
+      - COMPANY_WALLET
+      - EXPENSE_CATEGORY
+      - EXPENSE_TYPE
+      - MAIN_WALLET
+      - ONLINE_ADS_CARD
+      - OUT_OF_PLATFORM_COMPANY
+      - OUT_OF_PLATFORM_PERSONAL
+      - PURCHASE
+      - SUBSCRIPTION_CARD
+      - TAG
+      - USER
+      - USER_CARD
+    ExpenseReviewProcessItems:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `ExpenseReviewProcess` ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        name:
+          type: string
+          description: 'The name of the `ExpenseReviewProcess` (sortable: yes).'
+          example: EXPENSE REVIEW PROCESS
+        description:
+          type: string
+          description: A textual description of the `ExpenseReviewProcess`.
+          example: EXPENSE REVIEW PROCESS DESCRIPTION
+        steps_count:
+          type: integer
+          description: The total number of approval steps.
+          format: int32
+          example: 2
+        priority:
+          type: integer
+          description: 'The order of priority in which the `ExpenseReviewProcess` will be executed (sortable: yes).'
+          format: int32
+          example: 2
+        status:
+          $ref: '#/components/schemas/ExpenseReviewProcessStatus'
+    ExpenseReviewProcessComparator:
+      type: string
+      description: The logical operator to be used in relationship to the transaction amount.
+      example: LOWER_EQUAL
+      enum:
+      - HIGHER_EQUAL
+      - LOWER_EQUAL
+    ExpenseReviewProcessStepStatus:
+      type: string
+      description: The status of the expense in case the conditions of the automation rules are satisfied.
+      example: PARTIALLY_APPROVED
+      enum:
+      - APPROVED
+      - PARTIALLY_APPROVED
+      - DECLINED
+    UpdateExpenseReviewProcess:
+      required:
+      - conditions
+      - description
+      - name
+      - steps
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the `ExpenseReviewProcess`.
+          example: EXPENSE REVIEW PROCESS
+        description:
+          type: string
+          description: The description of the `ExpenseReviewProcess`.
+          example: EXPENSE REVIEW PROCESS DESCRIPTION
+        conditions:
+          type: array
+          description: The conditions a transaction needs to match in order to be included in the `ExpenseReviewProcess`.
+          items:
+            $ref: '#/components/schemas/ExpenseReviewProcessCondition'
+        steps:
+          type: array
+          description: The approval steps a transaction needs to go through in order to be reviewed.
+          items:
+            $ref: '#/components/schemas/ExpenseReviewProcessStep'
+      description: Update ExpenseReviewProcessStatus JSON parameters.
+    ExpenseReviewProcessAmountCondition:
+      required:
+      - amount
+      - operator
+      type: object
+      properties:
+        amount:
+          type: number
+          description: The amount a transaction must exceed / not exceed in order to satisfy the condition.
+          example: 10.25
+        operator:
+          $ref: '#/components/schemas/ExpenseReviewProcessComparator'
+      description: A condition based on the transaction amount.
+    ExpenseReviewProcessReviewerInfo:
+      required:
+      - id
+      type: object
+      properties:
+        id:
+          type: array
+          description: The ID of the reviewer as returned by the corresponding endpoint (only required in case of reviewer of type `ROLE` and `USER`).
+          example:
+          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+          items:
+            type: string
+            description: The ID of the reviewer as returned by the corresponding endpoint (only required in case of reviewer of type `ROLE` and `USER`).
+            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
+      description: One or more IDs to identify who can review this step (only required in case of reviewer of type `ROLE` and `USER`).
+    ExpenseReviewProcessStatusSearch:
+      type: string
+      description: The status of the `ExpenseReviewProcess`.
+      enum:
+      - ACTIVE
+      - INACTIVE
+    ExpenseReviewProcessReviewerType:
+      type: string
+      description: The type of reviewer who can review this step.
+      example: USER
+      enum:
+      - LINE_MANAGER
+      - ROLE
+      - USER
     ExpenseReviewProcess:
       required:
       - conditions
@@ -310,27 +500,6 @@ components:
           description: The approval steps a transaction needs to go through in order to be reviewed.
           items:
             $ref: '#/components/schemas/ExpenseReviewProcessStep'
-    ExpenseReviewProcessStepStatus:
-      type: string
-      description: The status of the expense in case the conditions of the automation rules are satisfied.
-      example: PARTIALLY_APPROVED
-      enum:
-      - APPROVED
-      - PARTIALLY_APPROVED
-      - DECLINED
-    ExpenseReviewProcessAmountCondition:
-      required:
-      - amount
-      - operator
-      type: object
-      properties:
-        amount:
-          type: number
-          description: The amount a transaction must exceed / not exceed in order to satisfy the condition.
-          example: 10.25
-        operator:
-          $ref: '#/components/schemas/ExpenseReviewProcessComparator'
-      description: A condition based on the transaction amount.
     ExpenseReviewProcessPriorities:
       required:
       - new_priority
@@ -348,94 +517,6 @@ components:
           description: The ID of the `ExpenseReviewProcess` for which the priority should be updated.
           example: 135fdb6c-2e77-4fc0-a79f-2453fde75ef7
       description: A list of `ExpenseReviewProcesses` for which the priority should be updated with their new priority.
-    ExpenseReviewProcessChangeStatus:
-      type: string
-      description: The status of the `ExpenseReviewProcess`.
-      example: ACTIVE
-      enum:
-      - ACTIVE
-      - INACTIVE
-    ExpenseReviewProcessCondition:
-      required:
-      - type
-      - value
-      type: object
-      properties:
-        type:
-          $ref: '#/components/schemas/ExpenseReviewProcessConditionType'
-        value:
-          type: array
-          description: 'One or more values which identify the type of condition. In case of type `OUT_OF_PLATFORM_COMPANY`, `OUT_OF_PLATFORM_PERSONAL` and `PURCHASE` the value must be `ALL`. In case of `EXPENSE_TYPE` the accepted values are: `COMPANY`, `PERSONAL`, `TRAVEL_AND_ENTERTAINMENT`. In case of `ONLINE_ADS_CARD` and `SUBSCRIPTION_CARD` it’s the ID of the corresponding card. In all the other cases it’s the public ID of the resource as returned by the corresponding endpoint.'
-          example:
-          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
-          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-          items:
-            type: string
-            description: 'One or more values which identify the type of condition. In case of type `OUT_OF_PLATFORM_COMPANY`, `OUT_OF_PLATFORM_PERSONAL` and `PURCHASE` the value must be `ALL`. In case of `EXPENSE_TYPE` the accepted values are: `COMPANY`, `PERSONAL`, `TRAVEL_AND_ENTERTAINMENT`. In case of `ONLINE_ADS_CARD` and `SUBSCRIPTION_CARD` it’s the ID of the corresponding card. In all the other cases it’s the public ID of the resource as returned by the corresponding endpoint.'
-            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
-      description: The conditions a transaction needs to match in order to be included in the `ExpenseReviewProcess`.
-    CreateExpenseReviewProcess:
-      required:
-      - conditions
-      - description
-      - name
-      - steps
-      type: object
-      properties:
-        name:
-          type: string
-          description: The name of the `ExpenseReviewProcess`.
-          example: EXPENSE REVIEW PROCESS
-        description:
-          type: string
-          description: The description of the `ExpenseReviewProcess`.
-          example: EXPENSE REVIEW PROCESS DESCRIPTION
-        conditions:
-          type: array
-          description: The conditions a transaction needs to match in order to be included in the `ExpenseReviewProcess`.
-          items:
-            $ref: '#/components/schemas/ExpenseReviewProcessCondition'
-        steps:
-          type: array
-          description: The approval steps a transaction needs to go through in order to be reviewed.
-          items:
-            $ref: '#/components/schemas/ExpenseReviewProcessStep'
-      description: Create `ExpenseReviewProcess` JSON parameters.
-    UpdateExpenseReviewProcessStatus:
-      required:
-      - status
-      type: object
-      properties:
-        status:
-          $ref: '#/components/schemas/ExpenseReviewProcessChangeStatus'
-      description: Update ExpenseReviewProcessStatus JSON parameters.
-    UpdateExpenseReviewProcess:
-      required:
-      - conditions
-      - description
-      - name
-      - steps
-      type: object
-      properties:
-        name:
-          type: string
-          description: The name of the `ExpenseReviewProcess`.
-          example: EXPENSE REVIEW PROCESS
-        description:
-          type: string
-          description: The description of the `ExpenseReviewProcess`.
-          example: EXPENSE REVIEW PROCESS DESCRIPTION
-        conditions:
-          type: array
-          description: The conditions a transaction needs to match in order to be included in the `ExpenseReviewProcess`.
-          items:
-            $ref: '#/components/schemas/ExpenseReviewProcessCondition'
-        steps:
-          type: array
-          description: The approval steps a transaction needs to go through in order to be reviewed.
-          items:
-            $ref: '#/components/schemas/ExpenseReviewProcessStep'
-      description: Update ExpenseReviewProcessStatus JSON parameters.
     ExpenseReviewProcesses:
       type: object
       properties:
@@ -468,83 +549,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ExpenseReviewProcessItems'
-    ExpenseReviewProcessAutomationRule:
-      required:
-      - expense_status
-      - required_info
-      type: object
-      properties:
-        expense_status:
-          $ref: '#/components/schemas/ExpenseReviewProcessStepStatus'
-        required_info:
-          type: boolean
-          description: A boolean to define whether a transaction should have all the required info (as defined on the Reminders feature) completed.
-          example: true
-          default: false
-        amount_condition:
-          $ref: '#/components/schemas/ExpenseReviewProcessAmountCondition'
-      description: An automation to automatically review the step when certain conditions are met.
-    ExpenseReviewProcessComparator:
-      type: string
-      description: The logical operator to be used in relationship to the transaction amount.
-      example: LOWER_EQUAL
-      enum:
-      - HIGHER_EQUAL
-      - LOWER_EQUAL
-    ExpenseReviewProcessReviewerType:
-      type: string
-      description: The type of reviewer who can review this step.
-      example: USER
-      enum:
-      - LINE_MANAGER
-      - ROLE
-      - USER
-    ExpenseReviewProcessReviewerInfo:
-      required:
-      - id
-      type: object
-      properties:
-        id:
-          type: array
-          description: The ID of the reviewer as returned by the corresponding endpoint (only required in case of reviewer of type `ROLE` and `USER`).
-          example:
-          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
-          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-          items:
-            type: string
-            description: The ID of the reviewer as returned by the corresponding endpoint (only required in case of reviewer of type `ROLE` and `USER`).
-            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
-      description: One or more IDs to identify who can review this step (only required in case of reviewer of type `ROLE` and `USER`).
-    ExpenseReviewProcessItems:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The `ExpenseReviewProcess` ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        name:
-          type: string
-          description: 'The name of the `ExpenseReviewProcess` (sortable: yes).'
-          example: EXPENSE REVIEW PROCESS
-        description:
-          type: string
-          description: A textual description of the `ExpenseReviewProcess`.
-          example: EXPENSE REVIEW PROCESS DESCRIPTION
-        steps_count:
-          type: integer
-          description: The total number of approval steps.
-          format: int32
-          example: 2
-        priority:
-          type: integer
-          description: 'The order of priority in which the `ExpenseReviewProcess` will be executed (sortable: yes).'
-          format: int32
-          example: 2
-        status:
-          $ref: '#/components/schemas/ExpenseReviewProcessStatus'
-    ExpenseReviewProcessStatusSearch:
+    ExpenseReviewProcessChangeStatus:
       type: string
       description: The status of the `ExpenseReviewProcess`.
+      example: ACTIVE
       enum:
       - ACTIVE
       - INACTIVE
@@ -555,42 +563,33 @@ components:
       enum:
       - ACTIVE
       - INACTIVE
-    RecalculateExpenseReviewProcess:
+    CreateExpenseReviewProcess:
       required:
-      - transaction_ids
+      - conditions
+      - description
+      - name
+      - steps
       type: object
       properties:
-        transaction_ids:
+        name:
+          type: string
+          description: The name of the `ExpenseReviewProcess`.
+          example: EXPENSE REVIEW PROCESS
+        description:
+          type: string
+          description: The description of the `ExpenseReviewProcess`.
+          example: EXPENSE REVIEW PROCESS DESCRIPTION
+        conditions:
           type: array
-          description: A list of transaction IDs for which the `ExpenseReviewProcess` they’re included into should be recalculated.
-          example:
-          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
-          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+          description: The conditions a transaction needs to match in order to be included in the `ExpenseReviewProcess`.
           items:
-            type: string
-            description: A list of transaction IDs for which the `ExpenseReviewProcess` they’re included into should be recalculated.
-            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
-      description: Recalculate `ExpenseReviewProcess` JSON parameters.
-    ExpenseReviewProcessStep:
-      required:
-      - reviewer_type
-      - step_number
-      type: object
-      properties:
-        step_number:
-          minimum: 1
-          type: integer
-          description: A number which identifies the order of the step. The first step should start with `1`, the following steps number should be previous `step_number + 1` without any gap.
-          format: int32
-          example: 2
-          default: 1
-        reviewer_type:
-          $ref: '#/components/schemas/ExpenseReviewProcessReviewerType'
-        reviewer_info:
-          $ref: '#/components/schemas/ExpenseReviewProcessReviewerInfo'
-        automation_rule:
-          $ref: '#/components/schemas/ExpenseReviewProcessAutomationRule'
-      description: The approval steps a transaction needs to go through in order to be reviewed.
+            $ref: '#/components/schemas/ExpenseReviewProcessCondition'
+        steps:
+          type: array
+          description: The approval steps a transaction needs to go through in order to be reviewed.
+          items:
+            $ref: '#/components/schemas/ExpenseReviewProcessStep'
+      description: Create `ExpenseReviewProcess` JSON parameters.
     ExpenseReviewProcessPriority:
       required:
       - priorities
@@ -602,24 +601,25 @@ components:
           items:
             $ref: '#/components/schemas/ExpenseReviewProcessPriorities'
       description: Change `ExpenseReviewProcess` priority JSON parameters.
-    ExpenseReviewProcessConditionType:
-      type: string
-      description: The type of the condition.
-      example: USER
-      enum:
-      - COMPANY_CARD
-      - COMPANY_WALLET
-      - EXPENSE_CATEGORY
-      - EXPENSE_TYPE
-      - MAIN_WALLET
-      - ONLINE_ADS_CARD
-      - OUT_OF_PLATFORM_COMPANY
-      - OUT_OF_PLATFORM_PERSONAL
-      - PURCHASE
-      - SUBSCRIPTION_CARD
-      - TAG
-      - USER
-      - USER_CARD
+    ExpenseReviewProcessCondition:
+      required:
+      - type
+      - value
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/ExpenseReviewProcessConditionType'
+        value:
+          type: array
+          description: 'One or more values which identify the type of condition. In case of type `OUT_OF_PLATFORM_COMPANY`, `OUT_OF_PLATFORM_PERSONAL` and `PURCHASE` the value must be `ALL`. In case of `EXPENSE_TYPE` the accepted values are: `COMPANY`, `PERSONAL`, `TRAVEL_AND_ENTERTAINMENT`. In case of `ONLINE_ADS_CARD` and `SUBSCRIPTION_CARD` it’s the ID of the corresponding card. In all the other cases it’s the public ID of the resource as returned by the corresponding endpoint.'
+          example:
+          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+          items:
+            type: string
+            description: 'One or more values which identify the type of condition. In case of type `OUT_OF_PLATFORM_COMPANY`, `OUT_OF_PLATFORM_PERSONAL` and `PURCHASE` the value must be `ALL`. In case of `EXPENSE_TYPE` the accepted values are: `COMPANY`, `PERSONAL`, `TRAVEL_AND_ENTERTAINMENT`. In case of `ONLINE_ADS_CARD` and `SUBSCRIPTION_CARD` it’s the ID of the corresponding card. In all the other cases it’s the public ID of the resource as returned by the corresponding endpoint.'
+            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
+      description: The conditions a transaction needs to match in order to be included in the `ExpenseReviewProcess`.
   securitySchemes:
     standardAuth:
       type: oauth2

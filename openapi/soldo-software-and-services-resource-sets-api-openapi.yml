@@ -181,15 +181,36 @@ paths:
         - resource_set_write
 components:
   schemas:
-    ResourceSetScope:
+    ResourceSetResourceType:
       type: string
-      description: The scope defined for the resource.
-      example: ALL
+      description: The type of resource for which the scope is defined.
+      example: GROUP
       enum:
-      - SELF
-      - LIST
-      - ALL
-      - NONE
+      - MAIN_WALLET
+      - COMPANY_WALLET
+      - USER
+      - COMPANY_CARD
+      - GROUP
+    CreateResourceSet:
+      required:
+      - configuration
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the `ResourceSet`.
+          example: Resource set 01
+        description:
+          type: string
+          description: The description of the `ResourceSet`.
+          example: This is a resource set
+        configuration:
+          type: array
+          description: The configuration of the `ResourceSet`.
+          items:
+            $ref: '#/components/schemas/Configuration'
+      description: Create `ResourceSet` JSON parameters.
     Configuration:
       type: object
       properties:
@@ -208,6 +229,39 @@ components:
             description: The list of resource IDs belonging to the scope, only in case of scope of type `LIST`.
             example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
       description: The configuration of the `ResourceSet`.
+    ResourceSetScope:
+      type: string
+      description: The scope defined for the resource.
+      example: ALL
+      enum:
+      - SELF
+      - LIST
+      - ALL
+      - NONE
+    UpdateResourceSet:
+      required:
+      - configuration
+      - name
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `ResourceSet` ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        name:
+          type: string
+          description: The name of the `ResourceSet`.
+          example: Resource set 01
+        description:
+          type: string
+          description: The description of the `ResourceSet`.
+          example: This is a resource set
+        configuration:
+          type: array
+          description: The configuration of the `ResourceSet`.
+          items:
+            $ref: '#/components/schemas/Configuration'
+      description: Update `ResourceSet` JSON parameters.
     ResourceSet:
       type: object
       properties:
@@ -236,60 +290,6 @@ components:
           type: string
           description: The date and time when the `ResourceSet` was last updated.
           example: '2017-06-01T12:48:40Z'
-    CreateResourceSet:
-      required:
-      - configuration
-      - name
-      type: object
-      properties:
-        name:
-          type: string
-          description: The name of the `ResourceSet`.
-          example: Resource set 01
-        description:
-          type: string
-          description: The description of the `ResourceSet`.
-          example: This is a resource set
-        configuration:
-          type: array
-          description: The configuration of the `ResourceSet`.
-          items:
-            $ref: '#/components/schemas/Configuration'
-      description: Create `ResourceSet` JSON parameters.
-    UpdateResourceSet:
-      required:
-      - configuration
-      - name
-      type: object
-      properties:
-        id:
-          type: string
-          description: The `ResourceSet` ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        name:
-          type: string
-          description: The name of the `ResourceSet`.
-          example: Resource set 01
-        description:
-          type: string
-          description: The description of the `ResourceSet`.
-          example: This is a resource set
-        configuration:
-          type: array
-          description: The configuration of the `ResourceSet`.
-          items:
-            $ref: '#/components/schemas/Configuration'
-      description: Update `ResourceSet` JSON parameters.
-    ResourceSetResourceType:
-      type: string
-      description: The type of resource for which the scope is defined.
-      example: GROUP
-      enum:
-      - MAIN_WALLET
-      - COMPANY_WALLET
-      - USER
-      - COMPANY_CARD
-      - GROUP
   securitySchemes:
     standardAuth:
       type: oauth2

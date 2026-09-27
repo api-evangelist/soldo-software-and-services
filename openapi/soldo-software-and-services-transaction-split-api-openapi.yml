@@ -84,6 +84,29 @@ paths:
         - transaction_write
 components:
   schemas:
+    CreateTransactionSplit:
+      required:
+      - split_transactions
+      type: object
+      properties:
+        split_transactions:
+          minItems: 2
+          type: array
+          items:
+            $ref: '#/components/schemas/SplitTransaction'
+      description: Create `Transaction` split JSON parameters.
+    SplitTag:
+      type: object
+      properties:
+        tag_id:
+          type: string
+          description: The `Tags` of the `SplitTransaction`.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+        dictionary_id:
+          type: string
+          description: The `dictionaryId` of the `Tag` of the `SplitTransaction`.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+      description: The IDs of the `Tag` and related `Dictionary` to be assigned to a `SplitTransaction` line.
     SplitTransaction:
       required:
       - amount
@@ -131,29 +154,6 @@ components:
       - COMPANY
       - PERSONAL
       - TRAVEL_AND_ENTERTAINMENT
-    SplitTag:
-      type: object
-      properties:
-        tag_id:
-          type: string
-          description: The `Tags` of the `SplitTransaction`.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-        dictionary_id:
-          type: string
-          description: The `dictionaryId` of the `Tag` of the `SplitTransaction`.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-      description: The IDs of the `Tag` and related `Dictionary` to be assigned to a `SplitTransaction` line.
-    CreateTransactionSplit:
-      required:
-      - split_transactions
-      type: object
-      properties:
-        split_transactions:
-          minItems: 2
-          type: array
-          items:
-            $ref: '#/components/schemas/SplitTransaction'
-      description: Create `Transaction` split JSON parameters.
   securitySchemes:
     standardAuth:
       type: oauth2

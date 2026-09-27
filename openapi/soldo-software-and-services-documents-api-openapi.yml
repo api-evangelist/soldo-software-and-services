@@ -169,6 +169,108 @@ paths:
         - document_read
 components:
   schemas:
+    DocumentOperation:
+      type: string
+      description: The operation type to perform on the `Document`.
+      example: UPLOAD_URL
+      enum:
+      - UPLOAD_URL
+      - UPLOAD_COMPLETED
+    UploadUrlDocument:
+      type: object
+      properties:
+        uploaded_by:
+          type: string
+          description: The User or system that uploaded the file of the `Document`
+          example: USER
+        operation_type:
+          $ref: '#/components/schemas/DocumentOperation'
+        content_type:
+          type: string
+          description: The MIME type of the `Document`.
+          example: application/pdf
+        attachment_name:
+          type: string
+          description: Attachment name of the `Document`
+          example: 1779089463912.pdf
+        pre_signed_url:
+          type: string
+          description: Pre-signed URL of the `Document`
+          example: https://example.com/upload-url
+    Documents:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        pages:
+          type: integer
+          description: It represents the total number of available pages.
+          format: int32
+          example: 7
+        page_size:
+          type: integer
+          description: It represents the number of items per page.
+          format: int32
+          example: 25
+        current_page:
+          type: integer
+          description: It indicates the current page (the counter starts from zero).
+          format: int32
+          example: 0
+        results_size:
+          type: integer
+          description: It indicates the size of the array results.
+          format: int32
+          example: 25
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentItem'
+    UploadDocument:
+      required:
+      - content_type
+      - file_extension
+      type: object
+      properties:
+        content_type:
+          type: string
+          description: The MIME type of the `Document`.
+          example: application/pdf
+        file_extension:
+          type: string
+          description: The file extension of the `Document`.
+          example: pdf
+      description: Parameters used to request a temporary document upload URL.
+    Document:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `Document` ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        name:
+          type: string
+          description: The original file name of the `Document`.
+          example: invoice-2025-001.pdf
+        preview_url:
+          type: string
+          description: Pre-signed URL for the `Document` preview rendering.
+          example: https://storage.example.com/documents/7bf79328-a7ae-4222-aa54-091ff7f429a7/preview?signature=...
+        thumbnail_url:
+          type: string
+          description: The Pre-signed URL for the file of the `Document` thumbnail.
+          example: https://storage.example.com/documents/7bf79328-a7ae-4222-aa54-091ff7f429a7/thumbnail?signature=...
+        creation_time:
+          type: string
+          description: The date and time when the `Document` was imported.
+          example: '2025-04-12T10:15:30Z'
+        attached:
+          type: boolean
+          description: It indicates whether the `Document` is already attached to one or more activities.
+          example: false
     DocumentItem:
       type: object
       properties:
@@ -236,108 +338,6 @@ components:
           description: It indicates whether automated content analysis should be performed on the `Document` after upload.
           example: false
       description: Parameters used to request a document upload complite.
-    UploadUrlDocument:
-      type: object
-      properties:
-        uploaded_by:
-          type: string
-          description: The User or system that uploaded the file of the `Document`
-          example: USER
-        operation_type:
-          $ref: '#/components/schemas/DocumentOperation'
-        content_type:
-          type: string
-          description: The MIME type of the `Document`.
-          example: application/pdf
-        attachment_name:
-          type: string
-          description: Attachment name of the `Document`
-          example: 1779089463912.pdf
-        pre_signed_url:
-          type: string
-          description: Pre-signed URL of the `Document`
-          example: https://example.com/upload-url
-    Documents:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        pages:
-          type: integer
-          description: It represents the total number of available pages.
-          format: int32
-          example: 7
-        page_size:
-          type: integer
-          description: It represents the number of items per page.
-          format: int32
-          example: 25
-        current_page:
-          type: integer
-          description: It indicates the current page (the counter starts from zero).
-          format: int32
-          example: 0
-        results_size:
-          type: integer
-          description: It indicates the size of the array results.
-          format: int32
-          example: 25
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/DocumentItem'
-    DocumentOperation:
-      type: string
-      description: The operation type to perform on the `Document`.
-      example: UPLOAD_URL
-      enum:
-      - UPLOAD_URL
-      - UPLOAD_COMPLETED
-    UploadDocument:
-      required:
-      - content_type
-      - file_extension
-      type: object
-      properties:
-        content_type:
-          type: string
-          description: The MIME type of the `Document`.
-          example: application/pdf
-        file_extension:
-          type: string
-          description: The file extension of the `Document`.
-          example: pdf
-      description: Parameters used to request a temporary document upload URL.
-    Document:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The `Document` ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        name:
-          type: string
-          description: The original file name of the `Document`.
-          example: invoice-2025-001.pdf
-        preview_url:
-          type: string
-          description: Pre-signed URL for the `Document` preview rendering.
-          example: https://storage.example.com/documents/7bf79328-a7ae-4222-aa54-091ff7f429a7/preview?signature=...
-        thumbnail_url:
-          type: string
-          description: The Pre-signed URL for the file of the `Document` thumbnail.
-          example: https://storage.example.com/documents/7bf79328-a7ae-4222-aa54-091ff7f429a7/thumbnail?signature=...
-        creation_time:
-          type: string
-          description: The date and time when the `Document` was imported.
-          example: '2025-04-12T10:15:30Z'
-        attached:
-          type: boolean
-          description: It indicates whether the `Document` is already attached to one or more activities.
-          example: false
   securitySchemes:
     standardAuth:
       type: oauth2

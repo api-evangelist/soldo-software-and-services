@@ -228,6 +228,58 @@ paths:
         - address_write
 components:
   schemas:
+    UpdateAddress:
+      required:
+      - country
+      type: object
+      properties:
+        recipient:
+          type: string
+          description: The recipient of the addressee.
+          example: JohnSmith
+        name:
+          type: string
+          description: The actual name of the `Address`.
+          example: Actual address of John
+        line1:
+          type: string
+          description: The primary street of the `Address`.
+          example: Foo street 33
+        line2:
+          type: string
+          description: The optional secondary street.
+          example: Second floor
+        country:
+          $ref: '#/components/schemas/ISO3166Country'
+        county:
+          type: string
+          description: The county code.
+          example: '00000'
+        city:
+          type: string
+          description: The city name.
+          example: London
+        post_code:
+          type: string
+          description: The post code of the city.
+          example: '00000'
+        delivery_phone_number:
+          type: string
+          description: The delivery phone including the country code.
+          example: '+44123323232'
+        default_shipping:
+          type: boolean
+          description: It is `true` if it's the default shipping address. You cannot set this as 'false', but you can elect a new one that will replace it as default.
+          example: true
+          enum:
+          - true
+        cards_to_link:
+          type: array
+          items:
+            type: string
+            description: The list of the `Card` ID to link to the address
+            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
+      description: Update `Address` JSON parameters.
     CreateAddress:
       required:
       - city
@@ -286,163 +338,6 @@ components:
             description: The list of the `Card` ID to link to the address
             example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
       description: Create `Address` JSON parameters.
-    Address:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The `Address` ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        recipient:
-          type: string
-          description: The recipient of the `Address`
-          example: JohnSmith
-        name:
-          type: string
-          description: The actual name of the `Address`.
-          example: Foo Street 75
-        line1:
-          type: string
-          description: The `Address` street.
-          example: Bar Street 64
-        line2:
-          type: string
-          description: An optional other street.
-          example: Other street 31
-        country:
-          type: string
-          description: The country of the `Address`.
-          example: GB
-        county:
-          type: string
-          description: The county of the `Address`.
-          example: LD
-        city:
-          type: string
-          description: The city of the `Address`.
-          example: London
-        post_code:
-          type: string
-          description: The postal code of the `Address`.
-          example: '00000'
-        delivery_phone_number:
-          type: string
-          description: Delivery phone number
-          example: '+441234567890'
-        default_shipping:
-          type: boolean
-          description: True if the `Address` is the default shipping address.
-          example: false
-        type:
-          type: string
-          description: The type of the `Address`.
-          example: SHIPPING
-        category:
-          $ref: '#/components/schemas/AddressCategory'
-        user_id:
-          type: string
-          description: The `User` ID, only if category of the `Address` is `USER`.
-        creation_time:
-          type: string
-          description: The date and time when the `Address` was created.
-          example: '2017-06-01T12:48:40Z'
-        last_update:
-          type: string
-          description: The date and time when the `Address` was last updated.
-          example: '2017-06-01T12:48:40Z'
-      description: The default shipping `Address` of the `User`.
-      example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-    Addresses:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        pages:
-          type: integer
-          description: It represents the total number of available pages.
-          format: int32
-          example: 7
-        page_size:
-          type: integer
-          description: It represents the number of items per page.
-          format: int32
-          example: 25
-        current_page:
-          type: integer
-          description: It indicates the current page (the counter starts from zero).
-          format: int32
-          example: 0
-        results_size:
-          type: integer
-          description: It indicates the size of the array results.
-          format: int32
-          example: 25
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Address'
-    AddressCategory:
-      type: string
-      description: The category of the `Address`.
-      example: COMPANY
-      enum:
-      - USER
-      - COMPANY
-    UpdateAddress:
-      required:
-      - country
-      type: object
-      properties:
-        recipient:
-          type: string
-          description: The recipient of the addressee.
-          example: JohnSmith
-        name:
-          type: string
-          description: The actual name of the `Address`.
-          example: Actual address of John
-        line1:
-          type: string
-          description: The primary street of the `Address`.
-          example: Foo street 33
-        line2:
-          type: string
-          description: The optional secondary street.
-          example: Second floor
-        country:
-          $ref: '#/components/schemas/ISO3166Country'
-        county:
-          type: string
-          description: The county code.
-          example: '00000'
-        city:
-          type: string
-          description: The city name.
-          example: London
-        post_code:
-          type: string
-          description: The post code of the city.
-          example: '00000'
-        delivery_phone_number:
-          type: string
-          description: The delivery phone including the country code.
-          example: '+44123323232'
-        default_shipping:
-          type: boolean
-          description: It is `true` if it's the default shipping address. You cannot set this as 'false', but you can elect a new one that will replace it as default.
-          example: true
-          enum:
-          - true
-        cards_to_link:
-          type: array
-          items:
-            type: string
-            description: The list of the `Card` ID to link to the address
-            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
-      description: Update `Address` JSON parameters.
     Direction:
       type: string
       description: It indicates how the pages are ordered.
@@ -720,6 +615,111 @@ components:
       - ZMB
       - ZRCD
       - ZWE
+    Address:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `Address` ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        recipient:
+          type: string
+          description: The recipient of the `Address`
+          example: JohnSmith
+        name:
+          type: string
+          description: The actual name of the `Address`.
+          example: Foo Street 75
+        line1:
+          type: string
+          description: The `Address` street.
+          example: Bar Street 64
+        line2:
+          type: string
+          description: An optional other street.
+          example: Other street 31
+        country:
+          type: string
+          description: The country of the `Address`.
+          example: GB
+        county:
+          type: string
+          description: The county of the `Address`.
+          example: LD
+        city:
+          type: string
+          description: The city of the `Address`.
+          example: London
+        post_code:
+          type: string
+          description: The postal code of the `Address`.
+          example: '00000'
+        delivery_phone_number:
+          type: string
+          description: Delivery phone number
+          example: '+441234567890'
+        default_shipping:
+          type: boolean
+          description: True if the `Address` is the default shipping address.
+          example: false
+        type:
+          type: string
+          description: The type of the `Address`.
+          example: SHIPPING
+        category:
+          $ref: '#/components/schemas/AddressCategory'
+        user_id:
+          type: string
+          description: The `User` ID, only if category of the `Address` is `USER`.
+        creation_time:
+          type: string
+          description: The date and time when the `Address` was created.
+          example: '2017-06-01T12:48:40Z'
+        last_update:
+          type: string
+          description: The date and time when the `Address` was last updated.
+          example: '2017-06-01T12:48:40Z'
+      description: The default shipping `Address` of the `User`.
+      example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+    Addresses:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        pages:
+          type: integer
+          description: It represents the total number of available pages.
+          format: int32
+          example: 7
+        page_size:
+          type: integer
+          description: It represents the number of items per page.
+          format: int32
+          example: 25
+        current_page:
+          type: integer
+          description: It indicates the current page (the counter starts from zero).
+          format: int32
+          example: 0
+        results_size:
+          type: integer
+          description: It indicates the size of the array results.
+          format: int32
+          example: 25
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Address'
+    AddressCategory:
+      type: string
+      description: The category of the `Address`.
+      example: COMPANY
+      enum:
+      - USER
+      - COMPANY
   securitySchemes:
     standardAuth:
       type: oauth2

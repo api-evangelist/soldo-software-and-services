@@ -241,6 +241,89 @@ components:
             description: A list of `Wallet` IDs.
             example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
       description: The `Wallet` JSON parameters.
+    WalletAutotransferPresets:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        pages:
+          type: integer
+          description: It represents the total number of available pages.
+          format: int32
+          example: 7
+        page_size:
+          type: integer
+          description: It represents the number of items per page.
+          format: int32
+          example: 25
+        current_page:
+          type: integer
+          description: It indicates the current page (the counter starts from zero).
+          format: int32
+          example: 0
+        results_size:
+          type: integer
+          description: It indicates the size of the array results.
+          format: int32
+          example: 25
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/WalletAutotransferPresetItems'
+    WalletAutotransferPresetItems:
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'The unique identifier of the `AutoTransferPreset`. (Sortable: No).'
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        name:
+          type: string
+          description: 'The name of the `AutoTransferPreset`. (Sortable: No)'
+          example: DefaultPreset
+        description:
+          type: string
+          description: 'The description of `AutoTransferPreset` (sortable: no).'
+          example: Default CardRule preset policy
+        type:
+          $ref: '#/components/schemas/WalletPresetType'
+        currency:
+          type: string
+          description: The currency used in the `AutoTransferPreset`.
+          example: EUR
+        number_of_assigned_wallets:
+          type: integer
+          description: The number of wallets assigned to the `AutoTransferPreset`.
+          format: int32
+          example: 2
+        wallet_from:
+          type: string
+          description: The from wallet used for the `AutoTransferPreset`.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        creation_time:
+          type: string
+          description: The date and time when the `AutotransferPreset` was created.
+          example: '2017-06-01T12:48:40Z'
+        last_update_time:
+          type: string
+          description: The date and time the `AutoTransferPreset` was last updated.
+          example: '2017-06-01T12:48:40Z'
+    WalletPresetType:
+      type: string
+      description: The type of `AutoTransferPreset`.
+      enum:
+      - PERIODIC
+      - LOW_BALANCE
+    Direction:
+      type: string
+      description: It indicates how the pages are ordered.
+      example: DESC
+      enum:
+      - ASC
+      - DESC
     WalletAutotransferPreset:
       type: object
       properties:
@@ -289,89 +372,6 @@ components:
           type: string
           description: The date and time the `AutoTransferPreset` was last updated.
           example: '2017-06-01T12:48:40Z'
-    WalletAutotransferPresetItems:
-      type: object
-      properties:
-        id:
-          type: string
-          description: 'The unique identifier of the `AutoTransferPreset`. (Sortable: No).'
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        name:
-          type: string
-          description: 'The name of the `AutoTransferPreset`. (Sortable: No)'
-          example: DefaultPreset
-        description:
-          type: string
-          description: 'The description of `AutoTransferPreset` (sortable: no).'
-          example: Default CardRule preset policy
-        type:
-          $ref: '#/components/schemas/WalletPresetType'
-        currency:
-          type: string
-          description: The currency used in the `AutoTransferPreset`.
-          example: EUR
-        number_of_assigned_wallets:
-          type: integer
-          description: The number of wallets assigned to the `AutoTransferPreset`.
-          format: int32
-          example: 2
-        wallet_from:
-          type: string
-          description: The from wallet used for the `AutoTransferPreset`.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        creation_time:
-          type: string
-          description: The date and time when the `AutotransferPreset` was created.
-          example: '2017-06-01T12:48:40Z'
-        last_update_time:
-          type: string
-          description: The date and time the `AutoTransferPreset` was last updated.
-          example: '2017-06-01T12:48:40Z'
-    WalletAutotransferPresets:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        pages:
-          type: integer
-          description: It represents the total number of available pages.
-          format: int32
-          example: 7
-        page_size:
-          type: integer
-          description: It represents the number of items per page.
-          format: int32
-          example: 25
-        current_page:
-          type: integer
-          description: It indicates the current page (the counter starts from zero).
-          format: int32
-          example: 0
-        results_size:
-          type: integer
-          description: It indicates the size of the array results.
-          format: int32
-          example: 25
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/WalletAutotransferPresetItems'
-    WalletPresetType:
-      type: string
-      description: The type of `AutoTransferPreset`.
-      enum:
-      - PERIODIC
-      - LOW_BALANCE
-    Direction:
-      type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
-      enum:
-      - ASC
-      - DESC
   securitySchemes:
     standardAuth:
       type: oauth2

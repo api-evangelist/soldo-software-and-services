@@ -520,137 +520,6 @@ webhooks:
       description: Sandbox server (using test data)
 components:
   schemas:
-    ExpensePaymentMethod:
-      type: string
-      description: It determines the filter by payment method of the transaction.
-      enum:
-      - USER
-      - COMPANY
-      - PURCHASE
-      - SUBSCRIPTION
-      - ONLINE_ADS
-      - OUT_OF_PLATFORM_COMPANY
-      - OUT_OF_PLATFORM_PERSONAL
-    DateParam:
-      type: object
-      description: 'The end of the period of the search `toDate` included (i.e. less than) (Formats: `yyyy-MM-dd`, `yyyy-MM-ddThh:mm:ss`, `yyyy-MM-ddThh:mm:ssZ`).'
-      example: '1970-01-30'
-    UpdateExpenseType:
-      required:
-      - approver_id
-      - type
-      type: object
-      properties:
-        type:
-          $ref: '#/components/schemas/ExpenseType'
-        approver_id:
-          type: string
-          description: The ID of the 'SuperAdmin' `user` who approves/rejects the `expenseReview`.
-          example: XMPL1234-000003
-    ExpenseReviewEvent:
-      type: object
-      properties:
-        event_uuid:
-          type: string
-          description: The webhook unique ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        event_type:
-          $ref: '#/components/schemas/WebhookEventType'
-        event_name:
-          $ref: '#/components/schemas/WebhookEventName'
-        company_account_id:
-          type: string
-          description: The company account ID.
-          example: XMPL1234
-        subscription_id:
-          type: string
-          description: The webhook subscription ID used to route this event.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-      description: The webhook `ExpenseReview` data.
-    ExpenseStatus:
-      type: string
-      description: 'The status of approval of the expense (sortable: no).'
-      example: APPROVED
-      enum:
-      - APPROVED
-      - PARTIALLY_APPROVED
-      - DENIED
-      - TO_REVIEW
-    RequestExpenseInfo:
-      required:
-      - approver_id
-      - message
-      type: object
-      properties:
-        approver_id:
-          type: string
-          description: The ID of the SuperAdmin `User` who approves/rejects the expense.
-          example: XMPL1234-000003
-        message:
-          type: string
-          description: The request info of the transaction expense review.
-          example: Request info to employee
-    CompletedTransactionsImportEvent:
-      type: object
-      properties:
-        event_uuid:
-          type: string
-          description: The webhook unique ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        event_type:
-          $ref: '#/components/schemas/WebhookEventType'
-        event_name:
-          $ref: '#/components/schemas/WebhookEventName'
-        company_account_id:
-          type: string
-          description: The company account ID.
-          example: XMPL1234
-        data:
-          $ref: '#/components/schemas/ExpenseReviewConfigurationEvent'
-        subscription_id:
-          type: string
-          description: The webhook subscription ID used to route this event.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-    ExportExpenseReview:
-      type: object
-      properties:
-        expense_report_protocol_ids:
-          type: array
-          description: The protocol IDs of the `ExpenseReport`.
-          example:
-          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
-          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-          items:
-            type: string
-            description: The protocol IDs of the `ExpenseReport`.
-            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
-    ExportExpense:
-      required:
-      - transaction_ids
-      type: object
-      properties:
-        transaction_ids:
-          type: array
-          description: An array of `Transaction` ID to be exported
-          example:
-          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
-          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-          items:
-            type: string
-            description: An array of `Transaction` ID to be exported
-            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
-        exported_by_id:
-          type: string
-          description: The ID of the `User` who exports the expense.
-          example: XMPL1234-000003
-      description: Export the Expenses JSON parameters.
-    Direction:
-      type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
-      enum:
-      - ASC
-      - DESC
     ExpenseItem:
       type: object
       properties:
@@ -745,6 +614,17 @@ components:
         to_date:
           $ref: '#/components/schemas/DateParam'
       description: Send Expense reminder JSON parameters.
+    ExpensePaymentMethod:
+      type: string
+      description: It determines the filter by payment method of the transaction.
+      enum:
+      - USER
+      - COMPANY
+      - PURCHASE
+      - SUBSCRIPTION
+      - ONLINE_ADS
+      - OUT_OF_PLATFORM_COMPANY
+      - OUT_OF_PLATFORM_PERSONAL
     Expense:
       type: object
       properties:
@@ -784,114 +664,6 @@ components:
           description: 'The number of `Transaction` items (sortable: no).'
           format: int64
           example: 3
-    UpdateExpenseStatus:
-      required:
-      - approver_id
-      - status
-      - status_category
-      type: object
-      properties:
-        status:
-          $ref: '#/components/schemas/ExpenseStatus'
-        status_category:
-          $ref: '#/components/schemas/ExpenseStatusCategory'
-        status_reason:
-          type: string
-          description: The reason of the status.
-          example: Expense violates company's reimbursement policy
-        approver_id:
-          type: string
-          description: The ID of the SuperAdmin `User` who approves/rejects the `ExpenseReport`.
-          example: XMPL1234-000003
-    Expenses:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        pages:
-          type: integer
-          description: It represents the total number of available pages.
-          format: int32
-          example: 7
-        page_size:
-          type: integer
-          description: It represents the number of items per page.
-          format: int32
-          example: 25
-        current_page:
-          type: integer
-          description: It indicates the current page (the counter starts from zero).
-          format: int32
-          example: 0
-        results_size:
-          type: integer
-          description: It indicates the size of the array results.
-          format: int32
-          example: 25
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Expense'
-    ExpenseReviewConfigurationEvent:
-      type: object
-      properties:
-        event_uuid:
-          type: string
-          description: The webhook unique ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        event_type:
-          $ref: '#/components/schemas/WebhookEventType'
-        event_name:
-          $ref: '#/components/schemas/WebhookEventName'
-        company_account_id:
-          type: string
-          description: The company account ID.
-          example: XMPL1234
-        subscription_id:
-          type: string
-          description: The webhook subscription ID used to route this event.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-      description: The webhook `ExpenseReview` data.
-    ExpenseType:
-      type: string
-      description: The type of the expense of the `SplitTransaction` line.
-      example: TRAVEL_AND_ENTERTAINMENT
-      enum:
-      - COMPANY
-      - PERSONAL
-      - TRAVEL_AND_ENTERTAINMENT
-    UpdatedTransactionEvent:
-      type: object
-      properties:
-        event_uuid:
-          type: string
-          description: The webhook unique ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        event_type:
-          $ref: '#/components/schemas/WebhookEventType'
-        event_name:
-          $ref: '#/components/schemas/WebhookEventName'
-        company_account_id:
-          type: string
-          description: The company account ID.
-          example: XMPL1234
-        data:
-          $ref: '#/components/schemas/ExpenseReviewEvent'
-        subscription_id:
-          type: string
-          description: The webhook subscription ID used to route this event.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-    ExpenseStatusCategory:
-      type: string
-      description: The status category of the transaction expense.
-      example: AGAINST_POLICY
-      enum:
-      - AGAINST_POLICY
-      - PERSONAL_EXPENSE
-      - OTHER
     WebhookEventName:
       type: string
       description: The list of subscribed events.
@@ -981,6 +753,167 @@ components:
       - contact_created
       - contact_updated
       - contact_deleted
+    CompletedTransactionsImportEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/ExpenseReviewConfigurationEvent'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    UpdateExpenseType:
+      required:
+      - approver_id
+      - type
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/ExpenseType'
+        approver_id:
+          type: string
+          description: The ID of the 'SuperAdmin' `user` who approves/rejects the `expenseReview`.
+          example: XMPL1234-000003
+    ExportExpense:
+      required:
+      - transaction_ids
+      type: object
+      properties:
+        transaction_ids:
+          type: array
+          description: An array of `Transaction` ID to be exported
+          example:
+          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+          items:
+            type: string
+            description: An array of `Transaction` ID to be exported
+            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
+        exported_by_id:
+          type: string
+          description: The ID of the `User` who exports the expense.
+          example: XMPL1234-000003
+      description: Export the Expenses JSON parameters.
+    UpdatedTransactionEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/ExpenseReviewEvent'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    RequestExpenseInfo:
+      required:
+      - approver_id
+      - message
+      type: object
+      properties:
+        approver_id:
+          type: string
+          description: The ID of the SuperAdmin `User` who approves/rejects the expense.
+          example: XMPL1234-000003
+        message:
+          type: string
+          description: The request info of the transaction expense review.
+          example: Request info to employee
+    Expenses:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        pages:
+          type: integer
+          description: It represents the total number of available pages.
+          format: int32
+          example: 7
+        page_size:
+          type: integer
+          description: It represents the number of items per page.
+          format: int32
+          example: 25
+        current_page:
+          type: integer
+          description: It indicates the current page (the counter starts from zero).
+          format: int32
+          example: 0
+        results_size:
+          type: integer
+          description: It indicates the size of the array results.
+          format: int32
+          example: 25
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Expense'
+    ExportExpenseReview:
+      type: object
+      properties:
+        expense_report_protocol_ids:
+          type: array
+          description: The protocol IDs of the `ExpenseReport`.
+          example:
+          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+          items:
+            type: string
+            description: The protocol IDs of the `ExpenseReport`.
+            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
+    UpdateExpenseStatus:
+      required:
+      - approver_id
+      - status
+      - status_category
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/ExpenseStatus'
+        status_category:
+          $ref: '#/components/schemas/ExpenseStatusCategory'
+        status_reason:
+          type: string
+          description: The reason of the status.
+          example: Expense violates company's reimbursement policy
+        approver_id:
+          type: string
+          description: The ID of the SuperAdmin `User` who approves/rejects the `ExpenseReport`.
+          example: XMPL1234-000003
+    ExpenseStatus:
+      type: string
+      description: 'The status of approval of the expense (sortable: no).'
+      example: APPROVED
+      enum:
+      - APPROVED
+      - PARTIALLY_APPROVED
+      - DENIED
+      - TO_REVIEW
     ChangeExpenseTypeEvent:
       type: object
       properties:
@@ -1002,6 +935,33 @@ components:
           type: string
           description: The webhook subscription ID used to route this event.
           example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    ExpenseReviewEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+      description: The webhook `ExpenseReview` data.
+    Direction:
+      type: string
+      description: It indicates how the pages are ordered.
+      example: DESC
+      enum:
+      - ASC
+      - DESC
     WebhookEventType:
       type: string
       description: The webhook event type.
@@ -1022,6 +982,46 @@ components:
       - Employee
       - Vehicle
       - Wallet
+    ExpenseStatusCategory:
+      type: string
+      description: The status category of the transaction expense.
+      example: AGAINST_POLICY
+      enum:
+      - AGAINST_POLICY
+      - PERSONAL_EXPENSE
+      - OTHER
+    ExpenseReviewConfigurationEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+      description: The webhook `ExpenseReview` data.
+    DateParam:
+      type: object
+      description: 'The end of the period of the search `toDate` included (i.e. less than) (Formats: `yyyy-MM-dd`, `yyyy-MM-ddThh:mm:ss`, `yyyy-MM-ddThh:mm:ssZ`).'
+      example: '1970-01-30'
+    ExpenseType:
+      type: string
+      description: The type of the expense of the `SplitTransaction` line.
+      example: TRAVEL_AND_ENTERTAINMENT
+      enum:
+      - COMPANY
+      - PERSONAL
+      - TRAVEL_AND_ENTERTAINMENT
   securitySchemes:
     standardAuth:
       type: oauth2

@@ -78,6 +78,71 @@ paths:
         - statement_read
 components:
   schemas:
+    DownloadStatement:
+      required:
+      - currency
+      - file_type
+      - month
+      - year
+      type: object
+      properties:
+        year:
+          maximum: 2099
+          minimum: 2015
+          type: integer
+          format: int32
+          example: 2025
+        month:
+          $ref: '#/components/schemas/Month'
+        file_type:
+          $ref: '#/components/schemas/StatementFileType'
+        currency:
+          $ref: '#/components/schemas/ISO4217SupportedCurrency'
+      description: Download `statement` JSON parameters.
+    Month:
+      type: string
+      description: The reference month for `Statement`.
+      example: JANUARY
+      enum:
+      - JANUARY
+      - FEBRUARY
+      - MARCH
+      - APRIL
+      - MAY
+      - JUNE
+      - JULY
+      - AUGUST
+      - SEPTEMBER
+      - OCTOBER
+      - NOVEMBER
+      - DECEMBER
+    StatementFileType:
+      type: string
+      description: The generated `Statement` file types.
+      enum:
+      - PDF
+      - XLSX
+      - CSV
+    Statements:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Statement'
+    ISO4217SupportedCurrency:
+      type: string
+      description: The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Statement` to search for.
+      example: EUR
+      enum:
+      - EUR
+      - GBP
+      - USD
     Statement:
       type: object
       properties:
@@ -103,71 +168,6 @@ components:
           description: The presigned url where to download the `Statement`.
           format: uri
           example: https://my-demo-bucket.s3.amazonaws.com/example.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIOSFODNN7EXAMPLE%2F20250416%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250416T083000Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890
-    Statements:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Statement'
-    Month:
-      type: string
-      description: The reference month for `Statement`.
-      example: JANUARY
-      enum:
-      - JANUARY
-      - FEBRUARY
-      - MARCH
-      - APRIL
-      - MAY
-      - JUNE
-      - JULY
-      - AUGUST
-      - SEPTEMBER
-      - OCTOBER
-      - NOVEMBER
-      - DECEMBER
-    ISO4217SupportedCurrency:
-      type: string
-      description: The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Statement` to search for.
-      example: EUR
-      enum:
-      - EUR
-      - GBP
-      - USD
-    DownloadStatement:
-      required:
-      - currency
-      - file_type
-      - month
-      - year
-      type: object
-      properties:
-        year:
-          maximum: 2099
-          minimum: 2015
-          type: integer
-          format: int32
-          example: 2025
-        month:
-          $ref: '#/components/schemas/Month'
-        file_type:
-          $ref: '#/components/schemas/StatementFileType'
-        currency:
-          $ref: '#/components/schemas/ISO4217SupportedCurrency'
-      description: Download `statement` JSON parameters.
-    StatementFileType:
-      type: string
-      description: The generated `Statement` file types.
-      enum:
-      - PDF
-      - XLSX
-      - CSV
   securitySchemes:
     standardAuth:
       type: oauth2

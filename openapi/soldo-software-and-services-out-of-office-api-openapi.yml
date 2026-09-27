@@ -274,15 +274,6 @@ paths:
         - out_of_office_delegation_write
 components:
   schemas:
-    DelegationStatus:
-      type: string
-      description: The work status of `out_of_office`.
-      example: ACTIVE
-      enum:
-      - ACTIVE
-      - EXPIRED
-      - SCHEDULED
-      - DELETED
     OutOfOfficeDelegations:
       type: object
       properties:
@@ -315,6 +306,62 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OutOfOfficeDelegation'
+    DelegationStatus:
+      type: string
+      description: The work status of `out_of_office`.
+      example: ACTIVE
+      enum:
+      - ACTIVE
+      - EXPIRED
+      - SCHEDULED
+      - DELETED
+    DelegationFeature:
+      type: string
+      description: The features of `out_of_office`.
+      enum:
+      - REQUEST_MONEY
+      - REQUEST_PURCHASE
+      - EXPENSE_REVIEW
+    OutOfOfficeDelegation:
+      type: object
+      properties:
+        id:
+          type: string
+          description: A unique identifier for this `out_of_office` entry.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        delegator_id:
+          type: string
+          description: The ID of the person assigning the `out_of_office`.
+          example: XMPL1234-000001
+        delegate_id:
+          type: string
+          description: The ID of the person covering for the delegator.
+          example: XMPL1234-000002
+        from_date:
+          type: string
+          description: Defines when the out_of_office entry starts. fromDate included. (i.e. greater than or equal to) (Format:`yyyy-MM-dd`).
+          format: date
+          example: '2025-03-05'
+        to_date:
+          type: string
+          description: Defines when the out_of_office entry ends. toDate included. (i.e. less than) (Format:`yyyy-MM-dd`).
+          format: date
+          example: '2025-03-07'
+        features:
+          uniqueItems: true
+          type: array
+          description: The features of `out_of_office`.
+          items:
+            $ref: '#/components/schemas/DelegationFeature'
+        status:
+          $ref: '#/components/schemas/DelegationStatus'
+    Direction:
+      type: string
+      description: It indicates how the pages are ordered.
+      example: DESC
+      enum:
+      - ASC
+      - DESC
     UpdateOutOfOfficeDelegation:
       required:
       - delegate_id
@@ -380,53 +427,6 @@ components:
           items:
             $ref: '#/components/schemas/DelegationFeature'
       description: Create `out_of_office` JSON parameters.
-    OutOfOfficeDelegation:
-      type: object
-      properties:
-        id:
-          type: string
-          description: A unique identifier for this `out_of_office` entry.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        delegator_id:
-          type: string
-          description: The ID of the person assigning the `out_of_office`.
-          example: XMPL1234-000001
-        delegate_id:
-          type: string
-          description: The ID of the person covering for the delegator.
-          example: XMPL1234-000002
-        from_date:
-          type: string
-          description: Defines when the out_of_office entry starts. fromDate included. (i.e. greater than or equal to) (Format:`yyyy-MM-dd`).
-          format: date
-          example: '2025-03-05'
-        to_date:
-          type: string
-          description: Defines when the out_of_office entry ends. toDate included. (i.e. less than) (Format:`yyyy-MM-dd`).
-          format: date
-          example: '2025-03-07'
-        features:
-          uniqueItems: true
-          type: array
-          description: The features of `out_of_office`.
-          items:
-            $ref: '#/components/schemas/DelegationFeature'
-        status:
-          $ref: '#/components/schemas/DelegationStatus'
-    Direction:
-      type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
-      enum:
-      - ASC
-      - DESC
-    DelegationFeature:
-      type: string
-      description: The features of `out_of_office`.
-      enum:
-      - REQUEST_MONEY
-      - REQUEST_PURCHASE
-      - EXPENSE_REVIEW
   securitySchemes:
     standardAuth:
       type: oauth2

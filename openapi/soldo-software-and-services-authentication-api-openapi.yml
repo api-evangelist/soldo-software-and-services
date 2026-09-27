@@ -65,22 +65,6 @@ paths:
         - company_read
 components:
   schemas:
-    WhoAmI:
-      type: object
-      properties:
-        company_name:
-          type: string
-          description: The company name of the user.
-          example: Example Inc.
-        scopes:
-          type: array
-          description: The list of the scopes granted for the API Key.
-          example:
-          - ALL
-          items:
-            type: string
-            description: The list of the scopes granted for the API Key.
-            example: '["ALL"]'
     OAuth2Token:
       type: object
       properties:
@@ -100,6 +84,22 @@ components:
           type: string
           description: The `access_token` expiration, expressed in seconds. Once the `access_token` is expired your session will be invalidate, you will have to re-authenticate to get a fresh `access_token`.
           example: '7200'
+    WhoAmI:
+      type: object
+      properties:
+        company_name:
+          type: string
+          description: The company name of the user.
+          example: Example Inc.
+        scopes:
+          type: array
+          description: The list of the scopes granted for the API Key.
+          example:
+          - ALL
+          items:
+            type: string
+            description: The list of the scopes granted for the API Key.
+            example: '["ALL"]'
   securitySchemes:
     standardAuth:
       type: oauth2

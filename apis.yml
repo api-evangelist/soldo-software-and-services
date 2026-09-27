@@ -58,7 +58,7 @@ tags:
 - Business Cards
 - Prepaid Cards
 - Fintech
-- Financial-Services
+- Financial Services
 - Webhook
 tags_raw:
 - Company
@@ -70,6 +70,7 @@ tags_raw:
 - Fintech
 - Financial Services
 - Webhooks
+- Financial-Services
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

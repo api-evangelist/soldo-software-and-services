@@ -347,120 +347,6 @@ paths:
         - tag_write
 components:
   schemas:
-    TagItems:
-      type: object
-      properties:
-        tags:
-          type: array
-          description: The list of `Tag` resources.
-          example:
-          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
-          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-          items:
-            $ref: '#/components/schemas/Tag'
-    UpdateTagBulkItem:
-      required:
-      - id
-      - tag
-      type: object
-      properties:
-        id:
-          type: string
-          description: The `Tag` ID.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-        tag:
-          type: string
-          description: The name of the `Tag`.
-          example: tx-label
-        description:
-          type: string
-          description: The description of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).
-          example: Label to mark transactions
-        code:
-          maxLength: 60
-          type: string
-          description: The code of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).
-          example: CODE tag
-        visible:
-          type: boolean
-          description: It determines whether the `Tag` is visible in the `Transaction` detail.
-          example: true
-      description: The list of the `Tag` resources to update in bulk.
-      example:
-      - 7bf79328-a7ae-4222-aa54-091ff7f429a7
-      - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-    NewTagBulkItem:
-      required:
-      - tag
-      type: object
-      properties:
-        tag:
-          type: string
-          description: The name of the `Tag`.
-          example: tx-label
-        description:
-          type: string
-          description: The description of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).
-          example: Label to mark transactions
-        code:
-          type: string
-          description: The code of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).
-          example: CODE tag
-      description: The list of `Tag` resources to create in bulk.
-      example:
-      - 7bf79328-a7ae-4222-aa54-091ff7f429a7
-      - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-    UpdateTagItem:
-      type: object
-      properties:
-        tags:
-          type: array
-          description: The list of the `Tag` resources to update in bulk.
-          example:
-          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
-          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-          items:
-            $ref: '#/components/schemas/UpdateTagBulkItem'
-      description: Update `Tag` bulk JSON parameters.
-    Tags:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        pages:
-          type: integer
-          description: It represents the total number of available pages.
-          format: int32
-          example: 7
-        page_size:
-          type: integer
-          description: It represents the number of items per page.
-          format: int32
-          example: 25
-        current_page:
-          type: integer
-          description: It indicates the current page (the counter starts from zero).
-          format: int32
-          example: 0
-        results_size:
-          type: integer
-          description: It indicates the size of the array results.
-          format: int32
-          example: 25
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Tag'
-    Direction:
-      type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
-      enum:
-      - ASC
-      - DESC
     NewTagBulk:
       type: object
       properties:
@@ -473,6 +359,18 @@ components:
           items:
             $ref: '#/components/schemas/NewTagBulkItem'
       description: New `Tag` bulk JSON parameters.
+    UpdateTagItem:
+      type: object
+      properties:
+        tags:
+          type: array
+          description: The list of the `Tag` resources to update in bulk.
+          example:
+          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+          items:
+            $ref: '#/components/schemas/UpdateTagBulkItem'
+      description: Update `Tag` bulk JSON parameters.
     Tag:
       type: object
       properties:
@@ -509,6 +407,108 @@ components:
           format: double
           deprecated: true
       description: The list of `Tag` resources.
+      example:
+      - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+      - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    NewTagBulkItem:
+      required:
+      - tag
+      type: object
+      properties:
+        tag:
+          type: string
+          description: The name of the `Tag`.
+          example: tx-label
+        description:
+          type: string
+          description: The description of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).
+          example: Label to mark transactions
+        code:
+          type: string
+          description: The code of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).
+          example: CODE tag
+      description: The list of `Tag` resources to create in bulk.
+      example:
+      - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+      - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    Tags:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        pages:
+          type: integer
+          description: It represents the total number of available pages.
+          format: int32
+          example: 7
+        page_size:
+          type: integer
+          description: It represents the number of items per page.
+          format: int32
+          example: 25
+        current_page:
+          type: integer
+          description: It indicates the current page (the counter starts from zero).
+          format: int32
+          example: 0
+        results_size:
+          type: integer
+          description: It indicates the size of the array results.
+          format: int32
+          example: 25
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
+    TagItems:
+      type: object
+      properties:
+        tags:
+          type: array
+          description: The list of `Tag` resources.
+          example:
+          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+          items:
+            $ref: '#/components/schemas/Tag'
+    Direction:
+      type: string
+      description: It indicates how the pages are ordered.
+      example: DESC
+      enum:
+      - ASC
+      - DESC
+    UpdateTagBulkItem:
+      required:
+      - id
+      - tag
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `Tag` ID.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+        tag:
+          type: string
+          description: The name of the `Tag`.
+          example: tx-label
+        description:
+          type: string
+          description: The description of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).
+          example: Label to mark transactions
+        code:
+          maxLength: 60
+          type: string
+          description: The code of the `Tag`. If needed to support special characters, provide the character encoding in the `Content-Type` header (e.g. `application/x-www-form-urlencoded ; charset=utf-8`).
+          example: CODE tag
+        visible:
+          type: boolean
+          description: It determines whether the `Tag` is visible in the `Transaction` detail.
+          example: true
+      description: The list of the `Tag` resources to update in bulk.
       example:
       - 7bf79328-a7ae-4222-aa54-091ff7f429a7
       - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa

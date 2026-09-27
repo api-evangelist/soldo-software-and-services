@@ -259,16 +259,12 @@ paths:
         - webhook_subscription_read
 components:
   schemas:
-    CreateWebhookSubscription:
-      required:
-      - active
-      - enabled_events
-      - webhook_url
+    UpdateWebhookSubscription:
       type: object
       properties:
         webhook_url:
           type: string
-          description: The url of the `WebhookSubscription`.
+          description: The URL of the `WebhookSubscription`.
           example: https://your_domain.com/xx/xx
         enabled_events:
           type: array
@@ -280,12 +276,44 @@ components:
         description:
           type: string
           description: The description of the `WebhookSubscription`.
-          example: Google Ads Campaign
+          example: Report updates
         active:
           type: boolean
           description: The status of the `WebhookSubscription` (if `false`, notifications are not sent).
-          example: false
-      description: Create `WebhookSubscription` JSON parameters.
+          example: true
+      description: Update `WebhookSubscription` JSON parameters.
+    WebhookSubscriptions:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        pages:
+          type: integer
+          description: It represents the total number of available pages.
+          format: int32
+          example: 7
+        page_size:
+          type: integer
+          description: It represents the number of items per page.
+          format: int32
+          example: 25
+        current_page:
+          type: integer
+          description: It indicates the current page (the counter starts from zero).
+          format: int32
+          example: 0
+        results_size:
+          type: integer
+          description: It indicates the size of the array results.
+          format: int32
+          example: 25
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/WebhookSubscription'
     WebhookSubscription:
       type: object
       properties:
@@ -408,51 +436,16 @@ components:
       - contact_created
       - contact_updated
       - contact_deleted
-    WebhookSubscriptions:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        pages:
-          type: integer
-          description: It represents the total number of available pages.
-          format: int32
-          example: 7
-        page_size:
-          type: integer
-          description: It represents the number of items per page.
-          format: int32
-          example: 25
-        current_page:
-          type: integer
-          description: It indicates the current page (the counter starts from zero).
-          format: int32
-          example: 0
-        results_size:
-          type: integer
-          description: It indicates the size of the array results.
-          format: int32
-          example: 25
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/WebhookSubscription'
-    Direction:
-      type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
-      enum:
-      - ASC
-      - DESC
-    UpdateWebhookSubscription:
+    CreateWebhookSubscription:
+      required:
+      - active
+      - enabled_events
+      - webhook_url
       type: object
       properties:
         webhook_url:
           type: string
-          description: The URL of the `WebhookSubscription`.
+          description: The url of the `WebhookSubscription`.
           example: https://your_domain.com/xx/xx
         enabled_events:
           type: array
@@ -464,12 +457,19 @@ components:
         description:
           type: string
           description: The description of the `WebhookSubscription`.
-          example: Report updates
+          example: Google Ads Campaign
         active:
           type: boolean
           description: The status of the `WebhookSubscription` (if `false`, notifications are not sent).
-          example: true
-      description: Update `WebhookSubscription` JSON parameters.
+          example: false
+      description: Create `WebhookSubscription` JSON parameters.
+    Direction:
+      type: string
+      description: It indicates how the pages are ordered.
+      example: DESC
+      enum:
+      - ASC
+      - DESC
   securitySchemes:
     standardAuth:
       type: oauth2

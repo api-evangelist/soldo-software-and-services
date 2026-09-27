@@ -222,6 +222,26 @@ paths:
         - transaction_read
 components:
   schemas:
+    TransactionMetadata:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID related to the custom generated Metadata of the `Transaction`.
+        metadata:
+          type: object
+          additionalProperties:
+            type: object
+            description: A generic JSON.
+          description: A generic JSON.
+        creation_time:
+          type: string
+          description: 'The date and time when the metadata was created (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+        last_update:
+          type: string
+          description: 'The date and time when the metadata was last updated (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
     TransactionMetadataList:
       type: object
       properties:
@@ -261,26 +281,6 @@ components:
       enum:
       - ASC
       - DESC
-    TransactionMetadata:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The ID related to the custom generated Metadata of the `Transaction`.
-        metadata:
-          type: object
-          additionalProperties:
-            type: object
-            description: A generic JSON.
-          description: A generic JSON.
-        creation_time:
-          type: string
-          description: 'The date and time when the metadata was created (sortable: yes).'
-          example: '2017-06-01T12:48:40Z'
-        last_update:
-          type: string
-          description: 'The date and time when the metadata was last updated (sortable: yes).'
-          example: '2017-06-01T12:48:40Z'
   securitySchemes:
     standardAuth:
       type: oauth2

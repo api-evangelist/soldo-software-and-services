@@ -359,6 +359,38 @@ components:
           type: string
           description: Vehicle ID.
           example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+    Refuelings:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        pages:
+          type: integer
+          description: It represents the total number of available pages.
+          format: int32
+          example: 7
+        page_size:
+          type: integer
+          description: It represents the number of items per page.
+          format: int32
+          example: 25
+        current_page:
+          type: integer
+          description: It indicates the current page (the counter starts from zero).
+          format: int32
+          example: 0
+        results_size:
+          type: integer
+          description: It indicates the size of the array results.
+          format: int32
+          example: 25
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Refueling'
     ISO4217Currency:
       type: string
       description: 'The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Wallet` (sortable: no)'
@@ -548,119 +580,6 @@ components:
       - ZAR
       - ZMW
       - ZWL
-    TransactionSign:
-      type: string
-      description: 'The sign of the transaction amount (Negative, Positive, None) (sortable: no).'
-      example: Negative
-      enum:
-      - Negative
-      - Positive
-      - None
-    TransactionStatus:
-      type: string
-      description: 'The status of the `Transaction` (sortable: yes).'
-      example: Settled
-      enum:
-      - Authorised
-      - Settled
-      - Cancelled
-      - Declined
-      - DisputeFailed
-      - DisputeOpened
-      - DisputeWon
-      - Moved
-      - Unknown
-    Refuelings:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        pages:
-          type: integer
-          description: It represents the total number of available pages.
-          format: int32
-          example: 7
-        page_size:
-          type: integer
-          description: It represents the number of items per page.
-          format: int32
-          example: 25
-        current_page:
-          type: integer
-          description: It indicates the current page (the counter starts from zero).
-          format: int32
-          example: 0
-        results_size:
-          type: integer
-          description: It indicates the size of the array results.
-          format: int32
-          example: 25
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Refueling'
-    TransactionDateType:
-      type: string
-      description: It determines the date to be considered for `fromDate` and `toDate` parameters.
-      example: TRANSACTION
-      default: TRANSACTION
-      enum:
-      - TRANSACTION
-      - SETTLEMENT
-      - UPDATE
-    RefuelingType:
-      type: string
-      description: The resource `type` to be used together with id.
-      example: card
-      enum:
-      - transaction
-      - vehicle
-      - card
-    UpdateRefueling:
-      type: object
-      properties:
-        mileage:
-          type: integer
-          description: The mileage of the `Vehicle`.
-          format: int32
-          example: 125000
-        unit_price:
-          type: number
-          description: The fuel unit price as specified on the `Transaction`.
-          example: 1.41
-        tx_fuel_type:
-          $ref: '#/components/schemas/FuelType'
-        quantity:
-          type: number
-          description: The fuel quantity as specified on the `Transaction`.
-          example: 80
-      description: Update `Refueling` JSON parameters.
-    FuelType:
-      type: string
-      description: The fuel type of the `Vehicle`.
-      example: PETROL
-      enum:
-      - PETROL
-      - DIESEL
-      - METHANE
-      - LPG
-      - LNG
-      - ELECTRIC
-      - UNKNOWN
-    DateParam:
-      type: object
-      description: 'The end of the period of the search `toDate` included (i.e. less than) (Formats: `yyyy-MM-dd`, `yyyy-MM-ddThh:mm:ss`, `yyyy-MM-ddThh:mm:ssZ`).'
-      example: '1970-01-30'
-    Direction:
-      type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
-      enum:
-      - ASC
-      - DESC
     ISO3166Country:
       type: string
       description: The [ISO 3166-1 alpha-3](https://www.iso.org/obp/ui/#search/code/) code of the country where the `Transaction` has been authorised.
@@ -931,6 +850,87 @@ components:
       - ZMB
       - ZRCD
       - ZWE
+    TransactionStatus:
+      type: string
+      description: 'The status of the `Transaction` (sortable: yes).'
+      example: Settled
+      enum:
+      - Authorised
+      - Settled
+      - Cancelled
+      - Declined
+      - DisputeFailed
+      - DisputeOpened
+      - DisputeWon
+      - Moved
+      - Unknown
+    UpdateRefueling:
+      type: object
+      properties:
+        mileage:
+          type: integer
+          description: The mileage of the `Vehicle`.
+          format: int32
+          example: 125000
+        unit_price:
+          type: number
+          description: The fuel unit price as specified on the `Transaction`.
+          example: 1.41
+        tx_fuel_type:
+          $ref: '#/components/schemas/FuelType'
+        quantity:
+          type: number
+          description: The fuel quantity as specified on the `Transaction`.
+          example: 80
+      description: Update `Refueling` JSON parameters.
+    FuelType:
+      type: string
+      description: The fuel type of the `Vehicle`.
+      example: PETROL
+      enum:
+      - PETROL
+      - DIESEL
+      - METHANE
+      - LPG
+      - LNG
+      - ELECTRIC
+      - UNKNOWN
+    RefuelingType:
+      type: string
+      description: The resource `type` to be used together with id.
+      example: card
+      enum:
+      - transaction
+      - vehicle
+      - card
+    DateParam:
+      type: object
+      description: 'The end of the period of the search `toDate` included (i.e. less than) (Formats: `yyyy-MM-dd`, `yyyy-MM-ddThh:mm:ss`, `yyyy-MM-ddThh:mm:ssZ`).'
+      example: '1970-01-30'
+    TransactionDateType:
+      type: string
+      description: It determines the date to be considered for `fromDate` and `toDate` parameters.
+      example: TRANSACTION
+      default: TRANSACTION
+      enum:
+      - TRANSACTION
+      - SETTLEMENT
+      - UPDATE
+    Direction:
+      type: string
+      description: It indicates how the pages are ordered.
+      example: DESC
+      enum:
+      - ASC
+      - DESC
+    TransactionSign:
+      type: string
+      description: 'The sign of the transaction amount (Negative, Positive, None) (sortable: no).'
+      example: Negative
+      enum:
+      - Negative
+      - Positive
+      - None
   securitySchemes:
     standardAuth:
       type: oauth2

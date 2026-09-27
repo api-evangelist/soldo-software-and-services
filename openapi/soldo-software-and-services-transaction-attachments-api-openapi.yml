@@ -339,6 +339,39 @@ webhooks:
       description: Sandbox server (using test data)
 components:
   schemas:
+    TransactionAttachments:
+      type: object
+      properties:
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/TransactionAttachment'
+    TransactionAttachmentCompressedFile:
+      type: object
+      properties:
+        file_name:
+          type: string
+          description: The file name of the compressed attachment.
+          example: invoice01_thumb.jpg
+        file_extension:
+          type: string
+          description: The file extension of the compressed attachment.
+          example: .jpg
+        file_size:
+          type: integer
+          description: The file size of the compressed attachment in bytes.
+          format: int64
+          example: 32768
+        file_url:
+          type: string
+          description: The Base64 string of the Compressed File URL encrypted by DES in ECB mode, Pkcs7 padding scheme and using Token for key. Deprecated, use `url` instead.
+          deprecated: true
+        url:
+          type: string
+          description: The fileUrl  of the compressed attachment.
+        url_type:
+          $ref: '#/components/schemas/UrlType'
+      description: The Compressed version of the attachment, Soldo automatically generates a compressedversion of any image type (e.g. `JPG`, `JPEG`, `PNG`) attachment having a size greater than `2.5MB`.
     UploadUserChannel:
       type: string
       description: The channel used to upload the attachment ).
@@ -366,46 +399,6 @@ components:
             description: Generic map of custom metadata
           description: Generic map of custom metadata
       description: Update `TransactionAttachment` JSON parameters.
-    TransactionAttachmentType:
-      type: string
-      description: The type of attachment.
-      example: INVOICE
-      enum:
-      - RECEIPT
-      - INVOICE
-      - MAIL
-      - OTHER
-      - PURCHASE_REQUEST
-      - POP_AUTH
-      - POP_SETTLEMENT
-    UploadCompletedEvent:
-      type: object
-      properties:
-        event_uuid:
-          type: string
-          description: The webhook unique ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        event_type:
-          $ref: '#/components/schemas/WebhookEventType'
-        event_name:
-          $ref: '#/components/schemas/WebhookEventName'
-        company_account_id:
-          type: string
-          description: The company account ID.
-          example: XMPL1234
-        data:
-          $ref: '#/components/schemas/TransactionAttachment'
-        subscription_id:
-          type: string
-          description: The webhook subscription ID used to route this event.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-    TransactionAttachments:
-      type: object
-      properties:
-        attachments:
-          type: array
-          items:
-            $ref: '#/components/schemas/TransactionAttachment'
     TransactionAttachment:
       type: object
       properties:
@@ -469,6 +462,17 @@ components:
           type: string
           description: The date and time when the `TransactionAttachment` was last updated.
           example: '2017-06-01T12:48:40Z'
+    UrlType:
+      type: string
+      description: The URL type (DOWNLOAD_URL to download the attachment; UPLOAD_URL to upload the attachment).
+      example: DOWNLOAD_URL
+      enum:
+      - DOWNLOAD_URL
+      - UPLOAD_URL
+      - UPLOAD_COMPLETED
+      - DELETE
+      - THUMBNAILS_DOWNLOAD_URL
+      - UPDATE_METADATA
     WebhookEventName:
       type: string
       description: The list of subscribed events.
@@ -579,43 +583,18 @@ components:
           type: string
           description: The webhook subscription ID used to route this event.
           example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-    UrlType:
+    TransactionAttachmentType:
       type: string
-      description: The URL type (DOWNLOAD_URL to download the attachment; UPLOAD_URL to upload the attachment).
-      example: DOWNLOAD_URL
+      description: The type of attachment.
+      example: INVOICE
       enum:
-      - DOWNLOAD_URL
-      - UPLOAD_URL
-      - UPLOAD_COMPLETED
-      - DELETE
-      - THUMBNAILS_DOWNLOAD_URL
-      - UPDATE_METADATA
-    TransactionAttachmentCompressedFile:
-      type: object
-      properties:
-        file_name:
-          type: string
-          description: The file name of the compressed attachment.
-          example: invoice01_thumb.jpg
-        file_extension:
-          type: string
-          description: The file extension of the compressed attachment.
-          example: .jpg
-        file_size:
-          type: integer
-          description: The file size of the compressed attachment in bytes.
-          format: int64
-          example: 32768
-        file_url:
-          type: string
-          description: The Base64 string of the Compressed File URL encrypted by DES in ECB mode, Pkcs7 padding scheme and using Token for key. Deprecated, use `url` instead.
-          deprecated: true
-        url:
-          type: string
-          description: The fileUrl  of the compressed attachment.
-        url_type:
-          $ref: '#/components/schemas/UrlType'
-      description: The Compressed version of the attachment, Soldo automatically generates a compressedversion of any image type (e.g. `JPG`, `JPEG`, `PNG`) attachment having a size greater than `2.5MB`.
+      - RECEIPT
+      - INVOICE
+      - MAIL
+      - OTHER
+      - PURCHASE_REQUEST
+      - POP_AUTH
+      - POP_SETTLEMENT
     WebhookEventType:
       type: string
       description: The webhook event type.
@@ -636,6 +615,27 @@ components:
       - Employee
       - Vehicle
       - Wallet
+    UploadCompletedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/TransactionAttachment'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
   securitySchemes:
     standardAuth:
       type: oauth2

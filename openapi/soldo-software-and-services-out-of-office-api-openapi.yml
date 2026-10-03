@@ -274,54 +274,6 @@ paths:
         - out_of_office_delegation_write
 components:
   schemas:
-    OutOfOfficeDelegations:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        pages:
-          type: integer
-          description: It represents the total number of available pages.
-          format: int32
-          example: 7
-        page_size:
-          type: integer
-          description: It represents the number of items per page.
-          format: int32
-          example: 25
-        current_page:
-          type: integer
-          description: It indicates the current page (the counter starts from zero).
-          format: int32
-          example: 0
-        results_size:
-          type: integer
-          description: It indicates the size of the array results.
-          format: int32
-          example: 25
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/OutOfOfficeDelegation'
-    DelegationStatus:
-      type: string
-      description: The work status of `out_of_office`.
-      example: ACTIVE
-      enum:
-      - ACTIVE
-      - EXPIRED
-      - SCHEDULED
-      - DELETED
-    DelegationFeature:
-      type: string
-      description: The features of `out_of_office`.
-      enum:
-      - REQUEST_MONEY
-      - REQUEST_PURCHASE
-      - EXPENSE_REVIEW
     OutOfOfficeDelegation:
       type: object
       properties:
@@ -355,13 +307,6 @@ components:
             $ref: '#/components/schemas/DelegationFeature'
         status:
           $ref: '#/components/schemas/DelegationStatus'
-    Direction:
-      type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
-      enum:
-      - ASC
-      - DESC
     UpdateOutOfOfficeDelegation:
       required:
       - delegate_id
@@ -392,6 +337,61 @@ components:
           items:
             $ref: '#/components/schemas/DelegationFeature'
       description: Update `out_of_office` Request JSON parameters.
+    DelegationStatus:
+      type: string
+      description: The work status of `out_of_office`.
+      example: ACTIVE
+      enum:
+      - ACTIVE
+      - EXPIRED
+      - SCHEDULED
+      - DELETED
+    OutOfOfficeDelegations:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        pages:
+          type: integer
+          description: It represents the total number of available pages.
+          format: int32
+          example: 7
+        page_size:
+          type: integer
+          description: It represents the number of items per page.
+          format: int32
+          example: 25
+        current_page:
+          type: integer
+          description: It indicates the current page (the counter starts from zero).
+          format: int32
+          example: 0
+        results_size:
+          type: integer
+          description: It indicates the size of the array results.
+          format: int32
+          example: 25
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/OutOfOfficeDelegation'
+    DelegationFeature:
+      type: string
+      description: The features of `out_of_office`.
+      enum:
+      - REQUEST_MONEY
+      - REQUEST_PURCHASE
+      - EXPENSE_REVIEW
+    Direction:
+      type: string
+      description: It indicates how the pages are ordered.
+      example: DESC
+      enum:
+      - ASC
+      - DESC
     CreateOutOfOfficeDelegation:
       required:
       - delegate_id

@@ -84,29 +84,6 @@ paths:
         - transaction_write
 components:
   schemas:
-    CreateTransactionSplit:
-      required:
-      - split_transactions
-      type: object
-      properties:
-        split_transactions:
-          minItems: 2
-          type: array
-          items:
-            $ref: '#/components/schemas/SplitTransaction'
-      description: Create `Transaction` split JSON parameters.
-    SplitTag:
-      type: object
-      properties:
-        tag_id:
-          type: string
-          description: The `Tags` of the `SplitTransaction`.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-        dictionary_id:
-          type: string
-          description: The `dictionaryId` of the `Tag` of the `SplitTransaction`.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-      description: The IDs of the `Tag` and related `Dictionary` to be assigned to a `SplitTransaction` line.
     SplitTransaction:
       required:
       - amount
@@ -135,6 +112,18 @@ components:
           description: The IDs of the `Tag` and related `Dictionary` to be assigned to a `SplitTransaction` line.
           items:
             $ref: '#/components/schemas/SplitTag'
+    SplitTag:
+      type: object
+      properties:
+        tag_id:
+          type: string
+          description: The `Tags` of the `SplitTransaction`.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+        dictionary_id:
+          type: string
+          description: The `dictionaryId` of the `Tag` of the `SplitTransaction`.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+      description: The IDs of the `Tag` and related `Dictionary` to be assigned to a `SplitTransaction` line.
     UpdateTransactionSplit:
       required:
       - split_transactions
@@ -146,6 +135,17 @@ components:
           items:
             $ref: '#/components/schemas/SplitTransaction'
       description: Update `Transaction` split JSON parameters.
+    CreateTransactionSplit:
+      required:
+      - split_transactions
+      type: object
+      properties:
+        split_transactions:
+          minItems: 2
+          type: array
+          items:
+            $ref: '#/components/schemas/SplitTransaction'
+      description: Create `Transaction` split JSON parameters.
     ExpenseType:
       type: string
       description: The type of the expense of the `SplitTransaction` line.

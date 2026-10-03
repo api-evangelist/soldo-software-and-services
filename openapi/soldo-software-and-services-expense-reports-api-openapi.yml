@@ -249,85 +249,17 @@ paths:
         - expense_report_read
 components:
   schemas:
-    ExpenseReportType:
-      type: string
-      description: The type of the  `ExpenseReport`.
-      enum:
-      - EMPLOYEE
-      - COMPANY
-    ExpenseReportStatus:
-      type: string
-      description: The `ExpenseReport` status.
-      enum:
-      - PROCESSED
-      - CANCELLED
-      - TO_BE_PROCESSED
-    ExpenseReportDownload:
-      type: object
-      properties:
-        file_url:
-          type: string
-          description: 'The  `ExpenseReport`file URL '
     DateParam:
       type: object
       description: 'The end of the period of the search `toDate` included (i.e. less than) (Formats: `yyyy-MM-dd`, `yyyy-MM-ddThh:mm:ss`, `yyyy-MM-ddThh:mm:ssZ`).'
       example: '1970-01-30'
-    ExpenseReportStatusUpdate:
+    Direction:
       type: string
-      description: The status of the  `ExpenseReport`.
-      example: PROCESSED
+      description: It indicates how the pages are ordered.
+      example: DESC
       enum:
-      - PROCESSED
-      - CANCELLED
-    ExpenseReports:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        pages:
-          type: integer
-          description: It represents the total number of available pages.
-          format: int32
-          example: 7
-        page_size:
-          type: integer
-          description: It represents the number of items per page.
-          format: int32
-          example: 25
-        current_page:
-          type: integer
-          description: It indicates the current page (the counter starts from zero).
-          format: int32
-          example: 0
-        results_size:
-          type: integer
-          description: It indicates the size of the array results.
-          format: int32
-          example: 25
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/ExpenseReport'
-    UpdateExpenseReport:
-      type: object
-      properties:
-        approver_id:
-          type: string
-          description: The ID of the SuperAdmin `User` who approves/rejects the expense.
-          example: XMPL1234-000003
-        status:
-          $ref: '#/components/schemas/ExpenseReportStatusUpdate'
-      description: Update `ExpenseReport` Request JSON parameters.
-    ExpenseReportFileType:
-      type: string
-      description: The `ExpenseReport` file type.
-      example: PDF
-      enum:
-      - PDF
-      - PDF_WITH_ATTACHMENTS
+      - ASC
+      - DESC
     ExpenseReport:
       type: object
       properties:
@@ -381,13 +313,26 @@ components:
         reimbursement_transaction_id:
           type: string
           description: The ID of the transaction of the `ExpenseReport`.
-    Direction:
+    ExpenseReportDownload:
+      type: object
+      properties:
+        file_url:
+          type: string
+          description: 'The  `ExpenseReport`file URL '
+    ExpenseReportStatusUpdate:
       type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
+      description: The status of the  `ExpenseReport`.
+      example: PROCESSED
       enum:
-      - ASC
-      - DESC
+      - PROCESSED
+      - CANCELLED
+    ExpenseReportFileType:
+      type: string
+      description: The `ExpenseReport` file type.
+      example: PDF
+      enum:
+      - PDF
+      - PDF_WITH_ATTACHMENTS
     ExpenseReportStatusOutput:
       type: string
       description: The status of the  `ExpenseReport`.
@@ -396,6 +341,61 @@ components:
       - CANCELLED
       - DELETED
       - TO_BE_PROCESSED
+    UpdateExpenseReport:
+      type: object
+      properties:
+        approver_id:
+          type: string
+          description: The ID of the SuperAdmin `User` who approves/rejects the expense.
+          example: XMPL1234-000003
+        status:
+          $ref: '#/components/schemas/ExpenseReportStatusUpdate'
+      description: Update `ExpenseReport` Request JSON parameters.
+    ExpenseReportType:
+      type: string
+      description: The type of the  `ExpenseReport`.
+      enum:
+      - EMPLOYEE
+      - COMPANY
+    ExpenseReportStatus:
+      type: string
+      description: The `ExpenseReport` status.
+      enum:
+      - PROCESSED
+      - CANCELLED
+      - TO_BE_PROCESSED
+    ExpenseReports:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        pages:
+          type: integer
+          description: It represents the total number of available pages.
+          format: int32
+          example: 7
+        page_size:
+          type: integer
+          description: It represents the number of items per page.
+          format: int32
+          example: 25
+        current_page:
+          type: integer
+          description: It indicates the current page (the counter starts from zero).
+          format: int32
+          example: 0
+        results_size:
+          type: integer
+          description: It indicates the size of the array results.
+          format: int32
+          example: 25
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExpenseReport'
   securitySchemes:
     standardAuth:
       type: oauth2

@@ -241,38 +241,6 @@ components:
             description: A list of `Wallet` IDs.
             example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
       description: The `Wallet` JSON parameters.
-    WalletAutotransferPresets:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        pages:
-          type: integer
-          description: It represents the total number of available pages.
-          format: int32
-          example: 7
-        page_size:
-          type: integer
-          description: It represents the number of items per page.
-          format: int32
-          example: 25
-        current_page:
-          type: integer
-          description: It indicates the current page (the counter starts from zero).
-          format: int32
-          example: 0
-        results_size:
-          type: integer
-          description: It indicates the size of the array results.
-          format: int32
-          example: 25
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/WalletAutotransferPresetItems'
     WalletAutotransferPresetItems:
       type: object
       properties:
@@ -311,19 +279,38 @@ components:
           type: string
           description: The date and time the `AutoTransferPreset` was last updated.
           example: '2017-06-01T12:48:40Z'
-    WalletPresetType:
-      type: string
-      description: The type of `AutoTransferPreset`.
-      enum:
-      - PERIODIC
-      - LOW_BALANCE
-    Direction:
-      type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
-      enum:
-      - ASC
-      - DESC
+    WalletAutotransferPresets:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        pages:
+          type: integer
+          description: It represents the total number of available pages.
+          format: int32
+          example: 7
+        page_size:
+          type: integer
+          description: It represents the number of items per page.
+          format: int32
+          example: 25
+        current_page:
+          type: integer
+          description: It indicates the current page (the counter starts from zero).
+          format: int32
+          example: 0
+        results_size:
+          type: integer
+          description: It indicates the size of the array results.
+          format: int32
+          example: 25
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/WalletAutotransferPresetItems'
     WalletAutotransferPreset:
       type: object
       properties:
@@ -372,6 +359,19 @@ components:
           type: string
           description: The date and time the `AutoTransferPreset` was last updated.
           example: '2017-06-01T12:48:40Z'
+    Direction:
+      type: string
+      description: It indicates how the pages are ordered.
+      example: DESC
+      enum:
+      - ASC
+      - DESC
+    WalletPresetType:
+      type: string
+      description: The type of `AutoTransferPreset`.
+      enum:
+      - PERIODIC
+      - LOW_BALANCE
   securitySchemes:
     standardAuth:
       type: oauth2

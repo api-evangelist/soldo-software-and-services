@@ -252,38 +252,45 @@ webhooks:
       description: Sandbox server (using test data)
 components:
   schemas:
-    StoreOrderPlacedEvent:
+    Order:
       type: object
       properties:
-        event_uuid:
+        id:
           type: string
-          description: The webhook unique ID.
+          description: The `Order` ID.
           example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        event_type:
-          $ref: '#/components/schemas/WebhookEventType'
-        event_name:
-          $ref: '#/components/schemas/WebhookEventName'
-        company_account_id:
+        status:
+          $ref: '#/components/schemas/OrderStatus'
+        creation_time:
           type: string
-          description: The company account ID.
-          example: XMPL1234
-        data:
-          $ref: '#/components/schemas/Order'
-        subscription_id:
+          description: The date and time when the `Order` was created.
+          example: '2017-06-01T12:48:40Z'
+        last_update_time:
           type: string
-          description: The webhook subscription ID used to route this event.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-    OrderStatus:
-      type: string
-      description: The status of the `Order`.
-      example: PENDING
-      enum:
-      - PENDING
-      - ERROR
-      - PLACED
-      - CANCELLED
-      - COMPLETED
-      - COMPLETED_WITH_CREDIT
+          description: The last update date of the `Order`.
+          example: '2017-06-01T12:48:40Z'
+        error_code:
+          type: string
+          description: In case is_valid is false, the error code of the `Order` is shown.
+        total_paid_amount:
+          type: number
+          description: The total amount of the `Order`.
+          example: 10.25
+        total_paid_currency:
+          $ref: '#/components/schemas/ISO4217Currency'
+        items:
+          type: array
+          description: The products associated with the `Order`.
+          items:
+            $ref: '#/components/schemas/OrderItem'
+        is_valid:
+          type: boolean
+          description: It states whether the `Order` is valid.
+          example: true
+    DateParam:
+      type: object
+      description: 'The end of the period of the search `toDate` included (i.e. less than) (Formats: `yyyy-MM-dd`, `yyyy-MM-ddThh:mm:ss`, `yyyy-MM-ddThh:mm:ssZ`).'
+      example: '1970-01-30'
     ISO4217Currency:
       type: string
       description: 'The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Wallet` (sortable: no)'
@@ -473,45 +480,133 @@ components:
       - ZAR
       - ZMW
       - ZWL
-    Order:
+    WebhookEventType:
+      type: string
+      description: The webhook event type.
+      example: Contact
+      default: Contact
+      enum:
+      - BusinessTrip
+      - Card
+      - Contact
+      - ExpenseReview
+      - Group
+      - OnlineAds
+      - Order
+      - Purchase
+      - Subscription
+      - Transaction
+      - TransactionAttachment
+      - Employee
+      - Vehicle
+      - Wallet
+    OrderItem:
       type: object
       properties:
         id:
           type: string
-          description: The `Order` ID.
+          description: The ID of a single item of a specific `Order`.
           example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        status:
-          $ref: '#/components/schemas/OrderStatus'
-        creation_time:
+        item_type:
           type: string
-          description: The date and time when the `Order` was created.
-          example: '2017-06-01T12:48:40Z'
-        last_update_time:
+          description: The type of the ordered item.
+          example: CARD
+        category:
           type: string
-          description: The last update date of the `Order`.
-          example: '2017-06-01T12:48:40Z'
-        error_code:
-          type: string
-          description: In case is_valid is false, the error code of the `Order` is shown.
-        total_paid_amount:
-          type: number
-          description: The total amount of the `Order`.
-          example: 10.25
-        total_paid_currency:
-          $ref: '#/components/schemas/ISO4217Currency'
-        items:
-          type: array
-          description: The products associated with the `Order`.
-          items:
-            $ref: '#/components/schemas/OrderItem'
-        is_valid:
-          type: boolean
-          description: It states whether the `Order` is valid.
-          example: true
-    DateParam:
+          description: The category of the ordered item.
+      description: The products associated with the `Order`.
+    OrderStatus:
+      type: string
+      description: The status of the `Order`.
+      example: PENDING
+      enum:
+      - PENDING
+      - ERROR
+      - PLACED
+      - CANCELLED
+      - COMPLETED
+      - COMPLETED_WITH_CREDIT
+    Direction:
+      type: string
+      description: It indicates how the pages are ordered.
+      example: DESC
+      enum:
+      - ASC
+      - DESC
+    StoreOrderCompletedEvent:
       type: object
-      description: 'The end of the period of the search `toDate` included (i.e. less than) (Formats: `yyyy-MM-dd`, `yyyy-MM-ddThh:mm:ss`, `yyyy-MM-ddThh:mm:ssZ`).'
-      example: '1970-01-30'
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Order'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+    Orders:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        pages:
+          type: integer
+          description: It represents the total number of available pages.
+          format: int32
+          example: 7
+        page_size:
+          type: integer
+          description: It represents the number of items per page.
+          format: int32
+          example: 25
+        current_page:
+          type: integer
+          description: It indicates the current page (the counter starts from zero).
+          format: int32
+          example: 0
+        results_size:
+          type: integer
+          description: It indicates the size of the array results.
+          format: int32
+          example: 25
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Order'
+    StoreOrderPlacedEvent:
+      type: object
+      properties:
+        event_uuid:
+          type: string
+          description: The webhook unique ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        event_type:
+          $ref: '#/components/schemas/WebhookEventType'
+        event_name:
+          $ref: '#/components/schemas/WebhookEventName'
+        company_account_id:
+          type: string
+          description: The company account ID.
+          example: XMPL1234
+        data:
+          $ref: '#/components/schemas/Order'
+        subscription_id:
+          type: string
+          description: The webhook subscription ID used to route this event.
+          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
     WebhookEventName:
       type: string
       description: The list of subscribed events.
@@ -601,101 +696,6 @@ components:
       - contact_created
       - contact_updated
       - contact_deleted
-    Orders:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        pages:
-          type: integer
-          description: It represents the total number of available pages.
-          format: int32
-          example: 7
-        page_size:
-          type: integer
-          description: It represents the number of items per page.
-          format: int32
-          example: 25
-        current_page:
-          type: integer
-          description: It indicates the current page (the counter starts from zero).
-          format: int32
-          example: 0
-        results_size:
-          type: integer
-          description: It indicates the size of the array results.
-          format: int32
-          example: 25
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Order'
-    WebhookEventType:
-      type: string
-      description: The webhook event type.
-      example: Contact
-      default: Contact
-      enum:
-      - BusinessTrip
-      - Card
-      - Contact
-      - ExpenseReview
-      - Group
-      - OnlineAds
-      - Order
-      - Purchase
-      - Subscription
-      - Transaction
-      - TransactionAttachment
-      - Employee
-      - Vehicle
-      - Wallet
-    Direction:
-      type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
-      enum:
-      - ASC
-      - DESC
-    StoreOrderCompletedEvent:
-      type: object
-      properties:
-        event_uuid:
-          type: string
-          description: The webhook unique ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        event_type:
-          $ref: '#/components/schemas/WebhookEventType'
-        event_name:
-          $ref: '#/components/schemas/WebhookEventName'
-        company_account_id:
-          type: string
-          description: The company account ID.
-          example: XMPL1234
-        data:
-          $ref: '#/components/schemas/Order'
-        subscription_id:
-          type: string
-          description: The webhook subscription ID used to route this event.
-          example: 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-    OrderItem:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The ID of a single item of a specific `Order`.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        item_type:
-          type: string
-          description: The type of the ordered item.
-          example: CARD
-        category:
-          type: string
-          description: The category of the ordered item.
-      description: The products associated with the `Order`.
   securitySchemes:
     standardAuth:
       type: oauth2

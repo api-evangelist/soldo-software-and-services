@@ -224,150 +224,13 @@ paths:
         - workflow_write
 components:
   schemas:
-    WorkflowAutomationRule:
-      required:
-      - expense_status
-      - required_info
-      type: object
-      properties:
-        expense_status:
-          $ref: '#/components/schemas/WorkflowStepStatus'
-        required_info:
-          type: boolean
-          description: A boolean to define whether a transaction should have all the required info (as defined on the Reminders feature) completed.
-          example: true
-          default: false
-        amount_condition:
-          $ref: '#/components/schemas/WorkflowAmountCondition'
-      description: An automation to automatically review the step when certain conditions are met.
-    UpdateWorkflow:
-      required:
-      - steps
-      - target_type
-      - visibilities
-      type: object
-      properties:
-        name:
-          type: string
-          description: The name of the `Workflow`.
-          example: Workflow
-        description:
-          type: string
-          description: The description of the `Workflow`.
-          example: My Workflow Description
-        policy_url:
-          type: string
-          description: The URL of the policy document for the `Workflow`.
-          example: https://www.example.com/policy.pdf
-        steps:
-          type: array
-          description: The ordered set of workflow steps, where each step includes its configuration and the reviewers assigned for approval or review actions.
-          items:
-            $ref: '#/components/schemas/WorkflowProcessStep'
-        visibilities:
-          type: array
-          description: Workflow visibility definition. This field contains the list of users that are able to see this workflow. To grant access to all users, pass an empty list or -1.
-          items:
-            $ref: '#/components/schemas/PersistVisibility'
-        target_type:
-          $ref: '#/components/schemas/WorkflowTargetType'
-      description: Base schema for workflow update. The actual fields depend on the `target_type`.
-      discriminator:
-        propertyName: target_type
-        mapping:
-          FUNDS: '#/components/schemas/UpdateFundWorkflow'
-          GOODS_AND_SERVICES: '#/components/schemas/UpdateGoodsServicesWorkflow'
-          TRIP: '#/components/schemas/UpdateTripWorkflow'
-    WorkflowItem:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The `Workflow` ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        name:
-          type: string
-          description: The name of the `Workflow`.
-          example: Workflow
-        description:
-          type: string
-          description: The description of the `Workflow`.
-          example: My Workflow Description
-        status:
-          $ref: '#/components/schemas/WorkflowStatus'
-        target_type:
-          $ref: '#/components/schemas/WorkflowTargetType'
-        steps_count:
-          type: integer
-          description: The number of steps in the `Workflow`.
-          format: int32
-          example: 1
-    WorkflowStepStatus:
+    WorkflowComparator:
       type: string
-      description: The status of the expense in case the conditions of the automation rules are satisfied.
-      example: PARTIALLY_APPROVED
+      description: The logical operator to be used in relationship to the transaction amount.
+      example: LOWER_EQUAL
       enum:
-      - APPROVED
-      - PARTIALLY_APPROVED
-      - DECLINED
-    WorkflowProcessStep:
-      required:
-      - reviewer_type
-      - step_number
-      type: object
-      properties:
-        step_number:
-          minimum: 1
-          type: integer
-          description: A number which identifies the order of the step. The first step should start with `1`, the following steps number should be previous `step_number + 1` without any gap.
-          format: int32
-          example: 2
-          default: 1
-        reviewer_type:
-          $ref: '#/components/schemas/WorkflowReviewerType'
-        reviewer_info:
-          $ref: '#/components/schemas/WorkflowReviewerInfo'
-        automation_rule:
-          $ref: '#/components/schemas/WorkflowAutomationRule'
-      description: The ordered set of workflow steps, where each step includes its configuration and the reviewers assigned for approval or review actions.
-    VisibilityOwnerType:
-      type: string
-      description: The type of user or group that can see this workflow.
-      example: ACTIVE
-      enum:
-      - USER
-    Workflows:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        pages:
-          type: integer
-          description: It represents the total number of available pages.
-          format: int32
-          example: 7
-        page_size:
-          type: integer
-          description: It represents the number of items per page.
-          format: int32
-          example: 25
-        current_page:
-          type: integer
-          description: It indicates the current page (the counter starts from zero).
-          format: int32
-          example: 0
-        results_size:
-          type: integer
-          description: It indicates the size of the array results.
-          format: int32
-          example: 25
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/WorkflowItem'
+      - HIGHER_EQUAL
+      - LOWER_EQUAL
     WorkflowReviewerInfo:
       required:
       - ids
@@ -433,19 +296,6 @@ components:
       description: Base schema for workflow. The actual fields depend on the `target_type`.
       discriminator:
         propertyName: target_type
-    WorkflowStatus:
-      type: string
-      description: The status of the `Workflow`.
-      enum:
-      - ACTIVE
-      - DEACTIVATED
-      - DELETED
-    WorkflowStatusSearch:
-      type: string
-      description: The status of the `Workflow`.
-      enum:
-      - ACTIVE
-      - INACTIVE
     WorkflowTargetType:
       type: string
       description: The type of the `Workflow`.
@@ -454,6 +304,36 @@ components:
       - FUNDS
       - GOODS_AND_SERVICES
       - TRIP
+    WorkflowAutomationRule:
+      required:
+      - expense_status
+      - required_info
+      type: object
+      properties:
+        expense_status:
+          $ref: '#/components/schemas/WorkflowStepStatus'
+        required_info:
+          type: boolean
+          description: A boolean to define whether a transaction should have all the required info (as defined on the Reminders feature) completed.
+          example: true
+          default: false
+        amount_condition:
+          $ref: '#/components/schemas/WorkflowAmountCondition'
+      description: An automation to automatically review the step when certain conditions are met.
+    VisibilityOwnerType:
+      type: string
+      description: The type of user or group that can see this workflow.
+      example: ACTIVE
+      enum:
+      - USER
+    UpdateWorkflowStatus:
+      required:
+      - status
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/WorkflowStatus'
+      description: Status update parameters.
     WorkflowAmountCondition:
       required:
       - amount
@@ -467,21 +347,6 @@ components:
         operator:
           $ref: '#/components/schemas/WorkflowComparator'
       description: A condition based on the transaction amount.
-    UpdateWorkflowStatus:
-      required:
-      - status
-      type: object
-      properties:
-        status:
-          $ref: '#/components/schemas/WorkflowStatus'
-      description: Status update parameters.
-    WorkflowComparator:
-      type: string
-      description: The logical operator to be used in relationship to the transaction amount.
-      example: LOWER_EQUAL
-      enum:
-      - HIGHER_EQUAL
-      - LOWER_EQUAL
     PersistVisibility:
       required:
       - type
@@ -501,14 +366,38 @@ components:
             description: One or more values that identify the visibility condition. If the type is `USER`, the value must be `ALL`.
             example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
       description: Workflow visibility definition. This field contains the list of users that are able to see this workflow. To grant access to all users, pass an empty list or -1.
-    WorkflowReviewerType:
-      type: string
-      description: The type of reviewer who can review this step.
-      example: USER
-      enum:
-      - LINE_MANAGER
-      - ROLE
-      - USER
+    Workflows:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        pages:
+          type: integer
+          description: It represents the total number of available pages.
+          format: int32
+          example: 7
+        page_size:
+          type: integer
+          description: It represents the number of items per page.
+          format: int32
+          example: 25
+        current_page:
+          type: integer
+          description: It indicates the current page (the counter starts from zero).
+          format: int32
+          example: 0
+        results_size:
+          type: integer
+          description: It indicates the size of the array results.
+          format: int32
+          example: 25
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkflowItem'
     CreateWorkflow:
       required:
       - description
@@ -549,6 +438,117 @@ components:
           FUNDS: '#/components/schemas/CreateFundsWorkflow'
           GOODS_AND_SERVICES: '#/components/schemas/CreateGoodsServicesWorkflow'
           TRIP: '#/components/schemas/CreateTripWorkflow'
+    WorkflowReviewerType:
+      type: string
+      description: The type of reviewer who can review this step.
+      example: USER
+      enum:
+      - LINE_MANAGER
+      - ROLE
+      - USER
+    WorkflowStepStatus:
+      type: string
+      description: The status of the expense in case the conditions of the automation rules are satisfied.
+      example: PARTIALLY_APPROVED
+      enum:
+      - APPROVED
+      - PARTIALLY_APPROVED
+      - DECLINED
+    UpdateWorkflow:
+      required:
+      - steps
+      - target_type
+      - visibilities
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the `Workflow`.
+          example: Workflow
+        description:
+          type: string
+          description: The description of the `Workflow`.
+          example: My Workflow Description
+        policy_url:
+          type: string
+          description: The URL of the policy document for the `Workflow`.
+          example: https://www.example.com/policy.pdf
+        steps:
+          type: array
+          description: The ordered set of workflow steps, where each step includes its configuration and the reviewers assigned for approval or review actions.
+          items:
+            $ref: '#/components/schemas/WorkflowProcessStep'
+        visibilities:
+          type: array
+          description: Workflow visibility definition. This field contains the list of users that are able to see this workflow. To grant access to all users, pass an empty list or -1.
+          items:
+            $ref: '#/components/schemas/PersistVisibility'
+        target_type:
+          $ref: '#/components/schemas/WorkflowTargetType'
+      description: Base schema for workflow update. The actual fields depend on the `target_type`.
+      discriminator:
+        propertyName: target_type
+        mapping:
+          FUNDS: '#/components/schemas/UpdateFundWorkflow'
+          GOODS_AND_SERVICES: '#/components/schemas/UpdateGoodsServicesWorkflow'
+          TRIP: '#/components/schemas/UpdateTripWorkflow'
+    WorkflowItem:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `Workflow` ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        name:
+          type: string
+          description: The name of the `Workflow`.
+          example: Workflow
+        description:
+          type: string
+          description: The description of the `Workflow`.
+          example: My Workflow Description
+        status:
+          $ref: '#/components/schemas/WorkflowStatus'
+        target_type:
+          $ref: '#/components/schemas/WorkflowTargetType'
+        steps_count:
+          type: integer
+          description: The number of steps in the `Workflow`.
+          format: int32
+          example: 1
+    WorkflowStatusSearch:
+      type: string
+      description: The status of the `Workflow`.
+      enum:
+      - ACTIVE
+      - INACTIVE
+    WorkflowProcessStep:
+      required:
+      - reviewer_type
+      - step_number
+      type: object
+      properties:
+        step_number:
+          minimum: 1
+          type: integer
+          description: A number which identifies the order of the step. The first step should start with `1`, the following steps number should be previous `step_number + 1` without any gap.
+          format: int32
+          example: 2
+          default: 1
+        reviewer_type:
+          $ref: '#/components/schemas/WorkflowReviewerType'
+        reviewer_info:
+          $ref: '#/components/schemas/WorkflowReviewerInfo'
+        automation_rule:
+          $ref: '#/components/schemas/WorkflowAutomationRule'
+      description: The ordered set of workflow steps, where each step includes its configuration and the reviewers assigned for approval or review actions.
+    WorkflowStatus:
+      type: string
+      description: The status of the `Workflow`.
+      enum:
+      - ACTIVE
+      - DEACTIVATED
+      - DELETED
   securitySchemes:
     standardAuth:
       type: oauth2

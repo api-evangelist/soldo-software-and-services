@@ -515,14 +515,6 @@ paths:
         fingerprint-order: name, enabled, token
 components:
   schemas:
-    CardRuleChipAndPin:
-      type: object
-      properties:
-        enabled:
-          type: boolean
-          description: It determines whether the card rule is enabled.
-          example: true
-      description: It determines whether the `chipAndPin` is enabled.
     CardRuleCountry:
       required:
       - code
@@ -536,7 +528,197 @@ components:
           description: It determines whether the card should be allowed to spend money in that country.
           example: true
       description: A list of [ISO 3166-1 alpha-3](https://www.iso.org/obp/ui/#search/code/) country code and `enabled` pairs.
-    CardRuleMaxPerTransaction:
+    MerchantCategory:
+      type: string
+      description: A list of merchant categories this `ExpenseCategory`.
+      enum:
+      - Advertising
+      - Entertainment
+      - Utilities
+      - Food_Cocktail_Bar
+      - Food_Restaurant
+      - Food_Store
+      - Food_Wine
+      - Services_Business
+      - Services_Cleaning
+      - Services_Contracted
+      - Services_Delivery
+      - Services_Educational
+      - Services_Financial
+      - Services_Gambling
+      - Services_Government
+      - Services_Health
+      - Services_Insurance
+      - Services_Legal
+      - Services_Museum
+      - Services_Organisation
+      - Services_Personal
+      - Services_Repair
+      - Services_Social
+      - Services_Stationery
+      - Services_Telecommunication
+      - Services_Veterinary
+      - Services_Warehouse
+      - Services_Wholesale
+      - Shopping_Accessories
+      - Shopping_Airline
+      - Shopping_Art
+      - Shopping_Automotive
+      - Shopping_Beauty
+      - Shopping_Books
+      - Shopping_Clothes
+      - Shopping_Digital_Goods
+      - Shopping_Direct_Marketing
+      - Shopping_Furnitures
+      - Shopping_Sport
+      - Shopping_Store
+      - Shopping_Technology
+      - Transport_Airports
+      - Transport_Charging_Station
+      - Transport_Parking
+      - Transport_Public_Transportation
+      - Transport_Road
+      - Transport_Service_Station
+      - Transport_Ships
+      - Transport_Taxi
+      - Transport_Toll_Roads
+      - Transport_Trains
+      - Travel_Airlines
+      - Travel_Agency
+      - Travel_Car_Rental
+      - Travel_Hotels
+      - Travel_Time_Shares
+    CardRuleSpendingLimitsRule:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+          description: It determines whether the card rule is enabled.
+          example: true
+        amount:
+          type: number
+          description: Amount of the limit.
+          example: 10.25
+    CardRuleItem:
+      required:
+      - enabled
+      - name
+      type: object
+      properties:
+        name:
+          $ref: '#/components/schemas/CardRuleName'
+        enabled:
+          type: boolean
+          description: It determines whether the `CardRule` is enabled.
+          example: true
+    CardRuleMerchantCategories:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/CardRuleMerchantCategory'
+    CardRuleCashPointRules:
+      type: object
+      properties:
+        daily:
+          $ref: '#/components/schemas/CardRuleLimitPeriod'
+        weekly:
+          $ref: '#/components/schemas/CardRuleLimitPeriod'
+        monthly:
+          $ref: '#/components/schemas/CardRuleLimitPeriod'
+        chip_and_pin:
+          $ref: '#/components/schemas/CardRuleChipAndPin'
+        magstripe:
+          $ref: '#/components/schemas/CardRuleMagstripe'
+    CardRuleSpendingLimitsRules:
+      type: object
+      properties:
+        daily:
+          $ref: '#/components/schemas/CardRuleLimitPeriod'
+        weekly:
+          $ref: '#/components/schemas/CardRuleLimitPeriod'
+        monthly:
+          $ref: '#/components/schemas/CardRuleLimitPeriod'
+        per_transaction:
+          $ref: '#/components/schemas/CardRuleMaxPerTransaction'
+    UpdateCardRuleSpendingLimit:
+      required:
+      - enabled
+      - max
+      type: object
+      properties:
+        enabled:
+          type: boolean
+          description: It determines whether the card rule is enabled.
+          example: true
+        max:
+          type: number
+          description: Maximum spendable amount related to the limit.
+          format: double
+          example: 10.25
+      description: SpendingLimit rule parameters.
+    CardRuleCashPointLimitName:
+      type: string
+      description: A `CardRuleCashPointRule` limit name.
+      enum:
+      - daily
+      - weekly
+      - monthly
+      - chipAndPin
+      - magstripe
+    CardRuleName:
+      type: string
+      description: 'The name of the `CardRule` to update. To follow the implications of each rule when enabled (`enabled=true`) on a card:
+
+        - `OpenCloseMasterLock`, card is locked and only admins can unlock it
+
+        - `OpenClose`, card is locked and any user who have access to the card can unlock it
+
+        - `OpenCloseAfterOneTx`, card is automatically locked after each transaction
+
+        - `Online`, card can spend online
+
+        - `Contactless`, card can spend contactless'
+      example: CashPoint
+      enum:
+      - OpenCloseMasterLock
+      - OpenClose
+      - OpenCloseAfterOneTx
+      - Online
+      - Contactless
+    CardRuleMerchantCategory:
+      required:
+      - enabled
+      - name
+      type: object
+      properties:
+        name:
+          $ref: '#/components/schemas/MerchantCategory'
+        enabled:
+          type: boolean
+          description: It determines whether the rule is enabled.
+          example: true
+      description: A list of `MerchantCategory` and `enabled` pairs.
+    UpdateCardRules:
+      required:
+      - enabled
+      - name
+      type: object
+      properties:
+        name:
+          $ref: '#/components/schemas/CardRuleName'
+        enabled:
+          type: boolean
+          description: It determines whether the rule is enabled.
+          example: true
+      description: A `CardRule` representation.
+    CardRuleLimitPeriod:
       type: object
       properties:
         enabled:
@@ -551,20 +733,7 @@ components:
           type: number
         left:
           type: number
-      description: It determines the possibility to spend up to a certain amount on a weekly basis.
-    CardRuleCashPointRules:
-      type: object
-      properties:
-        daily:
-          $ref: '#/components/schemas/CardRuleLimitPeriod'
-        weekly:
-          $ref: '#/components/schemas/CardRuleLimitPeriod'
-        monthly:
-          $ref: '#/components/schemas/CardRuleLimitPeriod'
-        chip_and_pin:
-          $ref: '#/components/schemas/CardRuleChipAndPin'
-        magstripe:
-          $ref: '#/components/schemas/CardRuleMagstripe'
+      description: It determines the possibility to spend up to a certain amount on a monthly basis.
     UpdateCardRuleCashPoint:
       required:
       - enabled
@@ -581,6 +750,40 @@ components:
           format: double
           example: 10.25
       description: '`CardRuleCashPointRule` parameters.'
+    UpdateCardRuleMerchantCategories:
+      required:
+      - merchant_categories
+      - request_timestamp
+      type: object
+      properties:
+        request_timestamp:
+          type: integer
+          description: The epoch timestamp in millis. This is checked in Soldo. Requests with timestamp older than 5 seconds will be rejected.
+          format: int64
+          example: 1576850500000
+        merchant_categories:
+          type: array
+          description: A list of `MerchantCategory` and `enabled` pairs.
+          items:
+            $ref: '#/components/schemas/CardRuleMerchantCategory'
+      description: '`CardRuleMerchantCategories` parameters.'
+    UpdateCardRuleCountries:
+      required:
+      - countries
+      - request_timestamp
+      type: object
+      properties:
+        request_timestamp:
+          type: integer
+          description: The epoch timestamp in millis. This is checked in Soldo. Requests with timestamp older than 5 seconds will be rejected.
+          format: int64
+          example: 1576850500000
+        countries:
+          type: array
+          description: A list of [ISO 3166-1 alpha-3](https://www.iso.org/obp/ui/#search/code/) country code and `enabled` pairs.
+          items:
+            $ref: '#/components/schemas/CardRuleCountry'
+      description: '`CardRuleCountries` parameters.'
     CardRuleList:
       type: object
       properties:
@@ -588,55 +791,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CardRuleItem'
-    CardRuleMerchantCategories:
+    CardRuleChipAndPin:
       type: object
       properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/CardRuleMerchantCategory'
-    UpdateCardRules:
-      required:
-      - enabled
-      - name
-      type: object
-      properties:
-        name:
-          $ref: '#/components/schemas/CardRuleName'
         enabled:
           type: boolean
-          description: It determines whether the rule is enabled.
+          description: It determines whether the card rule is enabled.
           example: true
-      description: A `CardRule` representation.
-    CardRuleCountries:
+      description: It determines whether the `chipAndPin` is enabled.
+    CardRuleMagstripe:
       type: object
       properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/CardRuleCountry'
-    CardRuleItem:
-      required:
-      - enabled
-      - name
-      type: object
-      properties:
-        name:
-          $ref: '#/components/schemas/CardRuleName'
         enabled:
           type: boolean
-          description: It determines whether the `CardRule` is enabled.
+          description: It determines whether the card rule is enabled.
           example: true
+      description: It determines whether the `magstripe` is enabled.
     ISO3166CardRuleCountryCode:
       type: string
       description: The code of the country [ISO 3166-1 alpha-3](https://www.iso.org/obp/ui/#search/code/) to be updated.
@@ -877,7 +1047,15 @@ components:
       - ZAF
       - ZMB
       - ZWE
-    CardRuleLimitPeriod:
+    CardRuleSpendingLimitsLimitName:
+      type: string
+      description: A SpendingLimit rule name.
+      enum:
+      - daily
+      - weekly
+      - monthly
+      - perTransaction
+    CardRuleMaxPerTransaction:
       type: object
       properties:
         enabled:
@@ -892,121 +1070,19 @@ components:
           type: number
         left:
           type: number
-      description: It determines the possibility to spend up to a certain amount on a monthly basis.
-    UpdateCardRuleCountries:
-      required:
-      - countries
-      - request_timestamp
+      description: It determines the possibility to spend up to a certain amount on a weekly basis.
+    CardRuleCountries:
       type: object
       properties:
-        request_timestamp:
+        total:
           type: integer
-          description: The epoch timestamp in millis. This is checked in Soldo. Requests with timestamp older than 5 seconds will be rejected.
-          format: int64
-          example: 1576850500000
-        countries:
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        results:
           type: array
-          description: A list of [ISO 3166-1 alpha-3](https://www.iso.org/obp/ui/#search/code/) country code and `enabled` pairs.
           items:
             $ref: '#/components/schemas/CardRuleCountry'
-      description: '`CardRuleCountries` parameters.'
-    CardRuleMagstripe:
-      type: object
-      properties:
-        enabled:
-          type: boolean
-          description: It determines whether the card rule is enabled.
-          example: true
-      description: It determines whether the `magstripe` is enabled.
-    CardRuleMerchantCategory:
-      required:
-      - enabled
-      - name
-      type: object
-      properties:
-        name:
-          $ref: '#/components/schemas/MerchantCategory'
-        enabled:
-          type: boolean
-          description: It determines whether the rule is enabled.
-          example: true
-      description: A list of `MerchantCategory` and `enabled` pairs.
-    MerchantCategory:
-      type: string
-      description: A list of merchant categories this `ExpenseCategory`.
-      enum:
-      - Advertising
-      - Entertainment
-      - Utilities
-      - Food_Cocktail_Bar
-      - Food_Restaurant
-      - Food_Store
-      - Food_Wine
-      - Services_Business
-      - Services_Cleaning
-      - Services_Contracted
-      - Services_Delivery
-      - Services_Educational
-      - Services_Financial
-      - Services_Gambling
-      - Services_Government
-      - Services_Health
-      - Services_Insurance
-      - Services_Legal
-      - Services_Museum
-      - Services_Organisation
-      - Services_Personal
-      - Services_Repair
-      - Services_Social
-      - Services_Stationery
-      - Services_Telecommunication
-      - Services_Veterinary
-      - Services_Warehouse
-      - Services_Wholesale
-      - Shopping_Accessories
-      - Shopping_Airline
-      - Shopping_Art
-      - Shopping_Automotive
-      - Shopping_Beauty
-      - Shopping_Books
-      - Shopping_Clothes
-      - Shopping_Digital_Goods
-      - Shopping_Direct_Marketing
-      - Shopping_Furnitures
-      - Shopping_Sport
-      - Shopping_Store
-      - Shopping_Technology
-      - Transport_Airports
-      - Transport_Charging_Station
-      - Transport_Parking
-      - Transport_Public_Transportation
-      - Transport_Road
-      - Transport_Service_Station
-      - Transport_Ships
-      - Transport_Taxi
-      - Transport_Toll_Roads
-      - Transport_Trains
-      - Travel_Airlines
-      - Travel_Agency
-      - Travel_Car_Rental
-      - Travel_Hotels
-      - Travel_Time_Shares
-    UpdateCardRuleSpendingLimit:
-      required:
-      - enabled
-      - max
-      type: object
-      properties:
-        enabled:
-          type: boolean
-          description: It determines whether the card rule is enabled.
-          example: true
-        max:
-          type: number
-          description: Maximum spendable amount related to the limit.
-          format: double
-          example: 10.25
-      description: SpendingLimit rule parameters.
     CardRuleCashPointRule:
       type: object
       properties:
@@ -1018,82 +1094,6 @@ components:
           type: number
           description: Amount of the limit.
           example: 10.25
-    UpdateCardRuleMerchantCategories:
-      required:
-      - merchant_categories
-      - request_timestamp
-      type: object
-      properties:
-        request_timestamp:
-          type: integer
-          description: The epoch timestamp in millis. This is checked in Soldo. Requests with timestamp older than 5 seconds will be rejected.
-          format: int64
-          example: 1576850500000
-        merchant_categories:
-          type: array
-          description: A list of `MerchantCategory` and `enabled` pairs.
-          items:
-            $ref: '#/components/schemas/CardRuleMerchantCategory'
-      description: '`CardRuleMerchantCategories` parameters.'
-    CardRuleSpendingLimitsRules:
-      type: object
-      properties:
-        daily:
-          $ref: '#/components/schemas/CardRuleLimitPeriod'
-        weekly:
-          $ref: '#/components/schemas/CardRuleLimitPeriod'
-        monthly:
-          $ref: '#/components/schemas/CardRuleLimitPeriod'
-        per_transaction:
-          $ref: '#/components/schemas/CardRuleMaxPerTransaction'
-    CardRuleSpendingLimitsLimitName:
-      type: string
-      description: A SpendingLimit rule name.
-      enum:
-      - daily
-      - weekly
-      - monthly
-      - perTransaction
-    CardRuleSpendingLimitsRule:
-      type: object
-      properties:
-        enabled:
-          type: boolean
-          description: It determines whether the card rule is enabled.
-          example: true
-        amount:
-          type: number
-          description: Amount of the limit.
-          example: 10.25
-    CardRuleName:
-      type: string
-      description: 'The name of the `CardRule` to update. To follow the implications of each rule when enabled (`enabled=true`) on a card:
-
-        - `OpenCloseMasterLock`, card is locked and only admins can unlock it
-
-        - `OpenClose`, card is locked and any user who have access to the card can unlock it
-
-        - `OpenCloseAfterOneTx`, card is automatically locked after each transaction
-
-        - `Online`, card can spend online
-
-        - `Contactless`, card can spend contactless'
-      example: CashPoint
-      enum:
-      - OpenCloseMasterLock
-      - OpenClose
-      - OpenCloseAfterOneTx
-      - Online
-      - Contactless
-    CardRuleCashPointLimitName:
-      type: string
-      description: A `CardRuleCashPointRule` limit name.
-      enum:
-      - daily
-      - weekly
-      - monthly
-      - chipAndPin
-      - magstripe
   securitySchemes:
     standardAuth:
       type: oauth2

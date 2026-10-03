@@ -217,6 +217,38 @@ paths:
         - card_write
 components:
   schemas:
+    CardRulePresets:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        pages:
+          type: integer
+          description: It represents the total number of available pages.
+          format: int32
+          example: 7
+        page_size:
+          type: integer
+          description: It represents the number of items per page.
+          format: int32
+          example: 25
+        current_page:
+          type: integer
+          description: It indicates the current page (the counter starts from zero).
+          format: int32
+          example: 0
+        results_size:
+          type: integer
+          description: It indicates the size of the array results.
+          format: int32
+          example: 25
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/CardRulePreset'
     Direction:
       type: string
       description: It indicates how the pages are ordered.
@@ -224,29 +256,6 @@ components:
       enum:
       - ASC
       - DESC
-    CardRulePreset:
-      type: object
-      properties:
-        id:
-          type: string
-          description: 'The `CardRulePreset` ID (sortable: no).'
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        name:
-          type: string
-          description: 'The name of `CardRulePreset` (sortable: no).'
-          example: DefaultPreset
-        description:
-          type: string
-          description: 'The description of `CardRulePreset` (sortable: no).'
-          example: Default CardRule preset policy
-        creation_time:
-          type: string
-          description: The date and time when the `CardRulePreset` was created.
-          example: '2017-06-01T12:48:40Z'
-        last_update_time:
-          type: string
-          description: The date and time when the `CardRulePreset` was last updated.
-          example: '2017-06-01T12:48:40Z'
     ISO4217Currency:
       type: string
       description: 'The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Wallet` (sortable: no)'
@@ -436,38 +445,29 @@ components:
       - ZAR
       - ZMW
       - ZWL
-    CardRulePresets:
+    CardRulePreset:
       type: object
       properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        pages:
-          type: integer
-          description: It represents the total number of available pages.
-          format: int32
-          example: 7
-        page_size:
-          type: integer
-          description: It represents the number of items per page.
-          format: int32
-          example: 25
-        current_page:
-          type: integer
-          description: It indicates the current page (the counter starts from zero).
-          format: int32
-          example: 0
-        results_size:
-          type: integer
-          description: It indicates the size of the array results.
-          format: int32
-          example: 25
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/CardRulePreset'
+        id:
+          type: string
+          description: 'The `CardRulePreset` ID (sortable: no).'
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        name:
+          type: string
+          description: 'The name of `CardRulePreset` (sortable: no).'
+          example: DefaultPreset
+        description:
+          type: string
+          description: 'The description of `CardRulePreset` (sortable: no).'
+          example: Default CardRule preset policy
+        creation_time:
+          type: string
+          description: The date and time when the `CardRulePreset` was created.
+          example: '2017-06-01T12:48:40Z'
+        last_update_time:
+          type: string
+          description: The date and time when the `CardRulePreset` was last updated.
+          example: '2017-06-01T12:48:40Z'
   securitySchemes:
     standardAuth:
       type: oauth2

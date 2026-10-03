@@ -78,6 +78,30 @@ paths:
         - statement_read
 components:
   schemas:
+    StatementFileType:
+      type: string
+      description: The generated `Statement` file types.
+      enum:
+      - PDF
+      - XLSX
+      - CSV
+    Statement:
+      type: object
+      properties:
+        year:
+          type: integer
+          description: The reference year for `Statement`.
+          format: int32
+          example: 2025
+        month:
+          $ref: '#/components/schemas/Month'
+        currency:
+          $ref: '#/components/schemas/ISO4217SupportedCurrency'
+        file_types:
+          type: array
+          description: The generated `Statement` file types.
+          items:
+            $ref: '#/components/schemas/StatementFileType'
     DownloadStatement:
       required:
       - currency
@@ -99,6 +123,18 @@ components:
         currency:
           $ref: '#/components/schemas/ISO4217SupportedCurrency'
       description: Download `statement` JSON parameters.
+    Statements:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Statement'
     Month:
       type: string
       description: The reference month for `Statement`.
@@ -116,25 +152,6 @@ components:
       - OCTOBER
       - NOVEMBER
       - DECEMBER
-    StatementFileType:
-      type: string
-      description: The generated `Statement` file types.
-      enum:
-      - PDF
-      - XLSX
-      - CSV
-    Statements:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Statement'
     ISO4217SupportedCurrency:
       type: string
       description: The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Statement` to search for.
@@ -143,23 +160,6 @@ components:
       - EUR
       - GBP
       - USD
-    Statement:
-      type: object
-      properties:
-        year:
-          type: integer
-          description: The reference year for `Statement`.
-          format: int32
-          example: 2025
-        month:
-          $ref: '#/components/schemas/Month'
-        currency:
-          $ref: '#/components/schemas/ISO4217SupportedCurrency'
-        file_types:
-          type: array
-          description: The generated `Statement` file types.
-          items:
-            $ref: '#/components/schemas/StatementFileType'
     StatementDownloadUrl:
       type: object
       properties:

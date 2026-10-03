@@ -190,6 +190,33 @@ paths:
         - tax_rate_write
 components:
   schemas:
+    UpdateVatRate:
+      required:
+      - percentage
+      type: object
+      properties:
+        code:
+          type: string
+          description: The code of the `VATRate`.
+          example: code-vat-11
+        name:
+          type: string
+          description: The name of the `VATRate`.
+          example: Tax 11
+        description:
+          type: string
+          description: the description of the `VATRate`.
+          example: something
+        percentage:
+          type: number
+          description: The percentage value of the `VATRate`.
+          format: double
+          example: 15
+        enabled:
+          type: boolean
+          description: The `VATRate` is visible in the transaction detail.
+          example: true
+      description: Update `VatRate` JSON parameters.
     CreateVatRate:
       required:
       - name
@@ -217,6 +244,45 @@ components:
           description: the VATRate is visible in the transaction detail.
           example: true
       description: Add `VatRate` JSON parameters.
+    VatRates:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        pages:
+          type: integer
+          description: It represents the total number of available pages.
+          format: int32
+          example: 7
+        page_size:
+          type: integer
+          description: It represents the number of items per page.
+          format: int32
+          example: 25
+        current_page:
+          type: integer
+          description: It indicates the current page (the counter starts from zero).
+          format: int32
+          example: 0
+        results_size:
+          type: integer
+          description: It indicates the size of the array results.
+          format: int32
+          example: 25
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/VatRate'
+    Direction:
+      type: string
+      description: It indicates how the pages are ordered.
+      example: DESC
+      enum:
+      - ASC
+      - DESC
     VatRate:
       type: object
       properties:
@@ -258,72 +324,6 @@ components:
           description: 'The date and time when the `VATRate` was last updated (sortable: yes).'
           example: '2017-06-01T12:48:40Z'
       description: The `VATRate` object.
-    UpdateVatRate:
-      required:
-      - percentage
-      type: object
-      properties:
-        code:
-          type: string
-          description: The code of the `VATRate`.
-          example: code-vat-11
-        name:
-          type: string
-          description: The name of the `VATRate`.
-          example: Tax 11
-        description:
-          type: string
-          description: the description of the `VATRate`.
-          example: something
-        percentage:
-          type: number
-          description: The percentage value of the `VATRate`.
-          format: double
-          example: 15
-        enabled:
-          type: boolean
-          description: The `VATRate` is visible in the transaction detail.
-          example: true
-      description: Update `VatRate` JSON parameters.
-    Direction:
-      type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
-      enum:
-      - ASC
-      - DESC
-    VatRates:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        pages:
-          type: integer
-          description: It represents the total number of available pages.
-          format: int32
-          example: 7
-        page_size:
-          type: integer
-          description: It represents the number of items per page.
-          format: int32
-          example: 25
-        current_page:
-          type: integer
-          description: It indicates the current page (the counter starts from zero).
-          format: int32
-          example: 0
-        results_size:
-          type: integer
-          description: It indicates the size of the array results.
-          format: int32
-          example: 25
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/VatRate'
   securitySchemes:
     standardAuth:
       type: oauth2

@@ -257,49 +257,6 @@ paths:
         - expense_policy_read
 components:
   schemas:
-    ExpensePolicyStatus:
-      type: string
-      description: The list of `ExpensePolicy` statuses to search by.
-      example: ACTIVE
-      enum:
-      - ACTIVE
-      - DELETED
-    ExpensePolicyAssignee:
-      type: object
-      properties:
-        assignee_id:
-          type: string
-          description: The ID one `User` assigned to the `ExpensePolicy`.
-          example: XMPL1234-000001
-    ExpensePolicy:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The `ExpensePolicy` ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        name:
-          type: string
-          description: The name of the `ExpensePolicy`.
-          example: Company Travel Policy
-        description:
-          type: string
-          description: A custom description of the `ExpensePolicy`.
-          example: A policy for company travel expenses
-        policy_url:
-          type: string
-          description: A URL pointing to the `ExpensePolicy` document.
-          example: https://www.policy.pdf
-        status:
-          $ref: '#/components/schemas/ExpensePolicyStatus'
-        creation_time:
-          type: string
-          description: The date and time when the `ExpensePolicy` was created.
-          example: '2017-06-01T12:48:40Z'
-        last_update:
-          type: string
-          description: The date and time when the `ExpensePolicy` was last updated.
-          example: '2017-06-01T12:48:40Z'
     ExpensePolicyAssignees:
       type: object
       properties:
@@ -332,40 +289,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ExpensePolicyAssignee'
-    ExpensePolicyAssignment:
-      required:
-      - assignee_ids
-      type: object
-      properties:
-        assignee_ids:
-          type: array
-          description: List of `User` IDs to assign to the `ExpensePolicy`.
-          example:
-          - XMPL1234-000001
-          - XMPL1234-000002
-          - XMPL1234-000003
-          items:
-            type: string
-            description: List of `User` IDs to assign to the `ExpensePolicy`.
-            example: '["XMPL1234-000001","XMPL1234-000002","XMPL1234-000003"]'
-      description: Add `ExpensePolicy` assignees JSON parameters.
-    ExpensePolicyUnassignment:
-      required:
-      - assignee_ids
-      type: object
-      properties:
-        assignee_ids:
-          type: array
-          description: List of `User` IDs to remove from their current `ExpensePolicy`.
-          example:
-          - XMPL1234-000001
-          - XMPL1234-000002
-          - XMPL1234-000003
-          items:
-            type: string
-            description: List of `User` IDs to remove from their current `ExpensePolicy`.
-            example: '["XMPL1234-000001","XMPL1234-000002","XMPL1234-000003"]'
-      description: '`ExpensePolicy` unassignment JSON parameters.'
     ExpensePolicies:
       type: object
       properties:
@@ -398,6 +321,30 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ExpensePolicy'
+    ExpensePolicyAssignment:
+      required:
+      - assignee_ids
+      type: object
+      properties:
+        assignee_ids:
+          type: array
+          description: List of `User` IDs to assign to the `ExpensePolicy`.
+          example:
+          - XMPL1234-000001
+          - XMPL1234-000002
+          - XMPL1234-000003
+          items:
+            type: string
+            description: List of `User` IDs to assign to the `ExpensePolicy`.
+            example: '["XMPL1234-000001","XMPL1234-000002","XMPL1234-000003"]'
+      description: Add `ExpensePolicy` assignees JSON parameters.
+    ExpensePolicyStatus:
+      type: string
+      description: The list of `ExpensePolicy` statuses to search by.
+      example: ACTIVE
+      enum:
+      - ACTIVE
+      - DELETED
     Direction:
       type: string
       description: It indicates how the pages are ordered.
@@ -405,6 +352,59 @@ components:
       enum:
       - ASC
       - DESC
+    ExpensePolicyAssignee:
+      type: object
+      properties:
+        assignee_id:
+          type: string
+          description: The ID one `User` assigned to the `ExpensePolicy`.
+          example: XMPL1234-000001
+    ExpensePolicyUnassignment:
+      required:
+      - assignee_ids
+      type: object
+      properties:
+        assignee_ids:
+          type: array
+          description: List of `User` IDs to remove from their current `ExpensePolicy`.
+          example:
+          - XMPL1234-000001
+          - XMPL1234-000002
+          - XMPL1234-000003
+          items:
+            type: string
+            description: List of `User` IDs to remove from their current `ExpensePolicy`.
+            example: '["XMPL1234-000001","XMPL1234-000002","XMPL1234-000003"]'
+      description: '`ExpensePolicy` unassignment JSON parameters.'
+    ExpensePolicy:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `ExpensePolicy` ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        name:
+          type: string
+          description: The name of the `ExpensePolicy`.
+          example: Company Travel Policy
+        description:
+          type: string
+          description: A custom description of the `ExpensePolicy`.
+          example: A policy for company travel expenses
+        policy_url:
+          type: string
+          description: A URL pointing to the `ExpensePolicy` document.
+          example: https://www.policy.pdf
+        status:
+          $ref: '#/components/schemas/ExpensePolicyStatus'
+        creation_time:
+          type: string
+          description: The date and time when the `ExpensePolicy` was created.
+          example: '2017-06-01T12:48:40Z'
+        last_update:
+          type: string
+          description: The date and time when the `ExpensePolicy` was last updated.
+          example: '2017-06-01T12:48:40Z'
   securitySchemes:
     standardAuth:
       type: oauth2

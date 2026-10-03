@@ -30,6 +30,13 @@ paths:
         - company_read
 components:
   schemas:
+    AddressCategory:
+      type: string
+      description: The category of the `Address`.
+      example: COMPANY
+      enum:
+      - USER
+      - COMPANY
     Company:
       type: object
       properties:
@@ -403,13 +410,6 @@ components:
           example: '2017-06-01T12:48:40Z'
       description: The default shipping `Address` of the `User`.
       example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-    AddressCategory:
-      type: string
-      description: The category of the `Address`.
-      example: COMPANY
-      enum:
-      - USER
-      - COMPANY
     FinancialEntity:
       type: string
       description: The Soldo entity providing financial services to the ‘Company‘ (‘SFS-UK‘ stands for Soldo Financial Services Ltd. while ‘SFS-IRL‘ stands for Soldo Financial Services Ireland DAC).

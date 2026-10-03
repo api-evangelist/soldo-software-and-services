@@ -247,150 +247,10 @@ paths:
         fingerprint-order: type, publicId, fromDate, toDate, dateType, txCountry, txStatus, txFuelType, token
 components:
   schemas:
-    Refueling:
+    DateParam:
       type: object
-      properties:
-        public_id:
-          type: string
-          description: The refueling ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        transaction_id:
-          type: string
-          description: 'The `Transaction` ID (sortable: yes).'
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        card_id:
-          type: string
-          description: 'The ID of the `Card` used for the `Transaction` (sortable: no).'
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        tx_status:
-          $ref: '#/components/schemas/TransactionStatus'
-        transaction_sign:
-          $ref: '#/components/schemas/TransactionSign'
-        tx_amount:
-          type: number
-          description: 'The amount of the refueling `Transaction` in the currency of the merchant (sortable: no).'
-          example: 10.25
-        tx_amount_currency:
-          $ref: '#/components/schemas/ISO4217Currency'
-        tx_date:
-          type: string
-          description: 'The date and time of the transaction at the `Authorised` status (sortable: yes).'
-          example: '2017-06-01T12:48:40Z'
-        tx_settlement_date:
-          type: string
-          description: 'The date and time of the transaction at the `Settled` status (sortable: yes).'
-          example: '2017-06-01T12:48:40Z'
-        update_time:
-          type: string
-          description: 'The date and time of the last update to the refueling `Transaction` (sortable: yes).'
-          example: '2017-06-01T12:48:40Z'
-        tx_vat_amount:
-          type: number
-          description: 'The amount of the VAT in the currency of the `Wallet` (sortable: no).'
-          example: 10.25
-        tx_vat_currency:
-          $ref: '#/components/schemas/ISO4217Currency'
-        tx_country:
-          $ref: '#/components/schemas/ISO3166Country'
-        plate:
-          type: string
-          description: Vehicle's plate number.
-          example: AA000BB
-        vehicle_fuel_type:
-          $ref: '#/components/schemas/FuelType'
-        vat_deductibility_percentage:
-          type: string
-          description: The deductible VAT percentage configured for the vehicle.
-          example: 40%
-        mileage:
-          type: integer
-          description: The vehicle mileage.
-          format: int32
-          example: 125000
-        quantity:
-          type: number
-          description: The fuel quantity as specified in the invoice.
-          example: 80
-        unit_price:
-          type: number
-          description: The fuel unit price as specified on the transaction.
-          example: 1.41
-        tx_fuel_type:
-          $ref: '#/components/schemas/FuelType'
-        to_be_ignored:
-          type: boolean
-          description: If the transaction link status is set to ignored.
-          example: true
-        invoice_id:
-          type: integer
-          description: Invoice ID.
-          format: int64
-          example: 4421109
-        invoice_number:
-          type: string
-          description: Invoice number.
-          example: NVC112200987
-        invoice_date:
-          type: string
-          description: Invoice date.
-          example: '2017-06-01T12:48:40Z'
-        invoice_total_amount:
-          type: number
-          description: Total amount of the linked invoice.
-          example: 10.25
-        invoice_row:
-          type: integer
-          description: Row of the linked invoice.
-          format: int32
-          example: 4
-        invoice_row_amount:
-          type: number
-          description: Amount of the transaction's row in the linked invoice.
-          example: 10.25
-        supplier_vat_id:
-          type: string
-          description: Supplier VAT ID.
-          example: VT09138461
-        dri:
-          type: string
-          description: DRI (Documento Riepilogativo) code.
-          example: DRI00099881
-        vehicle_id:
-          type: string
-          description: Vehicle ID.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-    Refuelings:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        pages:
-          type: integer
-          description: It represents the total number of available pages.
-          format: int32
-          example: 7
-        page_size:
-          type: integer
-          description: It represents the number of items per page.
-          format: int32
-          example: 25
-        current_page:
-          type: integer
-          description: It indicates the current page (the counter starts from zero).
-          format: int32
-          example: 0
-        results_size:
-          type: integer
-          description: It indicates the size of the array results.
-          format: int32
-          example: 25
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Refueling'
+      description: 'The end of the period of the search `toDate` included (i.e. less than) (Formats: `yyyy-MM-dd`, `yyyy-MM-ddThh:mm:ss`, `yyyy-MM-ddThh:mm:ssZ`).'
+      example: '1970-01-30'
     ISO4217Currency:
       type: string
       description: 'The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Wallet` (sortable: no)'
@@ -580,6 +440,160 @@ components:
       - ZAR
       - ZMW
       - ZWL
+    UpdateRefueling:
+      type: object
+      properties:
+        mileage:
+          type: integer
+          description: The mileage of the `Vehicle`.
+          format: int32
+          example: 125000
+        unit_price:
+          type: number
+          description: The fuel unit price as specified on the `Transaction`.
+          example: 1.41
+        tx_fuel_type:
+          $ref: '#/components/schemas/FuelType'
+        quantity:
+          type: number
+          description: The fuel quantity as specified on the `Transaction`.
+          example: 80
+      description: Update `Refueling` JSON parameters.
+    Refueling:
+      type: object
+      properties:
+        public_id:
+          type: string
+          description: The refueling ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        transaction_id:
+          type: string
+          description: 'The `Transaction` ID (sortable: yes).'
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        card_id:
+          type: string
+          description: 'The ID of the `Card` used for the `Transaction` (sortable: no).'
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        tx_status:
+          $ref: '#/components/schemas/TransactionStatus'
+        transaction_sign:
+          $ref: '#/components/schemas/TransactionSign'
+        tx_amount:
+          type: number
+          description: 'The amount of the refueling `Transaction` in the currency of the merchant (sortable: no).'
+          example: 10.25
+        tx_amount_currency:
+          $ref: '#/components/schemas/ISO4217Currency'
+        tx_date:
+          type: string
+          description: 'The date and time of the transaction at the `Authorised` status (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+        tx_settlement_date:
+          type: string
+          description: 'The date and time of the transaction at the `Settled` status (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+        update_time:
+          type: string
+          description: 'The date and time of the last update to the refueling `Transaction` (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+        tx_vat_amount:
+          type: number
+          description: 'The amount of the VAT in the currency of the `Wallet` (sortable: no).'
+          example: 10.25
+        tx_vat_currency:
+          $ref: '#/components/schemas/ISO4217Currency'
+        tx_country:
+          $ref: '#/components/schemas/ISO3166Country'
+        plate:
+          type: string
+          description: Vehicle's plate number.
+          example: AA000BB
+        vehicle_fuel_type:
+          $ref: '#/components/schemas/FuelType'
+        vat_deductibility_percentage:
+          type: string
+          description: The deductible VAT percentage configured for the vehicle.
+          example: 40%
+        mileage:
+          type: integer
+          description: The vehicle mileage.
+          format: int32
+          example: 125000
+        quantity:
+          type: number
+          description: The fuel quantity as specified in the invoice.
+          example: 80
+        unit_price:
+          type: number
+          description: The fuel unit price as specified on the transaction.
+          example: 1.41
+        tx_fuel_type:
+          $ref: '#/components/schemas/FuelType'
+        to_be_ignored:
+          type: boolean
+          description: If the transaction link status is set to ignored.
+          example: true
+        invoice_id:
+          type: integer
+          description: Invoice ID.
+          format: int64
+          example: 4421109
+        invoice_number:
+          type: string
+          description: Invoice number.
+          example: NVC112200987
+        invoice_date:
+          type: string
+          description: Invoice date.
+          example: '2017-06-01T12:48:40Z'
+        invoice_total_amount:
+          type: number
+          description: Total amount of the linked invoice.
+          example: 10.25
+        invoice_row:
+          type: integer
+          description: Row of the linked invoice.
+          format: int32
+          example: 4
+        invoice_row_amount:
+          type: number
+          description: Amount of the transaction's row in the linked invoice.
+          example: 10.25
+        supplier_vat_id:
+          type: string
+          description: Supplier VAT ID.
+          example: VT09138461
+        dri:
+          type: string
+          description: DRI (Documento Riepilogativo) code.
+          example: DRI00099881
+        vehicle_id:
+          type: string
+          description: Vehicle ID.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+    TransactionSign:
+      type: string
+      description: 'The sign of the transaction amount (Negative, Positive, None) (sortable: no).'
+      example: Negative
+      enum:
+      - Negative
+      - Positive
+      - None
+    Direction:
+      type: string
+      description: It indicates how the pages are ordered.
+      example: DESC
+      enum:
+      - ASC
+      - DESC
+    RefuelingType:
+      type: string
+      description: The resource `type` to be used together with id.
+      example: card
+      enum:
+      - transaction
+      - vehicle
+      - card
     ISO3166Country:
       type: string
       description: The [ISO 3166-1 alpha-3](https://www.iso.org/obp/ui/#search/code/) code of the country where the `Transaction` has been authorised.
@@ -850,6 +864,27 @@ components:
       - ZMB
       - ZRCD
       - ZWE
+    FuelType:
+      type: string
+      description: The fuel type of the `Vehicle`.
+      example: PETROL
+      enum:
+      - PETROL
+      - DIESEL
+      - METHANE
+      - LPG
+      - LNG
+      - ELECTRIC
+      - UNKNOWN
+    TransactionDateType:
+      type: string
+      description: It determines the date to be considered for `fromDate` and `toDate` parameters.
+      example: TRANSACTION
+      default: TRANSACTION
+      enum:
+      - TRANSACTION
+      - SETTLEMENT
+      - UPDATE
     TransactionStatus:
       type: string
       description: 'The status of the `Transaction` (sortable: yes).'
@@ -864,73 +899,38 @@ components:
       - DisputeWon
       - Moved
       - Unknown
-    UpdateRefueling:
+    Refuelings:
       type: object
       properties:
-        mileage:
+        total:
           type: integer
-          description: The mileage of the `Vehicle`.
+          description: It represents the total number of available items in the list.
           format: int32
-          example: 125000
-        unit_price:
-          type: number
-          description: The fuel unit price as specified on the `Transaction`.
-          example: 1.41
-        tx_fuel_type:
-          $ref: '#/components/schemas/FuelType'
-        quantity:
-          type: number
-          description: The fuel quantity as specified on the `Transaction`.
-          example: 80
-      description: Update `Refueling` JSON parameters.
-    FuelType:
-      type: string
-      description: The fuel type of the `Vehicle`.
-      example: PETROL
-      enum:
-      - PETROL
-      - DIESEL
-      - METHANE
-      - LPG
-      - LNG
-      - ELECTRIC
-      - UNKNOWN
-    RefuelingType:
-      type: string
-      description: The resource `type` to be used together with id.
-      example: card
-      enum:
-      - transaction
-      - vehicle
-      - card
-    DateParam:
-      type: object
-      description: 'The end of the period of the search `toDate` included (i.e. less than) (Formats: `yyyy-MM-dd`, `yyyy-MM-ddThh:mm:ss`, `yyyy-MM-ddThh:mm:ssZ`).'
-      example: '1970-01-30'
-    TransactionDateType:
-      type: string
-      description: It determines the date to be considered for `fromDate` and `toDate` parameters.
-      example: TRANSACTION
-      default: TRANSACTION
-      enum:
-      - TRANSACTION
-      - SETTLEMENT
-      - UPDATE
-    Direction:
-      type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
-      enum:
-      - ASC
-      - DESC
-    TransactionSign:
-      type: string
-      description: 'The sign of the transaction amount (Negative, Positive, None) (sortable: no).'
-      example: Negative
-      enum:
-      - Negative
-      - Positive
-      - None
+          example: 168
+        pages:
+          type: integer
+          description: It represents the total number of available pages.
+          format: int32
+          example: 7
+        page_size:
+          type: integer
+          description: It represents the number of items per page.
+          format: int32
+          example: 25
+        current_page:
+          type: integer
+          description: It indicates the current page (the counter starts from zero).
+          format: int32
+          example: 0
+        results_size:
+          type: integer
+          description: It indicates the size of the array results.
+          format: int32
+          example: 25
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Refueling'
   securitySchemes:
     standardAuth:
       type: oauth2

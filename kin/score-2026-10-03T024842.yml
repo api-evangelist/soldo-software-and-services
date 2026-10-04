@@ -1,24 +1,22 @@
-# Kin Score artifact — soldo-software-and-services — 2026-08-26T215308
+# Kin Score artifact — soldo-software-and-services — 2026-10-03T024842
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: soldo-software-and-services
-  schema_version: 0.15.0
-  scored_at: '2026-08-26'
-  run_ts: 2026-08-26T215308
+  schema_version: 0.23.0
+  scored_at: '2026-10-03'
+  run_ts: 2026-10-03T024842
   composite: 61.8
   band: strong
   facets:
-    discoverability: 81.5
-    contract_quality: 66.6
-    governance: 30.3
-    operational_transparency: 39.5
-    developer_ergonomics: 57.7
-    commercial_clarity: 42.1
-    contract_governance: 30.3
-    access_clarity: 42.1
+    discoverability: 73.2
+    contract_quality: 60.2
+    contract_governance: 18.2
+    operational_transparency: 60.5
+    developer_ergonomics: 54.2
+    access_clarity: 73.7
   agent_readiness:
-    score: 30.8
+    score: 33.3
     band: agent-ready
     dimensions:
       spec_presence: true
@@ -29,7 +27,7 @@ kin_score:
       idempotency: false
       error_semantics: documented
       openapi_examples: partial
-      rate_limit_signal: false
+      rate_limit_signal: documented
       event_surface_described: true
       agent_skills: derived
       well_known_catalog: false
@@ -44,7 +42,7 @@ kin_score:
     applies: true
     regime: Payments
     regime_id: payments
-    score: 87.5
+    score: 50.0
     matched_via: tags
   provenance:
     mcp: derived
@@ -52,7 +50,7 @@ kin_score:
     agentic_access: derived
     conformance: first-party
     contracts:
-      total: 46
+      total: 47
       derived: 0
       coverage: 0.0
       callable: 100.0

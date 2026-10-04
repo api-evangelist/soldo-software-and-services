@@ -254,6 +254,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TransactionMetadata'
+    Direction:
+      type: string
+      description: It indicates how the pages are ordered.
+      example: DESC
+      enum:
+      - ASC
+      - DESC
     TransactionMetadata:
       type: object
       properties:
@@ -274,13 +281,6 @@ components:
           type: string
           description: 'The date and time when the metadata was last updated (sortable: yes).'
           example: '2017-06-01T12:48:40Z'
-    Direction:
-      type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
-      enum:
-      - ASC
-      - DESC
   securitySchemes:
     standardAuth:
       type: oauth2

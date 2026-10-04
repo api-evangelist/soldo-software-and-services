@@ -227,20 +227,67 @@ paths:
         - wallet_write
 components:
   schemas:
-    WalletsToTransfer:
+    WalletPresetType:
+      type: string
+      description: The type of `AutoTransferPreset`.
+      enum:
+      - PERIODIC
+      - LOW_BALANCE
+    Direction:
+      type: string
+      description: It indicates how the pages are ordered.
+      example: DESC
+      enum:
+      - ASC
+      - DESC
+    WalletAutotransferPreset:
       type: object
       properties:
-        walletIds:
+        id:
+          type: string
+          description: 'The unique identifier of the `AutoTransferPreset`. (Sortable: No).'
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        name:
+          type: string
+          description: 'The name of the `AutoTransferPreset`. (Sortable: No).'
+          example: DefaultPreset
+        description:
+          type: string
+          description: 'The description of the `AutoTransferPreset`. (Sortable: No).'
+          example: Default CardRule preset policy
+        type:
+          $ref: '#/components/schemas/WalletPresetType'
+        currency:
+          type: string
+          description: The currency used in the `AutoTransferPreset`.
+          example: EUR
+        number_of_assigned_wallets:
+          type: integer
+          description: The number of wallets assigned to the `AutoTransferPreset`.
+          format: int32
+          example: 2
+        wallet_from:
+          type: string
+          description: The from wallet used for the `AutoTransferPreset`.
+          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
+        wallet_to:
           type: array
-          description: A list of `Wallet` IDs.
+          description: The to wallet used for the `AutoTransferPreset`.
           example:
           - 7bf79328-a7ae-4222-aa54-091ff7f429a7
           - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
           items:
             type: string
-            description: A list of `Wallet` IDs.
+            description: The to wallet used for the `AutoTransferPreset`.
             example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
-      description: The `Wallet` JSON parameters.
+        creation_time:
+          type: string
+          description: The date and time the `AutoTransferPreset` was created.
+          example: '2017-06-01T12:48:40Z'
+        last_update_time:
+          type: string
+          description: The date and time the `AutoTransferPreset` was last updated.
+          example: '2017-06-01T12:48:40Z'
     WalletAutotransferPresetItems:
       type: object
       properties:
@@ -311,67 +358,20 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/WalletAutotransferPresetItems'
-    WalletAutotransferPreset:
+    WalletsToTransfer:
       type: object
       properties:
-        id:
-          type: string
-          description: 'The unique identifier of the `AutoTransferPreset`. (Sortable: No).'
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        name:
-          type: string
-          description: 'The name of the `AutoTransferPreset`. (Sortable: No).'
-          example: DefaultPreset
-        description:
-          type: string
-          description: 'The description of the `AutoTransferPreset`. (Sortable: No).'
-          example: Default CardRule preset policy
-        type:
-          $ref: '#/components/schemas/WalletPresetType'
-        currency:
-          type: string
-          description: The currency used in the `AutoTransferPreset`.
-          example: EUR
-        number_of_assigned_wallets:
-          type: integer
-          description: The number of wallets assigned to the `AutoTransferPreset`.
-          format: int32
-          example: 2
-        wallet_from:
-          type: string
-          description: The from wallet used for the `AutoTransferPreset`.
-          example: 7bf79328-a7ae-4222-aa54-091ff7f429a7
-        wallet_to:
+        walletIds:
           type: array
-          description: The to wallet used for the `AutoTransferPreset`.
+          description: A list of `Wallet` IDs.
           example:
           - 7bf79328-a7ae-4222-aa54-091ff7f429a7
           - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
           items:
             type: string
-            description: The to wallet used for the `AutoTransferPreset`.
+            description: A list of `Wallet` IDs.
             example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
-        creation_time:
-          type: string
-          description: The date and time the `AutoTransferPreset` was created.
-          example: '2017-06-01T12:48:40Z'
-        last_update_time:
-          type: string
-          description: The date and time the `AutoTransferPreset` was last updated.
-          example: '2017-06-01T12:48:40Z'
-    Direction:
-      type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
-      enum:
-      - ASC
-      - DESC
-    WalletPresetType:
-      type: string
-      description: The type of `AutoTransferPreset`.
-      enum:
-      - PERIODIC
-      - LOW_BALANCE
+      description: The `Wallet` JSON parameters.
   securitySchemes:
     standardAuth:
       type: oauth2

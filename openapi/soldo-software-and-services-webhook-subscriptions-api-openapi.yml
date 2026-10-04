@@ -259,6 +259,13 @@ paths:
         - webhook_subscription_read
 components:
   schemas:
+    Direction:
+      type: string
+      description: It indicates how the pages are ordered.
+      example: DESC
+      enum:
+      - ASC
+      - DESC
     UpdateWebhookSubscription:
       type: object
       properties:
@@ -314,73 +321,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/WebhookSubscription'
-    CreateWebhookSubscription:
-      required:
-      - active
-      - enabled_events
-      - webhook_url
-      type: object
-      properties:
-        webhook_url:
-          type: string
-          description: The url of the `WebhookSubscription`.
-          example: https://your_domain.com/xx/xx
-        enabled_events:
-          type: array
-          description: The list of the `WebhookSubscription` enabled events.
-          example:
-          - card_activated
-          items:
-            $ref: '#/components/schemas/WebhookEventName'
-        description:
-          type: string
-          description: The description of the `WebhookSubscription`.
-          example: Google Ads Campaign
-        active:
-          type: boolean
-          description: The status of the `WebhookSubscription` (if `false`, notifications are not sent).
-          example: false
-      description: Create `WebhookSubscription` JSON parameters.
-    Direction:
-      type: string
-      description: It indicates how the pages are ordered.
-      example: DESC
-      enum:
-      - ASC
-      - DESC
-    WebhookSubscription:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The `WebhookSubscription` ID.
-          format: uuid
-        webhook_url:
-          type: string
-          description: The URL of `WebhookSubscription`.
-          example: https://your_domain.com/xx/xx
-        enabled_events:
-          uniqueItems: true
-          type: array
-          description: The list of subscribed events.
-          items:
-            $ref: '#/components/schemas/WebhookEventName'
-        description:
-          type: string
-          description: A custom description of the `WebhookSubscription`.
-          example: Report updates
-        active:
-          type: boolean
-          description: The status of the `WebhookSubscription`.
-          example: true
-        creation_date:
-          type: string
-          description: 'The date and time when the `WebhookSubscription` was created (sortable: yes).'
-          example: '2017-06-01T12:48:40Z'
-        last_update:
-          type: string
-          description: 'The last date and time when the `WebhookSubscription` was last updated (sortable: yes).'
-          example: '2017-06-01T12:48:40Z'
     WebhookEventName:
       type: string
       description: The list of subscribed events.
@@ -470,6 +410,66 @@ components:
       - contact_created
       - contact_updated
       - contact_deleted
+    WebhookSubscription:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The `WebhookSubscription` ID.
+          format: uuid
+        webhook_url:
+          type: string
+          description: The URL of `WebhookSubscription`.
+          example: https://your_domain.com/xx/xx
+        enabled_events:
+          uniqueItems: true
+          type: array
+          description: The list of subscribed events.
+          items:
+            $ref: '#/components/schemas/WebhookEventName'
+        description:
+          type: string
+          description: A custom description of the `WebhookSubscription`.
+          example: Report updates
+        active:
+          type: boolean
+          description: The status of the `WebhookSubscription`.
+          example: true
+        creation_date:
+          type: string
+          description: 'The date and time when the `WebhookSubscription` was created (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+        last_update:
+          type: string
+          description: 'The last date and time when the `WebhookSubscription` was last updated (sortable: yes).'
+          example: '2017-06-01T12:48:40Z'
+    CreateWebhookSubscription:
+      required:
+      - active
+      - enabled_events
+      - webhook_url
+      type: object
+      properties:
+        webhook_url:
+          type: string
+          description: The url of the `WebhookSubscription`.
+          example: https://your_domain.com/xx/xx
+        enabled_events:
+          type: array
+          description: The list of the `WebhookSubscription` enabled events.
+          example:
+          - card_activated
+          items:
+            $ref: '#/components/schemas/WebhookEventName'
+        description:
+          type: string
+          description: The description of the `WebhookSubscription`.
+          example: Google Ads Campaign
+        active:
+          type: boolean
+          description: The status of the `WebhookSubscription` (if `false`, notifications are not sent).
+          example: false
+      description: Create `WebhookSubscription` JSON parameters.
   securitySchemes:
     standardAuth:
       type: oauth2

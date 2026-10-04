@@ -181,6 +181,54 @@ paths:
         - resource_set_write
 components:
   schemas:
+    CreateResourceSet:
+      required:
+      - configuration
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the `ResourceSet`.
+          example: Resource set 01
+        description:
+          type: string
+          description: The description of the `ResourceSet`.
+          example: This is a resource set
+        configuration:
+          type: array
+          description: The configuration of the `ResourceSet`.
+          items:
+            $ref: '#/components/schemas/Configuration'
+      description: Create `ResourceSet` JSON parameters.
+    Configuration:
+      type: object
+      properties:
+        resource_type:
+          $ref: '#/components/schemas/ResourceSetResourceType'
+        scope:
+          $ref: '#/components/schemas/ResourceSetScope'
+        resource_ids:
+          type: array
+          description: The list of resource IDs belonging to the scope, only in case of scope of type `LIST`.
+          example:
+          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
+          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
+          items:
+            type: string
+            description: The list of resource IDs belonging to the scope, only in case of scope of type `LIST`.
+            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
+      description: The configuration of the `ResourceSet`.
+    ResourceSetResourceType:
+      type: string
+      description: The type of resource for which the scope is defined.
+      example: GROUP
+      enum:
+      - MAIN_WALLET
+      - COMPANY_WALLET
+      - USER
+      - COMPANY_CARD
+      - GROUP
     ResourceSetScope:
       type: string
       description: The scope defined for the resource.
@@ -242,54 +290,6 @@ components:
           items:
             $ref: '#/components/schemas/Configuration'
       description: Update `ResourceSet` JSON parameters.
-    Configuration:
-      type: object
-      properties:
-        resource_type:
-          $ref: '#/components/schemas/ResourceSetResourceType'
-        scope:
-          $ref: '#/components/schemas/ResourceSetScope'
-        resource_ids:
-          type: array
-          description: The list of resource IDs belonging to the scope, only in case of scope of type `LIST`.
-          example:
-          - 7bf79328-a7ae-4222-aa54-091ff7f429a7
-          - 2d65bd5e-3fdf-4002-b166-bde7fb8863fa
-          items:
-            type: string
-            description: The list of resource IDs belonging to the scope, only in case of scope of type `LIST`.
-            example: '["7bf79328-a7ae-4222-aa54-091ff7f429a7","2d65bd5e-3fdf-4002-b166-bde7fb8863fa"]'
-      description: The configuration of the `ResourceSet`.
-    ResourceSetResourceType:
-      type: string
-      description: The type of resource for which the scope is defined.
-      example: GROUP
-      enum:
-      - MAIN_WALLET
-      - COMPANY_WALLET
-      - USER
-      - COMPANY_CARD
-      - GROUP
-    CreateResourceSet:
-      required:
-      - configuration
-      - name
-      type: object
-      properties:
-        name:
-          type: string
-          description: The name of the `ResourceSet`.
-          example: Resource set 01
-        description:
-          type: string
-          description: The description of the `ResourceSet`.
-          example: This is a resource set
-        configuration:
-          type: array
-          description: The configuration of the `ResourceSet`.
-          items:
-            $ref: '#/components/schemas/Configuration'
-      description: Create `ResourceSet` JSON parameters.
   securitySchemes:
     standardAuth:
       type: oauth2

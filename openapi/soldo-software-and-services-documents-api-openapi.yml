@@ -169,13 +169,41 @@ paths:
         - document_read
 components:
   schemas:
-    DocumentOperation:
-      type: string
-      description: The operation type to perform on the `Document`.
-      example: UPLOAD_URL
-      enum:
-      - UPLOAD_URL
-      - UPLOAD_COMPLETED
+    CompletedUploadDocument:
+      required:
+      - attachment_name
+      - content_type
+      type: object
+      properties:
+        content_type:
+          type: string
+          description: The MIME type of the `Document`.
+          example: application/pdf
+        attachment_name:
+          type: string
+          description: Attachment name of the `Document`
+          example: 1779089463912.pdf
+        attachment_type:
+          type: string
+          description: The type of file of the `Document`.
+          example: RECEIPT
+        uploaded_by:
+          type: string
+          description: The User or system that uploaded the file of the `Document`
+          example: USER
+        thumbnails_size:
+          type: string
+          description: The requested thumbnail size hint for downstream rendering of file of the `Document` .
+          example: x1
+        readonly:
+          type: boolean
+          description: Readonly flag of the `Document`
+          example: false
+        analysis_required:
+          type: boolean
+          description: It indicates whether automated content analysis should be performed on the `Document` after upload.
+          example: false
+      description: Parameters used to request a document upload complite.
     UploadUrlDocument:
       type: object
       properties:
@@ -197,6 +225,38 @@ components:
           type: string
           description: Pre-signed URL of the `Document`
           example: https://example.com/upload-url
+    Documents:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        pages:
+          type: integer
+          description: It represents the total number of available pages.
+          format: int32
+          example: 7
+        page_size:
+          type: integer
+          description: It represents the number of items per page.
+          format: int32
+          example: 25
+        current_page:
+          type: integer
+          description: It indicates the current page (the counter starts from zero).
+          format: int32
+          example: 0
+        results_size:
+          type: integer
+          description: It indicates the size of the array results.
+          format: int32
+          example: 25
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/DocumentItem'
     UploadDocument:
       required:
       - content_type
@@ -244,41 +304,6 @@ components:
           type: boolean
           description: It indicates whether the `Document` is already attached to one or more activities.
           example: false
-    CompletedUploadDocument:
-      required:
-      - attachment_name
-      - content_type
-      type: object
-      properties:
-        content_type:
-          type: string
-          description: The MIME type of the `Document`.
-          example: application/pdf
-        attachment_name:
-          type: string
-          description: Attachment name of the `Document`
-          example: 1779089463912.pdf
-        attachment_type:
-          type: string
-          description: The type of file of the `Document`.
-          example: RECEIPT
-        uploaded_by:
-          type: string
-          description: The User or system that uploaded the file of the `Document`
-          example: USER
-        thumbnails_size:
-          type: string
-          description: The requested thumbnail size hint for downstream rendering of file of the `Document` .
-          example: x1
-        readonly:
-          type: boolean
-          description: Readonly flag of the `Document`
-          example: false
-        analysis_required:
-          type: boolean
-          description: It indicates whether automated content analysis should be performed on the `Document` after upload.
-          example: false
-      description: Parameters used to request a document upload complite.
     Document:
       type: object
       properties:
@@ -306,38 +331,13 @@ components:
           type: boolean
           description: It indicates whether the `Document` is already attached to one or more activities.
           example: false
-    Documents:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        pages:
-          type: integer
-          description: It represents the total number of available pages.
-          format: int32
-          example: 7
-        page_size:
-          type: integer
-          description: It represents the number of items per page.
-          format: int32
-          example: 25
-        current_page:
-          type: integer
-          description: It indicates the current page (the counter starts from zero).
-          format: int32
-          example: 0
-        results_size:
-          type: integer
-          description: It indicates the size of the array results.
-          format: int32
-          example: 25
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/DocumentItem'
+    DocumentOperation:
+      type: string
+      description: The operation type to perform on the `Document`.
+      example: UPLOAD_URL
+      enum:
+      - UPLOAD_URL
+      - UPLOAD_COMPLETED
   securitySchemes:
     standardAuth:
       type: oauth2

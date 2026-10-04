@@ -122,6 +122,26 @@ paths:
         - employee_write
 components:
   schemas:
+    UserRole:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the `UserRole`.
+          example: superAdmin
+        name:
+          type: string
+          description: The name of the `UserRole`.
+          example: superAdmin
+        description:
+          type: string
+          description: The description of the `UserRole`.
+          example: The SuperAdmin role
+        scope:
+          type: string
+          description: The scope of the `UserRole`.
+          example: ALL
+      description: The list of `UserRole` of the `User`.
     UpdateUserRoleAssignment:
       type: object
       properties:
@@ -150,26 +170,6 @@ components:
           description: The list of `UserRole` of the `User`.
           items:
             $ref: '#/components/schemas/UserRole'
-    UserRole:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The ID of the `UserRole`.
-          example: superAdmin
-        name:
-          type: string
-          description: The name of the `UserRole`.
-          example: superAdmin
-        description:
-          type: string
-          description: The description of the `UserRole`.
-          example: The SuperAdmin role
-        scope:
-          type: string
-          description: The scope of the `UserRole`.
-          example: ALL
-      description: The list of `UserRole` of the `User`.
   securitySchemes:
     standardAuth:
       type: oauth2

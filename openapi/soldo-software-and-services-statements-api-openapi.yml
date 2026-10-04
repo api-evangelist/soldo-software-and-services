@@ -78,6 +78,14 @@ paths:
         - statement_read
 components:
   schemas:
+    ISO4217SupportedCurrency:
+      type: string
+      description: The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Statement` to search for.
+      example: EUR
+      enum:
+      - EUR
+      - GBP
+      - USD
     StatementFileType:
       type: string
       description: The generated `Statement` file types.
@@ -85,23 +93,6 @@ components:
       - PDF
       - XLSX
       - CSV
-    Statement:
-      type: object
-      properties:
-        year:
-          type: integer
-          description: The reference year for `Statement`.
-          format: int32
-          example: 2025
-        month:
-          $ref: '#/components/schemas/Month'
-        currency:
-          $ref: '#/components/schemas/ISO4217SupportedCurrency'
-        file_types:
-          type: array
-          description: The generated `Statement` file types.
-          items:
-            $ref: '#/components/schemas/StatementFileType'
     DownloadStatement:
       required:
       - currency
@@ -123,18 +114,23 @@ components:
         currency:
           $ref: '#/components/schemas/ISO4217SupportedCurrency'
       description: Download `statement` JSON parameters.
-    Statements:
+    Statement:
       type: object
       properties:
-        total:
+        year:
           type: integer
-          description: It represents the total number of available items in the list.
+          description: The reference year for `Statement`.
           format: int32
-          example: 168
-        results:
+          example: 2025
+        month:
+          $ref: '#/components/schemas/Month'
+        currency:
+          $ref: '#/components/schemas/ISO4217SupportedCurrency'
+        file_types:
           type: array
+          description: The generated `Statement` file types.
           items:
-            $ref: '#/components/schemas/Statement'
+            $ref: '#/components/schemas/StatementFileType'
     Month:
       type: string
       description: The reference month for `Statement`.
@@ -152,14 +148,6 @@ components:
       - OCTOBER
       - NOVEMBER
       - DECEMBER
-    ISO4217SupportedCurrency:
-      type: string
-      description: The [ISO 4217](https://www.six-group.com/en/products-services/financial-information/data-standards.html#scrollTo=maintenance-agency) code of the currency of the `Statement` to search for.
-      example: EUR
-      enum:
-      - EUR
-      - GBP
-      - USD
     StatementDownloadUrl:
       type: object
       properties:
@@ -168,6 +156,18 @@ components:
           description: The presigned url where to download the `Statement`.
           format: uri
           example: https://my-demo-bucket.s3.amazonaws.com/example.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIOSFODNN7EXAMPLE%2F20250416%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250416T083000Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890
+    Statements:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Statement'
   securitySchemes:
     standardAuth:
       type: oauth2

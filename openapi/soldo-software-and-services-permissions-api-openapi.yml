@@ -30,6 +30,18 @@ paths:
         - role_read
 components:
   schemas:
+    UserRoles:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: It represents the total number of available items in the list.
+          format: int32
+          example: 168
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Role'
     Role:
       type: object
       properties:
@@ -58,18 +70,6 @@ components:
             type: string
             description: The scopes of the `Role`.
             example: '["ALL"]'
-    UserRoles:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: It represents the total number of available items in the list.
-          format: int32
-          example: 168
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Role'
   securitySchemes:
     standardAuth:
       type: oauth2
